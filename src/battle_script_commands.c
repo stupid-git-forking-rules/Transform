@@ -6696,6 +6696,12 @@ static void Cmd_moveend(void)
             }
             gBattleScripting.moveendState++;
             break;
+        case MOVEEND_KINGSROCK: // King's rock
+            // These effects will occur at each hit in a multi-strike move
+            if (ItemBattleEffects(ITEMEFFECT_KINGSROCK, 0, FALSE))
+                effect = TRUE;
+            gBattleScripting.moveendState++;
+            break;
         case MOVEEND_SUBSTITUTE:
             for (i = 0; i < gBattlersCount; i++)
             {
@@ -7096,6 +7102,57 @@ static void Cmd_moveend(void)
             else
                 gBattleScripting.moveendState++;
             break;
+        case MOVEEND_RED_CARD:
+            {
+                u32 redCardBattlers = 0, i;
+                for (i = 0; i < gBattlersCount; i++)
+                {
+                    if (i == gBattlerAttacker)
+                        continue;
+                    if (GetBattlerHoldEffect(i, TRUE) == HOLD_EFFECT_RED_CARD)
+                        redCardBattlers |= (1u << i);
+                }
+                if (redCardBattlers && IsBattlerAlive(gBattlerAttacker))
+                {
+                    // Since we check if battler was damaged, we don't need to check move result.
+                    // In fact, doing so actually prevents multi-target moves from activating red card properly
+                    u8 battlers[4] = {0, 1, 2, 3};
+                    SortBattlersBySpeed(battlers, FALSE);
+                    for (i = 0; i < gBattlersCount; i++)
+                    {
+                        u32 battler = battlers[i];
+                        // Search for fastest hit pokemon with a red card
+                        // Attacker is the one to be switched out, battler is one with red card
+                        if (redCardBattlers & (1u << battler)
+                          && IsBattlerAlive(battler)
+                          && !DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)
+                          && IsBattlerTurnDamaged(battler)
+                          && CanBattlerSwitch(gBattlerAttacker)
+                          && !(moveEffect == EFFECT_HIT_SWITCH_TARGET && CanBattlerSwitch(battler)))
+                        {
+                            effect = TRUE;
+                            gLastUsedItem = gBattleMons[battler].item;
+                            SaveBattlerTarget(battler); // save battler with red card
+                            SaveBattlerAttacker(gBattlerAttacker);
+                            gBattleScripting.battler = battler;
+                            gEffectBattler = gBattlerAttacker;
+                            BattleScriptPushCursor();
+                            if (gBattleStruct->commanderActive[gBattlerAttacker] != SPECIES_NONE
+                             || GetBattlerAbility(gBattlerAttacker) == ABILITY_GUARD_DOG
+                             || GetActiveGimmick(gBattlerAttacker) == GIMMICK_DYNAMAX)
+                                gBattlescriptCurrInstr = BattleScript_RedCardActivationNoSwitch;
+                            else
+                                gBattlescriptCurrInstr = BattleScript_RedCardActivates;
+                            break;  // Only fastest red card activates
+                        }
+                    }
+                }
+            }
+            if (effect)
+                gBattleScripting.moveendState = MOVEEND_OPPORTUNIST;
+            else
+                gBattleScripting.moveendState++;
+            break;
         case MOVEEND_EJECT_BUTTON:
             {
                 // Because sorting the battlers by speed takes lots of cycles, it's better to just check if any of the battlers has the Eject items.
@@ -7136,6 +7193,61 @@ static void Cmd_moveend(void)
                     gBattlescriptCurrInstr = BattleScript_EjectButtonActivates;
                     gAiLogicData->ejectButtonSwitch = TRUE;
                     break; // Only the fastest Eject Button activates
+                }
+            }
+            if (effect)
+                gBattleScripting.moveendState = MOVEEND_OPPORTUNIST;
+            else
+                gBattleScripting.moveendState++;
+            break;
+        case MOVEEND_LIFEORB_SHELLBELL:
+            if (ItemBattleEffects(ITEMEFFECT_LIFEORB_SHELLBELL, 0, FALSE))
+                effect = TRUE;
+            gBattleScripting.moveendState++;
+            break;
+        case MOVEEND_EMERGENCY_EXIT: // Special case, because moves hitting multiple opponents stop after switching out
+            {
+                // Because sorting the battlers by speed takes lots of cycles,
+                // we check if EE can be activated and cound how many.
+                u32 numEmergencyExitBattlers = 0;
+                u32 emergencyExitBattlers = 0;
+
+                for (i = 0; i < gBattlersCount; i++)
+                {
+                    if (EmergencyExitCanBeTriggered(i))
+                    {
+                        emergencyExitBattlers |= 1u << i;
+                        numEmergencyExitBattlers++;
+                    }
+                }
+
+                if (numEmergencyExitBattlers == 0)
+                {
+                    gBattleScripting.moveendState++;
+                    break;
+                }
+
+                u8 battlers[4] = {0, 1, 2, 3};
+                if (numEmergencyExitBattlers > 1)
+                    SortBattlersBySpeed(battlers, FALSE);
+
+                for (i = 0; i < gBattlersCount; i++)
+                {
+                    u32 battler = battlers[i];
+
+                    if (!(emergencyExitBattlers & 1u << battler))
+                        continue;
+
+                    effect = TRUE;
+                    gBattleScripting.battler = battler;
+                    BattleScriptPushCursor();
+
+                    if (gBattleTypeFlags & BATTLE_TYPE_TRAINER || IsOnPlayerSide(battler))
+                        gBattlescriptCurrInstr = BattleScript_EmergencyExit;
+                    else
+                        gBattlescriptCurrInstr = BattleScript_EmergencyExitWild;
+
+                    break; // Only the fastest Emergency Exit / Wimp Out activates
                 }
             }
             if (effect)
