@@ -108,6 +108,15 @@ enum FourthEventBlock
     FOURTH_EVENT_BLOCK_EJECT_PACK,
 };
 
+static inline bool32 IsBattlerProtectedByMagicGuard(u32 battler, u32 ability)
+{
+    if (ability != ABILITY_MAGIC_GUARD)
+        return FALSE;
+
+    RecordAbilityBattle(battler, ability);
+    return TRUE;
+}
+
 static u32 GetBattlerSideForMessage(u32 side)
 {
     u32 battler = 0;
@@ -235,7 +244,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
          && !IS_BATTLER_ANY_TYPE(gBattlerAttacker, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
          && !(gStatuses3[gBattlerAttacker] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
          && GetBattlerHoldEffect(gBattlerAttacker, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
-         && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
+         && !IsBattlerProtectedByMagicGuard(battler, ability))
         {
             gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
             if (gBattleStruct->moveDamage[battler] == 0)
@@ -259,7 +268,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
              && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
              && !(gStatuses3[battler] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
              && GetBattlerHoldEffect(battler, TRUE) != HOLD_EFFECT_SAFETY_GOGGLES
-             && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
+             && !IsBattlerProtectedByMagicGuard(battler, ability))
             {
                 gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
                 if (gBattleStruct->moveDamage[battler] == 0)
@@ -434,7 +443,7 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         {
             if (IsBattlerAlive(battler)
              && !IS_BATTLER_OF_TYPE(battler, gSideTimers[side].damageNonTypesType)
-             && !IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+             && !IsBattlerProtectedByMagicGuard(battler, GetBattlerAbility(battler)))
             {
                 gBattlerAttacker = battler;
                 gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 6;
@@ -470,8 +479,8 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
                 gBattleMons[battler].status2 &= ~STATUS2_MULTIPLETURNS;
                 if (!(gBattleMons[battler].status2 & STATUS2_CONFUSION))
                 {
-                    gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION;
-                    SetMoveEffect(battler, battler, TRUE, FALSE);
+                    gBattleScripting.moveEffect = MOVE_EFFECT_CONFUSION | MOVE_EFFECT_AFFECTS_USER;
+                    SetMoveEffect(TRUE, FALSE);
                     if (gBattleMons[battler].status2 & STATUS2_CONFUSION)
                         BattleScriptExecute(BattleScript_ThrashConfuses);
                     effect = TRUE;
@@ -512,7 +521,7 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
         {
         case HOLD_EFFECT_LEFTOVERS:
         case HOLD_EFFECT_BLACK_SLUDGE:
-            if (ItemBattleEffects(ITEMEFFECT_NORMAL, battler))
+            if (ItemBattleEffects(ITEMEFFECT_NORMAL, battler, FALSE))
                 effect = TRUE;
             break;
         default:
@@ -574,7 +583,7 @@ static bool32 HandleEndTurnLeechSeed(u32 battler)
     if (gStatuses3[battler] & STATUS3_LEECHSEED
      && IsBattlerAlive(gStatuses3[battler] & STATUS3_LEECHSEED_BATTLER)
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+     && !IsBattlerProtectedByMagicGuard(battler, GetBattlerAbility(battler)))
     {
         gBattlerTarget = gStatuses3[battler] & STATUS3_LEECHSEED_BATTLER; // Notice gBattlerTarget is actually the HP receiver.
         gBattleScripting.animArg1 = gBattlerTarget;
@@ -613,7 +622,7 @@ static bool32 HandleEndTurnPoison(u32 battler)
 
     if ((gBattleMons[battler].status1 & STATUS1_POISON || gBattleMons[battler].status1 & STATUS1_TOXIC_POISON)
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
+     && !IsBattlerProtectedByMagicGuard(battler, ability))
     {
         if (ability == ABILITY_POISON_HEAL)
         {
@@ -661,7 +670,7 @@ static bool32 HandleEndTurnBurn(u32 battler)
 
     if (gBattleMons[battler].status1 & STATUS1_BURN
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
+     && !IsBattlerProtectedByMagicGuard(battler, ability))
     {
         gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / (B_BURN_DAMAGE >= GEN_7 ? 16 : 8);
         if (ability == ABILITY_HEATPROOF)
@@ -687,7 +696,7 @@ static bool32 HandleEndTurnFrostbite(u32 battler)
 
     if (gBattleMons[battler].status1 & STATUS1_FROSTBITE
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+     && !IsBattlerProtectedByMagicGuard(battler, GetBattlerAbility(battler)))
     {
         gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / (B_BURN_DAMAGE >= GEN_7 ? 16 : 8);
         if (gBattleStruct->moveDamage[battler] == 0)
@@ -707,7 +716,7 @@ static bool32 HandleEndTurnNightmare(u32 battler)
 
     if (gBattleMons[battler].status2 & STATUS2_NIGHTMARE
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+     && !IsBattlerProtectedByMagicGuard(battler, GetBattlerAbility(battler)))
     {
         if (gBattleMons[battler].status1 & STATUS1_SLEEP)
         {
@@ -734,7 +743,7 @@ static bool32 HandleEndTurnCurse(u32 battler)
 
     if (gBattleMons[battler].status2 & STATUS2_CURSED
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+     && !IsBattlerProtectedByMagicGuard(battler, GetBattlerAbility(battler)))
     {
         gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 4;
         if (gBattleStruct->moveDamage[battler] == 0)
@@ -756,7 +765,7 @@ static bool32 HandleEndTurnWrap(u32 battler)
     {
         if (--gDisableStructs[battler].wrapTurns != 0)
         {
-            if (IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+            if (IsBattlerProtectedByMagicGuard(battler, GetBattlerAbility(battler)))
                 return effect;
 
             gBattleScripting.animArg1 = gBattleStruct->wrappedMove[battler];
@@ -791,7 +800,7 @@ static bool32 HandleEndTurnSaltCure(u32 battler)
 
     if (gStatuses4[battler] & STATUS4_SALT_CURE
      && IsBattlerAlive(battler)
-     && !IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+     && !IsBattlerProtectedByMagicGuard(battler, GetBattlerAbility(battler)))
     {
         if (IS_BATTLER_ANY_TYPE(battler, TYPE_STEEL, TYPE_WATER))
             gBattleStruct->moveDamage[battler] = gBattleMons[battler].maxHP / 4;
@@ -1423,11 +1432,11 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         case HOLD_EFFECT_FLAME_ORB:
         case HOLD_EFFECT_STICKY_BARB:
         case HOLD_EFFECT_TOXIC_ORB:
-            if (ItemBattleEffects(ITEMEFFECT_ORBS, battler))
+            if (ItemBattleEffects(ITEMEFFECT_ORBS, battler, FALSE))
                 effect = TRUE;
             break;
         case HOLD_EFFECT_WHITE_HERB:
-            if (ItemBattleEffects(ITEMEFFECT_NORMAL, battler))
+            if (ItemBattleEffects(ITEMEFFECT_NORMAL, battler, FALSE))
                 effect = TRUE;
             break;
         default:
@@ -1485,7 +1494,7 @@ static bool32 HandleEndTurnFourthEventBlock(u32 battler)
         enum ItemHoldEffect holdEffect = GetBattlerHoldEffect(battler, TRUE);
         if (holdEffect == HOLD_EFFECT_EJECT_PACK)
         {
-            if (ItemBattleEffects(ITEMEFFECT_NORMAL, battler))
+            if (ItemBattleEffects(ITEMEFFECT_NORMAL, battler, FALSE))
                 effect = TRUE;
         }
         gBattleStruct->eventBlockCounter = 0;

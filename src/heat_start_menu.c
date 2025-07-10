@@ -749,9 +749,9 @@ static void HeatStartMenu_LoadBgGfx(void) {
   LoadBgTilemap(0, 0, 0, 0);
   DecompressAndCopyTileDataToVram(0, sStartMenuTiles, 0, 0, 0);
   if (GetSafariZoneFlag() == FALSE) {
-    DecompressDataWithHeaderWram(sStartMenuTilemap, buf);
+    LZDecompressWram(sStartMenuTilemap, buf);
   } else {
-    DecompressDataWithHeaderWram(sStartMenuTilemapSafari, buf);
+    LZDecompressWram(sStartMenuTilemapSafari, buf);
   }
   LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
   LoadPalette(sStartMenuPalette, BG_PLTT_ID(14), PLTT_SIZE_4BPP);

@@ -385,7 +385,7 @@ SINGLE_BATTLE_TEST("(TERA) Synchronoise uses a Terastallized Pokemon's Tera Type
     } SCENE {
         // turn 1
         MESSAGE("The opposing Wobbuffet used Synchronoise!");
-        MESSAGE("It doesn't affect Wobbuffet…");
+        MESSAGE("It won't have any effect on Wobbuffet!");
         // turn 2
         MESSAGE("The opposing Wobbuffet used Synchronoise!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SYNCHRONOISE, opponent);
