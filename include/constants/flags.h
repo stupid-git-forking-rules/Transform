@@ -1222,8 +1222,8 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_UNUSED_0x493                                           0x493 // Unused Flag
-#define FLAG_UNUSED_0x494                                           0x494 // Unused Flag
+#define FLAG_RUNNING_SHOES_TOGGLE                                   0x493 // changged from unused to running shoes toggle
+#define FLAG_AUTORUN_MENU_TOGGLE                                    0x494 // Unused Flag changed to running shoes menu toggle so i can turn of press b to run toggle in menu.
 #define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
 #define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
