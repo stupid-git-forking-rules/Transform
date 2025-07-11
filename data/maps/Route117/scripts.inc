@@ -70,8 +70,12 @@ Route117_EventScript_RouteSignMauville::
 	end
 
 Route117_EventScript_DayCareSign::
+	speakername DaycareSpeakernameTest
 	msgbox Route117_Text_DayCareSign, MSGBOX_SIGN
 	end
+	
+DaycareSpeakernameTest:
+.string "Day-Care Sign$"
 
 Route117_EventScript_Isaac::
 	trainerbattle_single TRAINER_ISAAC_1, Route117_Text_IsaacIntro, Route117_Text_IsaacDefeat, Route117_EventScript_RegisterIsaac
