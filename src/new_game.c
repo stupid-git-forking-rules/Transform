@@ -132,7 +132,7 @@ static void ClearFrontierRecord(void)
 static void WarpToTruck(void)
 {
     SetWarpDestination(MAP_GROUP(MAP_ROUTE117), MAP_NUM(MAP_ROUTE117), WARP_ID_NONE, -1, -1);
-    Varset(VAR_BATTLE_SPEED, 1) // Set battle speed to 2x by default, press L to slow down to 1x
+    VarSet(VAR_BATTLE_SPEED, 1); // Set battle speed to 2x by default, press L to slow down to 1x
     WarpIntoMap();
 }
 
