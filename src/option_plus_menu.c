@@ -184,6 +184,7 @@ static void SoundMode_DrawChoices(int selection, int y);
 static void DrawChoices_Follower(int selection, int y);
 static void BattleSpeed_DrawChoices(int selection, int y);
 static void DrawChoices_AutoRun(int selection, int y);
+static int ProcessInput_AutoRun(int selection);
 static int ProcessInput_MenuPal(int selection);
 static void DrawChoices_MenuPal(int selection, int y);
 static int BattleSpeed_ProcessInput_New(int selection);
@@ -246,7 +247,7 @@ static const MenuItemFunctions sItemFunctionsVanilla[MENUITEM_COUNT] =
 static const MenuItemFunctions sItemFunctionsCustom[MENUITEM_COUNT_PG2] =
 {
     [MENUITEM_BATTLESPEED]  = {BattleSpeed_DrawChoices,    BattleSpeed_ProcessInput_New},
-    [MENUITEM_AUTORUN]  = {DrawChoices_AutoRun,    TwoOptions_ProcessInput},
+    [MENUITEM_AUTORUN]  = {DrawChoices_AutoRun,    ProcessInput_AutoRun},
     [MENUITEM_CANCEL_PG2]       = {NULL, NULL},
 };
 
@@ -373,7 +374,7 @@ static const u8 *const sOptionMenuItemDescriptionsVanilla[MENUITEM_COUNT][3] =
 static const u8 *const sOptionMenuItemDescriptionsCustom[MENUITEM_COUNT_PG2][4] =
 {
     [MENUITEM_BATTLESPEED]  = {sText_Desc_BattleSpeed_1x,       sText_Desc_BattleSpeed_2x,        sText_Desc_BattleSpeed_3x,      sText_Desc_BattleSpeed_4x},
-    [MENUITEM_AUTORUN] = {sText_Desc_Autorun_Toggle,     sText_Desc_Autorun_Hold,          sText_Empty,                    sText_Empty},
+    [MENUITEM_AUTORUN] = {sText_Desc_Autorun_Hold,     sText_Desc_Autorun_Toggle,          sText_Empty,                    sText_Empty},
     [MENUITEM_CANCEL_PG2]       = {sText_Desc_Save,                 sText_Empty,                      sText_Empty,                    sText_Empty},
 };
 
@@ -469,7 +470,7 @@ static void VBlankCB(void)
 static const u8 sText_TopBar_Vanilla[]         = _("VANILLA");
 static const u8 sText_TopBar_General_Right[]   = _("{R_BUTTON}CUSTOM");
 static const u8 sText_TopBar_General_Left[]    = _("{L_BUTTON}CUSTOM");
-static const u8 sText_TopBar_Custom[]          = _("BATTLE");
+static const u8 sText_TopBar_Custom[]          = _("CUSTOM");
 static const u8 sText_TopBar_Battle_Left[]     = _("{L_BUTTON}VANILLA");
 static const u8 sText_TopBar_Battle_Right[]    = _("{R_BUTTON}VANILLA");
 static const u8 sText_TopBar_Sound[]           = _("SOUND");
@@ -709,7 +710,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_vanilla[MENUITEM_BUTTONMODE]  = gSaveBlock2Ptr->optionsButtonMode;
         sOptions->sel_vanilla[MENUITEM_FRAMETYPE]   = gSaveBlock2Ptr->optionsWindowFrameType;
         sOptions->sel_custom[MENUITEM_BATTLESPEED]  = gSaveBlock2Ptr->optionsBattleSpeed;
-        sOptions->sel_custom[MENUITEM_AUTORUN]      = FlagGet(FLAG_AUTORUN_MENU_TOGGLE);
+        sOptions->sel_custom[MENUITEM_AUTORUN]      = FlagGet(FLAG_AUTORUN_MENU_TOGGLE) ? 0 : 1;
 
         sOptions->submenu = sCurrPage; // Restore last page
 
@@ -932,7 +933,7 @@ static void Task_OptionMenuSave(u8 taskId)
     // explicitly mapped from sOptions->sel_custom to gSaveBlock2Ptr.
     gSaveBlock2Ptr->optionsBattleSpeed      = sOptions->sel_custom[MENUITEM_BATTLESPEED];
 
-    // Handle AutoRun option (another flag-based example, if you have it)
+// Handle AutoRun option (another flag-based example, if you have it)
     if (sOptions->sel_custom[MENUITEM_AUTORUN] == 0) // Assuming 0 means Autorun is ON
     {
         FlagSet(FLAG_AUTORUN_MENU_TOGGLE); // Set flag to ENABLE autorun (if your flag means enable when set)
@@ -1240,6 +1241,23 @@ static void FrameType_DrawChoices(int selection, int y)
 }
 
 
+static int ProcessInput_AutoRun(int selection)
+{
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+        selection ^= 1; // Toggle between 0 and 1
+
+    if (selection == 0) 
+    {
+        FlagSet(FLAG_AUTORUN_MENU_TOGGLE);
+        FlagClear(FLAG_RUNNING_SHOES_TOGGLE);
+    }
+    else
+    {
+        FlagClear(FLAG_AUTORUN_MENU_TOGGLE);
+    }
+
+    return selection;
+}
 
 static void BattleScene_DrawChoices(int selection, int y)
 {

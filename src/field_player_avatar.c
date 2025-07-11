@@ -37,6 +37,8 @@
 #define NUM_FORCED_MOVEMENTS 18
 #define NUM_ACRO_BIKE_COLLISIONS 5
 
+EWRAM_DATA bool8 gRunToggleBtnSet = FALSE;
+
 enum SpinDirection
 {
     SPIN_DIRECTION_NONE,
@@ -847,28 +849,51 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
         return;
     }
 
-    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (heldKeys & B_BUTTON) && FlagGet(FLAG_SYS_B_DASH)
+    if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER) && (gRunToggleBtnSet || (FlagGet(FLAG_RUNNING_SHOES_TOGGLE) && !FlagGet(FLAG_AUTORUN_MENU_TOGGLE)) || (heldKeys & B_BUTTON))
+    && FlagGet(FLAG_SYS_B_DASH)
      && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 && !FollowerNPCComingThroughDoor())
     {
-        if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
-            PlayerRunSlow(direction);
-        else
-            PlayerRun(direction);
-
+        if (gRunToggleBtnSet)
+        {
+            gRunToggleBtnSet = FALSE;
+            if (FlagGet(FLAG_RUNNING_SHOES_TOGGLE) == FALSE)
+            {
+                FlagSet(FLAG_RUNNING_SHOES_TOGGLE);
+                PlayerRun(direction);
+                gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+                return;
+            }
+            else
+            {
+                FlagClear(FLAG_RUNNING_SHOES_TOGGLE);
+                gRunToggleBtnSet = FALSE;
+                if (!(heldKeys & B_BUTTON))
+                {
+                    PlayerWalkNormal(direction);
+                }
+                else
+                {
+                    PlayerRun(direction);
+                    gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+                }
+                return;
+            } 
+        }
+        PlayerRun(direction);
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
-    }
-    else if (FlagGet(DN_FLAG_SEARCHING) && (heldKeys & A_BUTTON))
+     }
+     else
+     {
+        gRunToggleBtnSet = FALSE;
+        PlayerWalkNormal(direction);
+     }
+
+    if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
     {
-        gPlayerAvatar.creeping = TRUE;
-        PlayerWalkSlow(direction);
-    }
-    else
-    {
-        if (ObjectMovingOnRockStairs(&gObjectEvents[gPlayerAvatar.objectEventId], direction))
-            PlayerWalkSlowStairs(direction);
-        else
-            PlayerWalkNormal(direction);
+        PlayerRunSlow(direction);
+        gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
+        return;
     }
 }
 
