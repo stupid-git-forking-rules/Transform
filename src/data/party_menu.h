@@ -120,6 +120,74 @@ static const u8 sFontColorTable[][3] =
     {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},  // Unused
 };
 
+static const struct WindowTemplate sDittoPartyMenuWindowTemplate[] =
+{
+    { // Party mon 1 // CHANGED TO DITTO BLIT
+        .bg = 0,
+        .tilemapLeft = 1,
+        .tilemapTop = 3,
+        .width = 10,
+        .height = 8,
+        .paletteNum = 1,
+        .baseBlock = 0x58,
+    },
+    { // Party mon 2
+        .bg = 0,
+        .tilemapLeft = 12,
+        .tilemapTop = 1,
+        .width = 18,
+        .height = 3,
+        .paletteNum = 4,
+        .baseBlock = 0xA9,
+    },
+    { // Party mon 3
+        .bg = 0,
+        .tilemapLeft = 12,
+        .tilemapTop = 4,
+        .width = 18,
+        .height = 3,
+        .paletteNum = 5,
+        .baseBlock = 0xDF,
+    },
+    { // Party mon 4
+        .bg = 0,
+        .tilemapLeft = 12,
+        .tilemapTop = 7,
+        .width = 18,
+        .height = 3,
+        .paletteNum = 6,
+        .baseBlock = 0x115,
+    },
+    { // Party mon 5
+        .bg = 0,
+        .tilemapLeft = 12,
+        .tilemapTop = 10,
+        .width = 18,
+        .height = 3,
+        .paletteNum = 7,
+        .baseBlock = 0x14B,
+    },
+    { // Party mon 6 // UNUSED
+        .bg = 0,
+        .tilemapLeft = 12,
+        .tilemapTop = 13,
+        .width = 18,
+        .height = 3,
+        .paletteNum = 8,
+        .baseBlock = 0x181,
+    },
+    [WIN_MSG] = {
+        .bg = 2,
+        .tilemapLeft = 1,
+        .tilemapTop = 15,
+        .width = 28,
+        .height = 4,
+        .paletteNum = 14,
+        .baseBlock = 0x1DF,
+    },
+    DUMMY_WIN_TEMPLATE
+};
+
 static const struct WindowTemplate sSinglePartyMenuWindowTemplate[] =
 {
     { // Party mon 1
@@ -600,6 +668,8 @@ static const u8 sSlotTilemap_MainNoHP[]  = INCBIN_U8("graphics/party_menu/slot_m
 static const u8 sSlotTilemap_Wide[]      = INCBIN_U8("graphics/party_menu/slot_wide.bin");
 static const u8 sSlotTilemap_WideNoHP[]  = INCBIN_U8("graphics/party_menu/slot_wide_no_hp.bin");
 static const u8 sSlotTilemap_WideEmpty[] = INCBIN_U8("graphics/party_menu/slot_wide_empty.bin");
+
+static const u8 sDitto_Gfx[] = INCBIN_U8("graphics/party_menu/ditto.4bpp");
 
 // Palette offsets
 static const u8 sGenderPalOffsets[] = {11, 12};
