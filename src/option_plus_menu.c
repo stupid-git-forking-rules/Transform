@@ -207,9 +207,9 @@ static const u16 sOptionsPlusPalette[] = INCBIN_U16("graphics/ui_options_plus/op
 static const u32 sOptionsPlusTilemap[] = INCBIN_U32("graphics/ui_options_plus/options_plus_tiles.bin.lz");
 
 // Scrolling Background
-static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_options_plus/scroll_tiles.4bpp.lz");
-static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_options_plus/scroll_tiles.bin.lz");
-static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_options_plus/scroll_tiles.gbapal");
+static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_options_plus/subtleditto.4bpp.lz");
+static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_options_plus/subtleditto.bin.lz");
+static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_options_plus/subtleditto.gbapal");
 
 #define TEXT_COLOR_OPTIONS_WHITE                1
 #define TEXT_COLOR_OPTIONS_GRAY_FG              2

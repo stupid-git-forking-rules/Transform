@@ -532,23 +532,23 @@ static void StartPokemonLogoShine(u8 mode)
     case SHINE_MODE_SINGLE:
         // Create one regular shine sprite.
         // If mode is SHINE_MODE_SINGLE it will also change the background color.
-        spriteId = CreateSprite(&sPokemonLogoShineSpriteTemplate, 0, 75, 0);
+        spriteId = CreateSprite(&sPokemonLogoShineSpriteTemplate, 0, 68, 0);
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_WINDOW;
         gSprites[spriteId].sMode = mode;
         break;
     case SHINE_MODE_DOUBLE:
         // Create an invisible sprite with mode set to update the background color
-        spriteId = CreateSprite(&sPokemonLogoShineSpriteTemplate, 0, 75, 0);
+        spriteId = CreateSprite(&sPokemonLogoShineSpriteTemplate, 0, 68, 0);
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_WINDOW;
         gSprites[spriteId].sMode = mode;
         gSprites[spriteId].invisible = TRUE;
 
         // Create two faster shine sprites
-        spriteId = CreateSprite(&sPokemonLogoShineSpriteTemplate, 0, 75, 0);
+        spriteId = CreateSprite(&sPokemonLogoShineSpriteTemplate, 0, 68, 0);
         gSprites[spriteId].callback = SpriteCB_PokemonLogoShine_Fast;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_WINDOW;
 
-        spriteId = CreateSprite(&sPokemonLogoShineSpriteTemplate, -80, 75, 0);
+        spriteId = CreateSprite(&sPokemonLogoShineSpriteTemplate, -80, 68, 0);
         gSprites[spriteId].callback = SpriteCB_PokemonLogoShine_Fast;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_WINDOW;
         break;
@@ -756,7 +756,7 @@ static void Task_TitleScreenPhase2(u8 taskId)
                                     | DISPCNT_BG1_ON
                                     | DISPCNT_BG2_ON
                                     | DISPCNT_OBJ_ON);
-        CreatePressStartBanner(START_BANNER_X, 108);
+        CreatePressStartBanner(START_BANNER_X, 125);
         CreateCopyrightBanner(START_BANNER_X, 148);
         gTasks[taskId].tBg1Y = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;

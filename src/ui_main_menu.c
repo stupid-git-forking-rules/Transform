@@ -207,9 +207,9 @@ static const u32 sMainBgTilesFem[] = INCBIN_U32("graphics/ui_main_menu/main_tile
 static const u32 sMainBgTilemapFem[] = INCBIN_U32("graphics/ui_main_menu/main_tiles_fem.bin.lz");
 static const u16 sMainBgPaletteFem[] = INCBIN_U16("graphics/ui_main_menu/main_tiles_fem.gbapal");
 
-static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_main_menu/scroll_tiles.4bpp.lz");
-static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_main_menu/scroll_tiles.bin.lz");
-static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_main_menu/scroll_tiles.gbapal");
+static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_main_menu/subtleditto.4bpp.lz");
+static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_main_menu/subtleditto.bin.lz");
+static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_main_menu/subtleditto.gbapal");
 
 static const u16 sIconBox_Pal[] = INCBIN_U16("graphics/ui_main_menu/icon_shadow.gbapal");
 static const u32 sIconBox_Gfx[] = INCBIN_U32("graphics/ui_main_menu/icon_shadow.4bpp.lz");
