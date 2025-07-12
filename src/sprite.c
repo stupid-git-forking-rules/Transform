@@ -90,6 +90,8 @@ static void AllocSpriteTileRange(u16 tag, u16 start, u16 count);
 static void DoLoadSpritePalette(const u16 *src, u16 paletteOffset);
 static void UpdateSpriteMatrixAnchorPos(struct Sprite *, s32, s32);
 
+extern void SetGpuRegBits(u8 regOffset, u16 mask);
+
 typedef void (*AnimFunc)(struct Sprite *);
 typedef void (*AnimCmdFunc)(struct Sprite *);
 typedef void (*AffineAnimCmdFunc)(u8 matrixNum, struct Sprite *);
@@ -445,6 +447,52 @@ u32 CreateSprite(const struct SpriteTemplate *template, s16 x, s16 y, u32 subpri
     return MAX_SPRITES;
 }
 
+u32 CreateSpriteAndMask(const struct SpriteTemplate *template, s16 x, s16 y, u32 subpriority)
+{
+    u32 i;
+    u16 firstSpriteId = MAX_SPRITES;
+    u16 secondSpriteId = MAX_SPRITES;
+
+    // Create the first sprite
+    for (i = 0; i < MAX_SPRITES; i++)
+    {
+        if (!gSprites[i].inUse)
+        {
+            firstSpriteId = CreateSprite(template, x, y, subpriority);
+            break;
+        }
+    }
+
+    if (firstSpriteId == MAX_SPRITES) 
+        return ((u32)MAX_SPRITES << 16) | MAX_SPRITES; // No available sprite slots
+
+    SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
+    SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WINOBJ_OBJ);
+
+    // Create the second sprite with ST_OAM_OBJ_WINDOW mode
+    for (i = 0; i < MAX_SPRITES; i++)
+    {
+        if (!gSprites[i].inUse)
+        {
+            secondSpriteId = CreateSprite(template, x, y, subpriority);
+            break;
+        }
+    }
+
+    SetGpuRegBits(REG_OFFSET_DISPCNT, 0);
+    SetGpuRegBits(REG_OFFSET_WINOUT, 0);
+
+    // No space for second, return firstSpriteId only
+    if (secondSpriteId == MAX_SPRITES) 
+        return ((u32)firstSpriteId << 16) | MAX_SPRITES;
+
+    // Make the second sprite a window object (mask)
+    gSprites[secondSpriteId].oam.objMode = ST_OAM_OBJ_WINDOW;
+    gSprites[secondSpriteId].invisible = FALSE;
+
+    return ((u32)firstSpriteId << 16) | secondSpriteId;
+}
+
 u32 CreateSpriteAtEnd(const struct SpriteTemplate *template, s16 x, s16 y, u32 subpriority)
 {
     s32 i;
@@ -562,6 +610,24 @@ void DestroySprite(struct Sprite *sprite)
                 FREE_SPRITE_TILE(i);
         }
         ResetSprite(sprite);
+    }
+}
+
+void DestroySpriteAndMask(u32 spriteIds)
+{
+    u16 firstSpriteId = spriteIds >> 16;
+    u16 secondSpriteId = spriteIds & 0xFFFF;
+
+    // Destroy the first sprite if it's valid
+    if (firstSpriteId != MAX_SPRITES)
+    {
+        DestroySprite(&gSprites[firstSpriteId]);
+    }
+
+    // Destroy the second sprite if it's valid
+    if (secondSpriteId != MAX_SPRITES)
+    {
+        DestroySprite(&gSprites[secondSpriteId]);
     }
 }
 
@@ -830,6 +896,24 @@ void FreeSpriteOamMatrix(struct Sprite *sprite)
     {
         FreeOamMatrix(sprite->oam.matrixNum);
         sprite->oam.affineMode = ST_OAM_AFFINE_OFF;
+    }
+}
+
+void FreeSpriteAndMaskOamMatrix(u32 spriteIds)
+{
+    u16 firstSpriteId = spriteIds >> 16;
+    u16 secondSpriteId = spriteIds & 0xFFFF;
+
+    // Destroy the first sprite if it's valid
+    if (firstSpriteId != MAX_SPRITES)
+    {
+        FreeSpriteOamMatrix(&gSprites[firstSpriteId]);
+    }
+
+    // Destroy the second sprite if it's valid
+    if (secondSpriteId != MAX_SPRITES)
+    {
+        FreeSpriteOamMatrix(&gSprites[secondSpriteId]);
     }
 }
 
