@@ -860,7 +860,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             if (FlagGet(FLAG_RUNNING_SHOES_TOGGLE) == FALSE)
             {
                 FlagSet(FLAG_RUNNING_SHOES_TOGGLE);
-                PlayerRun(direction);
+                PlayerWalkFast(direction);
                 gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
                 return;
             }
@@ -874,13 +874,13 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
                 }
                 else
                 {
-                    PlayerRun(direction);
+                    PlayerWalkFast(direction);
                     gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
                 }
                 return;
             } 
         }
-        PlayerRun(direction);
+        PlayerWalkFast(direction);
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
      }

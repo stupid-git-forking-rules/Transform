@@ -98,8 +98,7 @@ u16 ReturnAvatarTrainerBackPicId(u16 avatarId)
 
 void SetPlayerAvatar(void)
 {
-    gSaveBlock2Ptr->playerGfxType = VarGet(VAR_RESULT);
-    gSaveBlock2Ptr->playerGender  = VarGet(VAR_RESULT) % 2;
+    gSaveBlock2Ptr->pokemonAvatarSpecies = VarGet(VAR_RESULT);
 }
 
 void TryCreatePokemonAvatarSpriteBob(void)
