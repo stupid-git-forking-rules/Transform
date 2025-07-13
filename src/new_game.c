@@ -137,6 +137,8 @@ static void WarpToTruck(void)
     VarSet(VAR_BATTLE_SPEED, 1); // Set battle speed to 2x by default, press L to slow down to 1x
     gSaveBlock2Ptr->playerGfxType = AVATAR_POKEMON_CHOICE;
     gSaveBlock2Ptr->pokemonAvatarSpecies = SPECIES_DITTO;
+    FlagSet(FLAG_SYS_B_DASH);
+    FlagClear(FLAG_RUNNING_SHOES_TOGGLE);
     WarpIntoMap();
 }
 
