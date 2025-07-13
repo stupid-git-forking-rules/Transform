@@ -46,6 +46,7 @@
 
 // party sizes
 #define PARTY_SIZE 6
+#define DITTO_PARTY 5
 #define MULTI_PARTY_SIZE (PARTY_SIZE / 2)
 #define FRONTIER_PARTY_SIZE         3
 #define FRONTIER_DOUBLES_PARTY_SIZE 4

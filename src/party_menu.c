@@ -283,6 +283,7 @@ static void FreePartyPointers(void);
 static void PartyPaletteBufferCopy(u8);
 static void DisplayPartyPokemonDataForMultiBattle(u8);
 static void LoadPartyBoxPalette(struct PartyMenuBox *, u8);
+static void DrawDittoSlot(u8 windowId);
 static void DrawEmptySlot(u8 windowId);
 static void DisplayPartyPokemonDataForRelearner(u8);
 static void DisplayPartyPokemonDataForContest(u8);
@@ -526,6 +527,11 @@ static void Task_HideFollowerNPCForTeleport(u8);
 // static const data
 #include "data/party_menu.h"
 
+static bool32 PlayerIsDitto(void)
+{
+    return TRUE;
+}
+
 // code
 static void InitPartyMenu(u8 menuType, u8 layout, u8 partyAction, bool8 keepCursorPos, u8 messageId, TaskFunc task, MainCallback callback)
 {
@@ -564,7 +570,7 @@ static void InitPartyMenu(u8 menuType, u8 layout, u8 partyAction, bool8 keepCurs
 
         if (!keepCursorPos)
             gPartyMenu.slotId = 0;
-        else if (gPartyMenu.slotId > PARTY_SIZE - 1 || GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_SPECIES) == SPECIES_NONE)
+        else if ((gPartyMenu.slotId > PARTY_SIZE - 1 || (PlayerIsDitto() && gPartyMenu.slotId > DITTO_PARTY - 1)) || GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_SPECIES) == SPECIES_NONE)
             gPartyMenu.slotId = 0;
 
         if (gPlayerPartyCount == 0)
@@ -961,15 +967,18 @@ static void FreePartyPointers(void)
 
 static void InitPartyMenuBoxes(u8 layout)
 {
-    sPartyMenuBoxes = Alloc(sizeof(struct PartyMenuBox[PARTY_SIZE]));
+    u8 partySize = PlayerIsDitto() ? DITTO_PARTY : PARTY_SIZE;
+
+    sPartyMenuBoxes = Alloc(sizeof(struct PartyMenuBox[partySize]));
     LoadPartyMenuBoxes(layout);
 }
 
 static void LoadPartyMenuBoxes(u8 layout)
 {
     u32 i;
+    u8 partySize = PlayerIsDitto() ? DITTO_PARTY : PARTY_SIZE;
 
-    for (i = 0; i < PARTY_SIZE; i++)
+    for (i = 0; i < partySize; i++)
     {
         sPartyMenuBoxes[i].infoRects = &sPartyBoxInfoRects[PARTY_BOX_RIGHT_COLUMN];
         sPartyMenuBoxes[i].spriteCoords = sPartyMenuSpriteCoords[layout][i];
@@ -1003,7 +1012,12 @@ static void RenderPartyMenuBox(u8 slot)
     }
     else if (gPlayerPartyCount != 0)
     {
-        if (GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES) == SPECIES_NONE)
+        if (PlayerIsDitto() && slot == 0)
+        {
+            DrawDittoSlot(sPartyMenuBoxes[0].windowId);
+            CopyWindowToVram(sPartyMenuBoxes[0].windowId, COPYWIN_GFX);
+        }
+        else if (GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES) == SPECIES_NONE)
         {
             DrawEmptySlot(sPartyMenuBoxes[slot].windowId);
             LoadPartyBoxPalette(&sPartyMenuBoxes[slot], PARTY_PAL_NO_MON);
@@ -1057,6 +1071,11 @@ static void DisplayPartyPokemonData(u8 slot)
 
 static void DisplayPartyPokemonDescriptionData(u8 slot, u8 stringID)
 {
+    if (PlayerIsDitto() && slot == 0)
+    {
+        return; // Temporary. Replace with Ditto stuff
+    }
+
     struct Pokemon *mon = &gPlayerParty[slot];
 
     sPartyMenuBoxes[slot].infoRects->blitFunc(sPartyMenuBoxes[slot].windowId, 0, 0, 0, 0, TRUE);
@@ -1243,6 +1262,10 @@ static void CreatePartyMonSprites(u8 slot)
             CreatePartyMonStatusSpriteParameterized(gMultiPartnerParty[actualSlot].species, status, &sPartyMenuBoxes[slot]);
         }
     }
+    else if (PlayerIsDitto() && slot == 0)
+    {
+        return; // Replace with any sprites we want to Animate onto Ditto
+    }
     else if (GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES) != SPECIES_NONE)
     {
         CreatePartyMonIconSprite(&gPlayerParty[slot], &sPartyMenuBoxes[slot], slot);
@@ -1290,6 +1313,11 @@ void AnimatePartySlot(u8 slot, u8 animNum)
 
     switch (slot)
     {
+    case 0:
+        if (PlayerIsDitto() && slot == 0)
+        {
+            return; // Temporary. Replace with any animation we want to play for Ditto tilemap
+        }
     default:
         if (GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES) != SPECIES_NONE)
         {
@@ -1332,6 +1360,11 @@ void AnimatePartySlot(u8 slot, u8 animNum)
 static u8 GetPartyBoxPaletteFlags(u8 slot, u8 animNum)
 {
     u8 palFlags = 0;
+
+    if (PlayerIsDitto() && slot == 0)
+    {
+        return PARTY_PAL_SELECTED; // Likely won't need to load this.
+    }
 
     if (animNum == 1)
         palFlags |= PARTY_PAL_SELECTED;
@@ -2288,7 +2321,10 @@ static void InitPartyMenuWindows(u8 layout)
     switch (layout)
     {
     case PARTY_LAYOUT_SINGLE:
-        InitWindows(sSinglePartyMenuWindowTemplate);
+        if (PlayerIsDitto())
+            InitWindows(sDittoPartyMenuWindowTemplate);
+        else
+            InitWindows(sSinglePartyMenuWindowTemplate);
         break;
     case PARTY_LAYOUT_DOUBLE:
         InitWindows(sDoublePartyMenuWindowTemplate);
@@ -2404,6 +2440,11 @@ static void BlitBitmapToPartyWindow_RightColumn(u8 windowId, u8 x, u8 y, u8 widt
         BlitBitmapToPartyWindow(windowId, sSlotTilemap_Wide, 18, x, y, width, height);
     else
         BlitBitmapToPartyWindow(windowId, sSlotTilemap_WideNoHP, 18, x, y, width, height);
+}
+
+static void DrawDittoSlot(u8 windowId)
+{
+    BlitBitmapToWindow(windowId, sDitto_Gfx, 0, 0, 72, 64);
 }
 
 static void DrawEmptySlot(u8 windowId)
