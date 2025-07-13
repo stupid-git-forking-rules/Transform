@@ -33,6 +33,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
+#include "transform.h"
 
 #define NUM_FORCED_MOVEMENTS 18
 #define NUM_ACRO_BIKE_COLLISIONS 5
@@ -1506,12 +1507,17 @@ void StopPlayerAvatar(void)
 
 u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
-    return sRivalAvatarGfxIds[state][gender];
+    return ReturnAvatarGraphicsId(gSaveBlock2Ptr->playerGfxType);
+}
+
+u16 GetPlayerAvatarGraphicsId()
+{
+    return ReturnAvatarGraphicsId(gSaveBlock2Ptr->playerGfxType);
 }
 
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
-    return sPlayerAvatarGfxIds[state][gender];
+    return ReturnAvatarGraphicsId(gSaveBlock2Ptr->playerGfxType);
 }
 
 u16 GetFRLGAvatarGraphicsIdByGender(u8 gender)
@@ -1526,7 +1532,7 @@ u16 GetRSAvatarGraphicsIdByGender(u8 gender)
 
 u16 GetPlayerAvatarGraphicsIdByStateId(u8 state)
 {
-    return GetPlayerAvatarGraphicsIdByStateIdAndGender(state, gPlayerAvatar.gender);
+    return GetPlayerAvatarGraphicsId();
 }
 
 u8 GetPlayerAvatarGenderByGraphicsId(u16 gfxId)
@@ -1638,7 +1644,7 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
     struct ObjectEvent *objectEvent;
 
     playerObjEventTemplate.localId = LOCALID_PLAYER;
-    playerObjEventTemplate.graphicsId = GetPlayerAvatarGraphicsIdByStateIdAndGender(PLAYER_AVATAR_STATE_NORMAL, gender);
+    playerObjEventTemplate.graphicsId = GetPlayerAvatarGraphicsId();
     playerObjEventTemplate.x = x - MAP_OFFSET;
     playerObjEventTemplate.y = y - MAP_OFFSET;
     playerObjEventTemplate.elevation = 0;

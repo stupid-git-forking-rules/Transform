@@ -48,6 +48,7 @@
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
+#include "transform.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -132,7 +133,10 @@ static void ClearFrontierRecord(void)
 static void WarpToTruck(void)
 {
     SetWarpDestination(MAP_GROUP(MAP_ROUTE117), MAP_NUM(MAP_ROUTE117), WARP_ID_NONE, -1, -1);
+    gSaveBlock2Ptr->optionsBattleSpeed = 1;
     VarSet(VAR_BATTLE_SPEED, 1); // Set battle speed to 2x by default, press L to slow down to 1x
+    gSaveBlock2Ptr->playerGfxType = AVATAR_POKEMON_CHOICE;
+    gSaveBlock2Ptr->pokemonAvatarSpecies = SPECIES_DITTO;
     WarpIntoMap();
 }
 
