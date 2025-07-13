@@ -17,6 +17,7 @@
 #include "field_specials.h"
 #include "field_weather.h"
 #include "field_screen_effect.h"
+#include "constants/flags.h"
 #include "frontier_pass.h"
 #include "frontier_util.h"
 #include "gpu_regs.h"
@@ -1646,49 +1647,112 @@ static void HeatStartMenu_HandleInput_Button(enum PlayerLocation location, u8 ta
 
 static void HeatStartMenu_HandleInput_Move(enum NavigationDirection direction, enum PlayerLocation location)
 {
-    const u8 *menu;
-    int menuSize;
-    int index;
+    // Array to hold the values of the currently active (visible) menu options.
+    // MENU_COUNT should be sufficient, as your static arrays have 6 items.
+    u8 activeMenuOptions[MENU_COUNT];
+    int activeMenuSize = 0;
+    int currentActiveIndex = -1; // Index of menuSelected within activeMenuOptions
 
     sHeatStartMenu->flag = 0;
+
+    // Determine which base menu array to use based on location
+    const u8* sourceMenu = NULL;
+    int sourceMenuSize = 0;
+
     switch (location)
     {
+        case LOCATION_OVERWORLD:
+            sourceMenu = sOverworldMenu;
+            sourceMenuSize = sizeof(sOverworldMenu) / sizeof(sOverworldMenu[0]);
+            break;
         case LOCATION_SAFARI:
-            menu = sSafariMenu;
-            menuSize = sizeof(sSafariMenu);
+            sourceMenu = sSafariMenu;
+            sourceMenuSize = sizeof(sSafariMenu) / sizeof(sSafariMenu[0]);
             break;
         case LOCATION_PYRAMID:
-            menu = sPyramidMenu;
-            menuSize = sizeof(sPyramidMenu);
+            sourceMenu = sPyramidMenu;
+            sourceMenuSize = sizeof(sPyramidMenu) / sizeof(sPyramidMenu[0]);
             break;
         default:
-            menu = sOverworldMenu;
-            menuSize = sizeof(sOverworldMenu);
+            // For an unknown location, no menu options are considered active.
+            sourceMenu = NULL;
+            sourceMenuSize = 0;
             break;
     }
 
-    for (index = 0; index < menuSize; index++)
-    {
-        if (menu[index] == menuSelected)
-            break;
+    // Populate the activeMenuOptions array by iterating the source menu
+    // and applying conditional checks for Pokedex and Party.
+    if (sourceMenu != NULL) {
+        for (int i = 0; i < sourceMenuSize; i++) {
+            u8 option = sourceMenu[i];
+            bool8 addOption = TRUE; // Assume we add the option by default
+
+            // Apply conditional checks based on flags
+            if (option == MENU_POKEDEX) {
+                if (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE) {
+                    addOption = FALSE; // Don't add Pokedex if flag isn't set
+                }
+            } else if (option == MENU_PARTY) {
+                if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE) {
+                    addOption = FALSE; // Don't add Party if flag isn't set
+                }
+            }
+            // Add any other conditional options here if needed.
+
+            if (addOption) {
+                activeMenuOptions[activeMenuSize++] = option;
+            }
+        }
     }
+
+    // 2. Find the current selected option's index within the *active* list.
+    for (int i = 0; i < activeMenuSize; i++)
+    {
+        if (activeMenuOptions[i] == menuSelected)
+        {
+            currentActiveIndex = i;
+            break;
+        }
+    }
+
+    // 3. Handle edge cases: no active options, or previously selected option is no longer available.
+
+    if (activeMenuSize == 0) {
+        // If there are no active options, then navigation can't occur.
+        // Return without changing menuSelected or playing a sound.
+        return;
+    }
+
+    if (currentActiveIndex == -1)
+    {
+        // The previously selected `menuSelected` is no longer in the `activeMenuOptions` list.
+        // This can happen if the currently highlighted option becomes disabled.
+        // Default to the first available option.
+        menuSelected = activeMenuOptions[0];
+        currentActiveIndex = 0;
+    }
+
+    // 4. Navigate within the *active* menu options.
 
     if (direction == DIRECTION_DOWN)
     {
-        if (index < menuSize - 1)
-            menuSelected = menu[index + 1];
-        else
-            menuSelected = menu[0];
+        if (currentActiveIndex < activeMenuSize - 1) {
+            menuSelected = activeMenuOptions[currentActiveIndex + 1];
+        } else {
+            // Wrap around to the first active option.
+            menuSelected = activeMenuOptions[0];
+        }
         PlaySE(SE_SELECT);
     }
     else if (direction == DIRECTION_UP)
     {
-        if (index > 0)
-            menuSelected = menu[index - 1];
-        else
-            menuSelected = menu[menuSize - 1];
+        if (currentActiveIndex > 0) {
+            menuSelected = activeMenuOptions[currentActiveIndex - 1];
+        } else {
+            // Wrap around to the last active option.
+            menuSelected = activeMenuOptions[activeMenuSize - 1];
+        }
         PlaySE(SE_SELECT);
     }
-    
     HeatStartMenu_UpdateMenuName();
 }
