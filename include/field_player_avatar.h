@@ -73,5 +73,7 @@ u8 GetLeftSideStairsDirection(u8 direction);
 void UpdateSpinData(void);
 void ResetSpinTimer(void);
 bool32 CanTriggerSpinEvolution();
+void PlayerAvatarTransition_Normal(struct ObjectEvent *objectEvent);
+
 
 #endif // GUARD_FIELD_PLAYER_AVATAR_H

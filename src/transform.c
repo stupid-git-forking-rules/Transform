@@ -46,7 +46,8 @@
 #include "naming_screen.h"
 #include "config/general.h"
 #include "item.h"
-
+#include "constants/vars.h"
+#include "event_object_lock.h"
 
 
 //
@@ -96,9 +97,93 @@ u16 ReturnAvatarTrainerBackPicId(u16 avatarId)
     return sPitAvatars[avatarId].trainerBackPicId;
 }
 
+
+EWRAM_DATA u8 gPlayerTransformEffectActive = FALSE;
+
+void BeginPlayerTransformEffect(u8 type)
+{
+    struct Sprite *sprite = &gSprites[gPlayerAvatar.spriteId];
+    if (sprite)
+    {
+        sprite->data[0] = 0; 
+        sprite->data[1] = type; 
+        sprite->oam.priority = 1; 
+        gPlayerTransformEffectActive = TRUE; 
+        sprite->callback = UpdatePlayerTransformAnimation;
+    }
+}
+
+// Main update logic for the player transform effect 
+void UpdatePlayerTransformAnimation(struct Sprite *sprite)
+{
+    u8 frames = sprite->data[0];
+    u8 stretch;
+
+    sprite->oam.mosaic = TRUE;
+
+    if (frames < 8)
+    {
+        stretch = frames >> 1;
+    }
+    else if (frames < 16)
+    {
+        stretch = (16 - frames) >> 1;
+    }
+    else // Animation finished
+    {
+        gPlayerTransformEffectActive = FALSE;
+        REG_MOSAIC = 0;
+        sprite->oam.mosaic = FALSE;
+        sprite->oam.priority = 2;
+        sprite->data[0] = 0;
+        sprite->data[1] = 0;
+        sprite->callback = SpriteCallbackDummy;
+
+        struct ObjectEvent *playerObjectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+        ObjectEventSetGraphicsId(playerObjectEvent, playerObjectEvent->graphicsId);
+
+        PlayerAvatarTransition_Normal(playerObjectEvent);
+
+
+        gPlayerAvatar.preventStep = FALSE;
+        UnlockPlayerFieldControls();
+        ObjectEventClearHeldMovementIfFinished(playerObjectEvent);
+        ObjectEventSetHeldMovement(playerObjectEvent, GetFaceDirectionMovementAction(playerObjectEvent->facingDirection));
+
+        SetMainCallback2(CB2_Overworld);
+
+        return;
+    }
+
+    SetGpuReg(REG_OFFSET_MOSAIC, (stretch << 12) | (stretch << 8));
+
+
+    if (frames == 8)
+    {
+        struct ObjectEvent *playerObjectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+        ObjectEventSetGraphicsId(playerObjectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL));
+    }
+    
+    sprite->data[0]++; // Increment frames
+}
+
 void SetPlayerAvatar(void)
 {
-    gSaveBlock2Ptr->pokemonAvatarSpecies = VarGet(VAR_RESULT);
+    u16 choiceIndex = VarGet(VAR_RESULT);
+    u16 speciesId = SPECIES_NONE;
+
+    switch (choiceIndex)
+    {
+        case 0: speciesId = SPECIES_DITTO; break;
+        case 1: speciesId = SPECIES_MARILL; break;
+        case 2: speciesId = SPECIES_RHYHORN; break;
+        case 3: speciesId = SPECIES_JOLTIK; break;
+        case 4: speciesId = SPECIES_NOIVERN; break;
+    }
+    gSaveBlock2Ptr->pokemonAvatarSpecies = speciesId;
+
+    BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
 }
 
 void TryCreatePokemonAvatarSpriteBob(void)

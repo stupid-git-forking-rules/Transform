@@ -2958,6 +2958,28 @@ static void ObjectEventSetGraphics(struct ObjectEvent *objectEvent, const struct
 {
     struct Sprite *sprite = &gSprites[objectEvent->spriteId];
     u32 i = FindObjectEventPaletteIndexByTag(graphicsInfo->paletteTag);
+    if (objectEvent->graphicsId >= OBJ_EVENT_GFX_VAR_0 && objectEvent->graphicsId <= OBJ_EVENT_GFX_VAR_D)
+    {
+        objectEvent->graphicsId = VarGet(VAR_OBJ_GFX_ID_D);
+    }
+
+    // --- START OF NEW DYNAMIC PALETTE LOGIC ---
+    if (graphicsInfo->paletteTag == OBJ_EVENT_PAL_TAG_DYNAMIC)
+    {
+        // Temporarily set sprite->inUse to FALSE so FieldEffectFreePaletteIfUnused
+        // correctly considers the palette potentially unused for freeing.
+        sprite->inUse = FALSE;
+        FieldEffectFreePaletteIfUnused(sprite->oam.paletteNum);
+        sprite->inUse = TRUE; // Restore original inUse status
+
+        // Load the new dynamic palette using the NOW CORRECT species, shiny, female values
+        // derived from objectEvent->graphicsId.
+        sprite->oam.paletteNum = LoadDynamicFollowerPalette(
+            OW_SPECIES(objectEvent),
+            OW_SHINY(objectEvent),
+            OW_FEMALE(objectEvent)
+        );
+    } 
     if (i != 0xFF)
         UpdateSpritePalette(&sObjectEventSpritePalettes[i], sprite);
 
@@ -2988,7 +3010,7 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
 {
     objectEvent->graphicsId = graphicsId;
     ObjectEventSetGraphics(objectEvent, GetObjectEventGraphicsInfo(graphicsId));
-    objectEvent->graphicsId = graphicsId;
+    //objectEvent->graphicsId = graphicsId;
 }
 
 void ObjectEventSetGraphicsIdByLocalIdAndMap(u8 localId, u8 mapNum, u8 mapGroup, u16 graphicsId)

@@ -105,7 +105,7 @@ static void CheckAcroBikeCollision(s16, s16, u8, u8 *);
 
 static void DoPlayerAvatarTransition(void);
 static void PlayerAvatarTransition_Dummy(struct ObjectEvent *);
-static void PlayerAvatarTransition_Normal(struct ObjectEvent *);
+void PlayerAvatarTransition_Normal(struct ObjectEvent *);
 static void PlayerAvatarTransition_MachBike(struct ObjectEvent *);
 static void PlayerAvatarTransition_AcroBike(struct ObjectEvent *);
 static void PlayerAvatarTransition_Surfing(struct ObjectEvent *);
@@ -789,7 +789,12 @@ static void PlayerNotOnBikeTurningInPlace(u8 direction, u16 heldKeys)
 static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
 {
     u8 collision = CheckForPlayerAvatarCollision(direction);
-
+    if (gPlayerTransformEffectActive)
+    {
+        struct Sprite *playerSprite = &gSprites[gPlayerAvatar.spriteId];
+        UpdatePlayerTransformAnimation(playerSprite);
+        return;
+    }
     if (collision)
     {
         if (collision == COLLISION_LEDGE_JUMP)
@@ -1083,7 +1088,7 @@ static void PlayerAvatarTransition_Dummy(struct ObjectEvent *objEvent)
 
 }
 
-static void PlayerAvatarTransition_Normal(struct ObjectEvent *objEvent)
+void PlayerAvatarTransition_Normal(struct ObjectEvent *objEvent)
 {
     ObjectEventSetGraphicsId(objEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL));
     ObjectEventTurn(objEvent, objEvent->movementDirection);
