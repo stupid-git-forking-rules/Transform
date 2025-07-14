@@ -789,12 +789,6 @@ static void PlayerNotOnBikeTurningInPlace(u8 direction, u16 heldKeys)
 static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
 {
     u8 collision = CheckForPlayerAvatarCollision(direction);
-    if (gPlayerTransformEffectActive)
-    {
-        struct Sprite *playerSprite = &gSprites[gPlayerAvatar.spriteId];
-        UpdatePlayerTransformAnimation(playerSprite);
-        return;
-    }
     if (collision)
     {
         if (collision == COLLISION_LEDGE_JUMP)

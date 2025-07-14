@@ -97,7 +97,6 @@ u16 ReturnAvatarTrainerBackPicId(u16 avatarId)
     return sPitAvatars[avatarId].trainerBackPicId;
 }
 
-
 EWRAM_DATA u8 gPlayerTransformEffectActive = FALSE;
 
 void BeginPlayerTransformEffect(u8 type)
@@ -109,61 +108,50 @@ void BeginPlayerTransformEffect(u8 type)
         sprite->data[1] = type; 
         sprite->oam.priority = 1; 
         gPlayerTransformEffectActive = TRUE; 
-        sprite->callback = UpdatePlayerTransformAnimation;
+        u8 taskId = CreateTask(UpdatePlayerTransformAnimation, 0xFF);
     }
 }
 
-// Main update logic for the player transform effect 
-void UpdatePlayerTransformAnimation(struct Sprite *sprite)
+void EndPlayerTransformAnimation(struct Sprite *sprite, u8 taskId)
 {
+    gPlayerTransformEffectActive = FALSE;
+    REG_MOSAIC = 0;
+    sprite->oam.mosaic = FALSE;
+    sprite->oam.priority = 2;
+    sprite->data[0] = 0;
+    sprite->data[1] = 0;
+
+    struct ObjectEvent *playerObjectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    ObjectEventSetGraphicsId(playerObjectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL));
+    ObjectEventTurn(playerObjectEvent, playerObjectEvent->movementDirection);
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
+    ObjectEventSetHeldMovement(playerObjectEvent, GetFaceDirectionMovementAction(playerObjectEvent->facingDirection));
+    gPlayerAvatar.preventStep = FALSE;
+    UnlockPlayerFieldControls();
+    return DestroyTask(taskId);
+}
+
+// Main update logic for the player transform effect 
+void UpdatePlayerTransformAnimation(u8 taskId)
+{
+    struct ObjectEvent *playerObjectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    struct Sprite *sprite = &gSprites[gPlayerAvatar.spriteId];
     u8 frames = sprite->data[0];
     u8 stretch;
 
     sprite->oam.mosaic = TRUE;
 
     if (frames < 8)
-    {
         stretch = frames >> 1;
-    }
     else if (frames < 16)
-    {
         stretch = (16 - frames) >> 1;
-    }
     else // Animation finished
-    {
-        gPlayerTransformEffectActive = FALSE;
-        REG_MOSAIC = 0;
-        sprite->oam.mosaic = FALSE;
-        sprite->oam.priority = 2;
-        sprite->data[0] = 0;
-        sprite->data[1] = 0;
-        sprite->callback = SpriteCallbackDummy;
-
-        struct ObjectEvent *playerObjectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
-
-        ObjectEventSetGraphicsId(playerObjectEvent, playerObjectEvent->graphicsId);
-
-        PlayerAvatarTransition_Normal(playerObjectEvent);
-
-
-        gPlayerAvatar.preventStep = FALSE;
-        UnlockPlayerFieldControls();
-        ObjectEventClearHeldMovementIfFinished(playerObjectEvent);
-        ObjectEventSetHeldMovement(playerObjectEvent, GetFaceDirectionMovementAction(playerObjectEvent->facingDirection));
-
-        SetMainCallback2(CB2_Overworld);
-
-        return;
-    }
+        return EndPlayerTransformAnimation(sprite, taskId);
 
     SetGpuReg(REG_OFFSET_MOSAIC, (stretch << 12) | (stretch << 8));
 
-
     if (frames == 8)
-    {
-        struct ObjectEvent *playerObjectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
         ObjectEventSetGraphicsId(playerObjectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL));
-    }
     
     sprite->data[0]++; // Increment frames
 }
