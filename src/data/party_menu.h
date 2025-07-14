@@ -109,6 +109,12 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
 static const u32 sConfirmButton_Tilemap[] = INCBIN_U32("graphics/party_menu/confirm_button.bin");
 static const u32 sCancelButton_Tilemap[] = INCBIN_U32("graphics/party_menu/cancel_button.bin");
 
+static const u8 sDitto_Gfx[] = INCBIN_U8("graphics/party_menu/ditto.4bpp");
+static const u16 sDitto_NormalPal[] = INCBIN_U16("graphics/party_menu/ditto_normal.gbapal");
+static const u16 sDitto_SelectedPal[] = INCBIN_U16("graphics/party_menu/ditto_selected.gbapal");
+
+#define DITTO_PALSLOT 8
+
 // Text colors for BG, FG, and Shadow in that order
 static const u8 sFontColorTable[][3] =
 {
@@ -125,10 +131,10 @@ static const struct WindowTemplate sDittoPartyMenuWindowTemplate[] =
     { // Party mon 1 // CHANGED TO DITTO BLIT
         .bg = 0,
         .tilemapLeft = 1,
-        .tilemapTop = 3,
+        .tilemapTop = 2,
         .width = 10,
         .height = 8,
-        .paletteNum = 1,
+        .paletteNum = DITTO_PALSLOT,
         .baseBlock = 0x58,
     },
     { // Party mon 2
@@ -668,8 +674,6 @@ static const u8 sSlotTilemap_MainNoHP[]  = INCBIN_U8("graphics/party_menu/slot_m
 static const u8 sSlotTilemap_Wide[]      = INCBIN_U8("graphics/party_menu/slot_wide.bin");
 static const u8 sSlotTilemap_WideNoHP[]  = INCBIN_U8("graphics/party_menu/slot_wide_no_hp.bin");
 static const u8 sSlotTilemap_WideEmpty[] = INCBIN_U8("graphics/party_menu/slot_wide_empty.bin");
-
-static const u8 sDitto_Gfx[] = INCBIN_U8("graphics/party_menu/ditto.4bpp");
 
 // Palette offsets
 static const u8 sGenderPalOffsets[] = {11, 12};

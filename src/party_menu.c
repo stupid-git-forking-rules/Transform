@@ -163,6 +163,11 @@ enum {
     TAG_STATUS_ICONS,
 };
 
+enum {
+    DITTO_PALETTE_NORMAL,
+    DITTO_PALETTE_SELECTED,
+};
+
 #define TAG_HELD_ITEM 55120
 
 #define PARTY_PAL_SELECTED     (1 << 0)
@@ -282,6 +287,7 @@ static void Task_ExitPartyMenu(u8);
 static void FreePartyPointers(void);
 static void PartyPaletteBufferCopy(u8);
 static void DisplayPartyPokemonDataForMultiBattle(u8);
+static void LoadDittoPalette(u8 windowId, u8 palType);
 static void LoadPartyBoxPalette(struct PartyMenuBox *, u8);
 static void DrawDittoSlot(u8 windowId);
 static void DrawEmptySlot(u8 windowId);
@@ -1015,6 +1021,7 @@ static void RenderPartyMenuBox(u8 slot)
         if (PlayerIsDitto() && slot == 0)
         {
             DrawDittoSlot(sPartyMenuBoxes[0].windowId);
+            LoadDittoPalette(DITTO_PALSLOT, DITTO_PALETTE_NORMAL);
             CopyWindowToVram(sPartyMenuBoxes[0].windowId, COPYWIN_GFX);
         }
         else if (GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES) == SPECIES_NONE)
@@ -1316,7 +1323,11 @@ void AnimatePartySlot(u8 slot, u8 animNum)
     case 0:
         if (PlayerIsDitto() && slot == 0)
         {
-            return; // Temporary. Replace with any animation we want to play for Ditto tilemap
+            if (gPartyMenu.slotId == slot)
+                LoadDittoPalette(DITTO_PALSLOT, DITTO_PALETTE_SELECTED);
+            else
+                LoadDittoPalette(DITTO_PALSLOT, DITTO_PALETTE_NORMAL);
+            return;
         }
     default:
         if (GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES) != SPECIES_NONE)
@@ -2450,6 +2461,20 @@ static void DrawDittoSlot(u8 windowId)
 static void DrawEmptySlot(u8 windowId)
 {
     BlitBitmapToPartyWindow(windowId, sSlotTilemap_WideEmpty, 18, 0, 0, 18, 3);
+}
+
+static void LoadDittoPalette(u8 BgPalSlot, u8 palType)
+{
+    switch (palType)
+    {
+    default: 
+    case DITTO_PALETTE_NORMAL: 
+        LoadPalette(sDitto_NormalPal, BG_PLTT_ID(BgPalSlot), PLTT_SIZE_4BPP);
+        break;
+    case DITTO_PALETTE_SELECTED:
+        LoadPalette(sDitto_SelectedPal, BG_PLTT_ID(BgPalSlot), PLTT_SIZE_4BPP);
+        break;
+    }
 }
 
 #define LOAD_PARTY_BOX_PAL(paletteIds, paletteOffsets)                                                    \
