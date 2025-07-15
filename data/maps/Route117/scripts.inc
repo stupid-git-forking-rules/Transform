@@ -501,7 +501,7 @@ Route117_test_formchange::
 # 253 "data/maps/Route117/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 5, VAR_TRANSFORM_MON, DYN_MULTICHOICE_CB_NONE, Route117_test_formchange_Text_1, Route117_test_formchange_Text_2, Route117_test_formchange_Text_3, Route117_test_formchange_Text_4, Route117_test_formchange_Text_5
 # 254 "data/maps/Route117/scripts.pory"
-	callnative SetPlayerAvatar
+	callnative SetPlayerAvatarFromScript
 # 255 "data/maps/Route117/scripts.pory"
 	releaseall
 	end

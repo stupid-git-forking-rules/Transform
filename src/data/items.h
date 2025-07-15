@@ -138,6 +138,62 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
+// Start qol_field_moves
+
+static const u8 sCutToolDesc[] = _(
+	"This tool\n"
+    "is used for\n"
+    "cutting trees.");
+
+static const u8 sFlyToolDesc[] = _(
+	"Noivern\n"
+    "can soar high\n"
+    "over mountains.");
+
+static const u8 sSurfToolDesc[] = _(
+	"Clauncher\n"
+    "can cross any\n"
+    "body of water.");
+
+static const u8 sStrengthToolDesc[] = _(
+	"Rhyhorn\n"
+    "allows you to\n"
+    "move boulders.");
+
+static const u8 sFlashToolDesc[] = _(
+	"Joltik\n"
+    "can squeeze into\n"
+    "tight spaces.");
+
+static const u8 sRockSmashToolDesc[] = _(
+	"This tool\n"
+    "is used for\n"
+    "smashing rocks.");
+
+static const u8 sWaterfallToolDesc[] = _(
+	"This tool\n"
+    "is used for\n"
+    "climbing waterfalls.");
+
+static const u8 sDiveToolDesc[] = _(
+	"This tool\n"
+    "is used for\n"
+    "diving underwater.");
+
+static const u8 sTeleportToolDesc[] = _(
+	"This tool\n"
+    "is used for\n"
+    "getting to safety.");
+
+static const u8 sSweetScentToolDesc[] = _(
+	"Return to\n"
+    "base Ditto\n"
+    "form.");
+
+// End qol_field_moves
+
+
+
 const struct Item gItemsInfo[] =
 {
     [ITEM_NONE] =
@@ -14141,4 +14197,138 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    //Start qol_field_moves
+
+    [ITEM_CUT_TOOL] =
+    {
+        .name = _("Cut Tool"),
+        .price = 0,
+        .importance = 1,
+        .description = sCutToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_CutTool,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,
+    },
+
+    [ITEM_FLY_TOOL] =
+    {
+        .name = _("Noivern"),
+        .price = 0,
+        .importance = 1,
+        .description = sFlyToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_FlyTransform,
+        .iconPic = gItemIcon_TransformFly,
+        .iconPalette = gItemIconPalette_TransformFly,
+    },
+
+    [ITEM_SURF_TOOL] =
+    {
+        .name = _("Clauncher"),
+        .price = 0,
+        .importance = 1,
+        .description = sSurfToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_SurfTransform,
+        .iconPic = gItemIcon_TransformSurf,
+        .iconPalette = gItemIconPalette_TransformSurf,        
+    },
+
+    [ITEM_STRENGTH_TOOL] =
+    {
+        .name = _("Rhyhorn"),
+        .price = 0,
+        .importance = 1,
+        .description = sStrengthToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_StrengthTransform,
+        .iconPic = gItemIcon_TransformStrength,
+        .iconPalette = gItemIconPalette_TransformStrength,        
+    },
+
+    [ITEM_FLASH_TOOL] =
+    {
+        .name = _("Joltik"),
+        .price = 0,
+        .importance = 1,
+        .description = sFlashToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_ShrinkTransform,
+        .iconPic = gItemIcon_TransformShrink,
+        .iconPalette = gItemIconPalette_TransformShrink,        
+    },
+
+    [ITEM_ROCKSMASH_TOOL] =
+    {
+        .name = _("RockSmashTool"),
+        .price = 0,
+        .importance = 1,
+        .description = sRockSmashToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_RockSmashTool,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,        
+    },
+
+    [ITEM_WATERFALL_TOOL] =
+    {
+        .name = _("WaterfallTool"),
+        .price = 0,
+        .importance = 1,
+        .description = sWaterfallToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_WaterfallTool,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,        
+    },
+
+    [ITEM_DIVE_TOOL] =
+    {
+        .name = _("Dive Tool"),
+        .price = 0,
+        .importance = 1,
+        .description = sDiveToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_DiveTool,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,        
+    },
+
+    [ITEM_TELEPORT_TOOL] =
+    {
+        .name = _("Teleport Tool"),
+        .price = 0,
+        .importance = 1,
+        .description = sTeleportToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_TeleportTool,
+        .iconPic = gItemIcon_QuestionMark,
+        .iconPalette = gItemIconPalette_QuestionMark,        
+    },
+
+    [ITEM_SWEETSCENT_TOOL] =
+    {
+        .name = _("Ditto"),
+        .price = 0,
+        .importance = 1,
+        .description = sSweetScentToolDesc,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_DittoTransform,
+        .iconPic = gItemIcon_TransformDitto,
+        .iconPalette = gItemIconPalette_TransformDitto,        
+    },
+
+    //End qol_field_moves
 };

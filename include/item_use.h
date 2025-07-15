@@ -50,6 +50,50 @@ void DisplayDadsAdviceCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKey
 void ItemUseOutOfBattle_PokeFlute(u8 taskId);
 void ItemUseOutOfBattle_TownMap(u8 taskId);
 
+// Start qol_field_moves
+
+void ItemUseOutOfBattle_CutTool(u8);
+void ItemUseOnFieldCB_CutTool(u8);
+
+void ItemUseOutOfBattle_FlyTool(u8);
+
+void ItemUseOutOfBattle_SurfTool(u8);
+void ItemUseOnFieldCB_SurfTool(u8);
+
+void ItemUseOutOfBattle_StrengthTool(u8);
+void ItemUseOnFieldCB_StrengthTool(u8);
+
+void ItemUseOutOfBattle_FlashTool(u8);
+void ItemUseOnFieldCB_FlashTool(u8 taskId);
+
+void ItemUseOutOfBattle_RockSmashTool(u8);
+
+void ItemUseOutOfBattle_WaterfallTool(u8);
+void ItemUseOnFieldCB_WaterfallTool(u8);
+
+void ItemUseOutOfBattle_DiveTool(u8);
+void ItemUseOnFieldCB_DiveTool(u8);
+
+void ItemUseOutOfBattle_TeleportTool(u8);
+
+void ItemUseOutOfBattle_SweetScentTool(u8);
+void ItemUseOnFieldCB_SweetScentTool(u8);
+
+// End qol_field_moves
+
+//transform functions
+void ItemUseOutOfBattle_FlyTransform(u8 taskId);
+void ItemUseOutOfBattle_SurfTransform(u8 taskId);
+void ItemUseOutOfBattle_StrengthTransform(u8 taskId);
+void ItemUseOutOfBattle_DittoTransform(u8 taskId);
+void ItemUseOutOfBattle_ShrinkTransform(u8 taskId);
+void ItemUseOnFieldCB_FlyTransform(u8 taskId);
+void ItemUseOnFieldCB_SurfTransform(u8 taskId);
+void ItemUseOnFieldCB_StrengthTransform(u8 taskId);
+void ItemUseOnFieldCB_DittoTransform(u8 taskId);
+void ItemUseOnFieldCB_ShrinkTransform(u8 taskId);
+
+
 enum {
     BALL_THROW_UNABLE_TWO_MONS,
     BALL_THROW_UNABLE_NO_ROOM,

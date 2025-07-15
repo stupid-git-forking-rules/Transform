@@ -8,13 +8,14 @@
 #define POCKET_TM_HM       3
 #define POCKET_BERRIES     4
 #define POCKET_KEY_ITEMS   5
+//#define POCKET_TRANSFORMATION_ITEMS 6 // will be used to hold transformation items
 
 #define ITEMS_POCKET       0
 #define BALLS_POCKET       1
 #define TMHM_POCKET        2
 #define BERRIES_POCKET     3
 #define KEYITEMS_POCKET    4
-#define POCKETS_COUNT      5
+#define POCKETS_COUNT      5 //6 will be 6 maybe?? or maybe we just keep the item count low.
 
 #define REPEL_LURE_MASK         (1 << 15)
 #define IS_LAST_USED_LURE(var)  (var & REPEL_LURE_MASK)

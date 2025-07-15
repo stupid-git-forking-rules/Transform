@@ -1743,6 +1743,23 @@ extern const u16 gItemIconPalette_TwiceSpicedRadish[];
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u16 gItemIconPalette_ReturnToFieldArrow[];
 
+
+//Transformations  -- limiting to 4 but adding all the names so we can choose which ones to use
+extern const u32 gItemIcon_TransformDitto[];
+extern const u16 gItemIconPalette_TransformDitto[];
+extern const u32 gItemIcon_TransformSurf[];
+extern const u16 gItemIconPalette_TransformSurf[];
+extern const u32 gItemIcon_TransformShrink[];
+extern const u16 gItemIconPalette_TransformShrink[];
+extern const u32 gItemIcon_TransformFly[];
+extern const u16 gItemIconPalette_TransformFly[];
+extern const u32 gItemIcon_TransformStrength[];
+extern const u16 gItemIconPalette_TransformStrength[];
+//extern const u32 gItemIcon_TransformRockSmash[];
+//extern const u16 gItemIconPalette_TransformRockSmash[];
+//extern const u32 gItemIcon_TransformRockClimb[];
+//extern const u16 gItemIconPalette_TransformRockClimb[];
+
 //menu graphics
 extern const u16 gMenuInfoElements1_Pal[16];
 extern const u16 gMenuInfoElements2_Pal[16];

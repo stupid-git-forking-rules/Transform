@@ -88,6 +88,29 @@ const u16 gItemIconPalette_BeastBall[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_CherishBall[] = INCBIN_U32("graphics/items/icons/cherish_ball.4bpp.lz");
 const u16 gItemIconPalette_CherishBall[] = INCBIN_U16("graphics/items/icon_palettes/cherish_ball.gbapal");
 
+
+// Transformations
+
+// PokeRides -- commenting out extras for now
+
+const u32 gItemIcon_TransformDitto[] = INCBIN_U32("graphics/items/icons/transformditto.4bpp.lz");
+const u16 gItemIconPalette_TransformDitto[] = INCBIN_U16("graphics/items/icon_palettes/transformditto.gbapal");
+const u32 gItemIcon_TransformSurf[] = INCBIN_U32("graphics/items/icons/transformsurf.4bpp.lz");
+const u16 gItemIconPalette_TransformSurf[] = INCBIN_U16("graphics/items/icon_palettes/transformsurf.gbapal");
+//const u32 gItemIcon_TransformRockSmash[] = INCBIN_U32("graphics/items/icons/transformrocksmash.4bpp.lz");
+//const u16 gItemIconPalette_TransformRockSmash[] = INCBIN_U16("graphics/items/icon_palettes/transformrocksmash.gbapal");
+const u32 gItemIcon_TransformStrength[] = INCBIN_U32("graphics/items/icons/transformstrength.4bpp.lz");
+const u16 gItemIconPalette_TransformStrength[] = INCBIN_U16("graphics/items/icon_palettes/transformstrength.gbapal");
+//const u32 gItemIcon_TransformRockClimb[] = INCBIN_U32("graphics/items/icons/transformrockclimb.4bpp.lz");
+//const u16 gItemIconPalette_TransformRockClimb[] = INCBIN_U16("graphics/items/icon_palettes/transformrockclimb.gbapal");
+const u32 gItemIcon_TransformShrink[] = INCBIN_U32("graphics/items/icons/transformshrink.4bpp.lz");
+const u16 gItemIconPalette_TransformShrink[] = INCBIN_U16("graphics/items/icon_palettes/transformshrink.gbapal");
+const u32 gItemIcon_TransformFly[] = INCBIN_U32("graphics/items/icons/transformfly.4bpp.lz");
+const u16 gItemIconPalette_TransformFly[] = INCBIN_U16("graphics/items/icon_palettes/transformfly.gbapal");
+
+
+
+
 // Medicine
 
 const u32 gItemIcon_Potion[] = INCBIN_U32("graphics/items/icons/potion.4bpp.lz");

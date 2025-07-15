@@ -13,6 +13,8 @@ u16 ReturnAvatarGraphicsId(u16 avatarId);
 u16 ReturnAvatarTrainerFrontPicId(u16 avatarId);
 u16 ReturnAvatarTrainerBackPicId(u16 avatarId);
 
+void SetPlayerAvatarFromItem(void);
+
 #define TRANSFORM_TYPE_PLAYER_SPECIES 1
 
 extern EWRAM_DATA u8 gPlayerTransformEffectActive;

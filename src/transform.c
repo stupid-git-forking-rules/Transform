@@ -156,7 +156,7 @@ void UpdatePlayerTransformAnimation(u8 taskId)
     sprite->data[0]++; // Increment frames
 }
 
-void SetPlayerAvatar(void)
+void SetPlayerAvatarFromScript(void)
 {
     u16 choiceIndex = VarGet(VAR_RESULT);
     u16 speciesId = SPECIES_NONE;
@@ -172,6 +172,28 @@ void SetPlayerAvatar(void)
     gSaveBlock2Ptr->pokemonAvatarSpecies = speciesId;
 
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
+    PlaySE(SE_M_TELEPORT);
+}
+
+
+void SetPlayerAvatarFromItem(void)
+{
+    u16 choiceIndex = VarGet(VAR_TRANSFORM_MON);
+    u16 speciesId = SPECIES_NONE;
+
+    switch (choiceIndex)
+    {
+        case 0: speciesId = SPECIES_DITTO; break;
+        case 1: speciesId = SPECIES_CLAUNCHER; break;
+        case 2: speciesId = SPECIES_RHYHORN; break;
+        case 3: speciesId = SPECIES_JOLTIK; break;
+        case 4: speciesId = SPECIES_NOIVERN; break;
+    }
+    gSaveBlock2Ptr->pokemonAvatarSpecies = speciesId;
+
+    BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
+    PlaySE(SE_M_TELEPORT);
+
 }
 
 void TryCreatePokemonAvatarSpriteBob(void)
