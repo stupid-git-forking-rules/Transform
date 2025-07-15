@@ -106,7 +106,7 @@ void BeginPlayerTransformEffect(u8 type)
     {
         sprite->data[0] = 0; 
         sprite->data[1] = type; 
-        sprite->oam.priority = 1; 
+        sprite->oam.priority = 2; 
         gPlayerTransformEffectActive = TRUE; 
         u8 taskId = CreateTask(UpdatePlayerTransformAnimation, 0xFF);
     }
