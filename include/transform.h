@@ -16,7 +16,10 @@ u16 ReturnAvatarGraphicsId(u16 avatarId);
 u16 ReturnAvatarTrainerFrontPicId(u16 avatarId);
 u16 ReturnAvatarTrainerBackPicId(u16 avatarId);
 
+typedef void (*TransformFunc)(u8);
+
 void SetPlayerAvatarFromItem(u16 speciesId);
+TransformFunc GetTransformationFunc(u16 speciesId);
 
 #define TRANSFORM_TYPE_PLAYER_SPECIES 1
 
@@ -25,8 +28,6 @@ extern EWRAM_DATA u8 gPlayerTransformEffectActive;
 enum {
     AVATAR_POKEMON_CHOICE,
 };
-
-typedef void (*TransformFunc)(u8);
 
 struct Transformation
 {

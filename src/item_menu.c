@@ -2073,7 +2073,8 @@ static void Task_ChooseHowManyToToss(u8 taskId)
 }
 
 // Returns [1-4] based on dpad, or 0 otherwise
-static u32 DpadInputToRegisteredItemIndex(bool32 check) {
+static u32 DpadInputToRegisteredItemIndex(bool32 check)
+{
     u32 i = 0;
     if (JOY_NEW(DPAD_UP))
         i = 1;
@@ -2084,12 +2085,18 @@ static u32 DpadInputToRegisteredItemIndex(bool32 check) {
     else if (JOY_NEW(DPAD_LEFT))
         i = 4;
     // If `check`, verify that slot actually has an item registered
-    if (i && check && gSaveBlock1Ptr->registeredItems[i-1] == ITEM_NONE)
-        i = 0;
+    if (i && check)
+    {
+        if (PlayerIsDitto() && !GetValidTransformationSpeciesFromParty(i))
+            i = 0;
+        else if (!PlayerIsDitto() && gSaveBlock1Ptr->registeredItems[i-1] == ITEM_NONE)
+            i = 0;
+    }
     return i;
 }
 
-static void Task_RegisterUsingDpad(u8 taskId) {
+static void Task_RegisterUsingDpad(u8 taskId)
+{
     s16 *data = gTasks[taskId].data;
     u16 *scrollPos = &gBagPosition.scrollPosition[gBagPosition.pocket];
     u16 *cursorPos = &gBagPosition.cursorPosition[gBagPosition.pocket];
@@ -2443,9 +2450,12 @@ static void Task_KeyItemWheel(u8 taskId) {
                 speciesId = GetValidTransformationSpeciesFromParty(i + 1);
                 if (speciesId == SPECIES_NONE)
                     continue;
+                tIconWindow[i] = j = AddWindowParameterized(0, sKeyItemBoxXPos[i] / 8 - 2, sKeyItemBoxYPos[i] / 8 - 2, 4, 4, i == 3 ? 13 : 13 + i, 16*(i+9));
                 if (j == WINDOW_NONE)
                     continue;
                 PutWindowTilemap(j);
+                if (gSaveBlock2Ptr->pokemonAvatarSpecies == speciesId)
+                    speciesId = SPECIES_DITTO;
                 BlitTransformationIconToWindow(speciesId, j, 4, 4, i == 3 ? sKeyItemWheelExtraPalette : NULL);
                 CopyWindowToVram(j, COPYWIN_FULL);
             }
@@ -2479,7 +2489,15 @@ static void Task_KeyItemWheel(u8 taskId) {
         if (i == 0 || data[i] == MAX_SPRITES)
             break;
         // use item as if it was registered
-        gSpecialVar_ItemId = gSaveBlock1Ptr->registeredItemCompat = gSaveBlock1Ptr->registeredItems[i - 1];
+        if (PlayerIsDitto())
+        {
+            speciesId = GetValidTransformationSpeciesFromParty(i);
+            if (gSaveBlock2Ptr->pokemonAvatarSpecies == speciesId)
+                speciesId = SPECIES_DITTO;
+            gSpecialVar_ItemId = gSaveBlock1Ptr->registeredItemCompat = speciesId;
+        }
+        else
+            gSpecialVar_ItemId = gSaveBlock1Ptr->registeredItemCompat = gSaveBlock1Ptr->registeredItems[i - 1];
         PlaySE(SE_SELECT);
         StartSpriteAffineAnim(&gSprites[data[i]], i + 4 - 1);
         data[15] = data[i];
@@ -2490,7 +2508,10 @@ static void Task_KeyItemWheel(u8 taskId) {
         if (!gSprites[data[15]].affineAnimEnded)
             break;
         FreeKeyItemWheelGfx(data);
-        i = CreateTask(GetItemFieldFunc(gSaveBlock1Ptr->registeredItemCompat), 8);
+        if (PlayerIsDitto())
+            i = CreateTask(GetTransformationFunc(gSaveBlock1Ptr->registeredItemCompat), 8);
+        else
+            i = CreateTask(GetItemFieldFunc(gSaveBlock1Ptr->registeredItemCompat), 8);
         gTasks[i].tUsingRegisteredKeyItem = TRUE;
         DestroyTask(taskId);
         break;

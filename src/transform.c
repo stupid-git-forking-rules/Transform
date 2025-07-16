@@ -196,6 +196,11 @@ u16 GetValidTransformationSpeciesFromParty(u8 partyId)
     return SPECIES_NONE;
 }
 
+TransformFunc GetTransformationFunc(u16 speciesId)
+{
+    return gTransformations[speciesId].fieldUseFunc;
+}
+
 void SetPlayerAvatarFromScript(struct ScriptContext *ctx)
 {
     u16 speciesId = SpeciesToNationalPokedexNum(VarGet(ScriptReadHalfword(ctx)));
@@ -209,7 +214,6 @@ void SetPlayerAvatarFromScript(struct ScriptContext *ctx)
     PlaySE(SE_M_TELEPORT);
 }
 
-
 void SetPlayerAvatarFromItem(u16 speciesId)
 {
     if (!IsSpeciesValidTransformation(speciesId))
@@ -219,7 +223,6 @@ void SetPlayerAvatarFromItem(u16 speciesId)
 
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
     PlaySE(SE_M_TELEPORT);
-
 }
 
 void TryCreatePokemonAvatarSpriteBob(void)
@@ -283,6 +286,7 @@ void Task_PokemonAvatar_HandleBob(u8 taskId)
 
 u8 BlitTransformationIconToWindow(u16 speciesId, u8 windowId, u16 x, u16 y, void *paletteDest)
 {
+    DebugPrintfLevel(MGBA_LOG_WARN, "Attempting to Blit Species %d", speciesId);
     if (!AllocItemIconTemporaryBuffers())
         return 16;
 
@@ -293,9 +297,9 @@ u8 BlitTransformationIconToWindow(u16 speciesId, u8 windowId, u16 x, u16 y, void
     // if paletteDest is nonzero, copies the palette directly into it
     // otherwise, loads the palette into the windowId's BG palette ID
     if (paletteDest)
-        CpuCopy16(GetItemIconPalette(speciesId), paletteDest, PLTT_SIZE_4BPP);
+        CpuCopy16(GetTransformationPalette(speciesId), paletteDest, PLTT_SIZE_4BPP);
     else
-        LoadPalette(GetItemIconPalette(speciesId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
+        LoadPalette(GetTransformationPalette(speciesId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
 
     FreeItemIconTemporaryBuffers();
     return 0;
@@ -307,7 +311,7 @@ const void *GetTransformationPic(u16 speciesId)
         return gItemIcon_ReturnToFieldArrow;
     if (speciesId >= NUM_SPECIES)
         return gItemIcon_ReturnToFieldArrow;
-    
+
     return gTransformations[speciesId].iconPic;
 }
 
