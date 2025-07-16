@@ -15,7 +15,6 @@ void Task_SurfToolFieldEffect(u8 taskId);
 u32 CanUseStrength(u8);
 u32 UseStrength(u32, u8, u8, u8);
 
-void FldEff_UseFlashTool(void);
 u32 CanUseFlash(void);
 void TryUseFlash(void);
 

@@ -63,6 +63,7 @@
 #include "task.h"
 #include "text.h"
 #include "text_window.h"
+#include "transform.h"
 #include "trade.h"
 #include "union_room.h"
 #include "window.h"
@@ -535,11 +536,6 @@ static void Task_HideFollowerNPCForTeleport(u8);
 
 // static const data
 #include "data/party_menu.h"
-
-static bool32 PlayerIsDitto(void)
-{
-    return TRUE;
-}
 
 // code
 static void InitPartyMenu(u8 menuType, u8 layout, u8 partyAction, bool8 keepCursorPos, u8 messageId, TaskFunc task, MainCallback callback)

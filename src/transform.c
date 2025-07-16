@@ -46,9 +46,17 @@
 #include "naming_screen.h"
 #include "config/general.h"
 #include "item.h"
+#include "item_use.h"
+#include "item_icon.h"
 #include "constants/vars.h"
 #include "event_object_lock.h"
+#include "constants/species.h"
+#include "graphics.h"
 
+#include "data/transformations.h"
+
+const void *GetTransformationPic(u16 speciesId);
+const u16 *GetTransformationPalette(u16 speciesId);
 
 //
 // 	Player Avatar System Code
@@ -72,6 +80,11 @@ static const struct PitAvatarInfo sPitAvatars[] = {
     },
 
 };
+
+bool32 PlayerIsDitto(void)
+{
+    return TRUE;
+}
 
 u16 ReturnAvatarMugshotId(u16 avatarId)
 {
@@ -156,19 +169,40 @@ void UpdatePlayerTransformAnimation(u8 taskId)
     sprite->data[0]++; // Increment frames
 }
 
-void SetPlayerAvatarFromScript(void)
+static u8 IsSpeciesValidTransformation(u16 speciesId)
 {
-    u16 choiceIndex = VarGet(VAR_RESULT);
-    u16 speciesId = SPECIES_NONE;
-
-    switch (choiceIndex)
+    switch (speciesId)
     {
-        case 0: speciesId = SPECIES_DITTO; break;
-        case 1: speciesId = SPECIES_MARILL; break;
-        case 2: speciesId = SPECIES_RHYHORN; break;
-        case 3: speciesId = SPECIES_JOLTIK; break;
-        case 4: speciesId = SPECIES_NOIVERN; break;
+        case SPECIES_DITTO:
+        case SPECIES_MARILL:
+        case SPECIES_RHYHORN:
+        case SPECIES_JOLTIK:
+        case SPECIES_NOIVERN:
+            DebugPrintfLevel(MGBA_LOG_WARN, "Got valid species %d", speciesId);
+            return TRUE;
+        default:
+            DebugPrintfLevel(MGBA_LOG_WARN, "No valid species");
+            return FALSE;
     }
+}
+
+u16 GetValidTransformationSpeciesFromParty(u8 partyId)
+{
+    u16 speciesId = GetMonData(&gPlayerParty[partyId], MON_DATA_SPECIES);
+
+    if (IsSpeciesValidTransformation(speciesId))
+        return speciesId;
+    
+    return SPECIES_NONE;
+}
+
+void SetPlayerAvatarFromScript(struct ScriptContext *ctx)
+{
+    u16 speciesId = SpeciesToNationalPokedexNum(VarGet(ScriptReadHalfword(ctx)));
+
+    if (!IsSpeciesValidTransformation(speciesId))
+        return;
+
     gSaveBlock2Ptr->pokemonAvatarSpecies = speciesId;
 
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
@@ -176,19 +210,11 @@ void SetPlayerAvatarFromScript(void)
 }
 
 
-void SetPlayerAvatarFromItem(void)
+void SetPlayerAvatarFromItem(u16 speciesId)
 {
-    u16 choiceIndex = VarGet(VAR_TRANSFORM_MON);
-    u16 speciesId = SPECIES_NONE;
+    if (!IsSpeciesValidTransformation(speciesId))
+        return;
 
-    switch (choiceIndex)
-    {
-        case 0: speciesId = SPECIES_DITTO; break;
-        case 1: speciesId = SPECIES_CLAUNCHER; break;
-        case 2: speciesId = SPECIES_RHYHORN; break;
-        case 3: speciesId = SPECIES_JOLTIK; break;
-        case 4: speciesId = SPECIES_NOIVERN; break;
-    }
     gSaveBlock2Ptr->pokemonAvatarSpecies = speciesId;
 
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
@@ -253,5 +279,44 @@ void Task_PokemonAvatar_HandleBob(u8 taskId)
     }
 
     data[0]++;
+}
 
+u8 BlitTransformationIconToWindow(u16 speciesId, u8 windowId, u16 x, u16 y, void *paletteDest)
+{
+    if (!AllocItemIconTemporaryBuffers())
+        return 16;
+
+    LZDecompressWram(GetTransformationPic(speciesId), gItemIconDecompressionBuffer);
+    CopyItemIconPicTo4x4Buffer(gItemIconDecompressionBuffer, gItemIcon4x4Buffer);
+    BlitBitmapToWindow(windowId, gItemIcon4x4Buffer, x, y, 32, 32);
+
+    // if paletteDest is nonzero, copies the palette directly into it
+    // otherwise, loads the palette into the windowId's BG palette ID
+    if (paletteDest)
+        CpuCopy16(GetItemIconPalette(speciesId), paletteDest, PLTT_SIZE_4BPP);
+    else
+        LoadPalette(GetItemIconPalette(speciesId), BG_PLTT_ID(gWindows[windowId].window.paletteNum), PLTT_SIZE_4BPP);
+
+    FreeItemIconTemporaryBuffers();
+    return 0;
+}
+
+const void *GetTransformationPic(u16 speciesId)
+{
+    if (speciesId == SPECIES_NONE)
+        return gItemIcon_ReturnToFieldArrow;
+    if (speciesId >= NUM_SPECIES)
+        return gItemIcon_ReturnToFieldArrow;
+    
+    return gTransformations[speciesId].iconPic;
+}
+
+const u16 *GetTransformationPalette(u16 speciesId)
+{
+    if (speciesId == SPECIES_NONE)
+        return gItemIconPalette_ReturnToFieldArrow;
+    if (speciesId >= NUM_SPECIES)
+        return gItemIconPalette_ReturnToFieldArrow;
+
+    return gTransformations[speciesId].iconPalette;
 }

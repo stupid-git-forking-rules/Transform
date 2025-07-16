@@ -46,11 +46,13 @@
 #include "string_util.h"
 #include "task.h"
 #include "text_window.h"
+#include "transform.h"
 #include "menu_helpers.h"
 #include "window.h"
 #include "apprentice.h"
 #include "battle_pike.h"
 #include "constants/items.h"
+#include "constants/species.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
@@ -2343,7 +2345,7 @@ bool8 UseRegisteredKeyItemOnField(void)
     ChangeBgY_ScreenOff(0, 0, BG_COORD_SET);
        i = CountRegisteredItems();
     // Show key item wheel
-    if (i > 1) {
+    if (i > 1 || PlayerIsDitto()) {
         func = Task_KeyItemWheel;
     // Use the only registered item
     } else if (i > 0) {
@@ -2417,6 +2419,7 @@ static void Task_KeyItemWheel(u8 taskId) {
     u32 i, j;
     s16 *data = gTasks[taskId].data;
     struct Sprite *sprite;
+    u16 speciesId;
     switch (tState)
     {
     case 0:
@@ -2424,7 +2427,8 @@ static void Task_KeyItemWheel(u8 taskId) {
         LoadSpritePalette(&sSpritePalette_KeyItemBox);
         LoadSpriteSheetByTemplateKeyItem(&sSpriteTemplate_KeyItemBox, 0);
 
-        for (i = 0; i < MAX_REGISTERED_ITEMS; i++) {
+        for (i = 0; i < MAX_REGISTERED_ITEMS; i++) 
+        {
             // Create box sprite
             tBoxSprite[i] = j = CreateSprite(&sSpriteTemplate_KeyItemBox, sKeyItemBoxXPos[i], sKeyItemBoxYPos[i], 0);
             if (j < MAX_SPRITES)
@@ -2432,14 +2436,30 @@ static void Task_KeyItemWheel(u8 taskId) {
             tBoxWinSprite[i] = MAX_SPRITES;
             // For each registered item the player has, create a window and blit its icon to it
             tIconWindow[i] = WINDOW_NONE;
-            if (!gSaveBlock1Ptr->registeredItems[i] || !CheckBagHasItem(gSaveBlock1Ptr->registeredItems[i], 1))
-                continue;
-            tIconWindow[i] = j = AddWindowParameterized(0, sKeyItemBoxXPos[i] / 8 - 2, sKeyItemBoxYPos[i] / 8 - 2, 4, 4, i == 3 ? 13 : 13 + i, 16*(i+9));
-            if (j == WINDOW_NONE)
-                continue;
-            PutWindowTilemap(j);
-            BlitItemIconToWindow(gSaveBlock1Ptr->registeredItems[i], j, 4, 4, i == 3 ? sKeyItemWheelExtraPalette : NULL);
-            CopyWindowToVram(j, COPYWIN_FULL);
+
+            if (PlayerIsDitto()) // Show Transformations
+            {
+                DebugPrintfLevel(MGBA_LOG_WARN, "Attempting to show Transformations");
+                speciesId = GetValidTransformationSpeciesFromParty(i + 1);
+                if (speciesId == SPECIES_NONE)
+                    continue;
+                if (j == WINDOW_NONE)
+                    continue;
+                PutWindowTilemap(j);
+                BlitTransformationIconToWindow(speciesId, j, 4, 4, i == 3 ? sKeyItemWheelExtraPalette : NULL);
+                CopyWindowToVram(j, COPYWIN_FULL);
+            }
+            else // Show Registered Items
+            {
+                if (!gSaveBlock1Ptr->registeredItems[i] || !CheckBagHasItem(gSaveBlock1Ptr->registeredItems[i], 1))
+                    continue;
+                tIconWindow[i] = j = AddWindowParameterized(0, sKeyItemBoxXPos[i] / 8 - 2, sKeyItemBoxYPos[i] / 8 - 2, 4, 4, i == 3 ? 13 : 13 + i, 16*(i+9));
+                if (j == WINDOW_NONE)
+                    continue;
+                PutWindowTilemap(j);
+                BlitItemIconToWindow(gSaveBlock1Ptr->registeredItems[i], j, 4, 4, i == 3 ? sKeyItemWheelExtraPalette : NULL);
+                CopyWindowToVram(j, COPYWIN_FULL);
+            }
         }
         SetHBlankCallback(HBlankCB_KeyItemWheel);
         EnableInterrupts(INTR_FLAG_HBLANK);

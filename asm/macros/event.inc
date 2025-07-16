@@ -2648,8 +2648,6 @@
 	.2byte \battlePartner
 	.endm
 
-    @ Start qol_field_moves
-
     @ Checks if any Pokémon in the party can learn a specific HM.
 	@ If so, VAR_RESULT is set to the
 	@ (zero-indexed) slot number of the first Pokemon that knows the move. If not, VAR_RESULT is set to PARTY_SIZE.
@@ -2659,5 +2657,8 @@
 	.2byte \tmhm
 	.endm
 
-    @ End qol_field_moves
-
+	@ Transforms the Player Ditto into a specific Pokemon
+	.macro dittotransform species:req
+	callnative SetPlayerAvatarFromScript, requests_effects=1
+	.2byte \species
+	.endm
