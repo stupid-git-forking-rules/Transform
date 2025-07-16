@@ -249,9 +249,7 @@ Route117_Text_DayCareSign:
 `
 script Route117_test_formchange {
     lockall
-    msgbox("Transform into which Pokémon?")
-    dynmultichoice(0, 0, TRUE, 5, VAR_TRANSFORM_MON, DYN_MULTICHOICE_CB_NONE, "DITTO", "MARILL", "RHYHORN", "JOLTIK", "NOIVERN")
-    callnative(SetPlayerAvatarFromScript)
+    dittotransform(SPECIES_MARILL)
     releaseall
     end
 }
