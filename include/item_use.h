@@ -56,11 +56,26 @@ void ItemUseOutOfBattle_SurfTransform(u8 taskId);
 void ItemUseOutOfBattle_StrengthTransform(u8 taskId);
 void ItemUseOutOfBattle_DittoTransform(u8 taskId);
 void ItemUseOutOfBattle_ShrinkTransform(u8 taskId);
+void ItemUseOutOfBattle_MachBikeTransform(u8 taskId);
+void ItemUseOutOfBattle_WaterfallTransform(u8 taskId);
+void ItemUseOutOfBattle_DiveTransform(u8 taskId);
+void ItemUseOutOfBattle_AcroBikeTransform(u8 taskId);
+void ItemUseOutOfBattle_FlashTransform(u8 taskId);
+void ItemUseOutOfBattle_CutTransform(u8 taskId);
+void ItemUseOutOfBattle_RockSmashTransform(u8 taskId);
 void ItemUseOnFieldCB_FlyTransform(u8 taskId);
 void ItemUseOnFieldCB_SurfTransform(u8 taskId);
 void ItemUseOnFieldCB_StrengthTransform(u8 taskId);
 void ItemUseOnFieldCB_DittoTransform(u8 taskId);
 void ItemUseOnFieldCB_ShrinkTransform(u8 taskId);
+void ItemUseOnFieldCB_MachBikeTransform(u8 taskId);
+void ItemUseOnFieldCB_WaterfallTransform(u8 taskId);
+void ItemUseOnFieldCB_DiveTransform(u8 taskId);
+void ItemUseOnFieldCB_AcroBikeTransform(u8 taskId);
+void ItemUseOnFieldCB_FlashTransform(u8 taskId);
+void ItemUseOnFieldCB_CutTransform(u8 taskId);
+void ItemUseOnFieldCB_RockSmashTransform(u8 taskId);
+
 
 
 enum {

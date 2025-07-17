@@ -1630,7 +1630,7 @@ void ItemUseOutOfBattle_StrengthTransform(u8 taskId)
 void ItemUseOnFieldCB_StrengthTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarFromItem(SPECIES_RHYHORN);
+    SetPlayerAvatarFromItem(SPECIES_MACHAMP);
     DestroyTask(taskId);
 }
 
@@ -1654,7 +1654,7 @@ void ItemUseOutOfBattle_SurfTransform(u8 taskId)
 void ItemUseOnFieldCB_SurfTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarFromItem(SPECIES_CLAUNCHER);
+    SetPlayerAvatarFromItem(SPECIES_MARILL);
 
     DestroyTask(taskId);
 }
@@ -1667,7 +1667,7 @@ void ItemUseOutOfBattle_ShrinkTransform(u8 taskId)
 void ItemUseOnFieldCB_ShrinkTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarFromItem(SPECIES_JOLTIK);
+    SetPlayerAvatarFromItem(SPECIES_CUTIEFLY);
     DestroyTask(taskId);
 }
 
@@ -1682,5 +1682,90 @@ void ItemUseOnFieldCB_FlyTransform(u8 taskId)
     SetPlayerAvatarFromItem(SPECIES_NOIVERN);
     DestroyTask(taskId);
 }
+
+void ItemUseOutOfBattle_RockSmashTransform(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_RockSmashTransform;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+void ItemUseOnFieldCB_RockSmashTransform(u8 taskId)
+{
+    LockPlayerFieldControls();
+    SetPlayerAvatarFromItem(SPECIES_RHYHORN);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_DiveTransform(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_DiveTransform;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+void ItemUseOnFieldCB_DiveTransform(u8 taskId)
+{
+    LockPlayerFieldControls();
+    SetPlayerAvatarFromItem(SPECIES_CHINCHOU);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_WaterfallTransform(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_WaterfallTransform;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+void ItemUseOnFieldCB_WaterfallTransform(u8 taskId)
+{
+    LockPlayerFieldControls();
+    SetPlayerAvatarFromItem(SPECIES_DRAGONAIR);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_MachBikeTransform(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_MachBikeTransform;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+void ItemUseOnFieldCB_MachBikeTransform(u8 taskId)
+{
+    LockPlayerFieldControls();
+    SetPlayerAvatarFromItem(SPECIES_ARCANINE);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_AcroBikeTransform(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_AcroBikeTransform;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+void ItemUseOnFieldCB_AcroBikeTransform(u8 taskId)
+{
+    LockPlayerFieldControls();
+    SetPlayerAvatarFromItem(SPECIES_WEAVILE);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_CutTransform(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_CutTransform;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+void ItemUseOnFieldCB_CutTransform(u8 taskId)
+{
+    LockPlayerFieldControls();
+    SetPlayerAvatarFromItem(SPECIES_SCYTHER);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_FlashTransform(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_FlashTransform;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+void ItemUseOnFieldCB_FlashTransform(u8 taskId)
+{
+    LockPlayerFieldControls();
+    SetPlayerAvatarFromItem(SPECIES_PIKACHU);
+    DestroyTask(taskId);
+}
+
 
 #undef tUsingRegisteredKeyItem

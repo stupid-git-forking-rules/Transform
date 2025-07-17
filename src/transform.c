@@ -174,10 +174,17 @@ static u8 IsSpeciesValidTransformation(u16 speciesId)
     switch (speciesId)
     {
         case SPECIES_DITTO:
-        case SPECIES_CLAUNCHER:
+        case SPECIES_MARILL:
         case SPECIES_RHYHORN:
-        case SPECIES_JOLTIK:
         case SPECIES_NOIVERN:
+        case SPECIES_PIKACHU:
+        case SPECIES_ARCANINE:
+        case SPECIES_WEAVILE:
+        case SPECIES_SCYTHER:
+        case SPECIES_CHINCHOU:
+        case SPECIES_CUTIEFLY:
+        case SPECIES_MACHAMP:
+        case SPECIES_DRAGONAIR:
             DebugPrintfLevel(MGBA_LOG_WARN, "Got valid species %d", speciesId);
             return TRUE;
         default:
