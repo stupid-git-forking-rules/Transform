@@ -249,7 +249,7 @@ Route117_Text_DayCareSign:
 `
 script Route117_test_formchange {
     lockall
-    dittotransform(SPECIES_MARILL)
+    dittotransform(SPECIES_CLAUNCHER)
     releaseall
     end
 }

@@ -174,7 +174,7 @@ static u8 IsSpeciesValidTransformation(u16 speciesId)
     switch (speciesId)
     {
         case SPECIES_DITTO:
-        case SPECIES_MARILL:
+        case SPECIES_CLAUNCHER:
         case SPECIES_RHYHORN:
         case SPECIES_JOLTIK:
         case SPECIES_NOIVERN:

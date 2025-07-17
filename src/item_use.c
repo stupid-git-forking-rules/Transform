@@ -1654,7 +1654,7 @@ void ItemUseOutOfBattle_SurfTransform(u8 taskId)
 void ItemUseOnFieldCB_SurfTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarFromItem(SPECIES_MARILL);
+    SetPlayerAvatarFromItem(SPECIES_CLAUNCHER);
 
     DestroyTask(taskId);
 }
