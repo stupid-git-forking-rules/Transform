@@ -4414,12 +4414,22 @@
     {
       "id": "LAYOUT_DAYCAREBASE",
       "name": "daycarebase_Layout",
-      "width": 40,
-      "height": 40,
+      "width": 44,
+      "height": 59,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/daycarebase/border.bin",
       "blockdata_filepath": "data/layouts/daycarebase/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAYCARE_EAST",
+      "name": "DaycareEast_Layout",
+      "width": 59,
+      "height": 43,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/DaycareEast/border.bin",
+      "blockdata_filepath": "data/layouts/DaycareEast/map.bin"
     }
   ]
 }

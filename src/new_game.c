@@ -133,7 +133,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_ROUTE117), MAP_NUM(MAP_ROUTE117), WARP_ID_NONE, -1, -1);
+    SetWarpDestination(MAP_GROUP(MAP_DAYCAREBASE), MAP_NUM(MAP_DAYCAREBASE), WARP_ID_NONE, -1, -1);
     ScriptGiveMon(SPECIES_DITTO, 5, ITEM_NONE);
     gSaveBlock2Ptr->optionsBattleSpeed = 1;
     VarSet(VAR_BATTLE_SPEED, 1); // Set battle speed to 2x by default, press L to slow down to 1x
