@@ -56,6 +56,7 @@
 #include "rtc.h"
 #include "event_object_movement.h"
 #include "gba/isagbprint.h"
+#include "party_menu.h"
 
 /* ENUMs */
 enum MenuOption 
@@ -184,24 +185,34 @@ static const u32 sStartMenuTiles[] = INCBIN_U32("graphics/heat_start_menu/bg.4bp
 static const u32 sStartMenuTilemap[] = INCBIN_U32("graphics/heat_start_menu/bg.bin.lz");
 static const u32 sStartMenuTilemapSafari[] = INCBIN_U32("graphics/heat_start_menu/bg_safari.bin.lz");
 static const u16 sStartMenuPalette[] = INCBIN_U16("graphics/heat_start_menu/bg_slowpoke.gbapal");
+static const u16 sStartMenuPaletteShiny[] = INCBIN_U16("graphics/heat_start_menu/bg_shiny.gbapal");
 const u16 gStandardMenuPalette[] = INCBIN_U16("graphics/interface/std_menu.gbapal");
 
 // --alternate BG pals--
 static const u16 sStartMenuPalettes[MENU_PAL_COUNT][16] = {
     INCBIN_U16("graphics/heat_start_menu/bg_slowpoke.gbapal"),
-    INCBIN_U16("graphics/heat_start_menu/bg1.gbapal"),
-    INCBIN_U16("graphics/heat_start_menu/bg2.gbapal"),
-    INCBIN_U16("graphics/heat_start_menu/bg3.gbapal"),
-
+    INCBIN_U16("graphics/heat_start_menu/bg_shiny.gbapal"),
 };
-#define MENU_PAL_COUNT 4
+#define MENU_PAL_COUNT 2
+
+u8 gCurrentStartMenuPalette = 0;
 
 const u16 *GetStartMenuPalette(u8 id)
 {
-    if (id >= MENU_PAL_COUNT)
-        return sStartMenuPalettes[0]; // Return the default if ID is out of bounds
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+
+        return sStartMenuPalettes[1];
+    }
     else
-        return sStartMenuPalettes[id];
+    {
+
+        if (id >= MENU_PAL_COUNT)
+            return sStartMenuPalettes[0]; 
+        else
+            return sStartMenuPalettes[id]; 
+    }
 }
 
 //--SPRITE-GFX--
@@ -220,6 +231,7 @@ const u16 *GetStartMenuPalette(u8 id)
 
 static const u32 sIconGfx[] = INCBIN_U32("graphics/heat_start_menu/icons.4bpp.lz");
 static const u16 sIconPal[] = INCBIN_U16("graphics/heat_start_menu/icons.gbapal");
+static const u16 sIconPalShiny[] = INCBIN_U16("graphics/heat_start_menu/icons_shiny.gbapal");
 
 static const u8 *const sPyramidFloorNames[FRONTIER_STAGES_PER_CHALLENGE + 1] =
 {
@@ -282,6 +294,19 @@ static const struct SpritePalette sSpritePal_Icon[] =
     {sIconPal, TAG_ICON_PAL},
     {NULL},
 };
+
+static const u16 *GetIconPalette(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return sIconPalShiny; 
+    }
+    else
+    {
+        return sIconPal; 
+    }
+}
 
 static const struct CompressedSpriteSheet sSpriteSheet_Icon[] = 
 {
@@ -858,15 +883,14 @@ static void SetupHeatMenuCommonComponents(void)
     HeatStartMenu_UpdateMenuName();
 }
 
-static void HeatStartMenu_LoadSprites(void) 
+static void HeatStartMenu_LoadSprites(void)
 {
     u32 index;
     LoadSpritePalette(sSpritePal_Icon);
     index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
-    LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP); 
-    LoadCompressedSpriteSheet(sSpriteSheet_Icon);
+    LoadPalette(GetIconPalette(), OBJ_PLTT_ID(index), PLTT_SIZE_4BPP);
+    LoadCompressedSpriteSheet(sSpriteSheet_Icon); 
 }
-
 static inline u32 CreateSpriteBasedOnFlashLevel(const struct SpriteTemplate *template, s16 x, s16 y, u32 subpriority)
 {
     if (sHeatStartMenu->lightLevel != 0)
@@ -936,18 +960,23 @@ static void HeatStartMenu_BattlePyramid_CreateSprites(void)
     sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_6, 0);
 }
 
-static void HeatStartMenu_LoadBgGfx(void) 
-{
+static void HeatStartMenu_LoadBgGfx(void) {
     u8* buf = GetBgTilemapBuffer(0);
     LoadBgTilemap(0, 0, 0, 0);
-    DecompressAndCopyTileDataToVram(0, sStartMenuTiles, 0, 0, 0);
-    if (GetSafariZoneFlag() || InBattlePyramid())
-        LZDecompressWram(sStartMenuTilemapSafari, buf);
-    else
+    DecompressAndCopyTileDataToVram(0, sStartMenuTiles, 0, 0, 0); // Keep as sStartMenuTiles (u32)
+    if (GetSafariZoneFlag() == FALSE) {
         LZDecompressWram(sStartMenuTilemap, buf);
+    } else {
+        LZDecompressWram(sStartMenuTilemapSafari, buf);
+    }
 
+    // Load the standard menu palette
     LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-    LoadPalette(sStartMenuPalette, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
+
+    // Load the start menu palette based on the ID
+    const u16 *selectedPalette = GetStartMenuPalette(gCurrentStartMenuPalette);
+    LoadPalette(selectedPalette, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
+
     ScheduleBgCopyTilemapToVram(0);
 }
 
@@ -1594,7 +1623,7 @@ static void Task_HeatStartMenu_HandleInput(u8 taskId)
 {
     enum PlayerLocation location;
     HeatStartMenu_UpdateClockDisplay();
-    
+
     if (InBattlePyramid())
         location = LOCATION_PYRAMID;
     else if (GetSafariZoneFlag() == TRUE)
@@ -1611,8 +1640,9 @@ static void Task_HeatStartMenu_HandleInput(u8 taskId)
     default:
         if (FadingComplete())
         {
-            u32 index = IndexOfSpritePaletteTag(TAG_ICON_PAL);
-            LoadPalette(sIconPal, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP);
+            u32 index = IndexOfSpritePaletteTag(TAG_ICON_PAL); // Get the palette index again
+            // Load the correct palette (shiny or normal) into the slot
+            LoadPalette(GetIconPalette(), OBJ_PLTT_ID(index), PLTT_SIZE_4BPP);
         }
         HeatStartMenu_HandleInput_Button(location, taskId);
         break;
