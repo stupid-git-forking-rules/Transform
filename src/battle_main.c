@@ -2242,7 +2242,7 @@ void CB2_InitEndLinkBattle(void)
         gBattle_BG3_Y = 0;
 
         InitBattleBgsVideo();
-        LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+        LoadPalette(GetBattleTextboxPaletteForShinyMon(), BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
         LoadBattleMenuWindowGfx();
         ResetSpriteData();
         ResetTasks();

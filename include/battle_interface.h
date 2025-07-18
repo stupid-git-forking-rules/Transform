@@ -138,5 +138,7 @@ void UpdateAbilityPopup(u8 battlerId);
 void CategoryIcons_LoadSpritesGfx(void);
 void TryToAddMoveInfoWindow(void);
 void TryToHideMoveInfoWindow(void);
+const u16* GetBattleTextboxPaletteForShinyMon(void);
+
 
 #endif // GUARD_BATTLE_INTERFACE_H

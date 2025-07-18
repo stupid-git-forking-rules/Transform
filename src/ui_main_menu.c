@@ -202,6 +202,7 @@ static const struct HWWindowPosition HWinCoords[6] =
 static const u32 sMainBgTiles[] = INCBIN_U32("graphics/ui_main_menu/main_tiles.4bpp.lz");
 static const u32 sMainBgTilemap[] = INCBIN_U32("graphics/ui_main_menu/main_tiles.bin.lz");
 static const u16 sMainBgPalette[] = INCBIN_U16("graphics/ui_main_menu/main_tiles.gbapal");
+static const u16 sMainBgPaletteShiny[] = INCBIN_U16("graphics/ui_main_menu/main_tiles_shiny.gbapal");
 
 static const u32 sMainBgTilesFem[] = INCBIN_U32("graphics/ui_main_menu/main_tiles_fem.4bpp.lz");
 static const u32 sMainBgTilemapFem[] = INCBIN_U32("graphics/ui_main_menu/main_tiles_fem.bin.lz");
@@ -218,10 +219,36 @@ static const u16 sIconBox_PalFem[] = INCBIN_U16("graphics/ui_main_menu/icon_shad
 static const u32 sIconBox_GfxFem[] = INCBIN_U32("graphics/ui_main_menu/icon_shadow_fem.4bpp.lz");
 
 static const u16 sBrendanMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/brendan_mugshot.gbapal");
+static const u16 sBrendanMugshot_PalShiny[] = INCBIN_U16("graphics/ui_main_menu/brendan_mugshot_shiny.gbapal");
 static const u32 sBrendanMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/brendan_mugshot.4bpp.lz");
 static const u16 sMayMugshot_Pal[] = INCBIN_U16("graphics/ui_main_menu/may_mugshot.gbapal");
 static const u32 sMayMugshot_Gfx[] = INCBIN_U32("graphics/ui_main_menu/may_mugshot.4bpp.lz");
 
+
+static const u16 *GetStartMenuPalette(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return sMainBgPaletteShiny; 
+    }
+    else
+    {
+        return sMainBgPalette; 
+    }
+}
+static const u16 *GetMugshotPalette(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return sBrendanMugshot_PalShiny; 
+    }
+    else
+    {
+        return sBrendanMugshot_Pal; 
+    }
+}
 
 //
 //  Sprite Data for Mugshots and Icon Shadows 
@@ -644,14 +671,17 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
         }
         break;
     case 4:
-    {
+    {   
+        u32 paletteIndex;
         if(gSaveBlock2Ptr->playerGender == MALE)
         {
             LoadCompressedSpriteSheet(&sSpriteSheet_IconBox);
             LoadSpritePalette(&sSpritePal_IconBox);
             LoadCompressedSpriteSheet(&sSpriteSheet_BrendanMugshot);
             LoadSpritePalette(&sSpritePal_BrendanMugshot);
-            LoadPalette(sMainBgPalette, 0, 32);
+            paletteIndex = IndexOfSpritePaletteTag(TAG_MUGSHOT);
+            LoadPalette(GetMugshotPalette(), OBJ_PLTT_ID(paletteIndex), PLTT_SIZE_4BPP); // THEN override it with shiny/normal (Brendan's)
+            LoadPalette(GetStartMenuPalette(), 0, 32);
         }
         else
         {
@@ -659,7 +689,7 @@ static bool8 MainMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, spr
             LoadSpritePalette(&sSpritePal_IconBoxFem);
             LoadCompressedSpriteSheet(&sSpriteSheet_MayMugshot);
             LoadSpritePalette(&sSpritePal_MayMugshot);
-            LoadPalette(sMainBgPalette, 0, 32);
+            LoadPalette(GetStartMenuPalette(), 0, 32);
         }
         LoadPalette(sScrollBgPalette, 16, 32);
     }

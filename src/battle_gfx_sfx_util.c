@@ -734,6 +734,16 @@ void BattleLoadAllHealthBoxesGfxAtOnce(void)
         LoadCompressedSpriteSheet(&sSpriteSheets_HealthBar[GetBattlerPosition(i)]);
 }
 
+static const u16 *GetStatusSummaryBarPaletteData(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return gBattleInterface_BallStatusBarPalShiny;
+    }
+    return gBattleInterface_BallStatusBarPal;
+}
+
 bool8 BattleLoadAllHealthBoxesGfx(u8 state)
 {
     bool8 retVal = FALSE;
@@ -742,8 +752,15 @@ bool8 BattleLoadAllHealthBoxesGfx(u8 state)
     {
         if (state == 1)
         {
-            LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[0]);
-            LoadSpritePalette(&sSpritePalettes_HealthBoxHealthBar[1]);
+
+            const u16 *healthboxFramePaletteData = GetStatusSummaryBarPaletteData(); 
+            struct SpritePalette tempHealthboxFramePal = sSpritePalettes_HealthBoxHealthBar[0];
+            tempHealthboxFramePal.data = healthboxFramePaletteData; 
+            LoadSpritePalette(&tempHealthboxFramePal);
+            struct SpritePalette tempHpBarFillPal = sSpritePalettes_HealthBoxHealthBar[1];
+            tempHpBarFillPal.data = gBattleInterface_BallDisplayPal; 
+            LoadSpritePalette(&tempHpBarFillPal);
+            LoadSpritePalette(&tempHpBarFillPal);
             LoadIndicatorSpritesGfx();
             CategoryIcons_LoadSpritesGfx();
         }

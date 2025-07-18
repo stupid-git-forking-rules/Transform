@@ -990,6 +990,31 @@ static void BagMenu_InitBGs(void)
     SetGpuReg(REG_OFFSET_BLDCNT, 0);
 }
 
+static const u16 *GetBagSpritePalette(void)
+{
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return gBagShinyPalette;
+    }
+    else
+    {
+        return gBagPalette;
+    }
+}
+
+static const u16 *GetBagGfxPalette(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return gBagScreenShiny_Pal;
+    }
+    else
+    {
+        return gBagScreenMale_Pal;
+    }
+}
+
 static bool8 LoadBagMenu_Graphics(void)
 {
     switch (gBagMenu->graphicsLoadState)
@@ -1010,7 +1035,7 @@ static bool8 LoadBagMenu_Graphics(void)
         if (!IsWallysBag() && gSaveBlock2Ptr->playerGender != MALE)
             LoadPalette(gBagScreenFemale_Pal, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
         else
-            LoadPalette(gBagScreenMale_Pal, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+            LoadPalette(GetBagGfxPalette(), BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
         gBagMenu->graphicsLoadState++;
         break;
     case 3:
@@ -1022,6 +1047,8 @@ static bool8 LoadBagMenu_Graphics(void)
         break;
     case 4:
         LoadSpritePalette(&gBagPaletteTable);
+        u32 paletteIndex = IndexOfSpritePaletteTag(TAG_BAG_GFX);
+        LoadPalette(GetBagSpritePalette(), OBJ_PLTT_ID(paletteIndex), PLTT_SIZE_4BPP);
         gBagMenu->graphicsLoadState++;
         break;
     default:

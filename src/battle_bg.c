@@ -27,6 +27,7 @@
 #include "constants/trainers.h"
 #include "constants/battle_anim.h"
 #include "constants/battle_partner.h"
+#include "battle_interface.h"
 
 // .rodata
 
@@ -862,7 +863,7 @@ void LoadBattleTextboxAndBackground(void)
     LZDecompressVram(gBattleTextboxTiles, (void *)(BG_CHAR_ADDR(0)));
     CopyToBgTilemapBuffer(0, gBattleTextboxTilemap, 0, 0);
     CopyBgTilemapBufferToVram(0);
-    LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+    LoadPalette(GetBattleTextboxPaletteForShinyMon(), BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
     LoadBattleMenuWindowGfx();
     if (B_TERRAIN_BG_CHANGE == TRUE)
         DrawTerrainTypeBattleBackground();
@@ -1231,7 +1232,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         CopyBgTilemapBufferToVram(0);
         break;
     case 2:
-        LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+        LoadPalette(GetBattleTextboxPaletteForShinyMon(), BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
         break;
     case 3:
         if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_EREADER_TRAINER))

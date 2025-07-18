@@ -203,10 +203,39 @@ static EWRAM_DATA u8 *sBg3TilemapBuffer = NULL;
 static const u8 sEqualSignGfx[] = INCBIN_U8("graphics/interface/option_menu_equals_sign.4bpp"); // note: this is only used in the Japanese release
 static const u16 sOptionMenuBg_Pal[] = {RGB(0, 0, 0)};
 static const u16 sOptionMenuText_Pal[] = INCBIN_U16("graphics/interface/option_menu_text_custom.gbapal");
+static const u16 sOptionMenuText_PalShiny[] = INCBIN_U16("graphics/interface/option_menu_text_custom_shiny.gbapal");
+
 
 static const u32 sOptionsPlusTiles[] = INCBIN_U32("graphics/ui_options_plus/options_plus_tiles.4bpp.lz");
 static const u16 sOptionsPlusPalette[] = INCBIN_U16("graphics/ui_options_plus/options_plus_tiles.gbapal");
+static const u16 sOptionsPlusPaletteShiny[] = INCBIN_U16("graphics/ui_options_plus/options_plus_tiles_shiny.gbapal");
 static const u32 sOptionsPlusTilemap[] = INCBIN_U32("graphics/ui_options_plus/options_plus_tiles.bin.lz");
+
+static const u16 *GetOptionsPlusMenuPalette(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return sOptionsPlusPaletteShiny; 
+    }
+    else
+    {
+        return sOptionsPlusPalette; 
+    }
+}
+static const u16 *GetOptionsPlusTextPalette(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return sOptionMenuText_PalShiny; 
+    }
+    else
+    {
+        return sOptionMenuText_Pal; 
+    }
+}
+
 
 // Scrolling Background
 static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_options_plus/subtleditto.4bpp.lz");
@@ -622,7 +651,7 @@ static bool8 OptionsMenu_LoadGraphics(void) // Load all the tilesets, tilemaps, 
         }
         break;
     case 4:
-        LoadPalette(sOptionsPlusPalette, 64, 32);
+        LoadPalette(GetOptionsPlusMenuPalette(), 64, 32);
         LoadPalette(sScrollBgPalette, 32, 32);
         sOptions->gfxLoadState++;
         break;
@@ -697,11 +726,11 @@ void CB2_InitOptionPlusMenu(void)
         break;
     case 4:
         LoadPalette(sOptionMenuBg_Pal, 0, sizeof(sOptionMenuBg_Pal));
-        LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, 0x70, 0x20);
+        LoadPalette(GetTextWindowFramePalette(gSaveBlock2Ptr->optionsWindowFrameType), 0x70, 0x20);
         gMain.state++;
         break;
     case 5:
-        LoadPalette(sOptionMenuText_Pal, 16, sizeof(sOptionMenuText_Pal));
+        LoadPalette(GetOptionsPlusTextPalette(), 16, sizeof(sOptionMenuText_Pal));
         gMain.state++;
         break;
     case 6:

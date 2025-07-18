@@ -11,7 +11,10 @@ struct TilesPal
 
 extern const u8 gTextWindowFrame1_Gfx[];
 extern const u16 gTextWindowFrame1_Pal[];
+extern const u16 sTextWindowFrame1_ShinyPal[];
 
+
+const u16 *GetTextWindowFramePalette(u8 frameId);
 const struct TilesPal *GetWindowFrameTilesPal(u8 id);
 void LoadMessageBoxGfx(u8 windowId, u16 destOffset, u8 palOffset);
 void LoadSignBoxGfx(u8 windowId, u16 destOffset, u8 palOffset);

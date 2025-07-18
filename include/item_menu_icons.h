@@ -6,6 +6,13 @@ extern const struct CompressedSpriteSheet gBagFemaleSpriteSheet;
 extern const struct SpritePalette gBagPaletteTable;
 extern const struct CompressedSpriteSheet gBerryCheckCircleSpriteSheet;
 extern const struct SpritePalette gBerryCheckCirclePaletteTable;
+// moved from .c filefor access for shiny bag
+enum {
+    TAG_BAG_GFX = 100,
+    TAG_ROTATING_BALL_GFX,
+    TAG_ITEM_ICON,
+    TAG_ITEM_ICON_ALT,
+};
 
 void RemoveBagSprite(u8 id);
 void AddBagVisualSprite(u8 bagPocketId);

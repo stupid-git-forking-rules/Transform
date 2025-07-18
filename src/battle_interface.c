@@ -211,6 +211,17 @@ static void SpriteCB_MoveInfoWin(struct Sprite *sprite);
 static u8 *AddTextPrinterAndCreateWindowOnHealthboxLightText(const u8 *str, u32 x, u32 y, u32 bgColor, u32 *windowId);
 static void PrintHpOnHealthboxLightText(u32 spriteId, s16 currHp, s16 maxHp, u32 bgColor, u32 rightTile, u32 leftTile);
 
+
+//battle text box helper function
+const u16* GetBattleTextboxPaletteForShinyMon(void)
+{
+    if (IsMonShiny(&gPlayerParty[0]))
+    {
+        return gBattleTextboxPaletteShiny;
+    }
+    return gBattleTextboxPalette;
+}
+
 static const struct OamData sOamData_64x32 =
 {
     .y = 0,
@@ -1303,6 +1314,16 @@ void SwapHpBarsWithHpText(void)
 #define tIsBattleStart          data[10]
 #define tBlend                  data[15]
 
+static const u16 *GetStatusSummaryBarPaletteData(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return gBattleInterface_BallStatusBarPalShiny;
+    }
+    return gBattleInterface_BallStatusBarPal;
+}
+
 u8 CreatePartyStatusSummarySprites(u8 battler, struct HpAndStatus *partyInfo, bool8 skipPlayer, bool8 isBattleStart)
 {
     bool8 isOpponent;
@@ -1344,7 +1365,9 @@ u8 CreatePartyStatusSummarySprites(u8 battler, struct HpAndStatus *partyInfo, bo
 
     LoadCompressedSpriteSheetUsingHeap(&sStatusSummaryBarSpriteSheet);
     LoadSpriteSheet(&sStatusSummaryBallsSpriteSheet);
-    LoadSpritePalette(&sStatusSummaryBarSpritePal);
+    struct SpritePalette tempPalette = sStatusSummaryBarSpritePal;
+    tempPalette.data = GetStatusSummaryBarPaletteData(); 
+    LoadSpritePalette(&tempPalette);
     LoadSpritePalette(&sStatusSummaryBallsSpritePal);
 
     summaryBarSpriteId = CreateSprite(&sStatusSummaryBarSpriteTemplates[isOpponent], bar_X, bar_Y, 10);
@@ -2484,6 +2507,7 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
 
 static const u8 ALIGNED(4) sAbilityPopUpGfx[] = INCBIN_U8("graphics/battle_interface/ability_pop_up.4bpp");
 static const u16 sAbilityPopUpPalette[] = INCBIN_U16("graphics/battle_interface/ability_pop_up.gbapal");
+static const u16 sAbilityPopUpPaletteShiny[] = INCBIN_U16("graphics/battle_interface/ability_pop_up_shiny.gbapal");
 
 static const struct SpriteSheet sSpriteSheet_AbilityPopUp =
 {
@@ -2493,6 +2517,16 @@ static const struct SpritePalette sSpritePalette_AbilityPopUp =
 {
     sAbilityPopUpPalette, ABILITY_POP_UP_TAG
 };
+
+static const u16 *GetAbilityPopUpPaletteData(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return sAbilityPopUpPaletteShiny;
+    }
+    return sAbilityPopUpPalette;
+}
 
 static const struct OamData sOamData_AbilityPopUp =
 {
@@ -2799,7 +2833,9 @@ void CreateAbilityPopUp(u8 battler, u32 ability, bool32 isDoubleBattle)
     if (!IsAnyAbilityPopUpActive())
     {
         LoadSpriteSheet(&sSpriteSheet_AbilityPopUp);
-        LoadSpritePalette(&sSpritePalette_AbilityPopUp);
+        struct SpritePalette tempPalette = sSpritePalette_AbilityPopUp; // Copy base struct
+        tempPalette.data = GetAbilityPopUpPaletteData(); // Assign shiny or normal data
+        LoadSpritePalette(&tempPalette); // Load the chosen palette
     }
 
     gBattleStruct->battlerState[battler].activeAbilityPopUps = TRUE;
@@ -3077,8 +3113,9 @@ void TryAddLastUsedBallItemSprites(void)
     }
 
     // window
-    LoadSpritePalette(&sSpritePalette_AbilityPopUp);
-    if (GetSpriteTileStartByTag(LAST_BALL_WINDOW_TAG) == 0xFFFF)
+    struct SpritePalette tempPalette = sSpritePalette_AbilityPopUp;
+    tempPalette.data = GetAbilityPopUpPaletteData();
+    LoadSpritePalette(&tempPalette);    if (GetSpriteTileStartByTag(LAST_BALL_WINDOW_TAG) == 0xFFFF)
         LoadSpriteSheet(&sSpriteSheet_LastUsedBallWindow);
 
     if (gBattleStruct->ballSpriteIds[1] == MAX_SPRITES)
@@ -3115,7 +3152,9 @@ void TryToAddMoveInfoWindow(void)
     if (!B_SHOW_MOVE_DESCRIPTION)
         return;
 
-    LoadSpritePalette(&sSpritePalette_AbilityPopUp);
+    struct SpritePalette tempPalette = sSpritePalette_AbilityPopUp;
+    tempPalette.data = GetAbilityPopUpPaletteData();
+    LoadSpritePalette(&tempPalette);
     if (GetSpriteTileStartByTag(MOVE_INFO_WINDOW_TAG) == 0xFFFF)
         LoadSpriteSheet(&sSpriteSheet_MoveInfoWindow);
 

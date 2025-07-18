@@ -3,6 +3,7 @@
 
 const u32 gBattleTextboxTiles[] = INCBIN_U32("graphics/battle_interface/textbox.4bpp.lz");
 const u16 gBattleTextboxPalette[] = INCBIN_U16("graphics/battle_interface/textbox.gbapal");
+const u16 gBattleTextboxPaletteShiny[] = INCBIN_U16("graphics/battle_interface/textbox_shiny.gbapal");
 const u32 gBattleTextboxTilemap[] = INCBIN_U32("graphics/battle_interface/textbox_map.bin.lz");
 
 const u32 gUnusedGfx_OldCharmap[] = INCBIN_U32("graphics/unused/old_charmap.4bpp.lz"); // japanese table and bunch of stuff
@@ -705,6 +706,7 @@ const u32 gUnusedTilemap_BasicFrame[] = INCBIN_U32("graphics/unused/basic_frame.
 // Battle Interface
 
 const u16 gBattleInterface_BallStatusBarPal[] = INCBIN_U16("graphics/battle_interface/ball_status_bar.gbapal");
+const u16 gBattleInterface_BallStatusBarPalShiny[] = INCBIN_U16("graphics/battle_interface/ball_status_bar_shiny.gbapal");
 
 const u16 gBattleInterface_BallDisplayPal[] = INCBIN_U16("graphics/battle_interface/ball_display.gbapal");
 
@@ -1705,10 +1707,11 @@ const u32 gSummaryPage_InfoEgg_Tilemap[]      = INCBIN_U32("graphics/summary_scr
 const u32 gBagMaleTiles[] = INCBIN_U32("graphics/bag/bag_male.4bpp.lz");
 const u32 gBagFemaleTiles[] = INCBIN_U32("graphics/bag/bag_female.4bpp.lz");
 const u16 gBagPalette[] = INCBIN_U16("graphics/bag/bag.gbapal");
+const u16 gBagShinyPalette[] = INCBIN_U16("graphics/bag/bag_shiny.gbapal");
 
 const u16 gBagScreenMale_Pal[] = INCBIN_U16("graphics/bag/menu_male.gbapal");
 const u16 gBagScreenFemale_Pal[] = INCBIN_U16("graphics/bag/menu_female.gbapal");
-
+const u16 gBagScreenShiny_Pal[] = INCBIN_U16("graphics/bag/menu_male_shiny.gbapal");
 const u32 gBagScreen_Gfx[] = INCBIN_U32("graphics/bag/menu.4bpp.lz");
 const u32 gBagScreen_GfxTileMap[] = INCBIN_U32("graphics/bag/menu.bin.lz");
 
@@ -2039,6 +2042,7 @@ const u16 gTradeMenu_Tilemap[] = INCBIN_U16("graphics/trade/menu.bin");
 const u16 gTradeMenuMonBox_Tilemap[] = INCBIN_U16("graphics/trade/menu_mon_box.bin");
 
 const u16 gMessageBox_Pal[] = INCBIN_U16("graphics/text_window/message_box.gbapal");
+const u16 gMessageBoxShiny_Pal[] = INCBIN_U16("graphics/text_window/message_box_shiny.gbapal");
 const u32 gMessageBox_Gfx[] = INCBIN_U32("graphics/text_window/message_box.4bpp");
 const u32 gSignpostWindow_Gfx[] = INCBIN_U32("graphics/text_window/signpost.4bpp");
 

@@ -29,6 +29,7 @@ static const u8 sTextWindowFrame19_Gfx[] = INCBIN_U8("graphics/text_window/19.4b
 static const u8 sTextWindowFrame20_Gfx[] = INCBIN_U8("graphics/text_window/20.4bpp");
 
 const u16 gTextWindowFrame1_Pal[] = INCBIN_U16("graphics/text_window/1.gbapal");
+const u16 sTextWindowFrame1_ShinyPal[] = INCBIN_U16("graphics/text_window/1_shiny.gbapal");
 static const u16 sTextWindowFrame2_Pal[] = INCBIN_U16("graphics/text_window/2.gbapal");
 static const u16 sTextWindowFrame3_Pal[] = INCBIN_U16("graphics/text_window/3.gbapal");
 static const u16 sTextWindowFrame4_Pal[] = INCBIN_U16("graphics/text_window/4.gbapal");
@@ -94,6 +95,22 @@ const struct TilesPal *GetWindowFrameTilesPal(u8 id)
         return &sWindowFrames[id];
 }
 
+const u16 *GetTextWindowFramePalette(u8 frameId)
+{
+    if (frameId == 0)
+    {
+        if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+        {
+            return sTextWindowFrame1_ShinyPal;
+        }
+        else
+        {
+            return gTextWindowFrame1_Pal; 
+        }
+    }
+    return sWindowFrames[frameId].pal;
+}
+
 void LoadMessageBoxGfx(u8 windowId, u16 destOffset, u8 palOffset)
 {
     LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), gMessageBox_Gfx, 0x1C0, destOffset);
@@ -114,7 +131,7 @@ void LoadUserWindowBorderGfx_(u8 windowId, u16 destOffset, u8 palOffset)
 void LoadWindowGfx(u8 windowId, u8 frameId, u16 destOffset, u8 palOffset)
 {
     LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sWindowFrames[frameId].tiles, 0x120, destOffset);
-    LoadPalette(sWindowFrames[frameId].pal, palOffset, PLTT_SIZE_4BPP);
+    LoadPalette(GetTextWindowFramePalette(frameId), palOffset, PLTT_SIZE_4BPP);
 }
 
 void LoadUserWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset)
@@ -196,14 +213,21 @@ const u16 *GetTextWindowPalette(u8 id)
 
 const u16 *GetOverworldTextboxPalettePtr(void)
 {
-    return gMessageBox_Pal;
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return gMessageBoxShiny_Pal;
+    }
+    else
+    {
+        return gMessageBox_Pal; 
+    }
 }
 
 // Effectively LoadUserWindowBorderGfx but specifying the bg directly instead of a window from that bg
 void LoadUserWindowBorderGfxOnBg(u8 bg, u16 destOffset, u8 palOffset)
 {
     LoadBgTiles(bg, sWindowFrames[gSaveBlock2Ptr->optionsWindowFrameType].tiles, 0x120, destOffset);
-    LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, palOffset, PLTT_SIZE_4BPP);
+    LoadPalette(GetTextWindowFramePalette(gSaveBlock2Ptr->optionsWindowFrameType), palOffset, PLTT_SIZE_4BPP);
 }
 
 void LoadDexNavWindowGfx(u8 windowId, u16 destOffset, u8 palOffset)

@@ -13,13 +13,9 @@
 #include "window.h"
 #include "util.h"
 #include "constants/items.h"
+#include "palette.h"
 
-enum {
-    TAG_BAG_GFX = 100,
-    TAG_ROTATING_BALL_GFX,
-    TAG_ITEM_ICON,
-    TAG_ITEM_ICON_ALT,
-};
+
 #define TAG_BERRY_CHECK_CIRCLE_GFX 10000
 #define TAG_BERRY_PIC_PAL 30020
 
@@ -37,6 +33,7 @@ static void SpriteCB_SwitchPocketRotatingBallContinue(struct Sprite *sprite);
 
 // static const rom data
 static const u16 sRotatingBall_Pal[] = INCBIN_U16("graphics/bag/rotating_ball.gbapal");
+static const u16 sRotatingBall_ShinyPal[] = INCBIN_U16("graphics/bag/rotating_ball_shiny.gbapal");
 static const u8 sRotatingBall_Gfx[] = INCBIN_U8("graphics/bag/rotating_ball.4bpp");
 static const u8 sCherryUnused[] = INCBIN_U8("graphics/unused/cherry.4bpp");
 static const u16 sCherryUnused_Pal[] = INCBIN_U16("graphics/unused/cherry.gbapal");
@@ -215,6 +212,19 @@ static const struct SpritePalette sRotatingBallPaletteTable =
 {
     sRotatingBall_Pal, TAG_ROTATING_BALL_GFX
 };
+
+static const u16 *GetRotatingBallPalette(void)
+{
+
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        return sRotatingBall_ShinyPal;
+    }
+    else
+    {
+        return sRotatingBall_Pal;
+    }
+}
 
 static const struct SpriteTemplate sRotatingBallSpriteTemplate =
 {
@@ -522,6 +532,8 @@ void AddSwitchPocketRotatingBallSprite(s16 rotationDirection)
     u8 *spriteId = &gBagMenu->spriteIds[ITEMMENUSPRITE_BALL];
     LoadSpriteSheet(&sRotatingBallTable);
     LoadSpritePalette(&sRotatingBallPaletteTable);
+    u32 paletteIndex = IndexOfSpritePaletteTag(TAG_ROTATING_BALL_GFX);
+    LoadPalette(GetRotatingBallPalette(), OBJ_PLTT_ID(paletteIndex), PLTT_SIZE_4BPP);
     *spriteId = CreateSprite(&sRotatingBallSpriteTemplate, 16, 16, 0);
     gSprites[*spriteId].data[0] = rotationDirection;
 }
