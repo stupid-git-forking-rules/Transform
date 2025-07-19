@@ -830,3 +830,47 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_DesertPrimary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_DesertPrimary,
+    .palettes = gTilesetPalettes_DesertPrimary,
+    .metatiles = gMetatiles_DesertPrimary,
+    .metatileAttributes = gMetatileAttributes_DesertPrimary,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_DesertSecondary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_DesertSecondary,
+    .palettes = gTilesetPalettes_DesertSecondary,
+    .metatiles = gMetatiles_DesertSecondary,
+    .metatileAttributes = gMetatileAttributes_DesertSecondary,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_GeneralORAS =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_GeneralORAS,
+    .palettes = gTilesetPalettes_GeneralORAS,
+    .metatiles = gMetatiles_GeneralORAS,
+    .metatileAttributes = gMetatileAttributes_GeneralORAS,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_MauvilleORAS =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MauvilleORAS,
+    .palettes = gTilesetPalettes_MauvilleORAS,
+    .metatiles = gMetatiles_MauvilleORAS,
+    .metatileAttributes = gMetatileAttributes_MauvilleORAS,
+    .callback = NULL,
+};

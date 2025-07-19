@@ -4424,12 +4424,22 @@
     {
       "id": "LAYOUT_DAYCARE_EAST",
       "name": "DaycareEast_Layout",
-      "width": 59,
+      "width": 71,
       "height": 43,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/DaycareEast/border.bin",
       "blockdata_filepath": "data/layouts/DaycareEast/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAYCARE_DESERT",
+      "name": "DaycareDesert_Layout",
+      "width": 50,
+      "height": 50,
+      "primary_tileset": "gTileset_DesertPrimary",
+      "secondary_tileset": "gTileset_DesertSecondary",
+      "border_filepath": "data/layouts/DaycareDesert/border.bin",
+      "blockdata_filepath": "data/layouts/DaycareDesert/map.bin"
     }
   ]
 }

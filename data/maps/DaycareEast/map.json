@@ -17,6 +17,11 @@
       "map": "MAP_DAYCAREBASE",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_DAYCARE_DESERT",
+      "offset": 7,
+      "direction": "up"
     }
   ],
   "object_events": [],

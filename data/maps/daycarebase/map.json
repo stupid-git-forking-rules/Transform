@@ -17,11 +17,6 @@
       "map": "MAP_DAYCARE_EAST",
       "offset": 0,
       "direction": "right"
-    },
-    {
-      "map": "MAP_ROUTE117",
-      "offset": 0,
-      "direction": "down"
     }
   ],
   "object_events": [

@@ -207,3 +207,15 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
+
+const u16 gMetatiles_DesertPrimary[] = INCBIN_U16("data/tilesets/primary/desert_primary/metatiles.bin");
+const u16 gMetatileAttributes_DesertPrimary[] = INCBIN_U16("data/tilesets/primary/desert_primary/metatile_attributes.bin");
+
+const u16 gMetatiles_DesertSecondary[] = INCBIN_U16("data/tilesets/secondary/desert_secondary/metatiles.bin");
+const u16 gMetatileAttributes_DesertSecondary[] = INCBIN_U16("data/tilesets/secondary/desert_secondary/metatile_attributes.bin");
+
+const u16 gMetatiles_GeneralORAS[] = INCBIN_U16("data/tilesets/primary/general_oras/metatiles.bin");
+const u16 gMetatileAttributes_GeneralORAS[] = INCBIN_U16("data/tilesets/primary/general_oras/metatile_attributes.bin");
+
+const u16 gMetatiles_MauvilleORAS[] = INCBIN_U16("data/tilesets/secondary/mauville_oras/metatiles.bin");
+const u16 gMetatileAttributes_MauvilleORAS[] = INCBIN_U16("data/tilesets/secondary/mauville_oras/metatile_attributes.bin");
