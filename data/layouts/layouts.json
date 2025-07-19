@@ -4416,8 +4416,8 @@
       "name": "daycarebase_Layout",
       "width": 44,
       "height": 59,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "primary_tileset": "gTileset_GeneralORAS",
+      "secondary_tileset": "gTileset_MauvilleORAS",
       "border_filepath": "data/layouts/daycarebase/border.bin",
       "blockdata_filepath": "data/layouts/daycarebase/map.bin"
     },
