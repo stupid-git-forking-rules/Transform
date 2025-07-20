@@ -901,6 +901,18 @@ static bool8 AllocPartyMenuBg(void)
     return TRUE;
 }
 
+const u16* GetPartyMenuBgPal(void)
+{
+    if (IsMonShiny(&gPlayerParty[0]))
+        {
+            return gPartyMenuBg_Pal_Shiny;
+        }
+    else
+        {
+            return gPartyMenuBg_Pal;
+        }
+}
+
 static bool8 AllocPartyMenuBgGfx(void)
 {
     u32 sizeout;
@@ -920,7 +932,7 @@ static bool8 AllocPartyMenuBgGfx(void)
         }
         break;
     case 2:
-        LoadPalette(gPartyMenuBg_Pal, BG_PLTT_ID(0), 11 * PLTT_SIZE_4BPP);
+        LoadPalette(GetPartyMenuBgPal(), BG_PLTT_ID(0), 11 * PLTT_SIZE_4BPP);
         CpuCopy16(gPlttBufferUnfaded, sPartyMenuInternal->palBuffer, 11 * PLTT_SIZE_4BPP);
         sPartyMenuInternal->data[0]++;
         break;
@@ -2468,10 +2480,24 @@ static void LoadDittoPalette(u8 BgPalSlot, u8 palType)
     {
     default: 
     case DITTO_PALETTE_NORMAL: 
-        LoadPalette(sDitto_NormalPal, BG_PLTT_ID(BgPalSlot), PLTT_SIZE_4BPP);
+        if (IsMonShiny(&gPlayerParty[0]))
+        {
+            LoadPalette(sDitto_ShinyPal, BG_PLTT_ID(BgPalSlot), PLTT_SIZE_4BPP);
+        }
+        else
+        {
+            LoadPalette(sDitto_NormalPal, BG_PLTT_ID(BgPalSlot), PLTT_SIZE_4BPP);
+        }
         break;
     case DITTO_PALETTE_SELECTED:
-        LoadPalette(sDitto_SelectedPal, BG_PLTT_ID(BgPalSlot), PLTT_SIZE_4BPP);
+        if (IsMonShiny(&gPlayerParty[0]))
+        {
+            LoadPalette(sDitto_SelectedShinyPal, BG_PLTT_ID(BgPalSlot), PLTT_SIZE_4BPP);
+        }
+        else
+        {
+            LoadPalette(sDitto_SelectedPal, BG_PLTT_ID(BgPalSlot), PLTT_SIZE_4BPP);
+        }
         break;
     }
 }

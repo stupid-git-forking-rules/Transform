@@ -112,7 +112,8 @@ static const u32 sCancelButton_Tilemap[] = INCBIN_U32("graphics/party_menu/cance
 static const u8 sDitto_Gfx[] = INCBIN_U8("graphics/party_menu/ditto.4bpp");
 static const u16 sDitto_NormalPal[] = INCBIN_U16("graphics/party_menu/ditto_normal.gbapal");
 static const u16 sDitto_SelectedPal[] = INCBIN_U16("graphics/party_menu/ditto_selected.gbapal");
-
+static const u16 sDitto_ShinyPal[] = INCBIN_U16("graphics/party_menu/ditto_shiny.gbapal");
+static const u16 sDitto_SelectedShinyPal[] = INCBIN_U16("graphics/party_menu/ditto_shiny_selected.gbapal");
 #define DITTO_PALSLOT 8
 
 // Text colors for BG, FG, and Shadow in that order
