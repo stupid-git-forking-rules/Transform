@@ -874,3 +874,14 @@ const struct Tileset gTileset_MauvilleORAS =
     .metatileAttributes = gMetatileAttributes_MauvilleORAS,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_FortreeORAS =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FortreeORAS,
+    .palettes = gTilesetPalettes_FortreeORAS,
+    .metatiles = gMetatiles_FortreeORAS,
+    .metatileAttributes = gMetatileAttributes_FortreeORAS,
+    .callback = NULL,
+};

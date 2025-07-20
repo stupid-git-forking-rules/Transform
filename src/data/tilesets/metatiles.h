@@ -219,3 +219,6 @@ const u16 gMetatileAttributes_GeneralORAS[] = INCBIN_U16("data/tilesets/primary/
 
 const u16 gMetatiles_MauvilleORAS[] = INCBIN_U16("data/tilesets/secondary/mauville_oras/metatiles.bin");
 const u16 gMetatileAttributes_MauvilleORAS[] = INCBIN_U16("data/tilesets/secondary/mauville_oras/metatile_attributes.bin");
+
+const u16 gMetatiles_FortreeORAS[] = INCBIN_U16("data/tilesets/secondary/fortree_oras/metatiles.bin");
+const u16 gMetatileAttributes_FortreeORAS[] = INCBIN_U16("data/tilesets/secondary/fortree_oras/metatile_attributes.bin");

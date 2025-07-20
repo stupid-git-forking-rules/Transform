@@ -96,7 +96,10 @@
     "daycarebase",
     "mauvilleplaceholder",
     "DaycareEast",
-    "DaycareDesert"
+    "DaycareDesert",
+    "DaycareWest",
+    "DaycareTreehouse",
+    "DaycareMountain"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

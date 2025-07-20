@@ -1165,3 +1165,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DaycareEast/scripts.inc"
 
 	.include "data/maps/DaycareDesert/scripts.inc"
+
+	.include "data/maps/DaycareWest/scripts.inc"
+
+	.include "data/maps/DaycareTreehouse/scripts.inc"
+
+	.include "data/maps/DaycareMountain/scripts.inc"

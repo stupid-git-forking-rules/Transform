@@ -4416,16 +4416,16 @@
       "name": "daycarebase_Layout",
       "width": 44,
       "height": 59,
-      "primary_tileset": "gTileset_GeneralORAS",
-      "secondary_tileset": "gTileset_MauvilleORAS",
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/daycarebase/border.bin",
       "blockdata_filepath": "data/layouts/daycarebase/map.bin"
     },
     {
       "id": "LAYOUT_DAYCARE_EAST",
       "name": "DaycareEast_Layout",
-      "width": 71,
-      "height": 43,
+      "width": 78,
+      "height": 47,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/DaycareEast/border.bin",
@@ -4440,6 +4440,36 @@
       "secondary_tileset": "gTileset_DesertSecondary",
       "border_filepath": "data/layouts/DaycareDesert/border.bin",
       "blockdata_filepath": "data/layouts/DaycareDesert/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAYCARE_WEST",
+      "name": "DaycareWest_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/DaycareWest/border.bin",
+      "blockdata_filepath": "data/layouts/DaycareWest/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAYCARE_TREEHOUSE",
+      "name": "DaycareTreehouse_Layout",
+      "width": 44,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/DaycareTreehouse/border.bin",
+      "blockdata_filepath": "data/layouts/DaycareTreehouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAYCARE_MOUNTAIN",
+      "name": "DaycareMountain_Layout",
+      "width": 44,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/DaycareMountain/border.bin",
+      "blockdata_filepath": "data/layouts/DaycareMountain/map.bin"
     }
   ]
 }
