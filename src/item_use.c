@@ -1631,6 +1631,7 @@ void ItemUseOnFieldCB_StrengthTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_MACHAMP);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1643,6 +1644,7 @@ void ItemUseOnFieldCB_DittoTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_DITTO);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1655,7 +1657,7 @@ void ItemUseOnFieldCB_SurfTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_MARILL);
-
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1668,6 +1670,7 @@ void ItemUseOnFieldCB_ShrinkTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_CUTIEFLY);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1680,6 +1683,7 @@ void ItemUseOnFieldCB_FlyTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_NOIVERN);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1692,6 +1696,7 @@ void ItemUseOnFieldCB_RockSmashTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_RHYHORN);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1704,6 +1709,7 @@ void ItemUseOnFieldCB_DiveTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_CHINCHOU);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1716,6 +1722,7 @@ void ItemUseOnFieldCB_WaterfallTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_DRAGONAIR);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1728,6 +1735,7 @@ void ItemUseOnFieldCB_MachBikeTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_ARCANINE);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1740,6 +1748,7 @@ void ItemUseOnFieldCB_AcroBikeTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_WEAVILE);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1752,6 +1761,7 @@ void ItemUseOnFieldCB_CutTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_SCYTHER);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
@@ -1764,6 +1774,7 @@ void ItemUseOnFieldCB_FlashTransform(u8 taskId)
 {
     LockPlayerFieldControls();
     SetPlayerAvatarFromItem(SPECIES_PIKACHU);
+    ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
 
