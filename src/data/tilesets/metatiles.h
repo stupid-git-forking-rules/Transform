@@ -222,3 +222,12 @@ const u16 gMetatileAttributes_MauvilleORAS[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_FortreeORAS[] = INCBIN_U16("data/tilesets/secondary/fortree_oras/metatiles.bin");
 const u16 gMetatileAttributes_FortreeORAS[] = INCBIN_U16("data/tilesets/secondary/fortree_oras/metatile_attributes.bin");
+
+const u16 gMetatiles_BeachCave[] = INCBIN_U16("data/tilesets/secondary/beach_cave/metatiles.bin");
+const u16 gMetatileAttributes_BeachCave[] = INCBIN_U16("data/tilesets/secondary/beach_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_Reef_Primary[] = INCBIN_U16("data/tilesets/primary/reef_primary/metatiles.bin");
+const u16 gMetatileAttributes_Reef_Primary[] = INCBIN_U16("data/tilesets/primary/reef_primary/metatile_attributes.bin");
+
+const u16 gMetatiles_Reef_Secondary[] = INCBIN_U16("data/tilesets/secondary/reef_secondary/metatiles.bin");
+const u16 gMetatileAttributes_Reef_Secondary[] = INCBIN_U16("data/tilesets/secondary/reef_secondary/metatile_attributes.bin");

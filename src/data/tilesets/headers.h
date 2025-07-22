@@ -885,3 +885,36 @@ const struct Tileset gTileset_FortreeORAS =
     .metatileAttributes = gMetatileAttributes_FortreeORAS,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_BeachCave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_BeachCave,
+    .palettes = gTilesetPalettes_BeachCave,
+    .metatiles = gMetatiles_BeachCave,
+    .metatileAttributes = gMetatileAttributes_BeachCave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Reef_Primary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Reef_Primary,
+    .palettes = gTilesetPalettes_Reef_Primary,
+    .metatiles = gMetatiles_Reef_Primary,
+    .metatileAttributes = gMetatileAttributes_Reef_Primary,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Reef_Secondary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Reef_Secondary,
+    .palettes = gTilesetPalettes_Reef_Secondary,
+    .metatiles = gMetatiles_Reef_Secondary,
+    .metatileAttributes = gMetatileAttributes_Reef_Secondary,
+    .callback = NULL,
+};

@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
@@ -60,7 +60,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SURSKIT)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDKIP)",
       "x": 3,
       "y": 41,
       "elevation": 0,
@@ -114,7 +114,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GOOMY)",
       "x": 17,
-      "y": 26,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 0,
@@ -190,13 +190,39 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SCYTHER)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MARILL)",
       "x": 45,
       "y": 47,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PSYDUCK)",
+      "x": 20,
+      "y": 46,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPRIGATITO)",
+      "x": 4,
+      "y": 46,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",

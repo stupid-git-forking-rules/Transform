@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HIPPOPOTAS)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RHYHORN)",
       "x": 12,
       "y": 26,
       "elevation": 0,
@@ -147,6 +147,41 @@
       "elevation": 0,
       "dest_map": "MAP_DESERT_TO_FIRE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 33,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_CAVETO_MEW",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 34,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_CAVETO_MEW",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 25,
+      "y": 44,
+      "elevation": 0,
+      "dest_map": "MAP_DAYCARE_BEACH_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 44,
+      "elevation": 0,
+      "dest_map": "MAP_DAYCARE_BEACH_CAVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 43,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_DAYCARE_MEW",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],

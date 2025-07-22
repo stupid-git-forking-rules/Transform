@@ -101,7 +101,8 @@
     "DaycareWest",
     "DaycareTreehouse",
     "DaycareMountain",
-    "DaycarePond"
+    "DaycarePond",
+    "DaycareEastUnderwater"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -633,6 +634,15 @@
   "gMapGroup_DaycareDunegons": [
     "EasttoDesert",
     "DesertToFire",
-    "DaycareVolcano"
+    "DaycareVolcano",
+    "DaycareMountainCave",
+    "DaycareMountainCaveDeep",
+    "DaycareMountainCaveDeepDive",
+    "DaycareMountainCaveMachamp",
+    "CavetoMew",
+    "DaycareBeachCave",
+    "DaycareNoivernCave",
+    "DaycareMew",
+    "DaycareMewFinale"
   ]
 }

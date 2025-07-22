@@ -17,6 +17,11 @@
       "map": "MAP_DAYCAREBASE",
       "offset": 4,
       "direction": "left"
+    },
+    {
+      "map": "MAP_DAYCARE_EAST_UNDERWATER",
+      "offset": 0,
+      "direction": "dive"
     }
   ],
   "object_events": [
@@ -48,10 +53,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHELLOS_EAST)",
-      "x": 19,
-      "y": 30,
+      "x": 18,
+      "y": 29,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -145,6 +150,20 @@
       "elevation": 0,
       "dest_map": "MAP_EASTTO_DESERT",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 50,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_CAVETO_MEW",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 69,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_DAYCARE_NOIVERN_CAVE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

@@ -1179,3 +1179,23 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DaycareVolcano/scripts.inc"
 
 	.include "data/maps/DaycarePond/scripts.inc"
+
+	.include "data/maps/DaycareMountainCave/scripts.inc"
+
+	.include "data/maps/DaycareMountainCaveDeep/scripts.inc"
+
+	.include "data/maps/DaycareMountainCaveDeepDive/scripts.inc"
+
+	.include "data/maps/DaycareMountainCaveMachamp/scripts.inc"
+
+	.include "data/maps/CavetoMew/scripts.inc"
+
+	.include "data/maps/DaycareBeachCave/scripts.inc"
+
+	.include "data/maps/DaycareNoivernCave/scripts.inc"
+
+	.include "data/maps/DaycareMew/scripts.inc"
+
+	.include "data/maps/DaycareMewFinale/scripts.inc"
+
+	.include "data/maps/DaycareEastUnderwater/scripts.inc"
