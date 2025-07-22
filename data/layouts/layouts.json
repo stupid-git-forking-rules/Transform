@@ -4610,6 +4610,26 @@
       "secondary_tileset": "gTileset_Reef_Secondary",
       "border_filepath": "data/layouts/DaycareEastUnderwater/border.bin",
       "blockdata_filepath": "data/layouts/DaycareEastUnderwater/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAYCARE_MAUSHOLD_SHRINK",
+      "name": "DaycareMausholdShrink_Layout",
+      "width": 36,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DaycareMausholdShrink/border.bin",
+      "blockdata_filepath": "data/layouts/DaycareMausholdShrink/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAYCARE_PIKACHU_SHRINK_CAVE",
+      "name": "DaycarePikachuShrinkCave_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/DaycarePikachuShrinkCave/border.bin",
+      "blockdata_filepath": "data/layouts/DaycarePikachuShrinkCave/map.bin"
     }
   ]
 }
