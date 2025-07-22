@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIEES(TAROUTULA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAROUTULA)",
       "x": 10,
       "y": 37,
       "elevation": 0,
@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIEES(SHROODLE)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHROODLE)",
       "x": 6,
       "y": 31,
       "elevation": 0,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIEES(NYMBLE)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NYMBLE)",
       "x": 4,
       "y": 26,
       "elevation": 0,
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIEES(SINISTEA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SINISTEA)",
       "x": 17,
       "y": 30,
       "elevation": 0,
@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIEES(BLIPBUG)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BLIPBUG)",
       "x": 3,
       "y": 16,
       "elevation": 0,
@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIEES(JOLTIK)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(JOLTIK)",
       "x": 8,
       "y": 22,
       "elevation": 0,
@@ -93,7 +93,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIEES(SEWADDLE)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SEWADDLE)",
       "x": 21,
       "y": 13,
       "elevation": 0,
@@ -106,7 +106,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIEES(KARABLAST)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KARABLAST)",
       "x": 3,
       "y": 9,
       "elevation": 0,
@@ -119,7 +119,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIEES(KRICKETOT)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRICKETOT)",
       "x": 33,
       "y": 8,
       "elevation": 0,
