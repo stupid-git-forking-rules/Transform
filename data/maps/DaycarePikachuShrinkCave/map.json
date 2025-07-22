@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAROUTULA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAROUNTULA)",
       "x": 10,
       "y": 37,
       "elevation": 0,
@@ -106,7 +106,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KARABLAST)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KARRABLAST)",
       "x": 3,
       "y": 9,
       "elevation": 0,
