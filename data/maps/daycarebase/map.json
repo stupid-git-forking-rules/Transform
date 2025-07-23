@@ -268,6 +268,27 @@
       "elevation": 0,
       "dest_map": "MAP_DAYCAREBASE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_DAYCARE_MAUSHOLD_SHRINK",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_DAYCARE_MOUNTAIN_CAVE_DEEP_DIVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_DAYCARE_EAST_UNDERWATER",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
