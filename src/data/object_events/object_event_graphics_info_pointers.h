@@ -236,6 +236,25 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphir
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RubySapphireMay;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lugia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoOh;
+
+//watermons
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Croconaw;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dragonair;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Milotic;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gyarados;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lapras;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Slowpoke;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Quagsire;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kabuto;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Omanyte;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Seaking;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sharpedo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Vaporeon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lombre;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Starmie;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Politoed;
+
+
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -492,6 +511,21 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
+    [OBJ_EVENT_GFX_CROCONAW] =                 &gObjectEventGraphicsInfo_Croconaw,
+    [OBJ_EVENT_GFX_DRAGONAIR] =                &gObjectEventGraphicsInfo_Dragonair,
+    [OBJ_EVENT_GFX_MILOTIC] =                  &gObjectEventGraphicsInfo_Milotic,
+    [OBJ_EVENT_GFX_GYARADOS] =                 &gObjectEventGraphicsInfo_Gyarados,
+    [OBJ_EVENT_GFX_LAPRAS] =                   &gObjectEventGraphicsInfo_Lapras,
+    [OBJ_EVENT_GFX_SLOWPOKE] =                 &gObjectEventGraphicsInfo_Slowpoke,
+    [OBJ_EVENT_GFX_QUAGSIRE] =                 &gObjectEventGraphicsInfo_Quagsire,
+    [OBJ_EVENT_GFX_KABUTO] =                   &gObjectEventGraphicsInfo_Kabuto,
+    [OBJ_EVENT_GFX_OMANYTE] =                  &gObjectEventGraphicsInfo_Omanyte,
+    [OBJ_EVENT_GFX_SEAKING] =                  &gObjectEventGraphicsInfo_Seaking,
+    [OBJ_EVENT_GFX_SHARPEDO] =                 &gObjectEventGraphicsInfo_Sharpedo,
+    [OBJ_EVENT_GFX_VAPOREON] =                 &gObjectEventGraphicsInfo_Vaporeon,
+    [OBJ_EVENT_GFX_LOMBRE] =                   &gObjectEventGraphicsInfo_Lombre,
+    [OBJ_EVENT_GFX_STARMIE] =                  &gObjectEventGraphicsInfo_Starmie,
+    [OBJ_EVENT_GFX_POLITOED] =                 &gObjectEventGraphicsInfo_Politoed,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

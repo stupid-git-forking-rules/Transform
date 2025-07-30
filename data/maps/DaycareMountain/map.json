@@ -151,7 +151,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KABUTO)",
+      "graphics_id": "OBJ_EVENT_GFX_KABUTO",
       "x": 7,
       "y": 36,
       "elevation": 0,
@@ -164,7 +164,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OMANYTE)",
+      "graphics_id": "OBJ_EVENT_GFX_OMANYTE",
       "x": 11,
       "y": 32,
       "elevation": 0,

@@ -1356,3 +1356,63 @@ static const struct SpriteFrameImage sPicTable_KirliaOld[] = {
 static const struct SpriteFrameImage sPicTable_RubySapphireMay[] = {
     overworld_ascending_frames(gObjectEventPic_RubySapphireMayNormal, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Watermon_Croconaw[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonCroconaw, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Dragonair[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonDragonair, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Milotic[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonMilotic, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Gyarados[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonGyarados, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Lapras[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonLapras, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Slowpoke[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonSlowpoke, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Quagsire[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonQuagsire, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Kabuto[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonKabuto, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Omanyte[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonOmanyte, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Seaking[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonSeaking, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Sharpedo[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonSharpedo, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Vaporeon[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonVaporeon, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Lombre[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonLombre, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Starmie[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonStarmie, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Watermon_Politoed[] = {
+    overworld_ascending_frames(gObjectEventPic_WatermonPolitoed, 4, 4),
+};

@@ -389,6 +389,38 @@ const u16 gObjectEventPal_Substitute[] = INCBIN_U16("graphics/object_events/pics
 const u16 gObjectEventPaletteEmotes[] = INCBIN_U16("graphics/misc/emotes.gbapal");
 const u16 gObjectEventPaletteNeonLight[] = INCBIN_U16("graphics/object_events/palettes/neon_light.gbapal");
 
+// water mons
+const u32 gObjectEventPic_WatermonCroconaw[] = INCBIN_U32("graphics/object_events/pics/people/watermons/croconaw.4bpp");
+const u16 gObjectEventPal_WatermonCroconaw[] = INCBIN_U16("graphics/object_events/palettes/croconaw.gbapal");
+const u32 gObjectEventPic_WatermonDragonair[] = INCBIN_U32("graphics/object_events/pics/people/watermons/dragonair.4bpp");
+const u16 gObjectEventPal_WatermonDragonair[] = INCBIN_U16("graphics/object_events/palettes/dragonair.gbapal");
+const u32 gObjectEventPic_WatermonGyarados[] = INCBIN_U32("graphics/object_events/pics/people/watermons/gyarados.4bpp");
+const u16 gObjectEventPal_WatermonGyarados[] = INCBIN_U16("graphics/object_events/palettes/gyarados.gbapal");
+const u32 gObjectEventPic_WatermonMilotic[] = INCBIN_U32("graphics/object_events/pics/people/watermons/milotic.4bpp");
+const u16 gObjectEventPal_WatermonMilotic[] = INCBIN_U16("graphics/object_events/palettes/milotic.gbapal");
+const u32 gObjectEventPic_WatermonQuagsire[] = INCBIN_U32("graphics/object_events/pics/people/watermons/quagsire.4bpp");
+const u16 gObjectEventPal_WatermonQuagsire[] = INCBIN_U16("graphics/object_events/palettes/quagsire.gbapal");
+const u32 gObjectEventPic_WatermonLapras[] = INCBIN_U32("graphics/object_events/pics/people/watermons/lapras.4bpp");
+const u16 gObjectEventPal_WatermonLapras[] = INCBIN_U16("graphics/object_events/palettes/lapras.gbapal");
+const u32 gObjectEventPic_WatermonKabuto[] = INCBIN_U32("graphics/object_events/pics/people/watermons/kabuto.4bpp");
+const u16 gObjectEventPal_WatermonKabuto[] = INCBIN_U16("graphics/object_events/palettes/kabuto.gbapal");
+const u32 gObjectEventPic_WatermonOmanyte[] = INCBIN_U32("graphics/object_events/pics/people/watermons/omanyte.4bpp");
+const u16 gObjectEventPal_WatermonOmanyte[] = INCBIN_U16("graphics/object_events/palettes/omanyte.gbapal");
+const u32 gObjectEventPic_WatermonSeaking[] = INCBIN_U32("graphics/object_events/pics/people/watermons/seaking.4bpp");
+const u16 gObjectEventPal_WatermonSeaking[] = INCBIN_U16("graphics/object_events/palettes/seaking.gbapal");
+const u32 gObjectEventPic_WatermonStarmie[] = INCBIN_U32("graphics/object_events/pics/people/watermons/starmie.4bpp");
+const u16 gObjectEventPal_WatermonStarmie[] = INCBIN_U16("graphics/object_events/palettes/starmie.gbapal");
+const u32 gObjectEventPic_WatermonSharpedo[] = INCBIN_U32("graphics/object_events/pics/people/watermons/sharpedo.4bpp");
+const u16 gObjectEventPal_WatermonSharpedo[] = INCBIN_U16("graphics/object_events/palettes/sharpedo.gbapal");
+const u32 gObjectEventPic_WatermonVaporeon[] = INCBIN_U32("graphics/object_events/pics/people/watermons/vaporeon.4bpp");
+const u16 gObjectEventPal_WatermonVaporeon[] = INCBIN_U16("graphics/object_events/palettes/vaporeon.gbapal");
+const u32 gObjectEventPic_WatermonLombre[] = INCBIN_U32("graphics/object_events/pics/people/watermons/lombre.4bpp");
+const u16 gObjectEventPal_WatermonLombre[] = INCBIN_U16("graphics/object_events/palettes/lombre.gbapal");
+const u32 gObjectEventPic_WatermonSlowpoke[] = INCBIN_U32("graphics/object_events/pics/people/watermons/slowpoke.4bpp");
+const u16 gObjectEventPal_WatermonSlowpoke[] = INCBIN_U16("graphics/object_events/palettes/slowpoke.gbapal");
+const u32 gObjectEventPic_WatermonPolitoed[] = INCBIN_U32("graphics/object_events/pics/people/watermons/politoed.4bpp");
+const u16 gObjectEventPal_WatermonPolitoed[] = INCBIN_U16("graphics/object_events/palettes/politoed.gbapal");
+
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");
 const u32 gObjectEventPic_UltraBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_ultra.4bpp");

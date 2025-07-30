@@ -246,11 +246,28 @@
 #define OBJ_EVENT_GFX_POKE_BALL                  239
 #define OBJ_EVENT_GFX_OW_MON                     240
 #define OBJ_EVENT_GFX_LIGHT_SPRITE               241
+#define OBJ_EVENT_GFX_CROCONAW                   242
+#define OBJ_EVENT_GFX_DRAGONAIR                  243
+#define OBJ_EVENT_GFX_GYARADOS                   244
+#define OBJ_EVENT_GFX_MILOTIC                    245
+#define OBJ_EVENT_GFX_SLOWPOKE                   246
+#define OBJ_EVENT_GFX_POLITOED                   247
+#define OBJ_EVENT_GFX_QUAGSIRE                   248
+#define OBJ_EVENT_GFX_LAPRAS                     249
+#define OBJ_EVENT_GFX_KABUTO                     250
+#define OBJ_EVENT_GFX_OMANYTE                    251
+#define OBJ_EVENT_GFX_SEAKING                    252
+#define OBJ_EVENT_GFX_SHARPEDO                   253
+#define OBJ_EVENT_GFX_VAPOREON                   254
+#define OBJ_EVENT_GFX_LOMBRE                     255
+#define OBJ_EVENT_GFX_STARMIE                    256
+
+
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        242
+#define NUM_OBJ_EVENT_GFX                        257
 
 
 // These are dynamic object gfx ids.
@@ -379,7 +396,24 @@
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
+//watermon pals
+#define OBJ_EVENT_PAL_TAG_CROCONAW                0x1124
+#define OBJ_EVENT_PAL_TAG_DRAGONAIR               0x1125
+#define OBJ_EVENT_PAL_TAG_GYARADOS                0x1126
+#define OBJ_EVENT_PAL_TAG_MILOTIC                 0x1127
+#define OBJ_EVENT_PAL_TAG_SLOWPOKE                0x1128
+#define OBJ_EVENT_PAL_TAG_POLITOED                0x1129
+#define OBJ_EVENT_PAL_TAG_QUAGSIRE                0x112A
+#define OBJ_EVENT_PAL_TAG_LAPRAS                  0x112B
+#define OBJ_EVENT_PAL_TAG_KABUTO                  0x112C
+#define OBJ_EVENT_PAL_TAG_OMANYTE                 0x112D
+#define OBJ_EVENT_PAL_TAG_SEAKING                 0x112E
+#define OBJ_EVENT_PAL_TAG_SHARPEDO                0x112F
+#define OBJ_EVENT_PAL_TAG_VAPOREON                0x1130
+#define OBJ_EVENT_PAL_TAG_LOMBRE                  0x1131
+#define OBJ_EVENT_PAL_TAG_STARMIE                 0x1132
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1133
+
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
