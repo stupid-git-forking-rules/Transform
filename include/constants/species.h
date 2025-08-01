@@ -1638,7 +1638,19 @@
 #define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 
-#define SPECIES_EGG                                     (SPECIES_MIMIKYU_BUSTED_TOTEM + 1)
+#define SPECIES_DITTO_NOIVERN                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 1)
+#define SPECIES_DITTO_MARILL                            (SPECIES_MIMIKYU_TOTEM_BUSTED + 2)
+#define SPECIES_DITTO_RHYHORN                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 3)
+#define SPECIES_DITTO_CUTIEFLY                          (SPECIES_MIMIKYU_TOTEM_BUSTED + 4)
+#define SPECIES_DITTO_ARCANINE                          (SPECIES_MIMIKYU_TOTEM_BUSTED + 5)
+#define SPECIES_DITTO_WEAVILE                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 6)
+#define SPECIES_DITTO_SCYTHER                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 7)
+#define SPECIES_DITTO_CHINCHOU                          (SPECIES_MIMIKYU_TOTEM_BUSTED + 8)
+#define SPECIES_DITTO_DRAGONAIR                         (SPECIES_MIMIKYU_TOTEM_BUSTED + 9)
+#define SPECIES_DITTO_MACHAMP                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 10)
+#define SPECIES_DITTO_PIKACHU                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 11)
+
+#define SPECIES_EGG                                     (SPECIES_DITTO_PIKACHU + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

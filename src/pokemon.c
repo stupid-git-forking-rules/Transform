@@ -3509,6 +3509,18 @@ u16 GetMonAbility(struct Pokemon *mon)
     return GetAbilityBySpecies(species, abilityNum);
 }
 
+u8 GetAbilityNumFromAbility(u16 ability, u16 species)
+{
+    const struct SpeciesInfo *speciesInfo = &gSpeciesInfo[species];
+    u32 maxAbilityNum = ARRAY_COUNT(speciesInfo->abilities);
+    for (u8 abilityNum = 0; abilityNum < maxAbilityNum; ++abilityNum)
+    {
+        if (speciesInfo->abilities[abilityNum] == ability)
+            return abilityNum;
+    }
+    return 0;
+}
+
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord)
 {
     s32 i, j;
