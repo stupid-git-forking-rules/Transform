@@ -40,6 +40,7 @@
 #include "constants/decorations.h"
 #include "decoration_inventory.h"
 #include "decoration.h"
+#include "pokemon.h"
 #include "pokedex.h"
 #include "pokedex_plus_hgss.h"
 #include "field_player_avatar.h"
@@ -48,6 +49,7 @@
 #include "item.h"
 #include "item_use.h"
 #include "item_icon.h"
+#include "constants/abilities.h"
 #include "constants/vars.h"
 #include "event_object_lock.h"
 #include "constants/species.h"
@@ -208,6 +210,22 @@ TransformFunc GetTransformationFunc(u16 speciesId)
     return gTransformations[speciesId].fieldUseFunc;
 }
 
+void TransformDittoBoxMon(u16 targetSpecies)
+{
+    if (!IsSpeciesValidTransformation(targetSpecies))
+        return;
+
+    struct Pokemon *mon = &gPlayerParty[0];
+    u16 dittoForm = gTransformations[targetSpecies].battleSpecies;
+
+    SetMonData(mon, MON_DATA_SPECIES, &dittoForm);
+    for (u32 i = 0; i < MAX_MON_MOVES; i++)
+        SetMonMoveSlot(mon, gTransformations[targetSpecies].moves[i], i);
+    u32 abilityNum = GetAbilityNumFromAbility(gTransformations[targetSpecies].ability, dittoForm);
+    SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
+    CalculateMonStats(mon);
+}
+
 void SetPlayerAvatarFromScript(struct ScriptContext *ctx)
 {
     u16 speciesId = SpeciesToNationalPokedexNum(VarGet(ScriptReadHalfword(ctx)));
@@ -216,6 +234,8 @@ void SetPlayerAvatarFromScript(struct ScriptContext *ctx)
         return;
 
     gSaveBlock2Ptr->pokemonAvatarSpecies = speciesId;
+    if (PlayerIsDitto())
+        TransformDittoBoxMon(speciesId);
 
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
     PlaySE(SE_M_TELEPORT);
@@ -227,6 +247,8 @@ void SetPlayerAvatarFromItem(u16 speciesId)
         return;
 
     gSaveBlock2Ptr->pokemonAvatarSpecies = speciesId;
+    if (PlayerIsDitto())
+        TransformDittoBoxMon(speciesId);
 
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
     PlaySE(SE_M_TELEPORT);

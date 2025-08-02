@@ -35,6 +35,9 @@ struct Transformation
     u8 name[ITEM_NAME_LENGTH];
     const u32 *iconPic;
     const u16 *iconPalette;
+    u16 battleSpecies;
+    u16 ability;
+    u16 moves[4];
 };
 
 

@@ -30,7 +30,15 @@ const struct Transformation gTransformations[] =
         .name = _("Ditto"),
         .fieldUseFunc = ItemUseOutOfBattle_DittoTransform,
         .iconPic = gItemIcon_TransformDitto,
-        .iconPalette = gItemIconPalette_TransformDitto,        
+        .iconPalette = gItemIconPalette_TransformDitto,
+        .battleSpecies = SPECIES_DITTO,
+        .ability = ABILITY_LIMBER,
+        .moves = {
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
 
     [SPECIES_NOIVERN] =
@@ -39,6 +47,14 @@ const struct Transformation gTransformations[] =
         .fieldUseFunc = ItemUseOutOfBattle_FlyTransform,
         .iconPic = gItemIcon_TransformFly,
         .iconPalette = gItemIconPalette_TransformFly,
+        .battleSpecies = SPECIES_DITTO_NOIVERN,
+        .ability = ABILITY_INFILTRATOR,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
 
     [SPECIES_MARILL] =
@@ -46,7 +62,15 @@ const struct Transformation gTransformations[] =
         .name = _("MARILL"),
         .fieldUseFunc = ItemUseOutOfBattle_SurfTransform,
         .iconPic = gItemIcon_TransformSurf,
-        .iconPalette = gItemIconPalette_TransformSurf,        
+        .iconPalette = gItemIconPalette_TransformSurf,
+        .battleSpecies = SPECIES_DITTO_MARILL,
+        .ability = ABILITY_HUGE_POWER,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
 
     [SPECIES_RHYHORN] =
@@ -54,7 +78,15 @@ const struct Transformation gTransformations[] =
         .name = _("Rhyhorn"),
         .fieldUseFunc = ItemUseOutOfBattle_RockSmashTransform,
         .iconPic = gItemIcon_TransformRockSmash,
-        .iconPalette = gItemIconPalette_TransformRockSmash,        
+        .iconPalette = gItemIconPalette_TransformRockSmash,   
+        .battleSpecies = SPECIES_DITTO_RHYHORN,
+        .ability = ABILITY_LIGHTNING_ROD,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
 
     [SPECIES_CUTIEFLY] =
@@ -62,21 +94,45 @@ const struct Transformation gTransformations[] =
         .name = _("Cutiefly"),
         .fieldUseFunc = ItemUseOutOfBattle_ShrinkTransform,
         .iconPic = gItemIcon_TransformShrink,
-        .iconPalette = gItemIconPalette_TransformShrink,        
+        .iconPalette = gItemIconPalette_TransformShrink,
+        .battleSpecies = SPECIES_DITTO_CUTIEFLY,
+        .ability = ABILITY_HONEY_GATHER,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
     [SPECIES_ARCANINE] =
     {
         .name = _("Arcanine"),
         .fieldUseFunc = ItemUseOutOfBattle_MachBikeTransform,
         .iconPic = gItemIcon_TransformMachBike,
-        .iconPalette = gItemIconPalette_TransformMachBike,        
+        .iconPalette = gItemIconPalette_TransformMachBike,
+        .battleSpecies = SPECIES_DITTO_ARCANINE,
+        .ability = ABILITY_INTIMIDATE,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
     [SPECIES_WEAVILE] =
     {
         .name = _("Weavile"),
         .fieldUseFunc = ItemUseOutOfBattle_AcroBikeTransform,
         .iconPic = gItemIcon_TransformAcrobike,
-        .iconPalette = gItemIconPalette_TransformAcrobike,        
+        .iconPalette = gItemIconPalette_TransformAcrobike,
+        .battleSpecies = SPECIES_DITTO_WEAVILE,
+        .ability = ABILITY_PICKPOCKET,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
     [SPECIES_SCYTHER] =
     {
@@ -84,34 +140,74 @@ const struct Transformation gTransformations[] =
         .fieldUseFunc = ItemUseOutOfBattle_CutTransform,
         .iconPic = gItemIcon_TransformCut,
         .iconPalette = gItemIconPalette_TransformCut,
+        .battleSpecies = SPECIES_DITTO_SCYTHER,
+        .ability = ABILITY_TECHNICIAN,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
     [SPECIES_CHINCHOU] =
     {
         .name = _("Chinchou"),
         .fieldUseFunc = ItemUseOutOfBattle_DiveTransform,
         .iconPic = gItemIcon_TransformDive,
-        .iconPalette = gItemIconPalette_TransformDive,        
+        .iconPalette = gItemIconPalette_TransformDive,
+        .battleSpecies = SPECIES_DITTO_CHINCHOU,
+        .ability = ABILITY_ILLUMINATE,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
     [SPECIES_DRAGONAIR] =
     {
         .name = _("Dragonair"),
         .fieldUseFunc = ItemUseOutOfBattle_WaterfallTransform,
         .iconPic = gItemIcon_TransformWaterfall,
-        .iconPalette = gItemIconPalette_TransformWaterfall,        
+        .iconPalette = gItemIconPalette_TransformWaterfall,
+        .battleSpecies = SPECIES_DITTO_DRAGONAIR,
+        .ability = ABILITY_MARVEL_SCALE,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
     [SPECIES_MACHAMP] =
     {
         .name = _("Machamp"),
         .fieldUseFunc = ItemUseOutOfBattle_StrengthTransform,
         .iconPic = gItemIcon_TransformStrength,
-        .iconPalette = gItemIconPalette_TransformStrength,        
+        .iconPalette = gItemIconPalette_TransformStrength,
+        .battleSpecies = SPECIES_DITTO_MACHAMP,
+        .ability = ABILITY_NO_GUARD,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
     [SPECIES_PIKACHU] =
     {
         .name = _("Pikachu"),
         .fieldUseFunc = ItemUseOutOfBattle_FlashTransform,
         .iconPic = gItemIcon_TransformFlash,
-        .iconPalette = gItemIconPalette_TransformFlash,        
+        .iconPalette = gItemIconPalette_TransformFlash,
+        .battleSpecies = SPECIES_DITTO_PIKACHU,
+        .ability = ABILITY_STATIC,
+        .moves = {
+            MOVE_TACKLE,
+            MOVE_TRANSFORM,
+            MOVE_NONE,
+            MOVE_NONE,
+        },
     },
     
 };
