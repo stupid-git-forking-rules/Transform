@@ -656,10 +656,10 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_NO_COLLISION  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
+#define FLAG_NO_COLLISION  0x264 // No collision debug flag
+#define FLAG_NO_RUNNING    0x265 // No running flag, used for all battles as there will be no running from them. if we use wild battles vs trainer battles
+#define FLAG_NO_CATCHING   0x266 //  No catching flag, used in all battles with non transform mons. if we use wild battles vs trainer battles
+#define FLAG_SMART_WILD_AI 0x267 //  Smart wild ai flag, used in all battles as we want wild mons to be smart. if we use wild battles vs trainer battles
 #define FLAG_UNUSED_0x268  0x268 // Unused Flag
 #define FLAG_UNUSED_0x269  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
