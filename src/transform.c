@@ -96,9 +96,15 @@ u16 ReturnAvatarMugshotId(u16 avatarId)
 u16 ReturnAvatarGraphicsId(u16 avatarId)
 {
     u16 graphicsId = OBJ_EVENT_GFX_VAR_D; // Directly assign the variable graphic ID
-    VarSet(VAR_OBJ_GFX_ID_D, gSaveBlock2Ptr->pokemonAvatarSpecies + OBJ_EVENT_MON);
+    if (IsMonShiny(&gPlayerParty[0]) == TRUE)
+    {
+        VarSet(VAR_OBJ_GFX_ID_D, gSaveBlock2Ptr->pokemonAvatarSpecies + OBJ_EVENT_MON + OBJ_EVENT_MON_SHINY);
+    }
+    else
+    {
+        VarSet(VAR_OBJ_GFX_ID_D, gSaveBlock2Ptr->pokemonAvatarSpecies + OBJ_EVENT_MON);
+    }
     TryCreatePokemonAvatarSpriteBob();
-
     return graphicsId;
 }
 
