@@ -61,7 +61,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "KecleonDialog",
       "flag": "0"
     },
     {
@@ -74,7 +74,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "AzumarillDialog",
       "flag": "0"
     },
     {
@@ -191,7 +191,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MimikyuDialog",
       "flag": "0"
     },
     {
@@ -230,7 +230,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ShrinkToPikachuCave",
       "flag": "0"
     },
     {
@@ -243,7 +243,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ShrinktoMausholdCave",
       "flag": "0"
     },
     {
@@ -296,22 +296,15 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
-      "y": 43,
-      "elevation": 0,
-      "dest_map": "MAP_DAYCARE_MAUSHOLD_SHRINK",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 15,
-      "y": 43,
+      "y": 38,
       "elevation": 0,
       "dest_map": "MAP_DAYCARE_MOUNTAIN_CAVE_DEEP_DIVE",
       "dest_warp_id": "0"
     },
     {
       "x": 16,
-      "y": 43,
+      "y": 38,
       "elevation": 0,
       "dest_map": "MAP_DAYCARE_EAST_UNDERWATER",
       "dest_warp_id": "0"

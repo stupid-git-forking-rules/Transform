@@ -170,7 +170,7 @@ static void HeatStartMenu_HandleInput_Button(enum PlayerLocation location, u8 ta
 static void HeatStartMenu_HandleInput_Move(enum NavigationDirection direction, enum PlayerLocation location);
 
 /* MENU DEFINITIONS */
-static const u8 sOverworldMenu[] = { MENU_POKEDEX, MENU_PARTY, MENU_BAG, MENU_TRAINER_CARD, MENU_SAVE, MENU_OPTIONS };
+static const u8 sOverworldMenu[] = { MENU_POKEDEX, MENU_PARTY, MENU_BAG, MENU_SAVE, MENU_OPTIONS };
 static const u8 sSafariMenu[] = { MENU_POKEDEX, MENU_PARTY, MENU_BAG, MENU_TRAINER_CARD, MENU_OPTIONS, MENU_FLAG };
 static const u8 sPyramidMenu[] = { MENU_PARTY, MENU_BAG, MENU_TRAINER_CARD, MENU_SAVE, MENU_FLAG, MENU_OPTIONS };
 
@@ -907,7 +907,7 @@ static void HeatStartMenu_CreateSprites(void)
         sHeatStartMenu->spriteIdParty       = CreateSpriteBasedOnFlashLevel(&gSpriteIconParty,       ICON_POS_X,    ICON_POS_2 -3, 0);
         sHeatStartMenu->spriteIdBag         = CreateSpriteBasedOnFlashLevel(&gSpriteIconBag,         ICON_POS_X,    ICON_POS_3 -2, 0);
         sHeatStartMenu->spriteIdPoketch     = CreateSpriteBasedOnFlashLevel(&gSpriteIconPoketch,     ICON_POS_X,    ICON_POS_4 +1, 0);
-        sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_5,    0);
+        //sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_5,    0);
         sHeatStartMenu->spriteIdSave        = CreateSpriteBasedOnFlashLevel(&gSpriteIconSave,        ICON_POS_X,    ICON_POS_6,    0);
         sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_7,    0);
         return;
@@ -917,26 +917,26 @@ static void HeatStartMenu_CreateSprites(void)
         sHeatStartMenu->spriteIdPokedex     = CreateSpriteBasedOnFlashLevel(&gSpriteIconPokedex,     ICON_POS_X -1, ICON_POS_1,    0);
         sHeatStartMenu->spriteIdParty       = CreateSpriteBasedOnFlashLevel(&gSpriteIconParty,       ICON_POS_X,    ICON_POS_2 -1, 0);
         sHeatStartMenu->spriteIdBag         = CreateSpriteBasedOnFlashLevel(&gSpriteIconBag,         ICON_POS_X,    ICON_POS_3 +1, 0);
-        sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_4 +2, 0);
-        sHeatStartMenu->spriteIdSave        = CreateSpriteBasedOnFlashLevel(&gSpriteIconSave,        ICON_POS_X,    ICON_POS_5 -1, 0);
-        sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_6 -2, 0);
+        //sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_4 +2, 0);
+        sHeatStartMenu->spriteIdSave        = CreateSpriteBasedOnFlashLevel(&gSpriteIconSave,        ICON_POS_X,    ICON_POS_4 +2, 0);
+        sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_5 -1, 0);
     return;
     }
     else if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE) 
     {
         sHeatStartMenu->spriteIdParty       = CreateSpriteBasedOnFlashLevel(&gSpriteIconParty,       ICON_POS_X,    ICON_POS_1,    0);
-        sHeatStartMenu->spriteIdBag         = CreateSpriteBasedOnFlashLevel(&gSpriteIconBag,         ICON_POS_X,    ICON_POS_2 +1, 0);
-        sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_3 +3, 0);
-        sHeatStartMenu->spriteIdSave        = CreateSpriteBasedOnFlashLevel(&gSpriteIconSave,        ICON_POS_X,    ICON_POS_4 +1, 0);
-        sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_5 -4, 0);
+        sHeatStartMenu->spriteIdBag         = CreateSpriteBasedOnFlashLevel(&gSpriteIconBag,         ICON_POS_X,    ICON_POS_2 +7, 0);
+        //sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_3 +3, 0);
+        sHeatStartMenu->spriteIdSave        = CreateSpriteBasedOnFlashLevel(&gSpriteIconSave,        ICON_POS_X,    ICON_POS_3 +17, 0);
+        sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_4 + 20, 0);
     return;
     }
     else 
     {
         sHeatStartMenu->spriteIdBag         = CreateSpriteBasedOnFlashLevel(&gSpriteIconBag,         ICON_POS_X,    ICON_POS_1,    0);
-        sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_2 +1, 0);
-        sHeatStartMenu->spriteIdSave        = CreateSpriteBasedOnFlashLevel(&gSpriteIconSave,        ICON_POS_X,    ICON_POS_3 +3, 0);
-        sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_4 +1, 0);
+        //sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_2 +1, 0);
+        sHeatStartMenu->spriteIdSave        = CreateSpriteBasedOnFlashLevel(&gSpriteIconSave,        ICON_POS_X,    ICON_POS_2 +1, 0);
+        sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_3 +3, 0);
     }
 }
 

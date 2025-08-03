@@ -240,6 +240,10 @@ void SetPlayerAvatarFromScript(struct ScriptContext *ctx)
         return;
 
     gSaveBlock2Ptr->pokemonAvatarSpecies = speciesId;
+    VarSet(VAR_TRANSFORM_MON, speciesId); 
+
+    DebugPrintfLevel(MGBA_LOG_WARN, "Set VAR_TRANSFORM_MON to %d", VarGet(VAR_TRANSFORM_MON));
+
     if (PlayerIsDitto())
         TransformDittoBoxMon(speciesId);
 
@@ -253,6 +257,9 @@ void SetPlayerAvatarFromItem(u16 speciesId)
         return;
 
     gSaveBlock2Ptr->pokemonAvatarSpecies = speciesId;
+    VarSet(VAR_TRANSFORM_MON, speciesId); 
+    
+    DebugPrintfLevel(MGBA_LOG_WARN, "Set VAR_TRANSFORM_MON to %d", VarGet(VAR_TRANSFORM_MON));
     if (PlayerIsDitto())
         TransformDittoBoxMon(speciesId);
 

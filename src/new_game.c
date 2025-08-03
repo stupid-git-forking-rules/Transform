@@ -142,6 +142,7 @@ static void WarpToTruck(void)
     FlagSet(FLAG_SYS_B_DASH);
     FlagClear(FLAG_RUNNING_SHOES_TOGGLE);
     FlagSet(FLAG_SYS_POKEMON_GET);
+    VarSet(VAR_TRANSFORM_MON, SPECIES_DITTO);
     WarpIntoMap();
 }
 

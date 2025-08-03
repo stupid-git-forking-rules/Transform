@@ -1,0 +1,120 @@
+mapscripts daycarebase_MapScripts {}
+
+script ShrinkToPikachuCave{
+    lockall
+    if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
+    {
+        msgbox("There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?",MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            warp(MAP_DAYCARE_PIKACHU_SHRINK_CAVE, 0)
+        }   
+        else
+        {
+           waitmessage
+          releaseall
+           end
+        }
+    }
+    else
+    {
+        msgbox(format("There is a tiny hole, but you are not small enough to fit through it."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
+}
+
+script ShrinktoMausholdCave{
+    lockall
+    if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
+    {
+        msgbox("There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?",MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            warp(MAP_DAYCARE_MAUSHOLD_SHRINK, 0)
+        }   
+        else
+        {
+           waitmessage
+           releaseall
+           end
+        }
+    }
+    else
+    {
+        msgbox(format("There is a tiny hole, but you are not small enough to fit through it."), MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
+}
+
+script MimikyuDialog{
+    lockall
+    faceplayer
+    if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
+    {
+        speakername("Pikachu")
+        msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!",MSGBOX_AUTOCLOSE)
+        lockall
+        faceplayer
+        speakername("Mimikyu")
+        msgbox("Oh...\nYou caught me.\pI wish I could disguise myself as\nwell as you can...\pMaybe then people would like me more...", MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
+    else
+    {
+    speakername("Pikachu")
+    msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!", MSGBOX_AUTOCLOSE)
+    waitmessage
+    releaseall
+    end
+    }
+}
+ script KecleonDialog{
+    lockall
+    faceplayer
+    if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
+    {
+        speakername("Kecleon")
+        msgbox("Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.\pDo you know?\pI've always heard of Dittos\nholding onto eggs...", MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
+    else
+    {
+        speakername("Kecleon")
+        msgbox("Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
+    
+}
+
+ script AzumarillDialog{
+    lockall
+    faceplayer
+    if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
+    {
+        speakername("Azumarill")
+        msgbox("Welcome to the Daycare!\pYou'll fit in well here.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
+    else
+    {
+        speakername("Azumarill")
+        msgbox("Oh!\nThank goodness you aren't a Ditto...\pMy trainer keeps putting me in here\nwith Dittos hoping we'll breed.\pThey even gave me this Sea Incence\nto set the mood...\pThey're just not my type.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        releaseall
+        end
+    }
+ }
+
+

@@ -1,0 +1,24 @@
+mapscripts DaycarePikachuShrinkCave_MapScripts {}
+    
+script TarountulaDialog{
+    lockall
+    faceplayer
+    if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
+    {
+        speakername("Tarountula")
+        msgbox("This cave feels so much bigger\nfor us small bug types.\pI'm sure bigger Pokemon suspect\nnothing is in here!", MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    elif (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
+    {
+        speakername("Tarountula")
+        msgbox("This cave feels so much bigger\nfor us small bug types.\pWAIT... HEY!\pI guess a Ditto could use\nTransform...", MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+    else
+    {
+        speakername("Tarountula")
+        msgbox("This cave feels so much bigger\nfor us small bug types.\pWAIT... HEY!\pHow did you fit in the tiny\nentrance?\pOH!\nA Ditto you say...", MSGBOX_AUTOCLOSE)
+        waitmessage
+    }
+}
