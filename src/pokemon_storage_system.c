@@ -270,7 +270,7 @@ enum {
 
 // The maximum number of Pokémon icons that can appear on-screen.
 // By default the limit is 40 (though in practice only 37 can be).
-#define MAX_MON_ICONS max(IN_BOX_COUNT + PARTY_SIZE + 1, 40)
+#define MAX_MON_ICONS max(IN_BOX_COUNT + DITTO_PARTY + 1, 40)
 
 // The maximum number of item icons that can appear on-screen while
 // moving held items. 1 in the cursor, and 2 more while switching
@@ -432,7 +432,7 @@ struct PokemonStorageSystemData
     s8 scrollDirection;
     u8 *wallpaperTiles;
     struct Sprite *movingMonSprite;
-    struct Sprite *partySprites[PARTY_SIZE];
+    struct Sprite *partySprites[DITTO_PARTY];
     struct Sprite *boxMonsSprites[IN_BOX_COUNT];
     struct Sprite **shiftMonSpritePtr;
     struct Sprite **releaseMonSpritePtr;
@@ -849,7 +849,7 @@ void UpdateSpeciesSpritePSS(struct BoxPokemon *boxmon);
 
 static const u8 gText_JustOnePkmn[] = _("There is just one POKéMON with you.");
 static const u8 gText_PartyFull[] = _("Your party is full!");
-static const u8 gText_Box[] = _("BOX");
+static const u8 gText_Box[] = _("XFORMS");
 
 struct {
     const u8 *text;
@@ -1402,7 +1402,7 @@ u32 CountPartyNonEggMons(void)
 {
     u32 i, count;
 
-    for (i = 0, count = 0; i < PARTY_SIZE; i++)
+    for (i = 0, count = 0; i < DITTO_PARTY; i++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE
             && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
@@ -1418,7 +1418,7 @@ u8 CountPartyAliveNonEggMonsExcept(u8 slotToIgnore)
 {
     u16 i, count;
 
-    for (i = 0, count = 0; i < PARTY_SIZE; i++)
+    for (i = 0, count = 0; i < DITTO_PARTY; i++)
     {
         if (i != slotToIgnore
             && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE
@@ -1441,7 +1441,7 @@ u8 CountPartyMons(void)
 {
     u16 i, count;
 
-    for (i = 0, count = 0; i < PARTY_SIZE; i++)
+    for (i = 0, count = 0; i < DITTO_PARTY; i++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE)
         {
@@ -1559,7 +1559,7 @@ static void Task_PCMainMenu(u8 taskId)
             DestroyTask(taskId);
             break;
         default:
-            if (task->tInput == OPTION_WITHDRAW && CountPartyMons() == PARTY_SIZE)
+            if (task->tInput == OPTION_WITHDRAW && CountPartyMons() == DITTO_PARTY)
             {
                 // Can't withdraw
                 FillWindowPixelBuffer(0, PIXEL_FILL(1));
@@ -1715,8 +1715,7 @@ void ResetPokemonStorageSystem(void)
     }
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
     {
-        u8 *dest = StringCopy(GetBoxNamePtr(boxId), gText_Box);
-        ConvertIntToDecimalStringN(dest, boxId + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+        StringCopy(GetBoxNamePtr(boxId), gText_Box);
     }
 
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
@@ -2287,14 +2286,14 @@ static void Task_PokeStorageMain(u8 taskId)
         case INPUT_PRESSED_B:
             SetPokeStorageTask(Task_OnBPressed);
             break;
-        case INPUT_BOX_OPTIONS:
-            PlaySE(SE_SELECT);
-            SetPokeStorageTask(Task_HandleBoxOptions);
-            break;
+        //case INPUT_BOX_OPTIONS:
+         //   PlaySE(SE_SELECT);
+          //  SetPokeStorageTask(Task_HandleBoxOptions);
+           // break;
         case INPUT_IN_MENU:
             SetPokeStorageTask(Task_OnSelectedMon);
             break;
-        case INPUT_SCROLL_RIGHT:
+        /*case INPUT_SCROLL_RIGHT:
             PlaySE(SE_SELECT);
             sStorage->newCurrBoxId = StorageGetCurrentBox() + 1;
             if (sStorage->newCurrBoxId >= TOTAL_BOXES_COUNT)
@@ -2325,7 +2324,7 @@ static void Task_PokeStorageMain(u8 taskId)
                 TryHideItemAtCursor();
                 sStorage->state = MSTATE_SCROLL_BOX_ITEM;
             }
-            break;
+            break;*/
         case INPUT_DEPOSIT:
             if (!IsRemovingLastPartyMon())
             {
@@ -2775,7 +2774,7 @@ static void Task_WithdrawMon(u8 taskId)
     switch (sStorage->state)
     {
     case 0:
-        if (CalculatePlayerPartyCount() == PARTY_SIZE)
+        if (CalculatePlayerPartyCount() == DITTO_PARTY)
         {
             PrintMessage(MSG_PARTY_FULL);
             sStorage->state = 1;
@@ -4180,7 +4179,7 @@ static void SetPartySlotTilemaps(void)
 
     // Skips first party slot, it should always be drawn
     // as if it has a Pokémon in it
-    for (i = 1; i < PARTY_SIZE; i++)
+    for (i = 1; i < DITTO_PARTY; i++)
     {
         s32 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
         SetPartySlotTilemap(i, species != SPECIES_NONE);
@@ -4407,7 +4406,7 @@ static void InitMonIconFields(void)
         sStorage->numIconsPerSpecies[i] = 0;
     for (i = 0; i < MAX_MON_ICONS; i++)
         sStorage->iconSpeciesList[i] = SPECIES_NONE;
-    for (i = 0; i < PARTY_SIZE; i++)
+    for (i = 0; i < DITTO_PARTY; i++)
         sStorage->partySprites[i] = NULL;
     for (i = 0; i < IN_BOX_COUNT; i++)
         sStorage->boxMonsSprites[i] = NULL;
@@ -4739,7 +4738,7 @@ static void CreatePartyMonsSprites(bool8 visible)
 
     sStorage->partySprites[0] = CreateMonIconSprite(species, personality, 104, 64, 1, 12);
     count = 1;
-    for (i = 1; i < PARTY_SIZE; i++)
+    for (i = 1; i < DITTO_PARTY; i++)
     {
         species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
         if (species != SPECIES_NONE)
@@ -4765,7 +4764,7 @@ static void CreatePartyMonsSprites(bool8 visible)
 
     if (sStorage->boxOption == OPTION_MOVE_ITEMS)
     {
-        for (i = 0; i < PARTY_SIZE; i++)
+        for (i = 0; i < DITTO_PARTY; i++)
         {
             if (sStorage->partySprites[i] != NULL && GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM) == ITEM_NONE)
                 sStorage->partySprites[i]->oam.objMode = ST_OAM_OBJ_BLEND;
@@ -4778,7 +4777,7 @@ static void CompactPartySprites(void)
     u16 i, targetSlot;
 
     sStorage->numPartyToCompact = 0;
-    for (i = 0, targetSlot = 0; i < PARTY_SIZE; i++)
+    for (i = 0, targetSlot = 0; i < DITTO_PARTY; i++)
     {
         if (sStorage->partySprites[i] != NULL)
         {
@@ -4871,7 +4870,7 @@ static void MovePartySprites(s16 yDelta)
 {
     u16 i, posY;
 
-    for (i = 0; i < PARTY_SIZE; i++)
+    for (i = 0; i < DITTO_PARTY; i++)
     {
         if (sStorage->partySprites[i] != NULL)
         {
@@ -4899,7 +4898,7 @@ static void DestroyAllPartyMonIcons(void)
 {
     u16 i;
 
-    for (i = 0; i < PARTY_SIZE; i++)
+    for (i = 0; i < DITTO_PARTY; i++)
     {
         if (sStorage->partySprites[i] != NULL)
         {
@@ -5844,7 +5843,7 @@ static void GetCursorCoordsByPos(u8 cursorArea, u8 cursorPosition, u16 *x, u16 *
             *x = 104;
             *y = 52;
         }
-        else if (cursorPosition == PARTY_SIZE)
+        else if (cursorPosition == DITTO_PARTY)
         {
             *x = 152;
             *y = 132;
@@ -6113,8 +6112,8 @@ static void SetCursorInParty(void)
     else
     {
         partyCount = CalculatePlayerPartyCount();
-        if (partyCount >= PARTY_SIZE)
-            partyCount = PARTY_SIZE - 1;
+        if (partyCount >= DITTO_PARTY)
+            partyCount = DITTO_PARTY - 1;
     }
     if (sStorage->cursorSprite->vFlip)
         sStorage->cursorFlipTimer = 1;
@@ -6616,7 +6615,7 @@ static bool32 AtLeastThreeUsableMons(void)
     s32 count = (sIsMonBeingMoved != FALSE);
 
     // Check party for usable Pokémon
-    for (j = 0; j < PARTY_SIZE; j++)
+    for (j = 0; j < DITTO_PARTY; j++)
     {
         if (GetMonData(&gPlayerParty[j], MON_DATA_SANITY_HAS_SPECIES))
             count++;
@@ -6654,7 +6653,7 @@ static s8 RunCanReleaseMon(void)
     case 0:
         // Check party for other Pokémon that know any restricted
         // moves the release Pokémon knows
-        for (i = 0; i < PARTY_SIZE; i++)
+        for (i = 0; i < DITTO_PARTY; i++)
         {
             // Make sure party Pokémon isn't the one we're releasing first
             if (sStorage->releaseBoxId != TOTAL_BOXES_COUNT || sStorage->releaseBoxPos != i)
@@ -6776,7 +6775,7 @@ s16 CompactPartySlots(void)
     s16 retVal = -1;
     u16 i, last;
 
-    for (i = 0, last = 0; i < PARTY_SIZE; i++)
+    for (i = 0, last = 0; i < DITTO_PARTY; i++)
     {
         u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
         if (species != SPECIES_NONE)
@@ -6790,7 +6789,7 @@ s16 CompactPartySlots(void)
             retVal = i;
         }
     }
-    for (; last < PARTY_SIZE; last++)
+    for (; last < DITTO_PARTY; last++)
         ZeroMonData(&gPlayerParty[last]);
 
     return retVal;
@@ -6880,7 +6879,7 @@ static void TryRefreshDisplayMon(void)
         switch (sCursorArea)
         {
         case CURSOR_AREA_IN_PARTY:
-            if (sCursorPosition < PARTY_SIZE)
+            if (sCursorPosition < DITTO_PARTY)
             {
                 SetDisplayMonData(&gPlayerParty[sCursorPosition], MODE_PARTY);
                 break;
@@ -7391,14 +7390,14 @@ static u8 HandleInput_InParty(void)
         if (JOY_REPEAT(DPAD_UP))
         {
             if (--cursorPosition < 0)
-                cursorPosition = PARTY_SIZE;
+                cursorPosition = DITTO_PARTY;
             if (cursorPosition != sCursorPosition)
                 retVal = INPUT_MOVE_CURSOR;
             break;
         }
         else if (JOY_REPEAT(DPAD_DOWN))
         {
-            if (++cursorPosition > PARTY_SIZE)
+            if (++cursorPosition > DITTO_PARTY)
                 cursorPosition = 0;
             if (cursorPosition != sCursorPosition)
                 retVal = INPUT_MOVE_CURSOR;
@@ -7429,7 +7428,7 @@ static u8 HandleInput_InParty(void)
 
         if (JOY_NEW(A_BUTTON))
         {
-            if (sCursorPosition == PARTY_SIZE)
+            if (sCursorPosition == DITTO_PARTY)
             {
                 if (sStorage->boxOption == OPTION_DEPOSIT)
                     return INPUT_CLOSE_BOX;
@@ -8840,7 +8839,7 @@ static void TryLoadItemIconAtPos(u8 cursorArea, u8 cursorPos)
         heldItem = GetCurrentBoxMonData(cursorPos, MON_DATA_HELD_ITEM);
         break;
     case CURSOR_AREA_IN_PARTY:
-        if (cursorPos >= PARTY_SIZE || !GetMonData(&gPlayerParty[cursorPos], MON_DATA_SANITY_HAS_SPECIES))
+        if (cursorPos >= DITTO_PARTY || !GetMonData(&gPlayerParty[cursorPos], MON_DATA_SANITY_HAS_SPECIES))
             return;
         heldItem = GetMonData(&gPlayerParty[cursorPos], MON_DATA_HELD_ITEM);
         break;

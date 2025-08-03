@@ -22,11 +22,11 @@ enum {
 
 static const u16 sWallpaperPalettes_Forest[][16] =
 {
-    INCBIN_U16("graphics/pokemon_storage/wallpapers/forest/frame.gbapal"),
-    INCBIN_U16("graphics/pokemon_storage/wallpapers/forest/bg.gbapal"),
+    INCBIN_U16("graphics/pokemon_storage/wallpapers/azumarill/bg.gbapal"),
+    INCBIN_U16("graphics/pokemon_storage/wallpapers/azumarill/bg.gbapal"),
 };
-static const u32 sWallpaperTiles_Forest[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/forest/tiles.4bpp.lz");
-static const u32 sWallpaperTilemap_Forest[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/forest/tilemap.bin.lz");
+static const u32 sWallpaperTiles_Forest[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/azumarill/tiles.4bpp.lz");
+static const u32 sWallpaperTilemap_Forest[] = INCBIN_U32("graphics/pokemon_storage/wallpapers/azumarill/tilemap.bin.lz");
 
 static const u16 sWallpaperPalettes_City[][16] =
 {
