@@ -660,17 +660,17 @@
 #define FLAG_NO_RUNNING    0x265 // No running flag, used for all battles as there will be no running from them. if we use wild battles vs trainer battles
 #define FLAG_NO_CATCHING   0x266 //  No catching flag, used in all battles with non transform mons. if we use wild battles vs trainer battles
 #define FLAG_SMART_WILD_AI 0x267 //  Smart wild ai flag, used in all battles as we want wild mons to be smart. if we use wild battles vs trainer battles
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
+#define FLAG_TRANS_RYHORN  0x268 // Transform Rhyhorn flag, means player has obtained Rhyhorn transformation
+#define FLAG_TRANS_CUTIEFLY  0x269 // Transform Cutiefly flag, means player has obtained Cutiefly transformation
+#define FLAG_TRANS_PIKACHU  0x26A // Transform Pikachu flag, means player has obtained Pikachu transformation
+#define FLAG_TRANS_MARILL  0x26B // Transform Marill flag, means player has obtained Marill transformation
+#define FLAG_TRANS_ARCANINE  0x26C // Transform Arcanine flag, means player has obtained Arcanine transformation
+#define FLAG_TRANS_WEAVILE  0x26D // Transform Weavile flag, means player has obtained Weavile transformation
+#define FLAG_TRANS_DRAGONAIR  0x26E // Transform Dragonair flag, means player has obtained Dragonair transformation
+#define FLAG_TRANS_SCYTHER  0x26F // Transform Scyther flag, means player has obtained Scyther transformation
+#define FLAG_TRANS_NOIVERN  0x270 // Transform Noivern flag, means player has obtained Noivern transformation
+#define FLAG_TRANS_MACHAMP  0x271 // Transform Machamp flag, means player has obtained Machamp transformation
+#define FLAG_TRANS_CHINCHOU 0x272 // Transform Chinchou flag, means player has obtained Chinchou transformation
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag
 #define FLAG_UNUSED_0x274  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag

@@ -50,10 +50,10 @@ const struct Transformation gTransformations[] =
         .battleSpecies = SPECIES_DITTO_NOIVERN,
         .ability = ABILITY_INFILTRATOR,
         .moves = {
-            MOVE_TACKLE,
-            MOVE_TRANSFORM,
-            MOVE_NONE,
-            MOVE_NONE,
+            MOVE_AIR_CUTTER,
+            MOVE_DRAGON_BREATH,
+            MOVE_SUPERSONIC,
+            MOVE_SUPER_FANG,
         },
     },
 
@@ -66,10 +66,10 @@ const struct Transformation gTransformations[] =
         .battleSpecies = SPECIES_DITTO_MARILL,
         .ability = ABILITY_HUGE_POWER,
         .moves = {
-            MOVE_TACKLE,
-            MOVE_TRANSFORM,
-            MOVE_NONE,
-            MOVE_NONE,
+            MOVE_WATER_PULSE,
+            MOVE_AQUA_JET,
+            MOVE_COVET,
+            MOVE_RAIN_DANCE,
         },
     },
 
