@@ -46,7 +46,7 @@ TarountulaDialog_Text_0:
 
 TarountulaDialog_Text_1:
 # 9 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	.string "This cave feels so much bigger\nfor us small bug types.\pI'm sure bigger Pokemon suspect\nnothing is in here!$"
+	.string "This cave feels so much bigger\nfor us small bug types.\pI'm sure bigger Pokémon suspect\nnothing is in here!$"
 
 TarountulaDialog_Text_2:
 # 15 "data/maps/DaycarePikachuShrinkCave/scripts.pory"

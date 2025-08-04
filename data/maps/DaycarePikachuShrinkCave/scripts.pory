@@ -6,7 +6,7 @@ script TarountulaDialog{
     if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
     {
         speakername("Tarountula")
-        msgbox("This cave feels so much bigger\nfor us small bug types.\pI'm sure bigger Pokemon suspect\nnothing is in here!", MSGBOX_AUTOCLOSE)
+        msgbox("This cave feels so much bigger\nfor us small bug types.\pI'm sure bigger Pokémon suspect\nnothing is in here!", MSGBOX_AUTOCLOSE)
         waitmessage
     }
     elif (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)

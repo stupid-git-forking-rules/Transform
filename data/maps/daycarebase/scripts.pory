@@ -43,7 +43,7 @@ script ShrinktoMausholdCave{
     }
     else
     {
-        msgbox(format("There is a tiny hole, but you are not small enough to fit through it."), MSGBOX_AUTOCLOSE)
+        msgbox("There is a tiny hole.\nA small Pokémon may be able\lto squeeze through it.", MSGBOX_AUTOCLOSE)
         waitmessage
         releaseall
         end
@@ -51,69 +51,322 @@ script ShrinktoMausholdCave{
 }
 
 script MimikyuDialog{
-    lockall
+    lock
     faceplayer
     if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Pikachu")
-        msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!",MSGBOX_AUTOCLOSE)
-        lockall
-        faceplayer
+        msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!",MSGBOX_DEFAULT)
         speakername("Mimikyu")
-        msgbox("Oh...\nYou caught me.\pI wish I could disguise myself as\nwell as you can...\pMaybe then people would like me more...", MSGBOX_AUTOCLOSE)
+        msgbox("Oh...\nYou caught me.\pI wish I could disguise myself as\nwell as you can...\pMaybe then people would like me more...", MSGBOX_DEFAULT)
         waitmessage
-        releaseall
+        release
         end
     }
     else
     {
     speakername("Pikachu")
-    msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!", MSGBOX_AUTOCLOSE)
+    msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!", MSGBOX_DEFAULT)
     waitmessage
-    releaseall
+    release
     end
     }
 }
  script KecleonDialog{
-    lockall
+    lock
     faceplayer
     if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Kecleon")
-        msgbox("Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.\pDo you know?\pI've always heard of Dittos\nholding onto eggs...", MSGBOX_AUTOCLOSE)
+        msgbox("Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.\pDo you know?\pI've always heard of Dittos\nholding onto eggs...", MSGBOX_DEFAULT)
         waitmessage
-        releaseall
+        release
         end
     }
     else
     {
         speakername("Kecleon")
-        msgbox("Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.", MSGBOX_AUTOCLOSE)
+        msgbox("Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.", MSGBOX_DEFAULT)
         waitmessage
-        releaseall
+        release
         end
     }
     
 }
 
  script AzumarillDialog{
-    lockall
+    lock
     faceplayer
     if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Azumarill")
-        msgbox("Welcome to the Daycare!\pYou'll fit in well here.", MSGBOX_AUTOCLOSE)
+        msgbox("Welcome to the Daycare!\pYou'll fit in well here.", MSGBOX_DEFAULT)
         waitmessage
-        releaseall
+        release
         end
     }
     else
     {
         speakername("Azumarill")
-        msgbox("Oh!\nThank goodness you aren't a Ditto...\pMy trainer keeps putting me in here\nwith Dittos hoping we'll breed.\pThey even gave me this Sea Incence\nto set the mood...\pThey're just not my type.", MSGBOX_AUTOCLOSE)
+        msgbox("Oh!\nThank goodness you aren't a Ditto...\pMy trainer keeps putting me in here\nwith Dittos hoping we'll breed.\pThey even gave me this Sea Incence\nto set the mood...\pThey're just not my type.", MSGBOX_DEFAULT)
         waitmessage
-        releaseall
+        release
         end
     }
  }
 
+script DaycareOldManDialog{
+    lock
+    faceplayer
+    if (flag(FLAG_OLDMAN_INTRO))
+    {
+        speakername("Daycare Man")
+	    msgbox("Back from exploring the Daycare?\pAh!\nBut where is your egg!\pKeep doing whatever it is you\nDittos do and come back when\lyou have one!", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    elif(flag(FLAG_EGG_OBTAINED))
+    {  
+        speakername("Daycare Man")
+	    msgbox("Why what do we have here?\nGoodness!\pYou're holding an Egg!\pWherever did you get this?\pIt's the darndest thing.\pYou Pokémon always seem to find\nthese eggs, but I can never figure\lout where they come from.\pWould you like to give me the Egg\nso that I may give it to your\lTrainer?", MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {  
+            speakername("Daycare Man")
+            msgbox("Thank your for the Egg!\pAs a reward, take this experience!\n", MSGBOX_DEFAULT)
+            msgbox("Ditto gained 1 level!", MSGBOX_DEFAULT)
+            playse(MUS_LEVEL_UP)
+            waitmessage
+            release
+            end// roll credits daycare man takes two steps forward into the route
+        }
+        else
+        {  
+            speakername("Daycare Man")
+            msgbox("Oh, I see...\pGIMME THAT EGG!!\pThank your for the Egg!\pAs a reward, take this experience!\n", MSGBOX_DEFAULT)
+            msgbox("Ditto gained 1 level!", MSGBOX_DEFAULT)
+            playse(MUS_LEVEL_UP)
+            waitmessage
+            release
+            end //roll credits daycare man takes two steps forward into the route
+        }
+    }
+    else
+    {
+        speakername("Daycare Man")
+	    msgbox("Welcome to the Daycare!\pDespite what trainers may see from\nRoute 117, the Daycare is a vast\larea filled with biomes for nearly\levery type of Pokémon!\pExplore the Daycare and interact\nwith many of the Pokémon we are\lraising.\pYou never know what friends you\nwill make along the way!\pNow, I do expect you to be holding\nan Egg at some point... Every Ditto\lI've raised has produced one.\pWhen you're holding an Egg,\ncome back and talk to me and\lwe can get it to your trainer.", MSGBOX_DEFAULT)
+        waitmessage
+        setflag(FLAG_OLDMAN_INTRO)
+        release
+        end
+    }
+}
+
+script VaporeonDialog{
+    lock
+    faceplayer
+    speakername("Vaporeon")
+    msgbox("Ew!\pGet away from me.\pI know it's you Ditto.\pGoodness,\nwhy is everyone so into me?")
+    waitmessage
+    release
+    end
+}
+
+script LaprasDialog{
+
+    lock
+    faceplayer
+    speakername("Lapras")
+    msgbox("I love the Daycare!\pIt's so peaceful and quiet here.\pI can just float around all day\nand relax.\pThose waterfalls are pretty\nvicious, I won't go near them.\pI've heard that Dragonair can\neasily scale even the largest\lof waterfalls!")
+    waitmessage
+    release
+    end
+}
+
+script LinooneDialog{
+    if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
+    {
+        lock
+        faceplayer
+        speakername("Linoone")
+	    msgbox("The Daycare is huge!\pIt's a bit scary to expore,\nso I stay up here.\pRiolu is way more brave than I\nam and has explored the entirety\lof the Daycare.\pYou should talk with Riolu if\nyou get lost!\pI'm sure they can help!\n")
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        lock
+        faceplayer
+        speakername("Linoone")
+	    msgbox("Those Dittos really freak me out.\pThey could be any one of use right\nnow...\pEven you!... or me!\n")
+        waitmessage
+        release
+        end
+    }
+}
+
+script BulbsaurDialog{
+    lock
+    faceplayer
+    speakername("Bulbasaur")
+	msgbox("You want to know where Eggs\ncome from?\pI heard that a Pokémon needs\nto go on a great adventure to\lmeet a shapeshifting Pokémon.\pIf you can best them, they will\ngive you an egg!\pAt least, that's what Venusaur\ntold me...", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script CombeeDialog{
+    lock
+    faceplayer
+    speakername("Combee")
+	msgbox("I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nexperience here is nothing more\lthan a big ole myth!", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script Porygon2Dialog{
+    lock
+    faceplayer
+    speakername("Porygon2")
+	msgbox("Another Ditto...\pI'm actually a Ditto too,\nI just prefer this look.\pThe Daycare population must be at\nleast 75 percent Dittos!\pMost Dittos will take on different\nforms.\pYou won't be able to transform\ninto a form that another Ditto has\ltaken on though.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script LurantisDialog{
+    lock
+    faceplayer
+    speakername("Lurantis")
+    msgbox("One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen3...", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script RioluDialog{
+    lock
+    faceplayer
+    if(flag(FLAG_RIOLU_INTRO))
+    {
+        lock
+        faceplayer
+        speakername("Riolu")
+	    msgbox("Back with a Lucky Egg?\n")
+        checkitem(ITEM_LUCKY_EGG)
+        if(var(VAR_RESULT) == TRUE)
+        {  
+            
+            msgbox("Great!\pI can tell about the habitat and\nability of a Pokémon in the Daycare.\pWould you like to exchange a\nLucky Egg?", MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES)
+            {  
+                removeitem(ITEM_LUCKY_EGG)
+                dynmultichoice(0,0,TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Arcanine","Chinchou", "Cutiefly", "Dragonair", "Marill", "Machamp", "Noivern","Pikachu", "Rhyhorn", "Scyther", "Weavile")
+                if(var(VAR_RESULT) == 0)
+                {
+                    msgbox("Arcanine can be found deep in the\nVolcano.\pIt can run really fast and scale\nhills that would normally be to\lslippery to climb!", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 1)
+                {
+                    msgbox("Chinchou can be found in a cave\non the water in the desert.\pIt can dive deep underwater.\n", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 2)
+                {
+                    msgbox("Cutiefly can be found in the\nDaycare's flowers to the west.\pIt's a tiny Pokémon that can\nfit through small openings.", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 3)
+                {
+                    msgbox("Dragonair can be found at the lake.\pIt can be a bit cryptic so it\nmay be difficult to reach.\pIt can scale large waterfalls\nwith ease.", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 4)
+                {
+                    msgbox("Marill can be found at the lake,\nusually by the shore.\pIt's a bit shy so it may be hiding.\pIt can float in any body of water.\n", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 5)
+                {
+                    msgbox("Machamp likes to train deep in\nthe mountains.\pIt is a very tough and solitary\nPokémon.\pIts strength can move large\nboulders.", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 6)
+                {
+                    msgbox("Noivern hangs out in a dark\ncave above the Daycare Falls.\pIt's quite a powerful Pokémon,\nso be prepared for a fight.\pIt can soar through the air,\nreaching places unreachable by\lnon_flying types.", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 7)
+                {
+                    msgbox("Pikachu is standing on that cliff\nright over there.\pIts electricity can light up even\nthe darkest of caves.", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 8)
+                {
+                    msgbox("Rhyhorn lives in the desert.\pIt's quite a friendly Pokémon,\nbut don't upset it!\pIt is strong enough to smash\nsolid rocks!", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 9)
+                {
+                    msgbox("Scyther has been spending time\nacross the water in the mountains.\pIts sharp scythes can cut through\nsmall trees.", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+                elif(var(VAR_RESULT) == 10)
+                {
+                    msgbox("Weavile is quite the ninja.\pIt spends time in the tall trees\nin the jungle.\pIt demands a fierce challenger\nto battle it.\pIts agility allows it to cross\neven the smallest of walkways.", MSGBOX_DEFAULT)
+                    waitmessage
+                    release
+                    end
+                }
+            }
+            else
+            {
+                msgbox("Oh.\pWhat else are you gonna do\nwith that egg?")
+                waitmessage
+                release
+                end
+            }
+        }
+        else
+        {
+            speakername("Riolu")
+            msgbox("No?\nCome back when you do!", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+
+    }
+    else
+    {
+    speakername("Riolu")
+	msgbox("Hiya!\pI'm Riolu!\pI've visited every biome the\nDaycare has to offer.\lI know it like the back of my paw!\pIf you need guidance on where a\ncertain Pokémon might be,\lI'm your Pokémon!\pAlthough I won't do it for free...\pBring me Lucky Eggs, and I'll tell\nyou what I know.")
+    setflag(FLAG_RIOLU_INTRO)
+    waitmessage
+    release
+    end
+    }
+}
