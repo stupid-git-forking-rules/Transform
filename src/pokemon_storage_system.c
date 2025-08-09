@@ -6115,6 +6115,7 @@ static void DoCursorNewPosUpdate(void)
 static void SetCursorInParty(void)
 {
     u8 partyCount;
+    u8 newCursorPos = 1; // Start at the first movable slot.
 
     if (!sIsMonBeingMoved)
     {
@@ -6125,12 +6126,19 @@ static void SetCursorInParty(void)
         partyCount = CalculatePlayerPartyCount();
         if (partyCount >= DITTO_PARTY)
             partyCount = DITTO_PARTY - 1;
+
+        // If a Pokemon is being moved, the cursor should go to the next available slot
+        if (partyCount > 0)
+        {
+            newCursorPos = partyCount;
+        }
     }
+    
     if (sStorage->cursorSprite->vFlip)
         sStorage->cursorFlipTimer = 1;
-    SetCursorPosition(CURSOR_AREA_IN_PARTY, partyCount);
+    
+    SetCursorPosition(CURSOR_AREA_IN_PARTY, newCursorPos);
 }
-
 static void SetCursorBoxPosition(u8 cursorBoxPosition)
 {
     SetCursorPosition(CURSOR_AREA_IN_BOX, cursorBoxPosition);
@@ -7398,6 +7406,30 @@ static u8 HandleInput_InParty(void)
         gotoBox = FALSE;
         retVal = INPUT_NONE;
 
+        // if you replace the JOY_REPEAT(DPAD_UP) with this commented out section, you can make it so pressing up closes the party menu rather than selecting ditto
+/*
+        if (JOY_REPEAT(DPAD_UP))
+        {
+            // If the cursor is at position 1, pressing up should not move to 0.
+            if (sCursorPosition == 1)
+            {
+                retVal = INPUT_HIDE_PARTY;
+                cursorArea = CURSOR_AREA_IN_BOX;
+                cursorPosition = 0;
+            }
+            else if (sCursorPosition == DITTO_PARTY)
+            {
+                cursorPosition = DITTO_PARTY - 1; 
+                retVal = INPUT_MOVE_CURSOR;
+            }
+            else
+            {
+                cursorPosition = sCursorPosition - 1;
+                if (cursorPosition != sCursorPosition)
+                    retVal = INPUT_MOVE_CURSOR;
+            }
+            break;
+        }*/
         if (JOY_REPEAT(DPAD_UP))
         {
             if (--cursorPosition < 0)
@@ -7418,7 +7450,7 @@ static u8 HandleInput_InParty(void)
         {
             retVal = INPUT_MOVE_CURSOR;
             sStorage->cursorPrevHorizPos = sCursorPosition;
-            cursorPosition = 0;
+            cursorPosition = 0; // can modify this to 1 to make it so you cannot scroll left to hover over ditto
             break;
         }
         else if (JOY_REPEAT(DPAD_RIGHT))
@@ -7439,6 +7471,12 @@ static u8 HandleInput_InParty(void)
 
         if (JOY_NEW(A_BUTTON))
         {
+                // Do nothing if the cursor is at position 0.
+            if (sCursorPosition == 0)
+            {
+                retVal = INPUT_NONE;
+                break;
+            }
             if (sCursorPosition == DITTO_PARTY)
             {
                 if (sStorage->boxOption == OPTION_DEPOSIT)
@@ -7698,7 +7736,7 @@ static bool8 SetMenuTexts_Mon(void)
 
     switch (sStorage->boxOption)
     {
-    case OPTION_DEPOSIT:
+    /*case OPTION_DEPOSIT:
         if (species != SPECIES_NONE)
             SetMenuText(MENU_STORE);
         else
@@ -7709,7 +7747,7 @@ static bool8 SetMenuTexts_Mon(void)
             SetMenuText(MENU_WITHDRAW);
         else
             return FALSE;
-        break;
+        break;*/
     case OPTION_MOVE_MONS:
         if (sIsMonBeingMoved)
         {
@@ -7732,16 +7770,16 @@ static bool8 SetMenuTexts_Mon(void)
     }
 
     SetMenuText(MENU_SUMMARY);
-    if (sStorage->boxOption == OPTION_MOVE_MONS)
+    /*if (sStorage->boxOption == OPTION_MOVE_MONS)
     {
         if (sCursorArea == CURSOR_AREA_IN_BOX)
             SetMenuText(MENU_WITHDRAW);
         else
             SetMenuText(MENU_STORE);
-    }
+    }*/
 
-    SetMenuText(MENU_MARK);
-    SetMenuText(MENU_RELEASE);
+    //SetMenuText(MENU_MARK);
+    //SetMenuText(MENU_RELEASE);
     SetMenuText(MENU_CANCEL);
     return TRUE;
 }
