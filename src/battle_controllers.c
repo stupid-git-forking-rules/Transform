@@ -2501,7 +2501,10 @@ void BtlController_HandleLoadMonSprite(u32 battler, void (*controllerCallback)(u
                                                GetBattlerSpriteDefault_Y(battler),
                                                GetBattlerSpriteSubpriority(battler));
 
-    gSprites[gBattlerSpriteIds[battler]].x2 = -DISPLAY_WIDTH;
+    if (gBattleStruct->introState <= 7 && GetBattlerSide(battler) == B_SIDE_PLAYER)
+        gSprites[gBattlerSpriteIds[battler]].x2 = DISPLAY_WIDTH;
+    else
+        gSprites[gBattlerSpriteIds[battler]].x2 = -DISPLAY_WIDTH;
     gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
     gSprites[gBattlerSpriteIds[battler]].data[2] = species;
     gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;

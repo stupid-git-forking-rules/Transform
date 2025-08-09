@@ -2827,15 +2827,29 @@ void SpriteCB_BattleSpriteStartSlideLeft(struct Sprite *sprite)
     sprite->callback = SpriteCB_BattleSpriteSlideLeft;
 }
 
+static void SpriteCB_ShowHealthbox(struct Sprite *sprite)
+{
+    if (sprite->animEnded)
+    {
+        StartHealthboxSlideIn(sprite->sBattler);
+        SetHealthboxSpriteVisible(gHealthboxSpriteIds[sprite->sBattler]);
+        sprite->callback = SpriteCB_PlayerMonFromBall;
+        StartSpriteAnim(sprite, 0);
+        PlayCry_ByMode(sprite->sSpeciesId, -25, CRY_MODE_NORMAL);
+    }
+}
+
 static void SpriteCB_BattleSpriteSlideLeft(struct Sprite *sprite)
 {
-    if (!(gIntroSlideFlags & 1))
+    if ((gIntroSlideFlags & 1) == 0)
     {
-        sprite->x2 -= 2;
+        if (B_FAST_INTRO_NO_SLIDE == FALSE && !gTestRunnerHeadless)
+            sprite->x2 -= 2;
+        else
+            sprite->x2 = 0;
         if (sprite->x2 == 0)
         {
-            sprite->callback = SpriteCB_Idle;
-            sprite->data[1] = 0;
+           sprite->callback = SpriteCB_ShowHealthbox;
         }
     }
 }
@@ -3548,8 +3562,16 @@ static void DoBattleIntro(void)
             switch (GetBattlerPosition(battler))
             {
             case B_POSITION_PLAYER_LEFT: // player sprite
-                BtlController_EmitDrawTrainerPic(battler, B_COMM_TO_CONTROLLER);
-                MarkBattlerForControllerExec(battler);
+                if (!(gBattleTypeFlags & (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TRAINER)))
+                {
+                    BtlController_EmitLoadMonSprite(battler, B_COMM_TO_CONTROLLER);
+                    MarkBattlerForControllerExec(battler);
+                }
+                else 
+                {
+                    BtlController_EmitDrawTrainerPic(battler, B_COMM_TO_CONTROLLER);
+                    MarkBattlerForControllerExec(battler);
+                }
                 break;
             case B_POSITION_OPPONENT_LEFT:
                 if (gBattleTypeFlags & BATTLE_TYPE_TRAINER) // opponent 1 sprite
@@ -3715,7 +3737,12 @@ static void DoBattleIntro(void)
         break;
     case BATTLE_INTRO_STATE_WAIT_FOR_WILD_BATTLE_TEXT:
         if (!IsBattlerMarkedForControllerExec(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT)))
-            gBattleStruct->introState++;
+        {
+            if (!(gBattleTypeFlags & (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TRAINER)))
+                gBattleStruct->introState = BATTLE_INTRO_STATE_SET_DEX_AND_BATTLE_VARS;
+            else
+                gBattleStruct->introState++;
+        }
         break;
     case BATTLE_INTRO_STATE_PRINT_PLAYER_SEND_OUT_TEXT:
         if (!(gBattleTypeFlags & BATTLE_TYPE_SAFARI))
