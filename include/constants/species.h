@@ -1644,7 +1644,7 @@
 #define SPECIES_DITTO_CUTIEFLY                          (SPECIES_MIMIKYU_TOTEM_BUSTED + 4)
 #define SPECIES_DITTO_ARCANINE                          (SPECIES_MIMIKYU_TOTEM_BUSTED + 5)
 #define SPECIES_DITTO_WEAVILE                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 6)
-#define SPECIES_DITTO_SCYTHER                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 7)
+#define SPECIES_DITTO_LURANTIS                          (SPECIES_MIMIKYU_TOTEM_BUSTED + 7)
 #define SPECIES_DITTO_CHINCHOU                          (SPECIES_MIMIKYU_TOTEM_BUSTED + 8)
 #define SPECIES_DITTO_DRAGONAIR                         (SPECIES_MIMIKYU_TOTEM_BUSTED + 9)
 #define SPECIES_DITTO_MACHAMP                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 10)

@@ -3,7 +3,7 @@
   "name": "DaycareMewFinale",
   "layout": "LAYOUT_DAYCARE_MEW_FINALE",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_SEALED_CHAMBER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

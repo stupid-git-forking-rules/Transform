@@ -1760,7 +1760,7 @@ void ItemUseOutOfBattle_CutTransform(u8 taskId)
 void ItemUseOnFieldCB_CutTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_SCYTHER);
+    SetPlayerAvatarTransformation(SPECIES_LURANTIS);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }

@@ -190,7 +190,7 @@ static u8 IsSpeciesValidTransformation(u16 speciesId)
         case SPECIES_PIKACHU:
         case SPECIES_ARCANINE:
         case SPECIES_WEAVILE:
-        case SPECIES_SCYTHER:
+        case SPECIES_LURANTIS:
         case SPECIES_CHINCHOU:
         case SPECIES_CUTIEFLY:
         case SPECIES_MACHAMP:
