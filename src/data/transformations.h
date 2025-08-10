@@ -66,7 +66,7 @@ const struct Transformation gTransformations[] =
         .battleSpecies = SPECIES_DITTO_MARILL,
         .ability = ABILITY_HUGE_POWER,
         .moves = {
-            MOVE_WATER_PULSE,
+            MOVE_SURF,
             MOVE_AQUA_JET,
             MOVE_COVET,
             MOVE_RAIN_DANCE,
@@ -85,7 +85,7 @@ const struct Transformation gTransformations[] =
             MOVE_ROCK_THROW,
             MOVE_HORN_ATTACK,
             MOVE_ROCK_POLISH,
-            MOVE_ROCK_TOMB,
+            MOVE_ROCK_SMASH,
         },
     },
 
@@ -146,7 +146,7 @@ const struct Transformation gTransformations[] =
             MOVE_AERIAL_ACE,
             MOVE_BUG_BITE,
             MOVE_TRAILBLAZE,
-            MOVE_SLASH,
+            MOVE_CUT,
         },
     },
     [SPECIES_CHINCHOU] =
@@ -160,7 +160,7 @@ const struct Transformation gTransformations[] =
         .moves = {
             MOVE_THUNDER_WAVE,
             MOVE_DISCHARGE,
-            MOVE_BUBBLE_BEAM,
+            MOVE_DIVE,
             MOVE_DAZZLING_GLEAM,
         },
     },
@@ -173,10 +173,10 @@ const struct Transformation gTransformations[] =
         .battleSpecies = SPECIES_DITTO_DRAGONAIR,
         .ability = ABILITY_MARVEL_SCALE,
         .moves = {
-            MOVE_TACKLE,
-            MOVE_TRANSFORM,
-            MOVE_NONE,
-            MOVE_NONE,
+            MOVE_OUTRAGE,
+            MOVE_WATERFALL,
+            MOVE_IRON_HEAD,
+            MOVE_SAFEGUARD,
         },
     },
     [SPECIES_MACHAMP] =
@@ -188,7 +188,7 @@ const struct Transformation gTransformations[] =
         .battleSpecies = SPECIES_DITTO_MACHAMP,
         .ability = ABILITY_NO_GUARD,
         .moves = {
-            MOVE_OUTRAGE,
+            MOVE_STRENGTH,
             MOVE_WATERFALL,
             MOVE_IRON_HEAD,
             MOVE_SAFEGUARD,
@@ -206,7 +206,7 @@ const struct Transformation gTransformations[] =
             MOVE_NUZZLE,
             MOVE_IRON_TAIL,
             MOVE_SPARK,
-            MOVE_DOUBLE_TEAM,
+            MOVE_FLASH,
         },
     },
     
