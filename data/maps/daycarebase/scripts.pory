@@ -337,7 +337,7 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 9)
                 {
-                    msgbox("Lurantis has been spending time\nacross the water in the mountains.\pIts sharp scythes can cut through\nsmall trees.", MSGBOX_DEFAULT)
+                    msgbox("Lurantis has been spending time\nacross the water in the mountains.\pIts sharp limbs can cut through\nsmall trees.", MSGBOX_DEFAULT)
                     waitmessage
                     release
                     end
@@ -385,20 +385,28 @@ script BattleVsPikachu{
     faceplayer
     if(flag(FLAG_TRANS_PIKACHU))
     {
-        msgbox("You really lit me up.", MSGBOX_AUTOCLOSE)
+        speakername("Pikachu")
+        msgbox("You really lit me up.\pBest of luck on your journey!\n", MSGBOX_DEFAULT)
         waitmessage
         release
         end
     }
-    msgbox("Pikachu wants to battle!", MSGBOX_AUTOCLOSE)
+    speakername("Pikachu")
+    msgbox("A ditto!\pYou must be on your quest to obtain\nyour egg.\pDefeat me in battle and I'll allow\nyou to transform into me!", MSGBOX_DEFAULT)
 	setwildbattle(SPECIES_PIKACHU, 25)
-	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
     {
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_PIKACHU)
-        msgbox("transform into pikachu", MSGBOX_AUTOCLOSE)
+        dittotransform(SPECIES_PIKACHU)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntranform into Pikachu!", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(SPECIES_PIKACHU, 25, move1=MOVE_NUZZLE, move2=MOVE_IRON_TAIL, move3=MOVE_SPARK, move4=MOVE_DOUBLE_TEAM)
         waitmessage
         release
         end
