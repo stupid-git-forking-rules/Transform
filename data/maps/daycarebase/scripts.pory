@@ -1,4 +1,11 @@
-mapscripts daycarebase_MapScripts {}
+mapscripts daycarebase_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION:Daycare_OnTransition
+}
+
+script Daycare_OnTransition{
+    setrespawn(HEAL_LOCATION_DAYCAREBASE)
+    end
+}
 
 script ShrinkToPikachuCave{
     lockall
@@ -236,11 +243,12 @@ script Porygon2Dialog{
     end
 }
 
-script LurantisDialog{
+script ScytherDialog{
     lock
     faceplayer
-    speakername("Lurantis")
+    speakername("Scyther")
     msgbox("One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen3...", MSGBOX_DEFAULT)
+    givemon(SPECIES_LURANTIS, 100, item=ITEM_LEFTOVERS, ball=ITEM_MASTER_BALL, nature=NATURE_TIMID, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31, hpEv=4, spAtkEv=252, speedEv=252, move1=MOVE_PSYSTRIKE, move2=MOVE_SHADOW_BALL, move3=MOVE_AURA_SPHERE, move4=MOVE_RECOVER, isShiny=TRUE)
     waitmessage
     release
     end
@@ -263,7 +271,7 @@ script RioluDialog{
             if(var(VAR_RESULT) == YES)
             {  
                 removeitem(ITEM_LUCKY_EGG)
-                dynmultichoice(0,0,TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Arcanine","Chinchou", "Cutiefly", "Dragonair", "Marill", "Machamp", "Noivern","Pikachu", "Rhyhorn", "Scyther", "Weavile")
+                dynmultichoice(0,0,TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Arcanine","Chinchou", "Cutiefly", "Dragonair", "Marill", "Machamp", "Noivern","Pikachu", "Rhyhorn","Lurantis", "Weavile")
                 if(var(VAR_RESULT) == 0)
                 {
                     msgbox("Arcanine can be found deep in the\nVolcano.\pIt can run really fast and scale\nhills that would normally be to\lslippery to climb!", MSGBOX_DEFAULT)
@@ -329,7 +337,7 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 9)
                 {
-                    msgbox("Scyther has been spending time\nacross the water in the mountains.\pIts sharp scythes can cut through\nsmall trees.", MSGBOX_DEFAULT)
+                    msgbox("Lurantis has been spending time\nacross the water in the mountains.\pIts sharp scythes can cut through\nsmall trees.", MSGBOX_DEFAULT)
                     waitmessage
                     release
                     end
@@ -369,4 +377,70 @@ script RioluDialog{
     release
     end
     }
+}
+
+
+script BattleVsPikachu{
+    lock
+    faceplayer
+    if(flag(FLAG_TRANS_PIKACHU))
+    {
+        msgbox("You really lit me up.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+    msgbox("Pikachu wants to battle!", MSGBOX_AUTOCLOSE)
+	setwildbattle(SPECIES_PIKACHU, 25)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 1)
+	dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON)
+    {
+        setflag(FLAG_TRANS_PIKACHU)
+        msgbox("transform into pikachu", MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+}
+
+script ChanseyHeal{
+    lock
+    faceplayer
+    speakername("Chansey")
+    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?", MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES)
+    {
+        checkitem(ITEM_LUCKY_EGG)
+        if(var(VAR_RESULT) == TRUE)
+        {
+            removeitem(ITEM_LUCKY_EGG)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            special(HealPlayerParty)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+            msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+
 }
