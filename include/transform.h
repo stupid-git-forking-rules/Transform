@@ -18,7 +18,8 @@ u16 ReturnAvatarTrainerBackPicId(u16 avatarId);
 
 typedef void (*TransformFunc)(u8);
 
-void SetPlayerAvatarFromItem(u16 speciesId);
+void SetPlayerAvatarTransformation(u16 speciesId);
+void TrySetPlayerAvatarTransformation(u16 speciesId);
 TransformFunc GetTransformationFunc(u16 speciesId);
 
 #define TRANSFORM_TYPE_PLAYER_SPECIES 1

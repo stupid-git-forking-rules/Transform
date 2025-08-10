@@ -93,7 +93,7 @@ static void LockPlayerAndLoadMon(void)
 // Cut
 u32 CanUseCut(s16 x, s16 y)
 {
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(ITEM_HM01);
+    bool32 monHasMove = LeadMonKnowsFieldMove(ITEM_HM01);
     bool32 playerHasBadge = FlagGet(FLAG_BADGE01_GET);
 
     if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_CUTTABLE_TREE)
@@ -169,7 +169,7 @@ void ResetFlyTool(void)
 // Surf
 u32 CanUseSurf(s16 x, s16 y, u8 collision)
 {
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(ITEM_HM03);
+    bool32 monHasMove = LeadMonKnowsFieldMove(ITEM_HM03);
     bool32 playerHasBadge = FlagGet(FLAG_BADGE05_GET);
     bool32 collisionHasMismatch = (collision == COLLISION_ELEVATION_MISMATCH);
 
@@ -253,7 +253,7 @@ void RemoveRelevantSurfFieldEffect(void)
 
 u32 CanUseStrength(u8 collision)
 {
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(ITEM_HM04);
+    bool32 monHasMove = LeadMonKnowsFieldMove(ITEM_HM04);
     bool32 playerHasBadge = FlagGet(FLAG_BADGE04_GET);
     bool32 playerUsedStrength = FlagGet(FLAG_SYS_USE_STRENGTH);
     bool32 collisionEvent = (collision == COLLISION_OBJECT_EVENT);
@@ -350,7 +350,7 @@ void TryUseFlash(void)
 
 u32 CanUseRockSmash(s16 x, s16 y)
 {
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(ITEM_HM06);
+    bool32 monHasMove = LeadMonKnowsFieldMove(ITEM_HM06);
     bool32 playerHasBadge = FlagGet(FLAG_BADGE03_GET);
 
     if (CheckObjectGraphicsInFrontOfPlayer(OBJ_EVENT_GFX_BREAKABLE_ROCK)
@@ -401,7 +401,7 @@ bool8 IsPlayerFacingWaterfall(void)
 
 u32 CanUseWaterfall(u8 direction)
 {
-    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(ITEM_HM07);
+    bool32 monHasMove = LeadMonKnowsFieldMove(ITEM_HM07);
     bool32 playerHasBadge = FlagGet(FLAG_BADGE08_GET);
     bool32 isPlayerPushedSouth = (direction == DIR_SOUTH);
 
@@ -605,7 +605,7 @@ bool32 PartyHasMonLearnsKnowsFieldMove(u16 itemId)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         mon = &gPlayerParty[i];
-        species = GetMonData(mon,MON_DATA_SPECIES,NULL);
+        species = GetMonData(mon, MON_DATA_SPECIES, NULL);
 
         if (species == SPECIES_NONE)
             break;
@@ -617,6 +617,25 @@ bool32 PartyHasMonLearnsKnowsFieldMove(u16 itemId)
             return SetMonResultVariables(i,species);
 
     }
+    return FALSE;
+}
+
+bool32 LeadMonKnowsFieldMove(u16 itemId)
+{
+    struct Pokemon *mon;
+    u32 species, monCanLearnTM;
+    u16 moveId = ItemIdToBattleMoveId(itemId);
+    gSpecialVar_0x8004 = 0;
+
+    mon = &gPlayerParty[0];
+    species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+
+    monCanLearnTM = CanTeachMove(mon,moveId);
+    if ((PartyCanLearnMoveLevelUp(species, moveId)
+            || (monCanLearnTM) == ALREADY_KNOWS_MOVE)
+            || (monCanLearnTM) == CAN_LEARN_MOVE)
+        return SetMonResultVariables(0 ,species);
+
     return FALSE;
 }
 

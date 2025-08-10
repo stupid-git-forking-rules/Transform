@@ -2305,6 +2305,12 @@
 	.2byte \var
 	.endm
 
+	@ Check if Field move is being used by player ditto.
+	.macro isdittofieldmoveuser var:req
+	callnative IsDittoFieldMoveUser, requests_effects=1
+	.2byte \var
+	.endm
+
 	@ Saves the direction from where source object event would need to turn to to face the target into the specified var.
 	.macro getdirectiontoface var:req, sourceId:req, targetId:req
 	callnative GetDirectionToFaceScript, requests_effects=1

@@ -15,6 +15,8 @@ EventScript_CutTree::
 EventScript_CutTreeCommon:
 	isfollowerfieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
+	isdittofieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
 EventScript_CutTreeDown:: @ fallthrough
@@ -81,6 +83,8 @@ EventScript_RockSmashCommon:
 	@ check if follower should use the field move
 	isfollowerfieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
+	isdittofieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
 EventScript_SmashRock:: @ fallthrough
@@ -392,6 +396,8 @@ EventScript_NoSurface::
 EventScript_DigCommon:
 	isfollowerfieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
+	isdittofieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_DIG
 	waitstate
 EventScript_DigSealedChamber:: @ fallthrough
@@ -410,6 +416,8 @@ EventScript_UseDig::
 EventScript_CutGrassCommon:
 	isfollowerfieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
+	isdittofieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_CUT_ON_GRASS
 	waitstate
 
@@ -452,6 +460,8 @@ EventScript_UseDefog::
 	closemessage
 	isfollowerfieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
+	isdittofieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_RESULT
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
 	waitmovement 0

@@ -14,6 +14,7 @@
 #include "pokemon_storage_system.h"
 #include "task.h"
 #include "field_weather.h"
+#include "fldeff.h"
 #include "new_game.h"
 #include "start_menu.h"
 #include "constants/metatile_labels.h"
@@ -54,6 +55,7 @@
 #include "event_object_lock.h"
 #include "constants/species.h"
 #include "graphics.h"
+#include "script.h"
 
 #include "data/transformations.h"
 
@@ -251,7 +253,7 @@ void SetPlayerAvatarFromScript(struct ScriptContext *ctx)
     PlaySE(SE_M_TELEPORT);
 }
 
-void SetPlayerAvatarFromItem(u16 speciesId)
+void SetPlayerAvatarTransformation(u16 speciesId)
 {
     if (!IsSpeciesValidTransformation(speciesId))
         return;
@@ -265,6 +267,14 @@ void SetPlayerAvatarFromItem(u16 speciesId)
 
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
     PlaySE(SE_M_TELEPORT);
+}
+
+void TrySetPlayerAvatarTransformation(u16 speciesId)
+{
+    if (gSaveBlock2Ptr->pokemonAvatarSpecies == speciesId)
+        return;
+    
+    SetPlayerAvatarTransformation(speciesId);
 }
 
 void TryCreatePokemonAvatarSpriteBob(void)
@@ -365,4 +375,14 @@ const u16 *GetTransformationPalette(u16 speciesId)
         return gItemIconPalette_ReturnToFieldArrow;
 
     return gTransformations[speciesId].iconPalette;
+}
+
+void IsDittoFieldMoveUser(struct ScriptContext *ctx)
+{
+    u32 var = VarGet(ScriptReadHalfword(ctx));
+
+    if (PlayerIsDitto())
+        gSpecialVar_Result = FLDEFF_CONST_PLAYER_IS_DITTO;
+    else
+        gSpecialVar_Result = var; // Mantains the state of the previous var
 }
