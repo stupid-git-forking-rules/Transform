@@ -3251,7 +3251,8 @@ void SurfFieldEffect_Init(struct Task *task)
     // Put follower into pokeball before using Surf
     HideFollowerForFieldEffect();
     gPlayerAvatar.preventStep = TRUE;
-    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_SURFING);
+    if (gFieldEffectArguments[3] != FLDEFF_CONST_PLAYER_IS_DITTO)
+        SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_SURFING);
     PlayerGetDestCoords(&task->tDestX, &task->tDestY);
     MoveCoords(gObjectEvents[gPlayerAvatar.objectEventId].movementDirection, &task->tDestX, &task->tDestY);
     task->tState++;
@@ -3264,8 +3265,17 @@ static void SurfFieldEffect_FieldMovePose(struct Task *task)
     if (!ObjectEventIsMovementOverridden(objectEvent) || ObjectEventClearHeldMovementIfFinished(objectEvent))
     {
         SetPlayerAvatarFieldMove();
-        ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
-        task->tState++;
+        if (gFieldEffectArguments[3] != FLDEFF_CONST_PLAYER_IS_DITTO)
+        {
+            gFieldEffectArguments[0] = task->tMonId | SHOW_MON_CRY_NO_DUCKING;
+            FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+            task->tState += 2;
+        }
+        else
+        {
+            ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
+            task->tState++;
+        }
     }
 }
 
@@ -3440,7 +3450,8 @@ static void FlyOutFieldEffect_FieldMovePose(struct Task *task)
         gPlayerAvatar.preventStep = TRUE;
         SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
         SetPlayerAvatarFieldMove();
-        ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
+        if (gFieldEffectArguments[3] == FLDEFF_CONST_PLAYER_IS_DITTO)
+            ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
         task->tState++;
     }
 }
@@ -3809,7 +3820,8 @@ static void FlyInFieldEffect_FieldMovePose(struct Task *task)
         sprite->y2 = 0;
         sprite->coordOffsetEnabled = TRUE;
         SetPlayerAvatarFieldMove();
-        ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
+        if (gFieldEffectArguments[3] == FLDEFF_CONST_PLAYER_IS_DITTO)
+            ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
         task->tState++;
     }
 }

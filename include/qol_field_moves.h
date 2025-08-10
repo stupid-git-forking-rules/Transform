@@ -39,6 +39,7 @@ bool8 FldEff_SweetScentTool(void);
 
 void ClearFieldMoveFlags(void);
 bool32 PartyHasMonLearnsKnowsFieldMove(u16);
+bool32 LeadMonKnowsFieldMove(u16 itemId);
 
 enum FieldMoveActionSource
 {

@@ -22,6 +22,7 @@
 #include "sprite.h"
 #include "strings.h"
 #include "task.h"
+#include "transform.h"
 #include "tv.h"
 #include "wild_encounter.h"
 #include "constants/abilities.h"
@@ -1670,6 +1671,9 @@ u16 GetPlayerAvatarGraphicsIdByCurrentState(void)
     u8 i;
     u8 flags = gPlayerAvatar.flags;
 
+    if (PlayerIsDitto())
+        return 0;
+
     for (i = 0; i < ARRAY_COUNT(sPlayerAvatarGfxToStateFlag[0]); i++)
     {
         if (sPlayerAvatarGfxToStateFlag[gPlayerAvatar.gender][i][1] & flags)
@@ -1728,8 +1732,15 @@ void SetPlayerInvisibility(bool8 invisible)
 
 void SetPlayerAvatarFieldMove(void)
 {
-    ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_FIELD_MOVE));
-    StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], ANIM_FIELD_MOVE);
+    if (PlayerIsDitto())
+    {
+        TrySetPlayerAvatarTransformation(GetMonData(&gPlayerParty[(u8)gFieldEffectArguments[0]], MON_DATA_SPECIES));
+    }
+    else
+    {
+        ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_FIELD_MOVE));
+        StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], ANIM_FIELD_MOVE);
+    }
 }
 
 static void SetPlayerAvatarFishing(u8 direction)
