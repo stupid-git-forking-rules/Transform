@@ -62,4 +62,6 @@ bool8 FldEff_Defog(void);
 //general
 void Task_DoFieldMove_RunFunc(u8 taskId); // qol_field_moves
 
+#define FLDEFF_CONST_PLAYER_IS_DITTO 9
+
 #endif // GUARD_FLDEFF_H
