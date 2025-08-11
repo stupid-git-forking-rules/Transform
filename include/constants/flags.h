@@ -674,7 +674,7 @@
 #define FLAG_OLDMAN_INTRO  0x273 // used in intro for old man introducing daycare expectations
 #define FLAG_EGG_OBTAINED  0x274 // used to beat the game, showing the old man you have obtained the egg, he will reward you with 1 level.
 #define FLAG_RIOLU_INTRO  0x275 // USED for riolus intro, which introduces that it will be your guide for the game.
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
+#define FLAG_HIDE_RUFFLET  0x276 // hides Rufflet
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag
@@ -1050,9 +1050,9 @@
 #define FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT                0x3E7
 
 // Item Ball Flags
-#define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
-#define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
-#define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
+#define FLAG_ITEM_DAYCARE_BASE1                                     0x3E8
+#define FLAG_ITEM_DAYCARE_BASE2                                     0x3E9
+#define FLAG_ITEM_DAYCARE_BASE3                                     0x3EA
 #define FLAG_ITEM_ROUTE_105_IRON                                    0x3EB
 #define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
 #define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED

@@ -25,7 +25,7 @@ script ShrinkToPikachuCave{
     }
     else
     {
-        msgbox(format("There is a tiny hole, but you are not small enough to fit through it."), MSGBOX_AUTOCLOSE)
+        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
         waitmessage
         releaseall
         end
@@ -50,7 +50,7 @@ script ShrinktoMausholdCave{
     }
     else
     {
-        msgbox("There is a tiny hole.\nA small Pokémon may be able\lto squeeze through it.", MSGBOX_AUTOCLOSE)
+        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
         waitmessage
         releaseall
         end
@@ -406,7 +406,7 @@ script BattleVsPikachu{
         msgbox("You have gained the ability to\ntranform into Pikachu!", MSGBOX_DEFAULT)
         waitmessage
         dittotransform(VAR_TEMP_0)
-        givemon(SPECIES_PIKACHU, 25, move1=MOVE_NUZZLE, move2=MOVE_IRON_TAIL, move3=MOVE_SPARK, move4=MOVE_DOUBLE_TEAM)
+        givemon(SPECIES_PIKACHU, 25, move1=MOVE_NUZZLE, move2=MOVE_IRON_TAIL, move3=MOVE_SPARK, move4=MOVE_FLASH)
         waitmessage
         release
         end
@@ -451,4 +451,12 @@ script ChanseyHeal{
         end
     }
 
+}
+
+script DaycareBase_FindLuckyEgg{
+    lock
+    finditem(ITEM_LUCKY_EGG)
+    waitmessage
+    release
+    end
 }

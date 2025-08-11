@@ -1,0 +1,182 @@
+mapscripts DaycareEast_MapScripts {
+}
+
+script KrabblyDialog {
+    lock
+    faceplayer
+    speakername("Krabbly")
+    msgbox("I love it here at the Daycare!\pI don't have to battle anyone that\nI don't want to!\pAlthough some Pokémon see it\ndifferently...", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script AlolanRaichuDialog {
+    lock
+    faceplayer
+    speakername("Raichu")
+    msgbox("Move out of my way!\nYou're blocking my waves dude.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script SandyghastDialog {
+    lock
+    faceplayer
+    if (var(VAR_TRANSFORM_MON) == SPECIES_RHYHORN)
+    {
+        speakername("Sandyghast")
+        msgbox("A fellow Ground_type!\pLet me give you some info...\nGround_type to Ground_type.\pI've heard a Pokémon will give an\nEgg for defeating it in a special\lbattle.\pBut...\pThat's just a rumor as no one has\nseen that Pokémon in ages.", MSGBOX_DEFAULT)
+        waitmessage
+    }
+    else
+    {
+        speakername("Sandyghast")
+        msgbox("...\n", MSGBOX_DEFAULT)
+        waitmessage
+    }
+    waitmessage
+    release
+    end
+}
+
+script DaycareEast_FindLuckyEgg {
+    lock
+    finditem(ITEM_LUCKY_EGG)
+    waitmessage
+    release
+    end
+}
+
+script ShellosEastDialog{
+    lock
+    faceplayer
+    if (var(VAR_TRANSFORM_MON) == SPECIES_MARILL)
+    {
+        speakername("Shellos")
+        msgbox("Wow a Marill!\pGastrodon told me about a cave\nwith a powerful flying Pokémon at\lthe top of the waterfall.\pMaybe you can reach it!\n", MSGBOX_DEFAULT)
+        waitmessage
+    }
+    elif(var(VAR_TRANSFORM_MON) == SPECIES_CHINCHOU)
+    {
+        speakername("Shellos")
+        msgbox("Wow a Chinchou!\pGastrodon told me about a reef\nunder the sea.\pMaybe you can reach it!\n", MSGBOX_DEFAULT)
+        waitmessage
+    }
+    else
+    {
+        speakername("Shellos")
+        msgbox("You seem nice and all...\nbut Gastrodon told me to only\ltalk to Water_types.", MSGBOX_DEFAULT)
+    }
+    release
+    end
+}
+
+script AlolanExeggutorDialog {
+    lock
+    faceplayer
+    speakername("Exeggutor")
+    msgbox("I hang out here all day long,\nbut I'm still not sure how to\lgain experience.\pI haven't interacted with the\nDaycare Man much though.\pMaybe he controls it?\pIt's all so confusing.\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script WingullDialog {
+    lock
+    faceplayer
+    speakername("Wingull")
+    msgbox("I wish more Pokémon could make\nway up here.\pSuch a beautiful view.\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script RuffletDialog {
+    lock
+    faceplayer
+    if (var(VAR_TRANSFORM_MON) == SPECIES_NOIVERN)
+    {
+        speakername("Rufflet")
+        msgbox("I wish I had the confidence to jump\nand try to fly...", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Rufflet, Common_Movement_ExclamationMark)
+        playSE(SE_PIN)
+        waitfanfare
+        waitmovement
+        msgbox("Wow a Flying_type Pokémon!\pWhere do you get the confidence to\nsoar like that?", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Rufflet, Common_Movement_ExclamationMark)
+        playSE(SE_PIN)
+        waitfanfare
+        waitmovement
+        msgbox("It just takes a leap of faith\nyou say?\pAlright, I'll try it!\pHere. Take this.", MSGBOX_DEFAULT)
+        waitmessage
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        giveitem(ITEM_LUCKY_EGG)   
+        waitfanfare
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        speakername("Rufflet")
+        msgbox("Thanks for the confidence boost.", MSGBOX_AUTOCLOSE)
+        waitmessage
+
+        applymovement(Rufflet, RuffletFlyAway)
+        waitmovement(0)
+        removeobject(Rufflet)
+
+        playse(SE_FALL)
+        waitfanfare
+        delay(30)
+        
+        setvar(VAR_0x8004, 2)
+        setvar(VAR_0x8005, 6)
+        setvar(VAR_0x8006, 4)
+        setvar(VAR_0x8007, 4)
+        special(ShakeCamera)
+        waitstate
+        delay(60)
+
+        playse(SE_BANG)
+        waitfanfare
+
+        setflag(FLAG_HIDE_RUFFLET)
+        release
+        end
+    }
+    else
+    {
+        speakername("Rufflet")
+        msgbox("I wish I had the confidence to jump\nand try to fly but I don't have\la role model to show me how.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+
+}
+
+movement RuffletFlyAway {
+    face_down
+    walk_down *2
+    levitate
+    slide_down
+    
+}
+
+script SlowpokeDialog{
+    lock
+    faceplayer
+    msgbox("I stay close to the shore.\pThere are some scary Pokémon\nfurther out!", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script SharpedoDialog{
+    lock
+    faceplayer
+    msgbox("I don't understand why Pokémon are\nso afraid of me...\pIs it something stuck in my teeth?\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
