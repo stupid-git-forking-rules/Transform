@@ -675,7 +675,7 @@
 #define FLAG_EGG_OBTAINED  0x274 // used to beat the game, showing the old man you have obtained the egg, he will reward you with 1 level.
 #define FLAG_RIOLU_INTRO  0x275 // USED for riolus intro, which introduces that it will be your guide for the game.
 #define FLAG_HIDE_RUFFLET  0x276 // hides Rufflet
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
+#define FLAG_XFORMS_TALKED_TO_DITTO  0x277 // talk to ditto the first time about xforms
 #define FLAG_UNUSED_0x278  0x278 // Unused Flag
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag
 #define FLAG_UNUSED_0x27A  0x27A // Unused Flag

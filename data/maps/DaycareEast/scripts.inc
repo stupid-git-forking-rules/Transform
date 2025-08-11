@@ -2,15 +2,15 @@ DaycareEast_MapScripts::
 	.byte 0
 
 
-KrabblyDialog::
+KrabbyDialog::
 # 5 "data/maps/DaycareEast/scripts.pory"
 	lock
 # 6 "data/maps/DaycareEast/scripts.pory"
 	faceplayer
 # 7 "data/maps/DaycareEast/scripts.pory"
-	speakername KrabblyDialog_Text_0
+	speakername KrabbyDialog_Text_0
 # 8 "data/maps/DaycareEast/scripts.pory"
-	msgbox KrabblyDialog_Text_1, MSGBOX_DEFAULT
+	msgbox KrabbyDialog_Text_1, MSGBOX_DEFAULT
 # 9 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
 # 10 "data/maps/DaycareEast/scripts.pory"
@@ -262,11 +262,102 @@ RuffletFlyAway:
 	slide_down
 	step_end
 
-KrabblyDialog_Text_0:
-# 7 "data/maps/DaycareEast/scripts.pory"
-	.string "Krabbly$"
+SlowpokeDialog::
+# 167 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 168 "data/maps/DaycareEast/scripts.pory"
+	faceplayer
+# 169 "data/maps/DaycareEast/scripts.pory"
+	msgbox SlowpokeDialog_Text_0, MSGBOX_DEFAULT
+# 170 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 171 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
 
-KrabblyDialog_Text_1:
+
+SharpedoDialog::
+# 176 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 177 "data/maps/DaycareEast/scripts.pory"
+	faceplayer
+# 178 "data/maps/DaycareEast/scripts.pory"
+	msgbox SharpedoDialog_Text_0, MSGBOX_DEFAULT
+# 179 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 180 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+
+DaycareEastDittoOpenXforms::
+# 185 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 186 "data/maps/DaycareEast/scripts.pory"
+	faceplayer
+# 187 "data/maps/DaycareEast/scripts.pory"
+	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareEastDittoOpenXforms_1
+# 208 "data/maps/DaycareEast/scripts.pory"
+	speakername DaycareEastDittoOpenXforms_Text_0
+# 209 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_3, MSGBOX_DEFAULT
+# 209 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 210 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_XFORMS_TALKED_TO_DITTO
+# 211 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 212 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareEastDittoOpenXforms_7
+# 221 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 222 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 223 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+DaycareEastDittoOpenXforms_1:
+# 189 "data/maps/DaycareEast/scripts.pory"
+	speakername DaycareEastDittoOpenXforms_Text_0
+# 190 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 191 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareEastDittoOpenXforms_4
+# 200 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 201 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 202 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+DaycareEastDittoOpenXforms_4:
+# 193 "data/maps/DaycareEast/scripts.pory"
+	special OpenPCMoveMons
+# 194 "data/maps/DaycareEast/scripts.pory"
+	waitstate
+# 195 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+DaycareEastDittoOpenXforms_7:
+# 214 "data/maps/DaycareEast/scripts.pory"
+	special OpenPCMoveMons
+# 215 "data/maps/DaycareEast/scripts.pory"
+	waitstate
+# 216 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+
+KrabbyDialog_Text_0:
+# 7 "data/maps/DaycareEast/scripts.pory"
+	.string "Krabby$"
+
+KrabbyDialog_Text_1:
 # 8 "data/maps/DaycareEast/scripts.pory"
 	.string "I love it here at the Daycare!\pI don't have to battle anyone that\nI don't want to!\pAlthough some Pokémon see it\ndifferently...$"
 
@@ -345,3 +436,27 @@ RuffletDialog_Text_4:
 RuffletDialog_Text_5:
 # 150 "data/maps/DaycareEast/scripts.pory"
 	.string "I wish I had the confidence to jump\nand try to fly but I don't have\la role model to show me how.$"
+
+SlowpokeDialog_Text_0:
+# 169 "data/maps/DaycareEast/scripts.pory"
+	.string "I stay close to the shore.\pThere are some scary Pokémon\nfurther out!$"
+
+SharpedoDialog_Text_0:
+# 178 "data/maps/DaycareEast/scripts.pory"
+	.string "I don't understand why Pokémon are\nso afraid of me...\pIs it something stuck in my teeth?\n$"
+
+DaycareEastDittoOpenXforms_Text_0:
+# 189 "data/maps/DaycareEast/scripts.pory"
+	.string "Ditto$"
+
+DaycareEastDittoOpenXforms_Text_1:
+# 190 "data/maps/DaycareEast/scripts.pory"
+	.string "Would you like to change out your\ntransformation options?$"
+
+DaycareEastDittoOpenXforms_Text_2:
+# 200 "data/maps/DaycareEast/scripts.pory"
+	.string "Come back anytime!$"
+
+DaycareEastDittoOpenXforms_Text_3:
+# 209 "data/maps/DaycareEast/scripts.pory"
+	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"

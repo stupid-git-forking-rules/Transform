@@ -72,3 +72,10 @@ EventScript_AccessPokemonBoxLink::
 	waitstate
 	goto EventScript_TurnOffPC
 	end
+
+EventScript_AccessMovePC::
+	playse SE_M_TELEPORT
+	special OpenPCMoveMons
+	waitstate
+	goto EventScript_TurnOffPC
+	end

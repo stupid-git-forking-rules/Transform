@@ -79,6 +79,7 @@ gSpecials::
 	def_special IsTrainerReadyForRematch
 	def_special BattleSetup_StartRematchBattle
 	def_special ShowPokemonStorageSystemPC
+	def_special OpenPCMoveMons
 	def_special HasEnoughMonsForDoubleBattle
 	def_special TurnOffTVScreen
 	def_special DoTVShow

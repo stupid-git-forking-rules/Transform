@@ -189,9 +189,9 @@ const struct Transformation gTransformations[] =
         .ability = ABILITY_NO_GUARD,
         .moves = {
             MOVE_STRENGTH,
-            MOVE_WATERFALL,
-            MOVE_IRON_HEAD,
-            MOVE_SAFEGUARD,
+            MOVE_FIRE_PUNCH,
+            MOVE_CROSS_CHOP,
+            MOVE_THUNDER_PUNCH,
         },
     },
     [SPECIES_PIKACHU] =

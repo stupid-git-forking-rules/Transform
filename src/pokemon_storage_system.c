@@ -1633,6 +1633,19 @@ void ShowPokemonStorageSystemPC(void)
     LockPlayerFieldControls();
 }
 
+void OpenPCMoveMons(void)
+{
+    u8 taskId;
+
+    taskId = CreateTask(Task_PCMainMenu, 80);
+
+    gTasks[taskId].tState = STATE_ENTER_PC;
+    gTasks[taskId].tInput = 0;
+
+    FadeScreen(FADE_TO_BLACK, 0);
+    LockPlayerFieldControls();
+}
+
 static void FieldTask_ReturnToPcMenu(void)
 {
     u8 taskId;
@@ -1669,7 +1682,7 @@ static void CreateMainMenu(u8 whichMenu, s16 *windowIdPtr)
 static void CB2_ExitPokeStorage(void)
 {
     sPreviousBoxOption = GetCurrentBoxOption();
-    gFieldCallback = FieldTask_ReturnToPcMenu;
+    //gFieldCallback = FieldTask_ReturnToPcMenu; // make it so exiting the pc returns to the field directly
     SetMainCallback2(CB2_ReturnToField);
 }
 
