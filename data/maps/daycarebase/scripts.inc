@@ -572,19 +572,25 @@ BattleVsPikachu::
 	faceplayer
 # 385 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_TRANS_PIKACHU, BattleVsPikachu_2
-# 393 "data/maps/daycarebase/scripts.pory"
-	speakername MimikyuDialog_Text_0
 # 394 "data/maps/daycarebase/scripts.pory"
-	msgbox BattleVsPikachu_Text_1, MSGBOX_AUTOCLOSE
+	playse SE_PIN
 # 395 "data/maps/daycarebase/scripts.pory"
-	setwildbattle SPECIES_PIKACHU, 25
+	applymovement Pikachu, Common_Movement_ExclamationMark
 # 396 "data/maps/daycarebase/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	waitmovement Pikachu
 # 397 "data/maps/daycarebase/scripts.pory"
-	dowildbattle
+	speakername MimikyuDialog_Text_0
 # 398 "data/maps/daycarebase/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	msgbox BattleVsPikachu_Text_1, MSGBOX_AUTOCLOSE
 # 399 "data/maps/daycarebase/scripts.pory"
+	setwildbattle SPECIES_PIKACHU, 25
+# 400 "data/maps/daycarebase/scripts.pory"
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+# 401 "data/maps/daycarebase/scripts.pory"
+	dowildbattle
+# 402 "data/maps/daycarebase/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 403 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsPikachu_4
 	return
@@ -601,95 +607,95 @@ BattleVsPikachu_2:
 	end
 
 BattleVsPikachu_4:
-# 401 "data/maps/daycarebase/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
-# 402 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_TRANS_PIKACHU
-# 403 "data/maps/daycarebase/scripts.pory"
-	dittotransform SPECIES_PIKACHU
-# 404 "data/maps/daycarebase/scripts.pory"
-	playse MUS_LEVEL_UP
 # 405 "data/maps/daycarebase/scripts.pory"
-	msgbox BattleVsPikachu_Text_2, MSGBOX_DEFAULT
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 406 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	setflag FLAG_TRANS_PIKACHU
 # 407 "data/maps/daycarebase/scripts.pory"
-	dittotransform VAR_TEMP_0
+	dittotransform SPECIES_PIKACHU
 # 408 "data/maps/daycarebase/scripts.pory"
-	givemon SPECIES_PIKACHU, 25, move1 = MOVE_NUZZLE, move2 = MOVE_IRON_TAIL, move3 = MOVE_SPARK, move4 = MOVE_FLASH
+	playse MUS_LEVEL_UP
 # 409 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	msgbox BattleVsPikachu_Text_2, MSGBOX_DEFAULT
 # 410 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 411 "data/maps/daycarebase/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 412 "data/maps/daycarebase/scripts.pory"
+	givemon SPECIES_PIKACHU, 25, move1 = MOVE_NUZZLE, move2 = MOVE_IRON_TAIL, move3 = MOVE_SPARK, move4 = MOVE_FLASH
+# 413 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 414 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 ChanseyHeal::
-# 416 "data/maps/daycarebase/scripts.pory"
-	lock
-# 417 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 418 "data/maps/daycarebase/scripts.pory"
-	speakername ChanseyHeal_Text_0
-# 419 "data/maps/daycarebase/scripts.pory"
-	msgbox ChanseyHeal_Text_1, MSGBOX_YESNO
 # 420 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	lock
 # 421 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 422 "data/maps/daycarebase/scripts.pory"
+	speakername ChanseyHeal_Text_0
+# 423 "data/maps/daycarebase/scripts.pory"
+	msgbox ChanseyHeal_Text_1, MSGBOX_YESNO
+# 424 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 425 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ChanseyHeal_1
-# 447 "data/maps/daycarebase/scripts.pory"
+# 451 "data/maps/daycarebase/scripts.pory"
 	msgbox ChanseyHeal_Text_4, MSGBOX_AUTOCLOSE
-# 448 "data/maps/daycarebase/scripts.pory"
+# 452 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 449 "data/maps/daycarebase/scripts.pory"
+# 453 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 ChanseyHeal_1:
-# 423 "data/maps/daycarebase/scripts.pory"
+# 427 "data/maps/daycarebase/scripts.pory"
 	checkitem ITEM_LUCKY_EGG
-# 424 "data/maps/daycarebase/scripts.pory"
+# 428 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ChanseyHeal_4
-# 439 "data/maps/daycarebase/scripts.pory"
+# 443 "data/maps/daycarebase/scripts.pory"
 	msgbox ChanseyHeal_Text_3, MSGBOX_AUTOCLOSE
-# 440 "data/maps/daycarebase/scripts.pory"
+# 444 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 441 "data/maps/daycarebase/scripts.pory"
+# 445 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 ChanseyHeal_4:
-# 426 "data/maps/daycarebase/scripts.pory"
-	removeitem ITEM_LUCKY_EGG
-# 427 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 428 "data/maps/daycarebase/scripts.pory"
-	playfanfare MUS_HEAL
-# 429 "data/maps/daycarebase/scripts.pory"
-	waitfanfare
 # 430 "data/maps/daycarebase/scripts.pory"
-	special HealPlayerParty
+	removeitem ITEM_LUCKY_EGG
 # 431 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 # 432 "data/maps/daycarebase/scripts.pory"
-	msgbox ChanseyHeal_Text_2, MSGBOX_AUTOCLOSE
+	playfanfare MUS_HEAL
 # 433 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	waitfanfare
 # 434 "data/maps/daycarebase/scripts.pory"
+	special HealPlayerParty
+# 435 "data/maps/daycarebase/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 436 "data/maps/daycarebase/scripts.pory"
+	msgbox ChanseyHeal_Text_2, MSGBOX_AUTOCLOSE
+# 437 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 438 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycareBase_FindLuckyEgg::
-# 456 "data/maps/daycarebase/scripts.pory"
+# 460 "data/maps/daycarebase/scripts.pory"
 	lock
-# 457 "data/maps/daycarebase/scripts.pory"
+# 461 "data/maps/daycarebase/scripts.pory"
 	finditem ITEM_LUCKY_EGG
-# 458 "data/maps/daycarebase/scripts.pory"
+# 462 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 459 "data/maps/daycarebase/scripts.pory"
+# 463 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
@@ -943,29 +949,29 @@ BattleVsPikachu_Text_0:
 	.string "You really lit me up.\pBest of luck on your journey!\n$"
 
 BattleVsPikachu_Text_1:
-# 394 "data/maps/daycarebase/scripts.pory"
+# 398 "data/maps/daycarebase/scripts.pory"
 	.string "A Ditto!\pYou must be on your quest to obtain\nyour egg.\pDefeat me in battle and I'll allow\nyou to transform into me!$"
 
 BattleVsPikachu_Text_2:
-# 405 "data/maps/daycarebase/scripts.pory"
+# 409 "data/maps/daycarebase/scripts.pory"
 	.string "You have gained the ability to\ntranform into Pikachu!$"
 
 ChanseyHeal_Text_0:
-# 418 "data/maps/daycarebase/scripts.pory"
+# 422 "data/maps/daycarebase/scripts.pory"
 	.string "Chansey$"
 
 ChanseyHeal_Text_1:
-# 419 "data/maps/daycarebase/scripts.pory"
+# 423 "data/maps/daycarebase/scripts.pory"
 	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?$"
 
 ChanseyHeal_Text_2:
-# 432 "data/maps/daycarebase/scripts.pory"
+# 436 "data/maps/daycarebase/scripts.pory"
 	.string "You have been restored to full health!$"
 
 ChanseyHeal_Text_3:
-# 439 "data/maps/daycarebase/scripts.pory"
+# 443 "data/maps/daycarebase/scripts.pory"
 	.string "You don't have a Lucky Egg!\pCome back when you do.$"
 
 ChanseyHeal_Text_4:
-# 447 "data/maps/daycarebase/scripts.pory"
+# 451 "data/maps/daycarebase/scripts.pory"
 	.string "Oh, okay then.$"

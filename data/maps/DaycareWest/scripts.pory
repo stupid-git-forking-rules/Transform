@@ -134,6 +134,14 @@ script BattleVsCutiefly{
         release
         end
     }
+    elif(var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
+    {
+        speakername("Cutiefly")
+        msgbox("Being tiny is great!\p...Unless you visit a biome\nlike the desert.\pThe winds are a bit too harsh\nfor a Pokémon of my size.\pThat just makes me think of how\nI miss my friend Rhyhorn...", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end        
+    }
     elif(flag(FLAG_TRANS_CUTIEFLY))
     {
         speakername("Cutiefly")
@@ -142,6 +150,9 @@ script BattleVsCutiefly{
         release
         end
     }
+    playse(SE_PIN)
+    applymovement(Cutiefly, Common_Movement_ExclamationMark)
+    waitmovement(Cutiefly)
     speakername("Cutiefly")
     msgbox("Welcome to the flower patch big\nfriend!\pSometimes it pays to be tiny!\pBeat me here on my home turf\nand you too can transform to be\ltiny.", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_CUTIEFLY, 25)

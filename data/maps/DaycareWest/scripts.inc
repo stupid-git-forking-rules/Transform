@@ -187,22 +187,31 @@ BattleVsCutiefly::
 # 129 "data/maps/DaycareWest/scripts.pory"
 	goto_if_unset FLAG_TRANS_RYHORN, BattleVsCutiefly_2
 # 137 "data/maps/DaycareWest/scripts.pory"
-	goto_if_set FLAG_TRANS_CUTIEFLY, BattleVsCutiefly_3
+	compare VAR_TRANSFORM_MON, SPECIES_DITTO
+	goto_if_eq BattleVsCutiefly_3
 # 145 "data/maps/DaycareWest/scripts.pory"
+	goto_if_set FLAG_TRANS_CUTIEFLY, BattleVsCutiefly_4
+# 153 "data/maps/DaycareWest/scripts.pory"
+	playse SE_PIN
+# 154 "data/maps/DaycareWest/scripts.pory"
+	applymovement Cutiefly, Common_Movement_ExclamationMark
+# 155 "data/maps/DaycareWest/scripts.pory"
+	waitmovement Cutiefly
+# 156 "data/maps/DaycareWest/scripts.pory"
 	speakername BattleVsCutiefly_Text_0
-# 146 "data/maps/DaycareWest/scripts.pory"
+# 157 "data/maps/DaycareWest/scripts.pory"
 	msgbox BattleVsCutiefly_Text_3, MSGBOX_AUTOCLOSE
-# 147 "data/maps/DaycareWest/scripts.pory"
+# 158 "data/maps/DaycareWest/scripts.pory"
 	setwildbattle SPECIES_CUTIEFLY, 25
-# 148 "data/maps/DaycareWest/scripts.pory"
+# 159 "data/maps/DaycareWest/scripts.pory"
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
-# 149 "data/maps/DaycareWest/scripts.pory"
+# 160 "data/maps/DaycareWest/scripts.pory"
 	dowildbattle
-# 150 "data/maps/DaycareWest/scripts.pory"
+# 161 "data/maps/DaycareWest/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 151 "data/maps/DaycareWest/scripts.pory"
+# 162 "data/maps/DaycareWest/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq BattleVsCutiefly_6
+	goto_if_eq BattleVsCutiefly_8
 	return
 
 BattleVsCutiefly_2:
@@ -220,33 +229,44 @@ BattleVsCutiefly_3:
 # 139 "data/maps/DaycareWest/scripts.pory"
 	speakername BattleVsCutiefly_Text_0
 # 140 "data/maps/DaycareWest/scripts.pory"
-	msgbox BattleVsCutiefly_Text_2, MSGBOX_DEFAULT
+	msgbox BattleVsCutiefly_Text_1, MSGBOX_DEFAULT
 # 141 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
 # 142 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
-BattleVsCutiefly_6:
-# 153 "data/maps/DaycareWest/scripts.pory"
+BattleVsCutiefly_4:
+# 147 "data/maps/DaycareWest/scripts.pory"
+	speakername BattleVsCutiefly_Text_0
+# 148 "data/maps/DaycareWest/scripts.pory"
+	msgbox BattleVsCutiefly_Text_2, MSGBOX_DEFAULT
+# 149 "data/maps/DaycareWest/scripts.pory"
+	waitmessage
+# 150 "data/maps/DaycareWest/scripts.pory"
+	release
+	end
+
+BattleVsCutiefly_8:
+# 164 "data/maps/DaycareWest/scripts.pory"
 	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
-# 154 "data/maps/DaycareWest/scripts.pory"
+# 165 "data/maps/DaycareWest/scripts.pory"
 	setflag FLAG_TRANS_CUTIEFLY
-# 155 "data/maps/DaycareWest/scripts.pory"
+# 166 "data/maps/DaycareWest/scripts.pory"
 	dittotransform SPECIES_CUTIEFLY
-# 156 "data/maps/DaycareWest/scripts.pory"
+# 167 "data/maps/DaycareWest/scripts.pory"
 	playse MUS_LEVEL_UP
-# 157 "data/maps/DaycareWest/scripts.pory"
+# 168 "data/maps/DaycareWest/scripts.pory"
 	msgbox BattleVsCutiefly_Text_4, MSGBOX_DEFAULT
-# 158 "data/maps/DaycareWest/scripts.pory"
+# 169 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 159 "data/maps/DaycareWest/scripts.pory"
+# 170 "data/maps/DaycareWest/scripts.pory"
 	dittotransform VAR_TEMP_0
-# 160 "data/maps/DaycareWest/scripts.pory"
+# 171 "data/maps/DaycareWest/scripts.pory"
 	givemon SPECIES_CUTIEFLY, 25, move1 = MOVE_BUG_BUZZ, move2 = MOVE_DAZZLING_GLEAM, move3 = MOVE_SWEET_SCENT, move4 = MOVE_PSYCHIC
-# 161 "data/maps/DaycareWest/scripts.pory"
+# 172 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 162 "data/maps/DaycareWest/scripts.pory"
+# 173 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
@@ -320,13 +340,13 @@ BattleVsCutiefly_Text_1:
 	.string "Being tiny is great!\p...Unless you visit a biome\nlike the desert.\pThe winds are a bit too harsh\nfor a Pokémon of my size.\pThat just makes me think of how\nI miss my friend Rhyhorn...$"
 
 BattleVsCutiefly_Text_2:
-# 140 "data/maps/DaycareWest/scripts.pory"
+# 148 "data/maps/DaycareWest/scripts.pory"
 	.string "I'll stick to my flowers.\pBe on the lookout for places only a\ntiny Pokémon can squeeze through!$"
 
 BattleVsCutiefly_Text_3:
-# 146 "data/maps/DaycareWest/scripts.pory"
+# 157 "data/maps/DaycareWest/scripts.pory"
 	.string "Welcome to the flower patch big\nfriend!\pSometimes it pays to be tiny!\pBeat me here on my home turf\nand you too can transform to be\ltiny.$"
 
 BattleVsCutiefly_Text_4:
-# 157 "data/maps/DaycareWest/scripts.pory"
+# 168 "data/maps/DaycareWest/scripts.pory"
 	.string "You have gained the ability to\ntranform into Cutiefly!$"

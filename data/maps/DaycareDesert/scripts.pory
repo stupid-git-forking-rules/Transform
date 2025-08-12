@@ -1,0 +1,118 @@
+mapscripts DaycareDesert_MapScripts{}
+
+script CacneaDialog{
+    lock
+    speakername("Cacnea")
+    msgbox("Don't blow my cover.\pThey totally think I'm a plant.\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script TrapinchDialog{
+    lock
+    faceplayer
+    if(var(VAR_TRANSFORM_MON) != SPECIES_RHYHORN)
+    {
+        speakername("Trapinch")
+        msgbox("Don't even think about coming near\nmy sand pit!", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        speakername("Trapinch")
+        msgbox("Oh, hey Rhyhorn!\pBeautiful weather today isn't it?\pThis fell into my sandtrap the\nthe other day...\pWhy don't you take it?\n", MSGBOX_DEFAULT)
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        giveitem(ITEM_LUCKY_EGG)
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        waitmessage
+        release
+        end
+    }
+
+}
+
+script StunfiskDialog{
+    lock
+    faceplayer
+    speakername("Stunfisk")
+    msgbox("You found me!\pHere, take this.\n", MSGBOX_DEFAULT)
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    giveitem(ITEM_LUCKY_EGG)
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    speakername("Larvitar")
+    msgbox("Not many Pokémon know how to\nsurf in the desert.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script BaltoyDialog{
+    lock
+    faceplayer
+    speakername("Baltoy")
+    msgbox("I've heard there is a secret cave\nsomewhere here in the desert.\pRumor has it that it a Pokémon\nneeds to know a move not many\ldesert Pokémon can learn...", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script SandshrewDialog{
+    lock
+    faceplayer
+    speakername("Sandshrew")
+    msgbox("Rhyhorn may have a tough exterior,\nbut he is the nicest Pokémon in\lthe desert!\pHe's a pacifist and doesn't like\nto battle.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script VibravaDialog{
+    lock
+    faceplayer
+    speakername("Vibrava")
+    msgbox("Surf?\pNever heard of it.\pI just fly over water.\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script RhyhornDialog{
+    lock
+    faceplayer
+    if(flag(FLAG_TRANS_RYHORN))
+    {
+        speakername("Rhyhorn")
+        msgbox("Keep on trucking little Ditto!\pHead over and see my old friend\nCutiefly.\pShe loves flowers.\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end 
+    }
+    else
+    {
+        playse(SE_PIN)
+        applymovement(Rhyhorn, Common_Movement_ExclamationMark)
+        waitmovement(Rhyhorn)
+        speakername("Rhyhorn")
+        msgbox("Hey there little Ditto!\pI'm not much of a fighter, but\nI can see that you're determined!\pYou could probaby get some use out\nof my armor plated exterior...\pTell you what.\pWhy don't you transform into me,\nthat way you make use of my\lstrength!", MSGBOX_DEFAULT)
+        waitmessage
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        setflag(FLAG_TRANS_RYHORN)
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        dittotransform(SPECIES_RHYHORN)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntranform into Ryhorn!", MSGBOX_DEFAULT)
+        waitmessage
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        speakername("Rhyhorn")
+        msgbox("Ho_ho!\pLooking tougher already!\n", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(SPECIES_RHYHORN, 25, move1=MOVE_ROCK_THROW, move2=MOVE_HORN_ATTACK, move3=MOVE_ROCK_POLISH, move4=MOVE_ROCK_SMASH)
+        waitmessage
+        release
+        end 
+    }
+}

@@ -1,0 +1,30 @@
+mapscripts EasttoDesert_MapScripts{
+}
+
+script RoggenrolaDialog{
+    lock
+    faceplayer
+    speakername("Roggenrola")
+    msgbox("If only I was fast enough to\nclimb this slope...", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script RolycolyDialog{
+    lock
+    faceplayer
+    speakername("Rolycoly")
+    msgbox("Haha!\pYou've got some serious speed\nif you made it up here!", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script EasttoDesert_FindLuckyEgg{
+    lock
+    finditem(ITEM_LUCKY_EGG)
+    waitmessage
+    release
+    end
+}

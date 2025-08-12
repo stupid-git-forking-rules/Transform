@@ -389,7 +389,11 @@ script BattleVsPikachu{
         waitmessage
         release
         end
+        
     }
+    playse(SE_PIN)
+    applymovement(Pikachu, Common_Movement_ExclamationMark)
+    waitmovement(Pikachu)
     speakername("Pikachu")
     msgbox("A Ditto!\pYou must be on your quest to obtain\nyour egg.\pDefeat me in battle and I'll allow\nyou to transform into me!", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_PIKACHU, 25)
