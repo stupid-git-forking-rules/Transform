@@ -1,0 +1,165 @@
+mapscripts DaycareWest_MapScripts {
+
+}
+
+script ChanseyDaycareWestHeal{
+    lock
+    faceplayer
+    speakername("Chansey")
+    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?", MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES)
+    {
+        checkitem(ITEM_LUCKY_EGG)
+        if(var(VAR_RESULT) == TRUE)
+        {
+            removeitem(ITEM_LUCKY_EGG)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            special(HealPlayerParty)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+            msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+
+}
+
+script DaycareWestDittoOpenXforms{
+    lock
+    faceplayer
+    if (flag(FLAG_XFORMS_TALKED_TO_DITTO))
+    {
+        speakername("Ditto")
+        msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            special(OpenPCMoveMons)
+            waitstate
+            release
+            end
+        }
+        else
+        {
+            msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        speakername("Ditto")
+        msgbox("Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n", MSGBOX_DEFAULT)        waitmessage
+        setflag(FLAG_XFORMS_TALKED_TO_DITTO)
+        msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            special(OpenPCMoveMons)
+            waitstate
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            release
+            end
+        }
+        else
+        {
+            msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            waitmessage
+            release
+            end
+        }
+    }
+
+}
+
+
+script ApplinDialog{
+    lock
+    faceplayer
+    speakername("Applin")
+    msgbox("The Daycare Woman is so kind.\pShe carried me around until I\nfound my favorite tree.\pNow I can hang out here all day!\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script SurskitDialog{
+    lock
+    faceplayer
+    speakername("Surskit")
+    msgbox("I'm not sure when my trainer is\ncoming back, but I don't mind!\pThe pondskipping here is radical!\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script MasquerainDialog{
+    lock
+    faceplayer
+    speakername("Masquerain")
+    msgbox("Bro!\pI wish my trainer didn't evolve me\nbefore dropping me off.\pSurskit has been skipping up the\npond and I'm mad jealous.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script BattleVsCutiefly{
+    lock
+    faceplayer
+    if(!flag(FLAG_TRANS_RYHORN))
+    {
+        speakername("Cutiefly")
+        msgbox("Being tiny is great!\p...Unless you visit a biome\nlike the desert.\pThe winds are a bit too harsh\nfor a Pokémon of my size.\pThat just makes me think of how\nI miss my friend Rhyhorn...", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    elif(flag(FLAG_TRANS_CUTIEFLY))
+    {
+        speakername("Cutiefly")
+        msgbox("I'll stick to my flowers.\pBe on the lookout for places only a\ntiny Pokémon can squeeze through!", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    speakername("Cutiefly")
+    msgbox("Welcome to the flower patch big\nfriend!\pSometimes it pays to be tiny!\pBeat me here on my home turf\nand you too can transform to be\ltiny.", MSGBOX_AUTOCLOSE)
+	setwildbattle(SPECIES_CUTIEFLY, 25)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON)
+    {
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        setflag(FLAG_TRANS_CUTIEFLY)
+        dittotransform(SPECIES_CUTIEFLY)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntranform into Cutiefly!", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(SPECIES_CUTIEFLY, 25, move1=MOVE_BUG_BUZZ, move2=MOVE_DAZZLING_GLEAM, move3=MOVE_SWEET_SCENT, move4=MOVE_PSYCHIC)
+        waitmessage
+        release
+        end
+    }
+}

@@ -248,7 +248,6 @@ script ScytherDialog{
     faceplayer
     speakername("Scyther")
     msgbox("One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen3...", MSGBOX_DEFAULT)
-    givemon(SPECIES_LURANTIS, 100, item=ITEM_LEFTOVERS, ball=ITEM_MASTER_BALL, nature=NATURE_TIMID, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31, hpEv=4, spAtkEv=252, speedEv=252, move1=MOVE_PSYSTRIKE, move2=MOVE_SHADOW_BALL, move3=MOVE_AURA_SPHERE, move4=MOVE_RECOVER, isShiny=TRUE)
     waitmessage
     release
     end
@@ -392,7 +391,7 @@ script BattleVsPikachu{
         end
     }
     speakername("Pikachu")
-    msgbox("A ditto!\pYou must be on your quest to obtain\nyour egg.\pDefeat me in battle and I'll allow\nyou to transform into me!", MSGBOX_DEFAULT)
+    msgbox("A Ditto!\pYou must be on your quest to obtain\nyour egg.\pDefeat me in battle and I'll allow\nyou to transform into me!", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_PIKACHU, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle

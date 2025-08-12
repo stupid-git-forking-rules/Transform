@@ -676,10 +676,10 @@
 #define FLAG_RIOLU_INTRO  0x275 // USED for riolus intro, which introduces that it will be your guide for the game.
 #define FLAG_HIDE_RUFFLET  0x276 // hides Rufflet
 #define FLAG_XFORMS_TALKED_TO_DITTO  0x277 // talk to ditto the first time about xforms
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
+#define FLAG_SHOW_RUFFLET  0x278 // show rufflet on shore after his failed attempt to fly
+#define FLAG_SHROODLE_BATTLE  0x279 // battle shroodle
+#define FLAG_SEWADDLE_BATTLE  0x27A // Unused Flag
+#define FLAG_BLIPBUG_BATTLE  0x27B // Unused Flag
 #define FLAG_UNUSED_0x27C  0x27C // Unused Flag
 #define FLAG_UNUSED_0x27D  0x27D // Unused Flag
 #define FLAG_UNUSED_0x27E  0x27E // Unused Flag

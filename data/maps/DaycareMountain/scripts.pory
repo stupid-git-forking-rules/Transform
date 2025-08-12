@@ -1,0 +1,8 @@
+mapscripts DaycareMountain_MapScripts {
+
+}
+
+script Script_Name {
+	msgbox("hi\n", MSGBOX_SIGN)
+	end
+}

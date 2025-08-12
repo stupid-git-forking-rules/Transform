@@ -102,13 +102,13 @@ script RuffletDialog {
         msgbox("I wish I had the confidence to jump\nand try to fly...", MSGBOX_DEFAULT)
         waitmessage
         applymovement(Rufflet, Common_Movement_ExclamationMark)
-        playSE(SE_PIN)
+        playse(SE_PIN)
         waitfanfare
         waitmovement
         msgbox("Wow a Flying_type Pokémon!\pWhere do you get the confidence to\nsoar like that?", MSGBOX_DEFAULT)
         waitmessage
         applymovement(Rufflet, Common_Movement_ExclamationMark)
-        playSE(SE_PIN)
+        playse(SE_PIN)
         waitfanfare
         waitmovement
         msgbox("It just takes a leap of faith\nyou say?\pAlright, I'll try it!\pHere. Take this.", MSGBOX_DEFAULT)
@@ -120,13 +120,19 @@ script RuffletDialog {
         speakername("Rufflet")
         msgbox("Thanks for the confidence boost.", MSGBOX_AUTOCLOSE)
         waitmessage
-
         applymovement(Rufflet, RuffletFlyAway)
         waitmovement(0)
-        removeobject(Rufflet)
+        playse(SE_LEDGE) 
 
+        applymovement(Rufflet, moves(
+jump_2_down 
+delay_16 * 2 
+)) 
+waitmovement(0) 
         playse(SE_FALL)
-        waitfanfare
+        applymovement(Rufflet,moves(
+slide_down * 5))
+        waitmovement(0)
         delay(30)
         
         setvar(VAR_0x8004, 2)
@@ -139,7 +145,10 @@ script RuffletDialog {
 
         playse(SE_BANG)
         waitfanfare
-
+        delay(60)
+        playmoncry(SPECIES_SHARPEDO, CRY_MODE_NORMAL)
+        waitmoncry
+        removeobject(Rufflet)
         setflag(FLAG_HIDE_RUFFLET)
         release
         end
@@ -156,16 +165,28 @@ script RuffletDialog {
 }
 
 movement RuffletFlyAway {
-    face_down
-    walk_down *2
-    levitate
-    slide_down
+face_down 
+lock_facing_direction 
+walk_slow_up * 2 
+delay_16 * 2 
+walk_fast_down * 2
     
+}
+
+script RuffletOnShore{
+    lock
+    faceplayer
+    speakername("Rufflet")
+    msgbox("That Sharpedo was nice enough to\nbring me ashore.\pI don't know why they get such a\nbad rap...", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
 }
 
 script SlowpokeDialog{
     lock
     faceplayer
+    speakername("Slowpoke")
     msgbox("I stay close to the shore.\pThere are some scary Pokémon\nfurther out!", MSGBOX_DEFAULT)
     waitmessage
     release
@@ -175,10 +196,27 @@ script SlowpokeDialog{
 script SharpedoDialog{
     lock
     faceplayer
-    msgbox("I don't understand why Pokémon are\nso afraid of me...\pIs it something stuck in my teeth?\n", MSGBOX_DEFAULT)
-    waitmessage
-    release
-    end
+    if(flag(FLAG_HIDE_RUFFLET))
+    {
+        speakername("Sharpedo")
+        msgbox("That little Rufflet fell into\nthe water.\pPoor fellow couldn't swim so\nI carried it to the shore.", MSGBOX_DEFAULT)
+        applymovement(Sharpedo, ContestHall_Movement_Heart)
+        speakername("Sharpedo")
+        playse(SE_PIN)
+        msgbox("Looks can be deceiving!\n", MSGBOX_DEFAULT)
+        clearflag(FLAG_SHOW_RUFFLET)
+        waitmessage
+        release
+        end        
+    }
+    else
+    {
+        speakername("Sharpedo")
+        msgbox("I don't understand why Pokémon are\nso afraid of me...\pIs it something stuck in my teeth?\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
 }
 
 script DaycareEastDittoOpenXforms{
@@ -213,12 +251,16 @@ script DaycareEastDittoOpenXforms{
         {
             special(OpenPCMoveMons)
             waitstate
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
             end
         }
         else
         {
             msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
             release
             end

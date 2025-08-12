@@ -28,6 +28,7 @@
       "flag": "0"
     },
     {
+      "local_id": "Shroodle",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHROODLE)",
       "x": 7,
       "y": 31,
@@ -35,9 +36,9 @@
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "NULL",
+      "script": "ShroodleInCave",
       "flag": "0"
     },
     {
@@ -50,7 +51,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NymbleDialog",
       "flag": "0"
     },
     {
@@ -63,20 +64,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SinisteaDialog",
       "flag": "0"
     },
     {
+      "local_id": "Blipbug",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BLIPBUG)",
-      "x": 3,
-      "y": 16,
+      "x": 25,
+      "y": 9,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BlipbugInCave",
       "flag": "0"
     },
     {
@@ -93,16 +95,17 @@
       "flag": "0"
     },
     {
+      "local_id": "Sewaddle",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SEWADDLE)",
-      "x": 21,
-      "y": 13,
+      "x": 4,
+      "y": 16,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SewaddleInCave",
       "flag": "0"
     },
     {
@@ -161,6 +164,79 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 32,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ShroodleInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 33,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "ShroodleInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SewaddleInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SewaddleInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "BlipbugInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "BlipbugInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "BlipbugInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "BlipbugInCaveTrigger"
+    }
+  ],
   "bg_events": []
 }

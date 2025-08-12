@@ -22,3 +22,327 @@ script TarountulaDialog{
         waitmessage
     }
 }
+
+script ShroodleInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_SHROODLE_BATTLE))
+    {
+        speakername("Shroodle")
+        msgbox("I've yet to gain a single level.\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Shroodle, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Shroodle")
+        msgbox("A trespasser!\n", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_SHROODLE, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Shroodle")
+	        msgbox("Some say battling is the way to\ngain EXP in the Daycare...", MSGBOX_DEFAULT)
+            setflag(FLAG_SHROODLE_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+    
+}
+
+script ShroodleInCaveTrigger{
+    if(!flag(FLAG_SHROODLE_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Shroodle, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_2)) 
+        {
+        case 33:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Shroodle, moves(walk_down))
+            waitmovement(Shroodle)
+	        speakername("Shroodle")
+            msgbox("A trespasser!\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_SHROODLE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+            speakername("Shroodle")
+	            msgbox("Some say battling is the way to\ngain EXP in the Daycare...", MSGBOX_DEFAULT)
+                setflag(FLAG_SHROODLE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 32:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+	        speakername("Shroodle")
+            msgbox("A trespasser!\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_SHROODLE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Shroodle")
+	            msgbox("Some say battling is the way to\ngain EXP in the Daycare...", MSGBOX_DEFAULT)
+                setflag(FLAG_SHROODLE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+
+script SewaddleInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_SEWADDLE_BATTLE))
+    {
+        speakername("Sewaddle")
+        msgbox("Now that I think about it,\nI haven't gained any EXP...\leven when I've won.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Sewaddle, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Sewaddle")
+        msgbox("I hope I level up after this\nbattle!", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_SEWADDLE, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Sewaddle")
+	        msgbox("I won't gain any EXP if I keep\nlosing...", MSGBOX_DEFAULT)
+            setflag(FLAG_SEWADDLE_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+    
+}
+
+script SewaddleInCaveTrigger{
+    if(!flag(FLAG_SEWADDLE_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Sewaddle, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_1)) 
+        {
+        case 5:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+	        speakername("Sewaddle")
+            msgbox("I hope I level up after this\nbattle!", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_SEWADDLE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+            speakername("Sewaddle")
+	            msgbox("I won't gain any EXP if I keep\nlosing...", MSGBOX_DEFAULT)
+                setflag(FLAG_SEWADDLE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 6:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            applymovement(Sewaddle,  moves(walk_right))
+	        speakername("Sewaddle")
+            msgbox("I hope I level up after this\nbattle!", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_SEWADDLE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Shroodle")
+	            msgbox("I won't gain any EXP if I keep\nlosing...", MSGBOX_DEFAULT)
+                setflag(FLAG_SEWADDLE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script BlipbugInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_BLIPBUG_BATTLE))
+    {
+        speakername("Blipbug")
+        msgbox("You just knew the perfect matchup.\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Blipbug, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Blipbug")
+        msgbox("Us little guys need to keep each\nother sharp!", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_BLIPBUG, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Blipbug")
+	        msgbox("You just knew the perfect matchup.\n", MSGBOX_DEFAULT)
+            setflag(FLAG_BLIPBUG_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+    
+}
+
+script BlipbugInCaveTrigger{
+    if(!flag(FLAG_BLIPBUG_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Blipbug, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_2)) 
+        {
+        case 13:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Blipbug, moves(walk_down*3))
+            waitmovement(Blipbug)
+	        speakername("Blipbug")
+            msgbox("Us little guys need to keep each\nother sharp!", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_BLIPBUG, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+            speakername("Blipbug")
+	            msgbox("It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.", MSGBOX_DEFAULT)
+                setflag(FLAG_BLIPBUG_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 12:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Blipbug, moves(walk_down*2))
+            waitmovement(Blipbug)
+	        speakername("Blipbug")
+            msgbox("Us little guys need to keep each\nother sharp!", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_BLIPBUG, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+            speakername("Blipbug")
+	            msgbox("It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.", MSGBOX_DEFAULT)
+                setflag(FLAG_BLIPBUG_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 11:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Blipbug, moves(walk_down))
+            waitmovement(Blipbug)
+	        speakername("Blipbug")
+            msgbox("Us little guys need to keep each\nother sharp!", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_BLIPBUG, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+            speakername("Blipbug")
+	            msgbox("It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.", MSGBOX_DEFAULT)
+                setflag(FLAG_BLIPBUG_BATTLE)
+                waitmessage
+                release
+                end
+            } 
+        case 10:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+	        speakername("Blipbug")
+            msgbox("Us little guys need to keep each\nother sharp!", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_BLIPBUG, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+            speakername("Blipbug")
+	            msgbox("It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.", MSGBOX_DEFAULT)
+                setflag(FLAG_BLIPBUG_BATTLE)
+                waitmessage
+                release
+                end
+            }           
+        }
+    }
+}
+
+script SinisteaDialog{
+    lock
+    faceplayer
+    if(var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
+    {
+        speakername("Sinistea")
+        msgbox("In this cave, you'll find only the\nsmallest of Pokémon.\pWe're the only ones who can fit\nthrough that tiny little entrance!", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        speakername("Sinistea")
+        msgbox("Hey!\pAren't you a little too big to be\nin here?", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+}
+
+script NymbleDialog{
+    lock
+    faceplayer
+    if(var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
+    {
+        speakername("Nymble")
+        msgbox("Our cave is quite barebones when it\ncomes to decor...\pSome Pokémon will make themselves\nright at home when they find space.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        speakername("Sinistea")
+        msgbox("Whoa... you're HUGE!\pPlease don't step on me.\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+}
