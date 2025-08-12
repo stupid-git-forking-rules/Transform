@@ -678,13 +678,13 @@
 #define FLAG_XFORMS_TALKED_TO_DITTO  0x277 // talk to ditto the first time about xforms
 #define FLAG_SHOW_RUFFLET  0x278 // show rufflet on shore after his failed attempt to fly
 #define FLAG_SHROODLE_BATTLE  0x279 // battle shroodle
-#define FLAG_SEWADDLE_BATTLE  0x27A // Unused Flag
-#define FLAG_BLIPBUG_BATTLE  0x27B // Unused Flag
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
+#define FLAG_SEWADDLE_BATTLE  0x27A // battle sewaddle
+#define FLAG_BLIPBUG_BATTLE  0x27B // battle blipbug
+#define FLAG_CYNDAQUIL_BATTLE  0x27C // battle cyndaquil
+#define FLAG_VULPIX_BATTLE  0x27D // battle vulpix
+#define FLAG_FUECOCO_BATTLE  0x27E // battle fuecoco
+#define FLAG_COMBUSKEN_BATTLE  0x27F // battle combnusken
+#define FLAG_TRAPINCH_EGG  0x280 // track if trapinch gave lucky egg
 #define FLAG_UNUSED_0x281  0x281 // Unused Flag
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag
 #define FLAG_UNUSED_0x283  0x283 // Unused Flag

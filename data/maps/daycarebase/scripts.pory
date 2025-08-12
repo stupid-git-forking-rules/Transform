@@ -381,9 +381,10 @@ script RioluDialog{
 
 script BattleVsPikachu{
     lock
-    faceplayer
+
     if(flag(FLAG_TRANS_PIKACHU))
     {
+        faceplayer
         speakername("Pikachu")
         msgbox("You really lit me up.\pBest of luck on your journey!\n", MSGBOX_DEFAULT)
         waitmessage
@@ -391,6 +392,7 @@ script BattleVsPikachu{
         end
         
     }
+    faceplayer
     playse(SE_PIN)
     applymovement(Pikachu, Common_Movement_ExclamationMark)
     waitmovement(Pikachu)
@@ -406,7 +408,7 @@ script BattleVsPikachu{
         setflag(FLAG_TRANS_PIKACHU)
         dittotransform(SPECIES_PIKACHU)
         playse(MUS_LEVEL_UP)
-        msgbox("You have gained the ability to\ntranform into Pikachu!", MSGBOX_DEFAULT)
+        msgbox("You have gained the ability to\ntransform into Pikachu!", MSGBOX_DEFAULT)
         waitmessage
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_PIKACHU, 25, move1=MOVE_NUZZLE, move2=MOVE_IRON_TAIL, move3=MOVE_SPARK, move4=MOVE_FLASH)

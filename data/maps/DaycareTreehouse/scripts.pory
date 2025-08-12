@@ -1,0 +1,178 @@
+mapscripts DaycareTreehouse_MapScripts {
+    
+}
+
+script GrovyleDialog{
+    lock
+    faceplayer
+    speakername("Grovyle")
+    msgbox("A lot of us here in the Jungle\nbiome are very agile, but none\lare quite as shifty as Weavile.\pHe is particular about who he\nchallenges to battle so don't\lbe surprised if he turns you\laway.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+
+script BattleVsWeavile{
+    if(flag(FLAG_TRANS_WEAVILE))
+    {
+        end
+    } 
+    elif(!flag(FLAG_TRANS_ARCANINE))
+    {
+        lock       
+        playmoncry(SPECIES_WEAVILE, CRY_MODE_NORMAL)
+        waitmoncry
+        applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+        waitmovement(LOCALID_PLAYER)            
+        applymovement(LOCALID_PLAYER, moves(face_up))
+        waitmovement(LOCALID_PLAYER) 
+        applymovement(LOCALID_PLAYER, moves(lock_facing_direction))
+        waitmovement(LOCALID_PLAYER)
+        applymovement(LOCALID_PLAYER, moves(walk_fast_down))
+        waitmovement(LOCALID_PLAYER)
+        playse(SE_M_SCRATCH)
+        applymovement(Weavile, moves(jump_2_down))
+        waitmovement(Weavile)
+        speakername("Weavile")
+        msgbox("You want to challenge me?\pNot a chance weakling.\pCcme back when you can keep up...\nor don't come back at all.", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Weavile, moves(walk_fast_up*2))
+        waitmovement(Weavile)
+        applymovement(Weavile, moves(walk_in_place_down))
+        waitmovement(Weavile)
+        release
+        end
+    }
+    lock
+    playmoncry(SPECIES_WEAVILE, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(LOCALID_PLAYER)            
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement(LOCALID_PLAYER) 
+    applymovement(LOCALID_PLAYER, moves(lock_facing_direction))
+    waitmovement(LOCALID_PLAYER)
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down))
+    waitmovement(LOCALID_PLAYER)
+    playse(SE_M_SCRATCH)
+    applymovement(Weavile, moves(jump_2_down))
+    waitmovement(Weavile)
+    speakername("Weavile")
+    msgbox("You look quick.\pNow we're talking.\pLet's see if you're fast or just\nflashy.", MSGBOX_AUTOCLOSE)
+    setwildbattle(SPECIES_WEAVILE, 25)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON)
+    {
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        setflag(FLAG_TRANS_WEAVILE)
+        dittotransform(SPECIES_WEAVILE)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntransform into Weavile!", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(FLAG_TRANS_WEAVILE, 25, move1=MOVE_BUG_BUZZ, move2=MOVE_DAZZLING_GLEAM, move3=MOVE_SWEET_SCENT, move4=MOVE_PSYCHIC)
+        waitmessage
+        speakername("Weavile")
+        msgbox("Godspeed challenger.\n", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Weavile, moves(walk_fast_up*2))
+        waitmovement(Weavile)
+        applymovement(Weavile, moves(walk_in_place_down))
+        waitmovement(Weavile)
+        release
+        end
+    }
+}
+
+script ChanseyDaycareTreehouseHeal{
+    lock
+    faceplayer
+    speakername("Chansey")
+    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?", MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES)
+    {
+        checkitem(ITEM_LUCKY_EGG)
+        if(var(VAR_RESULT) == TRUE)
+        {
+            removeitem(ITEM_LUCKY_EGG)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            special(HealPlayerParty)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+            msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+
+}
+
+script DaycareTreehouseDittoOpenXforms{
+    lock
+    faceplayer
+    if (flag(FLAG_XFORMS_TALKED_TO_DITTO))
+    {
+        speakername("Ditto")
+        msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            special(OpenPCMoveMons)
+            waitstate
+            release
+            end
+        }
+        else
+        {
+            msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        speakername("Ditto")
+        msgbox("Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n", MSGBOX_DEFAULT)        waitmessage
+        setflag(FLAG_XFORMS_TALKED_TO_DITTO)
+        msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            special(OpenPCMoveMons)
+            waitstate
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            release
+            end
+        }
+        else
+        {
+            msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            waitmessage
+            release
+            end
+        }
+    }
+
+}

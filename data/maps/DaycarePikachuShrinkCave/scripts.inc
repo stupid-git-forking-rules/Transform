@@ -314,7 +314,7 @@ SewaddleInCaveTrigger_6:
 
 SewaddleInCaveTrigger_8:
 # 179 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername ShroodleInCave_Text_0
+	speakername SewaddleInCave_Text_0
 # 180 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	msgbox SewaddleInCave_Text_3, MSGBOX_DEFAULT
 # 181 "data/maps/DaycarePikachuShrinkCave/scripts.pory"

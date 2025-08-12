@@ -12,10 +12,33 @@ script CacneaDialog{
 script TrapinchDialog{
     lock
     faceplayer
-    if(var(VAR_TRANSFORM_MON) != SPECIES_RHYHORN)
+    if (flag(FLAG_TRAPINCH_EGG))
+    {
+        if(var(VAR_TRANSFORM_MON) == SPECIES_RHYHORN)
+        {
+            speakername("Trapinch")
+            msgbox("Oh, hey Rhyhorn!\pBeautiful weather today isn't it?", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            speakername("Trapinch")
+            msgbox("Don't even think about coming near\nmy sand pit!", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end
+        }
+    }
+    if(var(VAR_TRANSFORM_MON) == SPECIES_RHYHORN)
     {
         speakername("Trapinch")
-        msgbox("Don't even think about coming near\nmy sand pit!", MSGBOX_DEFAULT)
+        msgbox("Oh, hey Rhyhorn!\pBeautiful weather today isn't it?\pThis fell into my sandtrap the\nthe other day...\pWhy don't you take it?\n", MSGBOX_DEFAULT)
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        giveitem(ITEM_LUCKY_EGG)
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        setflag(FLAG_TRAPINCH_EGG)
         waitmessage
         release
         end
@@ -23,10 +46,7 @@ script TrapinchDialog{
     else
     {
         speakername("Trapinch")
-        msgbox("Oh, hey Rhyhorn!\pBeautiful weather today isn't it?\pThis fell into my sandtrap the\nthe other day...\pWhy don't you take it?\n", MSGBOX_DEFAULT)
-        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
-        giveitem(ITEM_LUCKY_EGG)
-        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        msgbox("Don't even think about coming near\nmy sand pit!", MSGBOX_DEFAULT)
         waitmessage
         release
         end
@@ -103,7 +123,7 @@ script RhyhornDialog{
         setflag(FLAG_SUPPRESS_SPEAKER_NAME)
         dittotransform(SPECIES_RHYHORN)
         playse(MUS_LEVEL_UP)
-        msgbox("You have gained the ability to\ntranform into Ryhorn!", MSGBOX_DEFAULT)
+        msgbox("You have gained the ability to\ntransform into Ryhorn!", MSGBOX_DEFAULT)
         waitmessage
         clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
         speakername("Rhyhorn")

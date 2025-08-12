@@ -349,4 +349,4 @@ BattleVsCutiefly_Text_3:
 
 BattleVsCutiefly_Text_4:
 # 168 "data/maps/DaycareWest/scripts.pory"
-	.string "You have gained the ability to\ntranform into Cutiefly!$"
+	.string "You have gained the ability to\ntransform into Cutiefly!$"

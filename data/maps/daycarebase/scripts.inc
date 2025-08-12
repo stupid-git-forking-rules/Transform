@@ -954,7 +954,7 @@ BattleVsPikachu_Text_1:
 
 BattleVsPikachu_Text_2:
 # 409 "data/maps/daycarebase/scripts.pory"
-	.string "You have gained the ability to\ntranform into Pikachu!$"
+	.string "You have gained the ability to\ntransform into Pikachu!$"
 
 ChanseyHeal_Text_0:
 # 422 "data/maps/daycarebase/scripts.pory"

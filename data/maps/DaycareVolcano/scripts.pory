@@ -1,0 +1,412 @@
+mapscripts DaycareVolcano_MapScripts{
+
+}
+
+script CyndaquilInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_CYNDAQUIL_BATTLE))
+    {
+        speakername("Cyndaquil")
+        msgbox("Go on!\nSee for yourself.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Cyndaquil, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Cyndaquil")
+        msgbox("The boss is so strong.\nHe must know how to gain EXP!", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_CYNDAQUIL, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Cyndaquil")
+	        msgbox("Go on!\nSee for yourself.", MSGBOX_DEFAULT)
+            setflag(FLAG_CYNDAQUIL_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+    
+}
+
+script CyndaquilInCaveTrigger{
+    if(!flag(FLAG_CYNDAQUIL_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Cyndaquil, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_2)) 
+        {
+        case 37:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Cyndaquil, moves(walk_down))
+            waitmovement(Cyndaquil)
+	        speakername("Cyndaquil")
+            msgbox("The boss is so strong.\nHe must know how to gain EXP!", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_CYNDAQUIL, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+            speakername("Cyndaquil")
+	            msgbox("Go on!\nSee for yourself.", MSGBOX_DEFAULT)
+                setflag(FLAG_CYNDAQUIL_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 36:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+	        speakername("Cyndaquil")
+            msgbox("The boss is so strong.\nHe must know how to gain EXP!", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_CYNDAQUIL, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Cyndaquil")
+	            msgbox("Go on!\nSee for yourself.", MSGBOX_DEFAULT)
+                setflag(FLAG_CYNDAQUIL_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+
+script VulpixInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_VULPIX_BATTLE))
+    {
+        speakername("Vulpix")
+        msgbox("Someone once told me there's a\nplace where Vulpix live on snowy\lmountains... that sounds nice.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Vulpix, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Vulpix")
+        msgbox("Can't take the heat?\n", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_VULPIX, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Vulpix")
+	        msgbox("Neither can I.\nIt's hot in here.", MSGBOX_DEFAULT)
+            setflag(FLAG_VULPIX_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+    
+}
+
+script VulpixInCaveTrigger{
+    if(!flag(FLAG_VULPIX_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Vulpix, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_1)) 
+        {
+        case 26:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+	        speakername("Vulpix")
+            msgbox("Can't take the heat?\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_VULPIX, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+            speakername("Vulpix")
+	            msgbox("Neither can I.\nIt's hot in here.", MSGBOX_DEFAULT)
+                setflag(FLAG_VULPIX_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 27:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            applymovement(Vulpix,  moves(walk_right))
+	        speakername("Vulpix")
+            msgbox("Can't take the heat?\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_VULPIX, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Vulpix")
+	            msgbox("Neither can I.\nIt's hot in here.", MSGBOX_DEFAULT)
+                setflag(FLAG_VULPIX_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script FuecocoInCave{
+    lock
+    faceplayer
+    if(flag(FLAG_FUECOCO_BATTLE))
+    {
+        speakername("Fuecoco")
+        msgbox("At least it doesnt lag here in\nHoenn...", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Fuecoco, Common_Movement_ExclamationMark)
+        waitmovement
+        speakername("Fuecoco")
+        msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
+        setwildbattle(SPECIES_FUECOCO, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Fuecoco")
+            msgbox("No one here has even heard of\nPaldea...", MSGBOX_DEFAULT)
+            setflag(FLAG_FUECOCO_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+
+script FuecocoInCaveTrigger{
+    if(!flag(FLAG_FUECOCO_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Fuecoco, Common_Movement_ExclamationMark)
+        waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_2)) 
+        {
+        case 21:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Fuecoco, moves(walk_down))
+            waitmovement(Fuecoco)
+            speakername("Fuecoco")
+            msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_FUECOCO, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Fuecoco")
+                msgbox("No one here has even heard of\nPaldea...", MSGBOX_DEFAULT)
+                setflag(FLAG_FUECOCO_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 20:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            speakername("Fuecoco")
+            msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_FUECOCO, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Fuecoco")
+                msgbox("No one here has even heard of\nPaldea...", MSGBOX_DEFAULT)
+                setflag(FLAG_FUECOCO_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 22:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Fuecoco, moves(walk_down*2))
+            waitmovement(Fuecoco)
+            speakername("Fuecoco")
+            msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_FUECOCO, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Fuecoco")
+                msgbox("No one here has even heard of\nPaldea...", MSGBOX_DEFAULT)
+                setflag(FLAG_FUECOCO_BATTLE)
+                waitmessage
+                release
+                end
+            }   
+        }
+    }
+}
+
+script CombuskenInCave{
+    lock
+    faceplayer
+    if(flag(FLAG_COMBUSKEN_BATTLE))
+    {
+        speakername("Combusken")
+        msgbox("Ran out of steam.\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Combusken, Common_Movement_ExclamationMark)
+        waitmovement
+        speakername("Combusken")
+        msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
+        setwildbattle(SPECIES_COMBUSKEN, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Combusken")
+            msgbox("Guess I should take a lap.\n", MSGBOX_DEFAULT)
+            setflag(FLAG_COMBUSKEN_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+
+
+script CombuskenInCaveTrigger{
+    if(!flag(FLAG_COMBUSKEN_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Combusken, Common_Movement_ExclamationMark)
+        waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_1)) 
+        {
+        case 6:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            speakername("Combusken")
+            msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_COMBUSKEN, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Combusken")
+                msgbox("Guess I should take a lap.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_COMBUSKEN_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 7:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            applymovement(Combusken,  moves(walk_right))
+            speakername("Combusken")
+            msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_COMBUSKEN, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Combusken")
+                msgbox("Guess I should take a lap.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_COMBUSKEN_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 8:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            applymovement(Combusken,  moves(walk_right*2))
+            speakername("Combusken")
+            msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_COMBUSKEN, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Combusken")
+                msgbox("Guess I should take a lap.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_COMBUSKEN_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script BattleVsArcanine{
+    if(flag(FLAG_TRANS_ARCANINE))
+    {
+        end
+    } 
+    lock
+    playmoncry(SPECIES_ARCANINE, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(LOCALID_PLAYER)            
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement(LOCALID_PLAYER) 
+    applymovement(LOCALID_PLAYER, moves(lock_facing_direction))
+    waitmovement(LOCALID_PLAYER)
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down))
+    waitmovement(LOCALID_PLAYER)
+    playse(SE_M_SCRATCH)
+    applymovement(Arcanine, moves(jump_2_down*2))
+    waitmovement(Arcanine)
+    speakername("Arcanine")
+    msgbox("Your spirit burns bright.\pLet me test your flame.", MSGBOX_AUTOCLOSE)
+	setwildbattle(SPECIES_ARCANINE, 25)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON)
+    {
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        setflag(FLAG_TRANS_ARCANINE)
+        dittotransform(SPECIES_ARCANINE)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntransform into Arcanine!", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(SPECIES_ARCANINE, 25, move1=MOVE_FLARE_BLITZ, move2=MOVE_EXTREME_SPEED, move3=MOVE_CRUNCH, move4=MOVE_HOWL)
+        waitmessage
+        speakername("Arcanine")
+        msgbox("Carry yourself with honor.\pDon't soil my good name.", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Arcanine, moves(jump_2_up*2))
+        waitmovement(Arcanine)
+        applymovement(Arcanine, moves(walk_in_place_down))
+        waitmovement(Arcanine)
+        release
+        end
+    }
+}

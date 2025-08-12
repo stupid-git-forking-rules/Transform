@@ -176,7 +176,7 @@ script SewaddleInCaveTrigger{
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
-                speakername("Shroodle")
+                speakername("Sewaddle")
 	            msgbox("I won't gain any EXP if I keep\nlosing...", MSGBOX_DEFAULT)
                 setflag(FLAG_SEWADDLE_BATTLE)
                 waitmessage
