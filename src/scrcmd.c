@@ -2506,12 +2506,16 @@ bool8 ScrCmd_setwildbattle(struct ScriptContext *ctx)
     u8 level2 = ScriptReadByte(ctx);
     u16 item2 = ScriptReadHalfword(ctx);
     u8 isShiny = ScriptReadByte(ctx);
+    u16 move1 = ScriptReadHalfword(ctx);
+    u16 move2 = ScriptReadHalfword(ctx);
+    u16 move3 = ScriptReadHalfword(ctx);
+    u16 move4 = ScriptReadHalfword(ctx);
 
     Script_RequestEffects(SCREFF_V1);
 
     if(species2 == SPECIES_NONE)
     {
-        CreateScriptedWildMon(species, level, item, isShiny);
+        CreateScriptedWildMon(species, level, item, isShiny, move1, move2, move3, move4);
         sIsScriptedWildDouble = FALSE;
     }
     else

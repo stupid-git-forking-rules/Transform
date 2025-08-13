@@ -111,9 +111,11 @@ bool8 DoesPartyHaveEnigmaBerry(void)
     return hasItem;
 }
 
-void CreateScriptedWildMon(u16 species, u8 level, u16 item, u8 isShiny)
+void CreateScriptedWildMon(u16 species, u8 level, u16 item, u8 isShiny, u16 move1, u16 move2, u16 move3, u16 move4)
 {
     u8 heldItem[2];
+    u16 moves[MAX_MON_MOVES];
+	u32 i;
 
     ZeroEnemyPartyMons();
     if (OW_SYNCHRONIZE_NATURE > GEN_3)
@@ -130,6 +132,27 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item, u8 isShiny)
     
     // shininess
     SetMonData(&gEnemyParty[0], MON_DATA_IS_SHINY, &isShiny);
+
+	// moves
+	if (move1 == MOVE_NONE)
+	{
+		GiveMonInitialMoveset(&gEnemyParty[0]);
+	}
+	else
+	{
+		moves[0] = move1;
+		moves[1] = move2;
+		moves[2] = move3;
+		moves[3] = move4;
+	    for (i = 0; i < MAX_MON_MOVES; i++)
+		{
+			if (moves[i] == MOVE_NONE)
+				break;
+			if (moves[i] >= MOVES_COUNT)
+				continue;
+			SetMonMoveSlot(&gEnemyParty[0], moves[i], i);
+		}
+	}
 }
 void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species2, u8 level2, u16 item2)
 {

@@ -14,6 +14,7 @@
 #include "text.h"
 #include "constants/event_object_movement.h"
 #include "constants/items.h"
+#include "constants/moves.h"
 
 static u16 BerryTypeToItemId(u16 berry);
 static u8 BerryTreeGetNumStagesWatered(struct BerryTree *tree);
@@ -2269,7 +2270,7 @@ bool8 ObjectEventInteractionBerryHasPests(void)
     species = GetBerryPestSpecies(gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].berry);
     if (species == SPECIES_NONE)
         return FALSE;
-    CreateScriptedWildMon(species, 14 + Random() % 3, ITEM_NONE, FALSE);
+    CreateScriptedWildMon(species, 14 + Random() % 3, ITEM_NONE, FALSE, MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE);
     gSaveBlock1Ptr->berryTrees[GetObjectEventBerryTreeId(gSelectedObjectEvent)].pests = FALSE;
     return TRUE;
 }
