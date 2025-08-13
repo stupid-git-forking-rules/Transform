@@ -92,6 +92,8 @@ script MawileInCave{
     }
     else
     {
+        applymovement(Mawile, moves(face_player))
+        waitmovement(Mawile)        
         special(PlayTrainerEncounterMusic)
         applymovement(Mawile, Common_Movement_ExclamationMark)
         waitmovement
@@ -173,9 +175,11 @@ script DuskullInCave{
     }
     else
     {
+        applymovement(Duskull, moves(face_player))
+        waitmovement(Duskull)
         special(PlayTrainerEncounterMusic)
         applymovement(Duskull, Common_Movement_ExclamationMark)
-        waitmovement
+        waitmovement(Duskull)
         speakername("Duskull")
         msgbox("Not many dare to speak to me...\nYou must be bold.", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_DUSKULL, 25)

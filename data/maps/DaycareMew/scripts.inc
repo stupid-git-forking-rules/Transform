@@ -122,7 +122,7 @@ DittoEnd_Text_0:
 
 DittoEnd_Text_1:
 # 11 "data/maps/DaycareMew/scripts.pory"
-	.string "This is it.\pAfter you walk through this\ndoorway, you will learn the\lsecret of how we Dittos get\lour Eggs.\pTake these.\nThey'll come in handy$"
+	.string "This is it.\pAfter you walk through this\ndoorway, you will learn the\lsecret of how we Dittos get\lour Eggs.\pTake these.\nThey'll come in handy.$"
 
 DittoEnd_Text_2:
 # 24 "data/maps/DaycareMew/scripts.pory"

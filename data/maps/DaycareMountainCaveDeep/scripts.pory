@@ -54,16 +54,24 @@ script EiscueDialog{
                 fadescreenswapbuffers(FADE_TO_BLACK)
                 removeobject(Eiscue)
                 setflag(FLAG_HIDE_EISCUE)
-                clearflag(FLAG_SHOW_NOICE)
                 playse(SE_M_BRICK_BREAK)
-                showobjectat(NoIce, MAP_DAYCARE_MOUNTAIN_CAVE_DEEP)
+                clearflag(FLAG_SHOW_NOICE)
                 waitse
+                applymovement(NoIce, moves(walk_fast_up*7))
+                waitmovement(NoIce)
+                applymovement(NoIce, moves(face_player))
+                waitmovement(NoIce)
                 fadescreenswapbuffers(FADE_FROM_BLACK)
+                playse(SE_PIN)
+                applymovement(NoIce, Common_Movement_ExclamationMark)
+                waitmovement(NoIce)
                 speakername("Eiscue")
                 msgbox("Goodness!\nThank you.\pI have been trying to get that\nice cube off my head forever!\pTake this as a token of my\nappreciation.", MSGBOX_DEFAULT)
                 setflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 giveitem(ITEM_LUCKY_EGG)
                 clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+                speakername("Eiscue")
+                msgbox("I think I might go for a swim now!\n", MSGBOX_DEFAULT)
                 waitmessage
                 release
                 end

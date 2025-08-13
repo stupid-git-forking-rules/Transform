@@ -5621,6 +5621,15 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 13, SHADOW_SIZE_S)
         FOOTPRINT(Eiscue)
+        OVERWORLD(
+            sPicTable_EiscueNoIce,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_EiscueIce,
+            gShinyOverworldPalette_EiscueIce
+        )
         .levelUpLearnset = sEiscueLevelUpLearnset,
         .teachableLearnset = sEiscueTeachableLearnset,
         .eggMoveLearnset = sEiscueEggMoveLearnset,

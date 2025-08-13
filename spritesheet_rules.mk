@@ -3961,6 +3961,9 @@ $(POKEMONGFXDIR)/stonjourner/overworld.4bpp: %.4bpp: %.png
 $(POKEMONGFXDIR)/eiscue/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(POKEMONGFXDIR)/eiscue/noice_face/overworld.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(POKEMONGFXDIR)/indeedee/overworld.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 

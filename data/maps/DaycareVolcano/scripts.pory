@@ -15,6 +15,8 @@ script CyndaquilInCave{
     }
     else
     {
+        applymovement(Cyndaquil, moves(face_player))
+        waitmovement(Cyndaquil)        
         special(PlayTrainerEncounterMusic)
         applymovement(Cyndaquil, Common_Movement_ExclamationMark)
 	    waitmovement
@@ -98,6 +100,8 @@ script VulpixInCave{
     }
     else
     {
+        applymovement(Vulpix, moves(face_player))
+        waitmovement(Vulpix)        
         special(PlayTrainerEncounterMusic)
         applymovement(Vulpix, Common_Movement_ExclamationMark)
 	    waitmovement
@@ -179,9 +183,11 @@ script FuecocoInCave{
     }
     else
     {
+        applymovement(Fuecoco, moves(face_player))
+        waitmovement(Fuecoco)        
         special(PlayTrainerEncounterMusic)
         applymovement(Fuecoco, Common_Movement_ExclamationMark)
-        waitmovement
+        waitmovement(Fuecoco)
         speakername("Fuecoco")
         msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_FUECOCO, 25)
@@ -278,6 +284,8 @@ script CombuskenInCave{
     }
     else
     {
+        applymovement(Combusken, moves(face_player))
+        waitmovement(Combusken)
         special(PlayTrainerEncounterMusic)
         applymovement(Combusken, Common_Movement_ExclamationMark)
         waitmovement

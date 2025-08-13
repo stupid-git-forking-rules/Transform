@@ -150,6 +150,8 @@ script GoomyInCave{
     }
     else
     {
+        applymovement(Goomy, moves(face_player))
+        waitmovement(Goomy)              
         special(PlayTrainerEncounterMusic)
         applymovement(Goomy, Common_Movement_ExclamationMark)
 	    waitmovement
@@ -230,6 +232,8 @@ script BuizelInCave{
     }
     else
     {
+        applymovement(Buizel, moves(face_player))
+        waitmovement(Buizel)              
         special(PlayTrainerEncounterMusic)
         applymovement(Buizel, Common_Movement_ExclamationMark)
 	    waitmovement
@@ -311,6 +315,8 @@ script SlowpokeInCave{
     }
     else
     {
+        applymovement(Slowpoke, moves(face_player))
+        waitmovement(Slowpoke)              
         special(PlayTrainerEncounterMusic)
         applymovement(Slowpoke, Common_Movement_ExclamationMark)
 	    waitmovement
@@ -393,6 +399,8 @@ script CroagunkInCave{
     }
     else
     {
+        applymovement(Croagunk, moves(face_player))
+        waitmovement(Croagunk)              
         special(PlayTrainerEncounterMusic)
         applymovement(Croagunk, Common_Movement_ExclamationMark)
 	    waitmovement

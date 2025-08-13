@@ -23982,6 +23982,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_FOOTPRINTS
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_EiscueIce[] = INCBIN_COMP("graphics/pokemon/eiscue/overworld.4bpp");
+    const u32 gObjectEventPic_EiscueNoice[] = INCBIN_COMP("graphics/pokemon/eiscue/noice_face/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_EiscueIce[] = INCBIN_U16("graphics/pokemon/eiscue/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_EiscueIce[] = INCBIN_U16("graphics/pokemon/eiscue/overworld_shiny.gbapal");

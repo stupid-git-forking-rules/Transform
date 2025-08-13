@@ -2,9 +2,10 @@ mapscripts DaycareMountainCaveDeepDive_MapScripts{}
 
 script GorebyssInCave{
     lock
-    faceplayer
+
     if(flag(FLAG_GOREBYSS_BATTLE))
     {
+        faceplayer
         speakername("Gorebyss")
         msgbox("My brother Huntail doesnt care\nfor beauty.\pHe will attack you fiercely!\n", MSGBOX_DEFAULT)
         waitmessage
@@ -13,9 +14,11 @@ script GorebyssInCave{
     }
     else
     {
+        applymovement(Gorebyss, moves(face_player))
+        waitmovement(Gorebyss)
         special(PlayTrainerEncounterMusic)
         applymovement(Gorebyss, Common_Movement_ExclamationMark)
-        waitmovement
+        waitmovement(Gorebyss)
         speakername("Gorebyss")
         msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_GOREBYSS, 25)
@@ -127,9 +130,11 @@ script HuntailInCave{
     }
     else
     {
+        applymovement(Huntail, moves(face_player))
+        waitmovement(Huntail)        
         special(PlayTrainerEncounterMusic)
         applymovement(Huntail, Common_Movement_ExclamationMark)
-        waitmovement
+        waitmovement(Huntail)
         speakername("Huntail")
         msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_HUNTAIL, 25)

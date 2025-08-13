@@ -36,6 +36,8 @@ script ShroodleInCave{
     }
     else
     {
+        applymovement(Shroodle, moves(face_player))
+        waitmovement(Shroodle)
         special(PlayTrainerEncounterMusic)
         applymovement(Shroodle, Common_Movement_ExclamationMark)
 	    waitmovement
@@ -119,6 +121,8 @@ script SewaddleInCave{
     }
     else
     {
+        applymovement(Sewaddle, moves(face_player))
+        waitmovement(Sewaddle)        
         special(PlayTrainerEncounterMusic)
         applymovement(Sewaddle, Common_Movement_ExclamationMark)
 	    waitmovement
@@ -200,9 +204,11 @@ script BlipbugInCave{
     }
     else
     {
+        applymovement(Blipbug, moves(face_player))
+        waitmovement(Blipbug)        
         special(PlayTrainerEncounterMusic)
         applymovement(Blipbug, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Blipbug)
 	    speakername("Blipbug")
         msgbox("Us little guys need to keep each\nother sharp!", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_BLIPBUG, 25)

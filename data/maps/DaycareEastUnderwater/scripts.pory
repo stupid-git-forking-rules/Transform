@@ -1,0 +1,25 @@
+mapscripts DaycareEastUnderwater_MapScripts{}
+
+script HorseaDialog{
+
+}
+
+script ShellderDialog{
+
+}
+
+script CorsolaDialog{
+
+}
+script ClauncherDialog{
+
+}
+script TentacoolDialog{
+
+}
+script BinacleDialog{
+
+}
+script SkrelpDialog{
+
+}

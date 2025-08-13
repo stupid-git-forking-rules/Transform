@@ -5936,9 +5936,9 @@ static const struct SpriteFrameImage sPicTable_Stonjourner[] = {
 static const struct SpriteFrameImage sPicTable_EiscueIce[] = {
     overworld_ascending_frames(gObjectEventPic_EiscueIce, 4, 4),
 };
-/*static const struct SpriteFrameImage sPicTable_EiscueNoice[] = {
+static const struct SpriteFrameImage sPicTable_EiscueNoIce[] = {
     overworld_ascending_frames(gObjectEventPic_EiscueNoice, 4, 4),
-};*/
+};
 #endif //P_FAMILY_EISCUE
 
 #if P_FAMILY_INDEEDEE

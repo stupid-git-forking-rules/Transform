@@ -22,7 +22,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPHEAL)",
-      "x": 7,
+      "x": 4,
       "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -36,7 +36,7 @@
     {
       "local_id": "Eiscue",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(EISCUE)",
-      "x": 13,
+      "x": 12,
       "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -89,8 +89,8 @@
     {
       "local_id": "NoIce",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(EISCUE_NOICE)",
-      "x": 13,
-      "y": 26,
+      "x": 12,
+      "y": 33,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -98,7 +98,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FreedEicscue",
-      "flag": "FLAG_SHOW_NOICE"
+      "flag": "0"
     }
   ],
   "warp_events": [

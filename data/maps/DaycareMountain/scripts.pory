@@ -55,6 +55,8 @@ script VullabyDialog{
 }
 
 script NoibatDialog{
+    if(var(VAR_TRANSFORM_MON)== SPECIES_NOIVERN)
+    {
 	lock
 	faceplayer
 	speakername("Noibat")
@@ -62,6 +64,17 @@ script NoibatDialog{
 	waitmessage
 	release
 	end
+    }
+    else
+    {
+    	lock
+	faceplayer
+	speakername("Noibat")
+	msgbox("There's a cave up ahead.\pYou'll need my big bro's power\nto beat the Pokémon waiting deep\lwithin.", MSGBOX_DEFAULT)
+	waitmessage
+	release
+	end    
+    }
 }
 
 script BattleVsLurantis{
@@ -106,9 +119,10 @@ script BattleVsLurantis{
 
 script OmanyteInCave{
     lock
-	faceplayer
+
     if(flag(FLAG_OMANYTE_BATTLE))
     {
+        faceplayer
         speakername("Omanyte")
         msgbox("Fine.\nYou've earned your stay.", MSGBOX_DEFAULT)
         waitmessage
@@ -116,7 +130,9 @@ script OmanyteInCave{
 	    end
     }
     else
-    {
+    {   
+        applymovement(Omanyte, moves(face_player))
+        waitmovement(Omanyte)
         special(PlayTrainerEncounterMusic)
         applymovement(Omanyte, Common_Movement_ExclamationMark)
 	    waitmovement
@@ -187,9 +203,10 @@ script OmanyteInCaveTrigger{
 
 script KabutoInCave{
     lock
-	faceplayer
+
     if(flag(FLAG_KABUTO_BATTLE))
     {
+        faceplayer
         speakername("Kabuto")
         msgbox("It was only the two of us\nanyways...", MSGBOX_DEFAULT)
         waitmessage
@@ -198,6 +215,8 @@ script KabutoInCave{
     }
     else
     {
+        applymovement(Kabuto, moves(face_player))
+        waitmovement(Kabuto)        
         special(PlayTrainerEncounterMusic)
         applymovement(Kabuto, Common_Movement_ExclamationMark)
 	    waitmovement
@@ -276,7 +295,8 @@ script VullabyAfterSoar{
     waitmovement(OBJ_EVENT_ID_CAMERA)
     delay(30)
 	applymovement(Vullaby, moves(face_up))
-	waitmovement(Vullaby)	
+	waitmovement(Vullaby)
+    playse(SE_PIN)	
 	applymovement(Vullaby, Common_Movement_ExclamationMark)
 	waitmovement(Vullaby)
 	speakername("Vullaby")

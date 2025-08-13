@@ -73,416 +73,436 @@ VullabyDialog_1:
 
 NoibatDialog::
 # 58 "data/maps/DaycareMountain/scripts.pory"
+	compare VAR_TRANSFORM_MON, SPECIES_NOIVERN
+	goto_if_eq NoibatDialog_1
+# 70 "data/maps/DaycareMountain/scripts.pory"
 	lock
-# 59 "data/maps/DaycareMountain/scripts.pory"
+# 71 "data/maps/DaycareMountain/scripts.pory"
 	faceplayer
-# 60 "data/maps/DaycareMountain/scripts.pory"
+# 72 "data/maps/DaycareMountain/scripts.pory"
 	speakername NoibatDialog_Text_0
-# 61 "data/maps/DaycareMountain/scripts.pory"
-	msgbox NoibatDialog_Text_1, MSGBOX_DEFAULT
-# 62 "data/maps/DaycareMountain/scripts.pory"
+# 73 "data/maps/DaycareMountain/scripts.pory"
+	msgbox NoibatDialog_Text_2, MSGBOX_DEFAULT
+# 74 "data/maps/DaycareMountain/scripts.pory"
 	waitmessage
+# 75 "data/maps/DaycareMountain/scripts.pory"
+	release
+	end
+
+NoibatDialog_1:
+# 60 "data/maps/DaycareMountain/scripts.pory"
+	lock
+# 61 "data/maps/DaycareMountain/scripts.pory"
+	faceplayer
+# 62 "data/maps/DaycareMountain/scripts.pory"
+	speakername NoibatDialog_Text_0
 # 63 "data/maps/DaycareMountain/scripts.pory"
+	msgbox NoibatDialog_Text_1, MSGBOX_DEFAULT
+# 64 "data/maps/DaycareMountain/scripts.pory"
+	waitmessage
+# 65 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
 
 BattleVsLurantis::
-# 68 "data/maps/DaycareMountain/scripts.pory"
-	lock
-# 70 "data/maps/DaycareMountain/scripts.pory"
-	goto_if_set FLAG_TRANS_LURANTIS, BattleVsLurantis_2
-# 80 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Lurantis, BattleVsLurantis_Movement_0
 # 81 "data/maps/DaycareMountain/scripts.pory"
-	waitmovement Lurantis
-# 82 "data/maps/DaycareMountain/scripts.pory"
-	playse SE_PIN
+	lock
 # 83 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Lurantis, Common_Movement_ExclamationMark
-# 84 "data/maps/DaycareMountain/scripts.pory"
+	goto_if_set FLAG_TRANS_LURANTIS, BattleVsLurantis_2
+# 93 "data/maps/DaycareMountain/scripts.pory"
+	applymovement Lurantis, BattleVsLurantis_Movement_0
+# 94 "data/maps/DaycareMountain/scripts.pory"
 	waitmovement Lurantis
-# 85 "data/maps/DaycareMountain/scripts.pory"
+# 95 "data/maps/DaycareMountain/scripts.pory"
+	playse SE_PIN
+# 96 "data/maps/DaycareMountain/scripts.pory"
+	applymovement Lurantis, Common_Movement_ExclamationMark
+# 97 "data/maps/DaycareMountain/scripts.pory"
+	waitmovement Lurantis
+# 98 "data/maps/DaycareMountain/scripts.pory"
 	speakername BattleVsLurantis_Text_0
-# 86 "data/maps/DaycareMountain/scripts.pory"
+# 99 "data/maps/DaycareMountain/scripts.pory"
 	msgbox BattleVsLurantis_Text_2, MSGBOX_AUTOCLOSE
-# 87 "data/maps/DaycareMountain/scripts.pory"
+# 100 "data/maps/DaycareMountain/scripts.pory"
 	setwildbattle SPECIES_LURANTIS, 25
-# 88 "data/maps/DaycareMountain/scripts.pory"
+# 101 "data/maps/DaycareMountain/scripts.pory"
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
-# 89 "data/maps/DaycareMountain/scripts.pory"
+# 102 "data/maps/DaycareMountain/scripts.pory"
 	dowildbattle
-# 90 "data/maps/DaycareMountain/scripts.pory"
+# 103 "data/maps/DaycareMountain/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 91 "data/maps/DaycareMountain/scripts.pory"
+# 104 "data/maps/DaycareMountain/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsLurantis_4
 	return
 
 BattleVsLurantis_2:
-# 72 "data/maps/DaycareMountain/scripts.pory"
+# 85 "data/maps/DaycareMountain/scripts.pory"
 	faceplayer
-# 73 "data/maps/DaycareMountain/scripts.pory"
+# 86 "data/maps/DaycareMountain/scripts.pory"
 	speakername BattleVsLurantis_Text_0
-# 74 "data/maps/DaycareMountain/scripts.pory"
+# 87 "data/maps/DaycareMountain/scripts.pory"
 	msgbox BattleVsLurantis_Text_1, MSGBOX_DEFAULT
-# 75 "data/maps/DaycareMountain/scripts.pory"
+# 88 "data/maps/DaycareMountain/scripts.pory"
 	waitmessage
-# 76 "data/maps/DaycareMountain/scripts.pory"
+# 89 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
 BattleVsLurantis_4:
-# 93 "data/maps/DaycareMountain/scripts.pory"
+# 106 "data/maps/DaycareMountain/scripts.pory"
 	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
-# 94 "data/maps/DaycareMountain/scripts.pory"
+# 107 "data/maps/DaycareMountain/scripts.pory"
 	setflag FLAG_TRANS_LURANTIS
-# 95 "data/maps/DaycareMountain/scripts.pory"
-	dittotransform SPECIES_LURANTIS
-# 96 "data/maps/DaycareMountain/scripts.pory"
-	playse MUS_LEVEL_UP
-# 97 "data/maps/DaycareMountain/scripts.pory"
-	msgbox BattleVsLurantis_Text_3, MSGBOX_DEFAULT
-# 98 "data/maps/DaycareMountain/scripts.pory"
-	waitmessage
-# 99 "data/maps/DaycareMountain/scripts.pory"
-	dittotransform VAR_TEMP_0
-# 100 "data/maps/DaycareMountain/scripts.pory"
-	givemon SPECIES_LURANTIS, 25, move1 = MOVE_AERIAL_ACE, move2 = MOVE_BUG_BITE, move3 = MOVE_TRAILBLAZE, move4 = MOVE_CUT
-# 101 "data/maps/DaycareMountain/scripts.pory"
-	waitmessage
-# 102 "data/maps/DaycareMountain/scripts.pory"
-	release
-	end
-
-
-OmanyteInCave::
 # 108 "data/maps/DaycareMountain/scripts.pory"
-	lock
+	dittotransform SPECIES_LURANTIS
 # 109 "data/maps/DaycareMountain/scripts.pory"
-	faceplayer
+	playse MUS_LEVEL_UP
 # 110 "data/maps/DaycareMountain/scripts.pory"
-	goto_if_set FLAG_OMANYTE_BATTLE, OmanyteInCave_1
-# 120 "data/maps/DaycareMountain/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 121 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Omanyte, Common_Movement_ExclamationMark
-# 122 "data/maps/DaycareMountain/scripts.pory"
-	waitmovement
-# 123 "data/maps/DaycareMountain/scripts.pory"
-	speakername OmanyteInCave_Text_0
-# 124 "data/maps/DaycareMountain/scripts.pory"
-	msgbox OmanyteInCave_Text_2, MSGBOX_AUTOCLOSE
-# 125 "data/maps/DaycareMountain/scripts.pory"
-	setwildbattle SPECIES_OMANYTE, 25
-# 126 "data/maps/DaycareMountain/scripts.pory"
-	dowildbattle
-# 127 "data/maps/DaycareMountain/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 128 "data/maps/DaycareMountain/scripts.pory"
-	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq OmanyteInCave_4
-	return
-
-OmanyteInCave_1:
+	msgbox BattleVsLurantis_Text_3, MSGBOX_DEFAULT
+# 111 "data/maps/DaycareMountain/scripts.pory"
+	waitmessage
 # 112 "data/maps/DaycareMountain/scripts.pory"
-	speakername OmanyteInCave_Text_0
+	dittotransform VAR_TEMP_0
 # 113 "data/maps/DaycareMountain/scripts.pory"
-	msgbox OmanyteInCave_Text_1, MSGBOX_DEFAULT
+	givemon SPECIES_LURANTIS, 25, move1 = MOVE_AERIAL_ACE, move2 = MOVE_BUG_BITE, move3 = MOVE_TRAILBLAZE, move4 = MOVE_CUT
 # 114 "data/maps/DaycareMountain/scripts.pory"
 	waitmessage
 # 115 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
-OmanyteInCave_4:
-# 130 "data/maps/DaycareMountain/scripts.pory"
-	speakername OmanyteInCave_Text_0
-# 131 "data/maps/DaycareMountain/scripts.pory"
-	msgbox OmanyteInCave_Text_1, MSGBOX_DEFAULT
-# 132 "data/maps/DaycareMountain/scripts.pory"
-	setflag FLAG_OMANYTE_BATTLE
+
+OmanyteInCave::
+# 121 "data/maps/DaycareMountain/scripts.pory"
+	lock
+# 122 "data/maps/DaycareMountain/scripts.pory"
+	faceplayer
+# 123 "data/maps/DaycareMountain/scripts.pory"
+	goto_if_set FLAG_OMANYTE_BATTLE, OmanyteInCave_1
 # 133 "data/maps/DaycareMountain/scripts.pory"
-	waitmessage
+	special PlayTrainerEncounterMusic
 # 134 "data/maps/DaycareMountain/scripts.pory"
+	applymovement Omanyte, Common_Movement_ExclamationMark
+# 135 "data/maps/DaycareMountain/scripts.pory"
+	waitmovement
+# 136 "data/maps/DaycareMountain/scripts.pory"
+	speakername OmanyteInCave_Text_0
+# 137 "data/maps/DaycareMountain/scripts.pory"
+	msgbox OmanyteInCave_Text_2, MSGBOX_AUTOCLOSE
+# 138 "data/maps/DaycareMountain/scripts.pory"
+	setwildbattle SPECIES_OMANYTE, 25
+# 139 "data/maps/DaycareMountain/scripts.pory"
+	dowildbattle
+# 140 "data/maps/DaycareMountain/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 141 "data/maps/DaycareMountain/scripts.pory"
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq OmanyteInCave_4
+	return
+
+OmanyteInCave_1:
+# 125 "data/maps/DaycareMountain/scripts.pory"
+	speakername OmanyteInCave_Text_0
+# 126 "data/maps/DaycareMountain/scripts.pory"
+	msgbox OmanyteInCave_Text_1, MSGBOX_DEFAULT
+# 127 "data/maps/DaycareMountain/scripts.pory"
+	waitmessage
+# 128 "data/maps/DaycareMountain/scripts.pory"
+	release
+	end
+
+OmanyteInCave_4:
+# 143 "data/maps/DaycareMountain/scripts.pory"
+	speakername OmanyteInCave_Text_0
+# 144 "data/maps/DaycareMountain/scripts.pory"
+	msgbox OmanyteInCave_Text_1, MSGBOX_DEFAULT
+# 145 "data/maps/DaycareMountain/scripts.pory"
+	setflag FLAG_OMANYTE_BATTLE
+# 146 "data/maps/DaycareMountain/scripts.pory"
+	waitmessage
+# 147 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
 
 OmanyteInCaveTrigger::
-# 141 "data/maps/DaycareMountain/scripts.pory"
+# 154 "data/maps/DaycareMountain/scripts.pory"
 	goto_if_unset FLAG_OMANYTE_BATTLE, OmanyteInCaveTrigger_1
 	return
 
 OmanyteInCaveTrigger_1:
-# 143 "data/maps/DaycareMountain/scripts.pory"
+# 156 "data/maps/DaycareMountain/scripts.pory"
 	special PlayTrainerEncounterMusic
-# 144 "data/maps/DaycareMountain/scripts.pory"
+# 157 "data/maps/DaycareMountain/scripts.pory"
 	applymovement Omanyte, Common_Movement_ExclamationMark
-# 145 "data/maps/DaycareMountain/scripts.pory"
+# 158 "data/maps/DaycareMountain/scripts.pory"
 	waitmovement
-# 146 "data/maps/DaycareMountain/scripts.pory"
+# 159 "data/maps/DaycareMountain/scripts.pory"
 	delay 40
-# 147 "data/maps/DaycareMountain/scripts.pory"
+# 160 "data/maps/DaycareMountain/scripts.pory"
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
-# 148 "data/maps/DaycareMountain/scripts.pory"
+# 161 "data/maps/DaycareMountain/scripts.pory"
 	switch VAR_TEMP_2
-# 150 "data/maps/DaycareMountain/scripts.pory"
+# 163 "data/maps/DaycareMountain/scripts.pory"
 	case 34, OmanyteInCaveTrigger_4
-# 168 "data/maps/DaycareMountain/scripts.pory"
+# 181 "data/maps/DaycareMountain/scripts.pory"
 	case 33, OmanyteInCaveTrigger_5
 	return
 
 OmanyteInCaveTrigger_4:
-# 151 "data/maps/DaycareMountain/scripts.pory"
+# 164 "data/maps/DaycareMountain/scripts.pory"
 	applymovement LOCALID_PLAYER, OmanyteInCaveTrigger_Movement_0
-# 152 "data/maps/DaycareMountain/scripts.pory"
+# 165 "data/maps/DaycareMountain/scripts.pory"
 	applymovement Omanyte, OmanyteInCaveTrigger_Movement_1
-# 153 "data/maps/DaycareMountain/scripts.pory"
+# 166 "data/maps/DaycareMountain/scripts.pory"
 	waitmovement Omanyte
-# 154 "data/maps/DaycareMountain/scripts.pory"
+# 167 "data/maps/DaycareMountain/scripts.pory"
 	speakername OmanyteInCave_Text_0
-# 155 "data/maps/DaycareMountain/scripts.pory"
+# 168 "data/maps/DaycareMountain/scripts.pory"
 	msgbox OmanyteInCave_Text_2, MSGBOX_AUTOCLOSE
-# 156 "data/maps/DaycareMountain/scripts.pory"
+# 169 "data/maps/DaycareMountain/scripts.pory"
 	setwildbattle SPECIES_OMANYTE, 25
-# 157 "data/maps/DaycareMountain/scripts.pory"
+# 170 "data/maps/DaycareMountain/scripts.pory"
 	dowildbattle
-# 158 "data/maps/DaycareMountain/scripts.pory"
+# 171 "data/maps/DaycareMountain/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 159 "data/maps/DaycareMountain/scripts.pory"
+# 172 "data/maps/DaycareMountain/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq OmanyteInCaveTrigger_6
 	return
 
 OmanyteInCaveTrigger_5:
-# 169 "data/maps/DaycareMountain/scripts.pory"
+# 182 "data/maps/DaycareMountain/scripts.pory"
 	applymovement LOCALID_PLAYER, OmanyteInCaveTrigger_Movement_0
-# 170 "data/maps/DaycareMountain/scripts.pory"
+# 183 "data/maps/DaycareMountain/scripts.pory"
 	speakername OmanyteInCave_Text_0
-# 171 "data/maps/DaycareMountain/scripts.pory"
+# 184 "data/maps/DaycareMountain/scripts.pory"
 	msgbox OmanyteInCave_Text_2, MSGBOX_AUTOCLOSE
-# 172 "data/maps/DaycareMountain/scripts.pory"
+# 185 "data/maps/DaycareMountain/scripts.pory"
 	setwildbattle SPECIES_OMANYTE, 25
-# 173 "data/maps/DaycareMountain/scripts.pory"
+# 186 "data/maps/DaycareMountain/scripts.pory"
 	dowildbattle
-# 174 "data/maps/DaycareMountain/scripts.pory"
+# 187 "data/maps/DaycareMountain/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 175 "data/maps/DaycareMountain/scripts.pory"
+# 188 "data/maps/DaycareMountain/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq OmanyteInCaveTrigger_8
 	return
 
 OmanyteInCaveTrigger_6:
-# 161 "data/maps/DaycareMountain/scripts.pory"
+# 174 "data/maps/DaycareMountain/scripts.pory"
 	speakername OmanyteInCave_Text_0
-# 162 "data/maps/DaycareMountain/scripts.pory"
+# 175 "data/maps/DaycareMountain/scripts.pory"
 	msgbox OmanyteInCave_Text_1, MSGBOX_DEFAULT
-# 163 "data/maps/DaycareMountain/scripts.pory"
+# 176 "data/maps/DaycareMountain/scripts.pory"
 	setflag FLAG_OMANYTE_BATTLE
-# 164 "data/maps/DaycareMountain/scripts.pory"
+# 177 "data/maps/DaycareMountain/scripts.pory"
 	waitmessage
-# 165 "data/maps/DaycareMountain/scripts.pory"
+# 178 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
 OmanyteInCaveTrigger_8:
-# 177 "data/maps/DaycareMountain/scripts.pory"
+# 190 "data/maps/DaycareMountain/scripts.pory"
 	speakername OmanyteInCave_Text_0
-# 178 "data/maps/DaycareMountain/scripts.pory"
+# 191 "data/maps/DaycareMountain/scripts.pory"
 	msgbox OmanyteInCave_Text_1, MSGBOX_DEFAULT
-# 179 "data/maps/DaycareMountain/scripts.pory"
+# 192 "data/maps/DaycareMountain/scripts.pory"
 	setflag FLAG_OMANYTE_BATTLE
-# 180 "data/maps/DaycareMountain/scripts.pory"
+# 193 "data/maps/DaycareMountain/scripts.pory"
 	waitmessage
-# 181 "data/maps/DaycareMountain/scripts.pory"
+# 194 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
 
 KabutoInCave::
-# 189 "data/maps/DaycareMountain/scripts.pory"
-	lock
-# 190 "data/maps/DaycareMountain/scripts.pory"
-	faceplayer
-# 191 "data/maps/DaycareMountain/scripts.pory"
-	goto_if_set FLAG_KABUTO_BATTLE, KabutoInCave_1
-# 201 "data/maps/DaycareMountain/scripts.pory"
-	special PlayTrainerEncounterMusic
 # 202 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Kabuto, Common_Movement_ExclamationMark
+	lock
 # 203 "data/maps/DaycareMountain/scripts.pory"
-	waitmovement
+	faceplayer
 # 204 "data/maps/DaycareMountain/scripts.pory"
+	goto_if_set FLAG_KABUTO_BATTLE, KabutoInCave_1
+# 214 "data/maps/DaycareMountain/scripts.pory"
+	special PlayTrainerEncounterMusic
+# 215 "data/maps/DaycareMountain/scripts.pory"
+	applymovement Kabuto, Common_Movement_ExclamationMark
+# 216 "data/maps/DaycareMountain/scripts.pory"
+	waitmovement
+# 217 "data/maps/DaycareMountain/scripts.pory"
 	speakername KabutoInCave_Text_0
-# 205 "data/maps/DaycareMountain/scripts.pory"
+# 218 "data/maps/DaycareMountain/scripts.pory"
 	msgbox KabutoInCave_Text_2, MSGBOX_AUTOCLOSE
-# 206 "data/maps/DaycareMountain/scripts.pory"
+# 219 "data/maps/DaycareMountain/scripts.pory"
 	setwildbattle SPECIES_KABUTO, 25
-# 207 "data/maps/DaycareMountain/scripts.pory"
+# 220 "data/maps/DaycareMountain/scripts.pory"
 	dowildbattle
-# 208 "data/maps/DaycareMountain/scripts.pory"
+# 221 "data/maps/DaycareMountain/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 209 "data/maps/DaycareMountain/scripts.pory"
+# 222 "data/maps/DaycareMountain/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq KabutoInCave_4
 	return
 
 KabutoInCave_1:
-# 193 "data/maps/DaycareMountain/scripts.pory"
+# 206 "data/maps/DaycareMountain/scripts.pory"
 	speakername KabutoInCave_Text_0
-# 194 "data/maps/DaycareMountain/scripts.pory"
+# 207 "data/maps/DaycareMountain/scripts.pory"
 	msgbox KabutoInCave_Text_1, MSGBOX_DEFAULT
-# 195 "data/maps/DaycareMountain/scripts.pory"
+# 208 "data/maps/DaycareMountain/scripts.pory"
 	waitmessage
-# 196 "data/maps/DaycareMountain/scripts.pory"
+# 209 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
 KabutoInCave_4:
-# 211 "data/maps/DaycareMountain/scripts.pory"
+# 224 "data/maps/DaycareMountain/scripts.pory"
 	speakername KabutoInCave_Text_0
-# 212 "data/maps/DaycareMountain/scripts.pory"
+# 225 "data/maps/DaycareMountain/scripts.pory"
 	msgbox KabutoInCave_Text_3, MSGBOX_DEFAULT
-# 213 "data/maps/DaycareMountain/scripts.pory"
+# 226 "data/maps/DaycareMountain/scripts.pory"
 	setflag FLAG_KABUTO_BATTLE
-# 214 "data/maps/DaycareMountain/scripts.pory"
+# 227 "data/maps/DaycareMountain/scripts.pory"
 	waitmessage
-# 215 "data/maps/DaycareMountain/scripts.pory"
+# 228 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
 
 KabutoInCaveTrigger::
-# 223 "data/maps/DaycareMountain/scripts.pory"
+# 236 "data/maps/DaycareMountain/scripts.pory"
 	goto_if_unset FLAG_KABUTO_BATTLE, KabutoInCaveTrigger_1
 	return
 
 KabutoInCaveTrigger_1:
-# 225 "data/maps/DaycareMountain/scripts.pory"
+# 238 "data/maps/DaycareMountain/scripts.pory"
 	special PlayTrainerEncounterMusic
-# 226 "data/maps/DaycareMountain/scripts.pory"
+# 239 "data/maps/DaycareMountain/scripts.pory"
 	applymovement Kabuto, Common_Movement_ExclamationMark
-# 227 "data/maps/DaycareMountain/scripts.pory"
+# 240 "data/maps/DaycareMountain/scripts.pory"
 	waitmovement
-# 228 "data/maps/DaycareMountain/scripts.pory"
+# 241 "data/maps/DaycareMountain/scripts.pory"
 	delay 40
-# 229 "data/maps/DaycareMountain/scripts.pory"
+# 242 "data/maps/DaycareMountain/scripts.pory"
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
-# 230 "data/maps/DaycareMountain/scripts.pory"
+# 243 "data/maps/DaycareMountain/scripts.pory"
 	switch VAR_TEMP_1
-# 232 "data/maps/DaycareMountain/scripts.pory"
+# 245 "data/maps/DaycareMountain/scripts.pory"
 	case 8, KabutoInCaveTrigger_4
-# 248 "data/maps/DaycareMountain/scripts.pory"
+# 261 "data/maps/DaycareMountain/scripts.pory"
 	case 9, KabutoInCaveTrigger_5
 	return
 
 KabutoInCaveTrigger_4:
-# 233 "data/maps/DaycareMountain/scripts.pory"
+# 246 "data/maps/DaycareMountain/scripts.pory"
 	applymovement LOCALID_PLAYER, KabutoInCaveTrigger_Movement_0
-# 234 "data/maps/DaycareMountain/scripts.pory"
+# 247 "data/maps/DaycareMountain/scripts.pory"
 	speakername KabutoInCave_Text_0
-# 235 "data/maps/DaycareMountain/scripts.pory"
+# 248 "data/maps/DaycareMountain/scripts.pory"
 	msgbox KabutoInCave_Text_2, MSGBOX_AUTOCLOSE
-# 236 "data/maps/DaycareMountain/scripts.pory"
+# 249 "data/maps/DaycareMountain/scripts.pory"
 	setwildbattle SPECIES_KABUTO, 25
-# 237 "data/maps/DaycareMountain/scripts.pory"
+# 250 "data/maps/DaycareMountain/scripts.pory"
 	dowildbattle
-# 238 "data/maps/DaycareMountain/scripts.pory"
+# 251 "data/maps/DaycareMountain/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 239 "data/maps/DaycareMountain/scripts.pory"
+# 252 "data/maps/DaycareMountain/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq KabutoInCaveTrigger_6
 	return
 
 KabutoInCaveTrigger_5:
-# 249 "data/maps/DaycareMountain/scripts.pory"
+# 262 "data/maps/DaycareMountain/scripts.pory"
 	applymovement LOCALID_PLAYER, KabutoInCaveTrigger_Movement_0
-# 250 "data/maps/DaycareMountain/scripts.pory"
+# 263 "data/maps/DaycareMountain/scripts.pory"
 	applymovement Kabuto, KabutoInCaveTrigger_Movement_1
-# 251 "data/maps/DaycareMountain/scripts.pory"
+# 264 "data/maps/DaycareMountain/scripts.pory"
 	speakername KabutoInCave_Text_0
-# 252 "data/maps/DaycareMountain/scripts.pory"
+# 265 "data/maps/DaycareMountain/scripts.pory"
 	msgbox KabutoInCave_Text_2, MSGBOX_AUTOCLOSE
-# 253 "data/maps/DaycareMountain/scripts.pory"
+# 266 "data/maps/DaycareMountain/scripts.pory"
 	setwildbattle SPECIES_KABUTO, 25
-# 254 "data/maps/DaycareMountain/scripts.pory"
+# 267 "data/maps/DaycareMountain/scripts.pory"
 	dowildbattle
-# 255 "data/maps/DaycareMountain/scripts.pory"
+# 268 "data/maps/DaycareMountain/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 256 "data/maps/DaycareMountain/scripts.pory"
+# 269 "data/maps/DaycareMountain/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq KabutoInCaveTrigger_8
 	return
 
 KabutoInCaveTrigger_6:
-# 241 "data/maps/DaycareMountain/scripts.pory"
+# 254 "data/maps/DaycareMountain/scripts.pory"
 	speakername KabutoInCave_Text_0
-# 242 "data/maps/DaycareMountain/scripts.pory"
+# 255 "data/maps/DaycareMountain/scripts.pory"
 	msgbox KabutoInCave_Text_3, MSGBOX_DEFAULT
-# 243 "data/maps/DaycareMountain/scripts.pory"
+# 256 "data/maps/DaycareMountain/scripts.pory"
 	setflag FLAG_KABUTO_BATTLE
-# 244 "data/maps/DaycareMountain/scripts.pory"
+# 257 "data/maps/DaycareMountain/scripts.pory"
 	waitmessage
-# 245 "data/maps/DaycareMountain/scripts.pory"
+# 258 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
 KabutoInCaveTrigger_8:
-# 258 "data/maps/DaycareMountain/scripts.pory"
+# 271 "data/maps/DaycareMountain/scripts.pory"
 	speakername KabutoInCave_Text_0
-# 259 "data/maps/DaycareMountain/scripts.pory"
+# 272 "data/maps/DaycareMountain/scripts.pory"
 	msgbox KabutoInCave_Text_3, MSGBOX_DEFAULT
-# 260 "data/maps/DaycareMountain/scripts.pory"
+# 273 "data/maps/DaycareMountain/scripts.pory"
 	setflag FLAG_KABUTO_BATTLE
-# 261 "data/maps/DaycareMountain/scripts.pory"
+# 274 "data/maps/DaycareMountain/scripts.pory"
 	waitmessage
-# 262 "data/maps/DaycareMountain/scripts.pory"
+# 275 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
 
 VullabyAfterSoar::
-# 270 "data/maps/DaycareMountain/scripts.pory"
+# 283 "data/maps/DaycareMountain/scripts.pory"
 	goto_if_unset FLAG_SOAR_ACROSS, VullabyAfterSoar_1
 	end
 
 VullabyAfterSoar_1:
-# 272 "data/maps/DaycareMountain/scripts.pory"
-	lock
-# 273 "data/maps/DaycareMountain/scripts.pory"
-	setflag FLAG_SHOW_NOICE
-# 274 "data/maps/DaycareMountain/scripts.pory"
-	special SpawnCameraObject
-# 275 "data/maps/DaycareMountain/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, VullabyAfterSoar_Movement_0
-# 276 "data/maps/DaycareMountain/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 277 "data/maps/DaycareMountain/scripts.pory"
-	delay 30
-# 278 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Vullaby, OmanyteInCaveTrigger_Movement_0
-# 279 "data/maps/DaycareMountain/scripts.pory"
-	waitmovement Vullaby
-# 280 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Vullaby, Common_Movement_ExclamationMark
-# 281 "data/maps/DaycareMountain/scripts.pory"
-	waitmovement Vullaby
-# 282 "data/maps/DaycareMountain/scripts.pory"
-	speakername VullabyDialog_Text_0
-# 283 "data/maps/DaycareMountain/scripts.pory"
-	msgbox VullabyAfterSoar_Text_0, MSGBOX_AUTOCLOSE
-# 284 "data/maps/DaycareMountain/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, VullabyAfterSoar_Movement_1
 # 285 "data/maps/DaycareMountain/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
+	lock
 # 286 "data/maps/DaycareMountain/scripts.pory"
-	special RemoveCameraObject
+	setflag FLAG_SHOW_NOICE
 # 287 "data/maps/DaycareMountain/scripts.pory"
-	setflag FLAG_SOAR_ACROSS
+	special SpawnCameraObject
 # 288 "data/maps/DaycareMountain/scripts.pory"
-	waitmessage
+	applymovement OBJ_EVENT_ID_CAMERA, VullabyAfterSoar_Movement_0
 # 289 "data/maps/DaycareMountain/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 290 "data/maps/DaycareMountain/scripts.pory"
+	delay 30
+# 291 "data/maps/DaycareMountain/scripts.pory"
+	applymovement Vullaby, OmanyteInCaveTrigger_Movement_0
+# 292 "data/maps/DaycareMountain/scripts.pory"
+	waitmovement Vullaby
+# 293 "data/maps/DaycareMountain/scripts.pory"
+	playse SE_PIN
+# 294 "data/maps/DaycareMountain/scripts.pory"
+	applymovement Vullaby, Common_Movement_ExclamationMark
+# 295 "data/maps/DaycareMountain/scripts.pory"
+	waitmovement Vullaby
+# 296 "data/maps/DaycareMountain/scripts.pory"
+	speakername VullabyDialog_Text_0
+# 297 "data/maps/DaycareMountain/scripts.pory"
+	msgbox VullabyAfterSoar_Text_0, MSGBOX_AUTOCLOSE
+# 298 "data/maps/DaycareMountain/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, VullabyAfterSoar_Movement_1
+# 299 "data/maps/DaycareMountain/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 300 "data/maps/DaycareMountain/scripts.pory"
+	special RemoveCameraObject
+# 301 "data/maps/DaycareMountain/scripts.pory"
+	setflag FLAG_SOAR_ACROSS
+# 302 "data/maps/DaycareMountain/scripts.pory"
+	waitmessage
+# 303 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
@@ -511,65 +531,65 @@ SoarBack_Movement_0:
 	walk_down
 	step_end
 
-# 80 "data/maps/DaycareMountain/scripts.pory"
+# 93 "data/maps/DaycareMountain/scripts.pory"
 BattleVsLurantis_Movement_0:
-# 80 "data/maps/DaycareMountain/scripts.pory"
+# 93 "data/maps/DaycareMountain/scripts.pory"
 	face_player
 	step_end
 
-# 151 "data/maps/DaycareMountain/scripts.pory"
+# 164 "data/maps/DaycareMountain/scripts.pory"
 OmanyteInCaveTrigger_Movement_0:
-# 151 "data/maps/DaycareMountain/scripts.pory"
+# 164 "data/maps/DaycareMountain/scripts.pory"
 	face_up
 	step_end
 
-# 152 "data/maps/DaycareMountain/scripts.pory"
+# 165 "data/maps/DaycareMountain/scripts.pory"
 OmanyteInCaveTrigger_Movement_1:
-# 152 "data/maps/DaycareMountain/scripts.pory"
+# 165 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
 	step_end
 
-# 233 "data/maps/DaycareMountain/scripts.pory"
+# 246 "data/maps/DaycareMountain/scripts.pory"
 KabutoInCaveTrigger_Movement_0:
-# 233 "data/maps/DaycareMountain/scripts.pory"
+# 246 "data/maps/DaycareMountain/scripts.pory"
 	face_left
 	step_end
 
-# 250 "data/maps/DaycareMountain/scripts.pory"
+# 263 "data/maps/DaycareMountain/scripts.pory"
 KabutoInCaveTrigger_Movement_1:
-# 250 "data/maps/DaycareMountain/scripts.pory"
+# 263 "data/maps/DaycareMountain/scripts.pory"
 	walk_right
 	step_end
 
-# 275 "data/maps/DaycareMountain/scripts.pory"
+# 288 "data/maps/DaycareMountain/scripts.pory"
 VullabyAfterSoar_Movement_0:
-# 275 "data/maps/DaycareMountain/scripts.pory"
+# 288 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 275 "data/maps/DaycareMountain/scripts.pory"
+# 288 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 275 "data/maps/DaycareMountain/scripts.pory"
+# 288 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 275 "data/maps/DaycareMountain/scripts.pory"
+# 288 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 275 "data/maps/DaycareMountain/scripts.pory"
+# 288 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 275 "data/maps/DaycareMountain/scripts.pory"
+# 288 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
 	step_end
 
-# 284 "data/maps/DaycareMountain/scripts.pory"
+# 298 "data/maps/DaycareMountain/scripts.pory"
 VullabyAfterSoar_Movement_1:
-# 284 "data/maps/DaycareMountain/scripts.pory"
+# 298 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 284 "data/maps/DaycareMountain/scripts.pory"
+# 298 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 284 "data/maps/DaycareMountain/scripts.pory"
+# 298 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 284 "data/maps/DaycareMountain/scripts.pory"
+# 298 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 284 "data/maps/DaycareMountain/scripts.pory"
+# 298 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 284 "data/maps/DaycareMountain/scripts.pory"
+# 298 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
 	step_end
 
@@ -586,57 +606,61 @@ VullabyDialog_Text_2:
 	.string "I wish I could transform like you.\pI would change into a giant eagle!\n$"
 
 NoibatDialog_Text_0:
-# 60 "data/maps/DaycareMountain/scripts.pory"
+# 62 "data/maps/DaycareMountain/scripts.pory"
 	.string "Noibat$"
 
 NoibatDialog_Text_1:
-# 61 "data/maps/DaycareMountain/scripts.pory"
+# 63 "data/maps/DaycareMountain/scripts.pory"
 	.string "Big brother!\pOh, no. It's just another Ditto...\pThere's a cave up ahead.\pYou'll need my big bro's power\nto beat the Pokémon waiting deep\lwithin.$"
 
-BattleVsLurantis_Text_0:
+NoibatDialog_Text_2:
 # 73 "data/maps/DaycareMountain/scripts.pory"
+	.string "There's a cave up ahead.\pYou'll need my big bro's power\nto beat the Pokémon waiting deep\lwithin.$"
+
+BattleVsLurantis_Text_0:
+# 86 "data/maps/DaycareMountain/scripts.pory"
 	.string "Lurantis$"
 
 BattleVsLurantis_Text_1:
-# 74 "data/maps/DaycareMountain/scripts.pory"
+# 87 "data/maps/DaycareMountain/scripts.pory"
 	.string "Haven't seen any small trees\naround?\pThey tend to grow on the top of\ncliffs with crashing waterfalls.$"
 
 BattleVsLurantis_Text_2:
-# 86 "data/maps/DaycareMountain/scripts.pory"
+# 99 "data/maps/DaycareMountain/scripts.pory"
 	.string "You're out seeking your Egg...\nare you not?\pEvery Ditto comes here in search\nif the mythical Egg.\pProve your strength to me.\nMy sharp raptorial arms may come\lin handy.$"
 
 BattleVsLurantis_Text_3:
-# 97 "data/maps/DaycareMountain/scripts.pory"
+# 110 "data/maps/DaycareMountain/scripts.pory"
 	.string "You have gained the ability to\ntransform into Lurantis!$"
 
 OmanyteInCave_Text_0:
-# 112 "data/maps/DaycareMountain/scripts.pory"
+# 125 "data/maps/DaycareMountain/scripts.pory"
 	.string "Omanyte$"
 
 OmanyteInCave_Text_1:
-# 113 "data/maps/DaycareMountain/scripts.pory"
+# 126 "data/maps/DaycareMountain/scripts.pory"
 	.string "Fine.\nYou've earned your stay.$"
 
 OmanyteInCave_Text_2:
-# 124 "data/maps/DaycareMountain/scripts.pory"
+# 137 "data/maps/DaycareMountain/scripts.pory"
 	.string "You're no fossil!\n$"
 
 KabutoInCave_Text_0:
-# 193 "data/maps/DaycareMountain/scripts.pory"
+# 206 "data/maps/DaycareMountain/scripts.pory"
 	.string "Kabuto$"
 
 KabutoInCave_Text_1:
-# 194 "data/maps/DaycareMountain/scripts.pory"
+# 207 "data/maps/DaycareMountain/scripts.pory"
 	.string "It was only the two of us\nanyways...$"
 
 KabutoInCave_Text_2:
-# 205 "data/maps/DaycareMountain/scripts.pory"
+# 218 "data/maps/DaycareMountain/scripts.pory"
 	.string "Fossils only!\n$"
 
 KabutoInCave_Text_3:
-# 212 "data/maps/DaycareMountain/scripts.pory"
+# 225 "data/maps/DaycareMountain/scripts.pory"
 	.string "Alright.\nWe can make an exception.$"
 
 VullabyAfterSoar_Text_0:
-# 283 "data/maps/DaycareMountain/scripts.pory"
+# 297 "data/maps/DaycareMountain/scripts.pory"
 	.string "Wow!\pYou made it across!\pTransforming into Noivern was\nclever!$"
