@@ -1,25 +1,135 @@
 mapscripts DaycareEastUnderwater_MapScripts{}
 
 script HorseaDialog{
-
+    lock
+    faceplayer
+    speakername("Horsea")
+    msgbox("It's so vibrant and lively in\nthe reef.\pI'm glad the Daycare folks care\nso much for the environment.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
 }
 
 script ShellderDialog{
-
+    lock
+    faceplayer
+    msgbox("Shellder is intensely staring\nupward.\pIt looks ready to snap onto its\ntarget.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
 }
 
 script CorsolaDialog{
+    lock
+    speakername("Corsola")
+    msgbox("Welcome to the Daycare Reef my\nfriend!\pI can exchange Lucky Eggs for\nSuper Potions!\pWould you like to trade?\n", MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES)
+    {
+        checkitem(ITEM_LUCKY_EGG)
+        if(var(VAR_RESULT) == TRUE)
+        { 
+            speakername("Corsola")
+            msgbox("How many would you like to\nexchange?", MSGBOX_DEFAULT)
+            dynmultichoice(0,0,TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "One", "Two", "Three")
+            if(var(VAR_RESULT)==0)
+            {
+                removeitem(ITEM_LUCKY_EGG)
+                giveitem(ITEM_SUPER_POTION)
+                waitmessage
+                release
+                end
+            }
+            if(var(VAR_RESULT)==1)
+            {
+                checkitem(ITEM_LUCKY_EGG,2)
+                if(var(VAR_RESULT) == TRUE)
+                {
+                removeitem(ITEM_LUCKY_EGG, 2)
+                giveitem(ITEM_SUPER_POTION, 2)
+                waitmessage
+                release
+                end
+                }
+                else{
+                speakername("Corsola")
+                msgbox("You don't have enough!\n", MSGBOX_DEFAULT)
+                waitmessage
+                release
+                end
+                }
+
+            }
+            if(var(VAR_RESULT)==2)
+            {
+                checkitem(ITEM_LUCKY_EGG,3)
+                if(var(VAR_RESULT) == TRUE)
+                {
+                removeitem(ITEM_LUCKY_EGG, 3)
+                giveitem(ITEM_SUPER_POTION, 3)
+                waitmessage
+                release
+                end
+                }
+                else{
+                speakername("Corsola")
+                msgbox("You don't have enough!\n", MSGBOX_DEFAULT)
+                waitmessage
+                release
+                end
+                }
+            }           
+
+        }
+        else
+        {
+            msgbox("You don't have any Lucky Eggs!\pCome back when you do.", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
 
 }
-script ClauncherDialog{
 
+script ClauncherDialog{
+    lock
+    msgbox("It's impossible to get this\nClauncher's attention...\pIt's humming and snapping its\npinchers to the theme of\l'Under the Sea'", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
 }
 script TentacoolDialog{
-
+    lock
+    faceplayer
+    speakername("Tentacool")
+    msgbox("The sea is so beautiful.\nImagine if there was more of it!\pEveryone would get to experience\nits elegance!\pI wonder if there is an\norganization I can join to help\lfurther this mission!", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
 }
 script BinacleDialog{
-
+    lock
+    faceplayer
+    speakername("Binacle")
+    msgbox("Rock on dude!\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
 }
 script SkrelpDialog{
-
+    lock
+    faceplayer
+    speakername("Skrelp")
+    msgbox("Wait you can see me?\pI need to work on my camoflauge...\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
 }

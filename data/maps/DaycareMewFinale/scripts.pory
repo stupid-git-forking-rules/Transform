@@ -5,19 +5,24 @@ script MewFinalBattleTrigger{
     {
         lock
         dittotransform(SPECIES_DITTO)
-        applymovement(LOCALID_PLAYER, moves(walk_up*6))
+        applymovement(LOCALID_PLAYER, moves(walk_up*3))
         waitmovement(LOCALID_PLAYER)
+        playse(SE_PIN)
         applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
         waitmovement(LOCALID_PLAYER)
+        delay(45)
+        applymovement(LOCALID_PLAYER, moves(walk_fast_up*3))
+        waitmovement(LOCALID_PLAYER)
         speakername("Mew")
-        msgbox("Welcome Ditto.\pAre you ready to recieve your Egg?\pConsider this your final\nchallenge.", MSGBOX_DEFAULT)
-        setwildbattle(SPECIES_MEW, 25, IsShiny=TRUE)
+        msgbox("Welcome Ditto.\pAre you ready to recieve your Egg?\pConsider this your final\nchallenge.", MSGBOX_AUTOCLOSE)
+        setwildbattle(SPECIES_MEW, 25, IsShiny=TRUE, move1=MOVE_SWIFT, move2=MOVE_PSYCHIC, move3=MOVE_CONFUSE_RAY, move4=MOVE_ANCIENT_POWER)
+        settotemboost(B_POSITION_PLAYER_LEFT, 3, 3, 3, 3, 3, 3, 0)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Mew")
-            msgbox("Congratulations for overcoming\nthis tremendous challenge.\pThat battle was truly something.\pYou have earned this.\n", MSGBOX_DEFAULT)
+            msgbox("Congratulations for overcoming\nthis tremendous challenge.\pYou have earned this.\n", MSGBOX_DEFAULT)
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             giveitem(ITEM_AIR_BALLOON)
             playfanfare(MUS_LEVEL_UP)
@@ -25,11 +30,11 @@ script MewFinalBattleTrigger{
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitfanfare
             waitmessage
-            fadescreenswapbuffers(FADE_TO_BLACK)
-            removeobject(Mew)
             playse(SE_M_TELEPORT)
+            applymovement(Mew, moves(slide_up*8))
+            waitmovement(Mew)
+            removeobject(Mew)
             setflag(FLAG_BEAT_MEW)
-            fadescreenswapbuffers(FADE_FROM_BLACK)
             release
             end
         }
