@@ -11,7 +11,7 @@ script MewFinalBattleTrigger{
         waitmovement(LOCALID_PLAYER)
         speakername("Mew")
         msgbox("Welcome Ditto.\pAre you ready to recieve your Egg?\pConsider this your final\nchallenge.", MSGBOX_DEFAULT)
-        setwildbattle(SPECIES_MEW, 25)
+        setwildbattle(SPECIES_MEW, 25, IsShiny=TRUE)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
@@ -20,15 +20,16 @@ script MewFinalBattleTrigger{
             msgbox("Congratulations for overcoming\nthis tremendous challenge.\pThat battle was truly something.\pYou have earned this.\n", MSGBOX_DEFAULT)
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             giveitem(ITEM_AIR_BALLOON)
-            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             playfanfare(MUS_LEVEL_UP)
             msgbox("Ditto learned the secret of\nwhere Eggs come from!", MSGBOX_DEFAULT)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitfanfare
             waitmessage
             fadescreenswapbuffers(FADE_TO_BLACK)
-            playse(SE_DOOR)
+            removeobject(Mew)
+            playse(SE_M_TELEPORT)
             setflag(FLAG_BEAT_MEW)
-            fadescreenswapbuffers(FADE_TO_BLACK)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
             release
             end
         }

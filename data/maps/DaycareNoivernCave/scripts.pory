@@ -27,7 +27,8 @@ script HaunterDialog{
 
 script GengarDialog{
     lock
-    faceplayer
+    applymovement(Gengar, moves(face_player))
+    waitmovement(Gengar)
     applymovement(Gengar, Common_Movement_ExclamationMark)
     waitmovement(Gengar)
     speakername("Gengar")
@@ -232,6 +233,7 @@ script BattleVsNoivern{
     lock
     playmoncry(SPECIES_NOIVERN, CRY_MODE_NORMAL)
     waitmoncry
+    playse(SE_PIN)
     applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement(LOCALID_PLAYER)            
     applymovement(LOCALID_PLAYER, moves(face_up))

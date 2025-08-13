@@ -271,13 +271,16 @@ script VullabyAfterSoar{
 	{
 	lock
 	setflag(FLAG_SHOW_NOICE)
+	special(SpawnCameraObject)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 6))
     waitmovement(OBJ_EVENT_ID_CAMERA)
     delay(30)
+	applymovement(Vullaby, moves(face_up))
+	waitmovement(Vullaby)	
 	applymovement(Vullaby, Common_Movement_ExclamationMark)
 	waitmovement(Vullaby)
 	speakername("Vullaby")
-	msgbox("Wow!\pYou made it across!\pTransforming into Noivern was\nclever!", MSGBOX_DEFAULT)
+	msgbox("Wow!\pYou made it across!\pTransforming into Noivern was\nclever!", MSGBOX_AUTOCLOSE)
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 6))
     waitmovement(OBJ_EVENT_ID_CAMERA)
     special(RemoveCameraObject)

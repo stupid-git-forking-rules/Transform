@@ -371,6 +371,7 @@ script BattleVsArcanine{
     lock
     playmoncry(SPECIES_ARCANINE, CRY_MODE_NORMAL)
     waitmoncry
+    playse(SE_PIN)
     applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement(LOCALID_PLAYER)            
     applymovement(LOCALID_PLAYER, moves(face_up))

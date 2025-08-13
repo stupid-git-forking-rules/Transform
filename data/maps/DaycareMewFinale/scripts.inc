@@ -25,7 +25,7 @@ MewFinalBattleTrigger_1:
 # 13 "data/maps/DaycareMewFinale/scripts.pory"
 	msgbox MewFinalBattleTrigger_Text_1, MSGBOX_DEFAULT
 # 14 "data/maps/DaycareMewFinale/scripts.pory"
-	setwildbattle SPECIES_MEW, 25
+	setwildbattle SPECIES_MEW, 25, IsShiny = TRUE
 # 15 "data/maps/DaycareMewFinale/scripts.pory"
 	dowildbattle
 # 16 "data/maps/DaycareMewFinale/scripts.pory"
@@ -45,11 +45,11 @@ MewFinalBattleTrigger_4:
 # 22 "data/maps/DaycareMewFinale/scripts.pory"
 	giveitem ITEM_AIR_BALLOON
 # 23 "data/maps/DaycareMewFinale/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 24 "data/maps/DaycareMewFinale/scripts.pory"
 	playfanfare MUS_LEVEL_UP
-# 25 "data/maps/DaycareMewFinale/scripts.pory"
+# 24 "data/maps/DaycareMewFinale/scripts.pory"
 	msgbox MewFinalBattleTrigger_Text_3, MSGBOX_DEFAULT
+# 25 "data/maps/DaycareMewFinale/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 26 "data/maps/DaycareMewFinale/scripts.pory"
 	waitfanfare
 # 27 "data/maps/DaycareMewFinale/scripts.pory"
@@ -61,8 +61,10 @@ MewFinalBattleTrigger_4:
 # 30 "data/maps/DaycareMewFinale/scripts.pory"
 	setflag FLAG_BEAT_MEW
 # 31 "data/maps/DaycareMewFinale/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject Mew
 # 32 "data/maps/DaycareMewFinale/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 33 "data/maps/DaycareMewFinale/scripts.pory"
 	release
 	end
 
@@ -96,5 +98,5 @@ MewFinalBattleTrigger_Text_2:
 	.string "Congratulations for overcoming\nthis tremendous challenge.\pThat battle was truly something.\pYou have earned this.\n$"
 
 MewFinalBattleTrigger_Text_3:
-# 25 "data/maps/DaycareMewFinale/scripts.pory"
+# 24 "data/maps/DaycareMewFinale/scripts.pory"
 	.string "Ditto learned the secret of\nwhere Eggs come from!$"

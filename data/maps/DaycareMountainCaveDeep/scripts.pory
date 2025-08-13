@@ -31,7 +31,7 @@ script SphealDialog{
     lock
     faceplayer
     speakername("Spheal")
-    msgbox("Wow!\nYou're really round!\pJust like me!\pCan I tell you a secret?\pI once saw a Ditto carrying an\nEgg away from the beach in the\lWaterfall biome!\pThey must have gotten the Egg\nsomewhere around there!", MSGBOX_DEFAULT)    waitmessage
+    msgbox("Wow!\nYou're really round!\pJust like me!\pCan I tell you a secret?\pI once saw a Ditto carrying an\nEgg away from the beach in the\lOceanfront biome!\pThey must have gotten the Egg\nsomewhere around there!", MSGBOX_DEFAULT)    waitmessage
     release
     end 
     }
@@ -56,6 +56,7 @@ script EiscueDialog{
                 setflag(FLAG_HIDE_EISCUE)
                 clearflag(FLAG_SHOW_NOICE)
                 playse(SE_M_BRICK_BREAK)
+                showobjectat(NoIce, MAP_DAYCARE_MOUNTAIN_CAVE_DEEP)
                 waitse
                 fadescreenswapbuffers(FADE_FROM_BLACK)
                 speakername("Eiscue")

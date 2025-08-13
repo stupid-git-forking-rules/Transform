@@ -566,9 +566,9 @@ SlowpokeInCaveTrigger_1:
 # 341 "data/maps/DaycarePond/scripts.pory"
 	switch VAR_TEMP_1
 # 343 "data/maps/DaycarePond/scripts.pory"
-	case 26, SlowpokeInCaveTrigger_4
+	case 28, SlowpokeInCaveTrigger_4
 # 361 "data/maps/DaycarePond/scripts.pory"
-	case 28, SlowpokeInCaveTrigger_5
+	case 26, SlowpokeInCaveTrigger_5
 	return
 
 SlowpokeInCaveTrigger_4:
@@ -902,80 +902,84 @@ BattleVsDragonair::
 	lock
 # 520 "data/maps/DaycarePond/scripts.pory"
 	goto_if_set FLAG_TRANS_DRAGONAIR, BattleVsDragonair_2
-# 530 "data/maps/DaycarePond/scripts.pory"
-	faceplayer
 # 531 "data/maps/DaycarePond/scripts.pory"
-	playse SE_PIN
+	applymovement Dragonair, BattleVsMarill_Movement_0
 # 532 "data/maps/DaycarePond/scripts.pory"
-	applymovement Dragonair, Common_Movement_ExclamationMark
-# 533 "data/maps/DaycarePond/scripts.pory"
 	waitmovement Dragonair
+# 533 "data/maps/DaycarePond/scripts.pory"
+	playse SE_PIN
 # 534 "data/maps/DaycarePond/scripts.pory"
-	speakername BattleVsDragonair_Text_0
+	applymovement Dragonair, Common_Movement_ExclamationMark
 # 535 "data/maps/DaycarePond/scripts.pory"
-	msgbox BattleVsDragonair_Text_2, MSGBOX_AUTOCLOSE
+	waitmovement Dragonair
 # 536 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_DRAGONAIR, 25
+	speakername BattleVsDragonair_Text_0
 # 537 "data/maps/DaycarePond/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	msgbox BattleVsDragonair_Text_2, MSGBOX_AUTOCLOSE
 # 538 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_DRAGONAIR, 25
 # 539 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
 # 540 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 541 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 542 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsDragonair_4
 	return
 
 BattleVsDragonair_2:
 # 522 "data/maps/DaycarePond/scripts.pory"
-	faceplayer
+	applymovement Dragonair, BattleVsMarill_Movement_0
 # 523 "data/maps/DaycarePond/scripts.pory"
-	speakername BattleVsDragonair_Text_0
+	waitmovement Dragonair
 # 524 "data/maps/DaycarePond/scripts.pory"
-	msgbox BattleVsDragonair_Text_1, MSGBOX_DEFAULT
+	speakername BattleVsDragonair_Text_0
 # 525 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	msgbox BattleVsDragonair_Text_1, MSGBOX_DEFAULT
 # 526 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 527 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 BattleVsDragonair_4:
-# 542 "data/maps/DaycarePond/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
-# 543 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_TRANS_DRAGONAIR
 # 544 "data/maps/DaycarePond/scripts.pory"
-	dittotransform SPECIES_DRAGONAIR
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 545 "data/maps/DaycarePond/scripts.pory"
-	playse MUS_LEVEL_UP
+	setflag FLAG_TRANS_DRAGONAIR
 # 546 "data/maps/DaycarePond/scripts.pory"
-	msgbox BattleVsDragonair_Text_3, MSGBOX_DEFAULT
+	dittotransform SPECIES_DRAGONAIR
 # 547 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	playse MUS_LEVEL_UP
 # 548 "data/maps/DaycarePond/scripts.pory"
-	dittotransform VAR_TEMP_0
+	msgbox BattleVsDragonair_Text_3, MSGBOX_DEFAULT
 # 549 "data/maps/DaycarePond/scripts.pory"
-	givemon SPECIES_DRAGONAIR, 25, move1 = MOVE_OUTRAGE, move2 = MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD
-# 550 "data/maps/DaycarePond/scripts.pory"
-	speakername BattleVsDragonair_Text_0
-# 551 "data/maps/DaycarePond/scripts.pory"
-	msgbox BattleVsDragonair_Text_4, MSGBOX_DEFAULT
-# 552 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
+# 550 "data/maps/DaycarePond/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 551 "data/maps/DaycarePond/scripts.pory"
+	givemon SPECIES_DRAGONAIR, 25, move1 = MOVE_OUTRAGE, move2 = MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD
+# 552 "data/maps/DaycarePond/scripts.pory"
+	speakername BattleVsDragonair_Text_0
 # 553 "data/maps/DaycarePond/scripts.pory"
+	msgbox BattleVsDragonair_Text_4, MSGBOX_DEFAULT
+# 554 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 555 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 DaycarePond_FindLuckyEgg::
-# 561 "data/maps/DaycarePond/scripts.pory"
-	lock
-# 562 "data/maps/DaycarePond/scripts.pory"
-	finditem ITEM_LUCKY_EGG
 # 563 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	lock
 # 564 "data/maps/DaycarePond/scripts.pory"
+	finditem ITEM_LUCKY_EGG
+# 565 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 566 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
@@ -1183,21 +1187,21 @@ CroagunkInCave_Text_3:
 	.string "Right on.\n$"
 
 BattleVsDragonair_Text_0:
-# 523 "data/maps/DaycarePond/scripts.pory"
+# 524 "data/maps/DaycarePond/scripts.pory"
 	.string "Dragonair$"
 
 BattleVsDragonair_Text_1:
-# 524 "data/maps/DaycarePond/scripts.pory"
+# 525 "data/maps/DaycarePond/scripts.pory"
 	.string "You have proven your strength.\pI hope one day you learn that\ngrace will be the way to the EXP.$"
 
 BattleVsDragonair_Text_2:
-# 535 "data/maps/DaycarePond/scripts.pory"
+# 537 "data/maps/DaycarePond/scripts.pory"
 	.string "Hello there Ditto.\pYes, I see through your facade.\pMy philosophy to gain EXP has been\nto keep this biome calm.\pI spent my early days in the\ncrashing waterfalls, but gained\lno EXP.\pI found this biome and figured\nI try a different approach.\pYou seem to be causing a ruckus,\nand I have no problem taking you\ldown!$"
 
 BattleVsDragonair_Text_3:
-# 546 "data/maps/DaycarePond/scripts.pory"
+# 548 "data/maps/DaycarePond/scripts.pory"
 	.string "You have gained the ability to\ntransform into Dragonair!$"
 
 BattleVsDragonair_Text_4:
-# 551 "data/maps/DaycarePond/scripts.pory"
+# 553 "data/maps/DaycarePond/scripts.pory"
 	.string "Very well Ditto.\nGo on.\pLeave this place calmly, with\nthe power to scale roaring\lwaterfalls.$"

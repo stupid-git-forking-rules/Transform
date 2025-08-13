@@ -47,6 +47,7 @@ script BattleVsWeavile{
     lock
     playmoncry(SPECIES_WEAVILE, CRY_MODE_NORMAL)
     waitmoncry
+    playse(SE_PIN)
     applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement(LOCALID_PLAYER)            
     applymovement(LOCALID_PLAYER, moves(face_up))
@@ -56,6 +57,7 @@ script BattleVsWeavile{
     applymovement(LOCALID_PLAYER, moves(walk_fast_down))
     waitmovement(LOCALID_PLAYER)
     playse(SE_M_SCRATCH)
+    waitse
     applymovement(Weavile, moves(jump_2_down))
     waitmovement(Weavile)
     speakername("Weavile")

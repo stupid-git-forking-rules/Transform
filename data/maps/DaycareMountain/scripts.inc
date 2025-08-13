@@ -453,30 +453,36 @@ VullabyAfterSoar_1:
 # 273 "data/maps/DaycareMountain/scripts.pory"
 	setflag FLAG_SHOW_NOICE
 # 274 "data/maps/DaycareMountain/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, VullabyAfterSoar_Movement_0
+	special SpawnCameraObject
 # 275 "data/maps/DaycareMountain/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
+	applymovement OBJ_EVENT_ID_CAMERA, VullabyAfterSoar_Movement_0
 # 276 "data/maps/DaycareMountain/scripts.pory"
-	delay 30
-# 277 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Vullaby, Common_Movement_ExclamationMark
-# 278 "data/maps/DaycareMountain/scripts.pory"
-	waitmovement Vullaby
-# 279 "data/maps/DaycareMountain/scripts.pory"
-	speakername VullabyDialog_Text_0
-# 280 "data/maps/DaycareMountain/scripts.pory"
-	msgbox VullabyAfterSoar_Text_0, MSGBOX_DEFAULT
-# 281 "data/maps/DaycareMountain/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, VullabyAfterSoar_Movement_1
-# 282 "data/maps/DaycareMountain/scripts.pory"
 	waitmovement OBJ_EVENT_ID_CAMERA
+# 277 "data/maps/DaycareMountain/scripts.pory"
+	delay 30
+# 278 "data/maps/DaycareMountain/scripts.pory"
+	applymovement Vullaby, OmanyteInCaveTrigger_Movement_0
+# 279 "data/maps/DaycareMountain/scripts.pory"
+	waitmovement Vullaby
+# 280 "data/maps/DaycareMountain/scripts.pory"
+	applymovement Vullaby, Common_Movement_ExclamationMark
+# 281 "data/maps/DaycareMountain/scripts.pory"
+	waitmovement Vullaby
+# 282 "data/maps/DaycareMountain/scripts.pory"
+	speakername VullabyDialog_Text_0
 # 283 "data/maps/DaycareMountain/scripts.pory"
-	special RemoveCameraObject
+	msgbox VullabyAfterSoar_Text_0, MSGBOX_AUTOCLOSE
 # 284 "data/maps/DaycareMountain/scripts.pory"
-	setflag FLAG_SOAR_ACROSS
+	applymovement OBJ_EVENT_ID_CAMERA, VullabyAfterSoar_Movement_1
 # 285 "data/maps/DaycareMountain/scripts.pory"
-	waitmessage
+	waitmovement OBJ_EVENT_ID_CAMERA
 # 286 "data/maps/DaycareMountain/scripts.pory"
+	special RemoveCameraObject
+# 287 "data/maps/DaycareMountain/scripts.pory"
+	setflag FLAG_SOAR_ACROSS
+# 288 "data/maps/DaycareMountain/scripts.pory"
+	waitmessage
+# 289 "data/maps/DaycareMountain/scripts.pory"
 	release
 	end
 
@@ -535,35 +541,35 @@ KabutoInCaveTrigger_Movement_1:
 	walk_right
 	step_end
 
-# 274 "data/maps/DaycareMountain/scripts.pory"
+# 275 "data/maps/DaycareMountain/scripts.pory"
 VullabyAfterSoar_Movement_0:
-# 274 "data/maps/DaycareMountain/scripts.pory"
+# 275 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 274 "data/maps/DaycareMountain/scripts.pory"
+# 275 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 274 "data/maps/DaycareMountain/scripts.pory"
+# 275 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 274 "data/maps/DaycareMountain/scripts.pory"
+# 275 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 274 "data/maps/DaycareMountain/scripts.pory"
+# 275 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
-# 274 "data/maps/DaycareMountain/scripts.pory"
+# 275 "data/maps/DaycareMountain/scripts.pory"
 	walk_down
 	step_end
 
-# 281 "data/maps/DaycareMountain/scripts.pory"
+# 284 "data/maps/DaycareMountain/scripts.pory"
 VullabyAfterSoar_Movement_1:
-# 281 "data/maps/DaycareMountain/scripts.pory"
+# 284 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 281 "data/maps/DaycareMountain/scripts.pory"
+# 284 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 281 "data/maps/DaycareMountain/scripts.pory"
+# 284 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 281 "data/maps/DaycareMountain/scripts.pory"
+# 284 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 281 "data/maps/DaycareMountain/scripts.pory"
+# 284 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
-# 281 "data/maps/DaycareMountain/scripts.pory"
+# 284 "data/maps/DaycareMountain/scripts.pory"
 	walk_up
 	step_end
 
@@ -632,5 +638,5 @@ KabutoInCave_Text_3:
 	.string "Alright.\nWe can make an exception.$"
 
 VullabyAfterSoar_Text_0:
-# 280 "data/maps/DaycareMountain/scripts.pory"
+# 283 "data/maps/DaycareMountain/scripts.pory"
 	.string "Wow!\pYou made it across!\pTransforming into Noivern was\nclever!$"

@@ -340,7 +340,7 @@ script SlowpokeInCaveTrigger{
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
-        case 26:
+        case 28:
             applymovement(Slowpoke, moves(face_right))
             waitmovement(Slowpoke)
             applymovement(LOCALID_PLAYER, moves(face_left))
@@ -358,7 +358,7 @@ script SlowpokeInCaveTrigger{
                 release
                 end
             }
-        case 28:
+        case 26:
             applymovement(Slowpoke, moves(face_left))
             waitmovement(Slowpoke)        
             applymovement(LOCALID_PLAYER, moves(face_right))
@@ -519,7 +519,8 @@ script BattleVsDragonair{
 
     if(flag(FLAG_TRANS_DRAGONAIR))
     {
-        faceplayer
+        applymovement(Dragonair, moves(face_player))
+        waitmovement(Dragonair)
         speakername("Dragonair")
         msgbox("You have proven your strength.\pI hope one day you learn that\ngrace will be the way to the EXP.", MSGBOX_DEFAULT)
         waitmessage
@@ -527,7 +528,8 @@ script BattleVsDragonair{
         end
     }
 
-    faceplayer
+    applymovement(Dragonair, moves(face_player))
+    waitmovement(Dragonair)
     playse(SE_PIN)
     applymovement(Dragonair, Common_Movement_ExclamationMark)
     waitmovement(Dragonair)
