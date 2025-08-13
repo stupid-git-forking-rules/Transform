@@ -141,7 +141,7 @@ TotodiileDialog_Text_1:
 
 TotodiileDialog_Text_2:
 # 27 "data/maps/DaycareBeachCave/scripts.pory"
-	.string "\pDid that Baltoy tip you off?\nI've been pretty good about\lsneaking in here.\pIt's been my private getaway...\nplease don't tell anyone about\lthis place.$"
+	.string "Did that Baltoy tip you off?\nI've been pretty good about\lsneaking in here.\pIt's been my private getaway...\nplease don't tell anyone about\lthis place.$"
 
 ChinchouDialog_Text_0:
 # 39 "data/maps/DaycareBeachCave/scripts.pory"

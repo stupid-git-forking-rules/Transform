@@ -134,7 +134,7 @@ BattleVsWeavile_6:
 # 75 "data/maps/DaycareTreehouse/scripts.pory"
 	dittotransform VAR_TEMP_0
 # 76 "data/maps/DaycareTreehouse/scripts.pory"
-	givemon FLAG_TRANS_WEAVILE, 25, move1 = MOVE_ICE_SHARD, move2 = MOVE_ICE_PUNCH, move3 = MOVE_SHADOW_CLAW, move4 = MOVE_BRICK_BREAK
+	givemon SPECIES_WEAVILE, 25, move1 = MOVE_ICE_SHARD, move2 = MOVE_ICE_PUNCH, move3 = MOVE_SHADOW_CLAW, move4 = MOVE_BRICK_BREAK
 # 77 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
 # 78 "data/maps/DaycareTreehouse/scripts.pory"

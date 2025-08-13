@@ -24,7 +24,7 @@ script TotodiileDialog{
         playse(SE_PIN)
         applymovement(Totodile, Common_Movement_ExclamationMark)
         waitmovement(Totodile)
-        msgbox("\pDid that Baltoy tip you off?\nI've been pretty good about\lsneaking in here.\pIt's been my private getaway...\nplease don't tell anyone about\lthis place.", MSGBOX_DEFAULT)
+        msgbox("Did that Baltoy tip you off?\nI've been pretty good about\lsneaking in here.\pIt's been my private getaway...\nplease don't tell anyone about\lthis place.", MSGBOX_DEFAULT)
         waitmessage
         release
         end

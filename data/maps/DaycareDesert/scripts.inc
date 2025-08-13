@@ -97,9 +97,9 @@ StunfiskDialog::
 # 64 "data/maps/DaycareDesert/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 65 "data/maps/DaycareDesert/scripts.pory"
-	speakername StunfiskDialog_Text_2
+	speakername StunfiskDialog_Text_0
 # 66 "data/maps/DaycareDesert/scripts.pory"
-	msgbox StunfiskDialog_Text_3, MSGBOX_DEFAULT
+	msgbox StunfiskDialog_Text_2, MSGBOX_DEFAULT
 # 67 "data/maps/DaycareDesert/scripts.pory"
 	waitmessage
 # 68 "data/maps/DaycareDesert/scripts.pory"
@@ -261,10 +261,6 @@ StunfiskDialog_Text_1:
 	.string "You found me!\pHere, take this.\n$"
 
 StunfiskDialog_Text_2:
-# 65 "data/maps/DaycareDesert/scripts.pory"
-	.string "Larvitar$"
-
-StunfiskDialog_Text_3:
 # 66 "data/maps/DaycareDesert/scripts.pory"
 	.string "Not many Pokémon know how to\nsurf in the desert.$"
 

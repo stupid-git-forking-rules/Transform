@@ -62,7 +62,7 @@ script StunfiskDialog{
     setflag(FLAG_SUPPRESS_SPEAKER_NAME)
     giveitem(ITEM_LUCKY_EGG)
     clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
-    speakername("Larvitar")
+    speakername("Stunfisk")
     msgbox("Not many Pokémon know how to\nsurf in the desert.", MSGBOX_DEFAULT)
     waitmessage
     release
