@@ -680,7 +680,7 @@ BattleVsArcanine::
 # 385 "data/maps/DaycareVolcano/scripts.pory"
 	speakername BattleVsArcanine_Text_0
 # 386 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox BattleVsArcanine_Text_1, MSGBOX_DEFAULT
+	msgbox BattleVsArcanine_Text_1, MSGBOX_AUTOCLOSE
 # 387 "data/maps/DaycareVolcano/scripts.pory"
 	setwildbattle SPECIES_ARCANINE, 25
 # 388 "data/maps/DaycareVolcano/scripts.pory"

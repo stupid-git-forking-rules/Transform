@@ -17,7 +17,7 @@ BlockVolcano_3:
 # 10 "data/maps/DesertToFire/scripts.pory"
 	lock
 # 11 "data/maps/DesertToFire/scripts.pory"
-	delay 30
+	delay 15
 # 12 "data/maps/DesertToFire/scripts.pory"
 	setvar VAR_0x8004, 2
 # 13 "data/maps/DesertToFire/scripts.pory"

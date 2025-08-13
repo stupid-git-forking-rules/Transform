@@ -1,0 +1,566 @@
+mapscripts DaycarePond_MapScripts {
+    
+}
+
+script BattleVsMarill{
+    lock
+
+    if(flag(FLAG_TRANS_MARILL))
+    {
+        faceplayer
+        speakername("Marill")
+        msgbox("You’re stronger than you look!\pSwim swiftly on your journey!", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+
+    applymovement(Marill, moves(face_player))
+    waitmovement(Marill)
+    playse(SE_PIN)
+    applymovement(Marill, Common_Movement_ExclamationMark)
+    waitmovement(Marill)
+    speakername("Marill")
+    msgbox("Oh! A Ditto?\pYou’re gathering powers for your\nquest, right?\pIf you can beat me, you’ll earn the\npower to transform into me!", MSGBOX_AUTOCLOSE)
+	setwildbattle(SPECIES_MARILL, 25)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON)
+    {
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        setflag(FLAG_TRANS_MARILL)
+        dittotransform(SPECIES_MARILL)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntransform into Marill!", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(SPECIES_MARILL, 25, move1=MOVE_SURF, move2=MOVE_AQUA_JET, move3=MOVE_COVET, move4=MOVE_RAIN_DANCE)
+        waitmessage
+        release
+        end
+    }
+}
+
+
+script PsyduckDialog{
+    lock
+    faceplayer
+    speakername("Psyduck")
+    msgbox("OW OH GOD MY HEAD!\pWHY WAS I CREATED TO LIVE IN\nPAIN?", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+
+}
+
+script SprigatitoDialog{
+    if(!flag(FLAG_SPRIGATITO_EGG))
+    {
+        if(var(VAR_TRANSFORM_MON) == SPECIES_LURANTIS)
+        {
+            lock
+            faceplayer
+            speakername("Sprigatito")
+            msgbox("A Grass_type!\pDon't see many around the lake\nhere.\pPlease take this Egg I found.\n", MSGBOX_DEFAULT)
+            giveitem(ITEM_LUCKY_EGG)
+            setflag(FLAG_SPRIGATITO_EGG)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            lock
+            faceplayer
+            speakername("Sprigatito")
+            msgbox("I love it here by the water but\nI hardly see any other\lGrass_types...", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end            
+        }
+    }
+    else
+    {
+        if(var(VAR_TRANSFORM_MON) == SPECIES_LURANTIS)
+        {
+            lock
+            faceplayer
+            speakername("Sprigatito")
+            msgbox("A Grass_type!\pDon't see many around the lake\nhere.", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end        
+        }
+        else
+        {
+            lock
+            faceplayer
+            speakername("Sprigatito")
+            msgbox("I love it here by the water but\nI hardly see any other\lGrass_types...", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end        
+        }        
+    }
+
+}
+
+script MudkipDialog{
+    lock
+    faceplayer
+    speakername("Mudkip")
+    msgbox("I hope my trainer comes back\nsoon...\pI miss them.\pI'm supposed to be their first\npartner Pokémon.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script SeakingDialog{
+    lock
+    faceplayer
+    speakername("Seaking")
+    msgbox("Everyone talks about how\ndesireable Vaporeon is.\pSeakings need love too...\pDo you know any Dittos?\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+
+}
+
+script QuagsireDialog{
+    lock
+    faceplayer
+    speakername("Quagsire")
+    msgbox("The Lake here is so calm.\pDragonair makes sure that we\nkeep the peace here.\pShe believes keeping it mellow\nis the key to EXP.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script GoomyInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_GOOMY_BATTLE))
+    {
+        speakername("Goomy")
+        msgbox("Cool vibes friend.\pKeep on keepin on.\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Goomy, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Goomy")
+        msgbox("Keepin it mellow...\nLet's just have some fun.", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_GOOMY, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Goomy")
+	        msgbox("Cool vibes friend.\pKeep on keepin on.\n", MSGBOX_DEFAULT)
+            setflag(FLAG_GOOMY_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+
+script GoomyInCaveTrigger{
+    if(!flag(FLAG_GOOMY_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Goomy, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_1)) 
+        {
+        case 16:
+            applymovement(LOCALID_PLAYER, moves(face_right))
+	        speakername("Goomy")
+            msgbox("Keepin it mellow...\nLet's just have some fun.", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_GOOMY, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Goomy")
+	            msgbox("Cool vibes friend.\pKeep on keepin on.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_GOOMY_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 15:
+            applymovement(LOCALID_PLAYER, moves(face_right))
+            applymovement(Goomy,  moves(walk_left))
+	        speakername("Goomy")
+            msgbox("Keepin it mellow...\nLet's just have some fun.", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_GOOMY, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Goomy")
+	            msgbox("Cool vibes friend.\pKeep on keepin on.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_GOOMY_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script BuizelInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_BUIZEL_BATTLE))
+    {
+        speakername("Buizel")
+        msgbox("Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Buizel, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Buizel")
+        msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_BUIZEL, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Buizel")
+	        msgbox("She keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
+            setflag(FLAG_BUIZEL_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+
+script BuizelInCaveTrigger{
+    if(!flag(FLAG_BUIZEL_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Buizel, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_2)) 
+        {
+        case 34:
+            applymovement(LOCALID_PLAYER, moves(face_down))
+            applymovement(Buizel, moves(walk_up))
+            waitmovement(Buizel)
+	        speakername("Buizel")
+            msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_BUIZEL, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Buizel")
+	            msgbox("She keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
+                setflag(FLAG_BUIZEL_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 35:
+            applymovement(LOCALID_PLAYER, moves(face_down))
+	        speakername("Buizel")
+            msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_BUIZEL, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Buizel")
+	            msgbox("She keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
+                setflag(FLAG_BUIZEL_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script SlowpokeInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_SLOWPOKE_BATTLE))
+    {
+        speakername("Slowpoke")
+        msgbox("These bridges are so confusing...\pI've been stuck here for a while,\nbut it's chill.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Slowpoke, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Slowpoke")
+        msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_SLOWPOKE, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Slowpoke")
+	        msgbox("Maybe it's cause I'm too slow to\nharsh the vibe.", MSGBOX_DEFAULT)
+            setflag(FLAG_SLOWPOKE_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+script SlowpokeInCaveTrigger{
+    if(!flag(FLAG_SLOWPOKE_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Slowpoke, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_1)) 
+        {
+        case 26:
+            applymovement(Slowpoke, moves(face_right))
+            waitmovement(Slowpoke)
+            applymovement(LOCALID_PLAYER, moves(face_left))
+	        speakername("Slowpoke")
+            msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_SLOWPOKE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Slowpoke")
+	            msgbox("Maybe it's cause I'm too slow to\nharsh the vibe.", MSGBOX_DEFAULT)
+                setflag(FLAG_SLOWPOKE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 28:
+            applymovement(Slowpoke, moves(face_left))
+            waitmovement(Slowpoke)        
+            applymovement(LOCALID_PLAYER, moves(face_right))
+	        speakername("Slowpoke")
+            msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_SLOWPOKE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Slowpoke")
+	            msgbox("Maybe it's cause I'm too slow to\nharsh the vibe.", MSGBOX_DEFAULT)
+                setflag(FLAG_SLOWPOKE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script CroagunkInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_CROAGUNK_BATTLE))
+    {
+        speakername("Croagunk")
+        msgbox("We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Croagunk, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Croagunk")
+        msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_CROAGUNK, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Croagunk")
+	        msgbox("Right on.\n", MSGBOX_DEFAULT)
+            setflag(FLAG_CROAGUNK_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+script CroagunkInCaveTrigger{
+    if(!flag(FLAG_CROAGUNK_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Croagunk, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_2)) 
+        {
+        case 3:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+	        speakername("Croagunk")
+            msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_CROAGUNK, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Croagunk")
+	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_CROAGUNK_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 4:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Croagunk, moves(walk_down))
+            waitmovement(Croagunk)
+	        speakername("Croagunk")
+            msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_CROAGUNK, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Croagunk")
+	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_CROAGUNK_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 5:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Croagunk, moves(walk_down*2))
+            waitmovement(Croagunk)
+	        speakername("Croagunk")
+            msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_CROAGUNK, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Croagunk")
+	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_CROAGUNK_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 6:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Croagunk, moves(walk_down*3))
+            waitmovement(Croagunk)
+	        speakername("Croagunk")
+            msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_CROAGUNK, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Croagunk")
+	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_CROAGUNK_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 7:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Croagunk, moves(walk_down*4))
+            waitmovement(Croagunk)
+	        speakername("Croagunk")
+            msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_CROAGUNK, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Croagunk")
+	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_CROAGUNK_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script BattleVsDragonair{
+    lock
+
+    if(flag(FLAG_TRANS_DRAGONAIR))
+    {
+        faceplayer
+        speakername("Dragonair")
+        msgbox("You have proven your strength.\pI hope one day you learn that\ngrace will be the way to the EXP.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+
+    faceplayer
+    playse(SE_PIN)
+    applymovement(Dragonair, Common_Movement_ExclamationMark)
+    waitmovement(Dragonair)
+    speakername("Dragonair")
+    msgbox("Hello there Ditto.\pYes, I see through your facade.\pMy philosophy to gain EXP has been\nto keep this biome calm.\pI spent my early days in the\ncrashing waterfalls, but gained\lno EXP.\pI found this biome and figured\nI try a different approach.\pYou seem to be causing a ruckus,\nand I have no problem taking you\ldown!", MSGBOX_AUTOCLOSE)
+	setwildbattle(SPECIES_DRAGONAIR, 25)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON)
+    {
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        setflag(FLAG_TRANS_DRAGONAIR)
+        dittotransform(SPECIES_DRAGONAIR)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntransform into Dragonair!", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(SPECIES_DRAGONAIR, 25, move1=MOVE_OUTRAGE, move2=MOVE_WATERFALL, move3=MOVE_IRON_HEAD, move4=MOVE_SAFEGUARD)
+        speakername("Dragonair")
+        msgbox("Very well Ditto.\nGo on.\pLeave this place calmly, with\nthe power to scale roaring\lwaterfalls.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+}
+
+
+
+script DaycarePond_FindLuckyEgg{
+    lock
+    finditem(ITEM_LUCKY_EGG)
+    waitmessage
+    release
+    end
+}

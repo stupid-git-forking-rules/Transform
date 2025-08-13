@@ -1,0 +1,40 @@
+mapscripts DaycareMewFinale_MapScripts{}
+
+script MewFinalBattleTrigger{
+    if(!flag(FLAG_BEAT_MEW))
+    {
+        lock
+        dittotransform(SPECIES_DITTO)
+        applymovement(LOCALID_PLAYER, moves(walk_up*6))
+        waitmovement(LOCALID_PLAYER)
+        applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+        waitmovement(LOCALID_PLAYER)
+        speakername("Mew")
+        msgbox("Welcome Ditto.\pAre you ready to recieve your Egg?\pConsider this your final\nchallenge.", MSGBOX_DEFAULT)
+        setwildbattle(SPECIES_MEW, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Mew")
+            msgbox("Congratulations for overcoming\nthis tremendous challenge.\pThat battle was truly something.\pYou have earned this.\n", MSGBOX_DEFAULT)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            giveitem(ITEM_AIR_BALLOON)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            playfanfare(MUS_LEVEL_UP)
+            msgbox("Ditto learned the secret of\nwhere Eggs come from!", MSGBOX_DEFAULT)
+            waitfanfare
+            waitmessage
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            playse(SE_DOOR)
+            setflag(FLAG_BEAT_MEW)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            release
+            end
+        }
+    }
+    else{
+        end
+    }
+
+}

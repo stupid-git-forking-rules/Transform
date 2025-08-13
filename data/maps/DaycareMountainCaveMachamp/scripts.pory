@@ -1,0 +1,49 @@
+mapscripts DaycareMountainCaveMachamp_MapScripts{}
+
+script BattleVsMachamp{
+    if(flag(FLAG_TRANS_MACHAMP))
+    {
+        end
+    } 
+    lock
+    playmoncry(SPECIES_MACHAMP, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(LOCALID_PLAYER)            
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement(LOCALID_PLAYER) 
+    applymovement(LOCALID_PLAYER, moves(lock_facing_direction))
+    waitmovement(LOCALID_PLAYER)
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down))
+    waitmovement(LOCALID_PLAYER)
+    playse(SE_M_VITAL_THROW)
+    applymovement(Machamp, moves(jump_2_down))
+    waitmovement(Machamp)
+    speakername("Machamp")
+    msgbox("You need my strength to pass\nthrough that cave atop the cliff?\pYou'll need to prove that you can\nhandle it.", MSGBOX_AUTOCLOSE)
+	setwildbattle(SPECIES_MACHAMP, 25)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON)
+    {
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        setflag(FLAG_TRANS_MACHAMP)
+        dittotransform(SPECIES_MACHAMP)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntransform into Machamp!", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(SPECIES_MACHAMP, 25, move1=MOVE_DYNAMIC_PUNCH, move2=MOVE_KARATE_CHOP, move3=MOVE_BULK_UP, move4=MOVE_SEISMIC_TOSS)
+        waitmessage
+        speakername("Machamp")
+        msgbox("With great power comes great\nresponsibility.\pGo on!\nFind your Egg!", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Machamp, moves(jump_2_up))
+        waitmovement(Machamp)
+        applymovement(Machamp, moves(walk_in_place_down))
+        waitmovement(Machamp)
+        release
+        end
+    }
+}

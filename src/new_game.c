@@ -144,7 +144,14 @@ static void WarpToTruck(void)
     FlagSet(FLAG_SYS_POKEMON_GET);
     VarSet(VAR_TRANSFORM_MON, SPECIES_DITTO);
     FlagSet(FLAG_SHOW_RUFFLET);
-    FlagSet(FLAG_HIDE_MAP_NAME_POPUP); // maybe? well see how we want do handle map popups
+    FlagSet(FLAG_BADGE01_GET);
+    FlagSet(FLAG_BADGE02_GET);
+    FlagSet(FLAG_BADGE03_GET);
+    FlagSet(FLAG_BADGE04_GET);
+    FlagSet(FLAG_BADGE05_GET);
+    FlagSet(FLAG_BADGE06_GET);
+    FlagSet(FLAG_BADGE07_GET);
+    FlagSet(FLAG_BADGE08_GET);
     FlagSet(FLAG_NO_CATCHING);
     FlagSet(FLAG_NO_RUNNING);
     WarpIntoMap();

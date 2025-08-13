@@ -30,10 +30,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SphealDialog",
       "flag": "0"
     },
     {
+      "local_id": "Eiscue",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(EISCUE)",
       "x": 13,
       "y": 26,
@@ -43,11 +44,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "EiscueDialog",
+      "flag": "FLAG_HIDE_EISCUE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SANDSHREW_ALOLA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SANDSLASH_ALOLA)",
       "x": 31,
       "y": 21,
       "elevation": 0,
@@ -56,8 +57,47 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "AlolanSandshrewDialog",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 12,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Daycaremountaincavedeep_FindSuperPotion",
+      "flag": "FLAG_ITEM_DAYCARE_MCD1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 23,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaycareMCD_FindLuckyEgg",
+      "flag": "FLAG_ITEM_DAYCARE_MCD2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(EISCUE_NOICE)",
+      "x": 13,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FreedEicscue",
+      "flag": "FLAG_SHOW_NOICE"
     }
   ],
   "warp_events": [

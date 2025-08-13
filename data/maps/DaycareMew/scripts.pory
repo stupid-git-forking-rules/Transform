@@ -1,0 +1,81 @@
+mapscripts DaycareMew_MapScripts{}
+
+script DittoEnd{
+    if(!flag(FLAG_BEAT_MEW))
+    {
+        if(!flag(FLAG_DITTO_SITRUS))
+        {
+            lock
+            faceplayer
+            speakername("Ditto")
+            msgbox("This is it.\pAfter you walk through this\ndoorway, you will learn the\lsecret of how we Dittos get\lour Eggs.\pTake these.\nThey'll come in handy", MSGBOX_DEFAULT)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            giveitem(ITEM_SITRUS_BERRY, 5)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            lock
+            faceplayer
+            speakername("Ditto")
+            msgbox("Hold on to one of those berries.\nTrust me.", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end
+        }
+
+    }
+    else
+    {
+    lock
+    faceplayer
+    speakername("Ditto")
+    msgbox("Congratulations!\pNow you know how we Dittos\nget our Eggs!\pThis knowledge is sacred amonst\nthe Daycare Dittos, so keep this\lto yourself.\pComplete your obligation and hand\nthat Egg off to the Daycare Man.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+    }
+}
+
+script ChanseyHealMew{
+    lock
+    faceplayer
+    speakername("Chansey")
+    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?", MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES)
+    {
+        checkitem(ITEM_LUCKY_EGG)
+        if(var(VAR_RESULT) == TRUE)
+        {
+            removeitem(ITEM_LUCKY_EGG)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            special(HealPlayerParty)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+            msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        release
+        end
+    }
+
+}

@@ -10,7 +10,7 @@
     },
     {
       "id": "MAPSEC_OLDALE_TOWN",
-      "name": "DAYCARE FALLS",
+      "name": "OCEANFRONT BIOME",
       "x": 4,
       "y": 9,
       "width": 1,
@@ -18,7 +18,7 @@
     },
     {
       "id": "MAPSEC_DEWFORD_TOWN",
-      "name": "DAYCARE MARSH",
+      "name": "MARSH BIOME",
       "x": 2,
       "y": 14,
       "width": 1,
@@ -26,7 +26,7 @@
     },
     {
       "id": "MAPSEC_LAVARIDGE_TOWN",
-      "name": "DAYCARE FOREST",
+      "name": "JUNGLE BIOME",
       "x": 5,
       "y": 3,
       "width": 1,
@@ -66,7 +66,7 @@
     },
     {
       "id": "MAPSEC_SLATEPORT_CITY",
-      "name": "DAYCARE MOUNTAIN",
+      "name": "MOUNTAIN BIOME",
       "x": 8,
       "y": 10,
       "width": 1,
@@ -98,7 +98,7 @@
     },
     {
       "id": "MAPSEC_LILYCOVE_CITY",
-      "name": "DAYCARE VOLCANO",
+      "name": "VOLCANIC BIOME",
       "x": 18,
       "y": 3,
       "width": 2,
@@ -162,7 +162,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_105",
-      "name": "DAYCARE LAKE",
+      "name": "LAKE BIOME",
       "x": 0,
       "y": 10,
       "width": 1,
@@ -658,7 +658,7 @@
     },
     {
       "id": "MAPSEC_DESERT_RUINS",
-      "name": "DAYCARE DESERT",
+      "name": "DESERT BIOME",
       "x": 8,
       "y": 3,
       "width": 1,

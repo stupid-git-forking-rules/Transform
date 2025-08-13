@@ -8,7 +8,7 @@ script BlockVolcano{
         if(var(VAR_TRANSFORM_MON) != SPECIES_MARILL)
         {
             lock
-            delay(30)    
+            delay(15)    
             setvar(VAR_0x8004, 2)
             setvar(VAR_0x8005, 6)
             setvar(VAR_0x8006, 4)

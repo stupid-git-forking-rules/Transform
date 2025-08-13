@@ -112,6 +112,8 @@ script RhyhornDialog{
     }
     else
     {
+        applymovement(Rhyhorn, moves(face_player))
+        waitmovement(Rhyhorn)
         playse(SE_PIN)
         applymovement(Rhyhorn, Common_Movement_ExclamationMark)
         waitmovement(Rhyhorn)

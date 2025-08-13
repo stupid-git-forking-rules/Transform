@@ -392,7 +392,8 @@ script BattleVsPikachu{
         end
         
     }
-    faceplayer
+    applymovement(Pikachu, moves(face_player))
+    waitmovement(Pikachu)
     playse(SE_PIN)
     applymovement(Pikachu, Common_Movement_ExclamationMark)
     waitmovement(Pikachu)

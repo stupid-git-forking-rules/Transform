@@ -1,0 +1,273 @@
+mapscripts DaycareNoivernCave_MapScripts{
+
+}
+
+script GastlyDialog{
+    lock
+    faceplayer
+    speakername("Gastly")
+    msgbox("It's no Mt. Pyre, but this cave\ndoes the trick.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script HaunterDialog{
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(LOCALID_PLAYER)
+    speakername("Haunter")
+    msgbox("BOO!", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script GengarDialog{
+    lock
+    faceplayer
+    applymovement(Gengar, Common_Movement_ExclamationMark)
+    waitmovement(Gengar)
+    speakername("Gengar")
+    msgbox("How did you manage to pass\nthrough that rock?\pMaybe you've got a bit of\nGhost_type in you.\pMWAHAHA!\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script LitwickDialog {
+    if(!flag(FLAG_LITWICK_EGG))
+    {
+        if(flag(FLAG_TRANS_NOIVERN))
+        {
+            lock
+            faceplayer
+            speakername("Litwick")
+            msgbox("Noivern is quite the challenge,\nisn't he?\pHere. Take these.\n", MSGBOX_DEFAULT)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            giveitem(ITEM_LUCKY_EGG, 2)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            speakername("Litwick")
+            msgbox("I know a Chansey will exchange\nthese to heal your wounds.", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            lock
+            faceplayer
+            speakername("Litwick")
+            msgbox("Careful, that bat is fiesty!\n", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        lock
+        faceplayer
+        speakername("Litwick")
+        msgbox("Noivern is quite the challenge,\nisn't he?", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+}
+
+script MawileInCave{
+    lock
+    faceplayer
+    if(flag(FLAG_MAWILE_BATTLE))
+    {
+        speakername("Mawile")
+        msgbox("Keep your guard up.\nA strong challenge is ahead.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Mawile, Common_Movement_ExclamationMark)
+        waitmovement
+        speakername("Mawile")
+        msgbox("Not many get this far...\nLet's see if you're clever or just lucky.", MSGBOX_AUTOCLOSE)
+        setwildbattle(SPECIES_MAWILE, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Mawile")
+            msgbox("You’ve got bite.\nMaybe we’re not so different.", MSGBOX_DEFAULT)
+            setflag(FLAG_MAWILE_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+
+script MawileInCaveTrigger{
+    if(!flag(FLAG_MAWILE_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Mawile, Common_Movement_ExclamationMark)
+        waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_2)) 
+        {
+        case 11:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Mawile, moves(walk_down))
+            waitmovement(Mawile)
+            speakername("Mawile")
+            msgbox("Not many get this far...\nLet's see if you're clever or just lucky.", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_MAWILE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Mawile")
+                msgbox("You’ve got bite.\nMaybe we’re not so different.", MSGBOX_DEFAULT)
+                setflag(FLAG_MAWILE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 10:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            speakername("Mawile")
+            msgbox("Not many get this far...\nLet's see if you're clever or just lucky.", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_MAWILE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Mawile")
+                msgbox("You’ve got bite.\nMaybe we’re not so different.", MSGBOX_DEFAULT)
+                setflag(FLAG_MAWILE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script DuskullInCave{
+    lock
+    faceplayer
+    if(flag(FLAG_DUSKULL_BATTLE))
+    {
+        speakername("Duskull")
+        msgbox("Even spirits respect strength.\pWander well, traveler.\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Duskull, Common_Movement_ExclamationMark)
+        waitmovement
+        speakername("Duskull")
+        msgbox("Not many dare to speak to me...\nYou must be bold.", MSGBOX_AUTOCLOSE)
+        setwildbattle(SPECIES_DUSKULL, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Duskull")
+            msgbox("Even spirits respect strength.\pWander well, traveler.\n", MSGBOX_DEFAULT)
+            setflag(FLAG_DUSKULL_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+
+script DuskullInCaveTrigger{
+    if(!flag(FLAG_DUSKULL_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Duskull, Common_Movement_ExclamationMark)
+        waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_1)) 
+        {
+        case 15:
+            applymovement(LOCALID_PLAYER, moves(face_right))
+            applymovement(Duskull, moves(walk_left*3))
+            speakername("Duskull")
+            msgbox("Not many dare to speak to me...\nYou must be bold.", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_DUSKULL, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Duskull")
+                msgbox("Even spirits respect strength.\pWander well, traveler.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_DUSKULL_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+
+script BattleVsNoivern{
+    if(flag(FLAG_TRANS_NOIVERN))
+    {
+        end
+    } 
+    lock
+    playmoncry(SPECIES_NOIVERN, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement(LOCALID_PLAYER)            
+    applymovement(LOCALID_PLAYER, moves(face_up))
+    waitmovement(LOCALID_PLAYER) 
+    applymovement(LOCALID_PLAYER, moves(lock_facing_direction))
+    waitmovement(LOCALID_PLAYER)
+    applymovement(LOCALID_PLAYER, moves(walk_fast_down))
+    waitmovement(LOCALID_PLAYER)
+    playse(SE_M_SCREECH)
+    applymovement(Noivern, moves(walk_fast_down*4))
+    waitmovement(Noivern)
+    speakername("Noivern")
+    msgbox("You tread where echoes rule.\pLet's see if you can keep up with\nthe speed of sound!.", MSGBOX_AUTOCLOSE)
+	setwildbattle(SPECIES_NOIVERN, 25)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON)
+    {
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        setflag(FLAG_TRANS_NOIVERN)
+        dittotransform(SPECIES_NOIVERN)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntransform into Noivern!", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(SPECIES_NOIVERN, 25, move1=MOVE_AIR_CUTTER, move2=MOVE_DRAGON_BREATH, move3=MOVE_SUPERSONIC, move4=MOVE_SUPER_FANG)
+        waitmessage
+        speakername("Noivern")
+        msgbox("Soar high gooey friend.\pYou'll need my flight to reach your\ndestination", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Noivern, moves(walk_fast_up*4))
+        waitmovement(Noivern)
+        applymovement(Noivern, moves(walk_in_place_down))
+        waitmovement(Noivern)
+        release
+        end
+    }
+}

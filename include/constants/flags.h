@@ -667,7 +667,7 @@
 #define FLAG_TRANS_ARCANINE  0x26C // Transform Arcanine flag, means player has obtained Arcanine transformation
 #define FLAG_TRANS_WEAVILE  0x26D // Transform Weavile flag, means player has obtained Weavile transformation
 #define FLAG_TRANS_DRAGONAIR  0x26E // Transform Dragonair flag, means player has obtained Dragonair transformation
-#define FLAG_TRANS_SCYTHER  0x26F // Transform Scyther flag, means player has obtained Scyther transformation
+#define FLAG_TRANS_LURANTIS  0x26F // Transform Scyther flag, means player has obtained Scyther transformation
 #define FLAG_TRANS_NOIVERN  0x270 // Transform Noivern flag, means player has obtained Noivern transformation
 #define FLAG_TRANS_MACHAMP  0x271 // Transform Machamp flag, means player has obtained Machamp transformation
 #define FLAG_TRANS_CHINCHOU 0x272 // Transform Chinchou flag, means player has obtained Chinchou transformation
@@ -685,28 +685,28 @@
 #define FLAG_FUECOCO_BATTLE  0x27E // battle fuecoco
 #define FLAG_COMBUSKEN_BATTLE  0x27F // battle combnusken
 #define FLAG_TRAPINCH_EGG  0x280 // track if trapinch gave lucky egg
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
-#define FLAG_UNUSED_0x289  0x289 // Unused Flag
-#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
-#define FLAG_UNUSED_0x28C  0x28C // Unused Flag
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
+#define FLAG_GOOMY_BATTLE  0x281 // battle goomy
+#define FLAG_SLOWPOKE_BATTLE  0x282 // battle slowpoke
+#define FLAG_BUIZEL_BATTLE  0x283 // battle buizel
+#define FLAG_CROAGUNK_BATTLE  0x284 // battle crogunk
+#define FLAG_SPRIGATITO_EGG  0x285 // sprigatito gives a lucky egg
+#define FLAG_LITWICK_EGG  0x286 // litwick eggs
+#define FLAG_MAWILE_BATTLE  0x287 // battle vs mawile
+#define FLAG_DUSKULL_BATTLE  0x288 // battle vs duskull
+#define FLAG_FAM_FOUR  0x289 // fam of 4 giveitemflag
+#define FLAG_FAM_THREE  0x28A // fam of 3 giveitemflag
+#define FLAG_FAM_TWO  0x28B // fam of 2 giveitemflag
+#define FLAG_FAMFOUR_WRONG  0x28C // for use in answering the maushold questions
+#define FLAG_FAMTHREE_WRONG  0x28D //  for use in answering the maushold questions
+#define FLAG_OMANYTE_BATTLE  0x28E // battle omanyte
+#define FLAG_KABUTO_BATTLE  0x28F // battle kabuto
+#define FLAG_SOAR_ACROSS  0x290 // noibat notice you crossed the way!
+#define FLAG_HIDE_EISCUE  0x291 // hide eiscue
+#define FLAG_SHOW_NOICE  0x292 // show noicue
+#define FLAG_GOREBYSS_BATTLE  0x293 // battle gorebyss
+#define FLAG_HUNTAIL_BATTLE  0x294 // battle huntail
+#define FLAG_BEAT_MEW  0x295 // beat mew
+#define FLAG_DITTO_SITRUS  0x296 // ditto give sitrus berries
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
 #define FLAG_UNUSED_0x298  0x298 // Unused Flag
 #define FLAG_UNUSED_0x299  0x299 // Unused Flag
@@ -1054,11 +1054,11 @@
 #define FLAG_ITEM_DAYCARE_BASE2                                     0x3E9
 #define FLAG_ITEM_DAYCARE_EAST1                                     0x3EA
 #define FLAG_ITEM_EASTTODESERT1                                     0x3EB
-#define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
-#define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
-#define FLAG_ITEM_ROUTE_110_RARE_CANDY                              0x3EE
-#define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF
-#define FLAG_ITEM_ROUTE_111_TM_SANDSTORM                            0x3F0
+#define FLAG_ITEM_DAYCARE_POND1                                     0x3EC
+#define FLAG_ITEM_DAYCARE_POND2                                     0x3ED
+#define FLAG_ITEM_DAYCARE_MC1                                       0x3EE
+#define FLAG_ITEM_DAYCARE_MCD1                                      0x3EF
+#define FLAG_ITEM_DAYCARE_MCD2                                      0x3F0
 #define FLAG_ITEM_ROUTE_111_STARDUST                                0x3F1
 #define FLAG_ITEM_ROUTE_111_HP_UP                                   0x3F2
 #define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3

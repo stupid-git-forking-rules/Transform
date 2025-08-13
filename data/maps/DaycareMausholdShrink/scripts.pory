@@ -1,0 +1,181 @@
+mapscripts DaycareMausholdShrink_MapScripts{}
+
+script FamilyofFour{
+    lock
+    faceplayer
+    if(!flag(FLAG_FAM_FOUR))
+    {
+    speakername("Maushold")
+    msgbox("You!\pWelcome to our Maushold Haushold!\pWe've put in great work making\nthis haus a home.\pWe're in a bit of a dispute with\nthe neighbors over the proper\lhaushold size...\pWhat would you say the proper\nsize would be?", MSGBOX_DEFAULT)
+    dynmultichoice(0,0,TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Four", "Three", "Two")
+    if(var(VAR_RESULT) == 0)
+    {
+        if(!flag(FLAG_FAMTHREE_WRONG))
+        {
+            speakername("Maushold")
+            applymovement(Maushold4, Common_Movement_ExclamationMark)
+            waitmovement(Maushold4)
+            msgbox("Don't pander to me!\pI we heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
+            setflag(FLAG_FAM_FOUR)
+            waitmessage
+            release
+            end
+        }
+        speakername("Maushold")
+        applymovement(Maushold4, Common_Movement_ExclamationMark)
+        waitmovement(Maushold4)
+        applymovement(Maushold4, moves(face_left))
+        waitmovement(Maushold4)
+        msgbox("Aha!\pSee that!\nFour is the right number.", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Maushold4, moves(face_player))
+        waitmovement
+        msgbox("Here. Take these four items.\n", MSGBOX_DEFAULT)
+        waitmessage
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        setflag(FLAG_FAM_FOUR)
+        giveitem(ITEM_POTION, 4)
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        waitmessage
+        release
+        end
+    }
+    if(var(VAR_RESULT) == 1)
+    {
+        speakername("Maushold")
+        applymovement(Maushold4, Common_Movement_ExclamationMark)
+        waitmovement(Maushold4)
+        msgbox("Hey!\pHow dare you insult my family!\n", MSGBOX_DEFAULT)
+        waitmessage
+        setflag(FLAG_FAM_FOUR)
+        setflag(FLAG_FAMFOUR_WRONG)
+        waitmessage
+        release
+        end
+    }
+    if(var(VAR_RESULT) == 2)
+    {
+        speakername("Maushold")
+        applymovement(Maushold4, Common_Movement_ExclamationMark)
+        waitmovement(Maushold4)
+        msgbox("Hey!\pHow dare you insult my family!\n", MSGBOX_DEFAULT)
+        waitmessage
+        setflag(FLAG_FAM_FOUR)
+        setflag(FLAG_FAMFOUR_WRONG)
+        waitmessage
+        release
+        end
+    }    
+    }
+    else
+    {
+        speakername("Maushold")
+        msgbox("Things in fours just makes sense!\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+}
+
+script FamilyofThree{
+    lock
+    faceplayer
+    if(!flag(FLAG_FAM_THREE))
+    {
+    speakername("Maushold")
+    msgbox("You!\pWelcome to our Maushold Haushold!\pWe've put in great work making\nthis haus a home.\pWe're in a bit of a dispute with\nthe neighbors over the proper\lhaushold size...\pWhat would you say the proper\nsize would be?", MSGBOX_DEFAULT)
+    dynmultichoice(0,0,TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Four", "Three", "Two")
+    if(var(VAR_RESULT) == 0)
+    {
+        speakername("Maushold")
+        applymovement(Maushold3, Common_Movement_ExclamationMark)
+        waitmovement(Maushold3)
+        msgbox("Hey!\pHow dare you insult my family!\n", MSGBOX_DEFAULT)
+        waitmessage
+        setflag(FLAG_FAM_THREE)
+        setflag(FLAG_FAMTHREE_WRONG)
+        waitmessage
+        release
+        end
+    }
+    if(var(VAR_RESULT) == 1)
+    {
+        if(!flag(FLAG_FAMFOUR_WRONG))
+        {
+            speakername("Maushold")
+            applymovement(Maushold3, Common_Movement_ExclamationMark)
+            waitmovement(Maushold3)
+            msgbox("Don't pander to me!\pI we heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
+            setflag(FLAG_FAM_FOUR)
+            waitmessage
+            release
+            end
+        }
+        speakername("Maushold")
+        applymovement(Maushold3, Common_Movement_ExclamationMark)
+        waitmovement(Maushold3)
+        applymovement(Maushold3, moves(face_right))
+        waitmovement(Maushold3)
+        msgbox("Aha!\pSee that!\nThree is the right number.", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Maushold3, moves(face_player))
+        waitmovement
+        msgbox("Here. Take these three items.\n", MSGBOX_DEFAULT)
+        waitmessage
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        setflag(FLAG_FAM_THREE)
+        giveitem(ITEM_POTION, 3)
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        waitmessage
+        release
+        end
+    }
+    if(var(VAR_RESULT) == 2)
+    {
+        speakername("Maushold")
+        applymovement(Maushold3, Common_Movement_ExclamationMark)
+        waitmovement(Maushold3)
+        msgbox("Hey!\pHow dare you insult my family!\n", MSGBOX_DEFAULT)
+        waitmessage
+        setflag(FLAG_FAM_THREE)
+        setflag(FLAG_FAMTHREE_WRONG)
+        waitmessage
+        release
+        end
+    }    
+    }
+    else
+    {
+        speakername("Maushold")
+        msgbox("Things in threes just makes sense!\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+}
+
+script Familyoftwo{
+    if(!flag(FLAG_FAM_TWO))
+    {
+    lock
+    faceplayer
+    speakername("Tandemaus")
+    msgbox("The neighbors at the bottom of\nthe cliff are always feuding...\pWe decided not to have kids\nand we've been perfectly happy\lup here.\pHere. Take these two items.\n", MSGBOX_DEFAULT)
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    setflag(FLAG_FAM_TWO)
+    giveitem(ITEM_LUCKY_EGG, 2)
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME) 
+    waitmessage
+    release
+    end   
+    }
+    else{
+    lock
+    faceplayer
+    speakername("Tandemaus")
+    msgbox("We've been quite happy up here.\pWe've built a nice life for\nourselves.\pWe even have enough items\nleftover to afford to make\lfrequent trips around the Daycare!", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+    }
+}

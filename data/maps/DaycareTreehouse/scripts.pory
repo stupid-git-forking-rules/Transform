@@ -73,7 +73,7 @@ script BattleVsWeavile{
         msgbox("You have gained the ability to\ntransform into Weavile!", MSGBOX_DEFAULT)
         waitmessage
         dittotransform(VAR_TEMP_0)
-        givemon(FLAG_TRANS_WEAVILE, 25, move1=MOVE_BUG_BUZZ, move2=MOVE_DAZZLING_GLEAM, move3=MOVE_SWEET_SCENT, move4=MOVE_PSYCHIC)
+        givemon(FLAG_TRANS_WEAVILE, 25, move1=MOVE_ICE_SHARD, move2=MOVE_ICE_PUNCH, move3=MOVE_SHADOW_CLAW, move4=MOVE_BRICK_BREAK)
         waitmessage
         speakername("Weavile")
         msgbox("Godspeed challenger.\n", MSGBOX_DEFAULT)

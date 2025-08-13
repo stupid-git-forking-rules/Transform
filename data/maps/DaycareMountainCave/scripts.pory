@@ -1,0 +1,29 @@
+mapscripts DaycareMountainCave_MapScripts{}
+
+script PiplupDialog{
+    lock
+    faceplayer
+    speakername("Piplup")
+    msgbox("Brr! Hey there!\pYou must be cold!\pNot many Pokémon make it this far.\nI may not look it, but I hold\limperium down here!", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script SnomDialog{
+    lock
+    faceplayer
+    speakername("Snom")
+    msgbox("I wiggled my way over here...\nBut now I'm lost.\pI hope you can find your way out.\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+}
+
+script DaycareMountainCave_FindLuckyEgg{
+    lock
+    finditem(ITEM_LUCKY_EGG)
+    waitmessage
+    release
+    end
+}

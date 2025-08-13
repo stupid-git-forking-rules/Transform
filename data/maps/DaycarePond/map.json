@@ -21,6 +21,7 @@
   ],
   "object_events": [
     {
+      "local_id": "Dragonair",
       "graphics_id": "OBJ_EVENT_GFX_DRAGONAIR",
       "x": 48,
       "y": 4,
@@ -30,7 +31,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleVsDragonair",
       "flag": "0"
     },
     {
@@ -56,7 +57,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SeakingDialog",
       "flag": "0"
     },
     {
@@ -69,7 +70,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "MudkipDialog",
       "flag": "0"
     },
     {
@@ -82,7 +83,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "QuagsireDialog",
       "flag": "0"
     },
     {
@@ -99,6 +100,7 @@
       "flag": "0"
     },
     {
+      "local_id": "Buizel",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BUIZEL)",
       "x": 13,
       "y": 36,
@@ -108,10 +110,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_SEE_ALL_DIRECTIONS",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BuizelInCave",
       "flag": "0"
     },
     {
+      "local_id": "Goomy",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GOOMY)",
       "x": 17,
       "y": 25,
@@ -121,10 +124,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_SEE_ALL_DIRECTIONS",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "GoomyInCave",
       "flag": "0"
     },
     {
+      "local_id": "Slowpoke",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SLOWPOKE)",
       "x": 27,
       "y": 27,
@@ -134,10 +138,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_SEE_ALL_DIRECTIONS",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SlowpokeInCave",
       "flag": "0"
     },
     {
+      "local_id": "Croagunk",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CROAGUNK)",
       "x": 37,
       "y": 2,
@@ -147,7 +152,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "CroagunkInCave",
       "flag": "0"
     },
     {
@@ -160,8 +165,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "DaycarePond_FindLuckyEgg",
+      "flag": "FLAG_ITEM_DAYCARE_POND1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -173,8 +178,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "DaycarePond_FindLuckyEgg",
+      "flag": "FLAG_ITEM_DAYCARE_POND2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MILOTIC",
@@ -190,6 +195,7 @@
       "flag": "0"
     },
     {
+      "local_id": "Marill",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MARILL)",
       "x": 45,
       "y": 47,
@@ -199,7 +205,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "BattleVsMarill",
       "flag": "0"
     },
     {
@@ -212,7 +218,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PsyduckDialog",
       "flag": "0"
     },
     {
@@ -225,7 +231,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SprigatitoDialog",
       "flag": "0"
     },
     {
@@ -282,6 +288,106 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "GoomyInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SlowpokeInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "CroagunkInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 35,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "BuizelInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 25,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "GoomyInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "BuizelInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "SlowpokeInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "CroagunkInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "CroagunkInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "CroagunkInCaveTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "CroagunkInCaveTrigger"
+    }
+  ],
   "bg_events": []
 }

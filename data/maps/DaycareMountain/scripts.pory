@@ -2,7 +2,291 @@ mapscripts DaycareMountain_MapScripts {
 
 }
 
-script Script_Name {
-	msgbox("hi\n", MSGBOX_SIGN)
+script SoarFront {
+	if(var(VAR_TRANSFORM_MON)== SPECIES_NOIVERN)
+	{
+		lock
+		applymovement(LOCALID_PLAYER, moves(walk_up*4))
+		waitmovement(LOCALID_PLAYER)
+		release
+		end
+	}
+	else{
+		end
+	}
+}
+
+script SoarBack {
+	if(var(VAR_TRANSFORM_MON)== SPECIES_NOIVERN)
+	{
+		lock
+		applymovement(LOCALID_PLAYER, moves(walk_down*4))
+		waitmovement(LOCALID_PLAYER)
+		release
+		end
+	}
+	else{
+		end
+	}
+}
+
+
+script VullabyDialog{
+	if(!flag(FLAG_SOAR_ACROSS))
+	{
+	lock
+	faceplayer
+	speakername("Vullaby")
+	msgbox("I wish I had stronger wings...\pThen I'd just fly right over the\nbroken bridge!", MSGBOX_DEFAULT)
+	waitmessage
+	release
 	end
+	}
+	else{
+	lock
+	faceplayer
+	speakername("Vullaby")
+	msgbox("I wish I could transform like you.\pI would change into a giant eagle!\n", MSGBOX_DEFAULT)
+	waitmessage
+	release
+	end
+	}
+
+}
+
+script NoibatDialog{
+	lock
+	faceplayer
+	speakername("Noibat")
+	msgbox("Big brother!\pOh, no. It's just another Ditto...\pThere's a cave up ahead.\pYou'll need my big bro's power\nto beat the Pokémon waiting deep\lwithin.", MSGBOX_DEFAULT)
+	waitmessage
+	release
+	end
+}
+
+script BattleVsLurantis{
+    lock
+
+    if(flag(FLAG_TRANS_LURANTIS))
+    {
+        faceplayer
+        speakername("Lurantis")
+        msgbox("Haven't seen any small trees\naround?\pThey tend to grow on the top of\ncliffs with crashing waterfalls.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+
+    applymovement(Lurantis, moves(face_player))
+    waitmovement(Lurantis)
+    playse(SE_PIN)
+    applymovement(Lurantis, Common_Movement_ExclamationMark)
+    waitmovement(Lurantis)
+    speakername("Lurantis")
+    msgbox("You're out seeking your Egg...\nare you not?\pEvery Ditto comes here in search\nif the mythical Egg.\pProve your strength to me.\nMy sharp raptorial arms may come\lin handy.", MSGBOX_AUTOCLOSE)
+	setwildbattle(SPECIES_LURANTIS, 25)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	dowildbattle
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON)
+    {
+        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        setflag(FLAG_TRANS_LURANTIS)
+        dittotransform(SPECIES_LURANTIS)
+        playse(MUS_LEVEL_UP)
+        msgbox("You have gained the ability to\ntransform into Lurantis!", MSGBOX_DEFAULT)
+        waitmessage
+        dittotransform(VAR_TEMP_0)
+        givemon(SPECIES_LURANTIS, 25, move1=MOVE_AERIAL_ACE, move2=MOVE_BUG_BITE, move3=MOVE_TRAILBLAZE, move4=MOVE_CUT)
+        waitmessage
+        release
+        end
+    }
+}
+
+script OmanyteInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_OMANYTE_BATTLE))
+    {
+        speakername("Omanyte")
+        msgbox("Fine.\nYou've earned your stay.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Omanyte, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Omanyte")
+        msgbox("You're no fossil!\n", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_OMANYTE, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Omanyte")
+	        msgbox("Fine.\nYou've earned your stay.", MSGBOX_DEFAULT)
+            setflag(FLAG_OMANYTE_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+
+script OmanyteInCaveTrigger{
+    if(!flag(FLAG_OMANYTE_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Omanyte, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_2)) 
+        {
+        case 34:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            applymovement(Omanyte, moves(walk_down))
+            waitmovement(Omanyte)
+	        speakername("Omanyte")
+            msgbox("You're no fossil!\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_OMANYTE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Omanyte")
+	            msgbox("Fine.\nYou've earned your stay.", MSGBOX_DEFAULT)
+                setflag(FLAG_OMANYTE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 33:
+            applymovement(LOCALID_PLAYER, moves(face_up))
+	        speakername("Omanyte")
+            msgbox("You're no fossil!\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_OMANYTE, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Omanyte")
+	            msgbox("Fine.\nYou've earned your stay.", MSGBOX_DEFAULT)
+                setflag(FLAG_OMANYTE_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script KabutoInCave{
+    lock
+	faceplayer
+    if(flag(FLAG_KABUTO_BATTLE))
+    {
+        speakername("Kabuto")
+        msgbox("It was only the two of us\nanyways...", MSGBOX_DEFAULT)
+        waitmessage
+        release
+	    end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Kabuto, Common_Movement_ExclamationMark)
+	    waitmovement
+	    speakername("Kabuto")
+        msgbox("Fossils only!\n", MSGBOX_AUTOCLOSE)
+	    setwildbattle(SPECIES_KABUTO, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Kabuto")
+	        msgbox("Alright.\nWe can make an exception.", MSGBOX_DEFAULT)
+            setflag(FLAG_KABUTO_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+    
+}
+
+script KabutoInCaveTrigger{
+    if(!flag(FLAG_KABUTO_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Kabuto, Common_Movement_ExclamationMark)
+	    waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_1)) 
+        {
+        case 8:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+	        speakername("Kabuto")
+            msgbox("Fossils only!\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_KABUTO, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+            speakername("Kabuto")
+	            msgbox("Alright.\nWe can make an exception.", MSGBOX_DEFAULT)
+                setflag(FLAG_KABUTO_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 9:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            applymovement(Kabuto,  moves(walk_right))
+	        speakername("Kabuto")
+            msgbox("Fossils only!\n", MSGBOX_AUTOCLOSE)
+	        setwildbattle(SPECIES_KABUTO, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Kabuto")
+	            msgbox("Alright.\nWe can make an exception.", MSGBOX_DEFAULT)
+                setflag(FLAG_KABUTO_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        }
+    }
+}
+
+script VullabyAfterSoar{
+	if(!flag(FLAG_SOAR_ACROSS))
+	{
+	lock
+	setflag(FLAG_SHOW_NOICE)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 6))
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    delay(30)
+	applymovement(Vullaby, Common_Movement_ExclamationMark)
+	waitmovement(Vullaby)
+	speakername("Vullaby")
+	msgbox("Wow!\pYou made it across!\pTransforming into Noivern was\nclever!", MSGBOX_DEFAULT)
+	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 6))
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    special(RemoveCameraObject)
+	setflag(FLAG_SOAR_ACROSS)
+	waitmessage
+	release
+	end
+	}
+	else{
+		end
+	}
 }

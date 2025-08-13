@@ -1,0 +1,229 @@
+mapscripts DaycareMountainCaveDeepDive_MapScripts{}
+
+script GorebyssInCave{
+    lock
+    faceplayer
+    if(flag(FLAG_GOREBYSS_BATTLE))
+    {
+        speakername("Gorebyss")
+        msgbox("My brother Huntail doesnt care\nfor beauty.\pHe will attack you fiercely!\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Gorebyss, Common_Movement_ExclamationMark)
+        waitmovement
+        speakername("Gorebyss")
+        msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+        setwildbattle(SPECIES_GOREBYSS, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Gorebyss")
+            msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
+            setflag(FLAG_GOREBYSS_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+
+script GorebyssInCaveTrigger{
+    if(!flag(FLAG_GOREBYSS_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Gorebyss, Common_Movement_ExclamationMark)
+        waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_1)) 
+        {
+        case 5:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            speakername("Gorebyss")
+            msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_GOREBYSS, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Gorebyss")
+                msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_GOREBYSS_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 6:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            applymovement(Gorebyss, moves(walk_right))
+            speakername("Gorebyss")
+            msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_GOREBYSS, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Gorebyss")
+                msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_GOREBYSS_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 7:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            applymovement(Gorebyss, moves(walk_right*2))
+            speakername("Gorebyss")
+            msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_GOREBYSS, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Gorebyss")
+                msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_GOREBYSS_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 8:
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            applymovement(Gorebyss, moves(walk_right*3))
+            speakername("Gorebyss")
+            msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_GOREBYSS, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Gorebyss")
+                msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
+                setflag(FLAG_GOREBYSS_BATTLE)
+                waitmessage
+                release
+                end
+            }            
+        }
+    }
+}
+
+script HuntailInCave{
+    lock
+    faceplayer
+    if(flag(FLAG_HUNTAIL_BATTLE))
+    {
+        speakername("Huntail")
+        msgbox("Back into the dark...\nBut you swim well, little one.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+    else
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Huntail, Common_Movement_ExclamationMark)
+        waitmovement
+        speakername("Huntail")
+        msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+        setwildbattle(SPECIES_HUNTAIL, 25)
+        dowildbattle
+        specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        {
+            speakername("Huntail")
+            msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+            setflag(FLAG_HUNTAIL_BATTLE)
+            waitmessage
+            release
+            end
+        }
+    }
+}
+
+script HuntailInCaveTrigger{
+    if(!flag(FLAG_HUNTAIL_BATTLE))
+    {
+        special(PlayTrainerEncounterMusic)
+        applymovement(Huntail, Common_Movement_ExclamationMark)
+        waitmovement
+        delay(40)
+        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+        switch(var(VAR_TEMP_1)) 
+        {
+        case 5:
+            applymovement(LOCALID_PLAYER, moves(face_right))
+            speakername("Huntail")
+            msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_HUNTAIL, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Huntail")
+                msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+                setflag(FLAG_HUNTAIL_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 6:
+            applymovement(LOCALID_PLAYER, moves(face_right))
+            applymovement(Huntail, moves(walk_left))
+            speakername("Huntail")
+            msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_HUNTAIL, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Huntail")
+                msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+                setflag(FLAG_HUNTAIL_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 7:
+            applymovement(LOCALID_PLAYER, moves(face_right))
+            applymovement(Huntail, moves(walk_left*2))
+            speakername("Huntail")
+            msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_HUNTAIL, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Huntail")
+                msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+                setflag(FLAG_HUNTAIL_BATTLE)
+                waitmessage
+                release
+                end
+            }
+        case 8:
+            applymovement(LOCALID_PLAYER, moves(face_right))
+            applymovement(Huntail, moves(walk_left*3))
+            speakername("Huntail")
+            msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+            setwildbattle(SPECIES_HUNTAIL, 25)
+            dowildbattle
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            if (var(VAR_RESULT) == B_OUTCOME_WON)
+            {
+                speakername("Huntail")
+                msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+                setflag(FLAG_HUNTAIL_BATTLE)
+                waitmessage
+                release
+                end
+            }            
+        }
+    }
+}
