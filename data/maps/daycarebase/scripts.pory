@@ -125,37 +125,24 @@ script MimikyuDialog{
 script DaycareOldManDialog{
     lock
     faceplayer
-    if (flag(FLAG_OLDMAN_INTRO))
+    if(!flag(FLAG_BEAT_MEW))
     {
+    if (flag(FLAG_OLDMAN_INTRO))
+    {  
+        if(var(VAR_TRANSFORM_MON)==SPECIES_DITTO)
+        {
         speakername("Daycare Man")
 	    msgbox("Back from exploring the Daycare?\pAh!\nBut where is your egg!\pKeep doing whatever it is you\nDittos do and come back when\lyou have one!", MSGBOX_DEFAULT)
         waitmessage
         release
         end
-    }
-    elif(flag(FLAG_EGG_OBTAINED))
-    {  
-        speakername("Daycare Man")
-	    msgbox("Why what do we have here?\nGoodness!\pYou're holding an Egg!\pWherever did you get this?\pIt's the darndest thing.\pYou Pokémon always seem to find\nthese eggs, but I can never figure\lout where they come from.\pWould you like to give me the Egg\nso that I may give it to your\lTrainer?", MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES)
-        {  
-            speakername("Daycare Man")
-            msgbox("Thank your for the Egg!\pAs a reward, take this experience!\n", MSGBOX_DEFAULT)
-            msgbox("Ditto gained 1 level!", MSGBOX_DEFAULT)
-            playse(MUS_LEVEL_UP)
-            waitmessage
-            release
-            end// roll credits daycare man takes two steps forward into the route
         }
-        else
-        {  
-            speakername("Daycare Man")
-            msgbox("Oh, I see...\pGIMME THAT EGG!!\pThank your for the Egg!\pAs a reward, take this experience!\n", MSGBOX_DEFAULT)
-            msgbox("Ditto gained 1 level!", MSGBOX_DEFAULT)
-            playse(MUS_LEVEL_UP)
-            waitmessage
-            release
-            end //roll credits daycare man takes two steps forward into the route
+        else{
+        speakername("Daycare Man")
+	    msgbox("Why, who are you?\pI'm looking for a Ditto.\n", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end    
         }
     }
     else
@@ -166,6 +153,119 @@ script DaycareOldManDialog{
         setflag(FLAG_OLDMAN_INTRO)
         release
         end
+    }
+    }
+    else
+    {   
+        if(var(VAR_TRANSFORM_MON)== SPECIES_DITTO)
+        {
+        playse(SE_PIN)
+        applymovement(DaycareMan, moves(face_player))
+        waitmovement(DaycareMan)
+        applymovement(DaycareMan, Common_Movement_ExclamationMark)
+        waitmovement(DaycareMan)        
+        speakername("Daycare Man")
+        msgbox("Why what do we have here?\nGoodness!\pYou're holding an Egg!\pWherever did you get this?\pIt's the darndest thing.\pYou Pokémon always seem to find\nthese eggs, but I can never figure\lout where they come from.\pWould you like to give me the Egg\nso that I may give it to your\lTrainer?", MSGBOX_YESNO)
+        waitmessage
+        if(var(VAR_RESULT) == YES)
+        {  
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            playse(SE_ITEMFINDER)
+            msgbox("Ditto handed over the Egg.\n", MSGBOX_DEFAULT)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            waitmessage
+            speakername("Daycare Man")
+            msgbox("Thank your for the Egg!\pAs a reward, take this experience!\n", MSGBOX_DEFAULT)
+            waitmessage
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            playse(SE_EXP)
+            waitse
+            playse(SE_EXP_MAX)
+            waitse
+            playfanfare(MUS_LEVEL_UP)
+            msgbox("Ditto grew to level 26.\n", MSGBOX_DEFAULT)
+            waitfanfare
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            speakername("Daycare Man")
+            msgbox("With this Egg, I can now fulfill\nmy duties.", MSGBOX_AUTOCLOSE)
+            special(SpawnCameraObject)
+            applymovement(DaycareMan, moves(face_down))
+            waitmovement(DaycareMan)
+            applymovement(DaycareMan, moves(walk_down*2))
+            applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*2))
+            waitmovement(DaycareMan)
+            waitmovement(OBJ_EVENT_ID_CAMERA)
+            delay(60)
+            fadescreenswapbuffers(FADE_TO_BLACK, 24)
+            delay(60)
+            fadescreenswapbuffers(FADE_FROM_BLACK, 24)
+            applymovement(Brendan, moves(walk_fast_up*6))
+            waitmovement(Brendan)
+            applymovement(Brendan, moves(walk_left*9))
+            waitmovement(Brendan)
+            applymovement(DaycareMan, moves(face_right))
+            speakername("Daycare Man")
+            msgbox("Ah, it's you!\pWe were raising your Pokémon\nand my goodness, were we surprised!\pYour Pokémon had an Egg!\pWe don't know how it got there,\nbut your Pokémon had it.\pYou do want it, yes?\n", MSGBOX_DEFAULT)
+            fadescreenswapbuffers(FADE_TO_BLACK, 60)
+            delay(60)
+            clearflag(FLAG_BEAT_MEW)
+            special(GameClear)
+        }
+        else{
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            playse(SE_M_SCRATCH)
+            msgbox("The Daycare Man ripped the Egg\nfrom Ditto's clutches.", MSGBOX_DEFAULT)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            waitmessage
+            speakername("Daycare Man")
+            msgbox("Thank your for the Egg!\pAs a reward, take this experience!\n", MSGBOX_DEFAULT)
+            waitmessage
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            playse(SE_EXP)
+            waitse
+            playse(SE_EXP_MAX)
+            waitse
+            playfanfare(MUS_LEVEL_UP)
+            msgbox("Ditto grew to level 26.\n", MSGBOX_DEFAULT)
+            waitfanfare
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            speakername("Daycare Man")
+            msgbox("With this Egg, I can now fulfill\nmy duties.", MSGBOX_AUTOCLOSE)
+            special(SpawnCameraObject)
+            applymovement(DaycareMan, moves(face_down))
+            waitmovement(DaycareMan)
+            applymovement(DaycareMan, moves(walk_down*2))
+            applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*2))
+            waitmovement(DaycareMan)
+            waitmovement(OBJ_EVENT_ID_CAMERA)
+            delay(60)
+            fadescreenswapbuffers(FADE_TO_BLACK, 24)
+            delay(60)
+            fadescreenswapbuffers(FADE_FROM_BLACK, 24)
+            applymovement(Brendan, moves(walk_fast_up*6))
+            waitmovement(Brendan)
+            applymovement(Brendan, moves(walk_left*9))
+            waitmovement(Brendan)
+            applymovement(DaycareMan, moves(face_right))
+            speakername("Daycare Man")
+            msgbox("Ah, it's you!\pWe were raising your Pokémon\nand my goodness, were we surprised!\pYour Pokémon had an Egg!\pWe don't know how it got there,\nbut your Pokémon had it.\pYou do want it, yes?\n", MSGBOX_DEFAULT)
+            fadescreenswapbuffers(FADE_TO_BLACK, 60)
+            delay(60)
+            clearflag(FLAG_BEAT_MEW)
+            special(GameClear)
+        }
+        }
+        else{
+            speakername("Daycare Man")
+            msgbox("Why, who are you?\pI'm looking for a Ditto.\n", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end
+
+        }
+
+    
+    
     }
 }
 

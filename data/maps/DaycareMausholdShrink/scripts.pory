@@ -11,16 +11,37 @@ script FamilyofFour{
     if(var(VAR_RESULT) == 0)
     {
         if(!flag(FLAG_FAMTHREE_WRONG))
-        {
+            {
+            if(flag(FLAG_FAM_THREE))
+                {
+                    speakername("Maushold")
+                    applymovement(Maushold4, Common_Movement_ExclamationMark)
+                    waitmovement(Maushold4)
+                    msgbox("Don't pander to me!\pI we heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
+                    setflag(FLAG_FAM_FOUR)
+                    waitmessage
+                    release
+                    end
+                }     
             speakername("Maushold")
             applymovement(Maushold4, Common_Movement_ExclamationMark)
             waitmovement(Maushold4)
-            msgbox("Don't pander to me!\pI we heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
+            applymovement(Maushold4, moves(face_left))
+            waitmovement(Maushold4)
+            msgbox("Aha!\pSee that!\nFour is the right number.", MSGBOX_DEFAULT)
+            waitmessage
+            applymovement(Maushold4, moves(face_player))
+            waitmovement
+            msgbox("Here. Take these four items.\n", MSGBOX_DEFAULT)
+            waitmessage
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             setflag(FLAG_FAM_FOUR)
+            giveitem(ITEM_POTION, 4)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
             release
-            end
-        }
+            end  
+            }
         speakername("Maushold")
         applymovement(Maushold4, Common_Movement_ExclamationMark)
         waitmovement(Maushold4)
@@ -100,13 +121,34 @@ script FamilyofThree{
     }
     if(var(VAR_RESULT) == 1)
     {
-        if(!flag(FLAG_FAMFOUR_WRONG))
+        if(flag(FLAG_FAM_FOUR))
         {
+            if(!flag(FLAG_FAMFOUR_WRONG))
+            {
             speakername("Maushold")
             applymovement(Maushold3, Common_Movement_ExclamationMark)
             waitmovement(Maushold3)
             msgbox("Don't pander to me!\pI we heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
             setflag(FLAG_FAM_FOUR)
+            waitmessage
+            release
+            end
+            }
+            speakername("Maushold")
+            applymovement(Maushold3, Common_Movement_ExclamationMark)
+            waitmovement(Maushold3)
+            applymovement(Maushold3, moves(face_right))
+            waitmovement(Maushold3)
+            msgbox("Aha!\pSee that!\nThree is the right number.", MSGBOX_DEFAULT)
+            waitmessage
+            applymovement(Maushold3, moves(face_player))
+            waitmovement
+            msgbox("Here. Take these three items.\n", MSGBOX_DEFAULT)
+            waitmessage
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            setflag(FLAG_FAM_THREE)
+            giveitem(ITEM_POTION, 3)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
             release
             end

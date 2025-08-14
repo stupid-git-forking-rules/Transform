@@ -44,391 +44,393 @@ GengarDialog::
 # 29 "data/maps/DaycareNoivernCave/scripts.pory"
 	lock
 # 30 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Gengar, GengarDialog_Movement_0
+	playse SE_PIN
 # 31 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement Gengar
+	applymovement Gengar, GengarDialog_Movement_0
 # 32 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Gengar, Common_Movement_ExclamationMark
-# 33 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmovement Gengar
+# 33 "data/maps/DaycareNoivernCave/scripts.pory"
+	applymovement Gengar, Common_Movement_ExclamationMark
 # 34 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername GengarDialog_Text_0
+	waitmovement Gengar
 # 35 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox GengarDialog_Text_1, MSGBOX_DEFAULT
+	speakername GengarDialog_Text_0
 # 36 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	msgbox GengarDialog_Text_1, MSGBOX_DEFAULT
 # 37 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 38 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 
 LitwickDialog::
-# 42 "data/maps/DaycareNoivernCave/scripts.pory"
+# 43 "data/maps/DaycareNoivernCave/scripts.pory"
 	goto_if_unset FLAG_LITWICK_EGG, LitwickDialog_1
-# 72 "data/maps/DaycareNoivernCave/scripts.pory"
-	lock
 # 73 "data/maps/DaycareNoivernCave/scripts.pory"
-	faceplayer
+	lock
 # 74 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername LitwickDialog_Text_0
+	faceplayer
 # 75 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox LitwickDialog_Text_4, MSGBOX_DEFAULT
+	speakername LitwickDialog_Text_0
 # 76 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	msgbox LitwickDialog_Text_4, MSGBOX_DEFAULT
 # 77 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 78 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 LitwickDialog_1:
-# 44 "data/maps/DaycareNoivernCave/scripts.pory"
+# 45 "data/maps/DaycareNoivernCave/scripts.pory"
 	goto_if_set FLAG_TRANS_NOIVERN, LitwickDialog_4
-# 61 "data/maps/DaycareNoivernCave/scripts.pory"
-	lock
 # 62 "data/maps/DaycareNoivernCave/scripts.pory"
-	faceplayer
+	lock
 # 63 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername LitwickDialog_Text_0
+	faceplayer
 # 64 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox LitwickDialog_Text_3, MSGBOX_DEFAULT
+	speakername LitwickDialog_Text_0
 # 65 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	msgbox LitwickDialog_Text_3, MSGBOX_DEFAULT
 # 66 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 67 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 LitwickDialog_4:
-# 46 "data/maps/DaycareNoivernCave/scripts.pory"
-	lock
 # 47 "data/maps/DaycareNoivernCave/scripts.pory"
-	faceplayer
+	lock
 # 48 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername LitwickDialog_Text_0
+	faceplayer
 # 49 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox LitwickDialog_Text_1, MSGBOX_DEFAULT
-# 50 "data/maps/DaycareNoivernCave/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 51 "data/maps/DaycareNoivernCave/scripts.pory"
-	giveitem ITEM_LUCKY_EGG, 2
-# 52 "data/maps/DaycareNoivernCave/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 53 "data/maps/DaycareNoivernCave/scripts.pory"
 	speakername LitwickDialog_Text_0
+# 50 "data/maps/DaycareNoivernCave/scripts.pory"
+	msgbox LitwickDialog_Text_1, MSGBOX_DEFAULT
+# 51 "data/maps/DaycareNoivernCave/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 52 "data/maps/DaycareNoivernCave/scripts.pory"
+	giveitem ITEM_LUCKY_EGG, 2
+# 53 "data/maps/DaycareNoivernCave/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 54 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox LitwickDialog_Text_2, MSGBOX_DEFAULT
+	speakername LitwickDialog_Text_0
 # 55 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	msgbox LitwickDialog_Text_2, MSGBOX_DEFAULT
 # 56 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 57 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 
 MawileInCave::
-# 83 "data/maps/DaycareNoivernCave/scripts.pory"
-	lock
 # 84 "data/maps/DaycareNoivernCave/scripts.pory"
-	faceplayer
+	lock
 # 85 "data/maps/DaycareNoivernCave/scripts.pory"
+	faceplayer
+# 86 "data/maps/DaycareNoivernCave/scripts.pory"
 	goto_if_set FLAG_MAWILE_BATTLE, MawileInCave_1
-# 95 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Mawile, GengarDialog_Movement_0
 # 96 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement Mawile
+	applymovement Mawile, GengarDialog_Movement_0
 # 97 "data/maps/DaycareNoivernCave/scripts.pory"
-	special PlayTrainerEncounterMusic
+	waitmovement Mawile
 # 98 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Mawile, Common_Movement_ExclamationMark
+	special PlayTrainerEncounterMusic
 # 99 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement
+	applymovement Mawile, Common_Movement_ExclamationMark
 # 100 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername MawileInCave_Text_0
+	waitmovement
 # 101 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox MawileInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername MawileInCave_Text_0
 # 102 "data/maps/DaycareNoivernCave/scripts.pory"
-	setwildbattle SPECIES_MAWILE, 25
+	msgbox MawileInCave_Text_2, MSGBOX_AUTOCLOSE
 # 103 "data/maps/DaycareNoivernCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_MAWILE, 25
 # 104 "data/maps/DaycareNoivernCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 105 "data/maps/DaycareNoivernCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 106 "data/maps/DaycareNoivernCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq MawileInCave_4
 	return
 
 MawileInCave_1:
-# 87 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername MawileInCave_Text_0
 # 88 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox MawileInCave_Text_1, MSGBOX_DEFAULT
+	speakername MawileInCave_Text_0
 # 89 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	msgbox MawileInCave_Text_1, MSGBOX_DEFAULT
 # 90 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 91 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 MawileInCave_4:
-# 107 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername MawileInCave_Text_0
 # 108 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox MawileInCave_Text_3, MSGBOX_DEFAULT
+	speakername MawileInCave_Text_0
 # 109 "data/maps/DaycareNoivernCave/scripts.pory"
-	setflag FLAG_MAWILE_BATTLE
+	msgbox MawileInCave_Text_3, MSGBOX_DEFAULT
 # 110 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	setflag FLAG_MAWILE_BATTLE
 # 111 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 112 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 
 MawileInCaveTrigger::
-# 118 "data/maps/DaycareNoivernCave/scripts.pory"
+# 119 "data/maps/DaycareNoivernCave/scripts.pory"
 	goto_if_unset FLAG_MAWILE_BATTLE, MawileInCaveTrigger_1
 	return
 
 MawileInCaveTrigger_1:
-# 120 "data/maps/DaycareNoivernCave/scripts.pory"
-	special PlayTrainerEncounterMusic
 # 121 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Mawile, Common_Movement_ExclamationMark
+	special PlayTrainerEncounterMusic
 # 122 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement
+	applymovement Mawile, Common_Movement_ExclamationMark
 # 123 "data/maps/DaycareNoivernCave/scripts.pory"
-	delay 40
+	waitmovement
 # 124 "data/maps/DaycareNoivernCave/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	delay 40
 # 125 "data/maps/DaycareNoivernCave/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 126 "data/maps/DaycareNoivernCave/scripts.pory"
 	switch VAR_TEMP_2
-# 127 "data/maps/DaycareNoivernCave/scripts.pory"
+# 128 "data/maps/DaycareNoivernCave/scripts.pory"
 	case 11, MawileInCaveTrigger_4
-# 145 "data/maps/DaycareNoivernCave/scripts.pory"
+# 146 "data/maps/DaycareNoivernCave/scripts.pory"
 	case 10, MawileInCaveTrigger_5
 	return
 
 MawileInCaveTrigger_4:
-# 128 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement LOCALID_PLAYER, MawileInCaveTrigger_Movement_0
 # 129 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Mawile, MawileInCaveTrigger_Movement_1
+	applymovement LOCALID_PLAYER, MawileInCaveTrigger_Movement_0
 # 130 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement Mawile
+	applymovement Mawile, MawileInCaveTrigger_Movement_1
 # 131 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername MawileInCave_Text_0
+	waitmovement Mawile
 # 132 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox MawileInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername MawileInCave_Text_0
 # 133 "data/maps/DaycareNoivernCave/scripts.pory"
-	setwildbattle SPECIES_MAWILE, 25
+	msgbox MawileInCave_Text_2, MSGBOX_AUTOCLOSE
 # 134 "data/maps/DaycareNoivernCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_MAWILE, 25
 # 135 "data/maps/DaycareNoivernCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 136 "data/maps/DaycareNoivernCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 137 "data/maps/DaycareNoivernCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq MawileInCaveTrigger_6
 	return
 
 MawileInCaveTrigger_5:
-# 146 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement LOCALID_PLAYER, MawileInCaveTrigger_Movement_0
 # 147 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername MawileInCave_Text_0
+	applymovement LOCALID_PLAYER, MawileInCaveTrigger_Movement_0
 # 148 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox MawileInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername MawileInCave_Text_0
 # 149 "data/maps/DaycareNoivernCave/scripts.pory"
-	setwildbattle SPECIES_MAWILE, 25
+	msgbox MawileInCave_Text_2, MSGBOX_AUTOCLOSE
 # 150 "data/maps/DaycareNoivernCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_MAWILE, 25
 # 151 "data/maps/DaycareNoivernCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 152 "data/maps/DaycareNoivernCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 153 "data/maps/DaycareNoivernCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq MawileInCaveTrigger_8
 	return
 
 MawileInCaveTrigger_6:
-# 138 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername MawileInCave_Text_0
 # 139 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox MawileInCave_Text_3, MSGBOX_DEFAULT
+	speakername MawileInCave_Text_0
 # 140 "data/maps/DaycareNoivernCave/scripts.pory"
-	setflag FLAG_MAWILE_BATTLE
+	msgbox MawileInCave_Text_3, MSGBOX_DEFAULT
 # 141 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	setflag FLAG_MAWILE_BATTLE
 # 142 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 143 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 MawileInCaveTrigger_8:
-# 154 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername MawileInCave_Text_0
 # 155 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox MawileInCave_Text_3, MSGBOX_DEFAULT
+	speakername MawileInCave_Text_0
 # 156 "data/maps/DaycareNoivernCave/scripts.pory"
-	setflag FLAG_MAWILE_BATTLE
+	msgbox MawileInCave_Text_3, MSGBOX_DEFAULT
 # 157 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	setflag FLAG_MAWILE_BATTLE
 # 158 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 159 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 
 DuskullInCave::
-# 166 "data/maps/DaycareNoivernCave/scripts.pory"
-	lock
 # 167 "data/maps/DaycareNoivernCave/scripts.pory"
-	faceplayer
+	lock
 # 168 "data/maps/DaycareNoivernCave/scripts.pory"
+	faceplayer
+# 169 "data/maps/DaycareNoivernCave/scripts.pory"
 	goto_if_set FLAG_DUSKULL_BATTLE, DuskullInCave_1
-# 178 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Duskull, GengarDialog_Movement_0
 # 179 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement Duskull
+	applymovement Duskull, GengarDialog_Movement_0
 # 180 "data/maps/DaycareNoivernCave/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 181 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Duskull, Common_Movement_ExclamationMark
-# 182 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmovement Duskull
+# 181 "data/maps/DaycareNoivernCave/scripts.pory"
+	special PlayTrainerEncounterMusic
+# 182 "data/maps/DaycareNoivernCave/scripts.pory"
+	applymovement Duskull, Common_Movement_ExclamationMark
 # 183 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername DuskullInCave_Text_0
+	waitmovement Duskull
 # 184 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox DuskullInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername DuskullInCave_Text_0
 # 185 "data/maps/DaycareNoivernCave/scripts.pory"
-	setwildbattle SPECIES_DUSKULL, 25
+	msgbox DuskullInCave_Text_2, MSGBOX_AUTOCLOSE
 # 186 "data/maps/DaycareNoivernCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_DUSKULL, 25
 # 187 "data/maps/DaycareNoivernCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 188 "data/maps/DaycareNoivernCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 189 "data/maps/DaycareNoivernCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq DuskullInCave_4
 	return
 
 DuskullInCave_1:
-# 170 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername DuskullInCave_Text_0
 # 171 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox DuskullInCave_Text_1, MSGBOX_DEFAULT
+	speakername DuskullInCave_Text_0
 # 172 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	msgbox DuskullInCave_Text_1, MSGBOX_DEFAULT
 # 173 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 174 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 DuskullInCave_4:
-# 190 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername DuskullInCave_Text_0
 # 191 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox DuskullInCave_Text_1, MSGBOX_DEFAULT
+	speakername DuskullInCave_Text_0
 # 192 "data/maps/DaycareNoivernCave/scripts.pory"
-	setflag FLAG_DUSKULL_BATTLE
+	msgbox DuskullInCave_Text_1, MSGBOX_DEFAULT
 # 193 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	setflag FLAG_DUSKULL_BATTLE
 # 194 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 195 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 
 DuskullInCaveTrigger::
-# 201 "data/maps/DaycareNoivernCave/scripts.pory"
+# 202 "data/maps/DaycareNoivernCave/scripts.pory"
 	goto_if_unset FLAG_DUSKULL_BATTLE, DuskullInCaveTrigger_1
 	return
 
 DuskullInCaveTrigger_1:
-# 203 "data/maps/DaycareNoivernCave/scripts.pory"
-	special PlayTrainerEncounterMusic
 # 204 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Duskull, Common_Movement_ExclamationMark
+	special PlayTrainerEncounterMusic
 # 205 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement
+	applymovement Duskull, Common_Movement_ExclamationMark
 # 206 "data/maps/DaycareNoivernCave/scripts.pory"
-	delay 40
+	waitmovement
 # 207 "data/maps/DaycareNoivernCave/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	delay 40
 # 208 "data/maps/DaycareNoivernCave/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 209 "data/maps/DaycareNoivernCave/scripts.pory"
 	switch VAR_TEMP_1
-# 210 "data/maps/DaycareNoivernCave/scripts.pory"
+# 211 "data/maps/DaycareNoivernCave/scripts.pory"
 	case 15, DuskullInCaveTrigger_4
 	return
 
 DuskullInCaveTrigger_4:
-# 211 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement LOCALID_PLAYER, DuskullInCaveTrigger_Movement_0
 # 212 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Duskull, DuskullInCaveTrigger_Movement_1
+	applymovement LOCALID_PLAYER, DuskullInCaveTrigger_Movement_0
 # 213 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername DuskullInCave_Text_0
+	applymovement Duskull, DuskullInCaveTrigger_Movement_1
 # 214 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox DuskullInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername DuskullInCave_Text_0
 # 215 "data/maps/DaycareNoivernCave/scripts.pory"
-	setwildbattle SPECIES_DUSKULL, 25
+	msgbox DuskullInCave_Text_2, MSGBOX_AUTOCLOSE
 # 216 "data/maps/DaycareNoivernCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_DUSKULL, 25
 # 217 "data/maps/DaycareNoivernCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 218 "data/maps/DaycareNoivernCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 219 "data/maps/DaycareNoivernCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq DuskullInCaveTrigger_5
 	return
 
 DuskullInCaveTrigger_5:
-# 220 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername DuskullInCave_Text_0
 # 221 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox DuskullInCave_Text_1, MSGBOX_DEFAULT
+	speakername DuskullInCave_Text_0
 # 222 "data/maps/DaycareNoivernCave/scripts.pory"
-	setflag FLAG_DUSKULL_BATTLE
+	msgbox DuskullInCave_Text_1, MSGBOX_DEFAULT
 # 223 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	setflag FLAG_DUSKULL_BATTLE
 # 224 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 225 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 
 BattleVsNoivern::
-# 233 "data/maps/DaycareNoivernCave/scripts.pory"
+# 234 "data/maps/DaycareNoivernCave/scripts.pory"
 	goto_if_set FLAG_TRANS_NOIVERN, BattleVsNoivern_2
-# 237 "data/maps/DaycareNoivernCave/scripts.pory"
-	lock
 # 238 "data/maps/DaycareNoivernCave/scripts.pory"
-	playmoncry SPECIES_NOIVERN, CRY_MODE_NORMAL
+	lock
 # 239 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_NOIVERN, CRY_MODE_NORMAL
 # 240 "data/maps/DaycareNoivernCave/scripts.pory"
-	playse SE_PIN
+	waitmoncry
 # 241 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	playse SE_PIN
 # 242 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 243 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement LOCALID_PLAYER, MawileInCaveTrigger_Movement_0
+	waitmovement LOCALID_PLAYER
 # 244 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	applymovement LOCALID_PLAYER, MawileInCaveTrigger_Movement_0
 # 245 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement LOCALID_PLAYER, BattleVsNoivern_Movement_0
+	waitmovement LOCALID_PLAYER
 # 246 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	applymovement LOCALID_PLAYER, BattleVsNoivern_Movement_0
 # 247 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement LOCALID_PLAYER, BattleVsNoivern_Movement_1
-# 248 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmovement LOCALID_PLAYER
+# 248 "data/maps/DaycareNoivernCave/scripts.pory"
+	applymovement LOCALID_PLAYER, BattleVsNoivern_Movement_1
 # 249 "data/maps/DaycareNoivernCave/scripts.pory"
-	playse SE_M_SCREECH
+	waitmovement LOCALID_PLAYER
 # 250 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Noivern, BattleVsNoivern_Movement_2
+	playse SE_M_SCREECH
 # 251 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement Noivern
+	applymovement Noivern, BattleVsNoivern_Movement_2
 # 252 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername BattleVsNoivern_Text_0
+	waitmovement Noivern
 # 253 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox BattleVsNoivern_Text_1, MSGBOX_AUTOCLOSE
+	speakername BattleVsNoivern_Text_0
 # 254 "data/maps/DaycareNoivernCave/scripts.pory"
-	setwildbattle SPECIES_NOIVERN, 25
+	msgbox BattleVsNoivern_Text_1, MSGBOX_AUTOCLOSE
 # 255 "data/maps/DaycareNoivernCave/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	setwildbattle SPECIES_NOIVERN, 25
 # 256 "data/maps/DaycareNoivernCave/scripts.pory"
-	dowildbattle
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
 # 257 "data/maps/DaycareNoivernCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 258 "data/maps/DaycareNoivernCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 259 "data/maps/DaycareNoivernCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsNoivern_4
 	return
@@ -437,116 +439,116 @@ BattleVsNoivern_2:
 	end
 
 BattleVsNoivern_4:
-# 260 "data/maps/DaycareNoivernCave/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 261 "data/maps/DaycareNoivernCave/scripts.pory"
-	setflag FLAG_TRANS_NOIVERN
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 262 "data/maps/DaycareNoivernCave/scripts.pory"
-	dittotransform SPECIES_NOIVERN
+	setflag FLAG_TRANS_NOIVERN
 # 263 "data/maps/DaycareNoivernCave/scripts.pory"
-	playse MUS_LEVEL_UP
+	dittotransform SPECIES_NOIVERN
 # 264 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox BattleVsNoivern_Text_2, MSGBOX_DEFAULT
+	playse MUS_LEVEL_UP
 # 265 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	msgbox BattleVsNoivern_Text_2, MSGBOX_DEFAULT
 # 266 "data/maps/DaycareNoivernCave/scripts.pory"
-	dittotransform VAR_TEMP_0
+	waitmessage
 # 267 "data/maps/DaycareNoivernCave/scripts.pory"
-	givemon SPECIES_NOIVERN, 25, move1 = MOVE_AIR_CUTTER, move2 = MOVE_DRAGON_BREATH, move3 = MOVE_SUPERSONIC, move4 = MOVE_SUPER_FANG
+	dittotransform VAR_TEMP_0
 # 268 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmessage
+	givemon SPECIES_NOIVERN, 25, move1 = MOVE_AIR_CUTTER, move2 = MOVE_DRAGON_BREATH, move3 = MOVE_SUPERSONIC, move4 = MOVE_SUPER_FANG
 # 269 "data/maps/DaycareNoivernCave/scripts.pory"
-	speakername BattleVsNoivern_Text_0
-# 270 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox BattleVsNoivern_Text_3, MSGBOX_DEFAULT
-# 271 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmessage
+# 270 "data/maps/DaycareNoivernCave/scripts.pory"
+	speakername BattleVsNoivern_Text_0
+# 271 "data/maps/DaycareNoivernCave/scripts.pory"
+	msgbox BattleVsNoivern_Text_3, MSGBOX_DEFAULT
 # 272 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Noivern, BattleVsNoivern_Movement_3
+	waitmessage
 # 273 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement Noivern
+	applymovement Noivern, BattleVsNoivern_Movement_3
 # 274 "data/maps/DaycareNoivernCave/scripts.pory"
-	applymovement Noivern, BattleVsNoivern_Movement_4
-# 275 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmovement Noivern
+# 275 "data/maps/DaycareNoivernCave/scripts.pory"
+	applymovement Noivern, BattleVsNoivern_Movement_4
 # 276 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmovement Noivern
+# 277 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
 
-# 30 "data/maps/DaycareNoivernCave/scripts.pory"
+# 31 "data/maps/DaycareNoivernCave/scripts.pory"
 GengarDialog_Movement_0:
-# 30 "data/maps/DaycareNoivernCave/scripts.pory"
+# 31 "data/maps/DaycareNoivernCave/scripts.pory"
 	face_player
 	step_end
 
-# 128 "data/maps/DaycareNoivernCave/scripts.pory"
+# 129 "data/maps/DaycareNoivernCave/scripts.pory"
 MawileInCaveTrigger_Movement_0:
-# 128 "data/maps/DaycareNoivernCave/scripts.pory"
+# 129 "data/maps/DaycareNoivernCave/scripts.pory"
 	face_up
 	step_end
 
-# 129 "data/maps/DaycareNoivernCave/scripts.pory"
+# 130 "data/maps/DaycareNoivernCave/scripts.pory"
 MawileInCaveTrigger_Movement_1:
-# 129 "data/maps/DaycareNoivernCave/scripts.pory"
+# 130 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_down
 	step_end
 
-# 211 "data/maps/DaycareNoivernCave/scripts.pory"
+# 212 "data/maps/DaycareNoivernCave/scripts.pory"
 DuskullInCaveTrigger_Movement_0:
-# 211 "data/maps/DaycareNoivernCave/scripts.pory"
+# 212 "data/maps/DaycareNoivernCave/scripts.pory"
 	face_right
 	step_end
 
-# 212 "data/maps/DaycareNoivernCave/scripts.pory"
+# 213 "data/maps/DaycareNoivernCave/scripts.pory"
 DuskullInCaveTrigger_Movement_1:
-# 212 "data/maps/DaycareNoivernCave/scripts.pory"
+# 213 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_left
-# 212 "data/maps/DaycareNoivernCave/scripts.pory"
+# 213 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_left
-# 212 "data/maps/DaycareNoivernCave/scripts.pory"
+# 213 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_left
 	step_end
 
-# 245 "data/maps/DaycareNoivernCave/scripts.pory"
+# 246 "data/maps/DaycareNoivernCave/scripts.pory"
 BattleVsNoivern_Movement_0:
-# 245 "data/maps/DaycareNoivernCave/scripts.pory"
+# 246 "data/maps/DaycareNoivernCave/scripts.pory"
 	lock_facing_direction
 	step_end
 
-# 247 "data/maps/DaycareNoivernCave/scripts.pory"
+# 248 "data/maps/DaycareNoivernCave/scripts.pory"
 BattleVsNoivern_Movement_1:
-# 247 "data/maps/DaycareNoivernCave/scripts.pory"
+# 248 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 250 "data/maps/DaycareNoivernCave/scripts.pory"
+# 251 "data/maps/DaycareNoivernCave/scripts.pory"
 BattleVsNoivern_Movement_2:
-# 250 "data/maps/DaycareNoivernCave/scripts.pory"
+# 251 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_down
-# 250 "data/maps/DaycareNoivernCave/scripts.pory"
+# 251 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_down
-# 250 "data/maps/DaycareNoivernCave/scripts.pory"
+# 251 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_down
-# 250 "data/maps/DaycareNoivernCave/scripts.pory"
+# 251 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 272 "data/maps/DaycareNoivernCave/scripts.pory"
+# 273 "data/maps/DaycareNoivernCave/scripts.pory"
 BattleVsNoivern_Movement_3:
-# 272 "data/maps/DaycareNoivernCave/scripts.pory"
+# 273 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_up
-# 272 "data/maps/DaycareNoivernCave/scripts.pory"
+# 273 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_up
-# 272 "data/maps/DaycareNoivernCave/scripts.pory"
+# 273 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_up
-# 272 "data/maps/DaycareNoivernCave/scripts.pory"
+# 273 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 274 "data/maps/DaycareNoivernCave/scripts.pory"
+# 275 "data/maps/DaycareNoivernCave/scripts.pory"
 BattleVsNoivern_Movement_4:
-# 274 "data/maps/DaycareNoivernCave/scripts.pory"
+# 275 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_in_place_down
 	step_end
 
@@ -567,73 +569,73 @@ HaunterDialog_Text_1:
 	.string "BOO!$"
 
 GengarDialog_Text_0:
-# 34 "data/maps/DaycareNoivernCave/scripts.pory"
+# 35 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Gengar$"
 
 GengarDialog_Text_1:
-# 35 "data/maps/DaycareNoivernCave/scripts.pory"
+# 36 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "How did you manage to pass\nthrough that rock?\pMaybe you've got a bit of\nGhost_type in you.\pMWAHAHA!\n$"
 
 LitwickDialog_Text_0:
-# 48 "data/maps/DaycareNoivernCave/scripts.pory"
+# 49 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Litwick$"
 
 LitwickDialog_Text_1:
-# 49 "data/maps/DaycareNoivernCave/scripts.pory"
+# 50 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Noivern is quite the challenge,\nisn't he?\pHere. Take these.\n$"
 
 LitwickDialog_Text_2:
-# 54 "data/maps/DaycareNoivernCave/scripts.pory"
+# 55 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "I know a Chansey will exchange\nthese to heal your wounds.$"
 
 LitwickDialog_Text_3:
-# 64 "data/maps/DaycareNoivernCave/scripts.pory"
+# 65 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Careful, that bat is fiesty!\n$"
 
 LitwickDialog_Text_4:
-# 75 "data/maps/DaycareNoivernCave/scripts.pory"
+# 76 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Noivern is quite the challenge,\nisn't he?$"
 
 MawileInCave_Text_0:
-# 87 "data/maps/DaycareNoivernCave/scripts.pory"
+# 88 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Mawile$"
 
 MawileInCave_Text_1:
-# 88 "data/maps/DaycareNoivernCave/scripts.pory"
+# 89 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Keep your guard up.\nA strong challenge is ahead.$"
 
 MawileInCave_Text_2:
-# 101 "data/maps/DaycareNoivernCave/scripts.pory"
+# 102 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Not many get this far...\nLet's see if you're clever or just lucky.$"
 
 MawileInCave_Text_3:
-# 108 "data/maps/DaycareNoivernCave/scripts.pory"
+# 109 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "You’ve got bite.\nMaybe we’re not so different.$"
 
 DuskullInCave_Text_0:
-# 170 "data/maps/DaycareNoivernCave/scripts.pory"
+# 171 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Duskull$"
 
 DuskullInCave_Text_1:
-# 171 "data/maps/DaycareNoivernCave/scripts.pory"
+# 172 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Even spirits respect strength.\pWander well, traveler.\n$"
 
 DuskullInCave_Text_2:
-# 184 "data/maps/DaycareNoivernCave/scripts.pory"
+# 185 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Not many dare to speak to me...\nYou must be bold.$"
 
 BattleVsNoivern_Text_0:
-# 252 "data/maps/DaycareNoivernCave/scripts.pory"
+# 253 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Noivern$"
 
 BattleVsNoivern_Text_1:
-# 253 "data/maps/DaycareNoivernCave/scripts.pory"
+# 254 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "You tread where echoes rule.\pLet's see if you can keep up with\nthe speed of sound!.$"
 
 BattleVsNoivern_Text_2:
-# 264 "data/maps/DaycareNoivernCave/scripts.pory"
+# 265 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "You have gained the ability to\ntransform into Noivern!$"
 
 BattleVsNoivern_Text_3:
-# 270 "data/maps/DaycareNoivernCave/scripts.pory"
+# 271 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Soar high gooey friend.\pYou'll need my flight to reach your\ndestination$"

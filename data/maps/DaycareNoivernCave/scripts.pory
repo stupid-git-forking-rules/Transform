@@ -27,6 +27,7 @@ script HaunterDialog{
 
 script GengarDialog{
     lock
+    playse(SE_PIN)
     applymovement(Gengar, moves(face_player))
     waitmovement(Gengar)
     applymovement(Gengar, Common_Movement_ExclamationMark)

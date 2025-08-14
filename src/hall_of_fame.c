@@ -676,8 +676,8 @@ static void Task_Hof_DoConfetti(u8 taskId)
         BeginNormalPaletteFade(sHofFadePalettes, 0, 12, 12, RGB(16, 29, 24));
         FillWindowPixelBuffer(0, PIXEL_FILL(0));
         CopyWindowToVram(0, COPYWIN_FULL);
-        gTasks[taskId].tFrameCount = 7;
-        gTasks[taskId].func = Task_Hof_WaitToDisplayPlayer;
+        gTasks[taskId].tFrameCount = 0;
+        gTasks[taskId].func = Task_Hof_ExitOnKeyPressed;
     }
 }
 

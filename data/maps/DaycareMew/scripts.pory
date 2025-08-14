@@ -12,6 +12,7 @@ script DittoEnd{
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             giveitem(ITEM_SITRUS_BERRY, 5)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            setflag(FLAG_DITTO_SITRUS)
             waitmessage
             release
             end

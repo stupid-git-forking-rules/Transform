@@ -503,13 +503,13 @@ u32 ScriptGiveDitto(u16 species, u8 level, u16 item)
 {
     bool8 ShinyDitto = FALSE;
 
-    if (Random() < 1311) 
+    if (Random() < 32768)  // 1311 for 1/50 odds
     {
         ShinyDitto = TRUE;
     }
     u8 evs[NUM_STATS]        = {0, 0, 0, 0, 0, 0};
-    u8 ivs[NUM_STATS]        = {MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1,   // We pass "MAX_PER_STAT_IVS + 1" here to ensure that
-                                MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1};  // ScriptGiveMonParameterized won't touch the stats' IV.
+    u8 ivs[NUM_STATS]        = {31, 31, 31,   // We pass "MAX_PER_STAT_IVS + 1" here to ensure that
+                                31, 31, 31};  // ScriptGiveMonParameterized won't touch the stats' IV.
     u16 moves[MAX_MON_MOVES] = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE};
 
     return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, ShinyDitto, FALSE, NUMBER_OF_MON_TYPES, 0);

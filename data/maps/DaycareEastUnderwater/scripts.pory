@@ -12,7 +12,6 @@ script HorseaDialog{
 
 script ShellderDialog{
     lock
-    faceplayer
     msgbox("Shellder is intensely staring\nupward.\pIt looks ready to snap onto its\ntarget.", MSGBOX_DEFAULT)
     waitmessage
     release
@@ -101,7 +100,7 @@ script CorsolaDialog{
 
 script ClauncherDialog{
     lock
-    msgbox("It's impossible to get this\nClauncher's attention...\pIt's humming and snapping its\npinchers to the theme of\l'Under the Sea'", MSGBOX_DEFAULT)
+    msgbox("It's impossible to get this\nClauncher's attention...\pIt's humming and snapping its\npinchers to the theme of\l'Under the Sea'.", MSGBOX_DEFAULT)
     waitmessage
     release
     end
