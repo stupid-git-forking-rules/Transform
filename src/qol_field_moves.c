@@ -623,18 +623,12 @@ bool32 PartyHasMonLearnsKnowsFieldMove(u16 itemId)
 bool32 LeadMonKnowsFieldMove(u16 itemId)
 {
     struct Pokemon *mon;
-    u32 species, monCanLearnTM;
     u16 moveId = ItemIdToBattleMoveId(itemId);
     gSpecialVar_0x8004 = 0;
-
     mon = &gPlayerParty[0];
-    species = GetMonData(mon, MON_DATA_SPECIES, NULL);
 
-    monCanLearnTM = CanTeachMove(mon,moveId);
-    if ((PartyCanLearnMoveLevelUp(species, moveId)
-            || (monCanLearnTM) == ALREADY_KNOWS_MOVE)
-            || (monCanLearnTM) == CAN_LEARN_MOVE)
-        return SetMonResultVariables(0 ,species);
+    if (!GetMonData(mon, MON_DATA_IS_EGG) && MonKnowsMove(mon, moveId) == TRUE)
+        return TRUE;
 
     return FALSE;
 }

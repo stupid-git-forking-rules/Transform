@@ -1734,7 +1734,7 @@ void SetPlayerAvatarFieldMove(void)
 {
     if (PlayerIsDitto())
     {
-        TrySetPlayerAvatarTransformation(GetMonData(&gPlayerParty[(u8)gFieldEffectArguments[0]], MON_DATA_SPECIES));
+        TrySetPlayerAvatarTransformation(GetMonData(&gPlayerParty[(u8)gFieldEffectArguments[0]], MON_DATA_SPECIES), FALSE);
     }
     else
     {
