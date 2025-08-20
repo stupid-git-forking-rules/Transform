@@ -20,8 +20,7 @@ script DaycareIntro{
     waitmovement(LOCALID_PLAYER)
     waitmovement(VaporeonIntro)
     speakername("Vaporeon")
-    msgbox("I don't care what the Daycare Man\nsays, I'm NOT into you.\pJust because Brendan put us in here\ntogether, doesn't mean I have to\llike you.\pYou'll just have to find your Egg\nsome other way.", MSGBOX_AUTOCLOSE)
-    waitmessage
+    msgbox("I don't care what they Daycare Man\nsays, I'm not interested going on\lan Egg hunt.\pJust because Brendan put us in here\ntogether doesn't mean I have to\lhelp you.\pI'm going for a swim.\pYou'll just have to find that Egg\non your own.", MSGBOX_AUTOCLOSE)    waitmessage
     applymovement(VaporeonIntro, moves(walk_fast_right*8))
     playse(SE_FLEE)
     waitmovement(VaporeonIntro)
@@ -146,8 +145,7 @@ script MimikyuDialog{
     else
     {
         speakername("Azumarill")
-        msgbox("Oh!\nThank goodness you aren't a Ditto...\pMy trainer keeps putting me in here\nwith Dittos hoping we'll breed.\pThey even gave me this Sea Incence\nto set the mood...\pThey're just not my type.", MSGBOX_DEFAULT)
-        waitmessage
+        msgbox("Oh!\nThank goodness you aren't a Ditto...\pMy trainer keeps putting me in here\nwith Dittos hoping we'll find an\lEgg.\pThey gave me this Sea Incence,\nbut I'm not sure how that would\lhelp us on our hunt...", MSGBOX_DEFAULT)        waitmessage
         release
         end
     }
@@ -322,8 +320,7 @@ script VaporeonDialog{
     lock
     faceplayer
     speakername("Vaporeon")
-    msgbox("Ew!\pGet away from me.\pI know it's you Ditto.\pGoodness,\nwhy is everyone so into me?")
-    waitmessage
+    msgbox("Ugh!\pWhy does everyone keep asking me\nto help them search for Eggs?\pCan't you see I'm busy?\n", MSGBOX_DEFAULT)    waitmessage
     release
     end
 }
