@@ -880,7 +880,7 @@ static const struct FadeColors sFadeColors[] = {
     },
 
     {
-        .color1 = RGB2GBA(140, 180, 240),
+        .color1 = RGB2GBA(192, 120, 224),
         .color2 = RGB2GBA(200, 160, 200),
         .colorIndex = 9
     }
