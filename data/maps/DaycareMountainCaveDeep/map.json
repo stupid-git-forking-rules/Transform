@@ -90,7 +90,7 @@
       "local_id": "NoIce",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(EISCUE_NOICE)",
       "x": 12,
-      "y": 33,
+      "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,

@@ -707,10 +707,10 @@
 #define FLAG_HUNTAIL_BATTLE  0x294 // battle huntail
 #define FLAG_BEAT_MEW  0x295 // beat mew
 #define FLAG_DITTO_SITRUS  0x296 // ditto give sitrus berries
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
-#define FLAG_UNUSED_0x299  0x299 // Unused Flag
-#define FLAG_UNUSED_0x29A  0x29A // Unused Flag
+#define FLAG_SHOW_BRENDAN_INTRO  0x297 // stop hiding brendan intro.
+#define FLAG_HIDE_VAPOREON_INTRO  0x298 // remove vapoeon after intro so she goes into the pond.
+#define FLAG_HIDE_INTRO_DAYCAREMAN  0x299 // Remove daycareman after intro.
+#define FLAG_SPAWN_INVISIBLE  0x29A // spawn the player invisible for scripting.
 #define FLAG_UNUSED_0x29B  0x29B // Unused Flag
 #define FLAG_UNUSED_0x29C  0x29C // Unused Flag
 #define FLAG_UNUSED_0x29D  0x29D // Unused Flag
