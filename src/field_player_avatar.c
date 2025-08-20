@@ -866,7 +866,14 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             if (FlagGet(FLAG_RUNNING_SHOES_TOGGLE) == FALSE)
             {
                 FlagSet(FLAG_RUNNING_SHOES_TOGGLE);
-                PlayerWalkFast(direction);
+                if (VarGet(VAR_TRANSFORM_MON) == SPECIES_NOIVERN)
+                {
+                    PlayerNoivernRun(direction);
+                }
+                else
+                {
+                    PlayerWalkFast(direction);
+                }
                 gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
                 return;
             }
@@ -880,13 +887,27 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
                 }
                 else
                 {
-                    PlayerWalkFast(direction);
+                    if (VarGet(VAR_TRANSFORM_MON) == SPECIES_NOIVERN)
+                    {
+                        PlayerNoivernRun(direction);
+                    }
+                    else
+                    {
+                        PlayerWalkFast(direction);
+                    }
                     gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
                 }
                 return;
             } 
         }
-        PlayerWalkFast(direction);
+        if (VarGet(VAR_TRANSFORM_MON) == SPECIES_NOIVERN)
+        {
+            PlayerNoivernRun(direction);
+        }
+        else
+        {
+            PlayerWalkFast(direction);
+        }
         gPlayerAvatar.flags |= PLAYER_AVATAR_FLAG_DASH;
         return;
      }
@@ -1271,6 +1292,11 @@ void PlayerRideWaterCurrent(u8 direction)
 void PlayerWalkFaster(u8 direction)
 {
     PlayerSetAnimId(GetWalkFasterMovementAction(direction), COPY_MOVE_WALK);
+}
+
+void PlayerNoivernRun(u8 direction)
+{
+    PlayerSetAnimId(GetNoivernRunMovementAction(direction), COPY_MOVE_WALK);
 }
 
 static void PlayerRun(u8 direction)

@@ -98,6 +98,14 @@ u8 MovementAction_WalkFasterLeft_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFasterLeft_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFasterRight_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFasterRight_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_NoivernRunDown_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_NoivernRunDown_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_NoivernRunRight_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_NoivernRunRight_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_NoivernRunLeft_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_NoivernRunLeft_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_NoivernRunUp_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_NoivernRunUp_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SlideDown_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SlideDown_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_SlideUp_Step0(struct ObjectEvent *, struct Sprite *);
@@ -336,6 +344,10 @@ u8 (*const gMovementActionFuncs_RideWaterCurrentDown[])(struct ObjectEvent *, st
 u8 (*const gMovementActionFuncs_RideWaterCurrentUp[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RideWaterCurrentLeft[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_RideWaterCurrentRight[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_NoivernRunDown[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_NoivernRunUp[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_NoivernRunLeft[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_NoivernRunRight[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFasterDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFasterUp[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFasterLeft[])(struct ObjectEvent *, struct Sprite *);
@@ -514,6 +526,10 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_WALK_FASTER_UP] = gMovementActionFuncs_WalkFasterUp,
     [MOVEMENT_ACTION_WALK_FASTER_LEFT] = gMovementActionFuncs_WalkFasterLeft,
     [MOVEMENT_ACTION_WALK_FASTER_RIGHT] = gMovementActionFuncs_WalkFasterRight,
+    [MOVEMENT_ACTION_NOIVERN_RUN_DOWN] = gMovementActionFuncs_NoivernRunDown,
+    [MOVEMENT_ACTION_NOIVERN_RUN_UP] = gMovementActionFuncs_NoivernRunUp,
+    [MOVEMENT_ACTION_NOIVERN_RUN_LEFT] = gMovementActionFuncs_NoivernRunLeft,
+    [MOVEMENT_ACTION_NOIVERN_RUN_RIGHT] = gMovementActionFuncs_NoivernRunRight,
     [MOVEMENT_ACTION_SLIDE_DOWN] = gMovementActionFuncs_SlideDown,
     [MOVEMENT_ACTION_SLIDE_UP] = gMovementActionFuncs_SlideUp,
     [MOVEMENT_ACTION_SLIDE_LEFT] = gMovementActionFuncs_SlideLeft,
@@ -983,6 +999,30 @@ u8 (*const gMovementActionFuncs_RideWaterCurrentLeft[])(struct ObjectEvent *, st
 u8 (*const gMovementActionFuncs_RideWaterCurrentRight[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_RideWaterCurrentRight_Step0,
     MovementAction_RideWaterCurrentRight_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+u8 (*const gMovementActionFuncs_NoivernRunDown[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_NoivernRunDown_Step0,
+    MovementAction_NoivernRunDown_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+u8 (*const gMovementActionFuncs_NoivernRunUp[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_NoivernRunUp_Step0,
+    MovementAction_NoivernRunUp_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+u8 (*const gMovementActionFuncs_NoivernRunLeft[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_NoivernRunLeft_Step0,
+    MovementAction_NoivernRunLeft_Step1,
+    MovementAction_PauseSpriteAnim,
+};
+
+u8 (*const gMovementActionFuncs_NoivernRunRight[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_NoivernRunRight_Step0,
+    MovementAction_NoivernRunRight_Step1,
     MovementAction_PauseSpriteAnim,
 };
 

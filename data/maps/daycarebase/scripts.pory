@@ -22,10 +22,10 @@ script DaycareIntro{
     speakername("Vaporeon")
     msgbox("I don't care what the Daycare Man\nsays, I'm NOT into you.\pJust because Brendan put us in here\ntogether, doesn't mean I have to\llike you.\pYou'll just have to find your Egg\nsome other way.", MSGBOX_AUTOCLOSE)
     waitmessage
-    playse(SE_FLEE)
-    waitse
     applymovement(VaporeonIntro, moves(walk_fast_right*8))
+    playse(SE_FLEE)
     waitmovement(VaporeonIntro)
+    waitse
     removeobject(VaporeonIntro)
     setflag(FLAG_HIDE_VAPOREON_INTRO)
     setvar(VAR_INTRO_PLAYED, 1)
@@ -259,6 +259,8 @@ script DaycareOldManDialog{
             waitmessage
             speakername("Daycare Man")
             msgbox("Thank your for the Egg!\pAs a reward, take this experience!\n", MSGBOX_DEFAULT)
+            removeobject(BrendanBiking)
+            setflag(FLAG_HIDE_BRENDAN_BIKE)
             waitmessage
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             playse(SE_EXP)

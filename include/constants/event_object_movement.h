@@ -259,6 +259,10 @@
 #define MOVEMENT_ACTION_SURF_STILL_UP                   0xAB
 #define MOVEMENT_ACTION_SURF_STILL_LEFT                 0xAC
 #define MOVEMENT_ACTION_SURF_STILL_RIGHT                0xAD
+#define MOVEMENT_ACTION_NOIVERN_RUN_DOWN                0xAE
+#define MOVEMENT_ACTION_NOIVERN_RUN_UP                  0xAF
+#define MOVEMENT_ACTION_NOIVERN_RUN_LEFT                0xB0
+#define MOVEMENT_ACTION_NOIVERN_RUN_RIGHT               0xB1
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF

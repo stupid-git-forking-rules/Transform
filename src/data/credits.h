@@ -66,7 +66,7 @@ enum
 static const u8 sCreditsText_EmptyString[]                    = _("");
 static const u8 sCreditsText_PkmnEmeraldVersion[]             = _("POKéMON TRANSFORM VERSION");
 static const u8 sCreditsText_Credits[]                        = _("Credits");
-static const u8 sCreditsText_RomHackers[]                     = _("Hck Developers");
+static const u8 sCreditsText_RomHackers[]                     = _("Hack Developers");
 static const u8 sCreditsText_ExecutiveDirector[]              = _("Executive Director");
 static const u8 sCreditsText_Director[]                       = _("Director");
 static const u8 sCreditsText_ArtDirector[]                    = _("Art Director");

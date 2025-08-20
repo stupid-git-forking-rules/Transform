@@ -1037,6 +1037,13 @@ const u8 gWalkFasterMovementActions[] = {
     [DIR_WEST] = MOVEMENT_ACTION_WALK_FASTER_LEFT,
     [DIR_EAST] = MOVEMENT_ACTION_WALK_FASTER_RIGHT,
 };
+const u8 gNoivernRunMovementActions[] = {
+    [DIR_NONE] = MOVEMENT_ACTION_NOIVERN_RUN_DOWN,
+    [DIR_SOUTH] = MOVEMENT_ACTION_NOIVERN_RUN_DOWN,
+    [DIR_NORTH] = MOVEMENT_ACTION_NOIVERN_RUN_UP,
+    [DIR_WEST] = MOVEMENT_ACTION_NOIVERN_RUN_LEFT,
+    [DIR_EAST] = MOVEMENT_ACTION_NOIVERN_RUN_RIGHT,
+};
 const u8 gSlideMovementActions[] = {
     [DIR_NONE] = MOVEMENT_ACTION_SLIDE_DOWN,
     [DIR_SOUTH] = MOVEMENT_ACTION_SLIDE_DOWN,
@@ -6790,6 +6797,7 @@ dirn_to_anim(GetWalkNormalMovementAction, gWalkNormalMovementActions);
 dirn_to_anim(GetWalkFastMovementAction, gWalkFastMovementActions);
 dirn_to_anim(GetRideWaterCurrentMovementAction, gRideWaterCurrentMovementActions);
 dirn_to_anim(GetWalkFasterMovementAction, gWalkFasterMovementActions);
+dirn_to_anim(GetNoivernRunMovementAction, gNoivernRunMovementActions);
 dirn_to_anim(GetSlideMovementAction, gSlideMovementActions);
 dirn_to_anim(GetPlayerRunMovementAction, gPlayerRunMovementActions);
 dirn_to_anim(GetJump2MovementAction, gJump2MovementActions);
@@ -7564,6 +7572,83 @@ bool8 MovementAction_WalkFastRight_Step1(struct ObjectEvent *objectEvent, struct
     }
     return FALSE;
 }
+
+bool8 MovementAction_NoivernRunRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FAST_2);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_EAST, MOVE_SPEED_FAST_2);    
+    return MovementAction_NoivernRunRight_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_NoivernRunRight_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_NoivernRunUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FAST_2);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_FAST_2);    
+    return MovementAction_NoivernRunUp_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_NoivernRunUp_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_NoivernRunLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FAST_2);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_WEST, MOVE_SPEED_FAST_2);    
+    return MovementAction_NoivernRunLeft_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_NoivernRunLeft_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_NoivernRunDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (objectEvent->directionOverwrite)
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FAST_2);
+    else
+        InitMovementNormal(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_FAST_2);    
+    return MovementAction_NoivernRunDown_Step1(objectEvent, sprite);
+}
+
+bool8 MovementAction_NoivernRunDown_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (UpdateMovementNormal(objectEvent, sprite))
+    {
+        sprite->sActionFuncId = 2;
+        return TRUE;
+    }
+    return FALSE;
+}
+
 
 
 static void InitMoveInPlace(struct ObjectEvent *objectEvent, struct Sprite *sprite, u8 direction, u8 animNum, u16 duration)
