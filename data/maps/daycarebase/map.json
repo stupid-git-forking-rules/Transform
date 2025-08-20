@@ -301,20 +301,21 @@
       "flag": "FLAG_ITEM_DAYCARE_BASE1"
     },
     {
-      "local_id": "Brendan",
+      "local_id": "BrendanBiking",
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_MACH_BIKE",
-      "x": 30,
+      "x": 11,
       "y": 52,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
       "movement_range_x": 15,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_BRENDAN_BIKE"
     },
     {
+      "local_id": "VaporeonIntro",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(VAPOREON)",
       "x": 21,
       "y": 40,
@@ -330,7 +331,7 @@
     {
       "local_id": "DaycareManIntro",
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
-      "x": 21,
+      "x": 20,
       "y": 41,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -340,6 +341,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_INTRO_DAYCAREMAN"
+    },
+    {
+      "local_id": "DittoIntro",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DITTO)",
+      "x": 20,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaycareBase_Ditto",
+      "flag": "0"
+    },
+    {
+      "local_id": "Brendan",
+      "graphics_id": "OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE",
+      "x": 10,
+      "y": 52,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_SHOW_BRENDAN_OUTRO"
     }
   ],
   "warp_events": [

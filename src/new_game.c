@@ -156,6 +156,7 @@ static void WarpToTruck(void)
     FlagSet(FLAG_NO_RUNNING);
     FlagSet(FLAG_SHOW_BRENDAN_INTRO);
     FlagSet(FLAG_SPAWN_INVISIBLE);
+    FlagSet(FLAG_SHOW_BRENDAN_OUTRO);
     WarpIntoMap();
 }
 
