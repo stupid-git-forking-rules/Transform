@@ -1227,11 +1227,11 @@ KecleonDialog_Text_0:
 
 KecleonDialog_Text_1:
 # 119 "data/maps/daycarebase/scripts.pory"
-	.string "Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.\pDo you know?\pI've always heard of Dittos\nholding onto eggs...$"
+	.string "Where do Eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.\pDo you know?\pI've always heard of Dittos\nholding onto Eggs...$"
 
 KecleonDialog_Text_2:
 # 127 "data/maps/daycarebase/scripts.pory"
-	.string "Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.$"
+	.string "Where do Eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.$"
 
 AzumarillDialog_Text_0:
 # 140 "data/maps/daycarebase/scripts.pory"
@@ -1247,7 +1247,7 @@ AzumarillDialog_Text_2:
 
 DaycareOldManDialog_Text_0:
 # 166 "data/maps/daycarebase/scripts.pory"
-	.string "Back from exploring the Daycare?\pAh!\nBut where is your egg!\pKeep doing whatever it is you\nDittos do and come back when\lyou have one!$"
+	.string "Back from exploring the Daycare?\pAh!\nBut where is your Egg!\pKeep doing whatever it is you\nDittos do and come back when\lyou have one!$"
 
 DaycareOldManDialog_Text_1:
 # 173 "data/maps/daycarebase/scripts.pory"
@@ -1259,7 +1259,7 @@ DaycareOldManDialog_Text_2:
 
 DaycareOldManDialog_Text_3:
 # 199 "data/maps/daycarebase/scripts.pory"
-	.string "Why what do we have here?\nGoodness!\pYou're holding an Egg!\pWherever did you get this?\pIt's the darndest thing.\pYou Pokémon always seem to find\nthese eggs, but I can never figure\lout where they come from.\pWould you like to give me the Egg\nso that I may give it to your\lTrainer?$"
+	.string "Why what do we have here?\nGoodness!\pYou're holding an Egg!\pWherever did you get this?\pIt's the darndest thing.\pYou Pokémon always seem to find\nthese Eggs, but I can never figure\lout where they come from.\pWould you like to give me the Egg\nso that I may give it to your\lTrainer?$"
 
 DaycareOldManDialog_Text_4:
 # 205 "data/maps/daycarebase/scripts.pory"
@@ -1267,7 +1267,7 @@ DaycareOldManDialog_Text_4:
 
 DaycareOldManDialog_Text_5:
 # 209 "data/maps/daycarebase/scripts.pory"
-	.string "Thank your for the Egg!\pAs a reward, take this experience!\n$"
+	.string "Thank your for the Egg!\pAs a reward, take this EXP!\n$"
 
 DaycareOldManDialog_Text_6:
 # 219 "data/maps/daycarebase/scripts.pory"
@@ -1323,7 +1323,7 @@ CombeeDialog_Text_0:
 
 CombeeDialog_Text_1:
 # 379 "data/maps/daycarebase/scripts.pory"
-	.string "I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nexperience here is nothing more\lthan a big ole myth!$"
+	.string "I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nEXP here is nothing more\lthan a big ole myth!$"
 
 Porygon2Dialog_Text_0:
 # 388 "data/maps/daycarebase/scripts.pory"

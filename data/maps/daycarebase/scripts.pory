@@ -116,7 +116,7 @@ script MimikyuDialog{
     if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Kecleon")
-        msgbox("Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.\pDo you know?\pI've always heard of Dittos\nholding onto eggs...", MSGBOX_DEFAULT)
+        msgbox("Where do Eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.\pDo you know?\pI've always heard of Dittos\nholding onto Eggs...", MSGBOX_DEFAULT)
         waitmessage
         release
         end
@@ -124,7 +124,7 @@ script MimikyuDialog{
     else
     {
         speakername("Kecleon")
-        msgbox("Where do eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.", MSGBOX_DEFAULT)
+        msgbox("Where do Eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.", MSGBOX_DEFAULT)
         waitmessage
         release
         end
@@ -163,7 +163,7 @@ script DaycareOldManDialog{
         if(var(VAR_TRANSFORM_MON)==SPECIES_DITTO)
         {
         speakername("Daycare Man")
-	    msgbox("Back from exploring the Daycare?\pAh!\nBut where is your egg!\pKeep doing whatever it is you\nDittos do and come back when\lyou have one!", MSGBOX_DEFAULT)
+	    msgbox("Back from exploring the Daycare?\pAh!\nBut where is your Egg!\pKeep doing whatever it is you\nDittos do and come back when\lyou have one!", MSGBOX_DEFAULT)
         waitmessage
         release
         end
@@ -196,7 +196,7 @@ script DaycareOldManDialog{
         applymovement(DaycareMan, Common_Movement_ExclamationMark)
         waitmovement(DaycareMan)        
         speakername("Daycare Man")
-        msgbox("Why what do we have here?\nGoodness!\pYou're holding an Egg!\pWherever did you get this?\pIt's the darndest thing.\pYou Pokémon always seem to find\nthese eggs, but I can never figure\lout where they come from.\pWould you like to give me the Egg\nso that I may give it to your\lTrainer?", MSGBOX_YESNO)
+        msgbox("Why what do we have here?\nGoodness!\pYou're holding an Egg!\pWherever did you get this?\pIt's the darndest thing.\pYou Pokémon always seem to find\nthese Eggs, but I can never figure\lout where they come from.\pWould you like to give me the Egg\nso that I may give it to your\lTrainer?", MSGBOX_YESNO)
         waitmessage
         if(var(VAR_RESULT) == YES)
         {  
@@ -206,7 +206,7 @@ script DaycareOldManDialog{
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
             speakername("Daycare Man")
-            msgbox("Thank your for the Egg!\pAs a reward, take this experience!\n", MSGBOX_DEFAULT)
+            msgbox("Thank your for the Egg!\pAs a reward, take this EXP!\n", MSGBOX_DEFAULT)
             waitmessage
             removeobject(BrendanBiking)
             setflag(FLAG_HIDE_BRENDAN_BIKE)
@@ -258,7 +258,7 @@ script DaycareOldManDialog{
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
             speakername("Daycare Man")
-            msgbox("Thank your for the Egg!\pAs a reward, take this experience!\n", MSGBOX_DEFAULT)
+            msgbox("Thank your for the Egg!\pAs a reward, take this EXP!\n", MSGBOX_DEFAULT)
             removeobject(BrendanBiking)
             setflag(FLAG_HIDE_BRENDAN_BIKE)
             waitmessage
@@ -376,7 +376,7 @@ script CombeeDialog{
     lock
     faceplayer
     speakername("Combee")
-	msgbox("I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nexperience here is nothing more\lthan a big ole myth!", MSGBOX_DEFAULT)
+	msgbox("I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nEXP here is nothing more\lthan a big ole myth!", MSGBOX_DEFAULT)
     waitmessage
     release
     end

@@ -77,7 +77,7 @@ script AlolanExeggutorDialog {
     lock
     faceplayer
     speakername("Exeggutor")
-    msgbox("I hang out here all day long,\nbut I'm still not sure how to\lgain experience.\pI haven't interacted with the\nDaycare Man much though.\pMaybe he controls it?\pIt's all so confusing.\n", MSGBOX_DEFAULT)
+    msgbox("I hang out here all day long,\nbut I'm still not sure how to\lgain EXP.\pI haven't interacted with the\nDaycare Man much though.\pMaybe he controls it?\pIt's all so confusing.\n", MSGBOX_DEFAULT)
     waitmessage
     release
     end

@@ -498,7 +498,7 @@ AlolanExeggutorDialog_Text_0:
 
 AlolanExeggutorDialog_Text_1:
 # 80 "data/maps/DaycareEast/scripts.pory"
-	.string "I hang out here all day long,\nbut I'm still not sure how to\lgain experience.\pI haven't interacted with the\nDaycare Man much though.\pMaybe he controls it?\pIt's all so confusing.\n$"
+	.string "I hang out here all day long,\nbut I'm still not sure how to\lgain EXP.\pI haven't interacted with the\nDaycare Man much though.\pMaybe he controls it?\pIt's all so confusing.\n$"
 
 WingullDialog_Text_0:
 # 89 "data/maps/DaycareEast/scripts.pory"
