@@ -1,3 +1,4 @@
+
 	.align 2
 
 gSongTable::
@@ -611,6 +612,18 @@ gSongTable::
 	song ph_nurse_blend, 2, 2
 	song ph_nurse_held, 2, 2
 	song ph_nurse_solo, 2, 2
+	song mus_pmd_heartwarming, 0, 0
+	song mus_pmd_base, 0, 0
+	song mus_pmd_battle_intro, 0, 0
+	song mus_pmd_boss_intro, 0, 0
+	song mus_pmd_desert, 0, 0
+	song mus_pmd_happiness, 0, 0
+	song mus_pmd_jungle, 0, 0
+	song mus_pmd_lake, 0, 0
+	song mus_pmd_mew, 0, 0
+	song mus_pmd_mountain, 0, 0
+	song mus_pmd_noiverncave, 0, 0
+	song mus_pmd_volcano, 0, 0
 
 	.align 2
 dummy_song_header:

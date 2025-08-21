@@ -546,6 +546,20 @@
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
 
+//pmd music
+#define MUS_PMD_HEARTWARMING        610
+#define MUS_PMD_BASE                611
+#define MUS_PMD_BATTLE_INTRO        612
+#define MUS_PMD_BOSS_INTRO          613
+#define MUS_PMD_DESERT              614
+#define MUS_PMD_HAPPINESS           615
+#define MUS_PMD_JUNGLE              616
+#define MUS_PMD_LAKE                617
+#define MUS_PMD_MEW                 618
+#define MUS_PMD_MOUNTAIN            619
+#define MUS_PMD_NOIVERNCAVE         620
+#define MUS_PMD_VOLCANO             621
+
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF
