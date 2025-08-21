@@ -2,7 +2,7 @@
   "id": "MAP_DAYCARE_MOUNTAIN_CAVE",
   "name": "DaycareMountainCave",
   "layout": "LAYOUT_DAYCARE_MOUNTAIN_CAVE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_PMD_MOUNTAIN",
   "region_map_section": "MAPSEC_UNDERWATER_SOOTOPOLIS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

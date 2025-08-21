@@ -2,7 +2,7 @@
   "id": "MAP_EASTTO_DESERT",
   "name": "EasttoDesert",
   "layout": "LAYOUT_EASTTO_DESERT",
-  "music": "MUS_DUMMY",
+  "music": "MUS_PMD_BASE",
   "region_map_section": "MAPSEC_MAUVILLE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

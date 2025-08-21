@@ -2,7 +2,7 @@
   "id": "MAP_DAYCARE_MEW_FINALE",
   "name": "DaycareMewFinale",
   "layout": "LAYOUT_DAYCARE_MEW_FINALE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_PMD_MEW",
   "region_map_section": "MAPSEC_SEALED_CHAMBER",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

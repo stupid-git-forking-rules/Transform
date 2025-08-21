@@ -2,7 +2,7 @@
   "id": "MAP_DAYCARE_NOIVERN_CAVE",
   "name": "DaycareNoivernCave",
   "layout": "LAYOUT_DAYCARE_NOIVERN_CAVE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_PMD_NOIVERNCAVE",
   "region_map_section": "MAPSEC_NEW_MAUVILLE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
