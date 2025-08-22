@@ -1,9 +1,8 @@
 @ Interact with cuttable tree
 EventScript_CutTree::
 	lockall
-	//checkpartymove MOVE_CUT
-    checkpartylearnknowsfieldmove ITEM_HM01
 	goto_if_unset FLAG_BADGE01_GET, EventScript_CheckTreeCantCut
+	checkpartymove MOVE_CUT
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -14,14 +13,13 @@ EventScript_CutTree::
 	closemessage
 EventScript_CutTreeCommon:
 	isfollowerfieldmoveuser VAR_0x8004
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	isdittofieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_CUT_ON_TREE
 	waitstate
 EventScript_CutTreeDown:: @ fallthrough
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	call_if_eq VAR_0x8004, 1, EventScript_FollowerFieldMove
 	setflag FLAG_SYS_USE_CUT @ qol_field_moves
 	applymovement VAR_LAST_TALKED, Movement_CutTreeDown
 	waitmovement 0
@@ -68,9 +66,8 @@ EventScript_UseRockSmash::
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
-	//checkpartymove MOVE_ROCK_SMASH
-    checkpartylearnknowsfieldmove ITEM_HM06
 	goto_if_unset FLAG_BADGE03_GET, EventScript_CantSmashRock
+	checkpartymove MOVE_ROCK_SMASH
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
 	setfieldeffectargument 0, VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -82,14 +79,13 @@ EventScript_RockSmash::
 EventScript_RockSmashCommon:
 	@ check if follower should use the field move
 	isfollowerfieldmoveuser VAR_0x8004
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	isdittofieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_ROCK_SMASH
 	waitstate
 EventScript_SmashRock:: @ fallthrough
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	call_if_eq VAR_0x8004, 1, EventScript_FollowerFieldMove
 	setflag FLAG_SYS_USE_ROCK_SMASH @ qol_field_moves
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
@@ -235,8 +231,7 @@ EventScript_StrengthBoulder::
 	lockall
 	goto_if_unset FLAG_BADGE04_GET, EventScript_CantStrength
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
-	//checkpartymove MOVE_STRENGTH
-    checkpartylearnknowsfieldmove ITEM_HM04
+    checkpartymove MOVE_STRENGTH
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToStrength, MSGBOX_YESNO
@@ -301,8 +296,7 @@ Text_StrengthActivated:
 
 EventScript_UseWaterfall::
 	lockall
-	//checkpartymove MOVE_WATERFALL
-    checkpartylearnknowsfieldmove ITEM_HM07
+    checkpartymove MOVE_WATERFALL
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -339,8 +333,7 @@ Text_MonUsedWaterfall:
 
 EventScript_UseDive::
 	lockall
-	//checkpartymove MOVE_DIVE
-    checkpartylearnknowsfieldmove ITEM_HM08
+    checkpartymove MOVE_DIVE
 	goto_if_eq VAR_RESULT, FALSE, EventScript_CantDive
 	copyvar 0x8004 VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -367,8 +360,7 @@ EventScript_EndDive::
 
 EventScript_UseDiveUnderwater::
 	lockall
-	//checkpartymove MOVE_DIVE
-    checkpartylearnknowsfieldmove ITEM_HM08
+    checkpartymove MOVE_DIVE
 	goto_if_eq VAR_RESULT, FALSE, EventScript_CantSurface
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -395,14 +387,13 @@ EventScript_NoSurface::
 
 EventScript_DigCommon:
 	isfollowerfieldmoveuser VAR_0x8004
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
 	isdittofieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_DIG
 	waitstate
 EventScript_DigSealedChamber:: @ fallthrough
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	call_if_eq VAR_0x8004, 1, EventScript_FollowerFieldMove
 	callnative DoBrailleDigEffect
 	releaseall
 	end
@@ -415,7 +406,6 @@ EventScript_UseDig::
 
 EventScript_CutGrassCommon:
 	isfollowerfieldmoveuser VAR_0x8004
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if true
 	isdittofieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_CUT_ON_GRASS
@@ -459,11 +449,10 @@ EventScript_UseDefog::
 	msgbox Text_MonUsedFieldMove, MSGBOX_DEFAULT
 	closemessage
 	isfollowerfieldmoveuser VAR_0x8004
-	setfieldeffectargument 3, VAR_0x8004 @ skip pose if so
 	isdittofieldmoveuser VAR_0x8004
 	setfieldeffectargument 3, VAR_RESULT
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
-	call_if_eq VAR_0x8004, TRUE, EventScript_FollowerFieldMove
+	call_if_eq VAR_0x8004, 1, EventScript_FollowerFieldMove
 	waitmovement 0
 	setfieldeffectargument 0, VAR_RESULT
 	dofieldeffect FLDEFF_DEFOG

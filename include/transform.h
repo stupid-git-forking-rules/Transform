@@ -2,7 +2,7 @@
 #define GUARD_TRANSFORM_H
 
 bool32 PlayerIsDitto(void);
-void BeginPlayerTransformEffect(u8 type);
+void BeginPlayerTransformEffect(u8 type, bool8 unlockPlayerFieldControls);
 u16 GetValidTransformationSpeciesFromParty(u8 partyId);
 u8 BlitTransformationIconToWindow(u16 speciesId, u8 windowId, u16 x, u16 y, void *paletteDest);
 
@@ -18,8 +18,8 @@ u16 ReturnAvatarTrainerBackPicId(u16 avatarId);
 
 typedef void (*TransformFunc)(u8);
 
-void SetPlayerAvatarTransformation(u16 speciesId);
-void TrySetPlayerAvatarTransformation(u16 speciesId);
+void SetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls);
+void TrySetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls);
 TransformFunc GetTransformationFunc(u16 speciesId);
 
 #define TRANSFORM_TYPE_PLAYER_SPECIES 1

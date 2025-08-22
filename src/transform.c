@@ -121,8 +121,9 @@ u16 ReturnAvatarTrainerBackPicId(u16 avatarId)
 }
 
 EWRAM_DATA u8 gPlayerTransformEffectActive = FALSE;
+#define unlockFieldControls data[0]
 
-void BeginPlayerTransformEffect(u8 type)
+void BeginPlayerTransformEffect(u8 type, bool8 unlockPlayerFieldControls)
 {
     struct Sprite *sprite = &gSprites[gPlayerAvatar.spriteId];
     if (sprite)
@@ -132,6 +133,7 @@ void BeginPlayerTransformEffect(u8 type)
         sprite->oam.priority = 2; 
         gPlayerTransformEffectActive = TRUE; 
         u8 taskId = CreateTask(UpdatePlayerTransformAnimation, 0xFF);
+        gTasks[taskId].unlockFieldControls = unlockPlayerFieldControls;
     }
 }
 
@@ -149,10 +151,15 @@ void EndPlayerTransformAnimation(struct Sprite *sprite, u8 taskId)
     ObjectEventTurn(playerObjectEvent, playerObjectEvent->movementDirection);
     SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
     ObjectEventSetHeldMovement(playerObjectEvent, GetFaceDirectionMovementAction(playerObjectEvent->facingDirection));
-    gPlayerAvatar.preventStep = FALSE;
-    UnlockPlayerFieldControls();
+    if (gTasks[taskId].unlockFieldControls)
+    {
+        gPlayerAvatar.preventStep = FALSE;
+        UnlockPlayerFieldControls();
+    }
     return DestroyTask(taskId);
 }
+
+#undef unlockFieldControls
 
 // Main update logic for the player transform effect 
 void UpdatePlayerTransformAnimation(u8 taskId)
@@ -249,11 +256,11 @@ void SetPlayerAvatarFromScript(struct ScriptContext *ctx)
     if (PlayerIsDitto())
         TransformDittoBoxMon(speciesId);
 
-    BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
+    BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES, TRUE);
     PlaySE(SE_M_TELEPORT);
 }
 
-void SetPlayerAvatarTransformation(u16 speciesId)
+void SetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls)
 {
     if (!IsSpeciesValidTransformation(speciesId))
         return;
@@ -265,16 +272,16 @@ void SetPlayerAvatarTransformation(u16 speciesId)
     if (PlayerIsDitto())
         TransformDittoBoxMon(speciesId);
 
-    BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES);
+    BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES, UnlockPlayerFieldControls);
     PlaySE(SE_M_TELEPORT);
 }
 
-void TrySetPlayerAvatarTransformation(u16 speciesId)
+void TrySetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls)
 {
     if (gSaveBlock2Ptr->pokemonAvatarSpecies == speciesId)
         return;
     
-    SetPlayerAvatarTransformation(speciesId);
+    SetPlayerAvatarTransformation(speciesId, UnlockPlayerFieldControls);
 }
 
 void TryCreatePokemonAvatarSpriteBob(void)
