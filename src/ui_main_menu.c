@@ -858,7 +858,7 @@ static void DestroyMonIcons()
 //
 //  Print The Text For Dex Num, Badges, Name, Playtime, Location
 //
-static const u8 sText_DexNum[] = _("Transformations {STR_VAR_1}");
+static const u8 sText_DexNum[] = _("XFORMS {STR_VAR_1}");
 static const u8 sText_Badges[] = _("Badges {STR_VAR_1}");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
@@ -892,7 +892,7 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
             dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
         else
             dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
-        ConvertIntToDecimalStringN(gStringVar1, dexCount, STR_CONV_MODE_RIGHT_ALIGN, 4);
+        ConvertIntToDecimalStringN(gStringVar1, dexCount, STR_CONV_MODE_LEFT_ALIGN, 4);
         StringExpandPlaceholders(gStringVar4, sText_DexNum);
         AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 8 + 8, 16 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
     }

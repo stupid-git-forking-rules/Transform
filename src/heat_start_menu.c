@@ -914,12 +914,11 @@ static void HeatStartMenu_CreateSprites(void)
     }
     else if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE) 
     {
-        sHeatStartMenu->spriteIdPokedex     = CreateSpriteBasedOnFlashLevel(&gSpriteIconPokedex,     ICON_POS_X -1, ICON_POS_1,    0);
-        sHeatStartMenu->spriteIdParty       = CreateSpriteBasedOnFlashLevel(&gSpriteIconParty,       ICON_POS_X,    ICON_POS_2 -1, 0);
-        sHeatStartMenu->spriteIdBag         = CreateSpriteBasedOnFlashLevel(&gSpriteIconBag,         ICON_POS_X,    ICON_POS_3 +1, 0);
-        //sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_4 +2, 0);
-        sHeatStartMenu->spriteIdSave        = CreateSpriteBasedOnFlashLevel(&gSpriteIconSave,        ICON_POS_X,    ICON_POS_4 +2, 0);
-        sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_5 -1, 0);
+        sHeatStartMenu->spriteIdParty       = CreateSpriteBasedOnFlashLevel(&gSpriteIconParty,       ICON_POS_X,    ICON_POS_1,    0);
+        sHeatStartMenu->spriteIdBag         = CreateSpriteBasedOnFlashLevel(&gSpriteIconBag,         ICON_POS_X,    ICON_POS_2 +7, 0);
+        //sHeatStartMenu->spriteIdTrainerCard = CreateSpriteBasedOnFlashLevel(&gSpriteIconTrainerCard, ICON_POS_X,    ICON_POS_3 +3, 0);
+        sHeatStartMenu->spriteIdSave        = CreateSpriteBasedOnFlashLevel(&gSpriteIconSave,        ICON_POS_X,    ICON_POS_3 +17, 0);
+        sHeatStartMenu->spriteIdOptions     = CreateSpriteBasedOnFlashLevel(&gSpriteIconOptions,     ICON_POS_X,    ICON_POS_4 + 20, 0);
     return;
     }
     else if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE) 
@@ -1447,7 +1446,7 @@ static void ShowSaveInfoWindow(void)
     u32 xOffset;
     u32 yOffset;
 
-    if (!FlagGet(FLAG_SYS_POKEDEX_GET))
+    if (FlagGet(FLAG_SYS_POKEDEX_GET))
         saveInfoWindow.height -= 2;
     
     sSaveInfoWindowId = AddWindow(&saveInfoWindow);
@@ -1471,13 +1470,13 @@ static void ShowSaveInfoWindow(void)
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     PrintPlayerNameOnWindow(sSaveInfoWindowId, gStringVar4, xOffset, yOffset);
 
-    // Print badge count
+   /* // Print badge count
     yOffset += 16;
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL);
     BufferSaveMenuText(SAVE_MENU_BADGES, gStringVar4, color);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
-
+*/
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
     {
         // Print pokedex count
@@ -1719,9 +1718,8 @@ static void HeatStartMenu_HandleInput_Move(enum NavigationDirection direction, e
 
             // Apply conditional checks based on flags
             if (option == MENU_POKEDEX) {
-                if (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE) {
-                    addOption = FALSE; // Don't add Pokedex if flag isn't set
-                }
+                addOption = FALSE; // Don't add Pokedex if flag isn't set
+    
             } else if (option == MENU_PARTY) {
                 if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE) {
                     addOption = FALSE; // Don't add Party if flag isn't set
