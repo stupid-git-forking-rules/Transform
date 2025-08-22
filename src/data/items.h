@@ -8881,20 +8881,20 @@ const struct Item gItemsInfo[] =
 
     [ITEM_AIR_BALLOON] =
     {
-        .name = _("Air Balloon"),
+        .name = _("Mythical Egg"),
         .price = (I_PRICE >= GEN_9) ? 15000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
         .holdEffect = HOLD_EFFECT_AIR_BALLOON,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
-            "Makes the holder\n"
-            "float but bursts\n"
-            "if hit by an attack."),
+            "A mythical Egg\n"
+            "obtained from a long\n"
+            "journey for Brendan."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
-        .iconPic = gItemIcon_AirBalloon,
-        .iconPalette = gItemIconPalette_AirBalloon,
+        .iconPic = gItemIcon_LuckyEgg,
+        .iconPalette = gItemIconPalette_LuckyEgg,
     },
 
     [ITEM_RED_CARD] =

@@ -18,16 +18,18 @@ GorebyssInCave::
 # 21 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	waitmovement Gorebyss
 # 22 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
+	delay 60
 # 23 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername GorebyssInCave_Text_0
 # 24 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_GOREBYSS, 25
+	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
 # 25 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_GOREBYSS, 25
 # 26 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 27 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 28 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq GorebyssInCave_4
 	return
@@ -46,390 +48,392 @@ GorebyssInCave_1:
 	end
 
 GorebyssInCave_4:
-# 29 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
 # 30 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
+	speakername GorebyssInCave_Text_0
 # 31 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_GOREBYSS_BATTLE
+	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
 # 32 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	setflag FLAG_GOREBYSS_BATTLE
 # 33 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 34 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 
 GorebyssInCaveTrigger::
-# 40 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 41 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	goto_if_unset FLAG_GOREBYSS_BATTLE, GorebyssInCaveTrigger_1
 	return
 
 GorebyssInCaveTrigger_1:
-# 42 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	special PlayTrainerEncounterMusic
 # 43 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Gorebyss, Common_Movement_ExclamationMark
+	special PlayTrainerEncounterMusic
 # 44 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmovement
+	applymovement Gorebyss, Common_Movement_ExclamationMark
 # 45 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	delay 40
+	waitmovement Gorebyss
 # 46 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	delay 60
 # 47 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 48 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	switch VAR_TEMP_1
-# 49 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 50 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	case 5, GorebyssInCaveTrigger_4
-# 65 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 66 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	case 6, GorebyssInCaveTrigger_5
-# 82 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 83 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	case 7, GorebyssInCaveTrigger_6
-# 99 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 100 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	case 8, GorebyssInCaveTrigger_7
 	return
 
 GorebyssInCaveTrigger_4:
-# 50 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement LOCALID_PLAYER, GorebyssInCaveTrigger_Movement_0
 # 51 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
+	applymovement LOCALID_PLAYER, GorebyssInCaveTrigger_Movement_0
 # 52 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername GorebyssInCave_Text_0
 # 53 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_GOREBYSS, 25
+	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
 # 54 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_GOREBYSS, 25
 # 55 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 56 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 57 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq GorebyssInCaveTrigger_8
 	return
 
 GorebyssInCaveTrigger_5:
-# 66 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement LOCALID_PLAYER, GorebyssInCaveTrigger_Movement_0
 # 67 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Gorebyss, GorebyssInCaveTrigger_Movement_1
+	applymovement LOCALID_PLAYER, GorebyssInCaveTrigger_Movement_0
 # 68 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
+	applymovement Gorebyss, GorebyssInCaveTrigger_Movement_1
 # 69 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername GorebyssInCave_Text_0
 # 70 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_GOREBYSS, 25
+	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
 # 71 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_GOREBYSS, 25
 # 72 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 73 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 74 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq GorebyssInCaveTrigger_10
 	return
 
 GorebyssInCaveTrigger_6:
-# 83 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement LOCALID_PLAYER, GorebyssInCaveTrigger_Movement_0
 # 84 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Gorebyss, GorebyssInCaveTrigger_Movement_2
+	applymovement LOCALID_PLAYER, GorebyssInCaveTrigger_Movement_0
 # 85 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
+	applymovement Gorebyss, GorebyssInCaveTrigger_Movement_2
 # 86 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername GorebyssInCave_Text_0
 # 87 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_GOREBYSS, 25
+	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
 # 88 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_GOREBYSS, 25
 # 89 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 90 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 91 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq GorebyssInCaveTrigger_12
 	return
 
 GorebyssInCaveTrigger_7:
-# 100 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement LOCALID_PLAYER, GorebyssInCaveTrigger_Movement_0
 # 101 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Gorebyss, GorebyssInCaveTrigger_Movement_3
+	applymovement LOCALID_PLAYER, GorebyssInCaveTrigger_Movement_0
 # 102 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
+	applymovement Gorebyss, GorebyssInCaveTrigger_Movement_3
 # 103 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername GorebyssInCave_Text_0
 # 104 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_GOREBYSS, 25
+	msgbox GorebyssInCave_Text_2, MSGBOX_AUTOCLOSE
 # 105 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_GOREBYSS, 25
 # 106 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 107 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 108 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq GorebyssInCaveTrigger_14
 	return
 
 GorebyssInCaveTrigger_8:
-# 58 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
 # 59 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
+	speakername GorebyssInCave_Text_0
 # 60 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_GOREBYSS_BATTLE
+	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
 # 61 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	setflag FLAG_GOREBYSS_BATTLE
 # 62 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 63 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 GorebyssInCaveTrigger_10:
-# 75 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
 # 76 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
+	speakername GorebyssInCave_Text_0
 # 77 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_GOREBYSS_BATTLE
+	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
 # 78 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	setflag FLAG_GOREBYSS_BATTLE
 # 79 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 80 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 GorebyssInCaveTrigger_12:
-# 92 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
 # 93 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
+	speakername GorebyssInCave_Text_0
 # 94 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_GOREBYSS_BATTLE
+	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
 # 95 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	setflag FLAG_GOREBYSS_BATTLE
 # 96 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 97 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 GorebyssInCaveTrigger_14:
-# 109 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername GorebyssInCave_Text_0
 # 110 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
+	speakername GorebyssInCave_Text_0
 # 111 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_GOREBYSS_BATTLE
+	msgbox GorebyssInCave_Text_3, MSGBOX_DEFAULT
 # 112 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	setflag FLAG_GOREBYSS_BATTLE
 # 113 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 114 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 
 HuntailInCave::
-# 121 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	lock
 # 122 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	faceplayer
+	lock
 # 123 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	faceplayer
+# 124 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	goto_if_set FLAG_HUNTAIL_BATTLE, HuntailInCave_1
-# 133 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Huntail, GorebyssInCave_Movement_0
 # 134 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmovement Huntail
+	applymovement Huntail, GorebyssInCave_Movement_0
 # 135 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 136 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Huntail, Common_Movement_ExclamationMark
-# 137 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	waitmovement Huntail
+# 136 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	special PlayTrainerEncounterMusic
+# 137 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	applymovement Huntail, Common_Movement_ExclamationMark
 # 138 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
+	waitmovement Huntail
 # 139 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
+	delay 60
 # 140 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_HUNTAIL, 25
+	speakername HuntailInCave_Text_0
 # 141 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
 # 142 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_HUNTAIL, 25
 # 143 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	dowildbattle
+# 144 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 145 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq HuntailInCave_4
 	return
 
 HuntailInCave_1:
-# 125 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
 # 126 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_1, MSGBOX_DEFAULT
+	speakername HuntailInCave_Text_0
 # 127 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	msgbox HuntailInCave_Text_1, MSGBOX_DEFAULT
 # 128 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 129 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 HuntailInCave_4:
-# 145 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
-# 146 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 147 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_HUNTAIL_BATTLE
+	speakername HuntailInCave_Text_0
 # 148 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 149 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	setflag FLAG_HUNTAIL_BATTLE
+# 150 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 151 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 
 HuntailInCaveTrigger::
-# 156 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 158 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	goto_if_unset FLAG_HUNTAIL_BATTLE, HuntailInCaveTrigger_1
 	return
 
 HuntailInCaveTrigger_1:
-# 158 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 159 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Huntail, Common_Movement_ExclamationMark
 # 160 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmovement
+	special PlayTrainerEncounterMusic
 # 161 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	delay 40
+	applymovement Huntail, Common_Movement_ExclamationMark
 # 162 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	waitmovement Huntail
 # 163 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	switch VAR_TEMP_1
+	delay 60
+# 164 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 # 165 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	switch VAR_TEMP_1
+# 167 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	case 5, HuntailInCaveTrigger_4
-# 181 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 183 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	case 6, HuntailInCaveTrigger_5
-# 198 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 200 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	case 7, HuntailInCaveTrigger_6
-# 215 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 217 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	case 8, HuntailInCaveTrigger_7
 	return
 
 HuntailInCaveTrigger_4:
-# 166 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement LOCALID_PLAYER, HuntailInCaveTrigger_Movement_0
-# 167 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
 # 168 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, HuntailInCaveTrigger_Movement_0
 # 169 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_HUNTAIL, 25
+	speakername HuntailInCave_Text_0
 # 170 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
 # 171 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_HUNTAIL, 25
 # 172 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	dowildbattle
+# 173 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 174 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq HuntailInCaveTrigger_8
 	return
 
 HuntailInCaveTrigger_5:
-# 182 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement LOCALID_PLAYER, HuntailInCaveTrigger_Movement_0
-# 183 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Huntail, HuntailInCaveTrigger_Movement_1
 # 184 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
+	applymovement LOCALID_PLAYER, HuntailInCaveTrigger_Movement_0
 # 185 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Huntail, HuntailInCaveTrigger_Movement_1
 # 186 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_HUNTAIL, 25
+	speakername HuntailInCave_Text_0
 # 187 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
 # 188 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_HUNTAIL, 25
 # 189 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	dowildbattle
+# 190 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 191 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq HuntailInCaveTrigger_10
 	return
 
 HuntailInCaveTrigger_6:
-# 199 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement LOCALID_PLAYER, HuntailInCaveTrigger_Movement_0
-# 200 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Huntail, HuntailInCaveTrigger_Movement_2
 # 201 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
+	applymovement LOCALID_PLAYER, HuntailInCaveTrigger_Movement_0
 # 202 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Huntail, HuntailInCaveTrigger_Movement_2
 # 203 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_HUNTAIL, 25
+	speakername HuntailInCave_Text_0
 # 204 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
 # 205 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_HUNTAIL, 25
 # 206 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	dowildbattle
+# 207 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 208 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq HuntailInCaveTrigger_12
 	return
 
 HuntailInCaveTrigger_7:
-# 216 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement LOCALID_PLAYER, HuntailInCaveTrigger_Movement_0
-# 217 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	applymovement Huntail, HuntailInCaveTrigger_Movement_3
 # 218 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
+	applymovement LOCALID_PLAYER, HuntailInCaveTrigger_Movement_0
 # 219 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Huntail, HuntailInCaveTrigger_Movement_3
 # 220 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setwildbattle SPECIES_HUNTAIL, 25
+	speakername HuntailInCave_Text_0
 # 221 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	dowildbattle
+	msgbox HuntailInCave_Text_2, MSGBOX_AUTOCLOSE
 # 222 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_HUNTAIL, 25
 # 223 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	dowildbattle
+# 224 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 225 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq HuntailInCaveTrigger_14
 	return
 
 HuntailInCaveTrigger_8:
-# 174 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
-# 175 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 176 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_HUNTAIL_BATTLE
+	speakername HuntailInCave_Text_0
 # 177 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 178 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	setflag FLAG_HUNTAIL_BATTLE
+# 179 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 180 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 HuntailInCaveTrigger_10:
-# 191 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
-# 192 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 193 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_HUNTAIL_BATTLE
+	speakername HuntailInCave_Text_0
 # 194 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 195 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	setflag FLAG_HUNTAIL_BATTLE
+# 196 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 197 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 HuntailInCaveTrigger_12:
-# 208 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
-# 209 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 210 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_HUNTAIL_BATTLE
+	speakername HuntailInCave_Text_0
 # 211 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 212 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	setflag FLAG_HUNTAIL_BATTLE
+# 213 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 214 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
 HuntailInCaveTrigger_14:
-# 225 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	speakername HuntailInCave_Text_0
-# 226 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 227 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	setflag FLAG_HUNTAIL_BATTLE
+	speakername HuntailInCave_Text_0
 # 228 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	waitmessage
+	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 229 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	setflag FLAG_HUNTAIL_BATTLE
+# 230 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+	waitmessage
+# 231 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	release
 	end
 
@@ -440,63 +444,63 @@ GorebyssInCave_Movement_0:
 	face_player
 	step_end
 
-# 50 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 51 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 GorebyssInCaveTrigger_Movement_0:
-# 50 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 51 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	face_left
 	step_end
 
-# 67 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 68 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 GorebyssInCaveTrigger_Movement_1:
-# 67 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 68 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_right
 	step_end
 
-# 84 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 85 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 GorebyssInCaveTrigger_Movement_2:
-# 84 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 85 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_right
-# 84 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 85 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_right
 	step_end
 
-# 101 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 102 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 GorebyssInCaveTrigger_Movement_3:
-# 101 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 102 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_right
-# 101 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 102 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_right
-# 101 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 102 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_right
 	step_end
 
-# 166 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 168 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 HuntailInCaveTrigger_Movement_0:
-# 166 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 168 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	face_right
 	step_end
 
-# 183 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 185 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 HuntailInCaveTrigger_Movement_1:
-# 183 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 185 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_left
 	step_end
 
-# 200 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 202 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 HuntailInCaveTrigger_Movement_2:
-# 200 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 202 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_left
-# 200 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 202 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_left
 	step_end
 
-# 217 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 219 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 HuntailInCaveTrigger_Movement_3:
-# 217 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 219 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_left
-# 217 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 219 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_left
-# 217 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 219 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	walk_left
 	step_end
 
@@ -509,25 +513,25 @@ GorebyssInCave_Text_1:
 	.string "My brother Huntail doesnt care\nfor beauty.\pHe will attack you fiercely!\n$"
 
 GorebyssInCave_Text_2:
-# 23 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 24 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	.string "You are glowing!\nShow me how you illuminate\lthe deep with a battle!$"
 
 GorebyssInCave_Text_3:
-# 30 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 31 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	.string "You really are quite luminescent.\n$"
 
 HuntailInCave_Text_0:
-# 125 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 126 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	.string "Huntail$"
 
 HuntailInCave_Text_1:
-# 126 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 127 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	.string "Back into the dark...\nBut you swim well, little one.$"
 
 HuntailInCave_Text_2:
-# 139 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 141 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	.string "There's no need for light here in\nthe depths!$"
 
 HuntailInCave_Text_3:
-# 146 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
+# 148 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	.string "Grr...\pI prefer the the seafloor to be\ndark.$"

@@ -7,6 +7,8 @@ BattleVsMarill::
 	lock
 # 8 "data/maps/DaycarePond/scripts.pory"
 	goto_if_set FLAG_TRANS_MARILL, BattleVsMarill_2
+# 17 "data/maps/DaycarePond/scripts.pory"
+	playbgm MUS_PMD_BOSS_INTRO, FALSE
 # 18 "data/maps/DaycarePond/scripts.pory"
 	applymovement Marill, BattleVsMarill_Movement_0
 # 19 "data/maps/DaycarePond/scripts.pory"
@@ -80,151 +82,153 @@ PsyduckDialog::
 	speakername PsyduckDialog_Text_0
 # 50 "data/maps/DaycarePond/scripts.pory"
 	msgbox PsyduckDialog_Text_1, MSGBOX_DEFAULT
-# 51 "data/maps/DaycarePond/scripts.pory"
+# 50 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
-# 52 "data/maps/DaycarePond/scripts.pory"
+# 51 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 SprigatitoDialog::
-# 58 "data/maps/DaycarePond/scripts.pory"
+# 57 "data/maps/DaycarePond/scripts.pory"
 	goto_if_unset FLAG_SPRIGATITO_EGG, SprigatitoDialog_1
-# 85 "data/maps/DaycarePond/scripts.pory"
+# 84 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_LURANTIS
 	goto_if_eq SprigatitoDialog_7
-# 97 "data/maps/DaycarePond/scripts.pory"
+# 96 "data/maps/DaycarePond/scripts.pory"
 	lock
-# 98 "data/maps/DaycarePond/scripts.pory"
+# 97 "data/maps/DaycarePond/scripts.pory"
 	faceplayer
-# 99 "data/maps/DaycarePond/scripts.pory"
+# 98 "data/maps/DaycarePond/scripts.pory"
 	speakername SprigatitoDialog_Text_0
-# 100 "data/maps/DaycarePond/scripts.pory"
+# 99 "data/maps/DaycarePond/scripts.pory"
 	msgbox SprigatitoDialog_Text_2, MSGBOX_DEFAULT
-# 101 "data/maps/DaycarePond/scripts.pory"
+# 100 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
-# 102 "data/maps/DaycarePond/scripts.pory"
+# 101 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 SprigatitoDialog_1:
-# 60 "data/maps/DaycarePond/scripts.pory"
+# 59 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_LURANTIS
 	goto_if_eq SprigatitoDialog_4
-# 74 "data/maps/DaycarePond/scripts.pory"
+# 73 "data/maps/DaycarePond/scripts.pory"
 	lock
-# 75 "data/maps/DaycarePond/scripts.pory"
+# 74 "data/maps/DaycarePond/scripts.pory"
 	faceplayer
-# 76 "data/maps/DaycarePond/scripts.pory"
+# 75 "data/maps/DaycarePond/scripts.pory"
 	speakername SprigatitoDialog_Text_0
-# 77 "data/maps/DaycarePond/scripts.pory"
+# 76 "data/maps/DaycarePond/scripts.pory"
 	msgbox SprigatitoDialog_Text_2, MSGBOX_DEFAULT
-# 78 "data/maps/DaycarePond/scripts.pory"
+# 77 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
-# 79 "data/maps/DaycarePond/scripts.pory"
+# 78 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 SprigatitoDialog_4:
-# 62 "data/maps/DaycarePond/scripts.pory"
+# 61 "data/maps/DaycarePond/scripts.pory"
 	lock
-# 63 "data/maps/DaycarePond/scripts.pory"
+# 62 "data/maps/DaycarePond/scripts.pory"
 	faceplayer
-# 64 "data/maps/DaycarePond/scripts.pory"
+# 63 "data/maps/DaycarePond/scripts.pory"
 	speakername SprigatitoDialog_Text_0
-# 65 "data/maps/DaycarePond/scripts.pory"
+# 64 "data/maps/DaycarePond/scripts.pory"
 	msgbox SprigatitoDialog_Text_1, MSGBOX_DEFAULT
-# 66 "data/maps/DaycarePond/scripts.pory"
+# 65 "data/maps/DaycarePond/scripts.pory"
 	giveitem ITEM_LUCKY_EGG
-# 67 "data/maps/DaycarePond/scripts.pory"
+# 66 "data/maps/DaycarePond/scripts.pory"
 	setflag FLAG_SPRIGATITO_EGG
-# 68 "data/maps/DaycarePond/scripts.pory"
+# 67 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
-# 69 "data/maps/DaycarePond/scripts.pory"
+# 68 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 SprigatitoDialog_7:
-# 87 "data/maps/DaycarePond/scripts.pory"
+# 86 "data/maps/DaycarePond/scripts.pory"
 	lock
-# 88 "data/maps/DaycarePond/scripts.pory"
+# 87 "data/maps/DaycarePond/scripts.pory"
 	faceplayer
-# 89 "data/maps/DaycarePond/scripts.pory"
+# 88 "data/maps/DaycarePond/scripts.pory"
 	speakername SprigatitoDialog_Text_0
-# 90 "data/maps/DaycarePond/scripts.pory"
+# 89 "data/maps/DaycarePond/scripts.pory"
 	msgbox SprigatitoDialog_Text_3, MSGBOX_DEFAULT
-# 91 "data/maps/DaycarePond/scripts.pory"
+# 90 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
-# 92 "data/maps/DaycarePond/scripts.pory"
+# 91 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 MudkipDialog::
-# 110 "data/maps/DaycarePond/scripts.pory"
+# 109 "data/maps/DaycarePond/scripts.pory"
 	lock
-# 111 "data/maps/DaycarePond/scripts.pory"
+# 110 "data/maps/DaycarePond/scripts.pory"
 	faceplayer
-# 112 "data/maps/DaycarePond/scripts.pory"
+# 111 "data/maps/DaycarePond/scripts.pory"
 	speakername MudkipDialog_Text_0
-# 113 "data/maps/DaycarePond/scripts.pory"
+# 112 "data/maps/DaycarePond/scripts.pory"
 	msgbox MudkipDialog_Text_1, MSGBOX_DEFAULT
-# 114 "data/maps/DaycarePond/scripts.pory"
+# 113 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
-# 115 "data/maps/DaycarePond/scripts.pory"
+# 114 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 SeakingDialog::
-# 120 "data/maps/DaycarePond/scripts.pory"
+# 119 "data/maps/DaycarePond/scripts.pory"
 	lock
-# 121 "data/maps/DaycarePond/scripts.pory"
+# 120 "data/maps/DaycarePond/scripts.pory"
 	faceplayer
-# 122 "data/maps/DaycarePond/scripts.pory"
+# 121 "data/maps/DaycarePond/scripts.pory"
 	speakername SeakingDialog_Text_0
-# 123 "data/maps/DaycarePond/scripts.pory"
+# 122 "data/maps/DaycarePond/scripts.pory"
 	msgbox SeakingDialog_Text_1, MSGBOX_DEFAULT
-# 124 "data/maps/DaycarePond/scripts.pory"
+# 123 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
-# 125 "data/maps/DaycarePond/scripts.pory"
+# 124 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 QuagsireDialog::
-# 131 "data/maps/DaycarePond/scripts.pory"
+# 130 "data/maps/DaycarePond/scripts.pory"
 	lock
-# 132 "data/maps/DaycarePond/scripts.pory"
+# 131 "data/maps/DaycarePond/scripts.pory"
 	faceplayer
-# 133 "data/maps/DaycarePond/scripts.pory"
+# 132 "data/maps/DaycarePond/scripts.pory"
 	speakername QuagsireDialog_Text_0
-# 134 "data/maps/DaycarePond/scripts.pory"
+# 133 "data/maps/DaycarePond/scripts.pory"
 	msgbox QuagsireDialog_Text_1, MSGBOX_DEFAULT
-# 135 "data/maps/DaycarePond/scripts.pory"
+# 134 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
-# 136 "data/maps/DaycarePond/scripts.pory"
+# 135 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 GoomyInCave::
-# 141 "data/maps/DaycarePond/scripts.pory"
+# 140 "data/maps/DaycarePond/scripts.pory"
 	lock
-# 142 "data/maps/DaycarePond/scripts.pory"
+# 141 "data/maps/DaycarePond/scripts.pory"
 	faceplayer
-# 143 "data/maps/DaycarePond/scripts.pory"
+# 142 "data/maps/DaycarePond/scripts.pory"
 	goto_if_set FLAG_GOOMY_BATTLE, GoomyInCave_1
-# 153 "data/maps/DaycarePond/scripts.pory"
+# 152 "data/maps/DaycarePond/scripts.pory"
 	applymovement Goomy, BattleVsMarill_Movement_0
-# 154 "data/maps/DaycarePond/scripts.pory"
+# 153 "data/maps/DaycarePond/scripts.pory"
 	waitmovement Goomy
-# 155 "data/maps/DaycarePond/scripts.pory"
+# 154 "data/maps/DaycarePond/scripts.pory"
 	special PlayTrainerEncounterMusic
-# 156 "data/maps/DaycarePond/scripts.pory"
+# 155 "data/maps/DaycarePond/scripts.pory"
 	applymovement Goomy, Common_Movement_ExclamationMark
+# 156 "data/maps/DaycarePond/scripts.pory"
+	waitmovement Goomy
 # 157 "data/maps/DaycarePond/scripts.pory"
-	waitmovement
+	delay 60
 # 158 "data/maps/DaycarePond/scripts.pory"
 	speakername GoomyInCave_Text_0
 # 159 "data/maps/DaycarePond/scripts.pory"
@@ -241,13 +245,13 @@ GoomyInCave::
 	return
 
 GoomyInCave_1:
-# 145 "data/maps/DaycarePond/scripts.pory"
+# 144 "data/maps/DaycarePond/scripts.pory"
 	speakername GoomyInCave_Text_0
-# 146 "data/maps/DaycarePond/scripts.pory"
+# 145 "data/maps/DaycarePond/scripts.pory"
 	msgbox GoomyInCave_Text_1, MSGBOX_DEFAULT
-# 147 "data/maps/DaycarePond/scripts.pory"
+# 146 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
-# 148 "data/maps/DaycarePond/scripts.pory"
+# 147 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
@@ -276,9 +280,9 @@ GoomyInCaveTrigger_1:
 # 179 "data/maps/DaycarePond/scripts.pory"
 	applymovement Goomy, Common_Movement_ExclamationMark
 # 180 "data/maps/DaycarePond/scripts.pory"
-	waitmovement
+	waitmovement Goomy
 # 181 "data/maps/DaycarePond/scripts.pory"
-	delay 40
+	delay 60
 # 182 "data/maps/DaycarePond/scripts.pory"
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 # 183 "data/maps/DaycarePond/scripts.pory"
@@ -370,18 +374,20 @@ BuizelInCave::
 # 238 "data/maps/DaycarePond/scripts.pory"
 	applymovement Buizel, Common_Movement_ExclamationMark
 # 239 "data/maps/DaycarePond/scripts.pory"
-	waitmovement
+	waitmovement Buizel
 # 240 "data/maps/DaycarePond/scripts.pory"
-	speakername BuizelInCave_Text_0
+	delay 60
 # 241 "data/maps/DaycarePond/scripts.pory"
-	msgbox BuizelInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername BuizelInCave_Text_0
 # 242 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_BUIZEL, 25
+	msgbox BuizelInCave_Text_2, MSGBOX_AUTOCLOSE
 # 243 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_BUIZEL, 25
 # 244 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 245 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 246 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BuizelInCave_4
 	return
@@ -398,604 +404,610 @@ BuizelInCave_1:
 	end
 
 BuizelInCave_4:
-# 247 "data/maps/DaycarePond/scripts.pory"
-	speakername BuizelInCave_Text_0
 # 248 "data/maps/DaycarePond/scripts.pory"
-	msgbox BuizelInCave_Text_3, MSGBOX_DEFAULT
+	speakername BuizelInCave_Text_0
 # 249 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_BUIZEL_BATTLE
+	msgbox BuizelInCave_Text_3, MSGBOX_DEFAULT
 # 250 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	setflag FLAG_BUIZEL_BATTLE
 # 251 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 252 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 BuizelInCaveTrigger::
-# 258 "data/maps/DaycarePond/scripts.pory"
+# 259 "data/maps/DaycarePond/scripts.pory"
 	goto_if_unset FLAG_BUIZEL_BATTLE, BuizelInCaveTrigger_1
 	return
 
 BuizelInCaveTrigger_1:
-# 260 "data/maps/DaycarePond/scripts.pory"
-	special PlayTrainerEncounterMusic
 # 261 "data/maps/DaycarePond/scripts.pory"
-	applymovement Buizel, Common_Movement_ExclamationMark
+	special PlayTrainerEncounterMusic
 # 262 "data/maps/DaycarePond/scripts.pory"
-	waitmovement
+	applymovement Buizel, Common_Movement_ExclamationMark
 # 263 "data/maps/DaycarePond/scripts.pory"
-	delay 40
+	waitmovement Buizel
 # 264 "data/maps/DaycarePond/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	delay 60
 # 265 "data/maps/DaycarePond/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 266 "data/maps/DaycarePond/scripts.pory"
 	switch VAR_TEMP_2
-# 267 "data/maps/DaycarePond/scripts.pory"
+# 268 "data/maps/DaycarePond/scripts.pory"
 	case 34, BuizelInCaveTrigger_4
-# 285 "data/maps/DaycarePond/scripts.pory"
+# 286 "data/maps/DaycarePond/scripts.pory"
 	case 35, BuizelInCaveTrigger_5
 	return
 
 BuizelInCaveTrigger_4:
-# 268 "data/maps/DaycarePond/scripts.pory"
-	applymovement LOCALID_PLAYER, BuizelInCaveTrigger_Movement_0
 # 269 "data/maps/DaycarePond/scripts.pory"
-	applymovement Buizel, BuizelInCaveTrigger_Movement_1
+	applymovement LOCALID_PLAYER, BuizelInCaveTrigger_Movement_0
 # 270 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Buizel
+	applymovement Buizel, BuizelInCaveTrigger_Movement_1
 # 271 "data/maps/DaycarePond/scripts.pory"
-	speakername BuizelInCave_Text_0
+	waitmovement Buizel
 # 272 "data/maps/DaycarePond/scripts.pory"
-	msgbox BuizelInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername BuizelInCave_Text_0
 # 273 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_BUIZEL, 25
+	msgbox BuizelInCave_Text_2, MSGBOX_AUTOCLOSE
 # 274 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_BUIZEL, 25
 # 275 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 276 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 277 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BuizelInCaveTrigger_6
 	return
 
 BuizelInCaveTrigger_5:
-# 286 "data/maps/DaycarePond/scripts.pory"
-	applymovement LOCALID_PLAYER, BuizelInCaveTrigger_Movement_0
 # 287 "data/maps/DaycarePond/scripts.pory"
-	speakername BuizelInCave_Text_0
+	applymovement LOCALID_PLAYER, BuizelInCaveTrigger_Movement_0
 # 288 "data/maps/DaycarePond/scripts.pory"
-	msgbox BuizelInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername BuizelInCave_Text_0
 # 289 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_BUIZEL, 25
+	msgbox BuizelInCave_Text_2, MSGBOX_AUTOCLOSE
 # 290 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_BUIZEL, 25
 # 291 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 292 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 293 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BuizelInCaveTrigger_8
 	return
 
 BuizelInCaveTrigger_6:
-# 278 "data/maps/DaycarePond/scripts.pory"
-	speakername BuizelInCave_Text_0
 # 279 "data/maps/DaycarePond/scripts.pory"
-	msgbox BuizelInCave_Text_3, MSGBOX_DEFAULT
+	speakername BuizelInCave_Text_0
 # 280 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_BUIZEL_BATTLE
+	msgbox BuizelInCave_Text_3, MSGBOX_DEFAULT
 # 281 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	setflag FLAG_BUIZEL_BATTLE
 # 282 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 283 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 BuizelInCaveTrigger_8:
-# 294 "data/maps/DaycarePond/scripts.pory"
-	speakername BuizelInCave_Text_0
 # 295 "data/maps/DaycarePond/scripts.pory"
-	msgbox BuizelInCave_Text_3, MSGBOX_DEFAULT
+	speakername BuizelInCave_Text_0
 # 296 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_BUIZEL_BATTLE
+	msgbox BuizelInCave_Text_3, MSGBOX_DEFAULT
 # 297 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	setflag FLAG_BUIZEL_BATTLE
 # 298 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 299 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 SlowpokeInCave::
-# 306 "data/maps/DaycarePond/scripts.pory"
-	lock
 # 307 "data/maps/DaycarePond/scripts.pory"
-	faceplayer
+	lock
 # 308 "data/maps/DaycarePond/scripts.pory"
+	faceplayer
+# 309 "data/maps/DaycarePond/scripts.pory"
 	goto_if_set FLAG_SLOWPOKE_BATTLE, SlowpokeInCave_1
-# 318 "data/maps/DaycarePond/scripts.pory"
-	applymovement Slowpoke, BattleVsMarill_Movement_0
 # 319 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Slowpoke
+	applymovement Slowpoke, BattleVsMarill_Movement_0
 # 320 "data/maps/DaycarePond/scripts.pory"
-	special PlayTrainerEncounterMusic
+	waitmovement Slowpoke
 # 321 "data/maps/DaycarePond/scripts.pory"
-	applymovement Slowpoke, Common_Movement_ExclamationMark
+	special PlayTrainerEncounterMusic
 # 322 "data/maps/DaycarePond/scripts.pory"
-	waitmovement
+	applymovement Slowpoke, Common_Movement_ExclamationMark
 # 323 "data/maps/DaycarePond/scripts.pory"
-	speakername SlowpokeInCave_Text_0
+	waitmovement Slowpoke
 # 324 "data/maps/DaycarePond/scripts.pory"
-	msgbox SlowpokeInCave_Text_2, MSGBOX_AUTOCLOSE
+	delay 60
 # 325 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_SLOWPOKE, 25
+	speakername SlowpokeInCave_Text_0
 # 326 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	msgbox SlowpokeInCave_Text_2, MSGBOX_AUTOCLOSE
 # 327 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_SLOWPOKE, 25
 # 328 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 329 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 330 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SlowpokeInCave_4
 	return
 
 SlowpokeInCave_1:
-# 310 "data/maps/DaycarePond/scripts.pory"
-	speakername SlowpokeInCave_Text_0
 # 311 "data/maps/DaycarePond/scripts.pory"
-	msgbox SlowpokeInCave_Text_1, MSGBOX_DEFAULT
+	speakername SlowpokeInCave_Text_0
 # 312 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	msgbox SlowpokeInCave_Text_1, MSGBOX_DEFAULT
 # 313 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 314 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 SlowpokeInCave_4:
-# 330 "data/maps/DaycarePond/scripts.pory"
-	speakername SlowpokeInCave_Text_0
-# 331 "data/maps/DaycarePond/scripts.pory"
-	msgbox SlowpokeInCave_Text_3, MSGBOX_DEFAULT
 # 332 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_SLOWPOKE_BATTLE
+	speakername SlowpokeInCave_Text_0
 # 333 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	msgbox SlowpokeInCave_Text_3, MSGBOX_DEFAULT
 # 334 "data/maps/DaycarePond/scripts.pory"
+	setflag FLAG_SLOWPOKE_BATTLE
+# 335 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 336 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 SlowpokeInCaveTrigger::
-# 340 "data/maps/DaycarePond/scripts.pory"
+# 342 "data/maps/DaycarePond/scripts.pory"
 	goto_if_unset FLAG_SLOWPOKE_BATTLE, SlowpokeInCaveTrigger_1
 	return
 
 SlowpokeInCaveTrigger_1:
-# 342 "data/maps/DaycarePond/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 343 "data/maps/DaycarePond/scripts.pory"
-	applymovement Slowpoke, Common_Movement_ExclamationMark
 # 344 "data/maps/DaycarePond/scripts.pory"
-	waitmovement
+	special PlayTrainerEncounterMusic
 # 345 "data/maps/DaycarePond/scripts.pory"
-	delay 40
+	applymovement Slowpoke, Common_Movement_ExclamationMark
 # 346 "data/maps/DaycarePond/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	waitmovement Slowpoke
 # 347 "data/maps/DaycarePond/scripts.pory"
-	switch VAR_TEMP_1
+	delay 60
+# 348 "data/maps/DaycarePond/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 # 349 "data/maps/DaycarePond/scripts.pory"
+	switch VAR_TEMP_1
+# 351 "data/maps/DaycarePond/scripts.pory"
 	case 28, SlowpokeInCaveTrigger_4
-# 367 "data/maps/DaycarePond/scripts.pory"
+# 369 "data/maps/DaycarePond/scripts.pory"
 	case 26, SlowpokeInCaveTrigger_5
 	return
 
 SlowpokeInCaveTrigger_4:
-# 350 "data/maps/DaycarePond/scripts.pory"
-	applymovement Slowpoke, GoomyInCaveTrigger_Movement_0
-# 351 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Slowpoke
 # 352 "data/maps/DaycarePond/scripts.pory"
-	applymovement LOCALID_PLAYER, SlowpokeInCaveTrigger_Movement_0
+	applymovement Slowpoke, GoomyInCaveTrigger_Movement_0
 # 353 "data/maps/DaycarePond/scripts.pory"
-	speakername SlowpokeInCave_Text_0
+	waitmovement Slowpoke
 # 354 "data/maps/DaycarePond/scripts.pory"
-	msgbox SlowpokeInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, SlowpokeInCaveTrigger_Movement_0
 # 355 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_SLOWPOKE, 25
+	speakername SlowpokeInCave_Text_0
 # 356 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	msgbox SlowpokeInCave_Text_2, MSGBOX_AUTOCLOSE
 # 357 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_SLOWPOKE, 25
 # 358 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 359 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 360 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SlowpokeInCaveTrigger_6
 	return
 
 SlowpokeInCaveTrigger_5:
-# 368 "data/maps/DaycarePond/scripts.pory"
-	applymovement Slowpoke, SlowpokeInCaveTrigger_Movement_0
-# 369 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Slowpoke
 # 370 "data/maps/DaycarePond/scripts.pory"
-	applymovement LOCALID_PLAYER, GoomyInCaveTrigger_Movement_0
+	applymovement Slowpoke, SlowpokeInCaveTrigger_Movement_0
 # 371 "data/maps/DaycarePond/scripts.pory"
-	speakername SlowpokeInCave_Text_0
+	waitmovement Slowpoke
 # 372 "data/maps/DaycarePond/scripts.pory"
-	msgbox SlowpokeInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, GoomyInCaveTrigger_Movement_0
 # 373 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_SLOWPOKE, 25
+	speakername SlowpokeInCave_Text_0
 # 374 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	msgbox SlowpokeInCave_Text_2, MSGBOX_AUTOCLOSE
 # 375 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_SLOWPOKE, 25
 # 376 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 377 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 378 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq SlowpokeInCaveTrigger_8
 	return
 
 SlowpokeInCaveTrigger_6:
-# 360 "data/maps/DaycarePond/scripts.pory"
-	speakername SlowpokeInCave_Text_0
-# 361 "data/maps/DaycarePond/scripts.pory"
-	msgbox SlowpokeInCave_Text_3, MSGBOX_DEFAULT
 # 362 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_SLOWPOKE_BATTLE
+	speakername SlowpokeInCave_Text_0
 # 363 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	msgbox SlowpokeInCave_Text_3, MSGBOX_DEFAULT
 # 364 "data/maps/DaycarePond/scripts.pory"
+	setflag FLAG_SLOWPOKE_BATTLE
+# 365 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 366 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 SlowpokeInCaveTrigger_8:
-# 378 "data/maps/DaycarePond/scripts.pory"
-	speakername SlowpokeInCave_Text_0
-# 379 "data/maps/DaycarePond/scripts.pory"
-	msgbox SlowpokeInCave_Text_3, MSGBOX_DEFAULT
 # 380 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_SLOWPOKE_BATTLE
+	speakername SlowpokeInCave_Text_0
 # 381 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	msgbox SlowpokeInCave_Text_3, MSGBOX_DEFAULT
 # 382 "data/maps/DaycarePond/scripts.pory"
+	setflag FLAG_SLOWPOKE_BATTLE
+# 383 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 384 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 CroagunkInCave::
-# 390 "data/maps/DaycarePond/scripts.pory"
-	lock
-# 391 "data/maps/DaycarePond/scripts.pory"
-	faceplayer
 # 392 "data/maps/DaycarePond/scripts.pory"
+	lock
+# 393 "data/maps/DaycarePond/scripts.pory"
+	faceplayer
+# 394 "data/maps/DaycarePond/scripts.pory"
 	goto_if_set FLAG_CROAGUNK_BATTLE, CroagunkInCave_1
-# 402 "data/maps/DaycarePond/scripts.pory"
-	applymovement Croagunk, BattleVsMarill_Movement_0
-# 403 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Croagunk
 # 404 "data/maps/DaycarePond/scripts.pory"
-	special PlayTrainerEncounterMusic
+	applymovement Croagunk, BattleVsMarill_Movement_0
 # 405 "data/maps/DaycarePond/scripts.pory"
-	applymovement Croagunk, Common_Movement_ExclamationMark
+	waitmovement Croagunk
 # 406 "data/maps/DaycarePond/scripts.pory"
-	waitmovement
+	special PlayTrainerEncounterMusic
 # 407 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
+	applymovement Croagunk, Common_Movement_ExclamationMark
 # 408 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
+	waitmovement Croagunk
 # 409 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_CROAGUNK, 25
+	delay 60
 # 410 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	speakername CroagunkInCave_Text_0
 # 411 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
 # 412 "data/maps/DaycarePond/scripts.pory"
+	setwildbattle SPECIES_CROAGUNK, 25
+# 413 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 414 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 415 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CroagunkInCave_4
 	return
 
 CroagunkInCave_1:
-# 394 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
-# 395 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_1, MSGBOX_DEFAULT
 # 396 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	speakername CroagunkInCave_Text_0
 # 397 "data/maps/DaycarePond/scripts.pory"
+	msgbox CroagunkInCave_Text_1, MSGBOX_DEFAULT
+# 398 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 399 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 CroagunkInCave_4:
-# 414 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
-# 415 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
-# 416 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_CROAGUNK_BATTLE
 # 417 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	speakername CroagunkInCave_Text_0
 # 418 "data/maps/DaycarePond/scripts.pory"
+	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
+# 419 "data/maps/DaycarePond/scripts.pory"
+	setflag FLAG_CROAGUNK_BATTLE
+# 420 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 421 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 CroagunkInCaveTrigger::
-# 424 "data/maps/DaycarePond/scripts.pory"
+# 427 "data/maps/DaycarePond/scripts.pory"
 	goto_if_unset FLAG_CROAGUNK_BATTLE, CroagunkInCaveTrigger_1
 	return
 
 CroagunkInCaveTrigger_1:
-# 426 "data/maps/DaycarePond/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 427 "data/maps/DaycarePond/scripts.pory"
-	applymovement Croagunk, Common_Movement_ExclamationMark
-# 428 "data/maps/DaycarePond/scripts.pory"
-	waitmovement
 # 429 "data/maps/DaycarePond/scripts.pory"
-	delay 40
+	special PlayTrainerEncounterMusic
 # 430 "data/maps/DaycarePond/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	applymovement Croagunk, Common_Movement_ExclamationMark
 # 431 "data/maps/DaycarePond/scripts.pory"
-	switch VAR_TEMP_2
+	waitmovement Croagunk
+# 432 "data/maps/DaycarePond/scripts.pory"
+	delay 60
 # 433 "data/maps/DaycarePond/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 434 "data/maps/DaycarePond/scripts.pory"
+	switch VAR_TEMP_2
+# 436 "data/maps/DaycarePond/scripts.pory"
 	case 3, CroagunkInCaveTrigger_4
-# 449 "data/maps/DaycarePond/scripts.pory"
+# 452 "data/maps/DaycarePond/scripts.pory"
 	case 4, CroagunkInCaveTrigger_5
-# 467 "data/maps/DaycarePond/scripts.pory"
+# 470 "data/maps/DaycarePond/scripts.pory"
 	case 5, CroagunkInCaveTrigger_6
-# 485 "data/maps/DaycarePond/scripts.pory"
+# 488 "data/maps/DaycarePond/scripts.pory"
 	case 6, CroagunkInCaveTrigger_7
-# 503 "data/maps/DaycarePond/scripts.pory"
+# 506 "data/maps/DaycarePond/scripts.pory"
 	case 7, CroagunkInCaveTrigger_8
 	return
 
 CroagunkInCaveTrigger_4:
-# 434 "data/maps/DaycarePond/scripts.pory"
-	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
-# 435 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
-# 436 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
 # 437 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_CROAGUNK, 25
+	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
 # 438 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	speakername CroagunkInCave_Text_0
 # 439 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
 # 440 "data/maps/DaycarePond/scripts.pory"
+	setwildbattle SPECIES_CROAGUNK, 25
+# 441 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 442 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 443 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CroagunkInCaveTrigger_9
 	return
 
 CroagunkInCaveTrigger_5:
-# 450 "data/maps/DaycarePond/scripts.pory"
-	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
-# 451 "data/maps/DaycarePond/scripts.pory"
-	applymovement Croagunk, CroagunkInCaveTrigger_Movement_1
-# 452 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Croagunk
 # 453 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
+	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
 # 454 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Croagunk, CroagunkInCaveTrigger_Movement_1
 # 455 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_CROAGUNK, 25
+	waitmovement Croagunk
 # 456 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	speakername CroagunkInCave_Text_0
 # 457 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
 # 458 "data/maps/DaycarePond/scripts.pory"
+	setwildbattle SPECIES_CROAGUNK, 25
+# 459 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 460 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 461 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CroagunkInCaveTrigger_11
 	return
 
 CroagunkInCaveTrigger_6:
-# 468 "data/maps/DaycarePond/scripts.pory"
-	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
-# 469 "data/maps/DaycarePond/scripts.pory"
-	applymovement Croagunk, CroagunkInCaveTrigger_Movement_2
-# 470 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Croagunk
 # 471 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
+	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
 # 472 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Croagunk, CroagunkInCaveTrigger_Movement_2
 # 473 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_CROAGUNK, 25
+	waitmovement Croagunk
 # 474 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	speakername CroagunkInCave_Text_0
 # 475 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
 # 476 "data/maps/DaycarePond/scripts.pory"
+	setwildbattle SPECIES_CROAGUNK, 25
+# 477 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 478 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 479 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CroagunkInCaveTrigger_13
 	return
 
 CroagunkInCaveTrigger_7:
-# 486 "data/maps/DaycarePond/scripts.pory"
-	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
-# 487 "data/maps/DaycarePond/scripts.pory"
-	applymovement Croagunk, CroagunkInCaveTrigger_Movement_3
-# 488 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Croagunk
 # 489 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
+	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
 # 490 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Croagunk, CroagunkInCaveTrigger_Movement_3
 # 491 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_CROAGUNK, 25
+	waitmovement Croagunk
 # 492 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	speakername CroagunkInCave_Text_0
 # 493 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
 # 494 "data/maps/DaycarePond/scripts.pory"
+	setwildbattle SPECIES_CROAGUNK, 25
+# 495 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 496 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 497 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CroagunkInCaveTrigger_15
 	return
 
 CroagunkInCaveTrigger_8:
-# 504 "data/maps/DaycarePond/scripts.pory"
-	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
-# 505 "data/maps/DaycarePond/scripts.pory"
-	applymovement Croagunk, CroagunkInCaveTrigger_Movement_4
-# 506 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Croagunk
 # 507 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
+	applymovement LOCALID_PLAYER, CroagunkInCaveTrigger_Movement_0
 # 508 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Croagunk, CroagunkInCaveTrigger_Movement_4
 # 509 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_CROAGUNK, 25
+	waitmovement Croagunk
 # 510 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	speakername CroagunkInCave_Text_0
 # 511 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	msgbox CroagunkInCave_Text_2, MSGBOX_AUTOCLOSE
 # 512 "data/maps/DaycarePond/scripts.pory"
+	setwildbattle SPECIES_CROAGUNK, 25
+# 513 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 514 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 515 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CroagunkInCaveTrigger_17
 	return
 
 CroagunkInCaveTrigger_9:
-# 442 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
-# 443 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
-# 444 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_CROAGUNK_BATTLE
 # 445 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	speakername CroagunkInCave_Text_0
 # 446 "data/maps/DaycarePond/scripts.pory"
+	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
+# 447 "data/maps/DaycarePond/scripts.pory"
+	setflag FLAG_CROAGUNK_BATTLE
+# 448 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 449 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 CroagunkInCaveTrigger_11:
-# 460 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
-# 461 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
-# 462 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_CROAGUNK_BATTLE
 # 463 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	speakername CroagunkInCave_Text_0
 # 464 "data/maps/DaycarePond/scripts.pory"
+	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
+# 465 "data/maps/DaycarePond/scripts.pory"
+	setflag FLAG_CROAGUNK_BATTLE
+# 466 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 467 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 CroagunkInCaveTrigger_13:
-# 478 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
-# 479 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
-# 480 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_CROAGUNK_BATTLE
 # 481 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	speakername CroagunkInCave_Text_0
 # 482 "data/maps/DaycarePond/scripts.pory"
+	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
+# 483 "data/maps/DaycarePond/scripts.pory"
+	setflag FLAG_CROAGUNK_BATTLE
+# 484 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 485 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 CroagunkInCaveTrigger_15:
-# 496 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
-# 497 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
-# 498 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_CROAGUNK_BATTLE
 # 499 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	speakername CroagunkInCave_Text_0
 # 500 "data/maps/DaycarePond/scripts.pory"
+	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
+# 501 "data/maps/DaycarePond/scripts.pory"
+	setflag FLAG_CROAGUNK_BATTLE
+# 502 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 503 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 CroagunkInCaveTrigger_17:
-# 514 "data/maps/DaycarePond/scripts.pory"
-	speakername CroagunkInCave_Text_0
-# 515 "data/maps/DaycarePond/scripts.pory"
-	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
-# 516 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_CROAGUNK_BATTLE
 # 517 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	speakername CroagunkInCave_Text_0
 # 518 "data/maps/DaycarePond/scripts.pory"
+	msgbox CroagunkInCave_Text_3, MSGBOX_DEFAULT
+# 519 "data/maps/DaycarePond/scripts.pory"
+	setflag FLAG_CROAGUNK_BATTLE
+# 520 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 521 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 BattleVsDragonair::
-# 526 "data/maps/DaycarePond/scripts.pory"
+# 529 "data/maps/DaycarePond/scripts.pory"
 	lock
-# 528 "data/maps/DaycarePond/scripts.pory"
+# 531 "data/maps/DaycarePond/scripts.pory"
 	goto_if_set FLAG_TRANS_DRAGONAIR, BattleVsDragonair_2
-# 539 "data/maps/DaycarePond/scripts.pory"
-	applymovement Dragonair, BattleVsMarill_Movement_0
-# 540 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Dragonair
 # 541 "data/maps/DaycarePond/scripts.pory"
-	playse SE_PIN
+	playbgm MUS_PMD_BOSS_INTRO, FALSE
 # 542 "data/maps/DaycarePond/scripts.pory"
-	applymovement Dragonair, Common_Movement_ExclamationMark
+	applymovement Dragonair, BattleVsMarill_Movement_0
 # 543 "data/maps/DaycarePond/scripts.pory"
 	waitmovement Dragonair
 # 544 "data/maps/DaycarePond/scripts.pory"
-	speakername BattleVsDragonair_Text_0
+	playse SE_PIN
 # 545 "data/maps/DaycarePond/scripts.pory"
-	msgbox BattleVsDragonair_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Dragonair, Common_Movement_ExclamationMark
 # 546 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_DRAGONAIR, 25
+	waitmovement Dragonair
 # 547 "data/maps/DaycarePond/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	speakername BattleVsDragonair_Text_0
 # 548 "data/maps/DaycarePond/scripts.pory"
-	dowildbattle
+	msgbox BattleVsDragonair_Text_2, MSGBOX_AUTOCLOSE
 # 549 "data/maps/DaycarePond/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	setwildbattle SPECIES_DRAGONAIR, 25
 # 550 "data/maps/DaycarePond/scripts.pory"
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+# 551 "data/maps/DaycarePond/scripts.pory"
+	dowildbattle
+# 552 "data/maps/DaycarePond/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 553 "data/maps/DaycarePond/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsDragonair_4
 	return
 
 BattleVsDragonair_2:
-# 530 "data/maps/DaycarePond/scripts.pory"
-	applymovement Dragonair, BattleVsMarill_Movement_0
-# 531 "data/maps/DaycarePond/scripts.pory"
-	waitmovement Dragonair
-# 532 "data/maps/DaycarePond/scripts.pory"
-	speakername BattleVsDragonair_Text_0
 # 533 "data/maps/DaycarePond/scripts.pory"
-	msgbox BattleVsDragonair_Text_1, MSGBOX_DEFAULT
+	applymovement Dragonair, BattleVsMarill_Movement_0
 # 534 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	waitmovement Dragonair
 # 535 "data/maps/DaycarePond/scripts.pory"
+	speakername BattleVsDragonair_Text_0
+# 536 "data/maps/DaycarePond/scripts.pory"
+	msgbox BattleVsDragonair_Text_1, MSGBOX_DEFAULT
+# 537 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 538 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 BattleVsDragonair_4:
-# 552 "data/maps/DaycarePond/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
-# 553 "data/maps/DaycarePond/scripts.pory"
-	setflag FLAG_TRANS_DRAGONAIR
-# 554 "data/maps/DaycarePond/scripts.pory"
-	dittotransform SPECIES_DRAGONAIR
 # 555 "data/maps/DaycarePond/scripts.pory"
-	playse MUS_LEVEL_UP
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 556 "data/maps/DaycarePond/scripts.pory"
-	msgbox BattleVsDragonair_Text_3, MSGBOX_DEFAULT
+	setflag FLAG_TRANS_DRAGONAIR
 # 557 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
+	dittotransform SPECIES_DRAGONAIR
 # 558 "data/maps/DaycarePond/scripts.pory"
-	dittotransform VAR_TEMP_0
+	playse MUS_LEVEL_UP
 # 559 "data/maps/DaycarePond/scripts.pory"
-	givemon SPECIES_DRAGONAIR, 25, move1 = MOVE_OUTRAGE, move2 = MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD
+	msgbox BattleVsDragonair_Text_3, MSGBOX_DEFAULT
 # 560 "data/maps/DaycarePond/scripts.pory"
-	speakername BattleVsDragonair_Text_0
-# 561 "data/maps/DaycarePond/scripts.pory"
-	msgbox BattleVsDragonair_Text_4, MSGBOX_DEFAULT
-# 562 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
+# 561 "data/maps/DaycarePond/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 562 "data/maps/DaycarePond/scripts.pory"
+	givemon SPECIES_DRAGONAIR, 25, move1 = MOVE_OUTRAGE, move2 = MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD
 # 563 "data/maps/DaycarePond/scripts.pory"
+	speakername BattleVsDragonair_Text_0
+# 564 "data/maps/DaycarePond/scripts.pory"
+	msgbox BattleVsDragonair_Text_4, MSGBOX_DEFAULT
+# 565 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 566 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
 
 DaycarePond_FindLuckyEgg::
-# 571 "data/maps/DaycarePond/scripts.pory"
-	lock
-# 572 "data/maps/DaycarePond/scripts.pory"
-	finditem ITEM_LUCKY_EGG
-# 573 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
 # 574 "data/maps/DaycarePond/scripts.pory"
+	lock
+# 575 "data/maps/DaycarePond/scripts.pory"
+	finditem ITEM_LUCKY_EGG
+# 576 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 577 "data/maps/DaycarePond/scripts.pory"
 	release
 	end
 
@@ -1018,63 +1030,63 @@ GoomyInCaveTrigger_Movement_1:
 	walk_left
 	step_end
 
-# 268 "data/maps/DaycarePond/scripts.pory"
+# 269 "data/maps/DaycarePond/scripts.pory"
 BuizelInCaveTrigger_Movement_0:
-# 268 "data/maps/DaycarePond/scripts.pory"
+# 269 "data/maps/DaycarePond/scripts.pory"
 	face_down
 	step_end
 
-# 269 "data/maps/DaycarePond/scripts.pory"
+# 270 "data/maps/DaycarePond/scripts.pory"
 BuizelInCaveTrigger_Movement_1:
-# 269 "data/maps/DaycarePond/scripts.pory"
+# 270 "data/maps/DaycarePond/scripts.pory"
 	walk_up
 	step_end
 
-# 352 "data/maps/DaycarePond/scripts.pory"
+# 354 "data/maps/DaycarePond/scripts.pory"
 SlowpokeInCaveTrigger_Movement_0:
-# 352 "data/maps/DaycarePond/scripts.pory"
+# 354 "data/maps/DaycarePond/scripts.pory"
 	face_left
 	step_end
 
-# 434 "data/maps/DaycarePond/scripts.pory"
+# 437 "data/maps/DaycarePond/scripts.pory"
 CroagunkInCaveTrigger_Movement_0:
-# 434 "data/maps/DaycarePond/scripts.pory"
+# 437 "data/maps/DaycarePond/scripts.pory"
 	face_up
 	step_end
 
-# 451 "data/maps/DaycarePond/scripts.pory"
+# 454 "data/maps/DaycarePond/scripts.pory"
 CroagunkInCaveTrigger_Movement_1:
-# 451 "data/maps/DaycarePond/scripts.pory"
+# 454 "data/maps/DaycarePond/scripts.pory"
 	walk_down
 	step_end
 
-# 469 "data/maps/DaycarePond/scripts.pory"
+# 472 "data/maps/DaycarePond/scripts.pory"
 CroagunkInCaveTrigger_Movement_2:
-# 469 "data/maps/DaycarePond/scripts.pory"
+# 472 "data/maps/DaycarePond/scripts.pory"
 	walk_down
-# 469 "data/maps/DaycarePond/scripts.pory"
+# 472 "data/maps/DaycarePond/scripts.pory"
 	walk_down
 	step_end
 
-# 487 "data/maps/DaycarePond/scripts.pory"
+# 490 "data/maps/DaycarePond/scripts.pory"
 CroagunkInCaveTrigger_Movement_3:
-# 487 "data/maps/DaycarePond/scripts.pory"
+# 490 "data/maps/DaycarePond/scripts.pory"
 	walk_down
-# 487 "data/maps/DaycarePond/scripts.pory"
+# 490 "data/maps/DaycarePond/scripts.pory"
 	walk_down
-# 487 "data/maps/DaycarePond/scripts.pory"
+# 490 "data/maps/DaycarePond/scripts.pory"
 	walk_down
 	step_end
 
-# 505 "data/maps/DaycarePond/scripts.pory"
+# 508 "data/maps/DaycarePond/scripts.pory"
 CroagunkInCaveTrigger_Movement_4:
-# 505 "data/maps/DaycarePond/scripts.pory"
+# 508 "data/maps/DaycarePond/scripts.pory"
 	walk_down
-# 505 "data/maps/DaycarePond/scripts.pory"
+# 508 "data/maps/DaycarePond/scripts.pory"
 	walk_down
-# 505 "data/maps/DaycarePond/scripts.pory"
+# 508 "data/maps/DaycarePond/scripts.pory"
 	walk_down
-# 505 "data/maps/DaycarePond/scripts.pory"
+# 508 "data/maps/DaycarePond/scripts.pory"
 	walk_down
 	step_end
 
@@ -1100,54 +1112,54 @@ PsyduckDialog_Text_0:
 
 PsyduckDialog_Text_1:
 # 50 "data/maps/DaycarePond/scripts.pory"
-	.string "OW OH GOD MY HEAD!\pWHY WAS I CREATED TO LIVE IN\nPAIN?$"
+	.string "I came to the lake to try to ease\nthis headache...\pIt's the most peaceful biome at\nthe daycare.$"
 
 SprigatitoDialog_Text_0:
-# 64 "data/maps/DaycarePond/scripts.pory"
+# 63 "data/maps/DaycarePond/scripts.pory"
 	.string "Sprigatito$"
 
 SprigatitoDialog_Text_1:
-# 65 "data/maps/DaycarePond/scripts.pory"
+# 64 "data/maps/DaycarePond/scripts.pory"
 	.string "A Grass_type!\pDon't see many around the lake\nhere.\pPlease take this Egg I found.\n$"
 
 SprigatitoDialog_Text_2:
-# 77 "data/maps/DaycarePond/scripts.pory"
+# 76 "data/maps/DaycarePond/scripts.pory"
 	.string "I love it here by the water but\nI hardly see any other\lGrass_types...$"
 
 SprigatitoDialog_Text_3:
-# 90 "data/maps/DaycarePond/scripts.pory"
+# 89 "data/maps/DaycarePond/scripts.pory"
 	.string "A Grass_type!\pDon't see many around the lake\nhere.$"
 
 MudkipDialog_Text_0:
-# 112 "data/maps/DaycarePond/scripts.pory"
+# 111 "data/maps/DaycarePond/scripts.pory"
 	.string "Mudkip$"
 
 MudkipDialog_Text_1:
-# 113 "data/maps/DaycarePond/scripts.pory"
+# 112 "data/maps/DaycarePond/scripts.pory"
 	.string "I hope my trainer comes back\nsoon...\pI miss them.\pI'm supposed to be their first\npartner Pokémon.$"
 
 SeakingDialog_Text_0:
-# 122 "data/maps/DaycarePond/scripts.pory"
+# 121 "data/maps/DaycarePond/scripts.pory"
 	.string "Seaking$"
 
 SeakingDialog_Text_1:
-# 123 "data/maps/DaycarePond/scripts.pory"
+# 122 "data/maps/DaycarePond/scripts.pory"
 	.string "Everyone talks about how\ndesireable Vaporeon is.\pSeakings need love too...\pDo you know any Dittos?\n$"
 
 QuagsireDialog_Text_0:
-# 133 "data/maps/DaycarePond/scripts.pory"
+# 132 "data/maps/DaycarePond/scripts.pory"
 	.string "Quagsire$"
 
 QuagsireDialog_Text_1:
-# 134 "data/maps/DaycarePond/scripts.pory"
+# 133 "data/maps/DaycarePond/scripts.pory"
 	.string "The Lake here is so calm.\pDragonair makes sure that we\nkeep the peace here.\pShe believes keeping it mellow\nis the key to EXP.$"
 
 GoomyInCave_Text_0:
-# 145 "data/maps/DaycarePond/scripts.pory"
+# 144 "data/maps/DaycarePond/scripts.pory"
 	.string "Goomy$"
 
 GoomyInCave_Text_1:
-# 146 "data/maps/DaycarePond/scripts.pory"
+# 145 "data/maps/DaycarePond/scripts.pory"
 	.string "Cool vibes friend.\pKeep on keepin on.\n$"
 
 GoomyInCave_Text_2:
@@ -1163,61 +1175,61 @@ BuizelInCave_Text_1:
 	.string "Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.$"
 
 BuizelInCave_Text_2:
-# 241 "data/maps/DaycarePond/scripts.pory"
+# 242 "data/maps/DaycarePond/scripts.pory"
 	.string "Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n$"
 
 BuizelInCave_Text_3:
-# 248 "data/maps/DaycarePond/scripts.pory"
+# 249 "data/maps/DaycarePond/scripts.pory"
 	.string "She keeps to herself.\nEnsuring maximum relaxation.$"
 
 SlowpokeInCave_Text_0:
-# 310 "data/maps/DaycarePond/scripts.pory"
+# 311 "data/maps/DaycarePond/scripts.pory"
 	.string "Slowpoke$"
 
 SlowpokeInCave_Text_1:
-# 311 "data/maps/DaycarePond/scripts.pory"
+# 312 "data/maps/DaycarePond/scripts.pory"
 	.string "These bridges are so confusing...\pI've been stuck here for a while,\nbut it's chill.$"
 
 SlowpokeInCave_Text_2:
-# 324 "data/maps/DaycarePond/scripts.pory"
+# 326 "data/maps/DaycarePond/scripts.pory"
 	.string "Dragonair really likes my vibe.\n$"
 
 SlowpokeInCave_Text_3:
-# 331 "data/maps/DaycarePond/scripts.pory"
+# 333 "data/maps/DaycarePond/scripts.pory"
 	.string "Maybe it's cause I'm too slow to\nharsh the vibe.$"
 
 CroagunkInCave_Text_0:
-# 394 "data/maps/DaycarePond/scripts.pory"
+# 396 "data/maps/DaycarePond/scripts.pory"
 	.string "Croagunk$"
 
 CroagunkInCave_Text_1:
-# 395 "data/maps/DaycarePond/scripts.pory"
+# 397 "data/maps/DaycarePond/scripts.pory"
 	.string "We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n$"
 
 CroagunkInCave_Text_2:
-# 408 "data/maps/DaycarePond/scripts.pory"
+# 411 "data/maps/DaycarePond/scripts.pory"
 	.string "Duuuuuude.\nWhat's upppp?$"
 
 CroagunkInCave_Text_3:
-# 415 "data/maps/DaycarePond/scripts.pory"
+# 418 "data/maps/DaycarePond/scripts.pory"
 	.string "Right on.\n$"
 
 BattleVsDragonair_Text_0:
-# 532 "data/maps/DaycarePond/scripts.pory"
+# 535 "data/maps/DaycarePond/scripts.pory"
 	.string "Dragonair$"
 
 BattleVsDragonair_Text_1:
-# 533 "data/maps/DaycarePond/scripts.pory"
+# 536 "data/maps/DaycarePond/scripts.pory"
 	.string "You have proven your strength.\pI hope one day you learn that\ngrace will be the way to the EXP.$"
 
 BattleVsDragonair_Text_2:
-# 545 "data/maps/DaycarePond/scripts.pory"
+# 548 "data/maps/DaycarePond/scripts.pory"
 	.string "Hello there Ditto.\pYes, I see through your facade.\pMy philosophy to gain EXP has been\nto keep this biome calm.\pI spent my early days in the\ncrashing waterfalls, but gained\lno EXP.\pI found this biome and figured\nI try a different approach.\pYou seem to be causing a ruckus,\nand I have no problem taking you\ldown!$"
 
 BattleVsDragonair_Text_3:
-# 556 "data/maps/DaycarePond/scripts.pory"
+# 559 "data/maps/DaycarePond/scripts.pory"
 	.string "You have gained the ability to\ntransform into Dragonair!$"
 
 BattleVsDragonair_Text_4:
-# 561 "data/maps/DaycarePond/scripts.pory"
+# 564 "data/maps/DaycarePond/scripts.pory"
 	.string "Very well Ditto.\nGo on.\pLeave this place calmly, with\nthe power to scale roaring\lwaterfalls.$"

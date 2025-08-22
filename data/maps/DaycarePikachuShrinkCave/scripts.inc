@@ -119,94 +119,96 @@ ShroodleInCaveTrigger_1:
 	switch VAR_TEMP_2
 # 73 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	case 33, ShroodleInCaveTrigger_4
-# 92 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 91 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	case 32, ShroodleInCaveTrigger_5
 	return
 
 ShroodleInCaveTrigger_4:
 # 74 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
-# 76 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 75 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	applymovement Shroodle, ShroodleInCaveTrigger_Movement_1
-# 77 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 76 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	waitmovement Shroodle
-# 78 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 77 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	speakername ShroodleInCave_Text_0
-# 79 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 78 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	msgbox ShroodleInCave_Text_2, MSGBOX_AUTOCLOSE
-# 80 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 79 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	setwildbattle SPECIES_SHROODLE, 25
-# 81 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 80 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	dowildbattle
-# 82 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 81 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 83 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 82 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq ShroodleInCaveTrigger_6
 	return
 
 ShroodleInCaveTrigger_5:
-# 93 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 92 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
-# 94 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 93 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	speakername ShroodleInCave_Text_0
-# 95 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 94 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	msgbox ShroodleInCave_Text_2, MSGBOX_AUTOCLOSE
-# 96 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 95 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	setwildbattle SPECIES_SHROODLE, 25
-# 97 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 96 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	dowildbattle
-# 98 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 97 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 99 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 98 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq ShroodleInCaveTrigger_8
 	return
 
 ShroodleInCaveTrigger_6:
-# 85 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 84 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	speakername ShroodleInCave_Text_0
-# 86 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 85 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	msgbox ShroodleInCave_Text_3, MSGBOX_DEFAULT
-# 87 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 86 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	setflag FLAG_SHROODLE_BATTLE
-# 88 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 87 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	waitmessage
-# 89 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 88 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 ShroodleInCaveTrigger_8:
-# 101 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 100 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	speakername ShroodleInCave_Text_0
-# 102 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 101 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	msgbox ShroodleInCave_Text_3, MSGBOX_DEFAULT
-# 103 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 102 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	setflag FLAG_SHROODLE_BATTLE
-# 104 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 103 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	waitmessage
-# 105 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 104 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 
 SewaddleInCave::
-# 114 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 113 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	lock
-# 115 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 114 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	faceplayer
-# 116 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 115 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	goto_if_set FLAG_SEWADDLE_BATTLE, SewaddleInCave_1
-# 126 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 125 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	applymovement Sewaddle, ShroodleInCave_Movement_0
-# 127 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 126 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	waitmovement Sewaddle
-# 128 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 127 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	special PlayTrainerEncounterMusic
-# 129 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 128 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	applymovement Sewaddle, Common_Movement_ExclamationMark
+# 129 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmovement Sewaddle
 # 130 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmovement
+	delay 60
 # 131 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	speakername SewaddleInCave_Text_0
 # 132 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
@@ -223,13 +225,13 @@ SewaddleInCave::
 	return
 
 SewaddleInCave_1:
-# 118 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 117 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	speakername SewaddleInCave_Text_0
-# 119 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 118 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	msgbox SewaddleInCave_Text_1, MSGBOX_DEFAULT
-# 120 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 119 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	waitmessage
-# 121 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 120 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
@@ -258,9 +260,9 @@ SewaddleInCaveTrigger_1:
 # 153 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	applymovement Sewaddle, Common_Movement_ExclamationMark
 # 154 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmovement
+	waitmovement Sewaddle
 # 155 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	delay 40
+	delay 60
 # 156 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 # 157 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
@@ -354,16 +356,18 @@ BlipbugInCave::
 # 213 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	waitmovement Blipbug
 # 214 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
+	delay 60
 # 215 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername BlipbugInCave_Text_0
 # 216 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setwildbattle SPECIES_BLIPBUG, 25
+	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
 # 217 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_BLIPBUG, 25
 # 218 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 219 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 220 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BlipbugInCave_4
 	return
@@ -380,240 +384,240 @@ BlipbugInCave_1:
 	end
 
 BlipbugInCave_4:
-# 221 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
 # 222 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCave_Text_1, MSGBOX_DEFAULT
+	speakername BlipbugInCave_Text_0
 # 223 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setflag FLAG_BLIPBUG_BATTLE
+	msgbox BlipbugInCave_Text_1, MSGBOX_DEFAULT
 # 224 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	setflag FLAG_BLIPBUG_BATTLE
 # 225 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 226 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 
 BlipbugInCaveTrigger::
-# 233 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 234 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	goto_if_unset FLAG_BLIPBUG_BATTLE, BlipbugInCaveTrigger_1
 	return
 
 BlipbugInCaveTrigger_1:
-# 235 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	special PlayTrainerEncounterMusic
 # 236 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	applymovement Blipbug, Common_Movement_ExclamationMark
+	special PlayTrainerEncounterMusic
 # 237 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmovement
+	applymovement Blipbug, Common_Movement_ExclamationMark
 # 238 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	delay 40
+	waitmovement
 # 239 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+	delay 60
 # 240 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 241 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	switch VAR_TEMP_2
-# 242 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 243 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	case 13, BlipbugInCaveTrigger_4
-# 260 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 261 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	case 12, BlipbugInCaveTrigger_5
-# 278 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 279 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	case 11, BlipbugInCaveTrigger_6
-# 296 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 297 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	case 10, BlipbugInCaveTrigger_7
 	return
 
 BlipbugInCaveTrigger_4:
-# 243 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
 # 244 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	applymovement Blipbug, BlipbugInCaveTrigger_Movement_0
+	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
 # 245 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmovement Blipbug
+	applymovement Blipbug, BlipbugInCaveTrigger_Movement_0
 # 246 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
+	waitmovement Blipbug
 # 247 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername BlipbugInCave_Text_0
 # 248 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setwildbattle SPECIES_BLIPBUG, 25
+	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
 # 249 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_BLIPBUG, 25
 # 250 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 251 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 252 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BlipbugInCaveTrigger_8
 	return
 
 BlipbugInCaveTrigger_5:
-# 261 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
 # 262 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	applymovement Blipbug, BlipbugInCaveTrigger_Movement_1
+	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
 # 263 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmovement Blipbug
+	applymovement Blipbug, BlipbugInCaveTrigger_Movement_1
 # 264 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
+	waitmovement Blipbug
 # 265 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername BlipbugInCave_Text_0
 # 266 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setwildbattle SPECIES_BLIPBUG, 25
+	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
 # 267 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_BLIPBUG, 25
 # 268 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 269 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 270 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BlipbugInCaveTrigger_10
 	return
 
 BlipbugInCaveTrigger_6:
-# 279 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
 # 280 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	applymovement Blipbug, ShroodleInCaveTrigger_Movement_1
+	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
 # 281 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmovement Blipbug
+	applymovement Blipbug, ShroodleInCaveTrigger_Movement_1
 # 282 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
+	waitmovement Blipbug
 # 283 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername BlipbugInCave_Text_0
 # 284 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setwildbattle SPECIES_BLIPBUG, 25
+	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
 # 285 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_BLIPBUG, 25
 # 286 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 287 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 288 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BlipbugInCaveTrigger_12
 	return
 
 BlipbugInCaveTrigger_7:
-# 297 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
 # 298 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
+	applymovement LOCALID_PLAYER, ShroodleInCaveTrigger_Movement_0
 # 299 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
+	speakername BlipbugInCave_Text_0
 # 300 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setwildbattle SPECIES_BLIPBUG, 25
+	msgbox BlipbugInCave_Text_2, MSGBOX_AUTOCLOSE
 # 301 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_BLIPBUG, 25
 # 302 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 303 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 304 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BlipbugInCaveTrigger_14
 	return
 
 BlipbugInCaveTrigger_8:
-# 253 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
 # 254 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCaveTrigger_Text_0, MSGBOX_DEFAULT
+	speakername BlipbugInCave_Text_0
 # 255 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setflag FLAG_BLIPBUG_BATTLE
+	msgbox BlipbugInCaveTrigger_Text_0, MSGBOX_DEFAULT
 # 256 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	setflag FLAG_BLIPBUG_BATTLE
 # 257 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 258 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 BlipbugInCaveTrigger_10:
-# 271 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
 # 272 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCaveTrigger_Text_0, MSGBOX_DEFAULT
+	speakername BlipbugInCave_Text_0
 # 273 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setflag FLAG_BLIPBUG_BATTLE
+	msgbox BlipbugInCaveTrigger_Text_0, MSGBOX_DEFAULT
 # 274 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	setflag FLAG_BLIPBUG_BATTLE
 # 275 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 276 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 BlipbugInCaveTrigger_12:
-# 289 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
 # 290 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCaveTrigger_Text_0, MSGBOX_DEFAULT
+	speakername BlipbugInCave_Text_0
 # 291 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setflag FLAG_BLIPBUG_BATTLE
+	msgbox BlipbugInCaveTrigger_Text_0, MSGBOX_DEFAULT
 # 292 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	setflag FLAG_BLIPBUG_BATTLE
 # 293 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 294 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 BlipbugInCaveTrigger_14:
-# 305 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername BlipbugInCave_Text_0
 # 306 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox BlipbugInCaveTrigger_Text_0, MSGBOX_DEFAULT
+	speakername BlipbugInCave_Text_0
 # 307 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	setflag FLAG_BLIPBUG_BATTLE
+	msgbox BlipbugInCaveTrigger_Text_0, MSGBOX_DEFAULT
 # 308 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	setflag FLAG_BLIPBUG_BATTLE
 # 309 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 310 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 
 SinisteaDialog::
-# 317 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	lock
 # 318 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	faceplayer
+	lock
 # 319 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	faceplayer
+# 320 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_CUTIEFLY
 	goto_if_eq SinisteaDialog_1
-# 329 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername SinisteaDialog_Text_0
 # 330 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox SinisteaDialog_Text_2, MSGBOX_DEFAULT
+	speakername SinisteaDialog_Text_0
 # 331 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	msgbox SinisteaDialog_Text_2, MSGBOX_DEFAULT
 # 332 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 333 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 SinisteaDialog_1:
-# 321 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername SinisteaDialog_Text_0
 # 322 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox SinisteaDialog_Text_1, MSGBOX_DEFAULT
+	speakername SinisteaDialog_Text_0
 # 323 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	msgbox SinisteaDialog_Text_1, MSGBOX_DEFAULT
 # 324 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 325 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 
 NymbleDialog::
-# 338 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	lock
 # 339 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	faceplayer
+	lock
 # 340 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	faceplayer
+# 341 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_CUTIEFLY
 	goto_if_eq NymbleDialog_1
-# 350 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername SinisteaDialog_Text_0
 # 351 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox NymbleDialog_Text_2, MSGBOX_DEFAULT
+	speakername SinisteaDialog_Text_0
 # 352 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	msgbox NymbleDialog_Text_2, MSGBOX_DEFAULT
 # 353 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 354 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 NymbleDialog_1:
-# 342 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername NymbleDialog_Text_0
 # 343 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox NymbleDialog_Text_1, MSGBOX_DEFAULT
+	speakername NymbleDialog_Text_0
 # 344 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	msgbox NymbleDialog_Text_1, MSGBOX_DEFAULT
 # 345 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 346 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
@@ -630,9 +634,9 @@ ShroodleInCaveTrigger_Movement_0:
 	face_up
 	step_end
 
-# 76 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 75 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 ShroodleInCaveTrigger_Movement_1:
-# 76 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 75 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	walk_down
 	step_end
 
@@ -648,21 +652,21 @@ SewaddleInCaveTrigger_Movement_1:
 	walk_right
 	step_end
 
-# 244 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 245 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 BlipbugInCaveTrigger_Movement_0:
-# 244 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 245 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	walk_down
-# 244 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 245 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	walk_down
-# 244 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 245 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	walk_down
 	step_end
 
-# 262 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 263 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 BlipbugInCaveTrigger_Movement_1:
-# 262 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 263 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	walk_down
-# 262 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 263 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	walk_down
 	step_end
 
@@ -699,11 +703,11 @@ ShroodleInCave_Text_3:
 	.string "Some say battling is the way to\ngain EXP in the Daycare...$"
 
 SewaddleInCave_Text_0:
-# 118 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 117 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Sewaddle$"
 
 SewaddleInCave_Text_1:
-# 119 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 118 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Now that I think about it,\nI haven't gained any EXP...\leven when I've won.$"
 
 SewaddleInCave_Text_2:
@@ -723,33 +727,33 @@ BlipbugInCave_Text_1:
 	.string "You just knew the perfect matchup.\n$"
 
 BlipbugInCave_Text_2:
-# 215 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 216 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Us little guys need to keep each\nother sharp!$"
 
 BlipbugInCaveTrigger_Text_0:
-# 254 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 255 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.$"
 
 SinisteaDialog_Text_0:
-# 321 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 322 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Sinistea$"
 
 SinisteaDialog_Text_1:
-# 322 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 323 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "In this cave, you'll find only the\nsmallest of Pokémon.\pWe're the only ones who can fit\nthrough that tiny little entrance!$"
 
 SinisteaDialog_Text_2:
-# 330 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 331 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Hey!\pAren't you a little too big to be\nin here?$"
 
 NymbleDialog_Text_0:
-# 342 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 343 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Nymble$"
 
 NymbleDialog_Text_1:
-# 343 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 344 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Our cave is quite barebones when it\ncomes to decor...\pSome Pokémon will make themselves\nright at home when they find space.$"
 
 NymbleDialog_Text_2:
-# 351 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 352 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Whoa... you're HUGE!\pPlease don't step on me.\n$"

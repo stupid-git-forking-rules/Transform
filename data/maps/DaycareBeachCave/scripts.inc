@@ -58,50 +58,54 @@ ChinchouDialog::
 # 37 "data/maps/DaycareBeachCave/scripts.pory"
 	goto_if_set FLAG_TRANS_CHINCHOU, ChinchouDialog_1
 # 47 "data/maps/DaycareBeachCave/scripts.pory"
-	applymovement Chinchou, TotodiileDialog_Movement_0
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 48 "data/maps/DaycareBeachCave/scripts.pory"
-	waitmovement Chinchou
+	applymovement Chinchou, TotodiileDialog_Movement_0
 # 49 "data/maps/DaycareBeachCave/scripts.pory"
-	playse SE_PIN
-# 50 "data/maps/DaycareBeachCave/scripts.pory"
-	applymovement Chinchou, Common_Movement_ExclamationMark
-# 51 "data/maps/DaycareBeachCave/scripts.pory"
 	waitmovement Chinchou
+# 50 "data/maps/DaycareBeachCave/scripts.pory"
+	playse SE_PIN
+# 51 "data/maps/DaycareBeachCave/scripts.pory"
+	applymovement Chinchou, Common_Movement_ExclamationMark
 # 52 "data/maps/DaycareBeachCave/scripts.pory"
+	waitmovement Chinchou
+# 53 "data/maps/DaycareBeachCave/scripts.pory"
 	speakername ChinchouDialog_Text_0
-# 53 "data/maps/DaycareBeachCave/scripts.pory"
-	msgbox ChinchouDialog_Text_2, MSGBOX_DEFAULT
-# 53 "data/maps/DaycareBeachCave/scripts.pory"
-	waitmessage
 # 54 "data/maps/DaycareBeachCave/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
+	msgbox ChinchouDialog_Text_2, MSGBOX_DEFAULT
+# 54 "data/maps/DaycareBeachCave/scripts.pory"
+	waitmessage
 # 55 "data/maps/DaycareBeachCave/scripts.pory"
-	setflag FLAG_TRANS_CHINCHOU
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 56 "data/maps/DaycareBeachCave/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	setflag FLAG_TRANS_CHINCHOU
 # 57 "data/maps/DaycareBeachCave/scripts.pory"
-	dittotransform SPECIES_CHINCHOU
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 58 "data/maps/DaycareBeachCave/scripts.pory"
-	playse MUS_LEVEL_UP
+	dittotransform SPECIES_CHINCHOU
 # 59 "data/maps/DaycareBeachCave/scripts.pory"
-	msgbox ChinchouDialog_Text_3, MSGBOX_DEFAULT
+	playse MUS_LEVEL_UP
 # 60 "data/maps/DaycareBeachCave/scripts.pory"
-	waitmessage
+	msgbox ChinchouDialog_Text_3, MSGBOX_DEFAULT
 # 61 "data/maps/DaycareBeachCave/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	waitmessage
 # 62 "data/maps/DaycareBeachCave/scripts.pory"
-	speakername ChinchouDialog_Text_0
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 63 "data/maps/DaycareBeachCave/scripts.pory"
-	msgbox ChinchouDialog_Text_4, MSGBOX_DEFAULT
+	speakername ChinchouDialog_Text_0
 # 64 "data/maps/DaycareBeachCave/scripts.pory"
-	waitmessage
+	msgbox ChinchouDialog_Text_4, MSGBOX_DEFAULT
 # 65 "data/maps/DaycareBeachCave/scripts.pory"
-	dittotransform VAR_TEMP_0
-# 66 "data/maps/DaycareBeachCave/scripts.pory"
-	givemon SPECIES_CHINCHOU, 25, move1 = MOVE_THUNDER_WAVE, move2 = MOVE_DISCHARGE, move3 = MOVE_DIVE, move4 = MOVE_DAZZLING_GLEAM
-# 67 "data/maps/DaycareBeachCave/scripts.pory"
 	waitmessage
+# 66 "data/maps/DaycareBeachCave/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 67 "data/maps/DaycareBeachCave/scripts.pory"
+	givemon SPECIES_CHINCHOU, 25, move1 = MOVE_THUNDER_WAVE, move2 = MOVE_DISCHARGE, move3 = MOVE_DIVE, move4 = MOVE_DAZZLING_GLEAM
 # 68 "data/maps/DaycareBeachCave/scripts.pory"
+	waitmessage
+# 69 "data/maps/DaycareBeachCave/scripts.pory"
+	playbgm MUS_PMD_LAKE, FALSE
+# 70 "data/maps/DaycareBeachCave/scripts.pory"
 	release
 	end
 
@@ -152,13 +156,13 @@ ChinchouDialog_Text_1:
 	.string "As you near your goal, you\nbest prepare yourself.\pAn opponent much like yourself\nawaits.\pThis blue Pokémon has also\nmastered transformation.$"
 
 ChinchouDialog_Text_2:
-# 53 "data/maps/DaycareBeachCave/scripts.pory"
+# 54 "data/maps/DaycareBeachCave/scripts.pory"
 	.string "You must be the new Ditto.\pGreat job finding this cave!\pNo need to fear. I am not looking\nfor a fight.\pI think I could help on your\nadventure by lending you my diving\lablities.\pGo on, Ditto, use Transform!\n$"
 
 ChinchouDialog_Text_3:
-# 59 "data/maps/DaycareBeachCave/scripts.pory"
+# 60 "data/maps/DaycareBeachCave/scripts.pory"
 	.string "You have gained the ability to\ntransform into Chinchou!$"
 
 ChinchouDialog_Text_4:
-# 63 "data/maps/DaycareBeachCave/scripts.pory"
+# 64 "data/maps/DaycareBeachCave/scripts.pory"
 	.string "Looking more electric already!\n$"

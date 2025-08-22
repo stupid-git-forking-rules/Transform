@@ -258,13 +258,14 @@ script BattleVsNoivern{
     waitmovement(Noivern)
     playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Noivern")
-    msgbox("You tread where echoes rule.\pLet's see if you can keep up with\nthe speed of sound!.", MSGBOX_AUTOCLOSE)
+    msgbox("You tread where echoes rule.\pLet's see if you can keep up with\nthe speed of sound!", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_NOIVERN, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
     {
+        playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_NOIVERN)
         dittotransform(SPECIES_NOIVERN)
@@ -277,10 +278,12 @@ script BattleVsNoivern{
         speakername("Noivern")
         msgbox("Soar high gooey friend.\pYou'll need my flight to reach your\ndestination", MSGBOX_DEFAULT)
         waitmessage
+        playbgm(MUS_NONE, FALSE)
         applymovement(Noivern, moves(walk_fast_up*4))
         waitmovement(Noivern)
         applymovement(Noivern, moves(walk_in_place_down))
         waitmovement(Noivern)
+        playbgm(MUS_PMD_NOIVERNCAVE, FALSE)
         release
         end
     }

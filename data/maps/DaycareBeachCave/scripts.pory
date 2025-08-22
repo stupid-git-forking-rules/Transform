@@ -66,6 +66,7 @@ script ChinchouDialog{
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_CHINCHOU, 25, move1=MOVE_THUNDER_WAVE, move2=MOVE_DISCHARGE, move3=MOVE_DIVE, move4=MOVE_DAZZLING_GLEAM)
         waitmessage
+        playbgm(MUS_PMD_LAKE, FALSE)
         release
         end 
     }
