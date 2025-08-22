@@ -14,7 +14,7 @@ script BattleVsMarill{
         release
         end
     }
-
+    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     applymovement(Marill, moves(face_player))
     waitmovement(Marill)
     playse(SE_PIN)
@@ -47,8 +47,7 @@ script PsyduckDialog{
     lock
     faceplayer
     speakername("Psyduck")
-    msgbox("OW OH GOD MY HEAD!\pWHY WAS I CREATED TO LIVE IN\nPAIN?", MSGBOX_DEFAULT)
-    waitmessage
+    msgbox("I came to the lake to try to ease\nthis headache...\pIt's the most peaceful biome at\nthe daycare.", MSGBOX_DEFAULT)    waitmessage
     release
     end
 
@@ -154,7 +153,8 @@ script GoomyInCave{
         waitmovement(Goomy)              
         special(PlayTrainerEncounterMusic)
         applymovement(Goomy, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Goomy)
+        delay(60)
 	    speakername("Goomy")
         msgbox("Keepin it mellow...\nLet's just have some fun.", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_GOOMY, 25)
@@ -177,8 +177,8 @@ script GoomyInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Goomy, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Goomy)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
@@ -236,7 +236,8 @@ script BuizelInCave{
         waitmovement(Buizel)              
         special(PlayTrainerEncounterMusic)
         applymovement(Buizel, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Buizel)
+        delay(60)
 	    speakername("Buizel")
         msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_BUIZEL, 25)
@@ -259,8 +260,8 @@ script BuizelInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Buizel, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Buizel)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {
@@ -319,7 +320,8 @@ script SlowpokeInCave{
         waitmovement(Slowpoke)              
         special(PlayTrainerEncounterMusic)
         applymovement(Slowpoke, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Slowpoke)
+        delay(60)
 	    speakername("Slowpoke")
         msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_SLOWPOKE, 25)
@@ -341,8 +343,8 @@ script SlowpokeInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Slowpoke, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Slowpoke)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
@@ -403,7 +405,8 @@ script CroagunkInCave{
         waitmovement(Croagunk)              
         special(PlayTrainerEncounterMusic)
         applymovement(Croagunk, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Croagunk)
+        delay(60)
 	    speakername("Croagunk")
         msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_CROAGUNK, 25)
@@ -425,8 +428,8 @@ script CroagunkInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Croagunk, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Croagunk)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {
@@ -535,7 +538,7 @@ script BattleVsDragonair{
         release
         end
     }
-
+    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     applymovement(Dragonair, moves(face_player))
     waitmovement(Dragonair)
     playse(SE_PIN)

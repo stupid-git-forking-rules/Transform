@@ -19,7 +19,8 @@ script CyndaquilInCave{
         waitmovement(Cyndaquil)        
         special(PlayTrainerEncounterMusic)
         applymovement(Cyndaquil, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Cyndaquil)
+        delay(60)
 	    speakername("Cyndaquil")
         msgbox("The boss is so strong.\nHe must know how to gain EXP!", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_CYNDAQUIL, 25)
@@ -43,8 +44,8 @@ script CyndaquilInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Cyndaquil, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Cyndaquil)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {
@@ -104,7 +105,8 @@ script VulpixInCave{
         waitmovement(Vulpix)        
         special(PlayTrainerEncounterMusic)
         applymovement(Vulpix, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Vulpix)
+        delay(60)
 	    speakername("Vulpix")
         msgbox("Can't take the heat?\n", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_VULPIX, 25)
@@ -128,8 +130,8 @@ script VulpixInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Vulpix, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Vulpix)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
@@ -188,6 +190,7 @@ script FuecocoInCave{
         special(PlayTrainerEncounterMusic)
         applymovement(Fuecoco, Common_Movement_ExclamationMark)
         waitmovement(Fuecoco)
+        delay(60)
         speakername("Fuecoco")
         msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_FUECOCO, 25)
@@ -210,8 +213,8 @@ script FuecocoInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Fuecoco, Common_Movement_ExclamationMark)
-        waitmovement
-        delay(40)
+        waitmovement(Fuecoco)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {
@@ -288,7 +291,8 @@ script CombuskenInCave{
         waitmovement(Combusken)
         special(PlayTrainerEncounterMusic)
         applymovement(Combusken, Common_Movement_ExclamationMark)
-        waitmovement
+        waitmovement(Combusken)
+        delay(60)
         speakername("Combusken")
         msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_COMBUSKEN, 25)
@@ -312,8 +316,8 @@ script CombuskenInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Combusken, Common_Movement_ExclamationMark)
-        waitmovement
-        delay(40)
+        waitmovement(Combusken)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
@@ -377,6 +381,7 @@ script BattleVsArcanine{
         end
     } 
     lock
+    playbgm(MUS_DUMMY, FALSE)
     playmoncry(SPECIES_ARCANINE, CRY_MODE_NORMAL)
     waitmoncry
     playse(SE_PIN)
@@ -391,6 +396,7 @@ script BattleVsArcanine{
     playse(SE_M_SCRATCH)
     applymovement(Arcanine, moves(jump_2_down*2))
     waitmovement(Arcanine)
+    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Arcanine")
     msgbox("Your spirit burns bright.\pLet me test your flame.", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_ARCANINE, 25)
@@ -406,7 +412,7 @@ script BattleVsArcanine{
         msgbox("You have gained the ability to\ntransform into Arcanine!", MSGBOX_DEFAULT)
         waitmessage
         dittotransform(VAR_TEMP_0)
-        givemon(SPECIES_ARCANINE, 25, move1=MOVE_FLARE_BLITZ, move2=MOVE_EXTREME_SPEED, move3=MOVE_CRUNCH, move4=MOVE_HOWL)
+        givemon(SPECIES_ARCANINE, 25, move1=MOVE_FIRE_FANG, move2=MOVE_BITE, move3=MOVE_AERIAL_ACE, move4=MOVE_THUNDER_FANG)
         waitmessage
         speakername("Arcanine")
         msgbox("Carry yourself with honor.\pDon't soil my good name.", MSGBOX_DEFAULT)

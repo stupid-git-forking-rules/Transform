@@ -72,7 +72,6 @@ script ShroodleInCaveTrigger{
         {
         case 33:
             applymovement(LOCALID_PLAYER, moves(face_up))
-
             applymovement(Shroodle, moves(walk_down))
             waitmovement(Shroodle)
 	        speakername("Shroodle")
@@ -127,7 +126,8 @@ script SewaddleInCave{
         waitmovement(Sewaddle)        
         special(PlayTrainerEncounterMusic)
         applymovement(Sewaddle, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Sewaddle)
+        delay(60)
 	    speakername("Sewaddle")
         msgbox("I hope I level up after this\nbattle!", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_SEWADDLE, 25)
@@ -151,8 +151,8 @@ script SewaddleInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Sewaddle, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Sewaddle)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
@@ -211,6 +211,7 @@ script BlipbugInCave{
         special(PlayTrainerEncounterMusic)
         applymovement(Blipbug, Common_Movement_ExclamationMark)
 	    waitmovement(Blipbug)
+        delay(60)
 	    speakername("Blipbug")
         msgbox("Us little guys need to keep each\nother sharp!", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_BLIPBUG, 25)
@@ -235,7 +236,7 @@ script BlipbugInCaveTrigger{
         special(PlayTrainerEncounterMusic)
         applymovement(Blipbug, Common_Movement_ExclamationMark)
 	    waitmovement
-        delay(40)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {

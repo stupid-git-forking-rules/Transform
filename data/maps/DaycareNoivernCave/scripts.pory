@@ -34,6 +34,9 @@ script GengarDialog{
     waitmovement(Gengar)
     speakername("Gengar")
     msgbox("How did you manage to pass\nthrough that rock?\pMaybe you've got a bit of\nGhost_type in you.\pMWAHAHA!\n", MSGBOX_DEFAULT)
+    setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    giveitem(ITEM_LUCKY_EGG)
+    clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
     waitmessage
     release
     end
@@ -97,7 +100,8 @@ script MawileInCave{
         waitmovement(Mawile)        
         special(PlayTrainerEncounterMusic)
         applymovement(Mawile, Common_Movement_ExclamationMark)
-        waitmovement
+        waitmovement(Mawile)
+        delay(60)
         speakername("Mawile")
         msgbox("Not many get this far...\nLet's see if you're clever or just lucky.", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_MAWILE, 25)
@@ -120,8 +124,8 @@ script MawileInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Mawile, Common_Movement_ExclamationMark)
-        waitmovement
-        delay(40)
+        waitmovement(Mawile)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {
@@ -181,6 +185,7 @@ script DuskullInCave{
         special(PlayTrainerEncounterMusic)
         applymovement(Duskull, Common_Movement_ExclamationMark)
         waitmovement(Duskull)
+        delay(60)
         speakername("Duskull")
         msgbox("Not many dare to speak to me...\nYou must be bold.", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_DUSKULL, 25)
@@ -203,8 +208,8 @@ script DuskullInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Duskull, Common_Movement_ExclamationMark)
-        waitmovement
-        delay(40)
+        waitmovement(Duskull)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
@@ -236,6 +241,7 @@ script BattleVsNoivern{
         end
     } 
     lock
+    playbgm(MUS_NONE, FALSE)
     playmoncry(SPECIES_NOIVERN, CRY_MODE_NORMAL)
     waitmoncry
     playse(SE_PIN)
@@ -250,6 +256,7 @@ script BattleVsNoivern{
     playse(SE_M_SCREECH)
     applymovement(Noivern, moves(walk_fast_down*4))
     waitmovement(Noivern)
+    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Noivern")
     msgbox("You tread where echoes rule.\pLet's see if you can keep up with\nthe speed of sound!.", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_NOIVERN, 25)

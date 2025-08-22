@@ -20,7 +20,8 @@ script BattleVsWeavile{
     } 
     elif(!flag(FLAG_TRANS_ARCANINE))
     {
-        lock       
+        lock
+        playbgm(MUS_NONE, FALSE)       
         playmoncry(SPECIES_WEAVILE, CRY_MODE_NORMAL)
         waitmoncry
         applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
@@ -34,6 +35,7 @@ script BattleVsWeavile{
         playse(SE_M_SCRATCH)
         applymovement(Weavile, moves(jump_2_down))
         waitmovement(Weavile)
+        playbgm(MUS_PMD_BOSS_INTRO, FALSE)
         speakername("Weavile")
         msgbox("You want to challenge me?\pNot a chance weakling.\pCcme back when you can keep up...\nor don't come back at all.", MSGBOX_DEFAULT)
         waitmessage
@@ -41,10 +43,12 @@ script BattleVsWeavile{
         waitmovement(Weavile)
         applymovement(Weavile, moves(walk_in_place_down))
         waitmovement(Weavile)
+        playbgm(MUS_PMD_JUNGLE, FALSE)
         release
         end
     }
     lock
+    playbgm(MUS_NONE, FALSE)       
     playmoncry(SPECIES_WEAVILE, CRY_MODE_NORMAL)
     waitmoncry
     playse(SE_PIN)
@@ -60,6 +64,7 @@ script BattleVsWeavile{
     waitse
     applymovement(Weavile, moves(jump_2_down))
     waitmovement(Weavile)
+    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Weavile")
     msgbox("You look quick.\pNow we're talking.\pLet's see if you're fast or just\nflashy.", MSGBOX_AUTOCLOSE)
     setwildbattle(SPECIES_WEAVILE, 25)

@@ -89,7 +89,7 @@ script BattleVsLurantis{
         release
         end
     }
-
+    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     applymovement(Lurantis, moves(face_player))
     waitmovement(Lurantis)
     playse(SE_PIN)
@@ -135,7 +135,8 @@ script OmanyteInCave{
         waitmovement(Omanyte)
         special(PlayTrainerEncounterMusic)
         applymovement(Omanyte, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Omanyte)
+        delay(60)
 	    speakername("Omanyte")
         msgbox("You're no fossil!\n", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_OMANYTE, 25)
@@ -158,8 +159,8 @@ script OmanyteInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Omanyte, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Omanyte)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {
@@ -219,7 +220,8 @@ script KabutoInCave{
         waitmovement(Kabuto)        
         special(PlayTrainerEncounterMusic)
         applymovement(Kabuto, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Kabuto)
+        delay(60)
 	    speakername("Kabuto")
         msgbox("Fossils only!\n", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_KABUTO, 25)
@@ -243,8 +245,8 @@ script KabutoInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Kabuto, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Kabuto)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {

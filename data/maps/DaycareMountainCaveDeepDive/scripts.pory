@@ -19,6 +19,7 @@ script GorebyssInCave{
         special(PlayTrainerEncounterMusic)
         applymovement(Gorebyss, Common_Movement_ExclamationMark)
         waitmovement(Gorebyss)
+        delay(60)
         speakername("Gorebyss")
         msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_GOREBYSS, 25)
@@ -41,8 +42,8 @@ script GorebyssInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Gorebyss, Common_Movement_ExclamationMark)
-        waitmovement
-        delay(40)
+        waitmovement(Gorebyss)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
@@ -135,6 +136,7 @@ script HuntailInCave{
         special(PlayTrainerEncounterMusic)
         applymovement(Huntail, Common_Movement_ExclamationMark)
         waitmovement(Huntail)
+        delay(60)
         speakername("Huntail")
         msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_HUNTAIL, 25)
@@ -157,8 +159,8 @@ script HuntailInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Huntail, Common_Movement_ExclamationMark)
-        waitmovement
-        delay(40)
+        waitmovement(Huntail)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {

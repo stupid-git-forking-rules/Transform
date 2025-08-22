@@ -112,6 +112,7 @@ script RhyhornDialog{
     }
     else
     {
+        playbgm(MUS_PMD_HAPPINESS,FALSE)
         applymovement(Rhyhorn, moves(face_player))
         waitmovement(Rhyhorn)
         playse(SE_PIN)
