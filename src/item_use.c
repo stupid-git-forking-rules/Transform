@@ -1630,7 +1630,7 @@ void ItemUseOutOfBattle_StrengthTransform(u8 taskId)
 void ItemUseOnFieldCB_StrengthTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_MACHAMP);
+    SetPlayerAvatarTransformation(SPECIES_MACHAMP, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1643,7 +1643,7 @@ void ItemUseOutOfBattle_DittoTransform(u8 taskId)
 void ItemUseOnFieldCB_DittoTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_DITTO);
+    SetPlayerAvatarTransformation(SPECIES_DITTO, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1656,7 +1656,7 @@ void ItemUseOutOfBattle_SurfTransform(u8 taskId)
 void ItemUseOnFieldCB_SurfTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_MARILL);
+    SetPlayerAvatarTransformation(SPECIES_MARILL, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1669,7 +1669,7 @@ void ItemUseOutOfBattle_ShrinkTransform(u8 taskId)
 void ItemUseOnFieldCB_ShrinkTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_CUTIEFLY);
+    SetPlayerAvatarTransformation(SPECIES_CUTIEFLY, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1682,7 +1682,7 @@ void ItemUseOutOfBattle_FlyTransform(u8 taskId)
 void ItemUseOnFieldCB_FlyTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_NOIVERN);
+    SetPlayerAvatarTransformation(SPECIES_NOIVERN, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1695,7 +1695,7 @@ void ItemUseOutOfBattle_RockSmashTransform(u8 taskId)
 void ItemUseOnFieldCB_RockSmashTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_RHYHORN);
+    SetPlayerAvatarTransformation(SPECIES_RHYHORN, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1708,7 +1708,7 @@ void ItemUseOutOfBattle_DiveTransform(u8 taskId)
 void ItemUseOnFieldCB_DiveTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_CHINCHOU);
+    SetPlayerAvatarTransformation(SPECIES_CHINCHOU, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1721,7 +1721,7 @@ void ItemUseOutOfBattle_WaterfallTransform(u8 taskId)
 void ItemUseOnFieldCB_WaterfallTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_DRAGONAIR);
+    SetPlayerAvatarTransformation(SPECIES_DRAGONAIR, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1734,7 +1734,7 @@ void ItemUseOutOfBattle_MachBikeTransform(u8 taskId)
 void ItemUseOnFieldCB_MachBikeTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_ARCANINE);
+    SetPlayerAvatarTransformation(SPECIES_ARCANINE, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1747,7 +1747,7 @@ void ItemUseOutOfBattle_AcroBikeTransform(u8 taskId)
 void ItemUseOnFieldCB_AcroBikeTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_WEAVILE);
+    SetPlayerAvatarTransformation(SPECIES_WEAVILE, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1760,7 +1760,7 @@ void ItemUseOutOfBattle_CutTransform(u8 taskId)
 void ItemUseOnFieldCB_CutTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_LURANTIS);
+    SetPlayerAvatarTransformation(SPECIES_LURANTIS, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
@@ -1773,7 +1773,7 @@ void ItemUseOutOfBattle_FlashTransform(u8 taskId)
 void ItemUseOnFieldCB_FlashTransform(u8 taskId)
 {
     LockPlayerFieldControls();
-    SetPlayerAvatarTransformation(SPECIES_PIKACHU);
+    SetPlayerAvatarTransformation(SPECIES_PIKACHU, TRUE);
     ScriptUnfreezeObjectEvents();
     DestroyTask(taskId);
 }
