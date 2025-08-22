@@ -1650,6 +1650,10 @@ static void Task_HeatStartMenu_HandleInput(u8 taskId)
 
 static void HeatStartMenu_HandleInput_Button(enum PlayerLocation location, u8 taskId)
 {
+    if (menuSelected == MENU_POKEDEX)
+    {
+        menuSelected = MENU_PARTY;
+    }
     if (JOY_NEW(A_BUTTON))
     {
         if (menuSelected != MENU_FLAG && menuSelected != MENU_SAVE)
