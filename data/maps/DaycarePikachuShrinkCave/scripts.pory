@@ -40,7 +40,8 @@ script ShroodleInCave{
         waitmovement(Shroodle)
         special(PlayTrainerEncounterMusic)
         applymovement(Shroodle, Common_Movement_ExclamationMark)
-	    waitmovement
+	    waitmovement(Shroodle)
+        delay(60)
 	    speakername("Shroodle")
         msgbox("A trespasser!\n", MSGBOX_AUTOCLOSE)
 	    setwildbattle(SPECIES_SHROODLE, 25)
@@ -64,13 +65,14 @@ script ShroodleInCaveTrigger{
     {
         special(PlayTrainerEncounterMusic)
         applymovement(Shroodle, Common_Movement_ExclamationMark)
-	    waitmovement
-        delay(40)
+	    waitmovement(Shroodle)
+        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {
         case 33:
             applymovement(LOCALID_PLAYER, moves(face_up))
+
             applymovement(Shroodle, moves(walk_down))
             waitmovement(Shroodle)
 	        speakername("Shroodle")

@@ -189,6 +189,7 @@ script DaycareOldManDialog{
     {   
         if(var(VAR_TRANSFORM_MON)== SPECIES_DITTO)
         {
+        playbgm(MUS_PMD_HAPPINESS, FALSE) 
         playse(SE_PIN)
         applymovement(DaycareMan, moves(face_player))
         waitmovement(DaycareMan)

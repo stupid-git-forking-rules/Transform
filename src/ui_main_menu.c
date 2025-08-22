@@ -858,7 +858,7 @@ static void DestroyMonIcons()
 //
 //  Print The Text For Dex Num, Badges, Name, Playtime, Location
 //
-static const u8 sText_DexNum[] = _("Dex {STR_VAR_1}");
+static const u8 sText_DexNum[] = _("Transformations {STR_VAR_1}");
 static const u8 sText_Badges[] = _("Badges {STR_VAR_1}");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
@@ -905,7 +905,7 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     } 
     ConvertIntToDecimalStringN(gStringVar1, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
     StringExpandPlaceholders(gStringVar4, sText_Badges);
-    AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
+    //AddTextPrinterParameterized4(WINDOW_MIDDLE, FONT_NORMAL, 16, 32 + 2, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
 
     // Print Player Name
     AddTextPrinterParameterized3(WINDOW_MIDDLE, FONT_NORMAL, 16, 2, colors, TEXT_SKIP_DRAW, gSaveBlock2Ptr->playerName);

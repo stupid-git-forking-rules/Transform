@@ -69,23 +69,23 @@ EiscueDialog_1:
 # 44 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_RHYHORN
 	goto_if_eq EiscueDialog_3
-# 84 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	lock
-# 85 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	faceplayer
 # 86 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	speakername EiscueDialog_Text_0
+	lock
 # 87 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox EiscueDialog_Text_1, MSGBOX_DEFAULT
+	faceplayer
 # 88 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	speakername EiscueDialog_Text_0
 # 89 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox EiscueDialog_Text_5, MSGBOX_DEFAULT
+	msgbox EiscueDialog_Text_1, MSGBOX_DEFAULT
 # 90 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 91 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	waitmessage
+	msgbox EiscueDialog_Text_5, MSGBOX_DEFAULT
 # 92 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 93 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	waitmessage
+# 94 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	release
 	end
 
@@ -107,9 +107,9 @@ EiscueDialog_3:
 # 52 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq EiscueDialog_6
-# 78 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 80 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	waitmessage
-# 79 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 81 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	release
 	end
 
@@ -129,65 +129,75 @@ EiscueDialog_6:
 # 60 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	addobject NoIce
 # 61 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	applymovement NoIce, EiscueDialog_Movement_0
 # 62 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	playse SE_PIN
-# 63 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	applymovement NoIce, Common_Movement_ExclamationMark
-# 64 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	waitmovement NoIce
+# 63 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 64 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	playse SE_PIN
 # 65 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	speakername EiscueDialog_Text_0
+	applymovement NoIce, Common_Movement_ExclamationMark
 # 66 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox EiscueDialog_Text_3, MSGBOX_DEFAULT
+	waitmovement NoIce
 # 67 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 68 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	giveitem ITEM_LUCKY_EGG
-# 69 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 70 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	speakername EiscueDialog_Text_0
+# 68 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox EiscueDialog_Text_3, MSGBOX_DEFAULT
+# 69 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 70 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	giveitem ITEM_LUCKY_EGG
 # 71 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox EiscueDialog_Text_4, MSGBOX_DEFAULT
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 72 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	waitmessage
+	speakername EiscueDialog_Text_0
 # 73 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox EiscueDialog_Text_4, MSGBOX_DEFAULT
+# 74 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	waitmessage
+# 75 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	release
 	end
 
 
 FreedEicscue::
-# 100 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	lock
-# 101 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	faceplayer
 # 102 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	speakername EiscueDialog_Text_0
+	lock
 # 103 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox FreedEicscue_Text_0, MSGBOX_DEFAULT
+	faceplayer
 # 104 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	waitmessage
+	speakername EiscueDialog_Text_0
 # 105 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox FreedEicscue_Text_0, MSGBOX_DEFAULT
+# 106 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	waitmessage
+# 107 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	release
 	end
 
 
 AlolanSandshrewDialog::
-# 110 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	lock
-# 111 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	faceplayer
 # 112 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	speakername AlolanSandshrewDialog_Text_0
+	lock
 # 113 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox AlolanSandshrewDialog_Text_1, MSGBOX_DEFAULT
+	faceplayer
 # 114 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	waitmessage
+	speakername AlolanSandshrewDialog_Text_0
 # 115 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox AlolanSandshrewDialog_Text_1, MSGBOX_DEFAULT
+# 116 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	waitmessage
+# 117 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	release
 	end
 
+
+# 61 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+EiscueDialog_Movement_0:
+# 61 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	face_player
+	step_end
 
 SphealDialog_Text_0:
 # 24 "data/maps/DaycareMountainCaveDeep/scripts.pory"
@@ -214,25 +224,25 @@ EiscueDialog_Text_2:
 	.string "This Eiscue is having trouble\ncommunicating through the giant\lice cube on its head.\pWould you like to use Rock Smash?\n$"
 
 EiscueDialog_Text_3:
-# 66 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 68 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	.string "Goodness!\nThank you.\pI have been trying to get that\nice cube off my head forever!\pTake this as a token of my\nappreciation.$"
 
 EiscueDialog_Text_4:
-# 71 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 73 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	.string "I think I might go for a swim now!\n$"
 
 EiscueDialog_Text_5:
-# 89 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 91 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	.string "This Eiscue is having trouble\ncommunicating through the giant\lice cube on its head.$"
 
 FreedEicscue_Text_0:
-# 103 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 105 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	.string "Thank you again!\pI feel like I'm finally able\nto regain my balance.$"
 
 AlolanSandshrewDialog_Text_0:
-# 112 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 114 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	.string "Sandslash$"
 
 AlolanSandshrewDialog_Text_1:
-# 113 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 115 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	.string "That Eiscue seems to be\nstruggling.\pI'm sure a Pokémon who can\nsmash rocks could smash that\lice cube.$"
