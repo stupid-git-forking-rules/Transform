@@ -4630,6 +4630,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/DaycarePikachuShrinkCave/border.bin",
       "blockdata_filepath": "data/layouts/DaycarePikachuShrinkCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_DAYCARE_DESERT_TEMPLE",
+      "name": "DaycareDesertTemple_Layout",
+      "width": 56,
+      "height": 50,
+      "primary_tileset": "gTileset_DesertPrimary",
+      "secondary_tileset": "gTileset_DesertSecondary",
+      "border_filepath": "data/layouts/DaycareDesertTemple/border.bin",
+      "blockdata_filepath": "data/layouts/DaycareDesertTemple/map.bin"
     }
   ]
 }

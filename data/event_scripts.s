@@ -1203,3 +1203,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DaycareMausholdShrink/scripts.inc"
 
 	.include "data/maps/DaycarePikachuShrinkCave/scripts.inc"
+
+	.include "data/maps/DaycareDesertTemple/scripts.inc"
