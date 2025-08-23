@@ -360,28 +360,28 @@ DaycareEastDittoOpenXforms::
 	faceplayer
 # 225 "data/maps/DaycareEast/scripts.pory"
 	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareEastDittoOpenXforms_1
-# 246 "data/maps/DaycareEast/scripts.pory"
-	speakername DaycareEastDittoOpenXforms_Text_0
-# 247 "data/maps/DaycareEast/scripts.pory"
-	msgbox DaycareEastDittoOpenXforms_Text_3, MSGBOX_DEFAULT
-# 247 "data/maps/DaycareEast/scripts.pory"
-	waitmessage
-# 248 "data/maps/DaycareEast/scripts.pory"
-	setflag FLAG_XFORMS_TALKED_TO_DITTO
-# 249 "data/maps/DaycareEast/scripts.pory"
-	msgbox DaycareEastDittoOpenXforms_Text_1, MSGBOX_YESNO
 # 250 "data/maps/DaycareEast/scripts.pory"
+	speakername DaycareEastDittoOpenXforms_Text_0
+# 251 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_3, MSGBOX_DEFAULT
+# 251 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 252 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_XFORMS_TALKED_TO_DITTO
+# 253 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 254 "data/maps/DaycareEast/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareEastDittoOpenXforms_7
-# 261 "data/maps/DaycareEast/scripts.pory"
-	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 262 "data/maps/DaycareEast/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 263 "data/maps/DaycareEast/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 264 "data/maps/DaycareEast/scripts.pory"
-	waitmessage
 # 265 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 266 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 267 "data/maps/DaycareEast/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 268 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 269 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
@@ -393,11 +393,15 @@ DaycareEastDittoOpenXforms_1:
 # 229 "data/maps/DaycareEast/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareEastDittoOpenXforms_4
-# 238 "data/maps/DaycareEast/scripts.pory"
-	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 239 "data/maps/DaycareEast/scripts.pory"
-	waitmessage
 # 240 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 241 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 242 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 243 "data/maps/DaycareEast/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 244 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
@@ -407,19 +411,23 @@ DaycareEastDittoOpenXforms_4:
 # 232 "data/maps/DaycareEast/scripts.pory"
 	waitstate
 # 233 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 234 "data/maps/DaycareEast/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 235 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 DaycareEastDittoOpenXforms_7:
-# 252 "data/maps/DaycareEast/scripts.pory"
-	special OpenPCMoveMons
-# 253 "data/maps/DaycareEast/scripts.pory"
-	waitstate
-# 254 "data/maps/DaycareEast/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 255 "data/maps/DaycareEast/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 256 "data/maps/DaycareEast/scripts.pory"
+	special OpenPCMoveMons
+# 257 "data/maps/DaycareEast/scripts.pory"
+	waitstate
+# 258 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 259 "data/maps/DaycareEast/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 260 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
@@ -569,9 +577,9 @@ DaycareEastDittoOpenXforms_Text_1:
 	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareEastDittoOpenXforms_Text_2:
-# 238 "data/maps/DaycareEast/scripts.pory"
+# 240 "data/maps/DaycareEast/scripts.pory"
 	.string "Come back anytime!$"
 
 DaycareEastDittoOpenXforms_Text_3:
-# 247 "data/maps/DaycareEast/scripts.pory"
+# 251 "data/maps/DaycareEast/scripts.pory"
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"

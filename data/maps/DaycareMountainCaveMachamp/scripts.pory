@@ -21,7 +21,7 @@ script BattleVsMachamp{
     playse(SE_M_VITAL_THROW)
     applymovement(Machamp, moves(jump_2_down))
     waitmovement(Machamp)
-    playbgm(MUS<MUS_PMD_BOSS_INTRO, FALSE)
+    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Machamp")
     msgbox("You need my strength to pass\nthrough that cave atop the cliff?\pYou'll need to prove that you can\nhandle it.", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_MACHAMP, 25)

@@ -38,7 +38,7 @@ BattleVsMachamp::
 # 23 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	waitmovement Machamp
 # 24 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	playbgm MUS < MUS_PMD_BOSS_INTRO, FALSE
+	playbgm MUS_PMD_BOSS_INTRO, FALSE
 # 25 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	speakername BattleVsMachamp_Text_0
 # 26 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
