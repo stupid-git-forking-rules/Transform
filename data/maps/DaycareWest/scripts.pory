@@ -53,6 +53,8 @@ script DaycareWestDittoOpenXforms{
         {
             special(OpenPCMoveMons)
             waitstate
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
             end
         }
@@ -60,6 +62,8 @@ script DaycareWestDittoOpenXforms{
         {
             msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
             waitmessage
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
             end
         }
@@ -150,6 +154,7 @@ script BattleVsCutiefly{
         release
         end
     }
+    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     playse(SE_PIN)
     applymovement(Cutiefly, Common_Movement_ExclamationMark)
     waitmovement(Cutiefly)

@@ -2,7 +2,7 @@
   "id": "MAP_DAYCARE_WEST",
   "name": "DaycareWest",
   "layout": "LAYOUT_DAYCARE_WEST",
-  "music": "MUS_PMD_TEST",
+  "music": "MUS_PMD_HEARTWARMING",
   "region_map_section": "MAPSEC_DEWFORD_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

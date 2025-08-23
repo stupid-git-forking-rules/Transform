@@ -282,8 +282,8 @@ Text_WantToStrength:
 	.string "Would you like to use STRENGTH?$"
 
 Text_MonUsedStrength:
-	.string "{STR_VAR_1} used STRENGTH!\p"
-	.string "{STR_VAR_1}'s STRENGTH made it\n"
+	.string "Machamp used STRENGTH!\p"
+	.string "Machamp's STRENGTH made it\n"
 	.string "possible to move boulders around!$"
 
 Text_CantStrength:
@@ -329,7 +329,7 @@ Text_WantToWaterfall:
 	.string "Would you like to use WATERFALL?$"
 
 Text_MonUsedWaterfall:
-	.string "{STR_VAR_1} used WATERFALL.$"
+	.string "Dragonair used WATERFALL.$"
 
 EventScript_UseDive::
 	lockall
@@ -425,7 +425,7 @@ Text_WantToDive:
 	.string "Would you like to use DIVE?$"
 
 Text_MonUsedDive:
-	.string "{STR_VAR_1} used DIVE.$"
+	.string "Chinchou used DIVE.$"
 
 Text_CantSurface:
 	.string "Light is filtering down from above.\n"

@@ -540,6 +540,7 @@ script BattleVsPikachu{
         end
         
     }
+    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     applymovement(Pikachu, moves(face_player))
     waitmovement(Pikachu)
     playse(SE_PIN)
@@ -620,6 +621,8 @@ script DaycareBase_Ditto{
         {
             special(OpenPCMoveMons)
             waitstate
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
             end
         }
@@ -627,6 +630,8 @@ script DaycareBase_Ditto{
         {
             msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
             waitmessage
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
             end
         }

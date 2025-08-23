@@ -145,6 +145,8 @@ script DaycareTreehouseDittoOpenXforms{
         {
             special(OpenPCMoveMons)
             waitstate
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
             end
         }
@@ -152,6 +154,8 @@ script DaycareTreehouseDittoOpenXforms{
         {
             msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
             waitmessage
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
             end
         }

@@ -700,11 +700,11 @@ BattleVsArcanine::
 # 395 "data/maps/DaycareVolcano/scripts.pory"
 	waitmovement LOCALID_PLAYER
 # 396 "data/maps/DaycareVolcano/scripts.pory"
-	playse SE_M_SCRATCH
-# 397 "data/maps/DaycareVolcano/scripts.pory"
 	applymovement Arcanine, BattleVsArcanine_Movement_2
-# 398 "data/maps/DaycareVolcano/scripts.pory"
+# 397 "data/maps/DaycareVolcano/scripts.pory"
 	waitmovement Arcanine
+# 398 "data/maps/DaycareVolcano/scripts.pory"
+	playse SE_M_SCRATCH
 # 399 "data/maps/DaycareVolcano/scripts.pory"
 	playbgm MUS_PMD_BOSS_INTRO, FALSE
 # 400 "data/maps/DaycareVolcano/scripts.pory"
@@ -823,11 +823,11 @@ BattleVsArcanine_Movement_1:
 	walk_fast_down
 	step_end
 
-# 397 "data/maps/DaycareVolcano/scripts.pory"
+# 396 "data/maps/DaycareVolcano/scripts.pory"
 BattleVsArcanine_Movement_2:
-# 397 "data/maps/DaycareVolcano/scripts.pory"
+# 396 "data/maps/DaycareVolcano/scripts.pory"
 	jump_2_down
-# 397 "data/maps/DaycareVolcano/scripts.pory"
+# 396 "data/maps/DaycareVolcano/scripts.pory"
 	jump_2_down
 	step_end
 

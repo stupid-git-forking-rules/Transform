@@ -6,6 +6,7 @@ script BattleVsMachamp{
         end
     } 
     lock
+    playbgm(MUS_NONE, FALSE)
     playmoncry(SPECIES_MACHAMP, CRY_MODE_NORMAL)
     waitmoncry
     playse(SE_PIN)
@@ -20,6 +21,7 @@ script BattleVsMachamp{
     playse(SE_M_VITAL_THROW)
     applymovement(Machamp, moves(jump_2_down))
     waitmovement(Machamp)
+    playbgm(MUS<MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Machamp")
     msgbox("You need my strength to pass\nthrough that cave atop the cliff?\pYou'll need to prove that you can\nhandle it.", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_MACHAMP, 25)
@@ -35,7 +37,7 @@ script BattleVsMachamp{
         msgbox("You have gained the ability to\ntransform into Machamp!", MSGBOX_DEFAULT)
         waitmessage
         dittotransform(VAR_TEMP_0)
-        givemon(SPECIES_MACHAMP, 25, move1=MOVE_DYNAMIC_PUNCH, move2=MOVE_KARATE_CHOP, move3=MOVE_BULK_UP, move4=MOVE_SEISMIC_TOSS)
+        givemon(SPECIES_MACHAMP, 25, move1=MOVE_STRENGTH, move2=MOVE_FIRE_PUNCH, move3=MOVE_CROSS_CHOP, move4=MOVE_THUNDER_PUNCH)
         waitmessage
         speakername("Machamp")
         msgbox("With great power comes great\nresponsibility.\pGo on!\nFind your Egg!", MSGBOX_DEFAULT)
