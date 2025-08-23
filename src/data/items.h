@@ -8887,8 +8887,8 @@ const struct Item gItemsInfo[] =
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
             "A mythical Egg\n"
-            "obtained from a long\n"
-            "journey for Brendan."),
+            "obtained from a\n"
+            "Ditto's journey."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
