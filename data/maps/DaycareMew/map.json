@@ -67,8 +67,8 @@
       "x": 10,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_DAYCARE_DESERT",
-      "dest_warp_id": "8"
+      "dest_map": "MAP_DAYCARE_DESERT_TEMPLE",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],
