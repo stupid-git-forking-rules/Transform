@@ -562,6 +562,8 @@ script BattleVsPikachu{
         waitmessage
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_PIKACHU, 25, move1=MOVE_NUZZLE, move2=MOVE_IRON_TAIL, move3=MOVE_SPARK, move4=MOVE_FLASH)
+        speakername("Pikachu")
+        msgbox("How electrifying!\pElectric_type moves are powerful\nagainst Water_type Pokémon.\pThey typically spend their time in\nthe Lake Biome here.", MSGBOX_DEFAULT)
         waitmessage
         release
         end

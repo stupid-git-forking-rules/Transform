@@ -158,6 +158,7 @@ script SewaddleInCaveTrigger{
         {
         case 5:
             applymovement(LOCALID_PLAYER, moves(face_left))
+            waitmovement(Sewaddle)
 	        speakername("Sewaddle")
             msgbox("I hope I level up after this\nbattle!", MSGBOX_AUTOCLOSE)
 	        setwildbattle(SPECIES_SEWADDLE, 25)
@@ -175,6 +176,7 @@ script SewaddleInCaveTrigger{
         case 6:
             applymovement(LOCALID_PLAYER, moves(face_left))
             applymovement(Sewaddle,  moves(walk_right))
+            waitmovement(Sewaddle)
 	        speakername("Sewaddle")
             msgbox("I hope I level up after this\nbattle!", MSGBOX_AUTOCLOSE)
 	        setwildbattle(SPECIES_SEWADDLE, 25)

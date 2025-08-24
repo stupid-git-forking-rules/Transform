@@ -137,6 +137,7 @@ script VulpixInCaveTrigger{
         {
         case 26:
             applymovement(LOCALID_PLAYER, moves(face_left))
+            applymovement(LOCALID_PLAYER, moves(face_left))
 	        speakername("Vulpix")
             msgbox("Can't take the heat?\n", MSGBOX_AUTOCLOSE)
 	        setwildbattle(SPECIES_VULPIX, 25)
@@ -154,6 +155,7 @@ script VulpixInCaveTrigger{
         case 27:
             applymovement(LOCALID_PLAYER, moves(face_left))
             applymovement(Vulpix,  moves(walk_right))
+            waitmovement(Vulpix)
 	        speakername("Vulpix")
             msgbox("Can't take the heat?\n", MSGBOX_AUTOCLOSE)
 	        setwildbattle(SPECIES_VULPIX, 25)
@@ -340,6 +342,7 @@ script CombuskenInCaveTrigger{
         case 7:
             applymovement(LOCALID_PLAYER, moves(face_left))
             applymovement(Combusken,  moves(walk_right))
+            waitmovement(Combusken)
             speakername("Combusken")
             msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
             setwildbattle(SPECIES_COMBUSKEN, 25)
@@ -357,6 +360,7 @@ script CombuskenInCaveTrigger{
         case 8:
             applymovement(LOCALID_PLAYER, moves(face_left))
             applymovement(Combusken,  moves(walk_right*2))
+            waitmovement(Combusken)
             speakername("Combusken")
             msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
             setwildbattle(SPECIES_COMBUSKEN, 25)
@@ -398,7 +402,7 @@ script BattleVsArcanine{
     playse(SE_M_SCRATCH)
     playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Arcanine")
-    msgbox("Your spirit burns bright.\pLet me test your flame.", MSGBOX_AUTOCLOSE)
+    msgbox("Aha!\pA challenger.\pYou must be strong if you battled\nyour way through my volcano.\pI see how your spirit burns bright.\pMaybe taking you down will grant me\nthe EXP I am looking for.\pLet me test your flame!\n", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_ARCANINE, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
@@ -415,7 +419,7 @@ script BattleVsArcanine{
         givemon(SPECIES_ARCANINE, 25, move1=MOVE_FIRE_FANG, move2=MOVE_BITE, move3=MOVE_AERIAL_ACE, move4=MOVE_THUNDER_FANG)
         waitmessage
         speakername("Arcanine")
-        msgbox("Carry yourself with honor.\pDon't soil my good name.", MSGBOX_DEFAULT)
+        msgbox("Carry yourself with honor.\pDon't soil my good name.\pMaybe you will unlock the secret\nto gain EXP.", MSGBOX_DEFAULT)
         waitmessage
         applymovement(Arcanine, moves(jump_2_up*2))
         waitmovement(Arcanine)

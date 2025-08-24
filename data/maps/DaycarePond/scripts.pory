@@ -342,16 +342,16 @@ script SlowpokeInCaveTrigger{
     if(!flag(FLAG_SLOWPOKE_BATTLE))
     {
         special(PlayTrainerEncounterMusic)
-        applymovement(Slowpoke, Common_Movement_ExclamationMark)
-	    waitmovement(Slowpoke)
-        delay(60)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
         case 28:
+            applymovement(Slowpoke, Common_Movement_ExclamationMark)
+	        waitmovement(Slowpoke)
             applymovement(Slowpoke, moves(face_right))
             waitmovement(Slowpoke)
             applymovement(LOCALID_PLAYER, moves(face_left))
+            delay(60)
 	        speakername("Slowpoke")
             msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
 	        setwildbattle(SPECIES_SLOWPOKE, 25)
@@ -367,9 +367,12 @@ script SlowpokeInCaveTrigger{
                 end
             }
         case 26:
+            applymovement(Slowpoke, Common_Movement_ExclamationMark)
+	        waitmovement(Slowpoke)
             applymovement(Slowpoke, moves(face_left))
             waitmovement(Slowpoke)        
             applymovement(LOCALID_PLAYER, moves(face_right))
+            delay(60)
 	        speakername("Slowpoke")
             msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
 	        setwildbattle(SPECIES_SLOWPOKE, 25)
@@ -546,7 +549,7 @@ script BattleVsDragonair{
     waitmovement(Dragonair)
     speakername("Dragonair")
     msgbox("Hello there Ditto.\pYes, I see through your facade.\pMy philosophy to gain EXP has been\nto keep this biome calm.\pI spent my early days in the\ncrashing waterfalls, but gained\lno EXP.\pI found this biome and figured\nI try a different approach.\pYou seem to be causing a ruckus,\nand I have no problem taking you\ldown!", MSGBOX_AUTOCLOSE)
-	setwildbattle(SPECIES_DRAGONAIR, 25)
+	setwildbattle(SPECIES_DRAGONAIR, 25, move1=MOVE_OUTRAGE, move2= MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)

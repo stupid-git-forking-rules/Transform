@@ -96,7 +96,7 @@ script BattleVsLurantis{
     applymovement(Lurantis, Common_Movement_ExclamationMark)
     waitmovement(Lurantis)
     speakername("Lurantis")
-    msgbox("You're out seeking your Egg...\nare you not?\pEvery Ditto comes here in search\nif the mythical Egg.\pProve your strength to me.\nMy sharp raptorial arms may come\lin handy.", MSGBOX_AUTOCLOSE)
+    msgbox("You're out seeking your Egg...\nare you not?\pEvery Ditto comes here in search\nif the Mythical Egg.\pProve your strength to me.\nMy sharp raptorial arms may come\lin handy.", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_LURANTIS, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
@@ -111,6 +111,8 @@ script BattleVsLurantis{
         waitmessage
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_LURANTIS, 25, move1=MOVE_AERIAL_ACE, move2=MOVE_BUG_BITE, move3=MOVE_TRAILBLAZE, move4=MOVE_CUT)
+        speakername("Lurantis")
+        msgbox("You are a sharp one!\pUse my abilities to your\nadvantage.\pThe journey ahead is no walk in the\ndaycare.", MSGBOX_DEFAULT))
         waitmessage
         release
         end
@@ -269,6 +271,7 @@ script KabutoInCaveTrigger{
         case 9:
             applymovement(LOCALID_PLAYER, moves(face_left))
             applymovement(Kabuto,  moves(walk_right))
+            waitmovement(Kabuto)
 	        speakername("Kabuto")
             msgbox("Fossils only!\n", MSGBOX_AUTOCLOSE)
 	        setwildbattle(SPECIES_KABUTO, 25)

@@ -27,6 +27,8 @@ script HaunterDialog{
 
 script GengarDialog{
     lock
+    if(!flag(FLAG_GENGAR_EGG))
+    {
     playse(SE_PIN)
     applymovement(Gengar, moves(face_player))
     waitmovement(Gengar)
@@ -40,6 +42,16 @@ script GengarDialog{
     waitmessage
     release
     end
+    }
+    else{
+    applymovement(Gengar, moves(face_player))
+    waitmovement(Gengar)
+    speakername("Gengar")
+    msgbox("Back for more?\pI have nothing left for you\pKekeh!\n", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+    }
 }
 
 script LitwickDialog {
@@ -216,6 +228,7 @@ script DuskullInCaveTrigger{
         case 15:
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(Duskull, moves(walk_left*3))
+            waitmovement(Duskull)
             speakername("Duskull")
             msgbox("Not many dare to speak to me...\nYou must be bold.", MSGBOX_AUTOCLOSE)
             setwildbattle(SPECIES_DUSKULL, 25)
@@ -258,7 +271,7 @@ script BattleVsNoivern{
     waitmovement(Noivern)
     playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Noivern")
-    msgbox("You tread where echoes rule.\pLet's see if you can keep up with\nthe speed of sound!", MSGBOX_AUTOCLOSE)
+    msgbox("You tread where echos rule.\pI've ruled over this cave since\nI bested my little brother as a\lNoibat.\pI hope you've come prepareed.\pLet's see if you can keep up with\nthe speed of sound!", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_NOIVERN, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
@@ -268,6 +281,7 @@ script BattleVsNoivern{
         playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_NOIVERN)
+        delay(30)
         dittotransform(SPECIES_NOIVERN)
         playse(MUS_LEVEL_UP)
         msgbox("You have gained the ability to\ntransform into Noivern!", MSGBOX_DEFAULT)
@@ -276,7 +290,7 @@ script BattleVsNoivern{
         givemon(SPECIES_NOIVERN, 25, move1=MOVE_AIR_CUTTER, move2=MOVE_DRAGON_BREATH, move3=MOVE_SUPERSONIC, move4=MOVE_SUPER_FANG)
         waitmessage
         speakername("Noivern")
-        msgbox("Soar high gooey friend.\pYou'll need my flight to reach your\ndestination", MSGBOX_DEFAULT)
+        msgbox("Soar high gooey friend.\pYou'll need my flight to reach your\ndestination\pYou near the end of your quest!", MSGBOX_DEFAULT)
         waitmessage
         playbgm(MUS_NONE, FALSE)
         applymovement(Noivern, moves(walk_fast_up*4))

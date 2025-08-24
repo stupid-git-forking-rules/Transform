@@ -66,6 +66,7 @@ script GorebyssInCaveTrigger{
         case 6:
             applymovement(LOCALID_PLAYER, moves(face_left))
             applymovement(Gorebyss, moves(walk_right))
+            waitmovement(Gorebyss)
             speakername("Gorebyss")
             msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
             setwildbattle(SPECIES_GOREBYSS, 25)
@@ -83,6 +84,7 @@ script GorebyssInCaveTrigger{
         case 7:
             applymovement(LOCALID_PLAYER, moves(face_left))
             applymovement(Gorebyss, moves(walk_right*2))
+            waitmovement(Gorebyss)
             speakername("Gorebyss")
             msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
             setwildbattle(SPECIES_GOREBYSS, 25)
@@ -100,6 +102,7 @@ script GorebyssInCaveTrigger{
         case 8:
             applymovement(LOCALID_PLAYER, moves(face_left))
             applymovement(Gorebyss, moves(walk_right*3))
+            waitmovement(Gorebyss)
             speakername("Gorebyss")
             msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
             setwildbattle(SPECIES_GOREBYSS, 25)
@@ -183,6 +186,7 @@ script HuntailInCaveTrigger{
         case 6:
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(Huntail, moves(walk_left))
+            waitmovement(Huntail)
             speakername("Huntail")
             msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
             setwildbattle(SPECIES_HUNTAIL, 25)
@@ -200,6 +204,7 @@ script HuntailInCaveTrigger{
         case 7:
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(Huntail, moves(walk_left*2))
+            waitmovement(Huntail)
             speakername("Huntail")
             msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
             setwildbattle(SPECIES_HUNTAIL, 25)
@@ -217,6 +222,7 @@ script HuntailInCaveTrigger{
         case 8:
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(Huntail, moves(walk_left*3))
+            waitmovement(Huntail)
             speakername("Huntail")
             msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
             setwildbattle(SPECIES_HUNTAIL, 25)

@@ -168,12 +168,15 @@ script BattleVsCutiefly{
     {
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_CUTIEFLY)
+        delay(30)
         dittotransform(SPECIES_CUTIEFLY)
         playse(MUS_LEVEL_UP)
         msgbox("You have gained the ability to\ntransform into Cutiefly!", MSGBOX_DEFAULT)
         waitmessage
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_CUTIEFLY, 25, move1=MOVE_BUG_BUZZ, move2=MOVE_DAZZLING_GLEAM, move3=MOVE_SWEET_SCENT, move4=MOVE_PSYCHIC)
+        speakername("Cutiefly")
+        msgbox("I'll stick to my flowers.\pBe on the lookout for places only a\ntiny Pokémon can squeeze through!", MSGBOX_DEFAULT)
         waitmessage
         release
         end

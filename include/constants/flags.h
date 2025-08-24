@@ -714,8 +714,8 @@
 #define FLAG_DITTO_INTRO  0x29B //  used for ditto at daycare base to give his shpeil about how the game works.
 #define FLAG_HIDE_BRENDAN_BIKE  0x29C // hide brendan on bike for outro
 #define FLAG_SHOW_BRENDAN_OUTRO  0x29D // show other brendan for outro
-#define FLAG_UNUSED_0x29E  0x29E // Unused Flag
-#define FLAG_UNUSED_0x29F  0x29F // Unused Flag
+#define FLAG_GENGAR_EGG  0x29E // gengar gives lucky egg
+#define FLAG_CHINCHOU_TRIGGER  0x29F // workaround for transforming on water
 #define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
 #define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
 #define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag

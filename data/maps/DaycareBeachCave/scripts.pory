@@ -51,24 +51,50 @@ script ChinchouDialog{
         applymovement(Chinchou, Common_Movement_ExclamationMark)
         waitmovement(Chinchou)
         speakername("Chinchou")
-        msgbox("You must be the new Ditto.\pGreat job finding this cave!\pNo need to fear. I am not looking\nfor a fight.\pI think I could help on your\nadventure by lending you my diving\lablities.\pGo on, Ditto, use Transform!\n", MSGBOX_DEFAULT)        waitmessage
-        copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+        msgbox("You must be the new Ditto.\pGreat job finding this cave!\pNo need to fear. I am not looking\nfor a fight.\pI think I could help on your\nadventure by lending you my diving\lablities.\pGo on, Ditto, use Transform!\n", MSGBOX_DEFAULT)       
+        waitmessage
         setflag(FLAG_TRANS_CHINCHOU)
         setflag(FLAG_SUPPRESS_SPEAKER_NAME)
-        dittotransform(SPECIES_CHINCHOU)
         playse(MUS_LEVEL_UP)
         msgbox("You have gained the ability to\ntransform into Chinchou!", MSGBOX_DEFAULT)
         waitmessage
         clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
         speakername("Chinchou")
-        msgbox("Looking more electric already!\n", MSGBOX_DEFAULT)
-        waitmessage
-        dittotransform(VAR_TEMP_0)
+        msgbox("A little shy?\pThat's alright.\nAnother time then.", MSGBOX_DEFAULT)
         givemon(SPECIES_CHINCHOU, 25, move1=MOVE_THUNDER_WAVE, move2=MOVE_DISCHARGE, move3=MOVE_DIVE, move4=MOVE_DAZZLING_GLEAM)
         waitmessage
         playbgm(MUS_PMD_LAKE, FALSE)
         release
         end 
+    }
+}
+
+script ChinchouTransformTrigger {
+    if(flag(FLAG_CHINCHOU_TRIGGER))
+    {
+        end
+    }
+    else
+    {
+    if(flag(FLAG_TRANS_CHINCHOU)){
+    lock
+    special(SpawnCameraObject)
+    copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
+    dittotransform(SPECIES_CHINCHOU)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*7))
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    playse(SE_PIN)
+    applymovement(Chinchou, Common_Movement_ExclamationMark)
+    waitmovement(Chinchou)
+    speakername("Chinchou")
+    msgbox("There it is!\pLooking more electric already!\n", MSGBOX_DEFAULT)
+    waitmessage
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*7))
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    dittotransform(VAR_TEMP_0)
+    release
+    end
+    }
     }
 }
 
