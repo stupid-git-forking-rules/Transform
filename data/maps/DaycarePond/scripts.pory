@@ -266,6 +266,8 @@ script BuizelInCaveTrigger{
         switch(var(VAR_TEMP_2)) 
         {
         case 34:
+            applymovement(Buizel, moves(face_player))
+            waitmovement(Buizel)
             applymovement(LOCALID_PLAYER, moves(face_down))
             applymovement(Buizel, moves(walk_up))
             waitmovement(Buizel)
@@ -284,6 +286,8 @@ script BuizelInCaveTrigger{
                 end
             }
         case 35:
+            applymovement(Buizel, moves(face_player))
+            waitmovement(Buizel)
             applymovement(LOCALID_PLAYER, moves(face_down))
 	        speakername("Buizel")
             msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)

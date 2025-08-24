@@ -139,7 +139,7 @@ BattleVsMachamp_Text_0:
 
 BattleVsMachamp_Text_1:
 # 26 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	.string "You need my strength to pass\nthrough that cave atop the cliff?\pYou'll need to prove that you can\nhandle it.$"
+	.string "You need my strength to pass\nthrough that cave atop the cliff?\pYou'll need to prove that you can\nhandle it\pCome on.\nLet's battle it out.\pShow me your strength!\n$"
 
 BattleVsMachamp_Text_2:
 # 37 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
