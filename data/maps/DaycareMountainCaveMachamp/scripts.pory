@@ -23,7 +23,7 @@ script BattleVsMachamp{
     waitmovement(Machamp)
     playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Machamp")
-    msgbox("You need my strength to pass\nthrough that cave atop the cliff?\pYou'll need to prove that you can\nhandle it\pCome on.\nLet's battle it out.\pShow me your strength!\n", MSGBOX_AUTOCLOSE)
+    msgbox("You need my strength to pass\nthrough that cave atop the cliff?\pYou'll need to prove that you can\nhandle it.\pCome on.\nLet's battle it out.\pShow me your strength!\n", MSGBOX_AUTOCLOSE)
 	setwildbattle(SPECIES_MACHAMP, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle

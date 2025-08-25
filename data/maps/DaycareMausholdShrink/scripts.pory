@@ -15,9 +15,10 @@ script FamilyofFour{
             if(flag(FLAG_FAM_THREE))
                 {
                     speakername("Maushold")
+                    playse(SE_PIN)
                     applymovement(Maushold4, Common_Movement_ExclamationMark)
                     waitmovement(Maushold4)
-                    msgbox("Don't pander to me!\pI we heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
+                    msgbox("Don't pander to me!\pWe heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
                     setflag(FLAG_FAM_FOUR)
                     waitmessage
                     release
@@ -43,6 +44,7 @@ script FamilyofFour{
             end  
             }
         speakername("Maushold")
+        playse(SE_PIN)
         applymovement(Maushold4, Common_Movement_ExclamationMark)
         waitmovement(Maushold4)
         applymovement(Maushold4, moves(face_left))
@@ -64,6 +66,7 @@ script FamilyofFour{
     if(var(VAR_RESULT) == 1)
     {
         speakername("Maushold")
+        playse(SE_PIN)
         applymovement(Maushold4, Common_Movement_ExclamationMark)
         waitmovement(Maushold4)
         msgbox("Hey!\pHow dare you insult my family!\n", MSGBOX_DEFAULT)
@@ -77,6 +80,7 @@ script FamilyofFour{
     if(var(VAR_RESULT) == 2)
     {
         speakername("Maushold")
+        playse(SE_PIN)
         applymovement(Maushold4, Common_Movement_ExclamationMark)
         waitmovement(Maushold4)
         msgbox("Hey!\pHow dare you insult my family!\n", MSGBOX_DEFAULT)
@@ -109,6 +113,7 @@ script FamilyofThree{
     if(var(VAR_RESULT) == 0)
     {
         speakername("Maushold")
+        playse(SE_PIN)
         applymovement(Maushold3, Common_Movement_ExclamationMark)
         waitmovement(Maushold3)
         msgbox("Hey!\pHow dare you insult my family!\n", MSGBOX_DEFAULT)
@@ -126,15 +131,17 @@ script FamilyofThree{
             if(!flag(FLAG_FAMFOUR_WRONG))
             {
             speakername("Maushold")
+            playse(SE_PIN)
             applymovement(Maushold3, Common_Movement_ExclamationMark)
             waitmovement(Maushold3)
-            msgbox("Don't pander to me!\pI we heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
+            msgbox("Don't pander to me!\pWe heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
             setflag(FLAG_FAM_THREE)
             waitmessage
             release
             end
             }
             speakername("Maushold")
+            playse(SE_PIN)
             applymovement(Maushold3, Common_Movement_ExclamationMark)
             waitmovement(Maushold3)
             applymovement(Maushold3, moves(face_right))
@@ -154,6 +161,7 @@ script FamilyofThree{
             end
         }
         speakername("Maushold")
+        playse(SE_PIN)
         applymovement(Maushold3, Common_Movement_ExclamationMark)
         waitmovement(Maushold3)
         applymovement(Maushold3, moves(face_right))
@@ -175,6 +183,7 @@ script FamilyofThree{
     if(var(VAR_RESULT) == 2)
     {
         speakername("Maushold")
+        playse(SE_PIN)
         applymovement(Maushold3, Common_Movement_ExclamationMark)
         waitmovement(Maushold3)
         msgbox("Hey!\pHow dare you insult my family!\n", MSGBOX_DEFAULT)

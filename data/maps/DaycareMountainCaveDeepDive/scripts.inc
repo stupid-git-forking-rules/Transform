@@ -304,13 +304,13 @@ HuntailInCaveTrigger_1:
 # 168 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	switch VAR_TEMP_1
 # 170 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	case 5, HuntailInCaveTrigger_4
+	case 26, HuntailInCaveTrigger_4
 # 186 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	case 6, HuntailInCaveTrigger_5
+	case 25, HuntailInCaveTrigger_5
 # 204 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	case 7, HuntailInCaveTrigger_6
+	case 24, HuntailInCaveTrigger_6
 # 222 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	case 8, HuntailInCaveTrigger_7
+	case 23, HuntailInCaveTrigger_7
 	return
 
 HuntailInCaveTrigger_4:

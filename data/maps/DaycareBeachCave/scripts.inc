@@ -139,22 +139,28 @@ ChinchouTransformTrigger_4:
 # 86 "data/maps/DaycareBeachCave/scripts.pory"
 	playse SE_PIN
 # 87 "data/maps/DaycareBeachCave/scripts.pory"
-	applymovement Chinchou, Common_Movement_ExclamationMark
+	applymovement Chinchou, TotodiileDialog_Movement_0
 # 88 "data/maps/DaycareBeachCave/scripts.pory"
 	waitmovement Chinchou
 # 89 "data/maps/DaycareBeachCave/scripts.pory"
-	speakername ChinchouDialog_Text_0
+	applymovement Chinchou, Common_Movement_ExclamationMark
 # 90 "data/maps/DaycareBeachCave/scripts.pory"
-	msgbox ChinchouTransformTrigger_Text_0, MSGBOX_DEFAULT
+	waitmovement Chinchou
 # 91 "data/maps/DaycareBeachCave/scripts.pory"
-	waitmessage
+	speakername ChinchouDialog_Text_0
 # 92 "data/maps/DaycareBeachCave/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, ChinchouTransformTrigger_Movement_1
+	msgbox ChinchouTransformTrigger_Text_0, MSGBOX_DEFAULT
 # 93 "data/maps/DaycareBeachCave/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
+	waitmessage
 # 94 "data/maps/DaycareBeachCave/scripts.pory"
-	dittotransform VAR_TEMP_0
+	applymovement OBJ_EVENT_ID_CAMERA, ChinchouTransformTrigger_Movement_1
 # 95 "data/maps/DaycareBeachCave/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 96 "data/maps/DaycareBeachCave/scripts.pory"
+	special RemoveCameraObject
+# 97 "data/maps/DaycareBeachCave/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 98 "data/maps/DaycareBeachCave/scripts.pory"
 	release
 	end
 
@@ -181,23 +187,31 @@ ChinchouTransformTrigger_Movement_0:
 	walk_down
 # 84 "data/maps/DaycareBeachCave/scripts.pory"
 	walk_down
+# 84 "data/maps/DaycareBeachCave/scripts.pory"
+	walk_down
+# 84 "data/maps/DaycareBeachCave/scripts.pory"
+	walk_down
 	step_end
 
-# 92 "data/maps/DaycareBeachCave/scripts.pory"
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
 ChinchouTransformTrigger_Movement_1:
-# 92 "data/maps/DaycareBeachCave/scripts.pory"
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
 	walk_up
-# 92 "data/maps/DaycareBeachCave/scripts.pory"
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
 	walk_up
-# 92 "data/maps/DaycareBeachCave/scripts.pory"
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
 	walk_up
-# 92 "data/maps/DaycareBeachCave/scripts.pory"
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
 	walk_up
-# 92 "data/maps/DaycareBeachCave/scripts.pory"
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
 	walk_up
-# 92 "data/maps/DaycareBeachCave/scripts.pory"
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
 	walk_up
-# 92 "data/maps/DaycareBeachCave/scripts.pory"
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
+	walk_up
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
+	walk_up
+# 94 "data/maps/DaycareBeachCave/scripts.pory"
 	walk_up
 	step_end
 
@@ -242,5 +256,5 @@ ChinchouDialog_Text_4:
 	.string "A little shy?\pThat's alright.\nAnother time then.$"
 
 ChinchouTransformTrigger_Text_0:
-# 90 "data/maps/DaycareBeachCave/scripts.pory"
+# 92 "data/maps/DaycareBeachCave/scripts.pory"
 	.string "There it is!\pLooking more electric already!\n$"

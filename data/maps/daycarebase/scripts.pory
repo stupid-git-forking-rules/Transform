@@ -240,6 +240,7 @@ script DaycareOldManDialog{
             waitse
             applymovement(Brendan, Common_Movement_ExclamationMark)
             waitmovement(Brendan)
+            delay(30)
             applymovement(Brendan, moves(walk_fast_right*5))
             waitmovement(Brendan)
             applymovement(Brendan, moves(walk_fast_up))
@@ -249,6 +250,8 @@ script DaycareOldManDialog{
             fadescreenswapbuffers(FADE_TO_BLACK, 60)
             delay(60)
             clearflag(FLAG_BEAT_MEW)
+            setflag(FLAG_SHOW_BRENDAN_OUTRO)
+            clearflag(FLAG_HIDE_BRENDAN_BIKE)
             special(GameClear)
         }
         else{
@@ -292,6 +295,7 @@ script DaycareOldManDialog{
             waitse
             applymovement(Brendan, Common_Movement_ExclamationMark)
             waitmovement(Brendan)
+            delay(30)
             applymovement(Brendan, moves(walk_fast_right*5))
             waitmovement(Brendan)
             applymovement(Brendan, moves(walk_fast_up))
@@ -301,6 +305,8 @@ script DaycareOldManDialog{
             fadescreenswapbuffers(FADE_TO_BLACK, 60)
             delay(60)
             clearflag(FLAG_BEAT_MEW)
+            setflag(FLAG_SHOW_BRENDAN_OUTRO)
+            clearflag(FLAG_HIDE_BRENDAN_BIKE)
             special(GameClear)
         }
         }

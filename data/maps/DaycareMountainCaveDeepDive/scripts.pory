@@ -167,7 +167,7 @@ script HuntailInCaveTrigger{
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
-        case 5:
+        case 26:
             applymovement(LOCALID_PLAYER, moves(face_right))
             speakername("Huntail")
             msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
@@ -183,7 +183,7 @@ script HuntailInCaveTrigger{
                 release
                 end
             }
-        case 6:
+        case 25:
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(Huntail, moves(walk_left))
             waitmovement(Huntail)
@@ -201,7 +201,7 @@ script HuntailInCaveTrigger{
                 release
                 end
             }
-        case 7:
+        case 24:
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(Huntail, moves(walk_left*2))
             waitmovement(Huntail)
@@ -219,7 +219,7 @@ script HuntailInCaveTrigger{
                 release
                 end
             }
-        case 8:
+        case 23:
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(Huntail, moves(walk_left*3))
             waitmovement(Huntail)

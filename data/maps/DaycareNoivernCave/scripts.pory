@@ -39,6 +39,7 @@ script GengarDialog{
     setflag(FLAG_SUPPRESS_SPEAKER_NAME)
     giveitem(ITEM_LUCKY_EGG)
     clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+    setflag(FLAG_GENGAR_EGG)
     waitmessage
     release
     end
