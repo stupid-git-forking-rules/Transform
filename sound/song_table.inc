@@ -625,6 +625,7 @@ gSongTable::
 	song mus_pmd_noiverncave, 0, 0
 	song mus_pmd_volcano, 0, 0
 	song mus_pmd_test, 0, 0
+	song mus_pmd_title, 0, 0
 
 	.align 2
 dummy_song_header:

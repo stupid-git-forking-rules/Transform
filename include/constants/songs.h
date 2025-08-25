@@ -560,6 +560,7 @@
 #define MUS_PMD_NOIVERNCAVE         620
 #define MUS_PMD_VOLCANO             621
 #define MUS_PMD_TEST                622
+#define MUS_PMD_TITLE               623
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
