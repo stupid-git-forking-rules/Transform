@@ -9,6 +9,8 @@ bool8 FldEff_CutGrass(void);
 void FixLongGrassMetatilesWindowTop(s16 x, s16 y);
 void FixLongGrassMetatilesWindowBottom(s16 x, s16 y);
 
+#define FLDEFF_CONST_PLAYER_IS_DITTO 9
+extern EWRAM_DATA u8 gFieldMoveBackupObject;
 extern const struct SpritePalette gSpritePalette_CutGrass;
 extern struct MapPosition gPlayerFacingPosition;
 
@@ -61,7 +63,5 @@ bool8 FldEff_Defog(void);
 
 //general
 void Task_DoFieldMove_RunFunc(u8 taskId); // qol_field_moves
-
-#define FLDEFF_CONST_PLAYER_IS_DITTO 9
 
 #endif // GUARD_FLDEFF_H
