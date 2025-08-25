@@ -193,6 +193,85 @@ AlolanSandshrewDialog::
 	end
 
 
+DaycareMCDDittoOpenXforms::
+# 124 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	lock
+# 125 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	faceplayer
+# 126 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareMCDDittoOpenXforms_1
+# 151 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	speakername DaycareMCDDittoOpenXforms_Text_0
+# 152 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox DaycareMCDDittoOpenXforms_Text_3, MSGBOX_DEFAULT
+# 152 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	waitmessage
+# 153 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	setflag FLAG_XFORMS_TALKED_TO_DITTO
+# 154 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox DaycareMCDDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 155 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareMCDDittoOpenXforms_7
+# 166 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox DaycareMCDDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 167 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 168 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 169 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	waitmessage
+# 170 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	release
+	end
+
+DaycareMCDDittoOpenXforms_1:
+# 128 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	speakername DaycareMCDDittoOpenXforms_Text_0
+# 129 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox DaycareMCDDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 130 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareMCDDittoOpenXforms_4
+# 141 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox DaycareMCDDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 142 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	waitmessage
+# 143 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 144 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 145 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	release
+	end
+
+DaycareMCDDittoOpenXforms_4:
+# 132 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	special OpenPCMoveMons
+# 133 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	waitstate
+# 134 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 135 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 136 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	release
+	end
+
+DaycareMCDDittoOpenXforms_7:
+# 157 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	special OpenPCMoveMons
+# 158 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	waitstate
+# 159 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 160 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 161 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	release
+	end
+
+
 # 61 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 EiscueDialog_Movement_0:
 # 61 "data/maps/DaycareMountainCaveDeep/scripts.pory"
@@ -246,3 +325,19 @@ AlolanSandshrewDialog_Text_0:
 AlolanSandshrewDialog_Text_1:
 # 115 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	.string "That Eiscue seems to be\nstruggling.\pI'm sure a Pokémon who can\nsmash rocks could smash that\lice cube.$"
+
+DaycareMCDDittoOpenXforms_Text_0:
+# 128 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	.string "Ditto$"
+
+DaycareMCDDittoOpenXforms_Text_1:
+# 129 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	.string "Would you like to change out your\ntransformation options?$"
+
+DaycareMCDDittoOpenXforms_Text_2:
+# 141 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	.string "Come back anytime!$"
+
+DaycareMCDDittoOpenXforms_Text_3:
+# 152 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"

@@ -28,6 +28,7 @@ script BattleVsMarill{
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
     {
+        playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_MARILL)
         dittotransform(SPECIES_MARILL)
@@ -37,6 +38,7 @@ script BattleVsMarill{
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_MARILL, 25, move1=MOVE_SURF, move2=MOVE_AQUA_JET, move3=MOVE_COVET, move4=MOVE_RAIN_DANCE)
         waitmessage
+        fadenewbgm(MUS_PMD_LAKE)
         release
         end
     }
@@ -559,6 +561,7 @@ script BattleVsDragonair{
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
     {
+        playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_DRAGONAIR)
         dittotransform(SPECIES_DRAGONAIR)
@@ -570,6 +573,7 @@ script BattleVsDragonair{
         speakername("Dragonair")
         msgbox("Very well Ditto.\nGo on.\pLeave this place calmly, with\nthe power to scale roaring\lwaterfalls.", MSGBOX_DEFAULT)
         waitmessage
+        fadenewbgm(MUS_PMD_LAKE)
         release
         end
     }

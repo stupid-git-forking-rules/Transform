@@ -135,7 +135,7 @@ script RhyhornDialog{
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_RHYHORN, 25, move1=MOVE_ROCK_THROW, move2=MOVE_HORN_ATTACK, move3=MOVE_ROCK_POLISH, move4=MOVE_ROCK_SMASH)
         waitmessage
-        playbgm(MUS_PMD_DESERT, FALSE)
+        fadenewbgm(MUS_PMD_DESERT)
         release
         end 
     }

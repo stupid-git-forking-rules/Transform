@@ -43,7 +43,7 @@ script BattleVsWeavile{
         waitmovement(Weavile)
         applymovement(Weavile, moves(walk_in_place_down))
         waitmovement(Weavile)
-        playbgm(MUS_PMD_JUNGLE, FALSE)
+        fadenewbgm(MUS_PMD_JUNGLE)
         release
         end
     }
@@ -73,6 +73,7 @@ script BattleVsWeavile{
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
     {
+        playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_WEAVILE)
         dittotransform(SPECIES_WEAVILE)
@@ -89,6 +90,7 @@ script BattleVsWeavile{
         waitmovement(Weavile)
         applymovement(Weavile, moves(walk_in_place_down))
         waitmovement(Weavile)
+        fadenewbgm(MUS_PMD_JUNGLE)
         release
         end
     }

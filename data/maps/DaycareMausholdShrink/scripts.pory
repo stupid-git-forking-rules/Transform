@@ -129,7 +129,7 @@ script FamilyofThree{
             applymovement(Maushold3, Common_Movement_ExclamationMark)
             waitmovement(Maushold3)
             msgbox("Don't pander to me!\pI we heard the neighbors yell\nover to us!", MSGBOX_DEFAULT)
-            setflag(FLAG_FAM_FOUR)
+            setflag(FLAG_FAM_THREE)
             waitmessage
             release
             end

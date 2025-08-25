@@ -511,7 +511,7 @@ BattleVsNoivern_4:
 # 299 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmovement Noivern
 # 300 "data/maps/DaycareNoivernCave/scripts.pory"
-	playbgm MUS_PMD_NOIVERNCAVE, FALSE
+	fadenewbgm MUS_PMD_NOIVERNCAVE
 # 301 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end

@@ -895,194 +895,198 @@ BattleVsPikachu_2:
 
 BattleVsPikachu_4:
 # 557 "data/maps/daycarebase/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 558 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_TRANS_PIKACHU
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 559 "data/maps/daycarebase/scripts.pory"
-	dittotransform SPECIES_PIKACHU
+	setflag FLAG_TRANS_PIKACHU
 # 560 "data/maps/daycarebase/scripts.pory"
-	playse MUS_LEVEL_UP
+	dittotransform SPECIES_PIKACHU
 # 561 "data/maps/daycarebase/scripts.pory"
-	msgbox BattleVsPikachu_Text_2, MSGBOX_DEFAULT
+	playse MUS_LEVEL_UP
 # 562 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	msgbox BattleVsPikachu_Text_2, MSGBOX_DEFAULT
 # 563 "data/maps/daycarebase/scripts.pory"
-	dittotransform VAR_TEMP_0
-# 564 "data/maps/daycarebase/scripts.pory"
-	givemon SPECIES_PIKACHU, 25, move1 = MOVE_NUZZLE, move2 = MOVE_IRON_TAIL, move3 = MOVE_SPARK, move4 = MOVE_FLASH
-# 565 "data/maps/daycarebase/scripts.pory"
-	speakername MimikyuDialog_Text_0
-# 566 "data/maps/daycarebase/scripts.pory"
-	msgbox BattleVsPikachu_Text_3, MSGBOX_DEFAULT
-# 567 "data/maps/daycarebase/scripts.pory"
 	waitmessage
+# 564 "data/maps/daycarebase/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 565 "data/maps/daycarebase/scripts.pory"
+	givemon SPECIES_PIKACHU, 25, move1 = MOVE_NUZZLE, move2 = MOVE_IRON_TAIL, move3 = MOVE_SPARK, move4 = MOVE_FLASH
+# 566 "data/maps/daycarebase/scripts.pory"
+	speakername MimikyuDialog_Text_0
+# 567 "data/maps/daycarebase/scripts.pory"
+	msgbox BattleVsPikachu_Text_3, MSGBOX_DEFAULT
 # 568 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 569 "data/maps/daycarebase/scripts.pory"
+	fadenewbgm MUS_PMD_HEARTWARMING
+# 570 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 ChanseyHeal::
-# 574 "data/maps/daycarebase/scripts.pory"
-	lock
-# 575 "data/maps/daycarebase/scripts.pory"
-	faceplayer
 # 576 "data/maps/daycarebase/scripts.pory"
-	speakername ChanseyHeal_Text_0
+	lock
 # 577 "data/maps/daycarebase/scripts.pory"
-	msgbox ChanseyHeal_Text_1, MSGBOX_YESNO
+	faceplayer
 # 578 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	speakername ChanseyHeal_Text_0
 # 579 "data/maps/daycarebase/scripts.pory"
+	msgbox ChanseyHeal_Text_1, MSGBOX_YESNO
+# 580 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 581 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ChanseyHeal_1
-# 605 "data/maps/daycarebase/scripts.pory"
-	msgbox ChanseyHeal_Text_4, MSGBOX_AUTOCLOSE
-# 606 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 607 "data/maps/daycarebase/scripts.pory"
+	msgbox ChanseyHeal_Text_4, MSGBOX_AUTOCLOSE
+# 608 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 609 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 ChanseyHeal_1:
-# 581 "data/maps/daycarebase/scripts.pory"
+# 583 "data/maps/daycarebase/scripts.pory"
 	checkitem ITEM_LUCKY_EGG
-# 582 "data/maps/daycarebase/scripts.pory"
+# 584 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ChanseyHeal_4
-# 597 "data/maps/daycarebase/scripts.pory"
-	msgbox ChanseyHeal_Text_3, MSGBOX_AUTOCLOSE
-# 598 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 599 "data/maps/daycarebase/scripts.pory"
+	msgbox ChanseyHeal_Text_3, MSGBOX_AUTOCLOSE
+# 600 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 601 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 ChanseyHeal_4:
-# 584 "data/maps/daycarebase/scripts.pory"
-	removeitem ITEM_LUCKY_EGG
-# 585 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
 # 586 "data/maps/daycarebase/scripts.pory"
-	playfanfare MUS_HEAL
+	removeitem ITEM_LUCKY_EGG
 # 587 "data/maps/daycarebase/scripts.pory"
-	waitfanfare
+	fadescreenswapbuffers FADE_TO_BLACK
 # 588 "data/maps/daycarebase/scripts.pory"
-	special HealPlayerParty
+	playfanfare MUS_HEAL
 # 589 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	waitfanfare
 # 590 "data/maps/daycarebase/scripts.pory"
-	msgbox ChanseyHeal_Text_2, MSGBOX_AUTOCLOSE
+	special HealPlayerParty
 # 591 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	fadescreenswapbuffers FADE_FROM_BLACK
 # 592 "data/maps/daycarebase/scripts.pory"
+	msgbox ChanseyHeal_Text_2, MSGBOX_AUTOCLOSE
+# 593 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 594 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycareBase_Ditto::
-# 614 "data/maps/daycarebase/scripts.pory"
-	lock
-# 615 "data/maps/daycarebase/scripts.pory"
-	faceplayer
 # 616 "data/maps/daycarebase/scripts.pory"
+	lock
+# 617 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 618 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_DITTO_INTRO, DaycareBase_Ditto_1
-# 669 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareBase_Ditto_Text_0
-# 670 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
-# 670 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 671 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_DITTO_INTRO
+	speakername DaycareBase_Ditto_Text_0
+# 672 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
 # 672 "data/maps/daycarebase/scripts.pory"
 	waitmessage
 # 673 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_DITTO_INTRO
+# 674 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 675 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_1:
-# 618 "data/maps/daycarebase/scripts.pory"
+# 620 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareBase_Ditto_4
-# 642 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareBase_Ditto_Text_0
-# 643 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_3, MSGBOX_DEFAULT
-# 643 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 644 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_XFORMS_TALKED_TO_DITTO
+	speakername DaycareBase_Ditto_Text_0
 # 645 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_1, MSGBOX_YESNO
+	msgbox DaycareBase_Ditto_Text_3, MSGBOX_DEFAULT
+# 645 "data/maps/daycarebase/scripts.pory"
+	waitmessage
 # 646 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_XFORMS_TALKED_TO_DITTO
+# 647 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_1, MSGBOX_YESNO
+# 648 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareBase_Ditto_10
-# 657 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
-# 658 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 659 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
 # 660 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 661 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 662 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 663 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_4:
-# 620 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareBase_Ditto_Text_0
-# 621 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_1, MSGBOX_YESNO
 # 622 "data/maps/daycarebase/scripts.pory"
+	speakername DaycareBase_Ditto_Text_0
+# 623 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_1, MSGBOX_YESNO
+# 624 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareBase_Ditto_7
-# 633 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
-# 634 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 635 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
 # 636 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	waitmessage
 # 637 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 638 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 639 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_7:
-# 624 "data/maps/daycarebase/scripts.pory"
-	special OpenPCMoveMons
-# 625 "data/maps/daycarebase/scripts.pory"
-	waitstate
 # 626 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	special OpenPCMoveMons
 # 627 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	waitstate
 # 628 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 629 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 630 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_10:
-# 648 "data/maps/daycarebase/scripts.pory"
-	special OpenPCMoveMons
-# 649 "data/maps/daycarebase/scripts.pory"
-	waitstate
 # 650 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	special OpenPCMoveMons
 # 651 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	waitstate
 # 652 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 653 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 654 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycareBase_FindLuckyEgg::
-# 681 "data/maps/daycarebase/scripts.pory"
-	lock
-# 682 "data/maps/daycarebase/scripts.pory"
-	finditem ITEM_LUCKY_EGG
 # 683 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	lock
 # 684 "data/maps/daycarebase/scripts.pory"
+	finditem ITEM_LUCKY_EGG
+# 685 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 686 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
@@ -1474,49 +1478,49 @@ BattleVsPikachu_Text_1:
 	.string "A Ditto!\pYou must be on your quest to obtain\nyour egg.\pDefeat me in battle and I'll allow\nyou to transform into me!$"
 
 BattleVsPikachu_Text_2:
-# 561 "data/maps/daycarebase/scripts.pory"
+# 562 "data/maps/daycarebase/scripts.pory"
 	.string "You have gained the ability to\ntransform into Pikachu!$"
 
 BattleVsPikachu_Text_3:
-# 566 "data/maps/daycarebase/scripts.pory"
+# 567 "data/maps/daycarebase/scripts.pory"
 	.string "How electrifying!\pElectric_type moves are powerful\nagainst Water_type Pokémon.\pThey typically spend their time in\nthe Lake Biome here.$"
 
 ChanseyHeal_Text_0:
-# 576 "data/maps/daycarebase/scripts.pory"
+# 578 "data/maps/daycarebase/scripts.pory"
 	.string "Chansey$"
 
 ChanseyHeal_Text_1:
-# 577 "data/maps/daycarebase/scripts.pory"
+# 579 "data/maps/daycarebase/scripts.pory"
 	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?$"
 
 ChanseyHeal_Text_2:
-# 590 "data/maps/daycarebase/scripts.pory"
+# 592 "data/maps/daycarebase/scripts.pory"
 	.string "You have been restored to full health!$"
 
 ChanseyHeal_Text_3:
-# 597 "data/maps/daycarebase/scripts.pory"
+# 599 "data/maps/daycarebase/scripts.pory"
 	.string "You don't have a Lucky Egg!\pCome back when you do.$"
 
 ChanseyHeal_Text_4:
-# 605 "data/maps/daycarebase/scripts.pory"
+# 607 "data/maps/daycarebase/scripts.pory"
 	.string "Oh, okay then.$"
 
 DaycareBase_Ditto_Text_0:
-# 620 "data/maps/daycarebase/scripts.pory"
+# 622 "data/maps/daycarebase/scripts.pory"
 	.string "Ditto$"
 
 DaycareBase_Ditto_Text_1:
-# 621 "data/maps/daycarebase/scripts.pory"
+# 623 "data/maps/daycarebase/scripts.pory"
 	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareBase_Ditto_Text_2:
-# 633 "data/maps/daycarebase/scripts.pory"
+# 635 "data/maps/daycarebase/scripts.pory"
 	.string "Come back anytime!$"
 
 DaycareBase_Ditto_Text_3:
-# 643 "data/maps/daycarebase/scripts.pory"
+# 645 "data/maps/daycarebase/scripts.pory"
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"
 
 DaycareBase_Ditto_Text_4:
-# 670 "data/maps/daycarebase/scripts.pory"
+# 672 "data/maps/daycarebase/scripts.pory"
 	.string "Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!$"

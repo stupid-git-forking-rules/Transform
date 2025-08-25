@@ -103,6 +103,7 @@ script BattleVsLurantis{
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
     {
+        playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_LURANTIS)
         dittotransform(SPECIES_LURANTIS)
@@ -114,6 +115,7 @@ script BattleVsLurantis{
         speakername("Lurantis")
         msgbox("You are a sharp one!\pUse my abilities to your\nadvantage.\pThe journey ahead is no walk in the\ndaycare.", MSGBOX_DEFAULT)
         waitmessage
+        fadenewbgm(MUS_PMD_MOUNTAIN)
         release
         end
     }

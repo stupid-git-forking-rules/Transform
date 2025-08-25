@@ -340,7 +340,7 @@ FamilyofThree_16:
 # 131 "data/maps/DaycareMausholdShrink/scripts.pory"
 	msgbox FamilyofFour_Text_5, MSGBOX_DEFAULT
 # 132 "data/maps/DaycareMausholdShrink/scripts.pory"
-	setflag FLAG_FAM_FOUR
+	setflag FLAG_FAM_THREE
 # 133 "data/maps/DaycareMausholdShrink/scripts.pory"
 	waitmessage
 # 134 "data/maps/DaycareMausholdShrink/scripts.pory"

@@ -737,38 +737,42 @@ BattleVsArcanine_2:
 
 BattleVsArcanine_4:
 # 412 "data/maps/DaycareVolcano/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 413 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_TRANS_ARCANINE
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 414 "data/maps/DaycareVolcano/scripts.pory"
-	dittotransform SPECIES_ARCANINE
+	setflag FLAG_TRANS_ARCANINE
 # 415 "data/maps/DaycareVolcano/scripts.pory"
-	playse MUS_LEVEL_UP
+	dittotransform SPECIES_ARCANINE
 # 416 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox BattleVsArcanine_Text_2, MSGBOX_DEFAULT
+	playse MUS_LEVEL_UP
 # 417 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
+	msgbox BattleVsArcanine_Text_2, MSGBOX_DEFAULT
 # 418 "data/maps/DaycareVolcano/scripts.pory"
-	dittotransform VAR_TEMP_0
+	waitmessage
 # 419 "data/maps/DaycareVolcano/scripts.pory"
-	givemon SPECIES_ARCANINE, 25, move1 = MOVE_FIRE_FANG, move2 = MOVE_BITE, move3 = MOVE_AERIAL_ACE, move4 = MOVE_THUNDER_FANG
+	dittotransform VAR_TEMP_0
 # 420 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
+	givemon SPECIES_ARCANINE, 25, move1 = MOVE_FIRE_FANG, move2 = MOVE_BITE, move3 = MOVE_AERIAL_ACE, move4 = MOVE_THUNDER_FANG
 # 421 "data/maps/DaycareVolcano/scripts.pory"
-	speakername BattleVsArcanine_Text_0
-# 422 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox BattleVsArcanine_Text_3, MSGBOX_DEFAULT
-# 423 "data/maps/DaycareVolcano/scripts.pory"
 	waitmessage
+# 422 "data/maps/DaycareVolcano/scripts.pory"
+	speakername BattleVsArcanine_Text_0
+# 423 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox BattleVsArcanine_Text_3, MSGBOX_DEFAULT
 # 424 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Arcanine, BattleVsArcanine_Movement_3
+	waitmessage
 # 425 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Arcanine
+	applymovement Arcanine, BattleVsArcanine_Movement_3
 # 426 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Arcanine, BattleVsArcanine_Movement_4
-# 427 "data/maps/DaycareVolcano/scripts.pory"
 	waitmovement Arcanine
+# 427 "data/maps/DaycareVolcano/scripts.pory"
+	applymovement Arcanine, BattleVsArcanine_Movement_4
 # 428 "data/maps/DaycareVolcano/scripts.pory"
+	waitmovement Arcanine
+# 429 "data/maps/DaycareVolcano/scripts.pory"
+	fadenewbgm MUS_PMD_VOLCANO
+# 430 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
@@ -839,17 +843,17 @@ BattleVsArcanine_Movement_2:
 	jump_2_down
 	step_end
 
-# 424 "data/maps/DaycareVolcano/scripts.pory"
+# 425 "data/maps/DaycareVolcano/scripts.pory"
 BattleVsArcanine_Movement_3:
-# 424 "data/maps/DaycareVolcano/scripts.pory"
+# 425 "data/maps/DaycareVolcano/scripts.pory"
 	jump_2_up
-# 424 "data/maps/DaycareVolcano/scripts.pory"
+# 425 "data/maps/DaycareVolcano/scripts.pory"
 	jump_2_up
 	step_end
 
-# 426 "data/maps/DaycareVolcano/scripts.pory"
+# 427 "data/maps/DaycareVolcano/scripts.pory"
 BattleVsArcanine_Movement_4:
-# 426 "data/maps/DaycareVolcano/scripts.pory"
+# 427 "data/maps/DaycareVolcano/scripts.pory"
 	walk_in_place_down
 	step_end
 
@@ -922,9 +926,9 @@ BattleVsArcanine_Text_1:
 	.string "Aha!\pA challenger.\pYou must be strong if you battled\nyour way through my volcano.\pI see how your spirit burns bright.\pMaybe taking you down will grant me\nthe EXP I am looking for.\pLet me test your flame!\n$"
 
 BattleVsArcanine_Text_2:
-# 416 "data/maps/DaycareVolcano/scripts.pory"
+# 417 "data/maps/DaycareVolcano/scripts.pory"
 	.string "You have gained the ability to\ntransform into Arcanine!$"
 
 BattleVsArcanine_Text_3:
-# 422 "data/maps/DaycareVolcano/scripts.pory"
+# 423 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Carry yourself with honor.\pDon't soil my good name.\pMaybe you will unlock the secret\nto gain EXP.$"

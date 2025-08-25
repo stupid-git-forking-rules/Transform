@@ -209,7 +209,7 @@ RhyhornDialog::
 # 137 "data/maps/DaycareDesert/scripts.pory"
 	waitmessage
 # 138 "data/maps/DaycareDesert/scripts.pory"
-	playbgm MUS_PMD_DESERT, FALSE
+	fadenewbgm MUS_PMD_DESERT
 # 139 "data/maps/DaycareDesert/scripts.pory"
 	release
 	end

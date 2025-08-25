@@ -96,7 +96,7 @@ ChinchouDialog::
 # 65 "data/maps/DaycareBeachCave/scripts.pory"
 	waitmessage
 # 66 "data/maps/DaycareBeachCave/scripts.pory"
-	playbgm MUS_PMD_LAKE, FALSE
+	fadenewbgm MUS_PMD_LAKE
 # 67 "data/maps/DaycareBeachCave/scripts.pory"
 	release
 	end

@@ -409,6 +409,7 @@ script BattleVsArcanine{
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
     {
+        playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_ARCANINE)
         dittotransform(SPECIES_ARCANINE)
@@ -425,6 +426,7 @@ script BattleVsArcanine{
         waitmovement(Arcanine)
         applymovement(Arcanine, moves(walk_in_place_down))
         waitmovement(Arcanine)
+        fadenewbgm(MUS_PMD_VOLCANO)
         release
         end
     }

@@ -297,7 +297,7 @@ script BattleVsNoivern{
         waitmovement(Noivern)
         applymovement(Noivern, moves(walk_in_place_down))
         waitmovement(Noivern)
-        playbgm(MUS_PMD_NOIVERNCAVE, FALSE)
+        fadenewbgm(MUS_PMD_NOIVERNCAVE)
         release
         end
     }

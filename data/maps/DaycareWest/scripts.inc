@@ -259,30 +259,34 @@ BattleVsCutiefly_4:
 
 BattleVsCutiefly_8:
 # 169 "data/maps/DaycareWest/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 170 "data/maps/DaycareWest/scripts.pory"
-	setflag FLAG_TRANS_CUTIEFLY
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 171 "data/maps/DaycareWest/scripts.pory"
-	delay 30
+	setflag FLAG_TRANS_CUTIEFLY
 # 172 "data/maps/DaycareWest/scripts.pory"
-	dittotransform SPECIES_CUTIEFLY
+	delay 30
 # 173 "data/maps/DaycareWest/scripts.pory"
-	playse MUS_LEVEL_UP
+	dittotransform SPECIES_CUTIEFLY
 # 174 "data/maps/DaycareWest/scripts.pory"
-	msgbox BattleVsCutiefly_Text_4, MSGBOX_DEFAULT
+	playse MUS_LEVEL_UP
 # 175 "data/maps/DaycareWest/scripts.pory"
-	waitmessage
+	msgbox BattleVsCutiefly_Text_4, MSGBOX_DEFAULT
 # 176 "data/maps/DaycareWest/scripts.pory"
-	dittotransform VAR_TEMP_0
-# 177 "data/maps/DaycareWest/scripts.pory"
-	givemon SPECIES_CUTIEFLY, 25, move1 = MOVE_BUG_BUZZ, move2 = MOVE_DAZZLING_GLEAM, move3 = MOVE_SWEET_SCENT, move4 = MOVE_PSYCHIC
-# 178 "data/maps/DaycareWest/scripts.pory"
-	speakername BattleVsCutiefly_Text_0
-# 179 "data/maps/DaycareWest/scripts.pory"
-	msgbox BattleVsCutiefly_Text_2, MSGBOX_DEFAULT
-# 180 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
+# 177 "data/maps/DaycareWest/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 178 "data/maps/DaycareWest/scripts.pory"
+	givemon SPECIES_CUTIEFLY, 25, move1 = MOVE_BUG_BUZZ, move2 = MOVE_DAZZLING_GLEAM, move3 = MOVE_SWEET_SCENT, move4 = MOVE_PSYCHIC
+# 179 "data/maps/DaycareWest/scripts.pory"
+	speakername BattleVsCutiefly_Text_0
+# 180 "data/maps/DaycareWest/scripts.pory"
+	msgbox BattleVsCutiefly_Text_2, MSGBOX_DEFAULT
 # 181 "data/maps/DaycareWest/scripts.pory"
+	waitmessage
+# 182 "data/maps/DaycareWest/scripts.pory"
+	fadenewbgm MUS_PMD_HEARTWARMING
+# 183 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
@@ -364,5 +368,5 @@ BattleVsCutiefly_Text_3:
 	.string "Welcome to the flower patch big\nfriend!\pSometimes it pays to be tiny!\pBeat me here on my home turf\nand you too can transform to be\ltiny.$"
 
 BattleVsCutiefly_Text_4:
-# 174 "data/maps/DaycareWest/scripts.pory"
+# 175 "data/maps/DaycareWest/scripts.pory"
 	.string "You have gained the ability to\ntransform into Cutiefly!$"

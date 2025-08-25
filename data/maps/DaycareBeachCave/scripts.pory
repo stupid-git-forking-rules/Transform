@@ -63,7 +63,7 @@ script ChinchouDialog{
         msgbox("A little shy?\pThat's alright.\nAnother time then.", MSGBOX_DEFAULT)
         givemon(SPECIES_CHINCHOU, 25, move1=MOVE_THUNDER_WAVE, move2=MOVE_DISCHARGE, move3=MOVE_DIVE, move4=MOVE_DAZZLING_GLEAM)
         waitmessage
-        playbgm(MUS_PMD_LAKE, FALSE)
+        fadenewbgm(MUS_PMD_LAKE)
         release
         end 
     }

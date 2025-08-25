@@ -166,6 +166,7 @@ script BattleVsCutiefly{
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
     {
+        playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_CUTIEFLY)
         delay(30)
@@ -178,6 +179,7 @@ script BattleVsCutiefly{
         speakername("Cutiefly")
         msgbox("I'll stick to my flowers.\pBe on the lookout for places only a\ntiny Pokémon can squeeze through!", MSGBOX_DEFAULT)
         waitmessage
+        fadenewbgm(MUS_PMD_HEARTWARMING)
         release
         end
     }
