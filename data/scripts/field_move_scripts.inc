@@ -30,6 +30,7 @@ EventScript_CutTreeDown:: @ fallthrough
 @ Use cut from party menu
 EventScript_UseCut::
 	lockall
+    specialvar VAR_LAST_TALKED, TryUpdateFromFieldMoveBackup
 	goto EventScript_CutTreeCommon
 
 Movement_CutTreeDown:
@@ -61,6 +62,7 @@ Text_CantCut:
 @ Use rock smash from party menu
 EventScript_UseRockSmash::
 	lockall
+    specialvar VAR_LAST_TALKED, TryUpdateFromFieldMoveBackup
 	goto EventScript_RockSmashCommon
 
 @ Interact with smashable rock
@@ -250,7 +252,8 @@ EventScript_UseStrength::
 	lockall
 	dofieldeffect FLDEFF_USE_STRENGTH
 	waitstate
-call_if_set FLAG_SYS_USE_STRENGTH, EventScript_PushBoulderScript @ qol_field_moves
+    specialvar VAR_LAST_TALKED, TryUpdateFromFieldMoveBackup
+    call_if_set FLAG_SYS_USE_STRENGTH, EventScript_PushBoulderScript @ qol_field_moves
 	goto EventScript_ActivateStrength
 	end
 

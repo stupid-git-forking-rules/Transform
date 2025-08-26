@@ -13,13 +13,17 @@
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
+#include "transform.h"
 #include "constants/event_object_movement.h"
 #include "constants/event_objects.h"
 #include "constants/field_effects.h"
 #include "constants/map_types.h"
 #include "constants/songs.h"
 
+EWRAM_DATA u8 gFieldMoveBackupObject = 0;
+
 static void Task_DoFieldMove_Init(u8 taskId);
+static void Task_DoFieldMove_WaitForTransformation(u8 taskId);
 static void Task_DoFieldMove_ShowMonAfterPose(u8 taskId);
 static void Task_DoFieldMove_WaitForMon(u8 taskId);
 //static void Task_DoFieldMove_RunFunc(u8 taskId);
@@ -41,6 +45,7 @@ bool8 CheckObjectGraphicsInFrontOfPlayer(u16 graphicsId)
     else
     {
         gSpecialVar_LastTalked = gObjectEvents[objEventId].localId;
+        gFieldMoveBackupObject = gObjectEvents[objEventId].localId;
         return TRUE;
     }
 }
@@ -61,11 +66,15 @@ static void Task_DoFieldMove_Init(u8 taskId)
     if (!ObjectEventIsMovementOverridden(&gObjectEvents[objEventId])
      || ObjectEventClearHeldMovementIfFinished(&gObjectEvents[objEventId]))
     {
-        if (gMapHeader.mapType == MAP_TYPE_UNDERWATER || gFieldEffectArguments[3])
+        if (gFieldEffectArguments[3] == FLDEFF_CONST_PLAYER_IS_DITTO)
+        {
+            SetPlayerAvatarFieldMove();
+            gFieldEffectArguments[3] = 0;
+            gTasks[taskId].func = Task_DoFieldMove_WaitForTransformation;
+        }
+        else if (gMapHeader.mapType == MAP_TYPE_UNDERWATER || gFieldEffectArguments[3])
         {
             // Skip field move pose underwater, or if arg3 is nonzero
-            if (gFieldEffectArguments[3] == FLDEFF_CONST_PLAYER_IS_DITTO)
-                SetPlayerAvatarFieldMove();
             if (gFieldEffectArguments[3])
                 gFieldEffectArguments[3] = 0;
             FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
@@ -78,6 +87,15 @@ static void Task_DoFieldMove_Init(u8 taskId)
             ObjectEventSetHeldMovement(&gObjectEvents[objEventId], MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
             gTasks[taskId].func = Task_DoFieldMove_ShowMonAfterPose;
         }
+    }
+}
+
+static void Task_DoFieldMove_WaitForTransformation(u8 taskId)
+{
+    if (gPlayerTransformEffectActive == FALSE && !IsSEPlaying())
+    {
+        FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON);
+        gTasks[taskId].func = Task_DoFieldMove_RunFunc;  
     }
 }
 
