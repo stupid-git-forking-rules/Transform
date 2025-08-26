@@ -159,6 +159,7 @@ static void WarpToTruck(void)
     FlagSet(FLAG_SHOW_BRENDAN_OUTRO);
     FlagSet(FLAG_SHOW_NOICE);
     FlagSet(FLAG_SYS_POKEDEX_GET);
+    FlagSet(FLAG_SYS_NATIONAL_DEX);
     WarpIntoMap();
 }
 

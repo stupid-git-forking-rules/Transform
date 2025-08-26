@@ -156,7 +156,7 @@ BattleVsWeavile_6:
 # 86 "data/maps/DaycareTreehouse/scripts.pory"
 	speakername BattleVsWeavile_Text_0
 # 87 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox BattleVsWeavile_Text_4, MSGBOX_DEFAULT
+	msgbox BattleVsWeavile_Text_4, MSGBOX_AUTOCLOSE
 # 88 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
 # 89 "data/maps/DaycareTreehouse/scripts.pory"
@@ -363,7 +363,7 @@ BattleVsWeavile_Text_0:
 
 BattleVsWeavile_Text_1:
 # 40 "data/maps/DaycareTreehouse/scripts.pory"
-	.string "You want to challenge me?\pNot a chance weakling.\pCcme back when you can keep up...\nor don't come back at all.$"
+	.string "You want to challenge me?\pNot a chance weakling.\pCome back when you can keep up...\nor don't come back at all.$"
 
 BattleVsWeavile_Text_2:
 # 69 "data/maps/DaycareTreehouse/scripts.pory"

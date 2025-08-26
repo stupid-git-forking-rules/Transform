@@ -37,7 +37,7 @@ script BattleVsWeavile{
         waitmovement(Weavile)
         playbgm(MUS_PMD_BOSS_INTRO, FALSE)
         speakername("Weavile")
-        msgbox("You want to challenge me?\pNot a chance weakling.\pCcme back when you can keep up...\nor don't come back at all.", MSGBOX_DEFAULT)
+        msgbox("You want to challenge me?\pNot a chance weakling.\pCome back when you can keep up...\nor don't come back at all.", MSGBOX_DEFAULT)
         waitmessage
         applymovement(Weavile, moves(walk_fast_up*2))
         waitmovement(Weavile)
@@ -84,7 +84,7 @@ script BattleVsWeavile{
         givemon(SPECIES_WEAVILE, 25, move1=MOVE_ICE_SHARD, move2=MOVE_ICE_PUNCH, move3=MOVE_SHADOW_CLAW, move4=MOVE_BRICK_BREAK)
         waitmessage
         speakername("Weavile")
-        msgbox("Godspeed challenger.\n", MSGBOX_DEFAULT)
+        msgbox("Godspeed challenger.\n", MSGBOX_AUTOCLOSE)
         waitmessage
         applymovement(Weavile, moves(walk_fast_up*2))
         waitmovement(Weavile)

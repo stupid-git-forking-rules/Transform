@@ -499,7 +499,7 @@ BattleVsNoivern_4:
 # 293 "data/maps/DaycareNoivernCave/scripts.pory"
 	speakername BattleVsNoivern_Text_0
 # 294 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox BattleVsNoivern_Text_3, MSGBOX_DEFAULT
+	msgbox BattleVsNoivern_Text_3, MSGBOX_AUTOCLOSE
 # 295 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmessage
 # 296 "data/maps/DaycareNoivernCave/scripts.pory"
@@ -617,7 +617,7 @@ GengarDialog_Text_0:
 
 GengarDialog_Text_1:
 # 38 "data/maps/DaycareNoivernCave/scripts.pory"
-	.string "How did you manage to pass\nthrough that rock?\pMaybe you've got a bit of\nGhost_type in you.\pMWAHAHA!\n$"
+	.string "How did you manage to pass\nthrough that rock?\pMaybe you've got a bit of\nGhost_type in you.\pKekeh!\n$"
 
 GengarDialog_Text_2:
 # 51 "data/maps/DaycareNoivernCave/scripts.pory"

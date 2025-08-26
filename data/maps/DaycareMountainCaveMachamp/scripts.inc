@@ -87,16 +87,18 @@ BattleVsMachamp_4:
 # 45 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	waitmessage
 # 46 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	applymovement Machamp, BattleVsMachamp_Movement_4
+	playse SE_LEDGE
 # 47 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	waitmovement Machamp
+	applymovement Machamp, BattleVsMachamp_Movement_4
 # 48 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	applymovement Machamp, BattleVsMachamp_Movement_5
-# 49 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	waitmovement Machamp
+# 49 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	applymovement Machamp, BattleVsMachamp_Movement_5
 # 50 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	fadenewbgm MUS_PMD_MOUNTAIN
+	waitmovement Machamp
 # 51 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	fadenewbgm MUS_PMD_MOUNTAIN
+# 52 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	release
 	end
 
@@ -125,15 +127,15 @@ BattleVsMachamp_Movement_3:
 	jump_2_down
 	step_end
 
-# 46 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 47 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 BattleVsMachamp_Movement_4:
-# 46 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 47 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	jump_2_up
 	step_end
 
-# 48 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 49 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 BattleVsMachamp_Movement_5:
-# 48 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 49 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	walk_in_place_down
 	step_end
 

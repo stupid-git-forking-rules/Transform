@@ -55,6 +55,8 @@ script TrapinchDialog{
 }
 
 script StunfiskDialog{
+    if(!flag(FLAG_STUNFISK_EGG))
+    {
     lock
     faceplayer
     speakername("Stunfisk")
@@ -67,6 +69,17 @@ script StunfiskDialog{
     waitmessage
     release
     end
+    }
+    else
+{
+    lock
+    faceplayer
+    speakername("Stunfisk")
+    msgbox("Not many Pokémon know how to\nsurf in the desert.", MSGBOX_DEFAULT)
+    waitmessage
+    release
+    end
+    }
 }
 
 script BaltoyDialog{

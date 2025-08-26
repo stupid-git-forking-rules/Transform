@@ -51,6 +51,7 @@ script EiscueDialog{
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             if(var(VAR_RESULT)== YES)
             {
+                fadenewbgm(MUS_PMD_MOUNTAIN)
                 fadescreenswapbuffers(FADE_TO_BLACK)
                 removeobject(Eiscue)
                 setflag(FLAG_HIDE_EISCUE)

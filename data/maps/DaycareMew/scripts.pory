@@ -1,6 +1,7 @@
 mapscripts DaycareMew_MapScripts{}
 
-script DittoEnd{
+script DittoEnd
+{
     if(!flag(FLAG_BEAT_MEW))
     {
         if(!flag(FLAG_DITTO_SITRUS))
@@ -40,6 +41,73 @@ script DittoEnd{
     end
     }
 }
+
+
+script DittoEndTrigger
+{
+    if(!flag(FLAG_DITTO_SITRUS))
+        {
+                lock
+                playse(SE_PIN)
+                applymovement(DittoFinale, Common_Movement_ExclamationMark)
+                waitmovement(DittoFinale)
+                applymovement(DittoFinale, moves(walk_left*2))
+                waitmovement(DittoFinale)
+                applymovement(DittoFinale, moves(walk_down))
+                waitmovement(DittoFinale)
+                speakername("Ditto")
+                msgbox("This is it.\pAfter you walk through this\ndoorway, you will learn the\lsecret of how we Dittos get\lour Eggs.\pTake these.\nThey'll come in handy.", MSGBOX_DEFAULT)
+                setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+                giveitem(ITEM_SITRUS_BERRY, 5)
+                clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+                setflag(FLAG_DITTO_SITRUS)
+                applymovement(DittoFinale, moves(walk_up))
+                waitmovement(DittoFinale)
+                applymovement(DittoFinale, moves(walk_right*2))
+                waitmovement(DittoFinale)
+                applymovement(DittoFinale, moves(walk_in_place_down))
+                waitmovement(DittoFinale)
+                waitmessage
+                release
+                end
+        }
+    else
+        {
+            end
+        }
+
+}
+
+script DittoEndTriggerTwo
+{
+    if(flag(FLAG_BEAT_MEW))
+    {
+        if(!flag(FLAG_DITTO_END_TRIGGER))
+            {
+                lock
+                playse(SE_PIN)
+                applymovement(DittoFinale, Common_Movement_ExclamationMark)
+                waitmovement(DittoFinale)
+                applymovement(DittoFinale, moves(face_player))
+                waitmovement(DittoFinale)
+                speakername("Ditto")
+                msgbox("Congratulations!\pNow you know how we Dittos\nget our Eggs!\pThis knowledge is sacred amonst\nthe Daycare Dittos, so keep this\lto yourself.\pComplete your obligation and hand\nthat Egg off to the Daycare Man.", MSGBOX_DEFAULT)
+                waitmessage
+                setflag(FLAG_DITTO_END_TRIGGER)
+                release
+                end
+            }
+            else
+            {
+                end
+            }
+    }
+    else
+    {
+        end
+    }
+}
+
 
 script ChanseyHealMew{
     lock

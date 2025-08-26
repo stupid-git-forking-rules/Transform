@@ -43,6 +43,7 @@ script BattleVsMachamp{
         speakername("Machamp")
         msgbox("With great power comes great\nresponsibility.\pGo on!\nFind your Egg!", MSGBOX_DEFAULT)
         waitmessage
+        playse(SE_LEDGE)
         applymovement(Machamp, moves(jump_2_up))
         waitmovement(Machamp)
         applymovement(Machamp, moves(walk_in_place_down))

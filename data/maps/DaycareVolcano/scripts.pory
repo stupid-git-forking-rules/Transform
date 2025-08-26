@@ -195,7 +195,7 @@ script FuecocoInCave{
         delay(60)
         speakername("Fuecoco")
         msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
-        setwildbattle(SPECIES_FUECOCO, 25)
+        setwildbattle(SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
@@ -226,7 +226,7 @@ script FuecocoInCaveTrigger{
             waitmovement(Fuecoco)
             speakername("Fuecoco")
             msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
-            setwildbattle(SPECIES_FUECOCO, 25)
+            setwildbattle(SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
@@ -242,7 +242,7 @@ script FuecocoInCaveTrigger{
             applymovement(LOCALID_PLAYER, moves(face_up))
             speakername("Fuecoco")
             msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
-            setwildbattle(SPECIES_FUECOCO, 25)
+            setwildbattle(SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
@@ -260,7 +260,7 @@ script FuecocoInCaveTrigger{
             waitmovement(Fuecoco)
             speakername("Fuecoco")
             msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
-            setwildbattle(SPECIES_FUECOCO, 25)
+            setwildbattle(SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
@@ -397,13 +397,14 @@ script BattleVsArcanine{
     waitmovement(LOCALID_PLAYER)
     applymovement(LOCALID_PLAYER, moves(walk_fast_down))
     waitmovement(LOCALID_PLAYER)
+    playse(SE_LEDGE)
+    playse(SE_LEDGE)
     applymovement(Arcanine, moves(jump_2_down*2))
     waitmovement(Arcanine)
-    playse(SE_M_SCRATCH)
     playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Arcanine")
     msgbox("Aha!\pA challenger.\pYou must be strong if you battled\nyour way through my volcano.\pI see how your spirit burns bright.\pMaybe taking you down will grant me\nthe EXP I am looking for.\pLet me test your flame!\n", MSGBOX_AUTOCLOSE)
-	setwildbattle(SPECIES_ARCANINE, 25)
+	setwildbattle(SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_FIRE_FANG, move3 = MOVE_FLAMETHROWER, move4 = MOVE_SWIFT)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
@@ -420,8 +421,10 @@ script BattleVsArcanine{
         givemon(SPECIES_ARCANINE, 25, move1=MOVE_FIRE_FANG, move2=MOVE_BITE, move3=MOVE_AERIAL_ACE, move4=MOVE_THUNDER_FANG)
         waitmessage
         speakername("Arcanine")
-        msgbox("Carry yourself with honor.\pDon't soil my good name.\pMaybe you will unlock the secret\nto gain EXP.", MSGBOX_DEFAULT)
+        msgbox("Carry yourself with honor.\pDon't soil my good name.\pMaybe you will unlock the secret\nto gain EXP.", MSGBOX_AUTOCLOSE)
         waitmessage
+        playse(SE_LEDGE)
+        playse(SE_LEDGE)
         applymovement(Arcanine, moves(jump_2_up*2))
         waitmovement(Arcanine)
         applymovement(Arcanine, moves(walk_in_place_down))

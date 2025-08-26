@@ -38,6 +38,9 @@ script BattleVsMarill{
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_MARILL, 25, move1=MOVE_SURF, move2=MOVE_AQUA_JET, move3=MOVE_COVET, move4=MOVE_RAIN_DANCE)
         waitmessage
+        speakername("Marill")
+        msgbox("You’re stronger than you look!\pSwim swiftly on your journey!", MSGBOX_DEFAULT)
+        waitmessage
         fadenewbgm(MUS_PMD_LAKE)
         release
         end
@@ -260,6 +263,7 @@ script BuizelInCave{
 script BuizelInCaveTrigger{
     if(!flag(FLAG_BUIZEL_BATTLE))
     {
+        lock
         special(PlayTrainerEncounterMusic)
         applymovement(Buizel, Common_Movement_ExclamationMark)
 	    waitmovement(Buizel)
@@ -270,6 +274,7 @@ script BuizelInCaveTrigger{
         case 34:
             applymovement(Buizel, moves(face_player))
             waitmovement(Buizel)
+            
             applymovement(LOCALID_PLAYER, moves(face_down))
             applymovement(Buizel, moves(walk_up))
             waitmovement(Buizel)
@@ -347,6 +352,7 @@ script SlowpokeInCave{
 script SlowpokeInCaveTrigger{
     if(!flag(FLAG_SLOWPOKE_BATTLE))
     {
+        lock
         special(PlayTrainerEncounterMusic)
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 

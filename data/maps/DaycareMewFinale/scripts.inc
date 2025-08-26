@@ -29,52 +29,64 @@ MewFinalBattleTrigger_1:
 # 15 "data/maps/DaycareMewFinale/scripts.pory"
 	waitmovement LOCALID_PLAYER
 # 16 "data/maps/DaycareMewFinale/scripts.pory"
-	speakername MewFinalBattleTrigger_Text_0
+	playbgm MUS_PMD_TITLE, FALSE
 # 17 "data/maps/DaycareMewFinale/scripts.pory"
-	msgbox MewFinalBattleTrigger_Text_1, MSGBOX_AUTOCLOSE
+	speakername MewFinalBattleTrigger_Text_0
 # 18 "data/maps/DaycareMewFinale/scripts.pory"
-	setwildbattle SPECIES_MEW, 25, IsShiny = TRUE, move1 = MOVE_SWIFT, move2 = MOVE_PSYCHIC, move3 = MOVE_CONFUSE_RAY, move4 = MOVE_ANCIENT_POWER
+	msgbox MewFinalBattleTrigger_Text_1, MSGBOX_AUTOCLOSE
 # 19 "data/maps/DaycareMewFinale/scripts.pory"
-	settotemboost B_POSITION_PLAYER_LEFT, 3, 3, 3, 3, 3, 3, 0
+	setwildbattle SPECIES_MEW, 25, IsShiny = TRUE, move1 = MOVE_SWIFT, move2 = MOVE_PSYCHIC, move3 = MOVE_CONFUSE_RAY, move4 = MOVE_ANCIENT_POWER
 # 20 "data/maps/DaycareMewFinale/scripts.pory"
-	dowildbattle
+	settotemboost B_POSITION_PLAYER_LEFT, 4, 4, 4, 4, 4, 4, 0
 # 21 "data/maps/DaycareMewFinale/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	dowildbattle
 # 22 "data/maps/DaycareMewFinale/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 23 "data/maps/DaycareMewFinale/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq MewFinalBattleTrigger_4
 	return
 
 MewFinalBattleTrigger_4:
-# 24 "data/maps/DaycareMewFinale/scripts.pory"
-	speakername MewFinalBattleTrigger_Text_0
 # 25 "data/maps/DaycareMewFinale/scripts.pory"
-	msgbox MewFinalBattleTrigger_Text_2, MSGBOX_DEFAULT
+	playbgm MUS_PMD_TITLE, FALSE
 # 26 "data/maps/DaycareMewFinale/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	speakername MewFinalBattleTrigger_Text_0
 # 27 "data/maps/DaycareMewFinale/scripts.pory"
-	giveitem ITEM_AIR_BALLOON
+	msgbox MewFinalBattleTrigger_Text_2, MSGBOX_DEFAULT
 # 28 "data/maps/DaycareMewFinale/scripts.pory"
-	playfanfare MUS_LEVEL_UP
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 29 "data/maps/DaycareMewFinale/scripts.pory"
-	msgbox MewFinalBattleTrigger_Text_3, MSGBOX_DEFAULT
+	giveitem ITEM_AIR_BALLOON
 # 30 "data/maps/DaycareMewFinale/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	playfanfare MUS_LEVEL_UP
 # 31 "data/maps/DaycareMewFinale/scripts.pory"
-	waitfanfare
+	msgbox MewFinalBattleTrigger_Text_3, MSGBOX_DEFAULT
 # 32 "data/maps/DaycareMewFinale/scripts.pory"
-	waitmessage
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 33 "data/maps/DaycareMewFinale/scripts.pory"
-	playse SE_M_TELEPORT
+	waitfanfare
 # 34 "data/maps/DaycareMewFinale/scripts.pory"
-	applymovement Mew, MewFinalBattleTrigger_Movement_2
+	waitmessage
 # 35 "data/maps/DaycareMewFinale/scripts.pory"
-	waitmovement Mew
+	speakername MewFinalBattleTrigger_Text_0
 # 36 "data/maps/DaycareMewFinale/scripts.pory"
-	removeobject Mew
+	msgbox MewFinalBattleTrigger_Text_4, MSGBOX_DEFAULT
 # 37 "data/maps/DaycareMewFinale/scripts.pory"
-	setflag FLAG_BEAT_MEW
+	waitmessage
 # 38 "data/maps/DaycareMewFinale/scripts.pory"
+	playse SE_M_TELEPORT
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
+	applymovement Mew, MewFinalBattleTrigger_Movement_2
+# 40 "data/maps/DaycareMewFinale/scripts.pory"
+	waitmovement Mew
+# 41 "data/maps/DaycareMewFinale/scripts.pory"
+	removeobject Mew
+# 42 "data/maps/DaycareMewFinale/scripts.pory"
+	fadenewbgm MUS_PMD_MEW
+# 43 "data/maps/DaycareMewFinale/scripts.pory"
+	setflag FLAG_BEAT_MEW
+# 44 "data/maps/DaycareMewFinale/scripts.pory"
 	release
 	end
 
@@ -99,38 +111,42 @@ MewFinalBattleTrigger_Movement_1:
 	walk_fast_up
 	step_end
 
-# 34 "data/maps/DaycareMewFinale/scripts.pory"
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
 MewFinalBattleTrigger_Movement_2:
-# 34 "data/maps/DaycareMewFinale/scripts.pory"
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
 	slide_up
-# 34 "data/maps/DaycareMewFinale/scripts.pory"
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
 	slide_up
-# 34 "data/maps/DaycareMewFinale/scripts.pory"
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
 	slide_up
-# 34 "data/maps/DaycareMewFinale/scripts.pory"
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
 	slide_up
-# 34 "data/maps/DaycareMewFinale/scripts.pory"
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
 	slide_up
-# 34 "data/maps/DaycareMewFinale/scripts.pory"
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
 	slide_up
-# 34 "data/maps/DaycareMewFinale/scripts.pory"
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
 	slide_up
-# 34 "data/maps/DaycareMewFinale/scripts.pory"
+# 39 "data/maps/DaycareMewFinale/scripts.pory"
 	slide_up
 	step_end
 
 MewFinalBattleTrigger_Text_0:
-# 16 "data/maps/DaycareMewFinale/scripts.pory"
+# 17 "data/maps/DaycareMewFinale/scripts.pory"
 	.string "Mew$"
 
 MewFinalBattleTrigger_Text_1:
-# 17 "data/maps/DaycareMewFinale/scripts.pory"
-	.string "Welcome Ditto.\pAre you ready to recieve your Egg?\pConsider this your final\nchallenge.$"
+# 18 "data/maps/DaycareMewFinale/scripts.pory"
+	.string "Welcome Ditto.\pYou've had quite the adventure\nhaven't you?\pI see you've gathered many\ndiverse transformations.\pYou'd have to travel far and wide\nto accomplish such a feat.\pI think you are ready to receive\nyour Egg.\pConsider me your final challenge.\n$"
 
 MewFinalBattleTrigger_Text_2:
-# 25 "data/maps/DaycareMewFinale/scripts.pory"
+# 27 "data/maps/DaycareMewFinale/scripts.pory"
 	.string "Congratulations for overcoming\nthis tremendous challenge.\pYou have earned this.\n$"
 
 MewFinalBattleTrigger_Text_3:
-# 29 "data/maps/DaycareMewFinale/scripts.pory"
+# 31 "data/maps/DaycareMewFinale/scripts.pory"
 	.string "Ditto learned the secret of\nwhere Eggs come from!$"
+
+MewFinalBattleTrigger_Text_4:
+# 36 "data/maps/DaycareMewFinale/scripts.pory"
+	.string "Now go on.\pDeliver that Egg to fulfill your\npurpose.$"

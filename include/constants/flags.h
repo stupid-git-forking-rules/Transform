@@ -716,8 +716,8 @@
 #define FLAG_SHOW_BRENDAN_OUTRO  0x29D // show other brendan for outro
 #define FLAG_GENGAR_EGG  0x29E // gengar gives lucky egg
 #define FLAG_CHINCHOU_TRIGGER  0x29F // workaround for transforming on water
-#define FLAG_UNUSED_0x2A0  0x2A0 // Unused Flag
-#define FLAG_UNUSED_0x2A1  0x2A1 // Unused Flag
+#define FLAG_DITTO_END_TRIGGER  0x2A0 //ditto end trigger
+#define FLAG_STUNFISK_EGG  0x2A1 // stunfisk lucky egg flag
 #define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
 #define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
 #define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag

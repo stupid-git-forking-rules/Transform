@@ -13,14 +13,16 @@ script MewFinalBattleTrigger{
         delay(45)
         applymovement(LOCALID_PLAYER, moves(walk_fast_up*3))
         waitmovement(LOCALID_PLAYER)
+        playbgm(MUS_PMD_TITLE, FALSE)
         speakername("Mew")
-        msgbox("Welcome Ditto.\pAre you ready to recieve your Egg?\pConsider this your final\nchallenge.", MSGBOX_AUTOCLOSE)
+        msgbox("Welcome Ditto.\pYou've had quite the adventure\nhaven't you?\pI see you've gathered many\ndiverse transformations.\pYou'd have to travel far and wide\nto accomplish such a feat.\pI think you are ready to receive\nyour Egg.\pConsider me your final challenge.\n", MSGBOX_AUTOCLOSE)
         setwildbattle(SPECIES_MEW, 25, IsShiny=TRUE, move1=MOVE_SWIFT, move2=MOVE_PSYCHIC, move3=MOVE_CONFUSE_RAY, move4=MOVE_ANCIENT_POWER)
-        settotemboost(B_POSITION_PLAYER_LEFT, 3, 3, 3, 3, 3, 3, 0)
+        settotemboost(B_POSITION_PLAYER_LEFT, 4, 4, 4, 4, 4, 4, 0)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
+            playbgm(MUS_PMD_TITLE, FALSE)
             speakername("Mew")
             msgbox("Congratulations for overcoming\nthis tremendous challenge.\pYou have earned this.\n", MSGBOX_DEFAULT)
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -30,10 +32,14 @@ script MewFinalBattleTrigger{
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitfanfare
             waitmessage
+            speakername("Mew")
+            msgbox("Now go on.\pDeliver that Egg to fulfill your\npurpose.", MSGBOX_DEFAULT)
+            waitmessage
             playse(SE_M_TELEPORT)
             applymovement(Mew, moves(slide_up*8))
             waitmovement(Mew)
             removeobject(Mew)
+            fadenewbgm(MUS_PMD_MEW)
             setflag(FLAG_BEAT_MEW)
             release
             end

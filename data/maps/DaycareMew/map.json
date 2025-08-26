@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "DittoFinale",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DITTO)",
       "x": 12,
       "y": 10,
@@ -71,6 +72,43 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "DittoEndTriggerTwo"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "DittoEndTriggerTwo"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "DittoEndTriggerTwo"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "DittoEndTrigger"
+    }
+  ],
   "bg_events": []
 }
