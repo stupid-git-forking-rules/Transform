@@ -503,18 +503,16 @@ BattleVsNoivern_4:
 # 295 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmessage
 # 296 "data/maps/DaycareNoivernCave/scripts.pory"
-	playbgm MUS_NONE, FALSE
-# 297 "data/maps/DaycareNoivernCave/scripts.pory"
 	applymovement Noivern, BattleVsNoivern_Movement_3
+# 297 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmovement Noivern
 # 298 "data/maps/DaycareNoivernCave/scripts.pory"
-	waitmovement Noivern
-# 299 "data/maps/DaycareNoivernCave/scripts.pory"
 	applymovement Noivern, BattleVsNoivern_Movement_4
-# 300 "data/maps/DaycareNoivernCave/scripts.pory"
+# 299 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmovement Noivern
-# 301 "data/maps/DaycareNoivernCave/scripts.pory"
+# 300 "data/maps/DaycareNoivernCave/scripts.pory"
 	fadenewbgm MUS_PMD_NOIVERNCAVE
-# 302 "data/maps/DaycareNoivernCave/scripts.pory"
+# 301 "data/maps/DaycareNoivernCave/scripts.pory"
 	release
 	end
 
@@ -577,21 +575,21 @@ BattleVsNoivern_Movement_2:
 	walk_fast_down
 	step_end
 
-# 297 "data/maps/DaycareNoivernCave/scripts.pory"
+# 296 "data/maps/DaycareNoivernCave/scripts.pory"
 BattleVsNoivern_Movement_3:
-# 297 "data/maps/DaycareNoivernCave/scripts.pory"
+# 296 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_up
-# 297 "data/maps/DaycareNoivernCave/scripts.pory"
+# 296 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_up
-# 297 "data/maps/DaycareNoivernCave/scripts.pory"
+# 296 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_up
-# 297 "data/maps/DaycareNoivernCave/scripts.pory"
+# 296 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 299 "data/maps/DaycareNoivernCave/scripts.pory"
+# 298 "data/maps/DaycareNoivernCave/scripts.pory"
 BattleVsNoivern_Movement_4:
-# 299 "data/maps/DaycareNoivernCave/scripts.pory"
+# 298 "data/maps/DaycareNoivernCave/scripts.pory"
 	walk_in_place_down
 	step_end
 
@@ -677,7 +675,7 @@ BattleVsNoivern_Text_0:
 
 BattleVsNoivern_Text_1:
 # 275 "data/maps/DaycareNoivernCave/scripts.pory"
-	.string "You tread where echos rule.\pI've ruled over this cave since\nI bested my little brother as a\lNoibat.\pI hope you've come prepareed.\pLet's see if you can keep up with\nthe speed of sound!$"
+	.string "You tread where echos rule.\pI've ruled over this cave since\nI bested my little brother as a\lNoibat.\pI hope you've come prepared.\pLet's see if you can keep up with\nthe speed of sound!$"
 
 BattleVsNoivern_Text_2:
 # 288 "data/maps/DaycareNoivernCave/scripts.pory"
