@@ -272,8 +272,10 @@ script BattleVsNoivern{
     waitmovement(Noivern)
     playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Noivern")
+    createfieldmugshot(MUGSHOT_NOIVERN, EMOTE_ANGRY)
     msgbox("You tread where echos rule.\pI've ruled over this cave since\nI bested my little brother as a\lNoibat.\pI hope you've come prepared.\pLet's see if you can keep up with\nthe speed of sound!", MSGBOX_AUTOCLOSE)
-	setwildbattle(SPECIES_NOIVERN, 25)
+	removefieldmugshot
+    setwildbattle(SPECIES_NOIVERN, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
@@ -291,8 +293,10 @@ script BattleVsNoivern{
         givemon(SPECIES_NOIVERN, 25, move1=MOVE_AIR_CUTTER, move2=MOVE_DRAGON_BREATH, move3=MOVE_SUPERSONIC, move4=MOVE_SUPER_FANG)
         waitmessage
         speakername("Noivern")
+        createfieldmugshot(MUGSHOT_NOIVERN, EMOTE_NORMAL)
         msgbox("Soar high gooey friend.\pYou'll need my flight to reach your\ndestination\pYou near the end of your quest!", MSGBOX_AUTOCLOSE)
         waitmessage
+        removefieldmugshot
         applymovement(Noivern, moves(walk_fast_up*4))
         waitmovement(Noivern)
         applymovement(Noivern, moves(walk_in_place_down))

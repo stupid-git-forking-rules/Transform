@@ -9,7 +9,9 @@ script DittoEnd
             lock
             faceplayer
             speakername("Ditto")
+            createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
             msgbox("This is it.\pAfter you walk through this\ndoorway, you will learn the\lsecret of how we Dittos get\lour Eggs.\pTake these.\nThey'll come in handy.", MSGBOX_DEFAULT)
+            removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             giveitem(ITEM_SITRUS_BERRY, 5)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -23,7 +25,9 @@ script DittoEnd
             lock
             faceplayer
             speakername("Ditto")
+            createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
             msgbox("Hold on to one of those berries.\nTrust me.", MSGBOX_DEFAULT)
+            removefieldmugshot
             waitmessage
             release
             end
@@ -35,8 +39,10 @@ script DittoEnd
     lock
     faceplayer
     speakername("Ditto")
+    createfieldmugshot(MUGSHOT_DITTO, EMOTE_HAPPY)
     msgbox("Congratulations!\pNow you know how we Dittos\nget our Eggs!\pThis knowledge is sacred amonst\nthe Daycare Dittos, so keep this\lto yourself.\pComplete your obligation and hand\nthat Egg off to the Daycare Man.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
     }
@@ -56,7 +62,9 @@ script DittoEndTrigger
                 applymovement(DittoFinale, moves(walk_down))
                 waitmovement(DittoFinale)
                 speakername("Ditto")
+                createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
                 msgbox("This is it.\pAfter you walk through this\ndoorway, you will learn the\lsecret of how we Dittos get\lour Eggs.\pTake these.\nThey'll come in handy.", MSGBOX_DEFAULT)
+                removefieldmugshot
                 setflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 giveitem(ITEM_SITRUS_BERRY, 5)
                 clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -91,8 +99,10 @@ script DittoEndTriggerTwo
                 applymovement(DittoFinale, moves(face_player))
                 waitmovement(DittoFinale)
                 speakername("Ditto")
+                createfieldmugshot(MUGSHOT_DITTO, EMOTE_HAPPY)
                 msgbox("Congratulations!\pNow you know how we Dittos\nget our Eggs!\pThis knowledge is sacred amonst\nthe Daycare Dittos, so keep this\lto yourself.\pComplete your obligation and hand\nthat Egg off to the Daycare Man.", MSGBOX_DEFAULT)
                 waitmessage
+                removefieldmugshot
                 setflag(FLAG_DITTO_END_TRIGGER)
                 release
                 end
@@ -113,7 +123,10 @@ script ChanseyHealMew{
     lock
     faceplayer
     speakername("Chansey")
-    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?", MSGBOX_YESNO)
+    createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.", MSGBOX_DEFAULT)
+    removefieldmugshot
+    msgbox("Would you like to heal?", MSGBOX_YESNO)
     waitmessage
     if(var(VAR_RESULT) == YES)
     {
@@ -125,24 +138,30 @@ script ChanseyHealMew{
             playfanfare(MUS_HEAL)
             waitfanfare
             special(HealPlayerParty)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             fadescreenswapbuffers(FADE_FROM_BLACK)
             msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
             release
             end
         }
         else
         {
+            createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
             msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
     }
     else
     {
+        createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
         msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
         waitmessage
+        removefieldmugshot
         release
         end
     }

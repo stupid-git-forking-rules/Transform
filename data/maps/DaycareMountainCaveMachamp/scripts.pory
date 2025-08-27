@@ -23,8 +23,10 @@ script BattleVsMachamp{
     waitmovement(Machamp)
     playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     speakername("Machamp")
+    createfieldmugshot(MUGSHOT_MACHAMP, EMOTE_NORMAL)
     msgbox("You need my strength to pass\nthrough that cave atop the cliff?\pYou'll need to prove that you can\nhandle it.\pCome on.\nLet's battle it out.\pShow me your strength!\n", MSGBOX_AUTOCLOSE)
-	setwildbattle(SPECIES_MACHAMP, 25)
+	removefieldmugshot
+    setwildbattle(SPECIES_MACHAMP, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
@@ -40,8 +42,10 @@ script BattleVsMachamp{
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_MACHAMP, 25, move1=MOVE_STRENGTH, move2=MOVE_FIRE_PUNCH, move3=MOVE_CROSS_CHOP, move4=MOVE_THUNDER_PUNCH)
         waitmessage
+        createfieldmugshot(MUGSHOT_MACHAMP, EMOTE_NORMAL)
         speakername("Machamp")
         msgbox("With great power comes great\nresponsibility.\pGo on!\nFind your Egg!", MSGBOX_DEFAULT)
+        removefieldmugshot
         waitmessage
         playse(SE_LEDGE)
         applymovement(Machamp, moves(jump_2_up))

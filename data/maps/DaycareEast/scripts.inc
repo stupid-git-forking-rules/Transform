@@ -359,75 +359,108 @@ DaycareEastDittoOpenXforms::
 # 224 "data/maps/DaycareEast/scripts.pory"
 	faceplayer
 # 225 "data/maps/DaycareEast/scripts.pory"
-	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareEastDittoOpenXforms_1
-# 250 "data/maps/DaycareEast/scripts.pory"
+	goto_if_set FLAG_DITTO_INTRO, DaycareEastDittoOpenXforms_1
+# 284 "data/maps/DaycareEast/scripts.pory"
 	speakername DaycareEastDittoOpenXforms_Text_0
-# 251 "data/maps/DaycareEast/scripts.pory"
-	msgbox DaycareEastDittoOpenXforms_Text_3, MSGBOX_DEFAULT
-# 251 "data/maps/DaycareEast/scripts.pory"
+# 285 "data/maps/DaycareEast/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 286 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_4, MSGBOX_DEFAULT
+# 286 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 252 "data/maps/DaycareEast/scripts.pory"
-	setflag FLAG_XFORMS_TALKED_TO_DITTO
-# 253 "data/maps/DaycareEast/scripts.pory"
-	msgbox DaycareEastDittoOpenXforms_Text_1, MSGBOX_YESNO
-# 254 "data/maps/DaycareEast/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq DaycareEastDittoOpenXforms_7
-# 265 "data/maps/DaycareEast/scripts.pory"
-	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 266 "data/maps/DaycareEast/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 267 "data/maps/DaycareEast/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 268 "data/maps/DaycareEast/scripts.pory"
+# 287 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_DITTO_INTRO
+# 288 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 269 "data/maps/DaycareEast/scripts.pory"
+# 289 "data/maps/DaycareEast/scripts.pory"
+	removefieldmugshot
+# 290 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 DaycareEastDittoOpenXforms_1:
 # 227 "data/maps/DaycareEast/scripts.pory"
+	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareEastDittoOpenXforms_4
+# 253 "data/maps/DaycareEast/scripts.pory"
 	speakername DaycareEastDittoOpenXforms_Text_0
-# 228 "data/maps/DaycareEast/scripts.pory"
-	msgbox DaycareEastDittoOpenXforms_Text_1, MSGBOX_YESNO
-# 229 "data/maps/DaycareEast/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq DaycareEastDittoOpenXforms_4
-# 240 "data/maps/DaycareEast/scripts.pory"
-	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 241 "data/maps/DaycareEast/scripts.pory"
+# 254 "data/maps/DaycareEast/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 255 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_3, MSGBOX_DEFAULT
+# 255 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 242 "data/maps/DaycareEast/scripts.pory"
+# 256 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_XFORMS_TALKED_TO_DITTO
+# 257 "data/maps/DaycareEast/scripts.pory"
+	removefieldmugshot
+# 258 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 259 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareEastDittoOpenXforms_10
+# 270 "data/maps/DaycareEast/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 271 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 272 "data/maps/DaycareEast/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 243 "data/maps/DaycareEast/scripts.pory"
+# 273 "data/maps/DaycareEast/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 244 "data/maps/DaycareEast/scripts.pory"
+# 274 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 275 "data/maps/DaycareEast/scripts.pory"
+	removefieldmugshot
+# 276 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 DaycareEastDittoOpenXforms_4:
+# 229 "data/maps/DaycareEast/scripts.pory"
+	speakername DaycareEastDittoOpenXforms_Text_0
+# 230 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_1, MSGBOX_YESNO
 # 231 "data/maps/DaycareEast/scripts.pory"
-	special OpenPCMoveMons
-# 232 "data/maps/DaycareEast/scripts.pory"
-	waitstate
-# 233 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareEastDittoOpenXforms_7
+# 242 "data/maps/DaycareEast/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 243 "data/maps/DaycareEast/scripts.pory"
+	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 244 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 245 "data/maps/DaycareEast/scripts.pory"
+	removefieldmugshot
+# 246 "data/maps/DaycareEast/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 234 "data/maps/DaycareEast/scripts.pory"
+# 247 "data/maps/DaycareEast/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 235 "data/maps/DaycareEast/scripts.pory"
+# 248 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 DaycareEastDittoOpenXforms_7:
-# 256 "data/maps/DaycareEast/scripts.pory"
+# 233 "data/maps/DaycareEast/scripts.pory"
 	special OpenPCMoveMons
-# 257 "data/maps/DaycareEast/scripts.pory"
+# 234 "data/maps/DaycareEast/scripts.pory"
 	waitstate
-# 258 "data/maps/DaycareEast/scripts.pory"
+# 235 "data/maps/DaycareEast/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 259 "data/maps/DaycareEast/scripts.pory"
+# 236 "data/maps/DaycareEast/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 260 "data/maps/DaycareEast/scripts.pory"
+# 237 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+DaycareEastDittoOpenXforms_10:
+# 261 "data/maps/DaycareEast/scripts.pory"
+	special OpenPCMoveMons
+# 262 "data/maps/DaycareEast/scripts.pory"
+	waitstate
+# 263 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 264 "data/maps/DaycareEast/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 265 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
@@ -569,17 +602,21 @@ SharpedoDialog_Text_3:
 	.string "I don't understand why Pokémon are\nso afraid of me...\pIs it something stuck in my teeth?\n$"
 
 DaycareEastDittoOpenXforms_Text_0:
-# 227 "data/maps/DaycareEast/scripts.pory"
+# 229 "data/maps/DaycareEast/scripts.pory"
 	.string "Ditto$"
 
 DaycareEastDittoOpenXforms_Text_1:
-# 228 "data/maps/DaycareEast/scripts.pory"
+# 230 "data/maps/DaycareEast/scripts.pory"
 	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareEastDittoOpenXforms_Text_2:
-# 240 "data/maps/DaycareEast/scripts.pory"
+# 243 "data/maps/DaycareEast/scripts.pory"
 	.string "Come back anytime!$"
 
 DaycareEastDittoOpenXforms_Text_3:
-# 251 "data/maps/DaycareEast/scripts.pory"
+# 255 "data/maps/DaycareEast/scripts.pory"
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"
+
+DaycareEastDittoOpenXforms_Text_4:
+# 286 "data/maps/DaycareEast/scripts.pory"
+	.string "Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!$"

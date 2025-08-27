@@ -32,8 +32,10 @@ script BlockVolcano{
             waitmovement(OBJ_EVENT_ID_CAMERA)
             delay(30)
             speakername("Volcarona")
+            createfieldmugshot(MUGSHOT_VOLCARONA, EMOTE_NORMAL)
             msgbox("You are not the one who may pass.\pThe Boss likes a challenge,\nso he only lets Water_types into\lthe Volcano.", MSGBOX_AUTOCLOSE)
             waitmessage
+            removefieldmugshot
             applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left * 6))
             waitmovement(OBJ_EVENT_ID_CAMERA)
             special(RemoveCameraObject)

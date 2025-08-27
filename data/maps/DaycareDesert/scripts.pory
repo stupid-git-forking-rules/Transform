@@ -66,6 +66,7 @@ script StunfiskDialog{
     clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
     speakername("Stunfisk")
     msgbox("Not many Pokémon know how to\nsurf in the desert.", MSGBOX_DEFAULT)
+    setflag(FLAG_STUNFISK_EGG)
     waitmessage
     release
     end
@@ -118,8 +119,10 @@ script RhyhornDialog{
     if(flag(FLAG_TRANS_RYHORN))
     {
         speakername("Rhyhorn")
+        createfieldmugshot(MUGSHOT_RHYHORN, EMOTE_NORMAL)
         msgbox("Keep on trucking little Ditto!\pHead over and see my old friend\nCutiefly.\pShe loves flowers.\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end 
     }
@@ -132,8 +135,10 @@ script RhyhornDialog{
         applymovement(Rhyhorn, Common_Movement_ExclamationMark)
         waitmovement(Rhyhorn)
         speakername("Rhyhorn")
+        createfieldmugshot(MUGSHOT_RHYHORN, EMOTE_HAPPY)
         msgbox("Hey there little Ditto!\pI'm not much of a fighter, but\nI can see that you're determined!\pYou could probaby get some use out\nof my armor plated exterior...\pTell you what.\pWhy don't you transform into me,\nthat way you make use of my\lstrength!", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_RYHORN)
         setflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -143,8 +148,10 @@ script RhyhornDialog{
         waitmessage
         clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
         speakername("Rhyhorn")
+        createfieldmugshot(MUGSHOT_RHYHORN, EMOTE_ELATED)
         msgbox("Ho_ho!\pLooking tougher already!\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_RHYHORN, 25, move1=MOVE_ROCK_THROW, move2=MOVE_HORN_ATTACK, move3=MOVE_ROCK_POLISH, move4=MOVE_ROCK_SMASH)
         waitmessage

@@ -402,9 +402,11 @@ script BattleVsArcanine{
     applymovement(Arcanine, moves(jump_2_down*2))
     waitmovement(Arcanine)
     playbgm(MUS_PMD_BOSS_INTRO, FALSE)
+    createfieldmugshot(MUGSHOT_ARCANINE, EMOTE_ANGRY)
     speakername("Arcanine")
     msgbox("Aha!\pA challenger.\pYou must be strong if you battled\nyour way through my volcano.\pI see how your spirit burns bright.\pMaybe taking you down will grant me\nthe EXP I am looking for.\pLet me test your flame!\n", MSGBOX_AUTOCLOSE)
-	setwildbattle(SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_FIRE_FANG, move3 = MOVE_FLAMETHROWER, move4 = MOVE_SWIFT)
+	removefieldmugshot
+    setwildbattle(SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_FIRE_FANG, move3 = MOVE_FLAMETHROWER, move4 = MOVE_SWIFT)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
@@ -421,8 +423,10 @@ script BattleVsArcanine{
         givemon(SPECIES_ARCANINE, 25, move1=MOVE_FIRE_FANG, move2=MOVE_BITE, move3=MOVE_AERIAL_ACE, move4=MOVE_THUNDER_FANG)
         waitmessage
         speakername("Arcanine")
+        createfieldmugshot(MUGSHOT_ARCANINE, EMOTE_NORMAL)
         msgbox("Carry yourself with honor.\pDon't soil my good name.\pMaybe you will unlock the secret\nto gain EXP.", MSGBOX_AUTOCLOSE)
         waitmessage
+        removefieldmugshot
         playse(SE_LEDGE)
         playse(SE_LEDGE)
         applymovement(Arcanine, moves(jump_2_up*2))

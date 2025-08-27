@@ -124,53 +124,73 @@ script AlolanSandshrewDialog{
 script DaycareMCDDittoOpenXforms{
     lock
     faceplayer
-    if (flag(FLAG_XFORMS_TALKED_TO_DITTO))
+    if(flag(FLAG_DITTO_INTRO))
     {
+        if (flag(FLAG_XFORMS_TALKED_TO_DITTO))
+        {
         speakername("Ditto")
         msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES)
-        {
+        {  
             special(OpenPCMoveMons)
             waitstate
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
-            end 
+            end
         }
         else
         {
+            createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
             msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
             waitmessage
+            removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
             end
         }
+        }
+        else{
+            speakername("Ditto")
+            createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
+            msgbox("Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n", MSGBOX_DEFAULT)        waitmessage
+            setflag(FLAG_XFORMS_TALKED_TO_DITTO)
+            removefieldmugshot
+            msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES)
+            {
+                special(OpenPCMoveMons)
+                waitstate
+                setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+                clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+                release
+                end
+            }
+            else
+            {
+                createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
+                msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
+                setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+                clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+                waitmessage
+                removefieldmugshot
+                release
+                end
+            }
+        }
+
     }
     else
     {
         speakername("Ditto")
-        msgbox("Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n", MSGBOX_DEFAULT)        waitmessage
-        setflag(FLAG_XFORMS_TALKED_TO_DITTO)
-        msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES)
-        {
-            special(OpenPCMoveMons)
-            waitstate
-            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
-            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
-            release
-            end
-        }
-        else
-        {
-            msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
-            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
-            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
-            waitmessage
-            release
-            end
-        }
+        createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
+        msgbox("Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!", MSGBOX_DEFAULT)        waitmessage
+        setflag(FLAG_DITTO_INTRO)
+        waitmessage
+        removefieldmugshot
+        release
+        end
     }
 
 }

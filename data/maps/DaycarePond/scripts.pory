@@ -9,7 +9,9 @@ script BattleVsMarill{
     {
         faceplayer
         speakername("Marill")
+        createfieldmugshot(MUGSHOT_MARILL, EMOTE_NORMAL)
         msgbox("You’re stronger than you look!\pSwim swiftly on your journey!", MSGBOX_DEFAULT)
+        removefieldmugshot
         waitmessage
         release
         end
@@ -20,9 +22,11 @@ script BattleVsMarill{
     playse(SE_PIN)
     applymovement(Marill, Common_Movement_ExclamationMark)
     waitmovement(Marill)
+    createfieldmugshot(MUGSHOT_MARILL, EMOTE_NORMAL)
     speakername("Marill")
     msgbox("Oh! A Ditto?\pYou’re gathering powers for your\nquest, right?\pIf you can beat me, you’ll earn the\npower to transform into me!", MSGBOX_AUTOCLOSE)
-	setwildbattle(SPECIES_MARILL, 25)
+	removefieldmugshot
+    setwildbattle(SPECIES_MARILL, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
@@ -39,8 +43,10 @@ script BattleVsMarill{
         givemon(SPECIES_MARILL, 25, move1=MOVE_SURF, move2=MOVE_AQUA_JET, move3=MOVE_COVET, move4=MOVE_RAIN_DANCE)
         waitmessage
         speakername("Marill")
+        createfieldmugshot(MUGSHOT_MARILL, EMOTE_HAPPY)
         msgbox("You’re stronger than you look!\pSwim swiftly on your journey!", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         fadenewbgm(MUS_PMD_LAKE)
         release
         end
@@ -124,7 +130,7 @@ script SeakingDialog{
     lock
     faceplayer
     speakername("Seaking")
-    msgbox("Everyone talks about how\ndesireable Vaporeon is.\pSeakings need love too...\pDo you know any Dittos?\n", MSGBOX_DEFAULT)
+    msgbox("Everyone talks about how\ncool Vaporeon is.\pSeakings deserve attention too...\n", MSGBOX_DEFAULT)
     waitmessage
     release
     end
@@ -250,6 +256,7 @@ script BuizelInCave{
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
+            lock
             speakername("Buizel")
 	        msgbox("She keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
             setflag(FLAG_BUIZEL_BATTLE)
@@ -274,7 +281,6 @@ script BuizelInCaveTrigger{
         case 34:
             applymovement(Buizel, moves(face_player))
             waitmovement(Buizel)
-            
             applymovement(LOCALID_PLAYER, moves(face_down))
             applymovement(Buizel, moves(walk_up))
             waitmovement(Buizel)
@@ -285,6 +291,7 @@ script BuizelInCaveTrigger{
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
+                lock
                 speakername("Buizel")
 	            msgbox("She keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
                 setflag(FLAG_BUIZEL_BATTLE)
@@ -303,6 +310,7 @@ script BuizelInCaveTrigger{
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
+                lock
                 speakername("Buizel")
 	            msgbox("She keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
                 setflag(FLAG_BUIZEL_BATTLE)
@@ -371,6 +379,7 @@ script SlowpokeInCaveTrigger{
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
+                lock
                 speakername("Slowpoke")
 	            msgbox("Maybe it's cause I'm too slow to\nharsh the vibe.", MSGBOX_DEFAULT)
                 setflag(FLAG_SLOWPOKE_BATTLE)
@@ -392,6 +401,7 @@ script SlowpokeInCaveTrigger{
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
+                lock
                 speakername("Slowpoke")
 	            msgbox("Maybe it's cause I'm too slow to\nharsh the vibe.", MSGBOX_DEFAULT)
                 setflag(FLAG_SLOWPOKE_BATTLE)
@@ -548,8 +558,10 @@ script BattleVsDragonair{
         applymovement(Dragonair, moves(face_player))
         waitmovement(Dragonair)
         speakername("Dragonair")
+        createfieldmugshot(MUGSHOT_DRAGONAIR, EMOTE_NORMAL)
         msgbox("You have proven your strength.\pI hope one day you learn that\ngrace will be the way to the EXP.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -560,8 +572,10 @@ script BattleVsDragonair{
     applymovement(Dragonair, Common_Movement_ExclamationMark)
     waitmovement(Dragonair)
     speakername("Dragonair")
+    createfieldmugshot(MUGSHOT_DRAGONAIR, EMOTE_NORMAL)
     msgbox("Hello there Ditto.\pYes, I see through your facade.\pMy philosophy to gain EXP has been\nto keep this biome calm.\pI spent my early days in the\ncrashing waterfalls, but gained\lno EXP.\pI found this biome and figured\nI try a different approach.\pYou seem to be causing a ruckus,\nand I have no problem taking you\ldown!", MSGBOX_AUTOCLOSE)
-	setwildbattle(SPECIES_DRAGONAIR, 25, move1=MOVE_OUTRAGE, move2= MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD)
+	removefieldmugshot
+    setwildbattle(SPECIES_DRAGONAIR, 25, move1=MOVE_OUTRAGE, move2= MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
@@ -577,7 +591,9 @@ script BattleVsDragonair{
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_DRAGONAIR, 25, move1=MOVE_OUTRAGE, move2=MOVE_WATERFALL, move3=MOVE_IRON_HEAD, move4=MOVE_SAFEGUARD)
         speakername("Dragonair")
+        createfieldmugshot(MUGSHOT_DRAGONAIR, EMOTE_HAPPY)
         msgbox("Very well Ditto.\nGo on.\pLeave this place calmly, with\nthe power to scale roaring\lwaterfalls.", MSGBOX_DEFAULT)
+        removefieldmugshot
         waitmessage
         fadenewbgm(MUS_PMD_LAKE)
         release

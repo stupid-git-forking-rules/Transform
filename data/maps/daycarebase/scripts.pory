@@ -5,6 +5,7 @@ mapscripts daycarebase_MapScripts {
 
 script DaycareIntro{
     lock
+    special(EnableNationalPokedex)
     speakername("Daycare Man")
     msgbox("Welcome to the Daycare!\pDespite what trainers may see from\nRoute 117, the Daycare is a vast\larea filled with biomes for nearly\levery type of Pokémon!\pExplore the Daycare and interact\nwith many of the Pokémon we are\lraising.\pYou never know what friends you\nwill make along the way!\pNow, I do expect you to be holding\nan Egg at some point... Every Ditto\lI've raised has produced one.\pNow you two, run along and do what\nyou need to do to get that Egg!\pWhen you're holding an Egg,\ncome back and talk to me and\lwe can get it to your trainer.", MSGBOX_AUTOCLOSE)
     waitmessage
@@ -19,8 +20,10 @@ script DaycareIntro{
     applymovement(VaporeonIntro, moves(face_left))
     waitmovement(LOCALID_PLAYER)
     waitmovement(VaporeonIntro)
+    createfieldmugshot(MUGSHOT_VAPOREON, EMOTE_ANGRY)
     speakername("Vaporeon")
     msgbox("I don't care what the Daycare Man\nsays, I'm not interested going on\lan Egg hunt.\pJust because Brendan put us in here\ntogether doesn't mean I have to\lhelp you.\pI'm going for a swim.\pYou'll just have to find that Egg\non your own.", MSGBOX_AUTOCLOSE)    waitmessage
+    removefieldmugshot
     applymovement(VaporeonIntro, moves(walk_fast_right*8))
     playse(SE_FLEE)
     waitmovement(VaporeonIntro)
@@ -328,7 +331,10 @@ script VaporeonDialog{
     lock
     faceplayer
     speakername("Vaporeon")
-    msgbox("Ugh!\pWhy does everyone keep asking me\nto help them search for Eggs?\pCan't you see I'm busy?\n", MSGBOX_DEFAULT)    waitmessage
+    createfieldmugshot(MUGSHOT_VAPOREON, EMOTE_ANGRY)
+    msgbox("Ugh!\pWhy does everyone keep asking me\nto help them search for Eggs?\pCan't you see I'm busy?\n", MSGBOX_DEFAULT)   
+    waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -350,7 +356,6 @@ script LinooneDialog{
         lock
         faceplayer
         speakername("Linoone")
-        createfieldmugshot(MUGSHOT_TEST, EMOTE_NORMAL)
 	    msgbox("The Daycare is huge!\pIt's a bit scary to expore,\nso I stay up here.\pRiolu is way more brave than I\nam and has explored the entirety\lof the Daycare.\pYou should talk with Riolu if\nyou get lost!\pI'm sure they can help!\n")
         waitmessage
         release
@@ -416,98 +421,126 @@ script RioluDialog{
         lock
         faceplayer
         speakername("Riolu")
+        createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
 	    msgbox("Back with a Lucky Egg?\n")
         checkitem(ITEM_LUCKY_EGG)
+        removefieldmugshot
         if(var(VAR_RESULT) == TRUE)
         {  
-            
-            msgbox("Great!\pI can tell about the habitat and\nability of a Pokémon in the Daycare.\pWould you like to exchange a\nLucky Egg?", MSGBOX_YESNO)
+            createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
+            msgbox("Great!\pI can tell about the habitat and\nability of a Pokémon in the Daycare.", MSGBOX_DEFAULT)
+            removefieldmugshot
+            msgbox("Would you like to exchange a\nLucky Egg?", MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
             {  
                 removeitem(ITEM_LUCKY_EGG)
                 dynmultichoice(0,0,TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Arcanine","Chinchou", "Cutiefly", "Dragonair", "Marill", "Machamp", "Noivern","Pikachu", "Rhyhorn","Lurantis", "Weavile")
                 if(var(VAR_RESULT) == 0)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Arcanine can be found deep in the\nVolcano.\pIt can run really fast and scale\nhills that would normally be to\lslippery to climb!", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 1)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Chinchou can be found in a cave\non the water in the desert.\pIt can dive deep underwater.\n", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 2)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Cutiefly can be found in the\nDaycare's flowers to the west.\pIt's a tiny Pokémon that can\nfit through small openings.", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 3)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Dragonair can be found at the lake.\pIt can be a bit cryptic so it\nmay be difficult to reach.\pIt can scale large waterfalls\nwith ease.", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 4)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Marill can be found at the lake,\nusually by the shore.\pIt's a bit shy so it may be hiding.\pIt can float in any body of water.\n", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 5)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Machamp likes to train deep in\nthe mountains.\pIt is a very tough and solitary\nPokémon.\pIts strength can move large\nboulders.", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 6)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Noivern hangs out in a dark\ncave above the Daycare Falls.\pIt's quite a powerful Pokémon,\nso be prepared for a fight.\pIt can soar through the air,\nreaching places unreachable by\lnon_flying types.", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 7)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Pikachu is standing on that cliff\nright over there.\pIts electricity can light up even\nthe darkest of caves.", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 8)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Rhyhorn lives in the desert.\pIt's quite a friendly Pokémon,\nbut don't upset it!\pIt is strong enough to smash\nsolid rocks!", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 9)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Lurantis has been spending time\nacross the water in the mountains.\pIts sharp limbs can cut through\nsmall trees.", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
                 elif(var(VAR_RESULT) == 10)
                 {
+                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Weavile is quite the ninja.\pIt spends time in the tall trees\nin the jungle.\pIt demands a fierce challenger\nto battle it.\pIts agility allows it to cross\neven the smallest of walkways.", MSGBOX_DEFAULT)
                     waitmessage
+                    removefieldmugshot
                     release
                     end
                 }
             }
             else
             {
+                createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                 msgbox("Oh.\pWhat else are you gonna do\nwith that egg?")
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -515,8 +548,10 @@ script RioluDialog{
         else
         {
             speakername("Riolu")
+            createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
             msgbox("No?\nCome back when you do!", MSGBOX_AUTOCLOSE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -525,9 +560,11 @@ script RioluDialog{
     else
     {
     speakername("Riolu")
+    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
 	msgbox("Hiya!\pI'm Riolu!\pI've visited every biome the\nDaycare has to offer.\lI know it like the back of my paw!\pIf you need guidance on where a\ncertain Pokémon might be,\lI'm your Pokémon!\pAlthough I won't do it for free...\pBring me Lucky Eggs, and I'll tell\nyou what I know.")
     setflag(FLAG_RIOLU_INTRO)
     waitmessage
+    removefieldmugshot
     release
     end
     }
@@ -541,8 +578,10 @@ script BattleVsPikachu{
     {
         faceplayer
         speakername("Pikachu")
+        createfieldmugshot(MUGSHOT_PIKACHU, EMOTE_NORMAL)
         msgbox("You really lit me up.\pBest of luck on your journey!\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
         
@@ -554,8 +593,10 @@ script BattleVsPikachu{
     applymovement(Pikachu, Common_Movement_ExclamationMark)
     waitmovement(Pikachu)
     speakername("Pikachu")
+    createfieldmugshot(MUGSHOT_PIKACHU, EMOTE_NORMAL)
     msgbox("A Ditto!\pYou must be on your quest to obtain\nyour egg.\pDefeat me in battle and I'll allow\nyou to transform into me!", MSGBOX_AUTOCLOSE)
-	setwildbattle(SPECIES_PIKACHU, 25)
+	removefieldmugshot
+    setwildbattle(SPECIES_PIKACHU, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
@@ -571,8 +612,10 @@ script BattleVsPikachu{
         dittotransform(VAR_TEMP_0)
         givemon(SPECIES_PIKACHU, 25, move1=MOVE_NUZZLE, move2=MOVE_IRON_TAIL, move3=MOVE_SPARK, move4=MOVE_FLASH)
         speakername("Pikachu")
+        createfieldmugshot(MUGSHOT_PIKACHU, EMOTE_HAPPY)
         msgbox("How electrifying!\pElectric_type moves are powerful\nagainst Water_type Pokémon.\pThey typically spend their time in\nthe Lake Biome here.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         fadenewbgm(MUS_PMD_HEARTWARMING)
         release
         end
@@ -583,7 +626,10 @@ script ChanseyHeal{
     lock
     faceplayer
     speakername("Chansey")
-    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?", MSGBOX_YESNO)
+    createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.", MSGBOX_DEFAULT)
+    removefieldmugshot
+    msgbox("Would you like to heal?", MSGBOX_YESNO)
     waitmessage
     if(var(VAR_RESULT) == YES)
     {
@@ -595,24 +641,30 @@ script ChanseyHeal{
             playfanfare(MUS_HEAL)
             waitfanfare
             special(HealPlayerParty)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             fadescreenswapbuffers(FADE_FROM_BLACK)
             msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
             release
             end
         }
         else
         {
+            createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
             msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
     }
     else
     {
+        createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
         msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -629,7 +681,7 @@ script DaycareBase_Ditto{
         speakername("Ditto")
         msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES)
-        {
+        {  
             special(OpenPCMoveMons)
             waitstate
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -639,8 +691,10 @@ script DaycareBase_Ditto{
         }
         else
         {
+            createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
             msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
             waitmessage
+            removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
@@ -649,8 +703,10 @@ script DaycareBase_Ditto{
         }
         else{
             speakername("Ditto")
+            createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
             msgbox("Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n", MSGBOX_DEFAULT)        waitmessage
             setflag(FLAG_XFORMS_TALKED_TO_DITTO)
+            removefieldmugshot
             msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
             {
@@ -663,10 +719,12 @@ script DaycareBase_Ditto{
             }
             else
             {
+                createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
                 msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
                 setflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -676,12 +734,15 @@ script DaycareBase_Ditto{
     else
     {
         speakername("Ditto")
+        createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
         msgbox("Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!", MSGBOX_DEFAULT)        waitmessage
         setflag(FLAG_DITTO_INTRO)
         waitmessage
+        removefieldmugshot
         release
         end
     }
+
 }
 
 

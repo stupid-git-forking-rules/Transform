@@ -15,7 +15,9 @@ script MewFinalBattleTrigger{
         waitmovement(LOCALID_PLAYER)
         playbgm(MUS_PMD_TITLE, FALSE)
         speakername("Mew")
+        createfieldmugshot(MUGSHOT_MEW, EMOTE_NORMAL)
         msgbox("Welcome Ditto.\pYou've had quite the adventure\nhaven't you?\pI see you've gathered many\ndiverse transformations.\pYou'd have to travel far and wide\nto accomplish such a feat.\pI think you are ready to receive\nyour Egg.\pConsider me your final challenge.\n", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
         setwildbattle(SPECIES_MEW, 25, IsShiny=TRUE, move1=MOVE_SWIFT, move2=MOVE_PSYCHIC, move3=MOVE_CONFUSE_RAY, move4=MOVE_ANCIENT_POWER)
         settotemboost(B_POSITION_PLAYER_LEFT, 4, 4, 4, 4, 4, 4, 0)
         dowildbattle
@@ -24,7 +26,9 @@ script MewFinalBattleTrigger{
         {
             playbgm(MUS_PMD_TITLE, FALSE)
             speakername("Mew")
+            createfieldmugshot(MUGSHOT_MEW, EMOTE_HAPPY)
             msgbox("Congratulations for overcoming\nthis tremendous challenge.\pYou have earned this.\n", MSGBOX_DEFAULT)
+            removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             giveitem(ITEM_AIR_BALLOON)
             playfanfare(MUS_LEVEL_UP)
@@ -33,7 +37,9 @@ script MewFinalBattleTrigger{
             waitfanfare
             waitmessage
             speakername("Mew")
+            createfieldmugshot(MUGSHOT_MEW, EMOTE_HAPPY)
             msgbox("Now go on.\pDeliver that Egg to fulfill your\npurpose.", MSGBOX_DEFAULT)
+            removefieldmugshot
             waitmessage
             playse(SE_M_TELEPORT)
             applymovement(Mew, moves(slide_up*8))

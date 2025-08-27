@@ -10,283 +10,354 @@ ChanseyDaycareWestHeal::
 # 8 "data/maps/DaycareWest/scripts.pory"
 	speakername ChanseyDaycareWestHeal_Text_0
 # 9 "data/maps/DaycareWest/scripts.pory"
-	msgbox ChanseyDaycareWestHeal_Text_1, MSGBOX_YESNO
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
 # 10 "data/maps/DaycareWest/scripts.pory"
-	waitmessage
+	msgbox ChanseyDaycareWestHeal_Text_1, MSGBOX_DEFAULT
 # 11 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 12 "data/maps/DaycareWest/scripts.pory"
+	msgbox ChanseyDaycareWestHeal_Text_2, MSGBOX_YESNO
+# 13 "data/maps/DaycareWest/scripts.pory"
+	waitmessage
+# 14 "data/maps/DaycareWest/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ChanseyDaycareWestHeal_1
-# 37 "data/maps/DaycareWest/scripts.pory"
-	msgbox ChanseyDaycareWestHeal_Text_4, MSGBOX_AUTOCLOSE
-# 38 "data/maps/DaycareWest/scripts.pory"
+# 44 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 45 "data/maps/DaycareWest/scripts.pory"
+	msgbox ChanseyDaycareWestHeal_Text_5, MSGBOX_AUTOCLOSE
+# 46 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 39 "data/maps/DaycareWest/scripts.pory"
+# 47 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 48 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 ChanseyDaycareWestHeal_1:
-# 13 "data/maps/DaycareWest/scripts.pory"
+# 16 "data/maps/DaycareWest/scripts.pory"
 	checkitem ITEM_LUCKY_EGG
-# 14 "data/maps/DaycareWest/scripts.pory"
+# 17 "data/maps/DaycareWest/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ChanseyDaycareWestHeal_4
-# 29 "data/maps/DaycareWest/scripts.pory"
-	msgbox ChanseyDaycareWestHeal_Text_3, MSGBOX_AUTOCLOSE
-# 30 "data/maps/DaycareWest/scripts.pory"
+# 34 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 35 "data/maps/DaycareWest/scripts.pory"
+	msgbox ChanseyDaycareWestHeal_Text_4, MSGBOX_AUTOCLOSE
+# 36 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 31 "data/maps/DaycareWest/scripts.pory"
+# 37 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 38 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 ChanseyDaycareWestHeal_4:
-# 16 "data/maps/DaycareWest/scripts.pory"
-	removeitem ITEM_LUCKY_EGG
-# 17 "data/maps/DaycareWest/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 18 "data/maps/DaycareWest/scripts.pory"
-	playfanfare MUS_HEAL
 # 19 "data/maps/DaycareWest/scripts.pory"
-	waitfanfare
+	removeitem ITEM_LUCKY_EGG
 # 20 "data/maps/DaycareWest/scripts.pory"
-	special HealPlayerParty
+	fadescreenswapbuffers FADE_TO_BLACK
 # 21 "data/maps/DaycareWest/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	playfanfare MUS_HEAL
 # 22 "data/maps/DaycareWest/scripts.pory"
-	msgbox ChanseyDaycareWestHeal_Text_2, MSGBOX_AUTOCLOSE
+	waitfanfare
 # 23 "data/maps/DaycareWest/scripts.pory"
-	waitmessage
+	special HealPlayerParty
 # 24 "data/maps/DaycareWest/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 25 "data/maps/DaycareWest/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 26 "data/maps/DaycareWest/scripts.pory"
+	msgbox ChanseyDaycareWestHeal_Text_3, MSGBOX_AUTOCLOSE
+# 27 "data/maps/DaycareWest/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 28 "data/maps/DaycareWest/scripts.pory"
+	waitmessage
+# 29 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 
 DaycareWestDittoOpenXforms::
-# 46 "data/maps/DaycareWest/scripts.pory"
+# 55 "data/maps/DaycareWest/scripts.pory"
 	lock
-# 47 "data/maps/DaycareWest/scripts.pory"
+# 56 "data/maps/DaycareWest/scripts.pory"
 	faceplayer
-# 48 "data/maps/DaycareWest/scripts.pory"
-	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareWestDittoOpenXforms_1
-# 73 "data/maps/DaycareWest/scripts.pory"
+# 57 "data/maps/DaycareWest/scripts.pory"
+	goto_if_set FLAG_DITTO_INTRO, DaycareWestDittoOpenXforms_1
+# 116 "data/maps/DaycareWest/scripts.pory"
 	speakername DaycareWestDittoOpenXforms_Text_0
-# 74 "data/maps/DaycareWest/scripts.pory"
-	msgbox DaycareWestDittoOpenXforms_Text_3, MSGBOX_DEFAULT
-# 74 "data/maps/DaycareWest/scripts.pory"
+# 117 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 118 "data/maps/DaycareWest/scripts.pory"
+	msgbox DaycareWestDittoOpenXforms_Text_4, MSGBOX_DEFAULT
+# 118 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 75 "data/maps/DaycareWest/scripts.pory"
-	setflag FLAG_XFORMS_TALKED_TO_DITTO
-# 76 "data/maps/DaycareWest/scripts.pory"
-	msgbox DaycareWestDittoOpenXforms_Text_1, MSGBOX_YESNO
-# 77 "data/maps/DaycareWest/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq DaycareWestDittoOpenXforms_7
-# 88 "data/maps/DaycareWest/scripts.pory"
-	msgbox DaycareWestDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 89 "data/maps/DaycareWest/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 90 "data/maps/DaycareWest/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 91 "data/maps/DaycareWest/scripts.pory"
+# 119 "data/maps/DaycareWest/scripts.pory"
+	setflag FLAG_DITTO_INTRO
+# 120 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 92 "data/maps/DaycareWest/scripts.pory"
+# 121 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 122 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 DaycareWestDittoOpenXforms_1:
-# 50 "data/maps/DaycareWest/scripts.pory"
+# 59 "data/maps/DaycareWest/scripts.pory"
+	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareWestDittoOpenXforms_4
+# 85 "data/maps/DaycareWest/scripts.pory"
 	speakername DaycareWestDittoOpenXforms_Text_0
-# 51 "data/maps/DaycareWest/scripts.pory"
-	msgbox DaycareWestDittoOpenXforms_Text_1, MSGBOX_YESNO
-# 52 "data/maps/DaycareWest/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq DaycareWestDittoOpenXforms_4
-# 63 "data/maps/DaycareWest/scripts.pory"
-	msgbox DaycareWestDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 64 "data/maps/DaycareWest/scripts.pory"
+# 86 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 87 "data/maps/DaycareWest/scripts.pory"
+	msgbox DaycareWestDittoOpenXforms_Text_3, MSGBOX_DEFAULT
+# 87 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 65 "data/maps/DaycareWest/scripts.pory"
+# 88 "data/maps/DaycareWest/scripts.pory"
+	setflag FLAG_XFORMS_TALKED_TO_DITTO
+# 89 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 90 "data/maps/DaycareWest/scripts.pory"
+	msgbox DaycareWestDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 91 "data/maps/DaycareWest/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareWestDittoOpenXforms_10
+# 102 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 103 "data/maps/DaycareWest/scripts.pory"
+	msgbox DaycareWestDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 104 "data/maps/DaycareWest/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 66 "data/maps/DaycareWest/scripts.pory"
+# 105 "data/maps/DaycareWest/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 67 "data/maps/DaycareWest/scripts.pory"
+# 106 "data/maps/DaycareWest/scripts.pory"
+	waitmessage
+# 107 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 108 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 DaycareWestDittoOpenXforms_4:
-# 54 "data/maps/DaycareWest/scripts.pory"
-	special OpenPCMoveMons
-# 55 "data/maps/DaycareWest/scripts.pory"
-	waitstate
-# 56 "data/maps/DaycareWest/scripts.pory"
+# 61 "data/maps/DaycareWest/scripts.pory"
+	speakername DaycareWestDittoOpenXforms_Text_0
+# 62 "data/maps/DaycareWest/scripts.pory"
+	msgbox DaycareWestDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 63 "data/maps/DaycareWest/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareWestDittoOpenXforms_7
+# 74 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 75 "data/maps/DaycareWest/scripts.pory"
+	msgbox DaycareWestDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 76 "data/maps/DaycareWest/scripts.pory"
+	waitmessage
+# 77 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 78 "data/maps/DaycareWest/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 57 "data/maps/DaycareWest/scripts.pory"
+# 79 "data/maps/DaycareWest/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 58 "data/maps/DaycareWest/scripts.pory"
+# 80 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 DaycareWestDittoOpenXforms_7:
-# 79 "data/maps/DaycareWest/scripts.pory"
+# 65 "data/maps/DaycareWest/scripts.pory"
 	special OpenPCMoveMons
-# 80 "data/maps/DaycareWest/scripts.pory"
+# 66 "data/maps/DaycareWest/scripts.pory"
 	waitstate
-# 81 "data/maps/DaycareWest/scripts.pory"
+# 67 "data/maps/DaycareWest/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 82 "data/maps/DaycareWest/scripts.pory"
+# 68 "data/maps/DaycareWest/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 83 "data/maps/DaycareWest/scripts.pory"
+# 69 "data/maps/DaycareWest/scripts.pory"
+	release
+	end
+
+DaycareWestDittoOpenXforms_10:
+# 93 "data/maps/DaycareWest/scripts.pory"
+	special OpenPCMoveMons
+# 94 "data/maps/DaycareWest/scripts.pory"
+	waitstate
+# 95 "data/maps/DaycareWest/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 96 "data/maps/DaycareWest/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 97 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 
 ApplinDialog::
-# 101 "data/maps/DaycareWest/scripts.pory"
+# 130 "data/maps/DaycareWest/scripts.pory"
 	lock
-# 102 "data/maps/DaycareWest/scripts.pory"
+# 131 "data/maps/DaycareWest/scripts.pory"
 	faceplayer
-# 103 "data/maps/DaycareWest/scripts.pory"
+# 132 "data/maps/DaycareWest/scripts.pory"
 	speakername ApplinDialog_Text_0
-# 104 "data/maps/DaycareWest/scripts.pory"
+# 133 "data/maps/DaycareWest/scripts.pory"
 	msgbox ApplinDialog_Text_1, MSGBOX_DEFAULT
-# 105 "data/maps/DaycareWest/scripts.pory"
+# 134 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 106 "data/maps/DaycareWest/scripts.pory"
+# 135 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 
 SurskitDialog::
-# 111 "data/maps/DaycareWest/scripts.pory"
+# 140 "data/maps/DaycareWest/scripts.pory"
 	lock
-# 112 "data/maps/DaycareWest/scripts.pory"
+# 141 "data/maps/DaycareWest/scripts.pory"
 	faceplayer
-# 113 "data/maps/DaycareWest/scripts.pory"
+# 142 "data/maps/DaycareWest/scripts.pory"
 	speakername SurskitDialog_Text_0
-# 114 "data/maps/DaycareWest/scripts.pory"
+# 143 "data/maps/DaycareWest/scripts.pory"
 	msgbox SurskitDialog_Text_1, MSGBOX_DEFAULT
-# 115 "data/maps/DaycareWest/scripts.pory"
+# 144 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 116 "data/maps/DaycareWest/scripts.pory"
+# 145 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 
 MasquerainDialog::
-# 121 "data/maps/DaycareWest/scripts.pory"
+# 150 "data/maps/DaycareWest/scripts.pory"
 	lock
-# 122 "data/maps/DaycareWest/scripts.pory"
+# 151 "data/maps/DaycareWest/scripts.pory"
 	faceplayer
-# 123 "data/maps/DaycareWest/scripts.pory"
+# 152 "data/maps/DaycareWest/scripts.pory"
 	speakername MasquerainDialog_Text_0
-# 124 "data/maps/DaycareWest/scripts.pory"
+# 153 "data/maps/DaycareWest/scripts.pory"
 	msgbox MasquerainDialog_Text_1, MSGBOX_DEFAULT
-# 125 "data/maps/DaycareWest/scripts.pory"
+# 154 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 126 "data/maps/DaycareWest/scripts.pory"
+# 155 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 
 BattleVsCutiefly::
-# 131 "data/maps/DaycareWest/scripts.pory"
+# 160 "data/maps/DaycareWest/scripts.pory"
 	lock
-# 132 "data/maps/DaycareWest/scripts.pory"
+# 161 "data/maps/DaycareWest/scripts.pory"
 	faceplayer
-# 133 "data/maps/DaycareWest/scripts.pory"
+# 162 "data/maps/DaycareWest/scripts.pory"
 	goto_if_unset FLAG_TRANS_RYHORN, BattleVsCutiefly_2
-# 141 "data/maps/DaycareWest/scripts.pory"
+# 172 "data/maps/DaycareWest/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_DITTO
 	goto_if_eq BattleVsCutiefly_3
-# 149 "data/maps/DaycareWest/scripts.pory"
+# 182 "data/maps/DaycareWest/scripts.pory"
 	goto_if_set FLAG_TRANS_CUTIEFLY, BattleVsCutiefly_4
-# 157 "data/maps/DaycareWest/scripts.pory"
+# 192 "data/maps/DaycareWest/scripts.pory"
 	playbgm MUS_PMD_BOSS_INTRO, FALSE
-# 158 "data/maps/DaycareWest/scripts.pory"
+# 193 "data/maps/DaycareWest/scripts.pory"
 	playse SE_PIN
-# 159 "data/maps/DaycareWest/scripts.pory"
+# 194 "data/maps/DaycareWest/scripts.pory"
 	applymovement Cutiefly, Common_Movement_ExclamationMark
-# 160 "data/maps/DaycareWest/scripts.pory"
+# 195 "data/maps/DaycareWest/scripts.pory"
 	waitmovement Cutiefly
-# 161 "data/maps/DaycareWest/scripts.pory"
+# 196 "data/maps/DaycareWest/scripts.pory"
 	speakername BattleVsCutiefly_Text_0
-# 162 "data/maps/DaycareWest/scripts.pory"
+# 197 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_CUTIEFLY, EMOTE_NORMAL
+# 198 "data/maps/DaycareWest/scripts.pory"
 	msgbox BattleVsCutiefly_Text_3, MSGBOX_AUTOCLOSE
-# 163 "data/maps/DaycareWest/scripts.pory"
+# 199 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 200 "data/maps/DaycareWest/scripts.pory"
 	setwildbattle SPECIES_CUTIEFLY, 25
-# 164 "data/maps/DaycareWest/scripts.pory"
+# 201 "data/maps/DaycareWest/scripts.pory"
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
-# 165 "data/maps/DaycareWest/scripts.pory"
+# 202 "data/maps/DaycareWest/scripts.pory"
 	dowildbattle
-# 166 "data/maps/DaycareWest/scripts.pory"
+# 203 "data/maps/DaycareWest/scripts.pory"
 	specialvar VAR_RESULT, GetBattleOutcome
-# 167 "data/maps/DaycareWest/scripts.pory"
+# 204 "data/maps/DaycareWest/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsCutiefly_8
 	return
 
 BattleVsCutiefly_2:
-# 135 "data/maps/DaycareWest/scripts.pory"
+# 164 "data/maps/DaycareWest/scripts.pory"
 	speakername BattleVsCutiefly_Text_0
-# 136 "data/maps/DaycareWest/scripts.pory"
+# 165 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_CUTIEFLY, EMOTE_NORMAL
+# 166 "data/maps/DaycareWest/scripts.pory"
 	msgbox BattleVsCutiefly_Text_1, MSGBOX_DEFAULT
-# 137 "data/maps/DaycareWest/scripts.pory"
+# 167 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 138 "data/maps/DaycareWest/scripts.pory"
+# 168 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 169 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 BattleVsCutiefly_3:
-# 143 "data/maps/DaycareWest/scripts.pory"
+# 174 "data/maps/DaycareWest/scripts.pory"
 	speakername BattleVsCutiefly_Text_0
-# 144 "data/maps/DaycareWest/scripts.pory"
+# 175 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_CUTIEFLY, EMOTE_NORMAL
+# 176 "data/maps/DaycareWest/scripts.pory"
 	msgbox BattleVsCutiefly_Text_1, MSGBOX_DEFAULT
-# 145 "data/maps/DaycareWest/scripts.pory"
+# 177 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 146 "data/maps/DaycareWest/scripts.pory"
+# 178 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 179 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 BattleVsCutiefly_4:
-# 151 "data/maps/DaycareWest/scripts.pory"
+# 184 "data/maps/DaycareWest/scripts.pory"
 	speakername BattleVsCutiefly_Text_0
-# 152 "data/maps/DaycareWest/scripts.pory"
+# 185 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_CUTIEFLY, EMOTE_NORMAL
+# 186 "data/maps/DaycareWest/scripts.pory"
 	msgbox BattleVsCutiefly_Text_2, MSGBOX_DEFAULT
-# 153 "data/maps/DaycareWest/scripts.pory"
+# 187 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 154 "data/maps/DaycareWest/scripts.pory"
+# 188 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 189 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
 BattleVsCutiefly_8:
-# 169 "data/maps/DaycareWest/scripts.pory"
+# 206 "data/maps/DaycareWest/scripts.pory"
 	playbgm MUS_PMD_HAPPINESS, FALSE
-# 170 "data/maps/DaycareWest/scripts.pory"
+# 207 "data/maps/DaycareWest/scripts.pory"
 	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
-# 171 "data/maps/DaycareWest/scripts.pory"
+# 208 "data/maps/DaycareWest/scripts.pory"
 	setflag FLAG_TRANS_CUTIEFLY
-# 172 "data/maps/DaycareWest/scripts.pory"
+# 209 "data/maps/DaycareWest/scripts.pory"
 	delay 30
-# 173 "data/maps/DaycareWest/scripts.pory"
+# 210 "data/maps/DaycareWest/scripts.pory"
 	dittotransform SPECIES_CUTIEFLY
-# 174 "data/maps/DaycareWest/scripts.pory"
+# 211 "data/maps/DaycareWest/scripts.pory"
 	playse MUS_LEVEL_UP
-# 175 "data/maps/DaycareWest/scripts.pory"
+# 212 "data/maps/DaycareWest/scripts.pory"
 	msgbox BattleVsCutiefly_Text_4, MSGBOX_DEFAULT
-# 176 "data/maps/DaycareWest/scripts.pory"
+# 213 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 177 "data/maps/DaycareWest/scripts.pory"
+# 214 "data/maps/DaycareWest/scripts.pory"
 	dittotransform VAR_TEMP_0
-# 178 "data/maps/DaycareWest/scripts.pory"
+# 215 "data/maps/DaycareWest/scripts.pory"
 	givemon SPECIES_CUTIEFLY, 25, move1 = MOVE_BUG_BUZZ, move2 = MOVE_DAZZLING_GLEAM, move3 = MOVE_SWEET_SCENT, move4 = MOVE_PSYCHIC
-# 179 "data/maps/DaycareWest/scripts.pory"
+# 216 "data/maps/DaycareWest/scripts.pory"
 	speakername BattleVsCutiefly_Text_0
-# 180 "data/maps/DaycareWest/scripts.pory"
+# 217 "data/maps/DaycareWest/scripts.pory"
+	createfieldmugshot MUGSHOT_CUTIEFLY, EMOTE_HAPPY
+# 218 "data/maps/DaycareWest/scripts.pory"
 	msgbox BattleVsCutiefly_Text_2, MSGBOX_DEFAULT
-# 181 "data/maps/DaycareWest/scripts.pory"
+# 219 "data/maps/DaycareWest/scripts.pory"
 	waitmessage
-# 182 "data/maps/DaycareWest/scripts.pory"
+# 220 "data/maps/DaycareWest/scripts.pory"
+	removefieldmugshot
+# 221 "data/maps/DaycareWest/scripts.pory"
 	fadenewbgm MUS_PMD_HEARTWARMING
-# 183 "data/maps/DaycareWest/scripts.pory"
+# 222 "data/maps/DaycareWest/scripts.pory"
 	release
 	end
 
@@ -296,77 +367,85 @@ ChanseyDaycareWestHeal_Text_0:
 	.string "Chansey$"
 
 ChanseyDaycareWestHeal_Text_1:
-# 9 "data/maps/DaycareWest/scripts.pory"
-	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?$"
+# 10 "data/maps/DaycareWest/scripts.pory"
+	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.$"
 
 ChanseyDaycareWestHeal_Text_2:
-# 22 "data/maps/DaycareWest/scripts.pory"
-	.string "You have been restored to full health!$"
+# 12 "data/maps/DaycareWest/scripts.pory"
+	.string "Would you like to heal?$"
 
 ChanseyDaycareWestHeal_Text_3:
-# 29 "data/maps/DaycareWest/scripts.pory"
-	.string "You don't have a Lucky Egg!\pCome back when you do.$"
+# 26 "data/maps/DaycareWest/scripts.pory"
+	.string "You have been restored to full health!$"
 
 ChanseyDaycareWestHeal_Text_4:
-# 37 "data/maps/DaycareWest/scripts.pory"
+# 35 "data/maps/DaycareWest/scripts.pory"
+	.string "You don't have a Lucky Egg!\pCome back when you do.$"
+
+ChanseyDaycareWestHeal_Text_5:
+# 45 "data/maps/DaycareWest/scripts.pory"
 	.string "Oh, okay then.$"
 
 DaycareWestDittoOpenXforms_Text_0:
-# 50 "data/maps/DaycareWest/scripts.pory"
+# 61 "data/maps/DaycareWest/scripts.pory"
 	.string "Ditto$"
 
 DaycareWestDittoOpenXforms_Text_1:
-# 51 "data/maps/DaycareWest/scripts.pory"
+# 62 "data/maps/DaycareWest/scripts.pory"
 	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareWestDittoOpenXforms_Text_2:
-# 63 "data/maps/DaycareWest/scripts.pory"
+# 75 "data/maps/DaycareWest/scripts.pory"
 	.string "Come back anytime!$"
 
 DaycareWestDittoOpenXforms_Text_3:
-# 74 "data/maps/DaycareWest/scripts.pory"
+# 87 "data/maps/DaycareWest/scripts.pory"
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"
 
+DaycareWestDittoOpenXforms_Text_4:
+# 118 "data/maps/DaycareWest/scripts.pory"
+	.string "Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!$"
+
 ApplinDialog_Text_0:
-# 103 "data/maps/DaycareWest/scripts.pory"
+# 132 "data/maps/DaycareWest/scripts.pory"
 	.string "Applin$"
 
 ApplinDialog_Text_1:
-# 104 "data/maps/DaycareWest/scripts.pory"
+# 133 "data/maps/DaycareWest/scripts.pory"
 	.string "The Daycare Woman is so kind.\pShe carried me around until I\nfound my favorite tree.\pNow I can hang out here all day!\n$"
 
 SurskitDialog_Text_0:
-# 113 "data/maps/DaycareWest/scripts.pory"
+# 142 "data/maps/DaycareWest/scripts.pory"
 	.string "Surskit$"
 
 SurskitDialog_Text_1:
-# 114 "data/maps/DaycareWest/scripts.pory"
+# 143 "data/maps/DaycareWest/scripts.pory"
 	.string "I'm not sure when my trainer is\ncoming back, but I don't mind!\pThe pondskipping here is radical!\n$"
 
 MasquerainDialog_Text_0:
-# 123 "data/maps/DaycareWest/scripts.pory"
+# 152 "data/maps/DaycareWest/scripts.pory"
 	.string "Masquerain$"
 
 MasquerainDialog_Text_1:
-# 124 "data/maps/DaycareWest/scripts.pory"
+# 153 "data/maps/DaycareWest/scripts.pory"
 	.string "Bro!\pI wish my trainer didn't evolve me\nbefore dropping me off.\pSurskit has been skipping up the\npond and I'm mad jealous.$"
 
 BattleVsCutiefly_Text_0:
-# 135 "data/maps/DaycareWest/scripts.pory"
+# 164 "data/maps/DaycareWest/scripts.pory"
 	.string "Cutiefly$"
 
 BattleVsCutiefly_Text_1:
-# 136 "data/maps/DaycareWest/scripts.pory"
+# 166 "data/maps/DaycareWest/scripts.pory"
 	.string "Being tiny is great!\p...Unless you visit a biome\nlike the desert.\pThe winds are a bit too harsh\nfor a Pokémon of my size.\pThat just makes me think of how\nI miss my friend Rhyhorn...$"
 
 BattleVsCutiefly_Text_2:
-# 152 "data/maps/DaycareWest/scripts.pory"
+# 186 "data/maps/DaycareWest/scripts.pory"
 	.string "I'll stick to my flowers.\pBe on the lookout for places only a\ntiny Pokémon can squeeze through!$"
 
 BattleVsCutiefly_Text_3:
-# 162 "data/maps/DaycareWest/scripts.pory"
+# 198 "data/maps/DaycareWest/scripts.pory"
 	.string "Welcome to the flower patch big\nfriend!\pSometimes it pays to be tiny!\pBeat me here on my home turf\nand you too can transform to be\ltiny.$"
 
 BattleVsCutiefly_Text_4:
-# 175 "data/maps/DaycareWest/scripts.pory"
+# 212 "data/maps/DaycareWest/scripts.pory"
 	.string "You have gained the ability to\ntransform into Cutiefly!$"

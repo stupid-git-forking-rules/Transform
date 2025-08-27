@@ -23,55 +23,59 @@ BattleVsWeavile::
 	goto_if_set FLAG_TRANS_WEAVILE, BattleVsWeavile_2
 # 21 "data/maps/DaycareTreehouse/scripts.pory"
 	goto_if_unset FLAG_TRANS_ARCANINE, BattleVsWeavile_3
-# 50 "data/maps/DaycareTreehouse/scripts.pory"
-	lock
-# 51 "data/maps/DaycareTreehouse/scripts.pory"
-	playbgm MUS_NONE, FALSE
 # 52 "data/maps/DaycareTreehouse/scripts.pory"
-	playmoncry SPECIES_WEAVILE, CRY_MODE_NORMAL
+	lock
 # 53 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmoncry
+	playbgm MUS_NONE, FALSE
 # 54 "data/maps/DaycareTreehouse/scripts.pory"
-	playse SE_PIN
+	playmoncry SPECIES_WEAVILE, CRY_MODE_NORMAL
 # 55 "data/maps/DaycareTreehouse/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmoncry
 # 56 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	playse SE_PIN
 # 57 "data/maps/DaycareTreehouse/scripts.pory"
-	applymovement LOCALID_PLAYER, BattleVsWeavile_Movement_0
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 58 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmovement LOCALID_PLAYER
 # 59 "data/maps/DaycareTreehouse/scripts.pory"
-	applymovement LOCALID_PLAYER, BattleVsWeavile_Movement_1
+	applymovement LOCALID_PLAYER, BattleVsWeavile_Movement_0
 # 60 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmovement LOCALID_PLAYER
 # 61 "data/maps/DaycareTreehouse/scripts.pory"
-	applymovement LOCALID_PLAYER, BattleVsWeavile_Movement_2
+	applymovement LOCALID_PLAYER, BattleVsWeavile_Movement_1
 # 62 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmovement LOCALID_PLAYER
 # 63 "data/maps/DaycareTreehouse/scripts.pory"
-	playse SE_M_SCRATCH
+	applymovement LOCALID_PLAYER, BattleVsWeavile_Movement_2
 # 64 "data/maps/DaycareTreehouse/scripts.pory"
-	waitse
+	waitmovement LOCALID_PLAYER
 # 65 "data/maps/DaycareTreehouse/scripts.pory"
-	applymovement Weavile, BattleVsWeavile_Movement_3
+	playse SE_M_SCRATCH
 # 66 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmovement Weavile
+	waitse
 # 67 "data/maps/DaycareTreehouse/scripts.pory"
-	playbgm MUS_PMD_BOSS_INTRO, FALSE
+	applymovement Weavile, BattleVsWeavile_Movement_3
 # 68 "data/maps/DaycareTreehouse/scripts.pory"
-	speakername BattleVsWeavile_Text_0
+	waitmovement Weavile
 # 69 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox BattleVsWeavile_Text_2, MSGBOX_AUTOCLOSE
+	playbgm MUS_PMD_BOSS_INTRO, FALSE
 # 70 "data/maps/DaycareTreehouse/scripts.pory"
-	setwildbattle SPECIES_WEAVILE, 25
+	speakername BattleVsWeavile_Text_0
 # 71 "data/maps/DaycareTreehouse/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	createfieldmugshot MUGSHOT_WEAVILE, EMOTE_ANGRY
 # 72 "data/maps/DaycareTreehouse/scripts.pory"
-	dowildbattle
+	msgbox BattleVsWeavile_Text_2, MSGBOX_AUTOCLOSE
 # 73 "data/maps/DaycareTreehouse/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	removefieldmugshot
 # 74 "data/maps/DaycareTreehouse/scripts.pory"
+	setwildbattle SPECIES_WEAVILE, 25
+# 75 "data/maps/DaycareTreehouse/scripts.pory"
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+# 76 "data/maps/DaycareTreehouse/scripts.pory"
+	dowildbattle
+# 77 "data/maps/DaycareTreehouse/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 78 "data/maps/DaycareTreehouse/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsWeavile_6
 	return
@@ -115,198 +119,257 @@ BattleVsWeavile_3:
 # 39 "data/maps/DaycareTreehouse/scripts.pory"
 	speakername BattleVsWeavile_Text_0
 # 40 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox BattleVsWeavile_Text_1, MSGBOX_DEFAULT
+	createfieldmugshot MUGSHOT_WEAVILE, EMOTE_ANGRY
 # 41 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmessage
+	msgbox BattleVsWeavile_Text_1, MSGBOX_AUTOCLOSE
 # 42 "data/maps/DaycareTreehouse/scripts.pory"
-	applymovement Weavile, BattleVsWeavile_Movement_4
+	waitmessage
 # 43 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmovement Weavile
+	removefieldmugshot
 # 44 "data/maps/DaycareTreehouse/scripts.pory"
-	applymovement Weavile, BattleVsWeavile_Movement_5
+	applymovement Weavile, BattleVsWeavile_Movement_4
 # 45 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmovement Weavile
 # 46 "data/maps/DaycareTreehouse/scripts.pory"
-	fadenewbgm MUS_PMD_JUNGLE
+	applymovement Weavile, BattleVsWeavile_Movement_5
 # 47 "data/maps/DaycareTreehouse/scripts.pory"
+	waitmovement Weavile
+# 48 "data/maps/DaycareTreehouse/scripts.pory"
+	fadenewbgm MUS_PMD_JUNGLE
+# 49 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 BattleVsWeavile_6:
-# 76 "data/maps/DaycareTreehouse/scripts.pory"
-	playbgm MUS_PMD_HAPPINESS, FALSE
-# 77 "data/maps/DaycareTreehouse/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
-# 78 "data/maps/DaycareTreehouse/scripts.pory"
-	setflag FLAG_TRANS_WEAVILE
-# 79 "data/maps/DaycareTreehouse/scripts.pory"
-	dittotransform SPECIES_WEAVILE
 # 80 "data/maps/DaycareTreehouse/scripts.pory"
-	playse MUS_LEVEL_UP
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 81 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox BattleVsWeavile_Text_3, MSGBOX_DEFAULT
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 82 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmessage
+	setflag FLAG_TRANS_WEAVILE
 # 83 "data/maps/DaycareTreehouse/scripts.pory"
-	dittotransform VAR_TEMP_0
+	dittotransform SPECIES_WEAVILE
 # 84 "data/maps/DaycareTreehouse/scripts.pory"
-	givemon SPECIES_WEAVILE, 25, move1 = MOVE_ICE_SHARD, move2 = MOVE_ICE_PUNCH, move3 = MOVE_SHADOW_CLAW, move4 = MOVE_BRICK_BREAK
+	playse MUS_LEVEL_UP
 # 85 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmessage
+	msgbox BattleVsWeavile_Text_3, MSGBOX_DEFAULT
 # 86 "data/maps/DaycareTreehouse/scripts.pory"
-	speakername BattleVsWeavile_Text_0
-# 87 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox BattleVsWeavile_Text_4, MSGBOX_AUTOCLOSE
-# 88 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
+# 87 "data/maps/DaycareTreehouse/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 88 "data/maps/DaycareTreehouse/scripts.pory"
+	givemon SPECIES_WEAVILE, 25, move1 = MOVE_ICE_SHARD, move2 = MOVE_ICE_PUNCH, move3 = MOVE_SHADOW_CLAW, move4 = MOVE_BRICK_BREAK
 # 89 "data/maps/DaycareTreehouse/scripts.pory"
-	applymovement Weavile, BattleVsWeavile_Movement_4
+	waitmessage
 # 90 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmovement Weavile
+	speakername BattleVsWeavile_Text_0
 # 91 "data/maps/DaycareTreehouse/scripts.pory"
-	applymovement Weavile, BattleVsWeavile_Movement_5
+	createfieldmugshot MUGSHOT_WEAVILE, EMOTE_NORMAL
 # 92 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmovement Weavile
+	msgbox BattleVsWeavile_Text_4, MSGBOX_AUTOCLOSE
 # 93 "data/maps/DaycareTreehouse/scripts.pory"
-	fadenewbgm MUS_PMD_JUNGLE
+	waitmessage
 # 94 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 95 "data/maps/DaycareTreehouse/scripts.pory"
+	applymovement Weavile, BattleVsWeavile_Movement_4
+# 96 "data/maps/DaycareTreehouse/scripts.pory"
+	waitmovement Weavile
+# 97 "data/maps/DaycareTreehouse/scripts.pory"
+	applymovement Weavile, BattleVsWeavile_Movement_5
+# 98 "data/maps/DaycareTreehouse/scripts.pory"
+	waitmovement Weavile
+# 99 "data/maps/DaycareTreehouse/scripts.pory"
+	fadenewbgm MUS_PMD_JUNGLE
+# 100 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 
 ChanseyDaycareTreehouseHeal::
-# 100 "data/maps/DaycareTreehouse/scripts.pory"
+# 106 "data/maps/DaycareTreehouse/scripts.pory"
 	lock
-# 101 "data/maps/DaycareTreehouse/scripts.pory"
+# 107 "data/maps/DaycareTreehouse/scripts.pory"
 	faceplayer
-# 102 "data/maps/DaycareTreehouse/scripts.pory"
+# 108 "data/maps/DaycareTreehouse/scripts.pory"
 	speakername ChanseyDaycareTreehouseHeal_Text_0
-# 103 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox ChanseyDaycareTreehouseHeal_Text_1, MSGBOX_YESNO
-# 104 "data/maps/DaycareTreehouse/scripts.pory"
+# 109 "data/maps/DaycareTreehouse/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 110 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox ChanseyDaycareTreehouseHeal_Text_1, MSGBOX_DEFAULT
+# 111 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 112 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox ChanseyDaycareTreehouseHeal_Text_2, MSGBOX_YESNO
+# 113 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
-# 105 "data/maps/DaycareTreehouse/scripts.pory"
+# 114 "data/maps/DaycareTreehouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ChanseyDaycareTreehouseHeal_1
-# 131 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox ChanseyDaycareTreehouseHeal_Text_4, MSGBOX_AUTOCLOSE
-# 132 "data/maps/DaycareTreehouse/scripts.pory"
+# 144 "data/maps/DaycareTreehouse/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 145 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox ChanseyDaycareTreehouseHeal_Text_5, MSGBOX_AUTOCLOSE
+# 146 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
-# 133 "data/maps/DaycareTreehouse/scripts.pory"
+# 147 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 148 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 ChanseyDaycareTreehouseHeal_1:
-# 107 "data/maps/DaycareTreehouse/scripts.pory"
+# 116 "data/maps/DaycareTreehouse/scripts.pory"
 	checkitem ITEM_LUCKY_EGG
-# 108 "data/maps/DaycareTreehouse/scripts.pory"
+# 117 "data/maps/DaycareTreehouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ChanseyDaycareTreehouseHeal_4
-# 123 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox ChanseyDaycareTreehouseHeal_Text_3, MSGBOX_AUTOCLOSE
-# 124 "data/maps/DaycareTreehouse/scripts.pory"
+# 134 "data/maps/DaycareTreehouse/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 135 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox ChanseyDaycareTreehouseHeal_Text_4, MSGBOX_AUTOCLOSE
+# 136 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
-# 125 "data/maps/DaycareTreehouse/scripts.pory"
+# 137 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 138 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 ChanseyDaycareTreehouseHeal_4:
-# 110 "data/maps/DaycareTreehouse/scripts.pory"
+# 119 "data/maps/DaycareTreehouse/scripts.pory"
 	removeitem ITEM_LUCKY_EGG
-# 111 "data/maps/DaycareTreehouse/scripts.pory"
+# 120 "data/maps/DaycareTreehouse/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 112 "data/maps/DaycareTreehouse/scripts.pory"
+# 121 "data/maps/DaycareTreehouse/scripts.pory"
 	playfanfare MUS_HEAL
-# 113 "data/maps/DaycareTreehouse/scripts.pory"
+# 122 "data/maps/DaycareTreehouse/scripts.pory"
 	waitfanfare
-# 114 "data/maps/DaycareTreehouse/scripts.pory"
+# 123 "data/maps/DaycareTreehouse/scripts.pory"
 	special HealPlayerParty
-# 115 "data/maps/DaycareTreehouse/scripts.pory"
+# 124 "data/maps/DaycareTreehouse/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 125 "data/maps/DaycareTreehouse/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 116 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox ChanseyDaycareTreehouseHeal_Text_2, MSGBOX_AUTOCLOSE
-# 117 "data/maps/DaycareTreehouse/scripts.pory"
+# 126 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox ChanseyDaycareTreehouseHeal_Text_3, MSGBOX_AUTOCLOSE
+# 127 "data/maps/DaycareTreehouse/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 128 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
-# 118 "data/maps/DaycareTreehouse/scripts.pory"
+# 129 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 
 DaycareTreehouseDittoOpenXforms::
-# 140 "data/maps/DaycareTreehouse/scripts.pory"
+# 155 "data/maps/DaycareTreehouse/scripts.pory"
 	lock
-# 141 "data/maps/DaycareTreehouse/scripts.pory"
+# 156 "data/maps/DaycareTreehouse/scripts.pory"
 	faceplayer
-# 142 "data/maps/DaycareTreehouse/scripts.pory"
-	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareTreehouseDittoOpenXforms_1
-# 167 "data/maps/DaycareTreehouse/scripts.pory"
+# 157 "data/maps/DaycareTreehouse/scripts.pory"
+	goto_if_set FLAG_DITTO_INTRO, DaycareTreehouseDittoOpenXforms_1
+# 216 "data/maps/DaycareTreehouse/scripts.pory"
 	speakername DaycareTreehouseDittoOpenXforms_Text_0
-# 168 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox DaycareTreehouseDittoOpenXforms_Text_3, MSGBOX_DEFAULT
-# 168 "data/maps/DaycareTreehouse/scripts.pory"
+# 217 "data/maps/DaycareTreehouse/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 218 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox DaycareTreehouseDittoOpenXforms_Text_4, MSGBOX_DEFAULT
+# 218 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
-# 169 "data/maps/DaycareTreehouse/scripts.pory"
-	setflag FLAG_XFORMS_TALKED_TO_DITTO
-# 170 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox DaycareTreehouseDittoOpenXforms_Text_1, MSGBOX_YESNO
-# 171 "data/maps/DaycareTreehouse/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq DaycareTreehouseDittoOpenXforms_7
-# 182 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox DaycareTreehouseDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 183 "data/maps/DaycareTreehouse/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 184 "data/maps/DaycareTreehouse/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 185 "data/maps/DaycareTreehouse/scripts.pory"
+# 219 "data/maps/DaycareTreehouse/scripts.pory"
+	setflag FLAG_DITTO_INTRO
+# 220 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
-# 186 "data/maps/DaycareTreehouse/scripts.pory"
+# 221 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 222 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 DaycareTreehouseDittoOpenXforms_1:
-# 144 "data/maps/DaycareTreehouse/scripts.pory"
-	speakername DaycareTreehouseDittoOpenXforms_Text_0
-# 145 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox DaycareTreehouseDittoOpenXforms_Text_1, MSGBOX_YESNO
-# 146 "data/maps/DaycareTreehouse/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq DaycareTreehouseDittoOpenXforms_4
-# 157 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox DaycareTreehouseDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 158 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmessage
 # 159 "data/maps/DaycareTreehouse/scripts.pory"
+	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareTreehouseDittoOpenXforms_4
+# 185 "data/maps/DaycareTreehouse/scripts.pory"
+	speakername DaycareTreehouseDittoOpenXforms_Text_0
+# 186 "data/maps/DaycareTreehouse/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 187 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox DaycareTreehouseDittoOpenXforms_Text_3, MSGBOX_DEFAULT
+# 187 "data/maps/DaycareTreehouse/scripts.pory"
+	waitmessage
+# 188 "data/maps/DaycareTreehouse/scripts.pory"
+	setflag FLAG_XFORMS_TALKED_TO_DITTO
+# 189 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 190 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox DaycareTreehouseDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 191 "data/maps/DaycareTreehouse/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareTreehouseDittoOpenXforms_10
+# 202 "data/maps/DaycareTreehouse/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 203 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox DaycareTreehouseDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 204 "data/maps/DaycareTreehouse/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 160 "data/maps/DaycareTreehouse/scripts.pory"
+# 205 "data/maps/DaycareTreehouse/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 161 "data/maps/DaycareTreehouse/scripts.pory"
+# 206 "data/maps/DaycareTreehouse/scripts.pory"
+	waitmessage
+# 207 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 208 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 DaycareTreehouseDittoOpenXforms_4:
-# 148 "data/maps/DaycareTreehouse/scripts.pory"
-	special OpenPCMoveMons
-# 149 "data/maps/DaycareTreehouse/scripts.pory"
-	waitstate
-# 150 "data/maps/DaycareTreehouse/scripts.pory"
+# 161 "data/maps/DaycareTreehouse/scripts.pory"
+	speakername DaycareTreehouseDittoOpenXforms_Text_0
+# 162 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox DaycareTreehouseDittoOpenXforms_Text_1, MSGBOX_YESNO
+# 163 "data/maps/DaycareTreehouse/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq DaycareTreehouseDittoOpenXforms_7
+# 174 "data/maps/DaycareTreehouse/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 175 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox DaycareTreehouseDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+# 176 "data/maps/DaycareTreehouse/scripts.pory"
+	waitmessage
+# 177 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 178 "data/maps/DaycareTreehouse/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 151 "data/maps/DaycareTreehouse/scripts.pory"
+# 179 "data/maps/DaycareTreehouse/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 152 "data/maps/DaycareTreehouse/scripts.pory"
+# 180 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 DaycareTreehouseDittoOpenXforms_7:
-# 173 "data/maps/DaycareTreehouse/scripts.pory"
+# 165 "data/maps/DaycareTreehouse/scripts.pory"
 	special OpenPCMoveMons
-# 174 "data/maps/DaycareTreehouse/scripts.pory"
+# 166 "data/maps/DaycareTreehouse/scripts.pory"
 	waitstate
-# 175 "data/maps/DaycareTreehouse/scripts.pory"
+# 167 "data/maps/DaycareTreehouse/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 176 "data/maps/DaycareTreehouse/scripts.pory"
+# 168 "data/maps/DaycareTreehouse/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 177 "data/maps/DaycareTreehouse/scripts.pory"
+# 169 "data/maps/DaycareTreehouse/scripts.pory"
+	release
+	end
+
+DaycareTreehouseDittoOpenXforms_10:
+# 193 "data/maps/DaycareTreehouse/scripts.pory"
+	special OpenPCMoveMons
+# 194 "data/maps/DaycareTreehouse/scripts.pory"
+	waitstate
+# 195 "data/maps/DaycareTreehouse/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 196 "data/maps/DaycareTreehouse/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 197 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
@@ -335,17 +398,17 @@ BattleVsWeavile_Movement_3:
 	jump_2_down
 	step_end
 
-# 42 "data/maps/DaycareTreehouse/scripts.pory"
+# 44 "data/maps/DaycareTreehouse/scripts.pory"
 BattleVsWeavile_Movement_4:
-# 42 "data/maps/DaycareTreehouse/scripts.pory"
+# 44 "data/maps/DaycareTreehouse/scripts.pory"
 	walk_fast_up
-# 42 "data/maps/DaycareTreehouse/scripts.pory"
+# 44 "data/maps/DaycareTreehouse/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 44 "data/maps/DaycareTreehouse/scripts.pory"
+# 46 "data/maps/DaycareTreehouse/scripts.pory"
 BattleVsWeavile_Movement_5:
-# 44 "data/maps/DaycareTreehouse/scripts.pory"
+# 46 "data/maps/DaycareTreehouse/scripts.pory"
 	walk_in_place_down
 	step_end
 
@@ -362,53 +425,61 @@ BattleVsWeavile_Text_0:
 	.string "Weavile$"
 
 BattleVsWeavile_Text_1:
-# 40 "data/maps/DaycareTreehouse/scripts.pory"
+# 41 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "You want to challenge me?\pNot a chance weakling.\pCome back when you can keep up...\nor don't come back at all.$"
 
 BattleVsWeavile_Text_2:
-# 69 "data/maps/DaycareTreehouse/scripts.pory"
+# 72 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "You look quick.\pNow we're talking.\pLet's see if you're fast or just\nflashy.$"
 
 BattleVsWeavile_Text_3:
-# 81 "data/maps/DaycareTreehouse/scripts.pory"
+# 85 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "You have gained the ability to\ntransform into Weavile!$"
 
 BattleVsWeavile_Text_4:
-# 87 "data/maps/DaycareTreehouse/scripts.pory"
+# 92 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "Godspeed challenger.\n$"
 
 ChanseyDaycareTreehouseHeal_Text_0:
-# 102 "data/maps/DaycareTreehouse/scripts.pory"
+# 108 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "Chansey$"
 
 ChanseyDaycareTreehouseHeal_Text_1:
-# 103 "data/maps/DaycareTreehouse/scripts.pory"
-	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.\pWould you like to heal?$"
+# 110 "data/maps/DaycareTreehouse/scripts.pory"
+	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.$"
 
 ChanseyDaycareTreehouseHeal_Text_2:
-# 116 "data/maps/DaycareTreehouse/scripts.pory"
-	.string "You have been restored to full health!$"
+# 112 "data/maps/DaycareTreehouse/scripts.pory"
+	.string "Would you like to heal?$"
 
 ChanseyDaycareTreehouseHeal_Text_3:
-# 123 "data/maps/DaycareTreehouse/scripts.pory"
-	.string "You don't have a Lucky Egg!\pCome back when you do.$"
+# 126 "data/maps/DaycareTreehouse/scripts.pory"
+	.string "You have been restored to full health!$"
 
 ChanseyDaycareTreehouseHeal_Text_4:
-# 131 "data/maps/DaycareTreehouse/scripts.pory"
+# 135 "data/maps/DaycareTreehouse/scripts.pory"
+	.string "You don't have a Lucky Egg!\pCome back when you do.$"
+
+ChanseyDaycareTreehouseHeal_Text_5:
+# 145 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "Oh, okay then.$"
 
 DaycareTreehouseDittoOpenXforms_Text_0:
-# 144 "data/maps/DaycareTreehouse/scripts.pory"
+# 161 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "Ditto$"
 
 DaycareTreehouseDittoOpenXforms_Text_1:
-# 145 "data/maps/DaycareTreehouse/scripts.pory"
+# 162 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareTreehouseDittoOpenXforms_Text_2:
-# 157 "data/maps/DaycareTreehouse/scripts.pory"
+# 175 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "Come back anytime!$"
 
 DaycareTreehouseDittoOpenXforms_Text_3:
-# 168 "data/maps/DaycareTreehouse/scripts.pory"
+# 187 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"
+
+DaycareTreehouseDittoOpenXforms_Text_4:
+# 218 "data/maps/DaycareTreehouse/scripts.pory"
+	.string "Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!$"

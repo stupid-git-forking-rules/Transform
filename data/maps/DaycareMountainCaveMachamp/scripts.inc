@@ -42,16 +42,20 @@ BattleVsMachamp::
 # 25 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	speakername BattleVsMachamp_Text_0
 # 26 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	msgbox BattleVsMachamp_Text_1, MSGBOX_AUTOCLOSE
+	createfieldmugshot MUGSHOT_MACHAMP, EMOTE_NORMAL
 # 27 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	setwildbattle SPECIES_MACHAMP, 25
+	msgbox BattleVsMachamp_Text_1, MSGBOX_AUTOCLOSE
 # 28 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	removefieldmugshot
 # 29 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_MACHAMP, 25
 # 30 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
 # 31 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	dowildbattle
+# 32 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 33 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsMachamp_4
 	return
@@ -60,45 +64,49 @@ BattleVsMachamp_2:
 	end
 
 BattleVsMachamp_4:
-# 33 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	playbgm MUS_PMD_HAPPINESS, FALSE
-# 34 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 35 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	setflag FLAG_TRANS_MACHAMP
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 36 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	dittotransform SPECIES_MACHAMP
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 37 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	playse MUS_LEVEL_UP
+	setflag FLAG_TRANS_MACHAMP
 # 38 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	msgbox BattleVsMachamp_Text_2, MSGBOX_DEFAULT
+	dittotransform SPECIES_MACHAMP
 # 39 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	waitmessage
+	playse MUS_LEVEL_UP
 # 40 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	dittotransform VAR_TEMP_0
+	msgbox BattleVsMachamp_Text_2, MSGBOX_DEFAULT
 # 41 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	givemon SPECIES_MACHAMP, 25, move1 = MOVE_STRENGTH, move2 = MOVE_FIRE_PUNCH, move3 = MOVE_CROSS_CHOP, move4 = MOVE_THUNDER_PUNCH
+	waitmessage
 # 42 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	waitmessage
+	dittotransform VAR_TEMP_0
 # 43 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	speakername BattleVsMachamp_Text_0
+	givemon SPECIES_MACHAMP, 25, move1 = MOVE_STRENGTH, move2 = MOVE_FIRE_PUNCH, move3 = MOVE_CROSS_CHOP, move4 = MOVE_THUNDER_PUNCH
 # 44 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	msgbox BattleVsMachamp_Text_3, MSGBOX_DEFAULT
-# 45 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	waitmessage
+# 45 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	createfieldmugshot MUGSHOT_MACHAMP, EMOTE_NORMAL
 # 46 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	playse SE_LEDGE
+	speakername BattleVsMachamp_Text_0
 # 47 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	applymovement Machamp, BattleVsMachamp_Movement_4
+	msgbox BattleVsMachamp_Text_3, MSGBOX_DEFAULT
 # 48 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	waitmovement Machamp
+	removefieldmugshot
 # 49 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	applymovement Machamp, BattleVsMachamp_Movement_5
+	waitmessage
 # 50 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	waitmovement Machamp
+	playse SE_LEDGE
 # 51 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	fadenewbgm MUS_PMD_MOUNTAIN
+	applymovement Machamp, BattleVsMachamp_Movement_4
 # 52 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	waitmovement Machamp
+# 53 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	applymovement Machamp, BattleVsMachamp_Movement_5
+# 54 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	waitmovement Machamp
+# 55 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	fadenewbgm MUS_PMD_MOUNTAIN
+# 56 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	release
 	end
 
@@ -127,15 +135,15 @@ BattleVsMachamp_Movement_3:
 	jump_2_down
 	step_end
 
-# 47 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 51 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 BattleVsMachamp_Movement_4:
-# 47 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 51 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	jump_2_up
 	step_end
 
-# 49 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 53 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 BattleVsMachamp_Movement_5:
-# 49 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 53 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	walk_in_place_down
 	step_end
 
@@ -144,13 +152,13 @@ BattleVsMachamp_Text_0:
 	.string "Machamp$"
 
 BattleVsMachamp_Text_1:
-# 26 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 27 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	.string "You need my strength to pass\nthrough that cave atop the cliff?\pYou'll need to prove that you can\nhandle it.\pCome on.\nLet's battle it out.\pShow me your strength!\n$"
 
 BattleVsMachamp_Text_2:
-# 38 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 40 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	.string "You have gained the ability to\ntransform into Machamp!$"
 
 BattleVsMachamp_Text_3:
-# 44 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+# 47 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	.string "With great power comes great\nresponsibility.\pGo on!\nFind your Egg!$"

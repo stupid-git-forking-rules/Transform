@@ -37,8 +37,10 @@ script ChinchouDialog{
     if(flag(FLAG_TRANS_CHINCHOU))
     {
         speakername("Chinchou")
+        createfieldmugshot(MUGSHOT_CHINCHOU, EMOTE_HAPPY)
         msgbox("As you near your goal, you\nbest prepare yourself.\pAn opponent much like yourself\nawaits.\pThis blue Pokémon has also\nmastered transformation.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end 
     }
@@ -51,8 +53,10 @@ script ChinchouDialog{
         applymovement(Chinchou, Common_Movement_ExclamationMark)
         waitmovement(Chinchou)
         speakername("Chinchou")
+        createfieldmugshot(MUGSHOT_CHINCHOU, EMOTE_HAPPY)
         msgbox("You must be the new Ditto.\pGreat job finding this cave!\pNo need to fear. I am not looking\nfor a fight.\pI think I could help on your\nadventure by lending you my diving\lablities.\pGo on, Ditto, use Transform!\n", MSGBOX_DEFAULT)       
         waitmessage
+        removefieldmugshot
         setflag(FLAG_TRANS_CHINCHOU)
         setflag(FLAG_SUPPRESS_SPEAKER_NAME)
         playse(MUS_LEVEL_UP)
@@ -60,9 +64,11 @@ script ChinchouDialog{
         waitmessage
         clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
         speakername("Chinchou")
+        createfieldmugshot(MUGSHOT_CHINCHOU, EMOTE_HAPPY)
         msgbox("A little shy?\pThat's alright.\nAnother time then.", MSGBOX_DEFAULT)
         givemon(SPECIES_CHINCHOU, 25, move1=MOVE_THUNDER_WAVE, move2=MOVE_DISCHARGE, move3=MOVE_DIVE, move4=MOVE_DAZZLING_GLEAM)
         waitmessage
+        removefieldmugshot
         fadenewbgm(MUS_PMD_LAKE)
         release
         end 
@@ -90,9 +96,11 @@ script ChinchouTransformTrigger {
         waitmovement(Chinchou)
         applymovement(Chinchou, Common_Movement_ExclamationMark)
         waitmovement(Chinchou)
+        createfieldmugshot(MUGSHOT_CHINCHOU, EMOTE_ELATED)
         speakername("Chinchou")
         msgbox("There it is!\pLooking more electric already!\n", MSGBOX_AUTOCLOSE)
         waitmessage
+        removefieldmugshot
         applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*9))
         waitmovement(OBJ_EVENT_ID_CAMERA)
         special(RemoveCameraObject)
