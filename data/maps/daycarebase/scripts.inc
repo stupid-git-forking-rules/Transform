@@ -1164,57 +1164,57 @@ DaycareBase_Ditto::
 	faceplayer
 # 705 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_DITTO_INTRO, DaycareBase_Ditto_1
-# 764 "data/maps/daycarebase/scripts.pory"
+# 766 "data/maps/daycarebase/scripts.pory"
 	speakername DaycareBase_Ditto_Text_0
-# 765 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 766 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
-# 766 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 767 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_DITTO_INTRO
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 768 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
 # 768 "data/maps/daycarebase/scripts.pory"
 	waitmessage
 # 769 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
+	setflag FLAG_DITTO_INTRO
 # 770 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 771 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 772 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_1:
 # 707 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareBase_Ditto_4
-# 733 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareBase_Ditto_Text_0
 # 734 "data/maps/daycarebase/scripts.pory"
+	speakername DaycareBase_Ditto_Text_0
+# 735 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 735 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_3, MSGBOX_DEFAULT
-# 735 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 736 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_XFORMS_TALKED_TO_DITTO
+	msgbox DaycareBase_Ditto_Text_3, MSGBOX_DEFAULT
+# 736 "data/maps/daycarebase/scripts.pory"
+	waitmessage
 # 737 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
+	setflag FLAG_XFORMS_TALKED_TO_DITTO
 # 738 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_1, MSGBOX_YESNO
+	removefieldmugshot
 # 739 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_1, MSGBOX_YESNO
+# 740 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareBase_Ditto_10
-# 750 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 751 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
 # 752 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 753 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
 # 754 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 755 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 756 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 757 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 758 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
@@ -1226,57 +1226,61 @@ DaycareBase_Ditto_4:
 # 711 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareBase_Ditto_7
-# 722 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 723 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 724 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
 # 725 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
+	waitmessage
 # 726 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	removefieldmugshot
 # 727 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 728 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 729 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_7:
 # 713 "data/maps/daycarebase/scripts.pory"
-	special OpenPCMoveMons
+	dittotransform SPECIES_DITTO
 # 714 "data/maps/daycarebase/scripts.pory"
-	waitstate
+	special OpenPCMoveMons
 # 715 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	waitstate
 # 716 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 717 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 718 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_10:
-# 741 "data/maps/daycarebase/scripts.pory"
-	special OpenPCMoveMons
 # 742 "data/maps/daycarebase/scripts.pory"
-	waitstate
+	dittotransform SPECIES_DITTO
 # 743 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	special OpenPCMoveMons
 # 744 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	waitstate
 # 745 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 746 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 747 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycareBase_FindLuckyEgg::
-# 779 "data/maps/daycarebase/scripts.pory"
-	lock
-# 780 "data/maps/daycarebase/scripts.pory"
-	finditem ITEM_LUCKY_EGG
 # 781 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	lock
 # 782 "data/maps/daycarebase/scripts.pory"
+	finditem ITEM_LUCKY_EGG
+# 783 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 784 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
@@ -1712,13 +1716,13 @@ DaycareBase_Ditto_Text_1:
 	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareBase_Ditto_Text_2:
-# 723 "data/maps/daycarebase/scripts.pory"
+# 724 "data/maps/daycarebase/scripts.pory"
 	.string "Come back anytime!$"
 
 DaycareBase_Ditto_Text_3:
-# 735 "data/maps/daycarebase/scripts.pory"
+# 736 "data/maps/daycarebase/scripts.pory"
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"
 
 DaycareBase_Ditto_Text_4:
-# 766 "data/maps/daycarebase/scripts.pory"
+# 768 "data/maps/daycarebase/scripts.pory"
 	.string "Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!$"

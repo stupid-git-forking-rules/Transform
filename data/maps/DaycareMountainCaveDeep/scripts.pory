@@ -150,6 +150,7 @@ script DaycareMCDDittoOpenXforms{
         msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES)
         {  
+            dittotransform(SPECIES_DITTO)
             special(OpenPCMoveMons)
             waitstate
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -178,6 +179,7 @@ script DaycareMCDDittoOpenXforms{
             msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
             {
+                dittotransform(SPECIES_DITTO)
                 special(OpenPCMoveMons)
                 waitstate
                 setflag(FLAG_SUPPRESS_SPEAKER_NAME)

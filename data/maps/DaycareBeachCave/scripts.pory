@@ -6,8 +6,10 @@ script WiggletDialog{
     lock
     faceplayer
     speakername("Wigglet")
+    createfieldmugshot(MUGSHOT_WIGGLET, EMOTE_NORMAL)
     msgbox("Pst!\nListen closely.\pYou're looking for an Egg, right?\pI've heard there's another\ntransforming Pokémon just like you\lwho holds the key to finding that\lEgg!", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
