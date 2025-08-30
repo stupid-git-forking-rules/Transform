@@ -111,136 +111,144 @@ DittoEndTrigger_1:
 # 71 "data/maps/DaycareMew/scripts.pory"
 	setflag FLAG_DITTO_SITRUS
 # 72 "data/maps/DaycareMew/scripts.pory"
-	applymovement DittoFinale, DittoEndTrigger_Movement_2
+	speakername DittoEnd_Text_0
 # 73 "data/maps/DaycareMew/scripts.pory"
-	waitmovement DittoFinale
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 74 "data/maps/DaycareMew/scripts.pory"
-	applymovement DittoFinale, DittoEndTrigger_Movement_3
+	msgbox DittoEnd_Text_2, MSGBOX_DEFAULT
 # 75 "data/maps/DaycareMew/scripts.pory"
-	waitmovement DittoFinale
+	removefieldmugshot
 # 76 "data/maps/DaycareMew/scripts.pory"
-	applymovement DittoFinale, DittoEndTrigger_Movement_4
+	applymovement DittoFinale, DittoEndTrigger_Movement_2
 # 77 "data/maps/DaycareMew/scripts.pory"
 	waitmovement DittoFinale
 # 78 "data/maps/DaycareMew/scripts.pory"
-	waitmessage
+	applymovement DittoFinale, DittoEndTrigger_Movement_3
 # 79 "data/maps/DaycareMew/scripts.pory"
+	waitmovement DittoFinale
+# 80 "data/maps/DaycareMew/scripts.pory"
+	applymovement DittoFinale, DittoEndTrigger_Movement_4
+# 81 "data/maps/DaycareMew/scripts.pory"
+	waitmovement DittoFinale
+# 82 "data/maps/DaycareMew/scripts.pory"
+	waitmessage
+# 83 "data/maps/DaycareMew/scripts.pory"
 	release
 	end
 
 
 DittoEndTriggerTwo::
-# 91 "data/maps/DaycareMew/scripts.pory"
+# 95 "data/maps/DaycareMew/scripts.pory"
 	goto_if_set FLAG_BEAT_MEW, DittoEndTriggerTwo_1
 	end
 
 DittoEndTriggerTwo_1:
-# 93 "data/maps/DaycareMew/scripts.pory"
+# 97 "data/maps/DaycareMew/scripts.pory"
 	goto_if_unset FLAG_DITTO_END_TRIGGER, DittoEndTriggerTwo_4
 	end
 
 DittoEndTriggerTwo_4:
-# 95 "data/maps/DaycareMew/scripts.pory"
-	lock
-# 96 "data/maps/DaycareMew/scripts.pory"
-	playse SE_PIN
-# 97 "data/maps/DaycareMew/scripts.pory"
-	applymovement DittoFinale, Common_Movement_ExclamationMark
-# 98 "data/maps/DaycareMew/scripts.pory"
-	waitmovement DittoFinale
 # 99 "data/maps/DaycareMew/scripts.pory"
-	applymovement DittoFinale, DittoEndTriggerTwo_Movement_0
+	lock
 # 100 "data/maps/DaycareMew/scripts.pory"
-	waitmovement DittoFinale
+	playse SE_PIN
 # 101 "data/maps/DaycareMew/scripts.pory"
-	speakername DittoEnd_Text_0
+	applymovement DittoFinale, Common_Movement_ExclamationMark
 # 102 "data/maps/DaycareMew/scripts.pory"
-	createfieldmugshot MUGSHOT_DITTO, EMOTE_HAPPY
+	waitmovement DittoFinale
 # 103 "data/maps/DaycareMew/scripts.pory"
-	msgbox DittoEnd_Text_3, MSGBOX_DEFAULT
+	applymovement DittoFinale, DittoEndTriggerTwo_Movement_0
 # 104 "data/maps/DaycareMew/scripts.pory"
-	waitmessage
+	waitmovement DittoFinale
 # 105 "data/maps/DaycareMew/scripts.pory"
-	removefieldmugshot
+	speakername DittoEnd_Text_0
 # 106 "data/maps/DaycareMew/scripts.pory"
-	setflag FLAG_DITTO_END_TRIGGER
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_HAPPY
 # 107 "data/maps/DaycareMew/scripts.pory"
+	msgbox DittoEnd_Text_3, MSGBOX_DEFAULT
+# 108 "data/maps/DaycareMew/scripts.pory"
+	waitmessage
+# 109 "data/maps/DaycareMew/scripts.pory"
+	removefieldmugshot
+# 110 "data/maps/DaycareMew/scripts.pory"
+	setflag FLAG_DITTO_END_TRIGGER
+# 111 "data/maps/DaycareMew/scripts.pory"
 	release
 	end
 
 
 ChanseyHealMew::
-# 123 "data/maps/DaycareMew/scripts.pory"
-	lock
-# 124 "data/maps/DaycareMew/scripts.pory"
-	faceplayer
-# 125 "data/maps/DaycareMew/scripts.pory"
-	speakername ChanseyHealMew_Text_0
-# 126 "data/maps/DaycareMew/scripts.pory"
-	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
 # 127 "data/maps/DaycareMew/scripts.pory"
-	msgbox ChanseyHealMew_Text_1, MSGBOX_DEFAULT
+	lock
 # 128 "data/maps/DaycareMew/scripts.pory"
-	removefieldmugshot
+	faceplayer
 # 129 "data/maps/DaycareMew/scripts.pory"
-	msgbox ChanseyHealMew_Text_2, MSGBOX_YESNO
+	speakername ChanseyHealMew_Text_0
 # 130 "data/maps/DaycareMew/scripts.pory"
-	waitmessage
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
 # 131 "data/maps/DaycareMew/scripts.pory"
+	msgbox ChanseyHealMew_Text_1, MSGBOX_DEFAULT
+# 132 "data/maps/DaycareMew/scripts.pory"
+	removefieldmugshot
+# 133 "data/maps/DaycareMew/scripts.pory"
+	msgbox ChanseyHealMew_Text_2, MSGBOX_YESNO
+# 134 "data/maps/DaycareMew/scripts.pory"
+	waitmessage
+# 135 "data/maps/DaycareMew/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ChanseyHealMew_1
-# 161 "data/maps/DaycareMew/scripts.pory"
-	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
-# 162 "data/maps/DaycareMew/scripts.pory"
-	msgbox ChanseyHealMew_Text_5, MSGBOX_AUTOCLOSE
-# 163 "data/maps/DaycareMew/scripts.pory"
-	waitmessage
-# 164 "data/maps/DaycareMew/scripts.pory"
-	removefieldmugshot
 # 165 "data/maps/DaycareMew/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 166 "data/maps/DaycareMew/scripts.pory"
+	msgbox ChanseyHealMew_Text_5, MSGBOX_AUTOCLOSE
+# 167 "data/maps/DaycareMew/scripts.pory"
+	waitmessage
+# 168 "data/maps/DaycareMew/scripts.pory"
+	removefieldmugshot
+# 169 "data/maps/DaycareMew/scripts.pory"
 	release
 	end
 
 ChanseyHealMew_1:
-# 133 "data/maps/DaycareMew/scripts.pory"
+# 137 "data/maps/DaycareMew/scripts.pory"
 	checkitem ITEM_LUCKY_EGG
-# 134 "data/maps/DaycareMew/scripts.pory"
+# 138 "data/maps/DaycareMew/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ChanseyHealMew_4
-# 151 "data/maps/DaycareMew/scripts.pory"
-	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
-# 152 "data/maps/DaycareMew/scripts.pory"
-	msgbox ChanseyHealMew_Text_4, MSGBOX_AUTOCLOSE
-# 153 "data/maps/DaycareMew/scripts.pory"
-	waitmessage
-# 154 "data/maps/DaycareMew/scripts.pory"
-	removefieldmugshot
 # 155 "data/maps/DaycareMew/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 156 "data/maps/DaycareMew/scripts.pory"
+	msgbox ChanseyHealMew_Text_4, MSGBOX_AUTOCLOSE
+# 157 "data/maps/DaycareMew/scripts.pory"
+	waitmessage
+# 158 "data/maps/DaycareMew/scripts.pory"
+	removefieldmugshot
+# 159 "data/maps/DaycareMew/scripts.pory"
 	release
 	end
 
 ChanseyHealMew_4:
-# 136 "data/maps/DaycareMew/scripts.pory"
-	removeitem ITEM_LUCKY_EGG
-# 137 "data/maps/DaycareMew/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 138 "data/maps/DaycareMew/scripts.pory"
-	playfanfare MUS_HEAL
-# 139 "data/maps/DaycareMew/scripts.pory"
-	waitfanfare
 # 140 "data/maps/DaycareMew/scripts.pory"
-	special HealPlayerParty
+	removeitem ITEM_LUCKY_EGG
 # 141 "data/maps/DaycareMew/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	fadescreenswapbuffers FADE_TO_BLACK
 # 142 "data/maps/DaycareMew/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	playfanfare MUS_HEAL
 # 143 "data/maps/DaycareMew/scripts.pory"
-	msgbox ChanseyHealMew_Text_3, MSGBOX_AUTOCLOSE
+	waitfanfare
 # 144 "data/maps/DaycareMew/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	special HealPlayerParty
 # 145 "data/maps/DaycareMew/scripts.pory"
-	waitmessage
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 146 "data/maps/DaycareMew/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 147 "data/maps/DaycareMew/scripts.pory"
+	msgbox ChanseyHealMew_Text_3, MSGBOX_AUTOCLOSE
+# 148 "data/maps/DaycareMew/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 149 "data/maps/DaycareMew/scripts.pory"
+	waitmessage
+# 150 "data/maps/DaycareMew/scripts.pory"
 	release
 	end
 
@@ -259,29 +267,29 @@ DittoEndTrigger_Movement_1:
 	walk_down
 	step_end
 
-# 72 "data/maps/DaycareMew/scripts.pory"
+# 76 "data/maps/DaycareMew/scripts.pory"
 DittoEndTrigger_Movement_2:
-# 72 "data/maps/DaycareMew/scripts.pory"
+# 76 "data/maps/DaycareMew/scripts.pory"
 	walk_up
 	step_end
 
-# 74 "data/maps/DaycareMew/scripts.pory"
+# 78 "data/maps/DaycareMew/scripts.pory"
 DittoEndTrigger_Movement_3:
-# 74 "data/maps/DaycareMew/scripts.pory"
+# 78 "data/maps/DaycareMew/scripts.pory"
 	walk_right
-# 74 "data/maps/DaycareMew/scripts.pory"
+# 78 "data/maps/DaycareMew/scripts.pory"
 	walk_right
 	step_end
 
-# 76 "data/maps/DaycareMew/scripts.pory"
+# 80 "data/maps/DaycareMew/scripts.pory"
 DittoEndTrigger_Movement_4:
-# 76 "data/maps/DaycareMew/scripts.pory"
+# 80 "data/maps/DaycareMew/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 99 "data/maps/DaycareMew/scripts.pory"
+# 103 "data/maps/DaycareMew/scripts.pory"
 DittoEndTriggerTwo_Movement_0:
-# 99 "data/maps/DaycareMew/scripts.pory"
+# 103 "data/maps/DaycareMew/scripts.pory"
 	face_player
 	step_end
 
@@ -302,25 +310,25 @@ DittoEnd_Text_3:
 	.string "Congratulations!\pNow you know how we Dittos\nget our Eggs!\pThis knowledge is sacred amonst\nthe Daycare Dittos, so keep this\lto yourself.\pComplete your obligation and hand\nthat Egg off to the Daycare Man.$"
 
 ChanseyHealMew_Text_0:
-# 125 "data/maps/DaycareMew/scripts.pory"
+# 129 "data/maps/DaycareMew/scripts.pory"
 	.string "Chansey$"
 
 ChanseyHealMew_Text_1:
-# 127 "data/maps/DaycareMew/scripts.pory"
+# 131 "data/maps/DaycareMew/scripts.pory"
 	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.$"
 
 ChanseyHealMew_Text_2:
-# 129 "data/maps/DaycareMew/scripts.pory"
+# 133 "data/maps/DaycareMew/scripts.pory"
 	.string "Would you like to heal?$"
 
 ChanseyHealMew_Text_3:
-# 143 "data/maps/DaycareMew/scripts.pory"
+# 147 "data/maps/DaycareMew/scripts.pory"
 	.string "You have been restored to full health!$"
 
 ChanseyHealMew_Text_4:
-# 152 "data/maps/DaycareMew/scripts.pory"
+# 156 "data/maps/DaycareMew/scripts.pory"
 	.string "You don't have a Lucky Egg!\pCome back when you do.$"
 
 ChanseyHealMew_Text_5:
-# 162 "data/maps/DaycareMew/scripts.pory"
+# 166 "data/maps/DaycareMew/scripts.pory"
 	.string "Oh, okay then.$"

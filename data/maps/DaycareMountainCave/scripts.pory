@@ -4,8 +4,10 @@ script PiplupDialog{
     lock
     faceplayer
     speakername("Piplup")
+    createfieldmugshot(MUGSHOT_PIPLUP, EMOTE_NORMAL)
     msgbox("Brr! Hey there!\pYou must be cold!\pNot many Pokémon make it this far.\nI may not look it, but I hold\limperium down here!", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -14,8 +16,10 @@ script SnomDialog{
     lock
     faceplayer
     speakername("Snom")
+    createfieldmugshot(MUGSHOT_SNOM, EMOTE_NORMAL)
     msgbox("I wiggled my way over here...\nBut now I'm lost.\pI hope you can find your way out.\n", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }

@@ -4,16 +4,20 @@ script HorseaDialog{
     lock
     faceplayer
     speakername("Horsea")
+    createfieldmugshot(MUGSHOT_HORSEA, EMOTE_NORMAL)
     msgbox("It's so vibrant and lively in\nthe reef.\pI'm glad the Daycare folks care\nso much for the environment.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
 
 script ShellderDialog{
     lock
+    createfieldmugshot(MUGSHOT_SHELLDER, EMOTE_NORMAL)
     msgbox("Shellder is intensely staring\nupward.\pIt looks ready to snap onto its\ntarget.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -123,8 +127,10 @@ script TentacoolDialog{
     lock
     faceplayer
     speakername("Tentacool")
+    createfieldmugshot(MUGSHOT_TENTACOOL, EMOTE_NORMAL)
     msgbox("The sea is so beautiful.\nImagine if there was more of it!\pEveryone would get to experience\nits elegance!\pI wonder if there is an\norganization I can join to help\lfurther this mission!", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -132,8 +138,10 @@ script BinacleDialog{
     lock
     faceplayer
     speakername("Binacle")
+    createfieldmugshot(MUGSHOT_BINACLE, EMOTE_NORMAL)
     msgbox("Rock on dude!\n", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -141,8 +149,10 @@ script SkrelpDialog{
     lock
     faceplayer
     speakername("Skrelp")
+    createfieldmugshot(MUGSHOT_SKRELP, EMOTE_NORMAL)
     msgbox("Wait you can see me?\pI need to work on my camoflauge...\n", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }

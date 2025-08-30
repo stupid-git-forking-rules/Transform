@@ -37,8 +37,10 @@ script VullabyDialog{
 	lock
 	faceplayer
 	speakername("Vullaby")
+    createfieldmugshot(MUGSHOT_VULLABY, EMOTE_NORMAL)
 	msgbox("I wish I had stronger wings...\pThen I'd just fly right over the\nbroken bridge!", MSGBOX_DEFAULT)
 	waitmessage
+    removefieldmugshot
 	release
 	end
 	}
@@ -46,8 +48,10 @@ script VullabyDialog{
 	lock
 	faceplayer
 	speakername("Vullaby")
+    createfieldmugshot(MUGSHOT_VULLABY, EMOTE_NORMAL)
 	msgbox("I wish I could transform like you.\pI would change into a giant eagle!\n", MSGBOX_DEFAULT)
 	waitmessage
+    removefieldmugshot
 	release
 	end
 	}
@@ -60,8 +64,14 @@ script NoibatDialog{
 	lock
 	faceplayer
 	speakername("Noibat")
-	msgbox("Big brother!\pOh, no. It's just another Ditto...\pThere's a cave up ahead.\pYou'll need my big bro's power\nto beat the Pokémon waiting deep\lwithin.", MSGBOX_DEFAULT)
+    createfieldmugshot(MUGSHOT_NOIBAT, EMOTE_HAPPY)
+	msgbox("Big brother!", MSGBOX_DEFAULT)
+    waitmessage
+    removefieldmugshot
+    createfieldmugshot(MUGSHOT_NOIBAT, EMOTE_NORMAL)
+    msgbox("Oh, no. It's just another Ditto...\pThere's a cave up ahead.\pYou'll need my big bro's power\nto beat the Pokémon waiting deep\lwithin.", MSGBOX_DEFAULT)
 	waitmessage
+    removefieldmugshot
 	release
 	end
     }
@@ -70,8 +80,10 @@ script NoibatDialog{
     	lock
 	faceplayer
 	speakername("Noibat")
+    createfieldmugshot(MUGSHOT_NOIBAT, EMOTE_NORMAL)
 	msgbox("There's a cave up ahead.\pYou'll need my big bro's power\nto beat the Pokémon waiting deep\lwithin.", MSGBOX_DEFAULT)
 	waitmessage
+    removefieldmugshot
 	release
 	end    
     }
@@ -132,8 +144,10 @@ script OmanyteInCave{
     {
         faceplayer
         speakername("Omanyte")
+        createfieldmugshot(MUGSHOT_OMANYTE, EMOTE_NORMAL)
         msgbox("Fine.\nYou've earned your stay.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
 	    end
     }
@@ -146,16 +160,20 @@ script OmanyteInCave{
 	    waitmovement(Omanyte)
         delay(60)
 	    speakername("Omanyte")
+        createfieldmugshot(MUGSHOT_OMANYTE, EMOTE_NORMAL)
         msgbox("You're no fossil!\n", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
 	    setwildbattle(SPECIES_OMANYTE, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Omanyte")
+            createfieldmugshot(MUGSHOT_OMANYTE, EMOTE_NORMAL)
 	        msgbox("Fine.\nYou've earned your stay.", MSGBOX_DEFAULT)
             setflag(FLAG_OMANYTE_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -177,32 +195,40 @@ script OmanyteInCaveTrigger{
             applymovement(Omanyte, moves(walk_down))
             waitmovement(Omanyte)
 	        speakername("Omanyte")
+            createfieldmugshot(MUGSHOT_OMANYTE, EMOTE_NORMAL)
             msgbox("You're no fossil!\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_OMANYTE, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Omanyte")
+                createfieldmugshot(MUGSHOT_OMANYTE, EMOTE_NORMAL)
 	            msgbox("Fine.\nYou've earned your stay.", MSGBOX_DEFAULT)
                 setflag(FLAG_OMANYTE_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
         case 33:
             applymovement(LOCALID_PLAYER, moves(face_up))
 	        speakername("Omanyte")
+            createfieldmugshot(MUGSHOT_OMANYTE, EMOTE_NORMAL)
             msgbox("You're no fossil!\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_OMANYTE, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Omanyte")
+                createfieldmugshot(MUGSHOT_OMANYTE, EMOTE_NORMAL)
 	            msgbox("Fine.\nYou've earned your stay.", MSGBOX_DEFAULT)
                 setflag(FLAG_OMANYTE_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -217,8 +243,10 @@ script KabutoInCave{
     {
         faceplayer
         speakername("Kabuto")
+        createfieldmugshot(MUGSHOT_KABUTO, EMOTE_NORMAL)
         msgbox("It was only the two of us\nanyways...", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
 	    end
     }
@@ -231,16 +259,20 @@ script KabutoInCave{
 	    waitmovement(Kabuto)
         delay(60)
 	    speakername("Kabuto")
+        createfieldmugshot(MUGSHOT_KABUTO, EMOTE_NORMAL)
         msgbox("Fossils only!\n", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
 	    setwildbattle(SPECIES_KABUTO, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Kabuto")
+            createfieldmugshot(MUGSHOT_KABUTO, EMOTE_NORMAL)
 	        msgbox("Alright.\nWe can make an exception.", MSGBOX_DEFAULT)
             setflag(FLAG_KABUTO_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -261,16 +293,20 @@ script KabutoInCaveTrigger{
         case 8:
             applymovement(LOCALID_PLAYER, moves(face_left))
 	        speakername("Kabuto")
+            createfieldmugshot(MUGSHOT_KABUTO, EMOTE_NORMAL)
             msgbox("Fossils only!\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_KABUTO, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
             speakername("Kabuto")
+            createfieldmugshot(MUGSHOT_KABUTO, EMOTE_NORMAL)
 	            msgbox("Alright.\nWe can make an exception.", MSGBOX_DEFAULT)
                 setflag(FLAG_KABUTO_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -279,16 +315,20 @@ script KabutoInCaveTrigger{
             applymovement(Kabuto,  moves(walk_right))
             waitmovement(Kabuto)
 	        speakername("Kabuto")
+            createfieldmugshot(MUGSHOT_KABUTO, EMOTE_NORMAL)
             msgbox("Fossils only!\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_KABUTO, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Kabuto")
+                createfieldmugshot(MUGSHOT_KABUTO, EMOTE_NORMAL)
 	            msgbox("Alright.\nWe can make an exception.", MSGBOX_DEFAULT)
                 setflag(FLAG_KABUTO_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -311,7 +351,9 @@ script VullabyAfterSoar{
 	applymovement(Vullaby, Common_Movement_ExclamationMark)
 	waitmovement(Vullaby)
 	speakername("Vullaby")
+    createfieldmugshot(MUGSHOT_VULLABY, EMOTE_HAPPY)
 	msgbox("Wow!\pYou made it across!\pTransforming into Noivern was\nclever!", MSGBOX_AUTOCLOSE)
+    removefieldmugshot
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 6))
     waitmovement(OBJ_EVENT_ID_CAMERA)
     special(RemoveCameraObject)

@@ -8,8 +8,10 @@ script CyndaquilInCave{
     if(flag(FLAG_CYNDAQUIL_BATTLE))
     {
         speakername("Cyndaquil")
+        createfieldmugshot(MUGSHOT_CYNDAQUIL, EMOTE_NORMAL)
         msgbox("Go on!\nSee for yourself.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
 	    end
     }
@@ -22,16 +24,20 @@ script CyndaquilInCave{
 	    waitmovement(Cyndaquil)
         delay(60)
 	    speakername("Cyndaquil")
+        createfieldmugshot(MUGSHOT_CYNDAQUIL, EMOTE_NORMAL)
         msgbox("The boss is so strong.\nHe must know how to gain EXP!", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
 	    setwildbattle(SPECIES_CYNDAQUIL, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Cyndaquil")
+            createfieldmugshot(MUGSHOT_CYNDAQUIL, EMOTE_NORMAL)
 	        msgbox("Go on!\nSee for yourself.", MSGBOX_DEFAULT)
             setflag(FLAG_CYNDAQUIL_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -54,32 +60,40 @@ script CyndaquilInCaveTrigger{
             applymovement(Cyndaquil, moves(walk_down))
             waitmovement(Cyndaquil)
 	        speakername("Cyndaquil")
+            createfieldmugshot(MUGSHOT_CYNDAQUIL, EMOTE_NORMAL)
             msgbox("The boss is so strong.\nHe must know how to gain EXP!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_CYNDAQUIL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
             speakername("Cyndaquil")
+            createfieldmugshot(MUGSHOT_CYNDAQUIL, EMOTE_NORMAL)
 	            msgbox("Go on!\nSee for yourself.", MSGBOX_DEFAULT)
                 setflag(FLAG_CYNDAQUIL_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
         case 36:
             applymovement(LOCALID_PLAYER, moves(face_up))
 	        speakername("Cyndaquil")
+            createfieldmugshot(MUGSHOT_CYNDAQUIL, EMOTE_NORMAL)
             msgbox("The boss is so strong.\nHe must know how to gain EXP!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_CYNDAQUIL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Cyndaquil")
+                createfieldmugshot(MUGSHOT_CYNDAQUIL, EMOTE_NORMAL)
 	            msgbox("Go on!\nSee for yourself.", MSGBOX_DEFAULT)
                 setflag(FLAG_CYNDAQUIL_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -94,8 +108,10 @@ script VulpixInCave{
     if(flag(FLAG_VULPIX_BATTLE))
     {
         speakername("Vulpix")
+        createfieldmugshot(MUGSHOT_VULPIX, EMOTE_NORMAL)
         msgbox("Someone once told me there's a\nplace where Vulpix live on snowy\lmountains... that sounds nice.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
 	    end
     }
@@ -108,16 +124,20 @@ script VulpixInCave{
 	    waitmovement(Vulpix)
         delay(60)
 	    speakername("Vulpix")
+        createfieldmugshot(MUGSHOT_VULPIX, EMOTE_NORMAL)
         msgbox("Can't take the heat?\n", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
 	    setwildbattle(SPECIES_VULPIX, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Vulpix")
+            createfieldmugshot(MUGSHOT_VULPIX, EMOTE_NORMAL)
 	        msgbox("Neither can I.\nIt's hot in here.", MSGBOX_DEFAULT)
             setflag(FLAG_VULPIX_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -139,16 +159,20 @@ script VulpixInCaveTrigger{
             applymovement(LOCALID_PLAYER, moves(face_left))
             applymovement(LOCALID_PLAYER, moves(face_left))
 	        speakername("Vulpix")
+            createfieldmugshot(MUGSHOT_VULPIX, EMOTE_NORMAL)
             msgbox("Can't take the heat?\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_VULPIX, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
             speakername("Vulpix")
+            createfieldmugshot(MUGSHOT_VULPIX, EMOTE_NORMAL)
 	            msgbox("Neither can I.\nIt's hot in here.", MSGBOX_DEFAULT)
                 setflag(FLAG_VULPIX_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -157,16 +181,20 @@ script VulpixInCaveTrigger{
             applymovement(Vulpix,  moves(walk_right))
             waitmovement(Vulpix)
 	        speakername("Vulpix")
+            createfieldmugshot(MUGSHOT_VULPIX, EMOTE_NORMAL)
             msgbox("Can't take the heat?\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_VULPIX, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Vulpix")
+                createfieldmugshot(MUGSHOT_VULPIX, EMOTE_NORMAL)
 	            msgbox("Neither can I.\nIt's hot in here.", MSGBOX_DEFAULT)
                 setflag(FLAG_VULPIX_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -180,8 +208,10 @@ script FuecocoInCave{
     if(flag(FLAG_FUECOCO_BATTLE))
     {
         speakername("Fuecoco")
+        createfieldmugshot(MUGSHOT_FUECOCO, EMOTE_NORMAL)
         msgbox("At least it doesnt lag here in\nHoenn...", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -194,16 +224,20 @@ script FuecocoInCave{
         waitmovement(Fuecoco)
         delay(60)
         speakername("Fuecoco")
+        createfieldmugshot(MUGSHOT_FUECOCO, EMOTE_NORMAL)
         msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
         setwildbattle(SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Fuecoco")
+            createfieldmugshot(MUGSHOT_FUECOCO, EMOTE_NORMAL)
             msgbox("No one here has even heard of\nPaldea...", MSGBOX_DEFAULT)
             setflag(FLAG_FUECOCO_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -225,32 +259,40 @@ script FuecocoInCaveTrigger{
             applymovement(Fuecoco, moves(walk_down))
             waitmovement(Fuecoco)
             speakername("Fuecoco")
+            createfieldmugshot(MUGSHOT_FUECOCO, EMOTE_NORMAL)
             msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Fuecoco")
+                createfieldmugshot(MUGSHOT_FUECOCO, EMOTE_NORMAL)
                 msgbox("No one here has even heard of\nPaldea...", MSGBOX_DEFAULT)
                 setflag(FLAG_FUECOCO_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
         case 20:
             applymovement(LOCALID_PLAYER, moves(face_up))
             speakername("Fuecoco")
+            createfieldmugshot(MUGSHOT_FUECOCO, EMOTE_NORMAL)
             msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Fuecoco")
+                createfieldmugshot(MUGSHOT_FUECOCO, EMOTE_NORMAL)
                 msgbox("No one here has even heard of\nPaldea...", MSGBOX_DEFAULT)
                 setflag(FLAG_FUECOCO_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -259,16 +301,20 @@ script FuecocoInCaveTrigger{
             applymovement(Fuecoco, moves(walk_down*2))
             waitmovement(Fuecoco)
             speakername("Fuecoco")
+            createfieldmugshot(MUGSHOT_FUECOCO, EMOTE_NORMAL)
             msgbox("I joined this group to fit in!\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Fuecoco")
+                createfieldmugshot(MUGSHOT_FUECOCO, EMOTE_NORMAL)
                 msgbox("No one here has even heard of\nPaldea...", MSGBOX_DEFAULT)
                 setflag(FLAG_FUECOCO_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }   
@@ -282,8 +328,10 @@ script CombuskenInCave{
     if(flag(FLAG_COMBUSKEN_BATTLE))
     {
         speakername("Combusken")
+        createfieldmugshot(MUGSHOT_COMBUSKEN, EMOTE_NORMAL)
         msgbox("Ran out of steam.\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -296,16 +344,20 @@ script CombuskenInCave{
         waitmovement(Combusken)
         delay(60)
         speakername("Combusken")
+        createfieldmugshot(MUGSHOT_COMBUSKEN, EMOTE_NORMAL)
         msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
         setwildbattle(SPECIES_COMBUSKEN, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Combusken")
+            createfieldmugshot(MUGSHOT_COMBUSKEN, EMOTE_NORMAL)
             msgbox("Guess I should take a lap.\n", MSGBOX_DEFAULT)
             setflag(FLAG_COMBUSKEN_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -326,16 +378,20 @@ script CombuskenInCaveTrigger{
         case 6:
             applymovement(LOCALID_PLAYER, moves(face_left))
             speakername("Combusken")
+            createfieldmugshot(MUGSHOT_COMBUSKEN, EMOTE_NORMAL)
             msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_COMBUSKEN, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Combusken")
+                createfieldmugshot(MUGSHOT_COMBUSKEN, EMOTE_NORMAL)
                 msgbox("Guess I should take a lap.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_COMBUSKEN_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -344,16 +400,20 @@ script CombuskenInCaveTrigger{
             applymovement(Combusken,  moves(walk_right))
             waitmovement(Combusken)
             speakername("Combusken")
+            createfieldmugshot(MUGSHOT_COMBUSKEN, EMOTE_NORMAL)
             msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_COMBUSKEN, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Combusken")
+                createfieldmugshot(MUGSHOT_COMBUSKEN, EMOTE_NORMAL)
                 msgbox("Guess I should take a lap.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_COMBUSKEN_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -362,16 +422,20 @@ script CombuskenInCaveTrigger{
             applymovement(Combusken,  moves(walk_right*2))
             waitmovement(Combusken)
             speakername("Combusken")
+            createfieldmugshot(MUGSHOT_COMBUSKEN, EMOTE_NORMAL)
             msgbox("I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_COMBUSKEN, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Combusken")
+                createfieldmugshot(MUGSHOT_COMBUSKEN, EMOTE_NORMAL)
                 msgbox("Guess I should take a lap.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_COMBUSKEN_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }

@@ -6,8 +6,10 @@ script GrovyleDialog{
     lock
     faceplayer
     speakername("Grovyle")
+    createfieldmugshot(MUGSHOT_GROVYLE, EMOTE_NORMAL)
     msgbox("A lot of us here in the Jungle\nbiome are very agile, but none\lare quite as shifty as Weavile.\pHe is particular about who he\nchallenges to battle so don't\lbe surprised if he turns you\laway.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }

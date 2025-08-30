@@ -58,7 +58,10 @@ script PsyduckDialog{
     lock
     faceplayer
     speakername("Psyduck")
-    msgbox("I came to the lake to try to ease\nthis headache...\pIt's the most peaceful biome at\nthe daycare.", MSGBOX_DEFAULT)    waitmessage
+    createfieldmugshot(MUGSHOT_PSYDUCK, EMOTE_NORMAL)
+    msgbox("I came to the lake to try to ease\nthis headache...\pIt's the most peaceful biome at\nthe daycare.", MSGBOX_DEFAULT)
+    waitmessage
+    removefieldmugshot
     release
     end
 
@@ -72,10 +75,12 @@ script SprigatitoDialog{
             lock
             faceplayer
             speakername("Sprigatito")
+            createfieldmugshot(MUGSHOT_SPRIGATITO, EMOTE_ELATED)
             msgbox("A Grass_type!\pDon't see many around the lake\nhere.\pPlease take this Egg I found.\n", MSGBOX_DEFAULT)
             giveitem(ITEM_LUCKY_EGG)
             setflag(FLAG_SPRIGATITO_EGG)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -84,8 +89,10 @@ script SprigatitoDialog{
             lock
             faceplayer
             speakername("Sprigatito")
+            createfieldmugshot(MUGSHOT_SPRIGATITO, EMOTE_NORMAL)
             msgbox("I love it here by the water but\nI hardly see any other\lGrass_types...", MSGBOX_DEFAULT)
             waitmessage
+            removefieldmugshot
             release
             end            
         }
@@ -97,8 +104,10 @@ script SprigatitoDialog{
             lock
             faceplayer
             speakername("Sprigatito")
+            createfieldmugshot(MUGSHOT_SPRIGATITO, EMOTE_ELATED)
             msgbox("A Grass_type!\pDon't see many around the lake\nhere.", MSGBOX_DEFAULT)
             waitmessage
+            removefieldmugshot
             release
             end        
         }
@@ -107,8 +116,10 @@ script SprigatitoDialog{
             lock
             faceplayer
             speakername("Sprigatito")
+            createfieldmugshot(MUGSHOT_SPRIGATITO, EMOTE_NORMAL)
             msgbox("I love it here by the water but\nI hardly see any other\lGrass_types...", MSGBOX_DEFAULT)
             waitmessage
+            removefieldmugshot
             release
             end        
         }        
@@ -120,8 +131,10 @@ script MudkipDialog{
     lock
     faceplayer
     speakername("Mudkip")
+    createfieldmugshot(MUGSHOT_MUDKIP, EMOTE_ANGRY)
     msgbox("I hope my trainer comes back\nsoon...\pI miss them.\pI'm supposed to be their first\npartner Pokémon.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -130,8 +143,10 @@ script SeakingDialog{
     lock
     faceplayer
     speakername("Seaking")
+    createfieldmugshot(MUGSHOT_SEAKING, EMOTE_NORMAL)
     msgbox("Everyone talks about how\ncool Vaporeon is.\pSeakings deserve attention too...\n", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 
@@ -141,8 +156,10 @@ script QuagsireDialog{
     lock
     faceplayer
     speakername("Quagsire")
+    createfieldmugshot(MUGSHOT_QUAGSIRE, EMOTE_HAPPY)
     msgbox("The Lake here is so calm.\pDragonair makes sure that we\nkeep the peace here.\pShe believes keeping it mellow\nis the key to EXP.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -153,8 +170,10 @@ script GoomyInCave{
     if(flag(FLAG_GOOMY_BATTLE))
     {
         speakername("Goomy")
+        createfieldmugshot(MUGSHOT_GOOMY, EMOTE_NORMAL)
         msgbox("Cool vibes friend.\pKeep on keepin on.\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
 	    end
     }
@@ -167,16 +186,20 @@ script GoomyInCave{
 	    waitmovement(Goomy)
         delay(60)
 	    speakername("Goomy")
+        createfieldmugshot(MUGSHOT_GOOMY, EMOTE_NORMAL)
         msgbox("Keepin it mellow...\nLet's just have some fun.", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
 	    setwildbattle(SPECIES_GOOMY, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Goomy")
+            createfieldmugshot(MUGSHOT_GOOMY, EMOTE_NORMAL)
 	        msgbox("Cool vibes friend.\pKeep on keepin on.\n", MSGBOX_DEFAULT)
             setflag(FLAG_GOOMY_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -196,16 +219,20 @@ script GoomyInCaveTrigger{
         case 16:
             applymovement(LOCALID_PLAYER, moves(face_right))
 	        speakername("Goomy")
+            createfieldmugshot(MUGSHOT_GOOMY, EMOTE_NORMAL)
             msgbox("Keepin it mellow...\nLet's just have some fun.", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_GOOMY, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Goomy")
+                createfieldmugshot(MUGSHOT_GOOMY, EMOTE_NORMAL)
 	            msgbox("Cool vibes friend.\pKeep on keepin on.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_GOOMY_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -213,16 +240,20 @@ script GoomyInCaveTrigger{
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(Goomy,  moves(walk_left))
 	        speakername("Goomy")
+            createfieldmugshot(MUGSHOT_GOOMY, EMOTE_NORMAL)
             msgbox("Keepin it mellow...\nLet's just have some fun.", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_GOOMY, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Goomy")
+                createfieldmugshot(MUGSHOT_GOOMY, EMOTE_NORMAL)
 	            msgbox("Cool vibes friend.\pKeep on keepin on.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_GOOMY_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -236,8 +267,10 @@ script BuizelInCave{
     if(flag(FLAG_BUIZEL_BATTLE))
     {
         speakername("Buizel")
+        createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
         msgbox("Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
 	    end
     }
@@ -250,7 +283,9 @@ script BuizelInCave{
 	    waitmovement(Buizel)
         delay(60)
 	    speakername("Buizel")
+        createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
         msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
 	    setwildbattle(SPECIES_BUIZEL, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
@@ -258,9 +293,11 @@ script BuizelInCave{
         {
             lock
             speakername("Buizel")
+            createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
 	        msgbox("She keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
             setflag(FLAG_BUIZEL_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -285,7 +322,9 @@ script BuizelInCaveTrigger{
             applymovement(Buizel, moves(walk_up))
             waitmovement(Buizel)
 	        speakername("Buizel")
+            createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
             msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_BUIZEL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
@@ -293,9 +332,11 @@ script BuizelInCaveTrigger{
             {
                 lock
                 speakername("Buizel")
+                createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
 	            msgbox("She keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
                 setflag(FLAG_BUIZEL_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -304,7 +345,9 @@ script BuizelInCaveTrigger{
             waitmovement(Buizel)
             applymovement(LOCALID_PLAYER, moves(face_down))
 	        speakername("Buizel")
+            createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
             msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_BUIZEL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
@@ -312,9 +355,11 @@ script BuizelInCaveTrigger{
             {
                 lock
                 speakername("Buizel")
+                createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
 	            msgbox("She keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
                 setflag(FLAG_BUIZEL_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -328,8 +373,10 @@ script SlowpokeInCave{
     if(flag(FLAG_SLOWPOKE_BATTLE))
     {
         speakername("Slowpoke")
+        createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)
         msgbox("These bridges are so confusing...\pI've been stuck here for a while,\nbut it's chill.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
 	    end
     }
@@ -342,16 +389,20 @@ script SlowpokeInCave{
 	    waitmovement(Slowpoke)
         delay(60)
 	    speakername("Slowpoke")
+        createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)
         msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
 	    setwildbattle(SPECIES_SLOWPOKE, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Slowpoke")
+            createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)
 	        msgbox("Maybe it's cause I'm too slow to\nharsh the vibe.", MSGBOX_DEFAULT)
             setflag(FLAG_SLOWPOKE_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -373,7 +424,9 @@ script SlowpokeInCaveTrigger{
             applymovement(LOCALID_PLAYER, moves(face_left))
             delay(60)
 	        speakername("Slowpoke")
+            createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)
             msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_SLOWPOKE, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
@@ -381,9 +434,11 @@ script SlowpokeInCaveTrigger{
             {
                 lock
                 speakername("Slowpoke")
+                createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)
 	            msgbox("Maybe it's cause I'm too slow to\nharsh the vibe.", MSGBOX_DEFAULT)
                 setflag(FLAG_SLOWPOKE_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -395,7 +450,9 @@ script SlowpokeInCaveTrigger{
             applymovement(LOCALID_PLAYER, moves(face_right))
             delay(60)
 	        speakername("Slowpoke")
+            createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)
             msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_SLOWPOKE, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
@@ -403,9 +460,11 @@ script SlowpokeInCaveTrigger{
             {
                 lock
                 speakername("Slowpoke")
+                createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)
 	            msgbox("Maybe it's cause I'm too slow to\nharsh the vibe.", MSGBOX_DEFAULT)
                 setflag(FLAG_SLOWPOKE_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -419,8 +478,10 @@ script CroagunkInCave{
     if(flag(FLAG_CROAGUNK_BATTLE))
     {
         speakername("Croagunk")
+        createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
         msgbox("We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
 	    end
     }
@@ -433,16 +494,20 @@ script CroagunkInCave{
 	    waitmovement(Croagunk)
         delay(60)
 	    speakername("Croagunk")
+        createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
         msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
 	    setwildbattle(SPECIES_CROAGUNK, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Croagunk")
+            createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
 	        msgbox("Right on.\n", MSGBOX_DEFAULT)
             setflag(FLAG_CROAGUNK_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -461,16 +526,20 @@ script CroagunkInCaveTrigger{
         case 3:
             applymovement(LOCALID_PLAYER, moves(face_up))
 	        speakername("Croagunk")
+            createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
             msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_CROAGUNK, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Croagunk")
+                createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
 	            msgbox("Right on.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -479,16 +548,20 @@ script CroagunkInCaveTrigger{
             applymovement(Croagunk, moves(walk_down))
             waitmovement(Croagunk)
 	        speakername("Croagunk")
+            createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
             msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_CROAGUNK, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Croagunk")
+                createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
 	            msgbox("Right on.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -497,16 +570,20 @@ script CroagunkInCaveTrigger{
             applymovement(Croagunk, moves(walk_down*2))
             waitmovement(Croagunk)
 	        speakername("Croagunk")
+            createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
             msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_CROAGUNK, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Croagunk")
+                createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
 	            msgbox("Right on.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -515,16 +592,20 @@ script CroagunkInCaveTrigger{
             applymovement(Croagunk, moves(walk_down*3))
             waitmovement(Croagunk)
 	        speakername("Croagunk")
+            createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
             msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_CROAGUNK, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Croagunk")
+                createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
 	            msgbox("Right on.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -533,16 +614,20 @@ script CroagunkInCaveTrigger{
             applymovement(Croagunk, moves(walk_down*4))
             waitmovement(Croagunk)
 	        speakername("Croagunk")
+            createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
             msgbox("Duuuuuude.\nWhat's upppp?", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
 	        setwildbattle(SPECIES_CROAGUNK, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Croagunk")
+                createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
 	            msgbox("Right on.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }

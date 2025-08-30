@@ -5,8 +5,10 @@ script RoggenrolaDialog{
     lock
     faceplayer
     speakername("Roggenrola")
+    createfieldmugshot(MUGSHOT_ROGGENROLA, EMOTE_NORMAL)
     msgbox("If only I was fast enough to\nclimb this slope...", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -15,8 +17,10 @@ script RolycolyDialog{
     lock
     faceplayer
     speakername("Rolycoly")
+    createfieldmugshot(MUGSHOT_ROLYCOLY, EMOTE_HAPPY)
     msgbox("Haha!\pYou've got some serious speed\nif you made it up here!", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }

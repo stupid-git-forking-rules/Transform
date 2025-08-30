@@ -5,8 +5,10 @@ script KrabbyDialog {
     lock
     faceplayer
     speakername("Krabby")
+    createfieldmugshot(MUGSHOT_KRABBY, EMOTE_NORMAL)
     msgbox("I love it here at the Daycare!\pI don't have to battle anyone that\nI don't want to!\pAlthough some Pokémon see it\ndifferently...", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -15,26 +17,32 @@ script AlolanRaichuDialog {
     lock
     faceplayer
     speakername("Raichu")
+    createfieldmugshot(MUGSHOT_ALOLANRAICHU, EMOTE_NORMAL)
     msgbox("Move out of my way!\nYou're blocking my waves dude.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
-
+ 
 script SandyghastDialog {
     lock
     faceplayer
     if (var(VAR_TRANSFORM_MON) == SPECIES_RHYHORN)
     {
         speakername("Sandyghast")
+        createfieldmugshot(MUGSHOT_SANDYGHAST, EMOTE_HAPPY)
         msgbox("A fellow Ground_type!\pLet me give you some info...\nGround_type to Ground_type.\pI've heard a Pokémon will give an\nEgg for defeating it in a special\lbattle.\pBut...\pThat's just a rumor as no one has\nseen that Pokémon in ages.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
     }
     else
     {
         speakername("Sandyghast")
+        createfieldmugshot(MUGSHOT_SANDYGHAST, EMOTE_NORMAL)
         msgbox("...\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
     }
     waitmessage
     release
@@ -55,6 +63,7 @@ script ShellosEastDialog{
     if (var(VAR_TRANSFORM_MON) == SPECIES_MARILL)
     {
         speakername("Shellos")
+        createfieldmugshot(MUGSHOT_SHELLOS, EMOTE_HAPPY)
         msgbox("Wow a Marill!\pGastrodon told me about a cave\nwith a powerful flying Pokémon at\lthe top of the waterfall.\pMaybe you can reach it!\n", MSGBOX_DEFAULT)
         waitmessage
     }
@@ -62,12 +71,15 @@ script ShellosEastDialog{
     {
         speakername("Shellos")
         msgbox("Wow a Chinchou!\pGastrodon told me about a reef\nunder the sea.\pMaybe you can reach it!\n", MSGBOX_DEFAULT)
+        createfieldmugshot(MUGSHOT_SHELLOS, EMOTE_HAPPY)
         waitmessage
     }
     else
     {
         speakername("Shellos")
+        createfieldmugshot(MUGSHOT_SHELLOS, EMOTE_NORMAL)
         msgbox("You seem nice and all...\nbut Gastrodon told me to only\ltalk to Water_types.", MSGBOX_DEFAULT)
+        waitmessage
     }
     release
     end
@@ -77,8 +89,10 @@ script AlolanExeggutorDialog {
     lock
     faceplayer
     speakername("Exeggutor")
+    createfieldmugshot(MUGSHOT_ALOLANEXEGGUTOR, EMOTE_NORMAL)
     msgbox("I hang out here all day long,\nbut I'm still not sure how to\lgain EXP.\pI haven't interacted with the\nDaycare Man much though.\pMaybe he controls it?\pIt's all so confusing.\n", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -87,8 +101,10 @@ script WingullDialog {
     lock
     faceplayer
     speakername("Wingull")
+    createfieldmugshot(MUGSHOT_WINGULL, EMOTE_HAPPY)
     msgbox("I wish more Pokémon could make\nway up here.\pSuch a beautiful view.\n", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -99,12 +115,15 @@ script RuffletDialog {
     if (var(VAR_TRANSFORM_MON) == SPECIES_NOIVERN)
     {
         speakername("Rufflet")
+        createfieldmugshot(MUGSHOT_RUFFLET, EMOTE_ANGRY)
         msgbox("I wish I had the confidence to jump\nand try to fly...", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         applymovement(Rufflet, Common_Movement_ExclamationMark)
         playse(SE_PIN)
         waitfanfare
         waitmovement
+        createfieldmugshot(MUGSHOT_RUFFLET, EMOTE_ELATED)
         msgbox("Wow a Flying_type Pokémon!\pWhere do you get the confidence to\nsoar like that?", MSGBOX_DEFAULT)
         waitmessage
         applymovement(Rufflet, Common_Movement_ExclamationMark)
@@ -113,13 +132,16 @@ script RuffletDialog {
         waitmovement
         msgbox("It just takes a leap of faith\nyou say?\pAlright, I'll try it!\pHere. Take this.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         setflag(FLAG_SUPPRESS_SPEAKER_NAME)
         giveitem(ITEM_LUCKY_EGG)   
         waitfanfare
         clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
         speakername("Rufflet")
+        createfieldmugshot(MUGSHOT_RUFFLET, EMOTE_ELATED)
         msgbox("Thanks for the confidence boost.", MSGBOX_AUTOCLOSE)
         waitmessage
+        removefieldmugshot
         applymovement(Rufflet, RuffletFlyAway)
         waitmovement(0)
         playse(SE_LEDGE) 
@@ -156,8 +178,10 @@ slide_down * 5))
     else
     {
         speakername("Rufflet")
+        createfieldmugshot(MUGSHOT_RUFFLET, EMOTE_ANGRY)
         msgbox("I wish I had the confidence to jump\nand try to fly but I don't have\la role model to show me how.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -177,8 +201,10 @@ script RuffletOnShore{
     lock
     faceplayer
     speakername("Rufflet")
+    createfieldmugshot(MUGSHOT_RUFFLET, EMOTE_ELATED)
     msgbox("That Sharpedo was nice enough to\nbring me ashore.\pI don't know why they get such a\nbad rap...", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -187,8 +213,10 @@ script SlowpokeDialog{
     lock
     faceplayer
     speakername("Slowpoke")
+    createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)
     msgbox("I stay close to the shore.\pThere are some scary Pokémon\nfurther out!", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -199,21 +227,28 @@ script SharpedoDialog{
     if(flag(FLAG_HIDE_RUFFLET))
     {
         speakername("Sharpedo")
+        createfieldmugshot(MUGSHOT_SHARPEDO, EMOTE_NORMAL)
         msgbox("That little Rufflet fell into\nthe water.\pPoor fellow couldn't swim so\nI carried it to the shore.", MSGBOX_DEFAULT)
+        waitmessage
+        removefieldmugshot
         applymovement(Sharpedo, ContestHall_Movement_Heart)
         speakername("Sharpedo")
+        createfieldmugshot(MUGSHOT_SHARPEDO, EMOTE_ELATED)
         playse(SE_PIN)
         msgbox("Looks can be deceiving!\n", MSGBOX_DEFAULT)
         clearflag(FLAG_SHOW_RUFFLET)
         waitmessage
+        removefieldmugshot
         release
         end        
     }
     else
     {
         speakername("Sharpedo")
+        createfieldmugshot(MUGSHOT_SHARPEDO, EMOTE_NORMAL)
         msgbox("I don't understand why Pokémon are\nso afraid of me...\pIs it something stuck in my teeth?\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }

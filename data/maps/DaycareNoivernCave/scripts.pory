@@ -6,8 +6,10 @@ script GastlyDialog{
     lock
     faceplayer
     speakername("Gastly")
+    createfieldmugshot(MUGSHOT_GASTLY, EMOTE_NORMAL)
     msgbox("It's no Mt. Pyre, but this cave\ndoes the trick.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -19,8 +21,10 @@ script HaunterDialog{
     applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement(LOCALID_PLAYER)
     speakername("Haunter")
+    createfieldmugshot(MUGSHOT_HAUNTER, EMOTE_NORMAL)
     msgbox("BOO!", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -35,7 +39,9 @@ script GengarDialog{
     applymovement(Gengar, Common_Movement_ExclamationMark)
     waitmovement(Gengar)
     speakername("Gengar")
+    createfieldmugshot(MUGSHOT_GENGAR, EMOTE_NORMAL)
     msgbox("How did you manage to pass\nthrough that rock?\pMaybe you've got a bit of\nGhost_type in you.\pKekeh!\n", MSGBOX_DEFAULT)
+    removefieldmugshot
     setflag(FLAG_SUPPRESS_SPEAKER_NAME)
     giveitem(ITEM_LUCKY_EGG)
     clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -48,8 +54,10 @@ script GengarDialog{
     applymovement(Gengar, moves(face_player))
     waitmovement(Gengar)
     speakername("Gengar")
+    createfieldmugshot(MUGSHOT_GENGAR, EMOTE_NORMAL)
     msgbox("Back for more?\pI have nothing left for you\pKekeh!\n", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
     }
@@ -63,12 +71,16 @@ script LitwickDialog {
             lock
             faceplayer
             speakername("Litwick")
+            createfieldmugshot(MUGSHOT_LITWICK, EMOTE_NORMAL)
             msgbox("Noivern is quite the challenge,\nisn't he?\pHere. Take these.\n", MSGBOX_DEFAULT)
+            removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             giveitem(ITEM_LUCKY_EGG, 2)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             speakername("Litwick")
+            createfieldmugshot(MUGSHOT_LITWICK, EMOTE_NORMAL)
             msgbox("I know a Chansey will exchange\nthese to heal your wounds.", MSGBOX_DEFAULT)
+            removefieldmugshot
             waitmessage
             release
             end
@@ -78,8 +90,10 @@ script LitwickDialog {
             lock
             faceplayer
             speakername("Litwick")
+            createfieldmugshot(MUGSHOT_LITWICK, EMOTE_NORMAL)
             msgbox("Careful, that bat is fiesty!\n", MSGBOX_DEFAULT)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -89,8 +103,10 @@ script LitwickDialog {
         lock
         faceplayer
         speakername("Litwick")
+        createfieldmugshot(MUGSHOT_LITWICK, EMOTE_NORMAL)
         msgbox("Noivern is quite the challenge,\nisn't he?", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -102,8 +118,10 @@ script MawileInCave{
     if(flag(FLAG_MAWILE_BATTLE))
     {
         speakername("Mawile")
+        createfieldmugshot(MUGSHOT_MAWILE, EMOTE_NORMAL)
         msgbox("Keep your guard up.\nA strong challenge is ahead.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -116,16 +134,20 @@ script MawileInCave{
         waitmovement(Mawile)
         delay(60)
         speakername("Mawile")
+        createfieldmugshot(MUGSHOT_MAWILE, EMOTE_NORMAL)
         msgbox("Not many get this far...\nLet's see if you're clever or just lucky.", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
         setwildbattle(SPECIES_MAWILE, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Mawile")
+            createfieldmugshot(MUGSHOT_MAWILE, EMOTE_NORMAL)
             msgbox("You’ve got bite.\nMaybe we’re not so different.", MSGBOX_DEFAULT)
             setflag(FLAG_MAWILE_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -147,32 +169,40 @@ script MawileInCaveTrigger{
             applymovement(Mawile, moves(walk_down))
             waitmovement(Mawile)
             speakername("Mawile")
+            createfieldmugshot(MUGSHOT_MAWILE, EMOTE_NORMAL)
             msgbox("Not many get this far...\nLet's see if you're clever or just lucky.", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_MAWILE, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Mawile")
+                createfieldmugshot(MUGSHOT_MAWILE, EMOTE_NORMAL)
                 msgbox("You’ve got bite.\nMaybe we’re not so different.", MSGBOX_DEFAULT)
                 setflag(FLAG_MAWILE_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
         case 10:
             applymovement(LOCALID_PLAYER, moves(face_up))
             speakername("Mawile")
+            createfieldmugshot(MUGSHOT_MAWILE, EMOTE_NORMAL)
             msgbox("Not many get this far...\nLet's see if you're clever or just lucky.", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_MAWILE, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Mawile")
+                createfieldmugshot(MUGSHOT_MAWILE, EMOTE_NORMAL)
                 msgbox("You’ve got bite.\nMaybe we’re not so different.", MSGBOX_DEFAULT)
                 setflag(FLAG_MAWILE_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -186,8 +216,10 @@ script DuskullInCave{
     if(flag(FLAG_DUSKULL_BATTLE))
     {
         speakername("Duskull")
+        createfieldmugshot(MUGSHOT_DUSKULL, EMOTE_NORMAL)
         msgbox("Even spirits respect strength.\pWander well, traveler.\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -200,16 +232,20 @@ script DuskullInCave{
         waitmovement(Duskull)
         delay(60)
         speakername("Duskull")
+        createfieldmugshot(MUGSHOT_DUSKULL, EMOTE_NORMAL)
         msgbox("Not many dare to speak to me...\nYou must be bold.", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
         setwildbattle(SPECIES_DUSKULL, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Duskull")
+            createfieldmugshot(MUGSHOT_DUSKULL, EMOTE_NORMAL)
             msgbox("Even spirits respect strength.\pWander well, traveler.\n", MSGBOX_DEFAULT)
             setflag(FLAG_DUSKULL_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -231,16 +267,20 @@ script DuskullInCaveTrigger{
             applymovement(Duskull, moves(walk_left*3))
             waitmovement(Duskull)
             speakername("Duskull")
+            createfieldmugshot(MUGSHOT_DUSKULL, EMOTE_NORMAL)
             msgbox("Not many dare to speak to me...\nYou must be bold.", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_DUSKULL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Duskull")
+                createfieldmugshot(MUGSHOT_DUSKULL, EMOTE_NORMAL)
                 msgbox("Even spirits respect strength.\pWander well, traveler.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_DUSKULL_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }

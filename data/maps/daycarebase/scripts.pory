@@ -41,7 +41,7 @@ script Daycare_OnTransition{
 }
 
 script ShrinkToPikachuCave{
-    lockall
+    lock
     if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
     {
         msgbox("There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?",MSGBOX_YESNO)
@@ -51,22 +51,22 @@ script ShrinkToPikachuCave{
         }   
         else
         {
-           waitmessage
-          releaseall
-           end
+            waitmessage
+            release
+            end
         }
     }
     else
     {
         msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
         waitmessage
-        releaseall
+        release
         end
     }
 }
 
 script ShrinktoMausholdCave{
-    lockall
+    lock
     if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
     {
         msgbox("There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?",MSGBOX_YESNO)
@@ -77,7 +77,7 @@ script ShrinktoMausholdCave{
         else
         {
            waitmessage
-           releaseall
+           release
            end
         }
     }
@@ -85,7 +85,7 @@ script ShrinktoMausholdCave{
     {
         msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
         waitmessage
-        releaseall
+        release
         end
     }
 }
@@ -96,18 +96,24 @@ script MimikyuDialog{
     if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Pikachu")
+        createfieldmugshot(MUGSHOT_MIMIKYUTOP, EMOTE_NORMAL)
         msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!",MSGBOX_DEFAULT)
+        removefieldmugshot
         speakername("Mimikyu")
+        createfieldmugshot(MUGSHOT_MIMIKYU, EMOTE_ANGRY)
         msgbox("Oh...\nYou caught me.\pI wish I could disguise myself as\nwell as you can...\pMaybe then people would like me more...", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
     else
     {
     speakername("Pikachu")
+    createfieldmugshot(MUGSHOT_MIMIKYUTOP, EMOTE_NORMAL)
     msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
     }
@@ -118,16 +124,20 @@ script MimikyuDialog{
     if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Kecleon")
+        createfieldmugshot(MUGSHOT_KECLEON, EMOTE_NORMAL)
         msgbox("Where do Eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.\pDo you know?\pI've always heard of Dittos\nholding onto Eggs...", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
     else
     {
         speakername("Kecleon")
+        createfieldmugshot(MUGSHOT_KECLEON, EMOTE_NORMAL)
         msgbox("Where do Eggs come from?\pMy trainer left me here a long time\nago and I've yet to find one.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -140,16 +150,20 @@ script MimikyuDialog{
     if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Azumarill")
+        createfieldmugshot(MUGSHOT_AZUMARILL, EMOTE_NORMAL)
         msgbox("Welcome to the Daycare!\pYou'll fit in well here.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
     else
     {
         speakername("Azumarill")
+        createfieldmugshot(MUGSHOT_AZUMARILL, EMOTE_ANGRY)
         msgbox("Oh!\nThank goodness you aren't a Ditto...\pMy trainer keeps putting me in here\nwith Dittos hoping we'll find an\lEgg.\pThey gave me this Sea Incence,\nbut I'm not sure how that would\lhelp us on our hunt...", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -344,8 +358,10 @@ script LaprasDialog{
     lock
     faceplayer
     speakername("Lapras")
+    createfieldmugshot(MUGSHOT_LAPRAS, EMOTE_NORMAL)
     msgbox("I love the Daycare!\pIt's so peaceful and quiet here.\pI can just float around all day\nand relax.\pThose waterfalls are pretty\nvicious, I won't go near them.\pI've heard that Dragonair can\neasily scale even the largest\lof waterfalls!")
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -356,8 +372,10 @@ script LinooneDialog{
         lock
         faceplayer
         speakername("Linoone")
+        createfieldmugshot(MUGSHOT_LINOONE, EMOTE_NORMAL)
 	    msgbox("The Daycare is huge!\pIt's a bit scary to expore,\nso I stay up here.\pRiolu is way more brave than I\nam and has explored the entirety\lof the Daycare.\pYou should talk with Riolu if\nyou get lost!\pI'm sure they can help!\n")
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -366,8 +384,10 @@ script LinooneDialog{
         lock
         faceplayer
         speakername("Linoone")
+        createfieldmugshot(MUGSHOT_LINOONE, EMOTE_NORMAL)
 	    msgbox("Those Dittos really freak me out.\pThey could be any one of use right\nnow...\pEven you!... or me!\n")
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -377,8 +397,10 @@ script BulbsaurDialog{
     lock
     faceplayer
     speakername("Bulbasaur")
+    createfieldmugshot(MUGSHOT_BULBASAUR, EMOTE_NORMAL)
 	msgbox("You want to know where Eggs\ncome from?\pI heard that a Pokémon needs\nto go on a great adventure to\lmeet a shapeshifting Pokémon.\pIf you can best them, they will\ngive you an egg!\pAt least, that's what Venusaur\ntold me...", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -387,8 +409,10 @@ script CombeeDialog{
     lock
     faceplayer
     speakername("Combee")
+    createfieldmugshot(MUGSHOT_COMBEE, EMOTE_NORMAL)
 	msgbox("I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nEXP here is nothing more\lthan a big ole myth!", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -397,8 +421,10 @@ script Porygon2Dialog{
     lock
     faceplayer
     speakername("Porygon2")
+    createfieldmugshot(MUGSHOT_PORYGON2, EMOTE_NORMAL)
 	msgbox("Another Ditto...\pI'm actually a Ditto too,\nI just prefer this look.\pThe Daycare population must be at\nleast 75 percent Dittos!\pMost Dittos will take on different\nforms.\pYou won't be able to transform\ninto a form that another Ditto has\ltaken on though.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -407,8 +433,10 @@ script ScytherDialog{
     lock
     faceplayer
     speakername("Scyther")
+    createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
     msgbox("One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen3...", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }

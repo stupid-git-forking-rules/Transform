@@ -7,8 +7,10 @@ script GorebyssInCave{
     {
         faceplayer
         speakername("Gorebyss")
+        createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
         msgbox("My brother Huntail doesnt care\nfor beauty.\pHe will attack you fiercely!\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -21,16 +23,20 @@ script GorebyssInCave{
         waitmovement(Gorebyss)
         delay(60)
         speakername("Gorebyss")
+        createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
         msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
         setwildbattle(SPECIES_GOREBYSS, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Gorebyss")
+            createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
             msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
             setflag(FLAG_GOREBYSS_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -50,16 +56,20 @@ script GorebyssInCaveTrigger{
         case 5:
             applymovement(LOCALID_PLAYER, moves(face_left))
             speakername("Gorebyss")
+            createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
             msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_GOREBYSS, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Gorebyss")
+                createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
                 msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_GOREBYSS_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -68,16 +78,20 @@ script GorebyssInCaveTrigger{
             applymovement(Gorebyss, moves(walk_right))
             waitmovement(Gorebyss)
             speakername("Gorebyss")
+            createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
             msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_GOREBYSS, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Gorebyss")
+                createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
                 msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_GOREBYSS_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -86,16 +100,20 @@ script GorebyssInCaveTrigger{
             applymovement(Gorebyss, moves(walk_right*2))
             waitmovement(Gorebyss)
             speakername("Gorebyss")
+            createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
             msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_GOREBYSS, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Gorebyss")
+                createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
                 msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_GOREBYSS_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -104,16 +122,20 @@ script GorebyssInCaveTrigger{
             applymovement(Gorebyss, moves(walk_right*3))
             waitmovement(Gorebyss)
             speakername("Gorebyss")
+            createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
             msgbox("You are glowing!\nShow me how you illuminate\lthe deep with a battle!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_GOREBYSS, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Gorebyss")
+                createfieldmugshot(MUGSHOT_GOREBYSS, EMOTE_NORMAL)
                 msgbox("You really are quite luminescent.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_GOREBYSS_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }            
@@ -127,8 +149,10 @@ script HuntailInCave{
     if(flag(FLAG_HUNTAIL_BATTLE))
     {
         speakername("Huntail")
+        createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
         msgbox("Back into the dark...\nBut you swim well, little one.", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -141,16 +165,20 @@ script HuntailInCave{
         waitmovement(Huntail)
         delay(60)
         speakername("Huntail")
+        createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
         msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+        removefieldmugshot
         setwildbattle(SPECIES_HUNTAIL, 25)
         dowildbattle
         specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Huntail")
-            msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+            createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
+            msgbox("I prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
             setflag(FLAG_HUNTAIL_BATTLE)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -170,16 +198,20 @@ script HuntailInCaveTrigger{
         case 26:
             applymovement(LOCALID_PLAYER, moves(face_right))
             speakername("Huntail")
+            createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
             msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_HUNTAIL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Huntail")
-                msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+                createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
+                msgbox("I prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
                 setflag(FLAG_HUNTAIL_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -188,16 +220,20 @@ script HuntailInCaveTrigger{
             applymovement(Huntail, moves(walk_left))
             waitmovement(Huntail)
             speakername("Huntail")
+            createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
             msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_HUNTAIL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Huntail")
-                msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+                createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
+                msgbox("I prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
                 setflag(FLAG_HUNTAIL_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -206,16 +242,20 @@ script HuntailInCaveTrigger{
             applymovement(Huntail, moves(walk_left*2))
             waitmovement(Huntail)
             speakername("Huntail")
+            createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
             msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_HUNTAIL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Huntail")
-                msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+                createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
+                msgbox("I prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
                 setflag(FLAG_HUNTAIL_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -224,16 +264,20 @@ script HuntailInCaveTrigger{
             applymovement(Huntail, moves(walk_left*3))
             waitmovement(Huntail)
             speakername("Huntail")
+            createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
             msgbox("There's no need for light here in\nthe depths!", MSGBOX_AUTOCLOSE)
+            removefieldmugshot
             setwildbattle(SPECIES_HUNTAIL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Huntail")
-                msgbox("Grr...\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+                createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
+                msgbox("\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
                 setflag(FLAG_HUNTAIL_BATTLE)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }            

@@ -130,8 +130,10 @@ script ApplinDialog{
     lock
     faceplayer
     speakername("Applin")
+    createfieldmugshot(MUGSHOT_APPLIN, EMOTE_NORMAL)
     msgbox("The Daycare Woman is so kind.\pShe carried me around until I\nfound my favorite tree.\pNow I can hang out here all day!\n", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -140,8 +142,10 @@ script SurskitDialog{
     lock
     faceplayer
     speakername("Surskit")
+    createfieldmugshot(MUGSHOT_SURSKIT, EMOTE_HAPPY)
     msgbox("I'm not sure when my trainer is\ncoming back, but I don't mind!\pThe pondskipping here is radical!\n", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }
@@ -150,8 +154,10 @@ script MasquerainDialog{
     lock
     faceplayer
     speakername("Masquerain")
+    createfieldmugshot(MUGSHOT_MASQUERAIN, EMOTE_NORMAL)
     msgbox("Bro!\pI wish my trainer didn't evolve me\nbefore dropping me off.\pSurskit has been skipping up the\npond and I'm mad jealous.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 }

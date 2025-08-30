@@ -22,8 +22,10 @@ script SphealDialog{
     lock
     faceplayer
     speakername("Spheal")
+    createfieldmugshot(MUGSHOT_SPHEAL, EMOTE_NORMAL)
     msgbox("The water is much colder down here!\pThe beaches on the surface are too\nwarm for my taste.\pI just wish there were more round\nPokémon around here though...", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
     }
@@ -31,8 +33,10 @@ script SphealDialog{
     lock
     faceplayer
     speakername("Spheal")
+    createfieldmugshot(MUGSHOT_SPHEAL, EMOTE_ELATED)
     msgbox("Wow!\nYou're really round!\pJust like me!\pCan I tell you a secret?\pI once saw a Ditto carrying an\nEgg away from the beach in the\lOceanfront biome!\pThey must have gotten the Egg\nsomewhere around there!", MSGBOX_DEFAULT)    waitmessage
     release
+    removefieldmugshot
     end 
     }
 
@@ -45,7 +49,10 @@ script EiscueDialog{
             lock
             faceplayer
             speakername("Eiscue")
+            createfieldmugshot(MUGSHOT_EISCUE, EMOTE_SAD)
             msgbox("Mmmmffff!\n", MSGBOX_DEFAULT)
+            waitmessage
+            removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             msgbox("This Eiscue is having trouble\ncommunicating through the giant\lice cube on its head.\pWould you like to use Rock Smash?\n", MSGBOX_YESNO)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -66,13 +73,17 @@ script EiscueDialog{
                 applymovement(NoIce, Common_Movement_ExclamationMark)
                 waitmovement(NoIce)
                 speakername("Eiscue")
+                createfieldmugshot(MUGSHOT_EISCUE, EMOTE_NORMAL)
                 msgbox("Goodness!\nThank you.\pI have been trying to get that\nice cube off my head forever!\pTake this as a token of my\nappreciation.", MSGBOX_DEFAULT)
+                removefieldmugshot
                 setflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 giveitem(ITEM_LUCKY_EGG)
                 clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 speakername("Eiscue")
+                createfieldmugshot(MUGSHOT_EISCUE, EMOTE_NORMAL)
                 msgbox("I think I might go for a swim now!\n", MSGBOX_DEFAULT)
                 waitmessage
+                removefieldmugshot
                 release
                 end
             }
@@ -87,7 +98,10 @@ script EiscueDialog{
     lock
     faceplayer
     speakername("Eiscue")
+    createfieldmugshot(MUGSHOT_EISCUE, EMOTE_SAD)
     msgbox("Mmmmffff!\n", MSGBOX_DEFAULT)
+    waitmessage
+    removefieldmugshot
     setflag(FLAG_SUPPRESS_SPEAKER_NAME)
     msgbox("This Eiscue is having trouble\ncommunicating through the giant\lice cube on its head.", MSGBOX_DEFAULT)
     clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -103,8 +117,10 @@ script FreedEicscue {
     lock
     faceplayer
     speakername("Eiscue")
+    createfieldmugshot(MUGSHOT_EISCUE, EMOTE_NORMAL)
     msgbox("Thank you again!\pI feel like I'm finally able\nto regain my balance.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
     
@@ -113,8 +129,10 @@ script AlolanSandshrewDialog{
     lock
     faceplayer
     speakername("Sandslash")
+    createfieldmugshot(MUGSHOT_ALOLANSANDSLASH, EMOTE_NORMAL)
     msgbox("That Eiscue seems to be\nstruggling.\pI'm sure a Pokémon who can\nsmash rocks could smash that\lice cube.", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
 

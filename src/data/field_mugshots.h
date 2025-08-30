@@ -77,7 +77,31 @@ static const u32 sFieldMugshotGfx_VullabyNormal[] = INCBIN_U32("graphics/field_m
 static const u32 sFieldMugshotGfx_VulpixNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/vulpix_normal.4bpp.lz");
 static const u32 sFieldMugshotGfx_AlolanExeggutorNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/alolanexeggutor_normal.4bpp.lz");
 static const u32 sFieldMugshotGfx_AlolanSandslashNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/alolansandslash_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_TotodileNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/totodile_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_SharpedoNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/sharpedo_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_BaltoyNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/baltoy_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_WiggletNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/wigglet_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_SlowpokeNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/slowpoke_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_TentacoolNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/tentacool_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_ShellderNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/shellder_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_AlolanRaichuNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/alolanraichu_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_ApplinNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/applin_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_MasquerainNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/masquerain_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_VibravaNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/vibrava_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_BlipbugNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/blipbug_normal.4bpp.lz");
 
+static const u16 sFieldMugshotPal_BlipbugNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/blipbug_normal.gbapal");
+static const u16 sFieldMugshotPal_VibravaNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/vibrava_normal.gbapal");
+static const u16 sFieldMugshotPal_MasquerainNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/masquerain_normal.gbapal");
+static const u16 sFieldMugshotPal_ApplinNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/applin_normal.gbapal");
+static const u16 sFieldMugshotPal_AlolanRaichuNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/alolanraichu_normal.gbapal");
+static const u16 sFieldMugshotPal_TotodileNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/totodile_normal.gbapal");
+static const u16 sFieldMugshotPal_SharpedoNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/sharpedo_normal.gbapal");
+static const u16 sFieldMugshotPal_BaltoyNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/baltoy_normal.gbapal");
+static const u16 sFieldMugshotPal_WiggletNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/wigglet_normal.gbapal");
+static const u16 sFieldMugshotPal_SlowpokeNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/slowpoke_normal.gbapal");
+static const u16 sFieldMugshotPal_TentacoolNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/tentacool_normal.gbapal");
+static const u16 sFieldMugshotPal_ShellderNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/shellder_normal.gbapal");
 static const u16 sFieldMugshotPal_RyhornNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/ryhorn_normal.gbapal");
 static const u16 sFieldMugshotPal_CutieflyNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/cutiefly_normal.gbapal");
 static const u16 sFieldMugshotPal_PikachuNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/pikachu_normal.gbapal");
@@ -206,11 +230,15 @@ static const u32 sFieldMugshotGfx_RyhornElated[] = INCBIN_U32("graphics/field_mu
 static const u32 sFieldMugshotGfx_ChinchouElated[] = INCBIN_U32("graphics/field_mugshots/pmd/chinchou_elated.4bpp.lz");
 static const u32 sFieldMugshotGfx_SprigatitoElated[] = INCBIN_U32("graphics/field_mugshots/pmd/sprigatito_elated.4bpp.lz");
 static const u32 sFieldMugshotGfx_RuffletElated[] = INCBIN_U32("graphics/field_mugshots/pmd/rufflet_elated.4bpp.lz");
+static const u32 sFieldMugshotGfx_SharpedoElated[] = INCBIN_U32("graphics/field_mugshots/pmd/sharpedo_elated.4bpp.lz");
+static const u32 sFieldMugshotGfx_SphealElated[] = INCBIN_U32("graphics/field_mugshots/pmd/spheal_elated.4bpp.lz");
 
+static const u16 sFieldMugshotPal_SharpedoElated[] = INCBIN_U16("graphics/field_mugshots/pmd/sharpedo_elated.gbapal");
 static const u16 sFieldMugshotPal_RyhornElated[] = INCBIN_U16("graphics/field_mugshots/pmd/ryhorn_elated.gbapal");
 static const u16 sFieldMugshotPal_ChinchouElated[] = INCBIN_U16("graphics/field_mugshots/pmd/chinchou_elated.gbapal");
 static const u16 sFieldMugshotPal_SprigatitoElated[] = INCBIN_U16("graphics/field_mugshots/pmd/sprigatito_elated.gbapal");
 static const u16 sFieldMugshotPal_RuffletElated[] = INCBIN_U16("graphics/field_mugshots/pmd/rufflet_elated.gbapal");
+static const u16 sFieldMugshotPal_SphealElated[] = INCBIN_U16("graphics/field_mugshots/pmd/spheal_elated.gbapal");
 
 //angry
 static const u32 sFieldMugshotGfx_ArcanineAngry[] = INCBIN_U32("graphics/field_mugshots/pmd/arcanine_angry.4bpp.lz");
@@ -949,6 +977,11 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .gfx = sFieldMugshotGfx_SphealNormal,
             .pal = sFieldMugshotPal_SphealNormal,
         },
+        [EMOTE_ELATED] =
+        {
+            .gfx = sFieldMugshotGfx_SphealElated,
+            .pal = sFieldMugshotPal_SphealElated,
+        },
     },
     [MUGSHOT_SPRIGATITO] =
     {
@@ -987,7 +1020,7 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .pal = sFieldMugshotPal_TandemausNormal,
         },
     },
-    [MUGSHOT_TARANTULA] =
+    [MUGSHOT_TAROUNTULA] =
     {
         [EMOTE_NORMAL] =
         {
@@ -1042,7 +1075,7 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .pal = sFieldMugshotPal_WingullHappy,
         },
     },
-    [MUGSHOT_ALOLANEXEGUTOR] =
+    [MUGSHOT_ALOLANEXEGGUTOR] =
     {
         [EMOTE_NORMAL] =
         {
@@ -1056,6 +1089,107 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_AlolanSandslashNormal,
             .pal = sFieldMugshotPal_AlolanSandslashNormal,
+        },
+    },
+    [MUGSHOT_TOTODILE] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_TotodileNormal,
+            .pal = sFieldMugshotPal_TotodileNormal,
+        },
+    },
+    [MUGSHOT_SHARPEDO] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_SharpedoNormal,
+            .pal = sFieldMugshotPal_SharpedoNormal,
+        },
+        [EMOTE_ELATED] =
+        {
+            .gfx = sFieldMugshotGfx_SharpedoElated,
+            .pal = sFieldMugshotPal_SharpedoElated,
+        },
+    },
+    [MUGSHOT_BALTOY] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_BaltoyNormal,
+            .pal = sFieldMugshotPal_BaltoyNormal,
+        },
+    },
+    [MUGSHOT_WIGGLET] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_WiggletNormal,
+            .pal = sFieldMugshotPal_WiggletNormal,
+        },
+    },
+    [MUGSHOT_SLOWPOKE] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_SlowpokeNormal,
+            .pal = sFieldMugshotPal_SlowpokeNormal,
+        },
+    },
+    [MUGSHOT_TENTACOOL] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_TentacoolNormal,
+            .pal = sFieldMugshotPal_TentacoolNormal,
+        },
+    },
+    [MUGSHOT_SHELLDER] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_ShellderNormal,
+            .pal = sFieldMugshotPal_ShellderNormal,
+        },
+    },
+    [MUGSHOT_ALOLANRAICHU] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_AlolanRaichuNormal,
+            .pal = sFieldMugshotPal_AlolanRaichuNormal,
+        },
+    },
+    [MUGSHOT_APPLIN] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_ApplinNormal,
+            .pal = sFieldMugshotPal_ApplinNormal,
+        },
+    },
+    [MUGSHOT_MASQUERAIN] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_MasquerainNormal,
+            .pal = sFieldMugshotPal_MasquerainNormal,
+        },
+    },
+    [MUGSHOT_VIBRAVA] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_VibravaNormal,
+            .pal = sFieldMugshotPal_VibravaNormal,
+        },
+    },
+    [MUGSHOT_BLIPBUG] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_BlipbugNormal,
+            .pal = sFieldMugshotPal_BlipbugNormal,
         },
     },
 };

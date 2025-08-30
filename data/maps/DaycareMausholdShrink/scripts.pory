@@ -6,6 +6,7 @@ script FamilyofFour{
     if(!flag(FLAG_FAM_FOUR))
     {
     speakername("Maushold")
+    createfieldmugshot(MUGSHOT_MAUSHOLD4, EMOTE_NORMAL)
     msgbox("You!\pWelcome to our Maushold Haushold!\pWe've put in great work making\nthis haus a home.\pWe're in a bit of a dispute with\nthe neighbors over the proper\lhaushold size...\pWhat would you say the proper\nsize would be?", MSGBOX_DEFAULT)
     dynmultichoice(0,0,TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Four", "Three", "Two")
     if(var(VAR_RESULT) == 0)
@@ -55,6 +56,7 @@ script FamilyofFour{
         waitmovement
         msgbox("Here. Take these four items.\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         setflag(FLAG_SUPPRESS_SPEAKER_NAME)
         setflag(FLAG_FAM_FOUR)
         giveitem(ITEM_POTION, 4)
@@ -74,6 +76,7 @@ script FamilyofFour{
         setflag(FLAG_FAM_FOUR)
         setflag(FLAG_FAMFOUR_WRONG)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -88,6 +91,7 @@ script FamilyofFour{
         setflag(FLAG_FAM_FOUR)
         setflag(FLAG_FAMFOUR_WRONG)
         waitmessage
+        removefieldmugshot
         release
         end
     }    
@@ -97,6 +101,7 @@ script FamilyofFour{
         speakername("Maushold")
         msgbox("Things in fours just makes sense!\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -108,6 +113,7 @@ script FamilyofThree{
     if(!flag(FLAG_FAM_THREE))
     {
     speakername("Maushold")
+    createfieldmugshot(MUGSHOT_MAUSHOLD3, EMOTE_NORMAL)
     msgbox("You!\pWelcome to our Maushold Haushold!\pWe've put in great work making\nthis haus a home.\pWe're in a bit of a dispute with\nthe neighbors over the proper\lhaushold size...\pWhat would you say the proper\nsize would be?", MSGBOX_DEFAULT)
     dynmultichoice(0,0,TRUE, 3, 0, DYN_MULTICHOICE_CB_NONE, "Four", "Three", "Two")
     if(var(VAR_RESULT) == 0)
@@ -121,6 +127,7 @@ script FamilyofThree{
         setflag(FLAG_FAM_THREE)
         setflag(FLAG_FAMTHREE_WRONG)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -157,6 +164,7 @@ script FamilyofThree{
             giveitem(ITEM_POTION, 3)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
+            removefieldmugshot
             release
             end
         }
@@ -172,6 +180,7 @@ script FamilyofThree{
         waitmovement
         msgbox("Here. Take these three items.\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         setflag(FLAG_SUPPRESS_SPEAKER_NAME)
         setflag(FLAG_FAM_THREE)
         giveitem(ITEM_POTION, 3)
@@ -191,6 +200,7 @@ script FamilyofThree{
         setflag(FLAG_FAM_THREE)
         setflag(FLAG_FAMTHREE_WRONG)
         waitmessage
+        removefieldmugshot
         release
         end
     }    
@@ -200,6 +210,7 @@ script FamilyofThree{
         speakername("Maushold")
         msgbox("Things in threes just makes sense!\n", MSGBOX_DEFAULT)
         waitmessage
+        removefieldmugshot
         release
         end
     }
@@ -211,7 +222,9 @@ script Familyoftwo{
     lock
     faceplayer
     speakername("Tandemaus")
+    createfieldmugshot(MUGSHOT_TANDEMAUS, EMOTE_NORMAL)
     msgbox("The neighbors at the bottom of\nthe cliff are always feuding...\pWe decided not to have kids\nand we've been perfectly happy\lup here.\pHere. Take these two items.\n", MSGBOX_DEFAULT)
+    removefieldmugshot
     setflag(FLAG_SUPPRESS_SPEAKER_NAME)
     setflag(FLAG_FAM_TWO)
     giveitem(ITEM_LUCKY_EGG, 2)
@@ -224,8 +237,10 @@ script Familyoftwo{
     lock
     faceplayer
     speakername("Tandemaus")
+    createfieldmugshot(MUGSHOT_TANDEMAUS, EMOTE_NORMAL)
     msgbox("We've been quite happy up here.\pWe've built a nice life for\nourselves.\pWe even have enough items\nleftover to afford to make\lfrequent trips around the Daycare!", MSGBOX_DEFAULT)
     waitmessage
+    removefieldmugshot
     release
     end
     }
