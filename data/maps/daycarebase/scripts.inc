@@ -383,27 +383,27 @@ DaycareOldManDialog_7:
 # 297 "data/maps/daycarebase/scripts.pory"
 	playse SE_PIN
 # 298 "data/maps/daycarebase/scripts.pory"
-	waitse
-# 299 "data/maps/daycarebase/scripts.pory"
 	applymovement Brendan, Common_Movement_ExclamationMark
+# 299 "data/maps/daycarebase/scripts.pory"
+	waitmovement Brendan
 # 300 "data/maps/daycarebase/scripts.pory"
-	waitmovement Brendan
-# 301 "data/maps/daycarebase/scripts.pory"
 	delay 30
-# 302 "data/maps/daycarebase/scripts.pory"
+# 301 "data/maps/daycarebase/scripts.pory"
 	applymovement Brendan, DaycareOldManDialog_Movement_4
+# 302 "data/maps/daycarebase/scripts.pory"
+	waitmovement Brendan
 # 303 "data/maps/daycarebase/scripts.pory"
-	waitmovement Brendan
-# 304 "data/maps/daycarebase/scripts.pory"
 	applymovement Brendan, DaycareOldManDialog_Movement_5
-# 305 "data/maps/daycarebase/scripts.pory"
+# 304 "data/maps/daycarebase/scripts.pory"
 	waitmovement Brendan
-# 306 "data/maps/daycarebase/scripts.pory"
+# 305 "data/maps/daycarebase/scripts.pory"
 	speakername DaycareIntro_Text_0
-# 307 "data/maps/daycarebase/scripts.pory"
+# 306 "data/maps/daycarebase/scripts.pory"
 	msgbox DaycareOldManDialog_Text_8, MSGBOX_DEFAULT
+# 307 "data/maps/daycarebase/scripts.pory"
+	delay 30
 # 308 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK, 60
+	fadescreenswapbuffers FADE_TO_BLACK, 240
 # 309 "data/maps/daycarebase/scripts.pory"
 	delay 60
 # 310 "data/maps/daycarebase/scripts.pory"
@@ -503,27 +503,27 @@ DaycareOldManDialog_13:
 # 242 "data/maps/daycarebase/scripts.pory"
 	playse SE_PIN
 # 243 "data/maps/daycarebase/scripts.pory"
-	waitse
-# 244 "data/maps/daycarebase/scripts.pory"
 	applymovement Brendan, Common_Movement_ExclamationMark
+# 244 "data/maps/daycarebase/scripts.pory"
+	waitmovement Brendan
 # 245 "data/maps/daycarebase/scripts.pory"
-	waitmovement Brendan
-# 246 "data/maps/daycarebase/scripts.pory"
 	delay 30
-# 247 "data/maps/daycarebase/scripts.pory"
+# 246 "data/maps/daycarebase/scripts.pory"
 	applymovement Brendan, DaycareOldManDialog_Movement_4
+# 247 "data/maps/daycarebase/scripts.pory"
+	waitmovement Brendan
 # 248 "data/maps/daycarebase/scripts.pory"
-	waitmovement Brendan
-# 249 "data/maps/daycarebase/scripts.pory"
 	applymovement Brendan, DaycareOldManDialog_Movement_5
-# 250 "data/maps/daycarebase/scripts.pory"
+# 249 "data/maps/daycarebase/scripts.pory"
 	waitmovement Brendan
-# 251 "data/maps/daycarebase/scripts.pory"
+# 250 "data/maps/daycarebase/scripts.pory"
 	speakername DaycareIntro_Text_0
-# 252 "data/maps/daycarebase/scripts.pory"
+# 251 "data/maps/daycarebase/scripts.pory"
 	msgbox DaycareOldManDialog_Text_8, MSGBOX_DEFAULT
+# 252 "data/maps/daycarebase/scripts.pory"
+	delay 30
 # 253 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK, 60
+	fadescreenswapbuffers FADE_TO_BLACK, 240
 # 254 "data/maps/daycarebase/scripts.pory"
 	delay 60
 # 255 "data/maps/daycarebase/scripts.pory"
@@ -1315,23 +1315,23 @@ DaycareOldManDialog_Movement_3:
 	walk_right
 	step_end
 
-# 247 "data/maps/daycarebase/scripts.pory"
+# 246 "data/maps/daycarebase/scripts.pory"
 DaycareOldManDialog_Movement_4:
-# 247 "data/maps/daycarebase/scripts.pory"
+# 246 "data/maps/daycarebase/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/daycarebase/scripts.pory"
+# 246 "data/maps/daycarebase/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/daycarebase/scripts.pory"
+# 246 "data/maps/daycarebase/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/daycarebase/scripts.pory"
+# 246 "data/maps/daycarebase/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/daycarebase/scripts.pory"
+# 246 "data/maps/daycarebase/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 249 "data/maps/daycarebase/scripts.pory"
+# 248 "data/maps/daycarebase/scripts.pory"
 DaycareOldManDialog_Movement_5:
-# 249 "data/maps/daycarebase/scripts.pory"
+# 248 "data/maps/daycarebase/scripts.pory"
 	walk_fast_up
 	step_end
 
@@ -1432,7 +1432,7 @@ DaycareOldManDialog_Text_7:
 	.string "With this Egg, I can now fulfill\nmy duties.$"
 
 DaycareOldManDialog_Text_8:
-# 252 "data/maps/daycarebase/scripts.pory"
+# 251 "data/maps/daycarebase/scripts.pory"
 	.string "Ah, it's you!\pWe were raising your Pokémon\nand my goodness, were we surprised!\pYour Pokémon had an Egg!\pWe don't know how it got there,\nbut your Pokémon had it.\pYou do want it, yes?\n$"
 
 DaycareOldManDialog_Text_9:

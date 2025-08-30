@@ -22,9 +22,11 @@ script CorsolaDialog{
     lock
     speakername("Corsola")
     createfieldmugshot(MUGSHOT_CORSOLA, EMOTE_NORMAL)
-    msgbox("Welcome to the Daycare Reef my\nfriend!\pI can exchange Lucky Eggs for\nSuper Potions!\pWould you like to trade?\n", MSGBOX_YESNO)
+    msgbox("Welcome to the Daycare Reef my\nfriend!\pI can exchange Lucky Eggs for\nSuper Potions!", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
+    msgbox("Would you like to trade?", MSGBOX_YESNO)
+    waitmessage
     if(var(VAR_RESULT) == YES)
     {
         checkitem(ITEM_LUCKY_EGG)
