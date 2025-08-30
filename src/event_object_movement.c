@@ -9906,8 +9906,14 @@ u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction)
     index--;
     behavior = MapGridGetMetatileBehaviorAt(x, y);
 
-    if (ledgeBehaviorFuncs[index](behavior) == TRUE)
+    if (ledgeBehaviorFuncs[index](behavior) ||
+        (VarGet(VAR_TRANSFORM_MON) == SPECIES_WEAVILE && (
+            (index < DIR_WEST - 1 && MetatileBehavior_IsVerticalJump(behavior)) ||
+            (index >= DIR_WEST - 1 && MetatileBehavior_IsHorizontalJump(behavior))
+        )))
+    {
         return index + 1;
+    }
 
     return DIR_NONE;
 }

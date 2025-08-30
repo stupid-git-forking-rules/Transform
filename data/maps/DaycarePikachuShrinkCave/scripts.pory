@@ -6,30 +6,38 @@ script TarountulaDialog{
     if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
     {
         speakername("Tarountula")
-        createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_HAPPY)
+        createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_NORMAL)
         msgbox("This cave feels so much bigger\nfor us small bug types.\pI'm sure bigger Pokémon suspect\nnothing is in here!", MSGBOX_AUTOCLOSE)
         waitmessage
     }
     elif (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Tarountula")
-        createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_HAPPY)
+        createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_NORMAL)
         msgbox("This cave feels so much bigger\nfor us small bug types.", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
+        createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_HAPPY)
+        msgbox("WAIT... HEY!", MSGBOX_DEFAULT)
+        waitmessage
+        removefieldmugshot
         createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_NORMAL)
-        msgbox("WAIT... HEY!\pI guess a Ditto could use\nTransform...", MSGBOX_AUTOCLOSE)
+        msgbox("I guess a Ditto could use\nTransform...", MSGBOX_AUTOCLOSE)
         waitmessage
     }
     else
     {
         speakername("Tarountula")
-        createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_HAPPY)
+        createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_NORMAL)
         msgbox("This cave feels so much bigger\nfor us small bug types.", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
+        createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_HAPPY)
+        msgbox("WAIT... HEY!\pHow did you fit in the tiny\nentrance?\p", MSGBOX_DEFAULT)
+        waitmessage
+        removefieldmugshot
         createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_NORMAL)
-        msgbox("WAIT... HEY!\pI guess a Ditto could use\nTransform...", MSGBOX_AUTOCLOSE)
+        msgbox("OH!\nA Ditto you say...", MSGBOX_AUTOCLOSE)
         waitmessage
     }
     removefieldmugshot
@@ -43,7 +51,7 @@ script ShroodleInCave{
     if(flag(FLAG_SHROODLE_BATTLE))
     {
         speakername("Shroodle")
-        createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_NORMAL)
+        createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
         msgbox("I've yet to gain a single level.\n", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
@@ -59,7 +67,7 @@ script ShroodleInCave{
 	    waitmovement(Shroodle)
         delay(60)
 	    speakername("Shroodle")
-        createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_NORMAL)
+        createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
         msgbox("A trespasser!\n", MSGBOX_AUTOCLOSE)
         removefieldmugshot
 	    setwildbattle(SPECIES_SHROODLE, 25)
@@ -68,7 +76,7 @@ script ShroodleInCave{
         if (var(VAR_RESULT) == B_OUTCOME_WON)
         {
             speakername("Shroodle")
-            createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_NORMAL)
+            createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
 	        msgbox("Some say battling is the way to\ngain EXP in the Daycare...", MSGBOX_DEFAULT)
             setflag(FLAG_SHROODLE_BATTLE)
             waitmessage
@@ -95,7 +103,7 @@ script ShroodleInCaveTrigger{
             applymovement(Shroodle, moves(walk_down))
             waitmovement(Shroodle)
 	        speakername("Shroodle")
-            createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_NORMAL)
+            createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
             msgbox("A trespasser!\n", MSGBOX_AUTOCLOSE)
             removefieldmugshot
 	        setwildbattle(SPECIES_SHROODLE, 25)
@@ -104,7 +112,7 @@ script ShroodleInCaveTrigger{
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
             speakername("Shroodle")
-            createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_NORMAL)
+            createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
 	            msgbox("Some say battling is the way to\ngain EXP in the Daycare...", MSGBOX_DEFAULT)
                 setflag(FLAG_SHROODLE_BATTLE)
                 waitmessage
@@ -115,7 +123,7 @@ script ShroodleInCaveTrigger{
         case 32:
             applymovement(LOCALID_PLAYER, moves(face_up))
 	        speakername("Shroodle")
-            createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_NORMAL)
+            createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
             msgbox("A trespasser!\n", MSGBOX_AUTOCLOSE)
             removefieldmugshot
 	        setwildbattle(SPECIES_SHROODLE, 25)
@@ -124,7 +132,7 @@ script ShroodleInCaveTrigger{
             if (var(VAR_RESULT) == B_OUTCOME_WON)
             {
                 speakername("Shroodle")
-                createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_NORMAL)
+                createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
 	            msgbox("Some say battling is the way to\ngain EXP in the Daycare...", MSGBOX_DEFAULT)
                 setflag(FLAG_SHROODLE_BATTLE)
                 waitmessage

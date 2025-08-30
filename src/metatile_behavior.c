@@ -1542,3 +1542,19 @@ bool8 MetatileBehavior_IsRockStairs(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+bool8 MetatileBehavior_IsHorizontalJump(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_HORIZONTAL_JUMP)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsVerticalJump(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_VERTICAL_JUMP)
+        return TRUE;
+    else
+        return FALSE;
+}
