@@ -72,7 +72,7 @@ static bool8 TryInterruptObjectEventSpecialAnim(struct ObjectEvent *, u8);
 static void npc_clear_strange_bits(struct ObjectEvent *);
 static void MovePlayerAvatarUsingKeypadInput(u8, u16, u16);
 static void PlayerAllowForcedMovementIfMovingSameDirection(void);
-static u8 GetForcedMovementByMetatileBehavior(void);
+static u8 GetForcedMovementByMetatileBehavior(u16 heldKeys);
 
 static bool8 ForcedMovement_None(void);
 static bool8 ForcedMovement_Slip(void);
@@ -385,7 +385,7 @@ void PlayerStep(u8 direction, u16 newKeys, u16 heldKeys)
         {
             npc_clear_strange_bits(playerObjEvent);
             DoPlayerAvatarTransition();
-            if (TryDoMetatileBehaviorForcedMovement() == 0)
+            if (TryDoMetatileBehaviorForcedMovement(heldKeys) == 0)
             {
                 MovePlayerAvatarUsingKeypadInput(direction, newKeys, heldKeys);
                 PlayerAllowForcedMovementIfMovingSameDirection();
@@ -448,12 +448,12 @@ static void PlayerAllowForcedMovementIfMovingSameDirection(void)
         gPlayerAvatar.flags &= ~PLAYER_AVATAR_FLAG_CONTROLLABLE;
 }
 
-bool8 TryDoMetatileBehaviorForcedMovement(void)
+bool8 TryDoMetatileBehaviorForcedMovement(u16 heldKeys)
 {
-    return sForcedMovementFuncs[GetForcedMovementByMetatileBehavior()]();
+    return sForcedMovementFuncs[GetForcedMovementByMetatileBehavior(heldKeys)]();
 }
 
-static u8 GetForcedMovementByMetatileBehavior(void)
+static u8 GetForcedMovementByMetatileBehavior(u16 heldKeys)
 {
     u8 i;
 
@@ -461,13 +461,15 @@ static u8 GetForcedMovementByMetatileBehavior(void)
     {
         u8 metatileBehavior = gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior;
 
-        if (metatileBehavior == MB_MUDDY_SLOPE && VarGet(VAR_TRANSFORM_MON) == SPECIES_ARCANINE)
+                    if (((gRunToggleBtnSet || (FlagGet(FLAG_RUNNING_SHOES_TOGGLE) && !FlagGet(FLAG_AUTORUN_MENU_TOGGLE)) || (heldKeys & B_BUTTON)) 
+                 && FlagGet(FLAG_SYS_B_DASH))
+                && (heldKeys & DPAD_UP))
         {
             if (PlayerHasFollowerNPC())
             {
                 gPlayerAvatar.preventStep = TRUE;
             }
-            return 0; 
+            return 0;
         }
         for (i = 0; i < NUM_FORCED_MOVEMENTS; i++)
         {

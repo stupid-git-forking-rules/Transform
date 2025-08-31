@@ -1549,8 +1549,11 @@ void FollowerNPC_TryRemoveFollowerOnWhiteOut(void)
 #define NPC_INTO_PLAYER         2
 #define ENABLE_PLAYER_STEP      3
 
+
+
 void Task_MoveNPCFollowerAfterForcedMovement(u8 taskId)
 {
+    u16 heldKeys = gTasks[taskId].data[0];
     struct ObjectEvent *follower = &gObjectEvents[GetFollowerNPCObjectId()];
     struct ObjectEvent *player = &gObjectEvents[gPlayerAvatar.objectEventId];
 
@@ -1567,7 +1570,7 @@ void Task_MoveNPCFollowerAfterForcedMovement(u8 taskId)
         if (follower->currentMetatileBehavior == MB_MUDDY_SLOPE)
             follower->facingDirectionLocked = TRUE;
 
-        if (TryDoMetatileBehaviorForcedMovement() == 0)
+        if (TryDoMetatileBehaviorForcedMovement(heldKeys) == 0)
             gTasks[taskId].tState = NPC_INTO_PLAYER;
 
         return;
