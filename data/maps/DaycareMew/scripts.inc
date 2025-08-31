@@ -115,7 +115,7 @@ DittoEndTrigger_1:
 # 73 "data/maps/DaycareMew/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 74 "data/maps/DaycareMew/scripts.pory"
-	msgbox DittoEnd_Text_2, MSGBOX_DEFAULT
+	msgbox DittoEnd_Text_2, MSGBOX_AUTOCLOSE
 # 75 "data/maps/DaycareMew/scripts.pory"
 	removefieldmugshot
 # 76 "data/maps/DaycareMew/scripts.pory"

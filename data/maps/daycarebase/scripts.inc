@@ -429,7 +429,7 @@ DaycareOldManDialog_7:
 # 320 "data/maps/daycarebase/scripts.pory"
 	msgbox DaycareOldManDialog_Text_8, MSGBOX_DEFAULT
 # 321 "data/maps/daycarebase/scripts.pory"
-	delay 30
+	delay 60
 # 322 "data/maps/daycarebase/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK, 240
 # 323 "data/maps/daycarebase/scripts.pory"
@@ -549,7 +549,7 @@ DaycareOldManDialog_13:
 # 265 "data/maps/daycarebase/scripts.pory"
 	msgbox DaycareOldManDialog_Text_8, MSGBOX_DEFAULT
 # 266 "data/maps/daycarebase/scripts.pory"
-	delay 30
+	delay 60
 # 267 "data/maps/daycarebase/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK, 240
 # 268 "data/maps/daycarebase/scripts.pory"
@@ -1273,14 +1273,53 @@ DaycareBase_Ditto_10:
 	end
 
 
-DaycareBase_FindLuckyEgg::
+DaycarebaseDitto_intro_trigger::
+# 779 "data/maps/daycarebase/scripts.pory"
+	goto_if_unset FLAG_DITTO_INTRO, DaycarebaseDitto_intro_trigger_1
+	end
+
+DaycarebaseDitto_intro_trigger_1:
 # 781 "data/maps/daycarebase/scripts.pory"
 	lock
 # 782 "data/maps/daycarebase/scripts.pory"
-	finditem ITEM_LUCKY_EGG
+	playse SE_PIN
 # 783 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	applymovement DittoIntro, Common_Movement_ExclamationMark
 # 784 "data/maps/daycarebase/scripts.pory"
+	applymovement DittoIntro, DaycareOldManDialog_Movement_0
+# 785 "data/maps/daycarebase/scripts.pory"
+	waitmovement DittoIntro
+# 786 "data/maps/daycarebase/scripts.pory"
+	applymovement LOCALID_PLAYER, DaycareIntro_Movement_3
+# 787 "data/maps/daycarebase/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 788 "data/maps/daycarebase/scripts.pory"
+	speakername DaycareBase_Ditto_Text_0
+# 789 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 790 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
+# 790 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 791 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_DITTO_INTRO
+# 792 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 793 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 794 "data/maps/daycarebase/scripts.pory"
+	release
+	end
+
+
+DaycareBase_FindLuckyEgg::
+# 804 "data/maps/daycarebase/scripts.pory"
+	lock
+# 805 "data/maps/daycarebase/scripts.pory"
+	finditem ITEM_LUCKY_EGG
+# 806 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 807 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
@@ -1553,7 +1592,7 @@ ScytherDialog_Text_0:
 
 ScytherDialog_Text_1:
 # 437 "data/maps/daycarebase/scripts.pory"
-	.string "One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen3...$"
+	.string "One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...$"
 
 RioluDialog_Text_0:
 # 451 "data/maps/daycarebase/scripts.pory"

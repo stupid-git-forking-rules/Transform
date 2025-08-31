@@ -165,7 +165,7 @@ EiscueDialog_6:
 # 75 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	speakername EiscueDialog_Text_0
 # 76 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	createfieldmugshot MUGSHOT_EISCUE, EMOTE_NORMAL
+	createfieldmugshot MUGSHOT_EISCUENOICE, EMOTE_NORMAL
 # 77 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	msgbox EiscueDialog_Text_3, MSGBOX_DEFAULT
 # 78 "data/maps/DaycareMountainCaveDeep/scripts.pory"
@@ -179,7 +179,7 @@ EiscueDialog_6:
 # 82 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	speakername EiscueDialog_Text_0
 # 83 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	createfieldmugshot MUGSHOT_EISCUE, EMOTE_NORMAL
+	createfieldmugshot MUGSHOT_EISCUENOICE, EMOTE_NORMAL
 # 84 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	msgbox EiscueDialog_Text_4, MSGBOX_DEFAULT
 # 85 "data/maps/DaycareMountainCaveDeep/scripts.pory"
@@ -199,7 +199,7 @@ FreedEicscue::
 # 119 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	speakername EiscueDialog_Text_0
 # 120 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	createfieldmugshot MUGSHOT_EISCUE, EMOTE_NORMAL
+	createfieldmugshot MUGSHOT_EISCUENOICE, EMOTE_NORMAL
 # 121 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	msgbox FreedEicscue_Text_0, MSGBOX_DEFAULT
 # 122 "data/maps/DaycareMountainCaveDeep/scripts.pory"

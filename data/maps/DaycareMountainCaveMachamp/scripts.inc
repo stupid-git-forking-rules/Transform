@@ -89,7 +89,7 @@ BattleVsMachamp_4:
 # 46 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	speakername BattleVsMachamp_Text_0
 # 47 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
-	msgbox BattleVsMachamp_Text_3, MSGBOX_DEFAULT
+	msgbox BattleVsMachamp_Text_3, MSGBOX_AUTOCLOSE
 # 48 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 	removefieldmugshot
 # 49 "data/maps/DaycareMountainCaveMachamp/scripts.pory"

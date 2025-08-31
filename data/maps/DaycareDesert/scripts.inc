@@ -70,17 +70,17 @@ TrapinchDialog_4:
 # 44 "data/maps/DaycareDesert/scripts.pory"
 	msgbox TrapinchDialog_Text_3, MSGBOX_DEFAULT
 # 45 "data/maps/DaycareDesert/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 46 "data/maps/DaycareDesert/scripts.pory"
-	giveitem ITEM_LUCKY_EGG
-# 47 "data/maps/DaycareDesert/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 48 "data/maps/DaycareDesert/scripts.pory"
-	setflag FLAG_TRAPINCH_EGG
-# 49 "data/maps/DaycareDesert/scripts.pory"
-	waitmessage
-# 50 "data/maps/DaycareDesert/scripts.pory"
 	removefieldmugshot
+# 46 "data/maps/DaycareDesert/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 47 "data/maps/DaycareDesert/scripts.pory"
+	giveitem ITEM_LUCKY_EGG
+# 48 "data/maps/DaycareDesert/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 49 "data/maps/DaycareDesert/scripts.pory"
+	setflag FLAG_TRAPINCH_EGG
+# 50 "data/maps/DaycareDesert/scripts.pory"
+	waitmessage
 # 51 "data/maps/DaycareDesert/scripts.pory"
 	release
 	end
