@@ -150,14 +150,7 @@ void EndPlayerTransformAnimation(struct Sprite *sprite, u8 taskId)
     struct ObjectEvent *playerObjectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
     ObjectEventSetGraphicsId(playerObjectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL));
     ObjectEventTurn(playerObjectEvent, playerObjectEvent->movementDirection);
-    if(VarGet(VAR_TRANSFORM_MON) == SPECIES_ARCANINE)
-    {}
-    else if(VarGet(VAR_TRANSFORM_MON)== SPECIES_WEAVILE)
-    {}
-    else
-    {
-        SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
-    }
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
     ObjectEventSetHeldMovement(playerObjectEvent, GetFaceDirectionMovementAction(playerObjectEvent->facingDirection));
     if (gTasks[taskId].unlockFieldControls)
     {
@@ -279,21 +272,7 @@ void SetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldControl
     DebugPrintfLevel(MGBA_LOG_WARN, "Set VAR_TRANSFORM_MON to %d", VarGet(VAR_TRANSFORM_MON));
     if (PlayerIsDitto())
         TransformDittoBoxMon(speciesId);
-
-    if (speciesId == SPECIES_ARCANINE)
-    {
-        SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_MACH_BIKE);
-    }
-    else if (speciesId == SPECIES_WEAVILE)
-    {   
-        SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ACRO_BIKE);
-        gPlayerAvatar.acroBikeState = ACRO_STATE_NORMAL;
-    }
-    else
-    {
-        SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT); 
-    }
-
+        
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES, UnlockPlayerFieldControls);
     PlaySE(SE_M_TELEPORT);
 }

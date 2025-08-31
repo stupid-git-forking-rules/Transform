@@ -461,6 +461,14 @@ static u8 GetForcedMovementByMetatileBehavior(void)
     {
         u8 metatileBehavior = gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior;
 
+        if (metatileBehavior == MB_MUDDY_SLOPE && VarGet(VAR_TRANSFORM_MON) == SPECIES_ARCANINE)
+        {
+            if (PlayerHasFollowerNPC())
+            {
+                gPlayerAvatar.preventStep = TRUE;
+            }
+            return 0; 
+        }
         for (i = 0; i < NUM_FORCED_MOVEMENTS; i++)
         {
             if (sForcedMovementTestFuncs[i](metatileBehavior))
@@ -866,7 +874,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             if (FlagGet(FLAG_RUNNING_SHOES_TOGGLE) == FALSE)
             {
                 FlagSet(FLAG_RUNNING_SHOES_TOGGLE);
-                if (VarGet(VAR_TRANSFORM_MON) == SPECIES_NOIVERN)
+                if (VarGet(VAR_TRANSFORM_MON) == SPECIES_NOIVERN || VarGet(VAR_TRANSFORM_MON) == SPECIES_ARCANINE)
                 {
                     PlayerNoivernRun(direction);
                 }
@@ -887,7 +895,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
                 }
                 else
                 {
-                    if (VarGet(VAR_TRANSFORM_MON) == SPECIES_NOIVERN)
+                    if (VarGet(VAR_TRANSFORM_MON) == SPECIES_NOIVERN || VarGet(VAR_TRANSFORM_MON) == SPECIES_ARCANINE)
                     {
                         PlayerNoivernRun(direction);
                     }
@@ -900,7 +908,7 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
                 return;
             } 
         }
-        if (VarGet(VAR_TRANSFORM_MON) == SPECIES_NOIVERN)
+        if (VarGet(VAR_TRANSFORM_MON) == SPECIES_NOIVERN || VarGet(VAR_TRANSFORM_MON) == SPECIES_ARCANINE)
         {
             PlayerNoivernRun(direction);
         }
