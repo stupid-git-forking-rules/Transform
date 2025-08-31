@@ -7576,9 +7576,9 @@ bool8 MovementAction_WalkFastRight_Step1(struct ObjectEvent *objectEvent, struct
 bool8 MovementAction_NoivernRunRight_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (objectEvent->directionOverwrite)
-        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FAST_2);
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FASTER);
     else
-        InitMovementNormal(objectEvent, sprite, DIR_EAST, MOVE_SPEED_FAST_2);    
+        InitMovementNormal(objectEvent, sprite, DIR_EAST, MOVE_SPEED_FASTER);    
     return MovementAction_NoivernRunRight_Step1(objectEvent, sprite);
 }
 
@@ -7595,9 +7595,9 @@ bool8 MovementAction_NoivernRunRight_Step1(struct ObjectEvent *objectEvent, stru
 bool8 MovementAction_NoivernRunUp_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (objectEvent->directionOverwrite)
-        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FAST_2);
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FASTER);
     else
-        InitMovementNormal(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_FAST_2);    
+        InitMovementNormal(objectEvent, sprite, DIR_NORTH, MOVE_SPEED_FASTER);    
     return MovementAction_NoivernRunUp_Step1(objectEvent, sprite);
 }
 
@@ -7614,9 +7614,9 @@ bool8 MovementAction_NoivernRunUp_Step1(struct ObjectEvent *objectEvent, struct 
 bool8 MovementAction_NoivernRunLeft_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (objectEvent->directionOverwrite)
-        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FAST_2);
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FASTER);
     else
-        InitMovementNormal(objectEvent, sprite, DIR_WEST, MOVE_SPEED_FAST_2);    
+        InitMovementNormal(objectEvent, sprite, DIR_WEST, MOVE_SPEED_FASTER);    
     return MovementAction_NoivernRunLeft_Step1(objectEvent, sprite);
 }
 
@@ -7633,9 +7633,9 @@ bool8 MovementAction_NoivernRunLeft_Step1(struct ObjectEvent *objectEvent, struc
 bool8 MovementAction_NoivernRunDown_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     if (objectEvent->directionOverwrite)
-        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FAST_2);
+        InitMovementNormal(objectEvent, sprite, objectEvent->directionOverwrite, MOVE_SPEED_FASTER);
     else
-        InitMovementNormal(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_FAST_2);    
+        InitMovementNormal(objectEvent, sprite, DIR_SOUTH, MOVE_SPEED_FASTER);    
     return MovementAction_NoivernRunDown_Step1(objectEvent, sprite);
 }
 
