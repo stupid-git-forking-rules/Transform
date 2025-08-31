@@ -26,7 +26,7 @@ script BattleVsMarill{
     speakername("Marill")
     msgbox("Oh! A Ditto?\pYou’re gathering powers for your\nquest, right?\pIf you can beat me, you’ll earn the\npower to transform into me!", MSGBOX_AUTOCLOSE)
 	removefieldmugshot
-    setwildbattle(SPECIES_MARILL, 25)
+    setwildbattle(SPECIES_MARILL, 25, move1= MOVE_SURF, move2=MOVE_AQUA_JET, move3=MOVE_COVET, move4=MOVE_RAIN_DANCE)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
@@ -662,7 +662,7 @@ script BattleVsDragonair{
     msgbox("Hello there Ditto.\pYes, I see through your facade.\pMy philosophy to gain EXP has been\nto keep this biome calm.\pI spent my early days in the\ncrashing waterfalls, but gained\lno EXP.\pI found this biome and figured\nI try a different approach.\pYou seem to be causing a ruckus,\nand I have no problem taking you\ldown!", MSGBOX_AUTOCLOSE)
 	removefieldmugshot
     setwildbattle(SPECIES_DRAGONAIR, 25, move1=MOVE_OUTRAGE, move2= MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD)
-	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	settotemboost(B_POSITION_OPPONENT_LEFT, atk=1, def=1, spd=1, spdef=1, acc=1, eva=0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)

@@ -1558,3 +1558,33 @@ bool8 MetatileBehavior_IsVerticalJump(u8 metatileBehavior)
     else
         return FALSE;
 }
+
+bool8 MetatileBehavior_IsNormalGrassBattle(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_TALL_GRASS_BATTLE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
+bool8 MetatileBehavior_IsNormalVolcanoBattle(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_VOLCANO_BATTLE)
+        return TRUE;
+    else
+        return FALSE;
+}
+bool8 MetatileBehavior_IsNormalPondBattle(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_POND_BATTLE)
+        return TRUE;
+    else
+        return FALSE;
+}
+bool8 MetatileBehavior_IsNormalDarkCaveBattle(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_DARK_CAVE_BATTLE)
+        return TRUE;
+    else
+        return FALSE;
+}

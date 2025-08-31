@@ -636,6 +636,16 @@ u8 BattleSetup_GetEnvironmentId(void)
 
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
+    if (MetatileBehavior_IsNormalGrassBattle(tileBehavior))
+        return BATTLE_ENVIRONMENT_GRASS;
+    if (MetatileBehavior_IsNormalVolcanoBattle(tileBehavior))
+        return BATTLE_ENVIRONMENT_LONG_GRASS;
+    if (MetatileBehavior_IsNormalDarkCaveBattle(tileBehavior))
+        return BATTLE_ENVIRONMENT_SAND;
+    if (MetatileBehavior_IsNormalPondBattle(tileBehavior))
+        return BATTLE_ENVIRONMENT_POND;
+    if (MetatileBehavior_IsPuddle(tileBehavior))
+        return BATTLE_ENVIRONMENT_POND;       
     if (MetatileBehavior_IsLongGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_LONG_GRASS;
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))

@@ -316,7 +316,7 @@ script BattleVsNoivern{
     msgbox("You tread where echos rule.\pI've ruled over this cave since\nI bested my little brother as a\lNoibat.\pI hope you've come prepared.\pLet's see if you can keep up with\nthe speed of sound!", MSGBOX_AUTOCLOSE)
 	removefieldmugshot
     setwildbattle(SPECIES_NOIVERN, 25)
-	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	settotemboost(B_POSITION_OPPONENT_LEFT, def=3, spdef=2, spatk=1, spd=4)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)

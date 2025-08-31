@@ -485,7 +485,7 @@ FamilyofFour_Text_4:
 
 FamilyofFour_Text_5:
 # 22 "data/maps/DaycareMausholdShrink/scripts.pory"
-	.string "Don't pander to me!\pWe heard the neighbors yell\nover to us!$"
+	.string "Don't pander to us!\pWe heard the neighbors yell\nover to us!$"
 
 FamilyofFour_Text_6:
 # 34 "data/maps/DaycareMausholdShrink/scripts.pory"

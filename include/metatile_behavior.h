@@ -166,5 +166,11 @@ bool8 MetatileBehavior_IsSidewaysStairsRightSideAny(u8 metatileBehavior);
 bool8 MetatileBehavior_IsSidewaysStairsLeftSideAny(u8 metatileBehavior);
 bool8 MetatileBehavior_IsHorizontalJump(u8 metatileBehavior);
 bool8 MetatileBehavior_IsVerticalJump(u8 metatileBehavior);
+bool8 MetatileBehavior_IsNormalGrassBattle(u8 metatileBehavior);
+bool8 MetatileBehavior_IsNormalCaveBattle(u8 metatileBehavior);
+bool8 MetatileBehavior_IsNormalVolcanoBattle(u8 metatileBehavior);
+bool8 MetatileBehavior_IsNormalPondBattle(u8 metatileBehavior);
+bool8 MetatileBehavior_IsNormalDarkCaveBattle(u8 metatileBehavior);
+
 
 #endif // GUARD_METATILE_BEHAVIOR_H

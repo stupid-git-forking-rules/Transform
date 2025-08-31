@@ -460,7 +460,9 @@ static u8 GetForcedMovementByMetatileBehavior(u16 heldKeys)
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_CONTROLLABLE))
     {
         u8 metatileBehavior = gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior;
-
+        
+        if (VarGet(VAR_TRANSFORM_MON)==SPECIES_ARCANINE)
+        {
                     if (((gRunToggleBtnSet || (FlagGet(FLAG_RUNNING_SHOES_TOGGLE) && !FlagGet(FLAG_AUTORUN_MENU_TOGGLE)) || (heldKeys & B_BUTTON)) 
                  && FlagGet(FLAG_SYS_B_DASH))
                 && (heldKeys & DPAD_UP))
@@ -470,6 +472,7 @@ static u8 GetForcedMovementByMetatileBehavior(u16 heldKeys)
                 gPlayerAvatar.preventStep = TRUE;
             }
             return 0;
+        }
         }
         for (i = 0; i < NUM_FORCED_MOVEMENTS; i++)
         {

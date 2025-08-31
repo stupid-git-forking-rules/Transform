@@ -1286,40 +1286,42 @@ DaycarebaseDitto_intro_trigger_1:
 # 783 "data/maps/daycarebase/scripts.pory"
 	applymovement DittoIntro, Common_Movement_ExclamationMark
 # 784 "data/maps/daycarebase/scripts.pory"
-	applymovement DittoIntro, DaycareOldManDialog_Movement_0
-# 785 "data/maps/daycarebase/scripts.pory"
 	waitmovement DittoIntro
+# 785 "data/maps/daycarebase/scripts.pory"
+	applymovement DittoIntro, DaycareIntro_Movement_2
 # 786 "data/maps/daycarebase/scripts.pory"
-	applymovement LOCALID_PLAYER, DaycareIntro_Movement_3
+	waitmovement DittoIntro
 # 787 "data/maps/daycarebase/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	applymovement LOCALID_PLAYER, DaycareIntro_Movement_3
 # 788 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareBase_Ditto_Text_0
+	waitmovement LOCALID_PLAYER
 # 789 "data/maps/daycarebase/scripts.pory"
+	speakername DaycareBase_Ditto_Text_0
+# 790 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 790 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
-# 790 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 791 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_DITTO_INTRO
-# 792 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
+# 791 "data/maps/daycarebase/scripts.pory"
 	waitmessage
+# 792 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_DITTO_INTRO
 # 793 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
+	waitmessage
 # 794 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 795 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycareBase_FindLuckyEgg::
-# 804 "data/maps/daycarebase/scripts.pory"
-	lock
 # 805 "data/maps/daycarebase/scripts.pory"
-	finditem ITEM_LUCKY_EGG
+	lock
 # 806 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	finditem ITEM_LUCKY_EGG
 # 807 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 808 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
