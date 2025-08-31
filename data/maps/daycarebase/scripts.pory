@@ -263,7 +263,7 @@ script DaycareOldManDialog{
             waitmovement(Brendan)
             speakername("Daycare Man")
             msgbox("Ah, it's you!\pWe were raising your Pokémon\nand my goodness, were we surprised!\pYour Pokémon had an Egg!\pWe don't know how it got there,\nbut your Pokémon had it.\pYou do want it, yes?\n", MSGBOX_DEFAULT)
-            delay(30)
+            delay(60)
             fadescreenswapbuffers(FADE_TO_BLACK, 240)
             delay(60)
             clearflag(FLAG_BEAT_MEW)
@@ -318,7 +318,7 @@ script DaycareOldManDialog{
             waitmovement(Brendan)
             speakername("Daycare Man")
             msgbox("Ah, it's you!\pWe were raising your Pokémon\nand my goodness, were we surprised!\pYour Pokémon had an Egg!\pWe don't know how it got there,\nbut your Pokémon had it.\pYou do want it, yes?\n", MSGBOX_DEFAULT)
-            delay(30)
+            delay(60)
             fadescreenswapbuffers(FADE_TO_BLACK, 240)
             delay(60)
             clearflag(FLAG_BEAT_MEW)
@@ -434,7 +434,7 @@ script ScytherDialog{
     faceplayer
     speakername("Scyther")
     createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
-    msgbox("One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen3...", MSGBOX_DEFAULT)
+    msgbox("One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release
@@ -775,7 +775,30 @@ script DaycareBase_Ditto{
 
 }
 
-
+script DaycarebaseDitto_intro_trigger{
+    if(!flag(FLAG_DITTO_INTRO))
+        {
+        lock
+        playse(SE_PIN)
+        applymovement(DittoIntro, Common_Movement_ExclamationMark)
+        applymovement(DittoIntro, moves(face_player))
+        waitmovement(DittoIntro)
+        applymovement(LOCALID_PLAYER, moves(face_left))
+        waitmovement(LOCALID_PLAYER)    
+        speakername("Ditto")
+        createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
+        msgbox("Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!", MSGBOX_DEFAULT)        waitmessage
+        setflag(FLAG_DITTO_INTRO)
+        waitmessage
+        removefieldmugshot
+        release
+        end
+        }
+    else
+    {
+        end
+    }    
+}
 
 script DaycareBase_FindLuckyEgg{
     lock

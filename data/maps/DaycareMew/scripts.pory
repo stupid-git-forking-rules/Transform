@@ -71,7 +71,7 @@ script DittoEndTrigger
                 setflag(FLAG_DITTO_SITRUS)
                 speakername("Ditto")
                 createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
-                msgbox("Hold on to one of those berries.\nTrust me.", MSGBOX_DEFAULT)
+                msgbox("Hold on to one of those berries.\nTrust me.", MSGBOX_AUTOCLOSE)
                 removefieldmugshot
                 applymovement(DittoFinale, moves(walk_up))
                 waitmovement(DittoFinale)

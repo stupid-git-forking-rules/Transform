@@ -42,12 +42,12 @@ script TrapinchDialog{
         speakername("Trapinch")
         createfieldmugshot(MUGSHOT_TRAPINCH, EMOTE_HAPPY)
         msgbox("Oh, hey Rhyhorn!\pBeautiful weather today isn't it?\pThis fell into my sandtrap the\nthe other day...\pWhy don't you take it?\n", MSGBOX_DEFAULT)
+        removefieldmugshot
         setflag(FLAG_SUPPRESS_SPEAKER_NAME)
         giveitem(ITEM_LUCKY_EGG)
         clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
         setflag(FLAG_TRAPINCH_EGG)
         waitmessage
-        removefieldmugshot
         release
         end
     }

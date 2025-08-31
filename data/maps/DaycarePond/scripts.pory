@@ -239,6 +239,7 @@ script GoomyInCaveTrigger{
         case 15:
             applymovement(LOCALID_PLAYER, moves(face_right))
             applymovement(Goomy,  moves(walk_left))
+            waitmovement(Goomy)
 	        speakername("Goomy")
             createfieldmugshot(MUGSHOT_GOOMY, EMOTE_NORMAL)
             msgbox("Keepin it mellow...\nLet's just have some fun.", MSGBOX_AUTOCLOSE)
@@ -479,7 +480,7 @@ script CroagunkInCave{
     {
         speakername("Croagunk")
         createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
-        msgbox("We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n", MSGBOX_DEFAULT)
+        msgbox("Right on.", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
         release
@@ -504,7 +505,7 @@ script CroagunkInCave{
         {
             speakername("Croagunk")
             createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
-	        msgbox("Right on.\n", MSGBOX_DEFAULT)
+	        msgbox("We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n", MSGBOX_DEFAULT)
             setflag(FLAG_CROAGUNK_BATTLE)
             waitmessage
             removefieldmugshot
@@ -536,7 +537,7 @@ script CroagunkInCaveTrigger{
             {
                 speakername("Croagunk")
                 createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
-	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+	            msgbox("We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -558,7 +559,7 @@ script CroagunkInCaveTrigger{
             {
                 speakername("Croagunk")
                 createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
-	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+	            msgbox("We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -580,7 +581,7 @@ script CroagunkInCaveTrigger{
             {
                 speakername("Croagunk")
                 createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
-	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+	            msgbox("We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -602,7 +603,7 @@ script CroagunkInCaveTrigger{
             {
                 speakername("Croagunk")
                 createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
-	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+	            msgbox("We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -624,7 +625,7 @@ script CroagunkInCaveTrigger{
             {
                 speakername("Croagunk")
                 createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
-	            msgbox("Right on.\n", MSGBOX_DEFAULT)
+	            msgbox("We keep it peaceful here my dude.\pCan't have anyone mess with the\nvibes or we risk losing out on\lgaining EXP.\pHaven't leveled up yet but I'm\nchillin.\pI'm sure it'll come.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_CROAGUNK_BATTLE)
                 waitmessage
                 removefieldmugshot

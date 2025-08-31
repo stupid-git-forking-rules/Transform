@@ -18,6 +18,9 @@ script TarountulaDialog{
         waitmessage
         removefieldmugshot
         createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_HAPPY)
+        playse(SE_PIN)
+        applymovement(tarountula, Common_Movement_ExclamationMark)
+        waitmovement(tarountula)
         msgbox("WAIT... HEY!", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
@@ -33,6 +36,9 @@ script TarountulaDialog{
         waitmessage
         removefieldmugshot
         createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_HAPPY)
+        playse(SE_PIN)
+        applymovement(tarountula, Common_Movement_ExclamationMark)
+        waitmovement(tarountula)
         msgbox("WAIT... HEY!\pHow did you fit in the tiny\nentrance?\p", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
@@ -405,6 +411,9 @@ script SinisteaDialog{
     {
         speakername("Sinistea")
         createfieldmugshot(MUGSHOT_SINISTEA, EMOTE_NORMAL)
+        playse(SE_PIN)
+        applymovement(sinistea, Common_Movement_ExclamationMark)
+        waitmovement(sinistea)
         msgbox("Hey!\pAren't you a little too big to be\nin here?", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
@@ -430,6 +439,9 @@ script NymbleDialog{
     {
         speakername("Nymble")
         createfieldmugshot(MUGSHOT_NYMBLE, EMOTE_HAPPY)
+        playse(SE_PIN)
+        applymovement(nymble, Common_Movement_ExclamationMark)
+        waitmovement(nymble)
         msgbox("Whoa... you're HUGE!\pPlease don't step on me.\n", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot

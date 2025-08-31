@@ -680,7 +680,7 @@ u8 (*const gMovementActionFuncs_FaceRight[])(struct ObjectEvent *, struct Sprite
 static u8 (*const sDirectionAnimFuncsBySpeed[])(u8) = {
     [MOVE_SPEED_NORMAL] = GetMoveDirectionAnimNum,
     [MOVE_SPEED_FAST_1] = GetMoveDirectionFastAnimNum,
-    [MOVE_SPEED_FAST_2] = GetMoveDirectionFastAnimNum,
+    [MOVE_SPEED_FAST_2] = GetMoveDirectionFastAnimNum, //
     [MOVE_SPEED_FASTER] = GetMoveDirectionFasterAnimNum,
     [MOVE_SPEED_FASTEST] = GetMoveDirectionFastestAnimNum,
 };

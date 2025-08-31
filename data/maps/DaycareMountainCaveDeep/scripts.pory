@@ -73,14 +73,14 @@ script EiscueDialog{
                 applymovement(NoIce, Common_Movement_ExclamationMark)
                 waitmovement(NoIce)
                 speakername("Eiscue")
-                createfieldmugshot(MUGSHOT_EISCUE, EMOTE_NORMAL)
+                createfieldmugshot(MUGSHOT_EISCUENOICE, EMOTE_NORMAL)
                 msgbox("Goodness!\nThank you.\pI have been trying to get that\nice cube off my head forever!\pTake this as a token of my\nappreciation.", MSGBOX_DEFAULT)
                 removefieldmugshot
                 setflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 giveitem(ITEM_LUCKY_EGG)
                 clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 speakername("Eiscue")
-                createfieldmugshot(MUGSHOT_EISCUE, EMOTE_NORMAL)
+                createfieldmugshot(MUGSHOT_EISCUENOICE, EMOTE_NORMAL)
                 msgbox("I think I might go for a swim now!\n", MSGBOX_DEFAULT)
                 waitmessage
                 removefieldmugshot
@@ -117,7 +117,7 @@ script FreedEicscue {
     lock
     faceplayer
     speakername("Eiscue")
-    createfieldmugshot(MUGSHOT_EISCUE, EMOTE_NORMAL)
+    createfieldmugshot(MUGSHOT_EISCUENOICE, EMOTE_NORMAL)
     msgbox("Thank you again!\pI feel like I'm finally able\nto regain my balance.", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot

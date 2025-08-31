@@ -44,7 +44,7 @@ script BattleVsMachamp{
         waitmessage
         createfieldmugshot(MUGSHOT_MACHAMP, EMOTE_NORMAL)
         speakername("Machamp")
-        msgbox("With great power comes great\nresponsibility.\pGo on!\nFind your Egg!", MSGBOX_DEFAULT)
+        msgbox("With great power comes great\nresponsibility.\pGo on!\nFind your Egg!", MSGBOX_AUTOCLOSE)
         removefieldmugshot
         waitmessage
         playse(SE_LEDGE)

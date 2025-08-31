@@ -26,6 +26,7 @@ script FamilyofFour{
                     end
                 }     
             speakername("Maushold")
+            playse(SE_PIN)
             applymovement(Maushold4, Common_Movement_ExclamationMark)
             waitmovement(Maushold4)
             applymovement(Maushold4, moves(face_left))
@@ -36,6 +37,7 @@ script FamilyofFour{
             waitmovement
             msgbox("Here. Take these four items.\n", MSGBOX_DEFAULT)
             waitmessage
+            removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             setflag(FLAG_FAM_FOUR)
             giveitem(ITEM_POTION, 4)
@@ -99,6 +101,7 @@ script FamilyofFour{
     else
     {
         speakername("Maushold")
+        createfieldmugshot(MUGSHOT_MAUSHOLD4, EMOTE_NORMAL)
         msgbox("Things in fours just makes sense!\n", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
@@ -159,12 +162,12 @@ script FamilyofThree{
             waitmovement
             msgbox("Here. Take these three items.\n", MSGBOX_DEFAULT)
             waitmessage
+            removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             setflag(FLAG_FAM_THREE)
             giveitem(ITEM_POTION, 3)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
-            removefieldmugshot
             release
             end
         }
@@ -208,6 +211,7 @@ script FamilyofThree{
     else
     {
         speakername("Maushold")
+        createfieldmugshot(MUGSHOT_MAUSHOLD3, EMOTE_NORMAL)
         msgbox("Things in threes just makes sense!\n", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot

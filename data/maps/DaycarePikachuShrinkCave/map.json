@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "tarountula",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAROUNTULA)",
       "x": 10,
       "y": 37,
@@ -42,6 +43,7 @@
       "flag": "0"
     },
     {
+      "local_id": "nymble",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(NYMBLE)",
       "x": 4,
       "y": 26,
@@ -55,6 +57,7 @@
       "flag": "0"
     },
     {
+      "local_id": "sinistea",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SINISTEA)",
       "x": 17,
       "y": 30,
