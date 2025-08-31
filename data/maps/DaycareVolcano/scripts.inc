@@ -854,9 +854,9 @@ BattleVsArcanine::
 # 472 "data/maps/DaycareVolcano/scripts.pory"
 	removefieldmugshot
 # 473 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_FIRE_FANG, move3 = MOVE_FLAMETHROWER, move4 = MOVE_SWIFT
+	setwildbattle SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_FIRE_FANG, move3 = MOVE_FLAMETHROWER, move4 = MOVE_EMBER
 # 474 "data/maps/DaycareVolcano/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 0, 1, 1, 0
 # 475 "data/maps/DaycareVolcano/scripts.pory"
 	dowildbattle
 # 476 "data/maps/DaycareVolcano/scripts.pory"

@@ -544,7 +544,7 @@ BattleVsNoivern::
 # 318 "data/maps/DaycareNoivernCave/scripts.pory"
 	setwildbattle SPECIES_NOIVERN, 25
 # 319 "data/maps/DaycareNoivernCave/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	settotemboost B_POSITION_OPPONENT_LEFT, 0, 3, 4, 1, 2, 0, 0
 # 320 "data/maps/DaycareNoivernCave/scripts.pory"
 	dowildbattle
 # 321 "data/maps/DaycareNoivernCave/scripts.pory"
