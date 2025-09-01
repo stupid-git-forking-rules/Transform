@@ -593,7 +593,7 @@ LaprasDialog::
 # 360 "data/maps/daycarebase/scripts.pory"
 	speakername LaprasDialog_Text_0
 # 361 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_LAPRAS, EMOTE_NORMAL
+	createfieldmugshot MUGSHOT_LAPRAS, EMOTE_HAPPY
 # 362 "data/maps/daycarebase/scripts.pory"
 	msgbox LaprasDialog_Text_1
 # 363 "data/maps/daycarebase/scripts.pory"

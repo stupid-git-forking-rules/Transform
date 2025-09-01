@@ -358,7 +358,7 @@ script LaprasDialog{
     lock
     faceplayer
     speakername("Lapras")
-    createfieldmugshot(MUGSHOT_LAPRAS, EMOTE_NORMAL)
+    createfieldmugshot(MUGSHOT_LAPRAS, EMOTE_HAPPY)
     msgbox("I love the Daycare!\pIt's so peaceful and quiet here.\pI can just float around all day\nand relax.\pThose waterfalls are pretty\nvicious, I won't go near them.\pI've heard that Dragonair can\neasily scale even the largest\lof waterfalls!")
     waitmessage
     removefieldmugshot
