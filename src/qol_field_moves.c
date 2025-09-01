@@ -229,7 +229,7 @@ u32 UseSurf(u32 fieldMoveStatus)
 #endif //QOL_NO_MESSAGING
 
 	if (FlagGet(FLAG_SYS_USE_SURF))
-		ScriptContext_SetupScript(EventScript_UseSurfMove);
+		ScriptContext_SetupScript(EventScript_UseSurf);
 
 	FlagSet(FLAG_SYS_USE_SURF);
 	return COLLISION_START_SURFING;

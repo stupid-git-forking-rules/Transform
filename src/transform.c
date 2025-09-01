@@ -415,3 +415,32 @@ void IsDittoFieldMoveUser(struct ScriptContext *ctx)
     else
         gSpecialVar_Result = var; // Mantains the state of the previous var
 }
+
+void Task_StartJump(u8 taskId)
+{
+    u8 direction = gObjectEvents[gPlayerAvatar.objectEventId].movementDirection;
+    PlayerJump(direction);
+    DestroyTask(taskId);
+}
+
+void Task_MarillSurfSequence2(u8 taskId)
+{
+    if (gTasks[taskId].data[0] < 15)
+    {
+        gTasks[taskId].data[0]++;
+    }
+    else
+    {
+        SetPlayerAvatarSurfTransformation(SPECIES_GUMSHOOS, TRUE);
+        PlaySE(SE_M_DIVE);
+        UnfreezeObjectEvents();
+        DestroyTask(taskId);
+    }
+}
+
+void StartMarillSurf(void)
+{
+
+    CreateTask(Task_StartJump, 0xFF);
+    CreateTask(Task_MarillSurfSequence2, 0xFF);
+}

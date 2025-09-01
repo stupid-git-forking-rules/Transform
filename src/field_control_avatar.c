@@ -41,6 +41,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "qol_field_moves.h"
+#include "transform.h"
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;
@@ -1139,7 +1140,11 @@ bool8 TryDoDiveWarp(struct MapPosition *position, u16 metatileBehavior)
         {
             StoreInitialPlayerAvatarState();
             DoDiveWarp();
+            
+            // Add your transformation for emerging here
+            SetPlayerAvatarTransformation(SPECIES_GUMSHOOS,TRUE);
             PlaySE(SE_M_DIVE);
+
             return TRUE;
         }
     }
@@ -1149,7 +1154,11 @@ bool8 TryDoDiveWarp(struct MapPosition *position, u16 metatileBehavior)
         {
             StoreInitialPlayerAvatarState();
             DoDiveWarp();
+            
+            // Add your transformation for submerging here
+            SetPlayerAvatarTransformation(SPECIES_CHINCHOU, TRUE);
             PlaySE(SE_M_DIVE);
+
             return TRUE;
         }
     }

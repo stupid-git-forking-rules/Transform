@@ -998,9 +998,9 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
     if (mapType != MAP_TYPE_INDOOR && FlagGet(FLAG_SYS_CRUISE_MODE))
         return PLAYER_AVATAR_FLAG_ON_FOOT;
     else if (mapType == MAP_TYPE_UNDERWATER)
-        return PLAYER_AVATAR_FLAG_UNDERWATER;
+        return PLAYER_AVATAR_FLAG_ON_FOOT;
     else if (MetatileBehavior_IsSurfableWaterOrUnderwater(metatileBehavior) == TRUE)
-        return PLAYER_AVATAR_FLAG_SURFING;
+        return PLAYER_AVATAR_FLAG_ON_FOOT;
     else if (Overworld_IsBikingAllowed() != TRUE)
         return PLAYER_AVATAR_FLAG_ON_FOOT;
     else if (playerStruct->transitionFlags == PLAYER_AVATAR_FLAG_MACH_BIKE)

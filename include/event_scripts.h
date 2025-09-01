@@ -412,7 +412,7 @@ extern const u8 EventScript_UseDefog[];
 //Start qol_field_moves
 extern const u8 EventScript_CutTreeDown[];
 extern const u8 EventScript_UseCut[];
-extern const u8 EventScript_UseSurfMove[];
+//extern const u8 EventScript_UseSurfMove[];
 extern const u8 EventScript_UseSurfFieldEffect[];
 extern const u8 EventScript_SmashRock[];
 extern const u8 EventScript_UseRockSmash[];
