@@ -209,5 +209,20 @@ const struct Transformation gTransformations[] =
             MOVE_FLASH,
         },
     },
+    [SPECIES_GUMSHOOS] =
+    {
+        .name = _("MARILL"),
+        .fieldUseFunc = ItemUseOutOfBattle_SurfStateTransform,
+        .iconPic = gItemIcon_TransformSurf,
+        .iconPalette = gItemIconPalette_TransformSurf,
+        .battleSpecies = SPECIES_DITTO_MARILL,
+        .ability = ABILITY_HUGE_POWER,
+        .moves = {
+            MOVE_SURF,
+            MOVE_AQUA_JET,
+            MOVE_COVET,
+            MOVE_RAIN_DANCE,
+        },
+    },
     
 };

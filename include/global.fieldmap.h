@@ -311,7 +311,9 @@ enum
         //Start qol_field_moves
     COLLISION_START_SURFING,
     COLLISION_START_CUT,
-    COLLISION_START_ROCK_SMASH
+    COLLISION_START_ROCK_SMASH,
+    COLLISION_START_SWIMMING,
+    COLLISION_STOP_SWIMMING
     //End qol_field_moves
 };
 // player running states

@@ -1778,5 +1778,16 @@ void ItemUseOnFieldCB_FlashTransform(u8 taskId)
     DestroyTask(taskId);
 }
 
-
+void ItemUseOutOfBattle_SurfStateTransform(u8 taskId)
+{
+    sItemUseOnFieldCB = ItemUseOnFieldCB_FlashTransform;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+void ItemUseOnFieldCB_SurfStateTransform(u8 taskId)
+{
+    LockPlayerFieldControls();
+    SetPlayerAvatarTransformation(SPECIES_GUMSHOOS, TRUE);
+    ScriptUnfreezeObjectEvents();
+    DestroyTask(taskId);
+}
 #undef tUsingRegisteredKeyItem

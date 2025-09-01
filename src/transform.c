@@ -203,6 +203,7 @@ static u8 IsSpeciesValidTransformation(u16 speciesId)
         case SPECIES_CUTIEFLY:
         case SPECIES_MACHAMP:
         case SPECIES_DRAGONAIR:
+        case SPECIES_GUMSHOOS:
             DebugPrintfLevel(MGBA_LOG_WARN, "Got valid species %d", speciesId);
             return TRUE;
         default:
@@ -275,6 +276,26 @@ void SetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldControl
         
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES, UnlockPlayerFieldControls);
     PlaySE(SE_M_TELEPORT);
+}
+
+void SetPlayerAvatarSurfTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls)
+{
+    gSaveBlock2Ptr->pokemonAvatarSpecies = SPECIES_GUMSHOOS;
+    VarSet(VAR_TRANSFORM_MON, SPECIES_GUMSHOOS);
+
+    // Start the transformation effect.
+    BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES, UnlockPlayerFieldControls);
+
+}
+
+void SetPlayerAvatarStopSurfTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls)
+{
+    gSaveBlock2Ptr->pokemonAvatarSpecies = SPECIES_MARILL;
+    VarSet(VAR_TRANSFORM_MON, SPECIES_MARILL);
+
+    // Start the transformation effect.
+    BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES, UnlockPlayerFieldControls);
+
 }
 
 void TrySetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls)

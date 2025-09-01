@@ -101,6 +101,8 @@ static u8 CheckForPlayerAvatarCollision(u8);
 static u8 CheckForPlayerAvatarStaticCollision(u8);
 static u8 CheckForObjectEventStaticCollision(struct ObjectEvent *, s16, s16, u8, u8);
 static bool8 CanStopSurfing(s16, s16, u8);
+static bool8 CanStartSwimming(s16, s16, u8, u8);
+static bool8 CanStopSwimming(s16, s16, u8);
 static bool8 ShouldJumpLedge(s16, s16, u8);
 //static bool8 TryPushBoulder(s16, s16, u8);
 static void CheckAcroBikeCollision(s16, s16, u8, u8 *);
@@ -806,10 +808,41 @@ static void PlayerNotOnBikeTurningInPlace(u8 direction, u16 heldKeys)
     PlayerTurnInPlace(direction);
 }
 
+#define SOUND_DELAY_FRAMES 15 
+
+void Task_MarillSurfSequence(u8 taskId)
+{
+    if (gTasks[taskId].data[0] < SOUND_DELAY_FRAMES)
+    {
+        gTasks[taskId].data[0]++;
+    }
+    else
+    {
+        SetPlayerAvatarSurfTransformation(SPECIES_GUMSHOOS, TRUE);
+        PlaySE(SE_M_DIVE);
+        UnfreezeObjectEvents();
+        DestroyTask(taskId);
+    }
+}
+
+
 static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
 {
     u8 collision = CheckForPlayerAvatarCollision(direction);
-    if (collision)
+    if (VarGet(VAR_TRANSFORM_MON) == SPECIES_MARILL && collision == COLLISION_START_SWIMMING)
+    {
+        LockPlayerFieldControls();
+        PlayerJump(direction);
+        CreateTask(Task_MarillSurfSequence, 0xFF);
+        return; 
+    }
+    else if (VarGet(VAR_TRANSFORM_MON) == SPECIES_GUMSHOOS && collision == COLLISION_STOP_SWIMMING)
+    {
+        PlayerJump(direction);
+        SetPlayerAvatarStopSurfTransformation(SPECIES_MARILL, TRUE); 
+        return;
+    }
+    else if (collision)
     {
         if (collision == COLLISION_LEDGE_JUMP)
         {
@@ -966,22 +999,26 @@ static u8 CheckForPlayerAvatarStaticCollision(u8 direction)
 u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u8 direction, u8 metatileBehavior)
 {
     u8 collision = GetCollisionAtCoords(objectEvent, x, y, direction);
-    u32 fieldMoveStatus; // qol_field_moves
+    //u32 fieldMoveStatus; // qol_field_moves
+    if (collision == COLLISION_ELEVATION_MISMATCH && CanStartSwimming(x, y, direction, metatileBehavior))
+        return COLLISION_START_SWIMMING;
 
+    if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSwimming(x, y, direction))
+        return COLLISION_STOP_SWIMMING;
     if (collision == COLLISION_ELEVATION_MISMATCH && CanStopSurfing(x, y, direction))
         return COLLISION_STOP_SURFING;
 // Start qol_field_moves
-    fieldMoveStatus = CanUseSurf(x,y,collision);
-    if (fieldMoveStatus != FIELD_MOVE_FAIL)
-        return UseSurf(fieldMoveStatus);
+   // fieldMoveStatus = CanUseSurf(x,y,collision);
+    //if (fieldMoveStatus != FIELD_MOVE_FAIL)
+     //   return UseSurf(fieldMoveStatus);
 
-    fieldMoveStatus = CanUseCut(x,y);
-    if (fieldMoveStatus != FIELD_MOVE_FAIL)
-        return UseCut(fieldMoveStatus);
+    //fieldMoveStatus = CanUseCut(x,y);
+   // if (fieldMoveStatus != FIELD_MOVE_FAIL)
+   //     return UseCut(fieldMoveStatus);
 
-    fieldMoveStatus = CanUseRockSmash(x,y);
-    if (fieldMoveStatus != FIELD_MOVE_FAIL)
-        return UseRockSmash(fieldMoveStatus);
+ //   fieldMoveStatus = CanUseRockSmash(x,y);
+ //   if (fieldMoveStatus != FIELD_MOVE_FAIL)
+ //       return UseRockSmash(fieldMoveStatus);
 // End qol_field_moves    
     if (ShouldJumpLedge(x, y, direction))
     {
@@ -989,9 +1026,9 @@ u8 CheckForObjectEventCollision(struct ObjectEvent *objectEvent, s16 x, s16 y, u
         return COLLISION_LEDGE_JUMP;
     }
 // Start qol_field_moves
-    fieldMoveStatus = CanUseStrength(collision);
-    if (fieldMoveStatus)
-        return UseStrength(fieldMoveStatus,x,y,direction);
+    //fieldMoveStatus = CanUseStrength(collision);
+    //if (fieldMoveStatus)
+    //    return UseStrength(fieldMoveStatus,x,y,direction);
 // End qol_field_moves
     if (collision == COLLISION_OBJECT_EVENT && TryPushBoulder(x, y, direction))
         return COLLISION_PUSHED_BOULDER;
@@ -1034,6 +1071,30 @@ static bool8 CanStopSurfing(s16 x, s16 y, u8 direction)
     {
         return FALSE;
     }
+}
+
+static bool8 CanStartSwimming(s16 x, s16 y, u8 direction, u8 metatileBehavior)
+{
+    if ((VarGet(VAR_TRANSFORM_MON) == SPECIES_MARILL) 
+        && MetatileBehavior_IsSurfableAndNotWaterfall(metatileBehavior)
+        && GetObjectEventIdByPosition(x, y, 3) == OBJECT_EVENTS_COUNT
+    )
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static bool8 CanStopSwimming(s16 x, s16 y, u8 direction)
+{
+    if ((VarGet(VAR_TRANSFORM_MON) == SPECIES_GUMSHOOS)
+        && MapGridGetElevationAt(x, y) == 3 
+        && GetObjectEventIdByPosition(x, y, 3) == OBJECT_EVENTS_COUNT
+    )
+    {
+        return TRUE;
+    }
+    return FALSE;
 }
 
 static bool8 ShouldJumpLedge(s16 x, s16 y, u8 direction)
@@ -1369,6 +1430,12 @@ void PlayerJumpLedge(u8 direction)
 {
     PlaySE(SE_LEDGE);
     PlayerSetAnimId(GetJump2MovementAction(direction), COPY_MOVE_JUMP2);
+}
+
+void PlayerJump(u8 direction)
+{
+    PlaySE(SE_LEDGE);
+    PlayerSetAnimId(GetJumpMovementAction(direction), COPY_MOVE_JUMP);
 }
 
 // Stop player on current facing direction once they're done moving and if they're not currently Acro Biking on bumpy slope
