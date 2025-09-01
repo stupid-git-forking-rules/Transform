@@ -1650,7 +1650,9 @@
 #define SPECIES_DITTO_MACHAMP                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 10)
 #define SPECIES_DITTO_PIKACHU                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 11)
 
-#define SPECIES_EGG                                     (SPECIES_DITTO_PIKACHU + 1)
+#define SPECIES_DITTO_SURFING                           (SPECIES_MIMIKYU_TOTEM_BUSTED + 12)
+
+#define SPECIES_EGG                                     (SPECIES_DITTO_SURFING + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

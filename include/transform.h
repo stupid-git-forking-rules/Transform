@@ -20,6 +20,7 @@ typedef void (*TransformFunc)(u8);
 
 void SetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls);
 void TrySetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls);
+void SetPlayerAvatarSurfingDitto(void);
 TransformFunc GetTransformationFunc(u16 speciesId);
 
 #define TRANSFORM_TYPE_PLAYER_SPECIES 1

@@ -95,7 +95,7 @@ static void Task_DoFieldMove_WaitForTransformation(u8 taskId)
     if (gPlayerTransformEffectActive == FALSE && !IsSEPlaying())
     {
         FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON);
-        gTasks[taskId].func = Task_DoFieldMove_RunFunc;  
+        gTasks[taskId].func = Task_DoFieldMove_RunFunc;
     }
 }
 

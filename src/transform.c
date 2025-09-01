@@ -285,6 +285,14 @@ void TrySetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldCont
     SetPlayerAvatarTransformation(speciesId, UnlockPlayerFieldControls);
 }
 
+void SetPlayerAvatarSurfingDitto(void)
+{
+    struct ObjectEvent *playerObjectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    gSaveBlock2Ptr->pokemonAvatarSpecies = SPECIES_DITTO_SURFING;
+    VarSet(VAR_TRANSFORM_MON, SPECIES_DITTO_SURFING);
+    ObjectEventSetGraphicsId(playerObjectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL));
+}
+
 void TryCreatePokemonAvatarSpriteBob(void)
 {   
     if(!(FuncIsActiveTask(Task_CreatePokemonAvatarBob) || FuncIsActiveTask(Task_PokemonAvatar_HandleBob)))

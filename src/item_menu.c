@@ -2473,6 +2473,9 @@ static void Task_KeyItemWheel(u8 taskId) {
 
             if (PlayerIsDitto()) // Show Transformations
             {
+                u16 currentSpecies = gSaveBlock2Ptr->pokemonAvatarSpecies;
+                if (gSaveBlock2Ptr->pokemonAvatarSpecies == SPECIES_DITTO_SURFING)
+                    currentSpecies = SPECIES_DITTO_MARILL;
                 DebugPrintfLevel(MGBA_LOG_WARN, "Attempting to show Transformations");
                 speciesId = GetValidTransformationSpeciesFromParty(i + 1);
                 if (speciesId == SPECIES_NONE)
@@ -2481,7 +2484,7 @@ static void Task_KeyItemWheel(u8 taskId) {
                 if (j == WINDOW_NONE)
                     continue;
                 PutWindowTilemap(j);
-                if (gSaveBlock2Ptr->pokemonAvatarSpecies == speciesId)
+                if (currentSpecies == speciesId)
                     speciesId = SPECIES_DITTO;
                 BlitTransformationIconToWindow(speciesId, j, 4, 4, i == 3 ? sKeyItemWheelExtraPalette : NULL);
                 CopyWindowToVram(j, COPYWIN_FULL);

@@ -138,6 +138,74 @@ const struct SpeciesInfo gSpeciesDitto[] =
         .formSpeciesIdTable = sDittoFormSpeciesIdTable,
     },
 
+    [SPECIES_DITTO_SURFING] =
+    {
+        .baseHP        = 70,
+        .baseAttack    = 20,
+        .baseDefense   = 50,
+        .baseSpeed     = 40,
+        .baseSpAttack  = 20,
+        .baseSpDefense = 50,
+        .types = MON_TYPES(TYPE_WATER, TYPE_FAIRY),
+        .catchRate = 190,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 88 : 58,
+        .evYield_HP = 2,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 10,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FAIRY),
+        .abilities = { ABILITY_THICK_FAT, ABILITY_HUGE_POWER, ABILITY_SAP_SIPPER },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Marill"),
+        .cryId = CRY_MARILL,
+        .natDexNum = NATIONAL_DEX_MARILL,
+        .categoryName = _("Aqua Mouse"),
+        .height = 4,
+        .weight = 85,
+        .description = COMPOUND_STRING(
+            "Its body is covered with water-repellent\n"
+            "fur. Because of the fur, it can swim\n"
+            "through water at high speed without being\n"
+            "slowed by the water's resistance."),
+        .pokemonScale = 476,
+        .pokemonOffset = 20,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Marill,
+        .frontPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(48, 40) : MON_COORDS_SIZE(56, 40),
+        .frontPicYOffset = 14,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 30),
+            ANIMCMD_FRAME(1, 30),
+            ANIMCMD_FRAME(0, 20),
+        ),
+        .frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_Marill,
+        .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 40) : MON_COORDS_SIZE(64, 40),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 12 : 13,
+        .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
+        .palette = gMonPalette_Marill,
+        .shinyPalette = gMonShinyPalette_Marill,
+        .iconSprite = gMonIcon_Marill,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 2 : 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_SLOW,
+        SHADOW(-2, 0, SHADOW_SIZE_S)
+        FOOTPRINT(Marill)
+        OVERWORLD(
+            sPicTable_MarillSurfing,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Marill,
+            gShinyOverworldPalette_Marill
+        )
+        .levelUpLearnset = sMarillLevelUpLearnset,
+        .teachableLearnset = sMarillTeachableLearnset,
+        .formSpeciesIdTable = sDittoFormSpeciesIdTable,
+    },
+
     [SPECIES_DITTO_RHYHORN] =
     {
         .baseHP        = 80,

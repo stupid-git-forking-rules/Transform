@@ -7273,6 +7273,7 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_FOOTPRINTS
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Marill[] = INCBIN_COMP("graphics/pokemon/marill/overworld.4bpp");
+    const u32 gObjectEventPic_MarillSurfing[] = INCBIN_COMP("graphics/pokemon/marill/overworld_surfing.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Marill[] = INCBIN_U16("graphics/pokemon/marill/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_Marill[] = INCBIN_U16("graphics/pokemon/marill/overworld_shiny.gbapal");

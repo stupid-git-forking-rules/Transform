@@ -1550,6 +1550,9 @@ static const struct SpriteFrameImage sPicTable_Marill[] = {
 static const struct SpriteFrameImage sPicTable_Azumarill[] = {
     overworld_ascending_frames(gObjectEventPic_Azumarill, 4, 4),
 };
+static const struct SpriteFrameImage sPicTable_MarillSurfing[] = {
+    overworld_ascending_frames(gObjectEventPic_MarillSurfing, 4, 4),
+};
 #endif //P_FAMILY_MARILL
 
 #if P_FAMILY_SUDOWOODO

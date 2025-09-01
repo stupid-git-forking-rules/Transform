@@ -29,6 +29,7 @@
 #include "sprite.h"
 #include "task.h"
 #include "trainer_pokemon_sprites.h"
+#include "transform.h"
 #include "trig.h"
 #include "util.h"
 #include "constants/event_objects.h"
@@ -3248,6 +3249,8 @@ void SurfFieldEffect_Init(struct Task *task)
 {
     LockPlayerFieldControls();
     FreezeObjectEvents();
+    if (PlayerIsDitto())
+        gFieldEffectArguments[3] = FLDEFF_CONST_PLAYER_IS_DITTO;
     // Put follower into pokeball before using Surf
     HideFollowerForFieldEffect();
     gPlayerAvatar.preventStep = TRUE;
@@ -3265,15 +3268,12 @@ static void SurfFieldEffect_FieldMovePose(struct Task *task)
     if (!ObjectEventIsMovementOverridden(objectEvent) || ObjectEventClearHeldMovementIfFinished(objectEvent))
     {
         SetPlayerAvatarFieldMove();
-        if (gFieldEffectArguments[3] != FLDEFF_CONST_PLAYER_IS_DITTO)
+        if (gFieldEffectArguments[3] == FLDEFF_CONST_PLAYER_IS_DITTO)
+            task->tState += 2;
+        else
         {
             gFieldEffectArguments[0] = task->tMonId | SHOW_MON_CRY_NO_DUCKING;
             FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
-            task->tState += 2;
-        }
-        else
-        {
-            ObjectEventSetHeldMovement(objectEvent, MOVEMENT_ACTION_START_ANIM_IN_DIRECTION);
             task->tState++;
         }
     }
@@ -3295,9 +3295,19 @@ static void SurfFieldEffect_ShowMon(struct Task *task)
 void SurfFieldEffect_JumpOnSurfBlob(struct Task *task)
 {
     struct ObjectEvent *objectEvent;
-    if (!FieldEffectActiveListContains(FLDEFF_FIELD_MOVE_SHOW_MON))
+    objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+    if (gFieldEffectArguments[3] == FLDEFF_CONST_PLAYER_IS_DITTO)
     {
-        objectEvent = &gObjectEvents[gPlayerAvatar.objectEventId];
+        if (gPlayerTransformEffectActive == FALSE)
+        {
+            ObjectEventClearHeldMovementIfFinished(objectEvent);
+            ObjectEventSetHeldMovement(objectEvent, GetJumpMovementAction(objectEvent->movementDirection));
+            gFieldEffectArguments[4] = 0;
+            task->tState++;
+        }
+    }
+    else if (!FieldEffectActiveListContains(FLDEFF_FIELD_MOVE_SHOW_MON))
+    {
         ObjectEventSetGraphicsId(objectEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_SURFING));
         ObjectEventClearHeldMovementIfFinished(objectEvent);
         ObjectEventSetHeldMovement(objectEvent, GetJumpSpecialMovementAction(objectEvent->movementDirection));
@@ -3323,7 +3333,14 @@ void SurfFieldEffect_End(struct Task *task)
         ObjectEventSetHeldMovement(objectEvent, GetFaceDirectionMovementAction(objectEvent->movementDirection));
         if (followerObject)
             ObjectEventClearHeldMovementIfFinished(followerObject);
-        SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, BOB_PLAYER_AND_MON);
+        if (gFieldEffectArguments[3] == FLDEFF_CONST_PLAYER_IS_DITTO)
+        {
+            SetPlayerAvatarSurfingDitto(); // Change into the swimming version of marill
+        }
+        else
+        {
+            SetSurfBlob_BobState(objectEvent->fieldEffectSpriteId, BOB_PLAYER_AND_MON);
+        }
         UnfreezeObjectEvents();
         UnlockPlayerFieldControls();
         RemoveRelevantSurfFieldEffect(); // qol_field_moves
