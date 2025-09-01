@@ -363,7 +363,7 @@ EventScript_EndDive::
 
 EventScript_UseDiveUnderwater::
 	lockall
-    checkpartymove MOVE_DIVE
+    setvar VAR_RESULT, 1
 	goto_if_eq VAR_RESULT, FALSE, EventScript_CantSurface
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
