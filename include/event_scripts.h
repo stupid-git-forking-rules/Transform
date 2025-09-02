@@ -416,8 +416,8 @@ extern const u8 EventScript_UseCut[];
 extern const u8 EventScript_UseSurfFieldEffect[];
 extern const u8 EventScript_SmashRock[];
 extern const u8 EventScript_UseRockSmash[];
-extern const u8 EventScript_UseWaterfallMon[];
-extern const u8 EventScript_UseWaterfallFieldEffect[];
+//extern const u8 EventScript_UseWaterfallMon[];
+//extern const u8 EventScript_UseWaterfallFieldEffect[];
 //End qol_field_moves
 
 

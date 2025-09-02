@@ -382,7 +382,7 @@ u32 UseRockSmash(u32 fieldMoveStatus)
 
 u32 CanUseWaterfallFromInteractedWater(void)
 {
-    return CanUseWaterfall(DIR_SOUTH);
+        return CanUseWaterfall(DIR_SOUTH);
 }
 
 bool8 IsPlayerFacingWaterfall(void)
@@ -401,7 +401,7 @@ bool8 IsPlayerFacingWaterfall(void)
 
 u32 CanUseWaterfall(u8 direction)
 {
-    bool32 monHasMove = LeadMonKnowsFieldMove(ITEM_HM07);
+    bool32 monHasMove = PartyHasMonLearnsKnowsFieldMove(ITEM_HM07);
     bool32 playerHasBadge = FlagGet(FLAG_BADGE08_GET);
     bool32 isPlayerPushedSouth = (direction == DIR_SOUTH);
 
@@ -429,7 +429,7 @@ u32 UseWaterfall(struct PlayerAvatar playerAvatar, u32 fieldMoveStatus)
     if (FlagGet(FLAG_SYS_USE_WATERFALL))
         FieldEffectStart(FLDEFF_USE_WATERFALL_TOOL);
     else if(fieldMoveStatus == FIELD_MOVE_POKEMON)
-        ScriptContext_SetupScript(EventScript_UseWaterfallMon);
+        ScriptContext_SetupScript(EventScript_UseWaterfall);
 
     FlagSet(FLAG_SYS_USE_WATERFALL);
     return TRUE;
@@ -483,7 +483,7 @@ void RemoveRelevantWaterfallFieldEffect(void)
     }
     else if(FieldEffectActiveListContains(FLDEFF_USE_WATERFALL_TOOL))
     {
-        FieldEffectActiveListRemove(FLDEFF_USE_SURF_TOOL);
+        FieldEffectActiveListRemove(FLDEFF_USE_WATERFALL_TOOL);
         DestroyTask(FindTaskIdByFunc(Task_UseWaterfallTool));
     }
 }
@@ -597,7 +597,7 @@ static bool32 PartyCanLearnMoveLevelUp(u16 species, u16 moveId)
 bool32 PartyHasMonLearnsKnowsFieldMove(u16 itemId)
 {
     struct Pokemon *mon;
-    u32 species, i, monCanLearnTM;
+    u32 i;
     u16 moveId = ItemIdToBattleMoveId(itemId);
     gSpecialVar_Result = PARTY_SIZE;
     gSpecialVar_0x8004 = 0;
@@ -605,17 +605,12 @@ bool32 PartyHasMonLearnsKnowsFieldMove(u16 itemId)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         mon = &gPlayerParty[i];
-        species = GetMonData(mon, MON_DATA_SPECIES, NULL);
 
-        if (species == SPECIES_NONE)
+        if (GetMonData(mon, MON_DATA_SPECIES, NULL) == SPECIES_NONE)
             break;
 
-        monCanLearnTM = CanTeachMove(mon,moveId);
-        if ((PartyCanLearnMoveLevelUp(species, moveId)
-                || (monCanLearnTM) == ALREADY_KNOWS_MOVE)
-                || (monCanLearnTM) == CAN_LEARN_MOVE)
-            return SetMonResultVariables(i,species);
-
+        if (!GetMonData(mon, MON_DATA_IS_EGG) && MonKnowsMove(mon, moveId) == TRUE)
+            return SetMonResultVariables(i, GetMonData(mon, MON_DATA_SPECIES, NULL));
     }
     return FALSE;
 }

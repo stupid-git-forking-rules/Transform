@@ -521,9 +521,9 @@ static bool8 DoForcedMovement(u8 direction, void (*moveFunc)(u8))
 
     playerAvatar->flags |= PLAYER_AVATAR_FLAG_FORCED_MOVE;
     // Start qol_field_moves
-    fieldMoveStatus = CanUseWaterfall(direction);
-    if (fieldMoveStatus)
-        return UseWaterfall(gPlayerAvatar, fieldMoveStatus);
+    //fieldMoveStatus = CanUseWaterfall(direction);
+    //if (fieldMoveStatus)
+    //    return UseWaterfall(gPlayerAvatar, fieldMoveStatus);
     // End qol_field_moves
     if (collision)
     {
@@ -1713,7 +1713,7 @@ bool8 PartyHasMonWithSurf(void)
 
 bool8 IsPlayerSurfingNorth(void)
 {
-    if (GetPlayerMovementDirection() == DIR_NORTH && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+    if (GetPlayerMovementDirection() == DIR_NORTH)
         return TRUE;
     else
         return FALSE;

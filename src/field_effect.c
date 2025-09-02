@@ -40,6 +40,7 @@
 #include "constants/songs.h"
 #include "constants/map_types.h"
 #include "qol_field_moves.h" // qol_field_moves
+#include "transform.h"
 
 #define subsprite_table(ptr) {.subsprites = ptr, .subspriteCount = (sizeof ptr) / (sizeof(struct Subsprite))}
 
@@ -1959,6 +1960,7 @@ bool8 WaterfallFieldEffect_Init(struct Task *task, struct ObjectEvent *objectEve
 {
     LockPlayerFieldControls();
     gPlayerAvatar.preventStep = TRUE;
+    SetPlayerAvatarTransformation(SPECIES_DRAGONAIR, FALSE);
     task->tState++;
     return FALSE;
 }
@@ -1969,10 +1971,11 @@ static bool8 WaterfallFieldEffect_ShowMon(struct Task *task, struct ObjectEvent 
     if (!ObjectEventIsMovementOverridden(objectEvent))
     {
         ObjectEventClearHeldMovementIfFinished(objectEvent);
-        gFieldEffectArguments[0] = task->tMonId;
-        FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
-        task->tState++;
+        //gFieldEffectArguments[0] = task->tMonId;
+        //FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        
     }
+    task->tState++;
     return FALSE;
 }
 
@@ -2010,6 +2013,9 @@ bool8 WaterfallFieldEffect_ContinueRideOrEnd(struct Task *task, struct ObjectEve
     UnlockPlayerFieldControls();
     gPlayerAvatar.preventStep = FALSE;
     RemoveRelevantWaterfallFieldEffect(); // qol_field_moves
+
+    SetPlayerAvatarTransformation(SPECIES_GUMSHOOS, TRUE);
+
     return FALSE;
 }
 
