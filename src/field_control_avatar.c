@@ -570,20 +570,14 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
 
 static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metatileBehavior, u8 direction)
 {
-    // Start qol_field_moves
-    if (CanUseSurfFromInteractedWater())
-    //if (FlagGet(FLAG_BADGE05_GET) == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
-    // End qol_field_moves
+    if (FlagGet(FLAG_BADGE05_GET) == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE
+     && CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_SURF))
         return EventScript_UseSurf;
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE
-     && CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_WATERFALL)
-     )
+     && CheckFollowerNPCFlag(FOLLOWER_NPC_FLAG_CAN_WATERFALL))
     {
-        // Start qol_field_moves
-        //if (FlagGet(FLAG_BADGE08_GET) == TRUE && IsPlayerSurfingNorth() == TRUE)
-        if (CanUseWaterfallFromInteractedWater())
-        // End qol_field_moves
+        if (FlagGet(FLAG_BADGE08_GET) == TRUE && IsPlayerSurfingNorth() == TRUE)
             return EventScript_UseWaterfall;
         else
             return EventScript_CannotUseWaterfall;
