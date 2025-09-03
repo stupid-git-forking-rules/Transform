@@ -2372,7 +2372,10 @@ bool8 UseRegisteredKeyItemOnField(void)
     u32 taskId;
     u32 i;
     ItemUseFunc func = NULL;
-
+    if (FlagGet(FLAG_DISABLE_XFORM_MENU))
+    {
+        return FALSE;
+    }
     if (InUnionRoom() == TRUE || InBattlePyramid() || InBattlePike() || InMultiPartnerRoom() == TRUE)
         return FALSE;
     HideMapNamePopUpWindow();
