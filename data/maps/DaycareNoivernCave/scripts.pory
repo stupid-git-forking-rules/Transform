@@ -7,7 +7,7 @@ script GastlyDialog{
     faceplayer
     speakername("Gastly")
     createfieldmugshot(MUGSHOT_GASTLY, EMOTE_NORMAL)
-    msgbox("It's no Mt. Pyre, but this cave\ndoes the trick.", MSGBOX_NPC)
+    msgbox("It's no Mt. Pyre, but this cave\ndoes the trick.", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release
@@ -22,7 +22,7 @@ script HaunterDialog{
     waitmovement(LOCALID_PLAYER)
     speakername("Haunter")
     createfieldmugshot(MUGSHOT_HAUNTER, EMOTE_NORMAL)
-    msgbox("BOO!", MSGBOX_NPC)
+    msgbox("BOO!", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release

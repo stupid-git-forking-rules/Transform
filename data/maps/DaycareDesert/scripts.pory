@@ -128,7 +128,7 @@ script VibravaDialog{
     faceplayer
     speakername("Vibrava")
     createfieldmugshot(MUGSHOT_VIBRAVA, EMOTE_NORMAL)
-    msgbox("Surf?\pNever heard of it.\pI just fly over water.\n", MSGBOX_NPC)
+    msgbox("Surf?\pNever heard of it.\pI just fly over water.\n", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release

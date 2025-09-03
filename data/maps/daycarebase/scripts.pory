@@ -346,7 +346,7 @@ script VaporeonDialog{
     faceplayer
     speakername("Vaporeon")
     createfieldmugshot(MUGSHOT_VAPOREON, EMOTE_ANGRY)
-    msgbox("Ugh!\pWhy does everyone keep asking me\nto help them search for Eggs?\pCan't you see I'm busy?\n", MSGBOX_NPC)   
+    msgbox("Ugh!\pWhy does everyone keep asking me\nto help them search for Eggs?\pCan't you see I'm busy?\n", MSGBOX_DEFAULT)   
     waitmessage
     removefieldmugshot
     release
@@ -359,7 +359,7 @@ script LaprasDialog{
     faceplayer
     speakername("Lapras")
     createfieldmugshot(MUGSHOT_LAPRAS, EMOTE_HAPPY)
-    msgbox("I love the Daycare!\pIt's so peaceful and quiet here.\pI can just float around all day\nand relax.\pThose waterfalls are pretty\nvicious, I won't go near them.\pI've heard that Dragonair can\neasily scale even the largest\lof waterfalls!", MSGBOX_NPC)
+    msgbox("I love the Daycare!\pIt's so peaceful and quiet here.\pI can just float around all day\nand relax.\pThose waterfalls are pretty\nvicious, I won't go near them.\pI've heard that Dragonair can\neasily scale even the largest\lof waterfalls!", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release
@@ -398,7 +398,7 @@ script BulbsaurDialog{
     faceplayer
     speakername("Bulbasaur")
     createfieldmugshot(MUGSHOT_BULBASAUR, EMOTE_NORMAL)
-	msgbox("You want to know where Eggs\ncome from?\pI heard that a Pokémon needs\nto go on a great adventure to\lmeet a shapeshifting Pokémon.\pIf you can best them, they will\ngive you an egg!\pAt least, that's what Venusaur\ntold me...", MSGBOX_NPC)
+	msgbox("You want to know where Eggs\ncome from?\pI heard that a Pokémon needs\nto go on a great adventure to\lmeet a shapeshifting Pokémon.\pIf you can best them, they will\ngive you an egg!\pAt least, that's what Venusaur\ntold me...", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release
@@ -410,7 +410,7 @@ script CombeeDialog{
     faceplayer
     speakername("Combee")
     createfieldmugshot(MUGSHOT_COMBEE, EMOTE_NORMAL)
-	msgbox("I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nEXP here is nothing more\lthan a big ole myth!", MSGBOX_NPC)
+	msgbox("I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nEXP here is nothing more\lthan a big ole myth!", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release
@@ -422,7 +422,7 @@ script Porygon2Dialog{
     faceplayer
     speakername("Porygon2")
     createfieldmugshot(MUGSHOT_PORYGON2, EMOTE_NORMAL)
-	msgbox("Another Ditto...\pI'm actually a Ditto too,\nI just prefer this look.\pThe Daycare population must be at\nleast 75 percent Dittos!\pMost Dittos will take on different\nforms.\pYou won't be able to transform\ninto a form that another Ditto has\ltaken on though.", MSGBOX_NPC)
+	msgbox("Another Ditto...\pI'm actually a Ditto too,\nI just prefer this look.\pThe Daycare population must be at\nleast 75 percent Dittos!\pMost Dittos will take on different\nforms.\pYou won't be able to transform\ninto a form that another Ditto has\ltaken on though.", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release
@@ -434,7 +434,7 @@ script ScytherDialog{
     faceplayer
     speakername("Scyther")
     createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
-    msgbox("One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...", MSGBOX_DEFAULT)
+    msgbox("One in every thirty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release
@@ -450,7 +450,7 @@ script RioluDialog{
         faceplayer
         speakername("Riolu")
         createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
-	    msgbox("Back with a Lucky Egg?\n", MSGBOX_NPC)
+	    msgbox("Back with a Lucky Egg?\n", MSGBOX_DEFAULT)
         checkitem(ITEM_LUCKY_EGG)
         removefieldmugshot
         if(var(VAR_RESULT) == TRUE)
@@ -589,7 +589,7 @@ script RioluDialog{
     {
     speakername("Riolu")
     createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
-	msgbox("Hiya!\pI'm Riolu!\pI've visited every biome the\nDaycare has to offer.\lI know it like the back of my paw!\pIf you need guidance on where a\ncertain Pokémon might be,\lI'm your Pokémon!\pAlthough I won't do it for free...\pBring me Lucky Eggs, and I'll tell\nyou what I know.", MSGBOX_NPC)
+	msgbox("Hiya!\pI'm Riolu!\pI've visited every biome the\nDaycare has to offer.\lI know it like the back of my paw!\pIf you need guidance on where a\ncertain Pokémon might be,\lI'm your Pokémon!\pAlthough I won't do it for free...\pBring me Lucky Eggs, and I'll tell\nyou what I know.", MSGBOX_DEFAULT)
     setflag(FLAG_RIOLU_INTRO)
     waitmessage
     removefieldmugshot

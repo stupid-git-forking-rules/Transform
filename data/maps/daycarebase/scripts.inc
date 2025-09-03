@@ -1596,7 +1596,7 @@ ScytherDialog_Text_0:
 
 ScytherDialog_Text_1:
 # 437 "data/maps/daycarebase/scripts.pory"
-	.string "One in every fifty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...$"
+	.string "One in every thirty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...$"
 
 RioluDialog_Text_0:
 # 451 "data/maps/daycarebase/scripts.pory"
