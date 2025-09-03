@@ -1075,6 +1075,13 @@ static bool8 CanStopSurfing(s16 x, s16 y, u8 direction)
 
 static bool8 CanStartSwimming(s16 x, s16 y, u8 direction, u8 metatileBehavior)
 {
+    // Check player's current elevation
+    if (MapGridGetElevationAt(gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x, gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y) != 3)
+    {
+        return FALSE;
+    }
+    
+    // Original checks
     if ((VarGet(VAR_TRANSFORM_MON) == SPECIES_MARILL) 
         && MetatileBehavior_IsSurfableAndNotWaterfall(metatileBehavior)
         && GetObjectEventIdByPosition(x, y, 3) == OBJECT_EVENTS_COUNT
