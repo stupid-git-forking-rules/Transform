@@ -6,7 +6,7 @@ script KrabbyDialog {
     faceplayer
     speakername("Krabby")
     createfieldmugshot(MUGSHOT_KRABBY, EMOTE_NORMAL)
-    msgbox("I love it here at the Daycare!\pI don't have to battle anyone that\nI don't want to!\pAlthough some Pokémon see it\ndifferently...", MSGBOX_DEFAULT)
+    msgbox("I love it here at the Daycare!\pI don't have to battle anyone that\nI don't want to!\pAlthough some Pokémon see it\ndifferently...", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release
@@ -64,13 +64,13 @@ script ShellosEastDialog{
     {
         speakername("Shellos")
         createfieldmugshot(MUGSHOT_SHELLOS, EMOTE_HAPPY)
-        msgbox("Wow a Marill!\pGastrodon told me about a cave\nwith a powerful flying Pokémon at\lthe top of the waterfall.\pMaybe you can reach it!\n", MSGBOX_DEFAULT)
+        msgbox("Wow a Marill!\pGastrodon told me about a cave\nwith a powerful flying Pokémon at\lthe top of the waterfall.\pMaybe you can reach it!\n", MSGBOX_NPC)
         waitmessage
     }
     elif(var(VAR_TRANSFORM_MON) == SPECIES_CHINCHOU)
     {
         speakername("Shellos")
-        msgbox("Wow a Chinchou!\pGastrodon told me about a reef\nunder the sea.\pMaybe you can reach it!\n", MSGBOX_DEFAULT)
+        msgbox("Wow a Chinchou!\pGastrodon told me about a reef\nunder the sea.\pMaybe you can reach it!\n", MSGBOX_NPC)
         createfieldmugshot(MUGSHOT_SHELLOS, EMOTE_HAPPY)
         waitmessage
     }
@@ -78,7 +78,7 @@ script ShellosEastDialog{
     {
         speakername("Shellos")
         createfieldmugshot(MUGSHOT_SHELLOS, EMOTE_NORMAL)
-        msgbox("You seem nice and all...\nbut Gastrodon told me to only\ltalk to Water_types.", MSGBOX_DEFAULT)
+        msgbox("You seem nice and all...\nbut Gastrodon told me to only\ltalk to Water_types.", MSGBOX_NPC)
         waitmessage
     }
     release

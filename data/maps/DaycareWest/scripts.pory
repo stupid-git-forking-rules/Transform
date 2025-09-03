@@ -146,7 +146,7 @@ script SurskitDialog{
     faceplayer
     speakername("Surskit")
     createfieldmugshot(MUGSHOT_SURSKIT, EMOTE_HAPPY)
-    msgbox("I'm not sure when my trainer is\ncoming back, but I don't mind!\pThe pondskipping here is radical!\n", MSGBOX_DEFAULT)
+    msgbox("I'm not sure when my trainer is\ncoming back, but I don't mind!\pThe pondskipping here is radical!\n", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release
@@ -158,7 +158,7 @@ script MasquerainDialog{
     faceplayer
     speakername("Masquerain")
     createfieldmugshot(MUGSHOT_MASQUERAIN, EMOTE_NORMAL)
-    msgbox("Bro!\pI wish my trainer didn't evolve me\nbefore dropping me off.\pSurskit has been skipping up the\npond and I'm mad jealous.", MSGBOX_DEFAULT)
+    msgbox("Bro!\pI wish my trainer didn't evolve me\nbefore dropping me off.\pSurskit has been skipping up the\npond and I'm mad jealous.", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release

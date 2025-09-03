@@ -346,7 +346,7 @@ script VaporeonDialog{
     faceplayer
     speakername("Vaporeon")
     createfieldmugshot(MUGSHOT_VAPOREON, EMOTE_ANGRY)
-    msgbox("Ugh!\pWhy does everyone keep asking me\nto help them search for Eggs?\pCan't you see I'm busy?\n", MSGBOX_DEFAULT)   
+    msgbox("Ugh!\pWhy does everyone keep asking me\nto help them search for Eggs?\pCan't you see I'm busy?\n", MSGBOX_NPC)   
     waitmessage
     removefieldmugshot
     release
@@ -398,7 +398,7 @@ script BulbsaurDialog{
     faceplayer
     speakername("Bulbasaur")
     createfieldmugshot(MUGSHOT_BULBASAUR, EMOTE_NORMAL)
-	msgbox("You want to know where Eggs\ncome from?\pI heard that a Pokémon needs\nto go on a great adventure to\lmeet a shapeshifting Pokémon.\pIf you can best them, they will\ngive you an egg!\pAt least, that's what Venusaur\ntold me...", MSGBOX_DEFAULT)
+	msgbox("You want to know where Eggs\ncome from?\pI heard that a Pokémon needs\nto go on a great adventure to\lmeet a shapeshifting Pokémon.\pIf you can best them, they will\ngive you an egg!\pAt least, that's what Venusaur\ntold me...", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release
@@ -410,7 +410,7 @@ script CombeeDialog{
     faceplayer
     speakername("Combee")
     createfieldmugshot(MUGSHOT_COMBEE, EMOTE_NORMAL)
-	msgbox("I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nEXP here is nothing more\lthan a big ole myth!", MSGBOX_DEFAULT)
+	msgbox("I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nEXP here is nothing more\lthan a big ole myth!", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release
@@ -422,7 +422,7 @@ script Porygon2Dialog{
     faceplayer
     speakername("Porygon2")
     createfieldmugshot(MUGSHOT_PORYGON2, EMOTE_NORMAL)
-	msgbox("Another Ditto...\pI'm actually a Ditto too,\nI just prefer this look.\pThe Daycare population must be at\nleast 75 percent Dittos!\pMost Dittos will take on different\nforms.\pYou won't be able to transform\ninto a form that another Ditto has\ltaken on though.", MSGBOX_DEFAULT)
+	msgbox("Another Ditto...\pI'm actually a Ditto too,\nI just prefer this look.\pThe Daycare population must be at\nleast 75 percent Dittos!\pMost Dittos will take on different\nforms.\pYou won't be able to transform\ninto a form that another Ditto has\ltaken on though.", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release

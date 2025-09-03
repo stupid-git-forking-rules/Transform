@@ -130,7 +130,7 @@ SprigatitoDialog::
 # 119 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_SPRIGATITO, EMOTE_NORMAL
 # 120 "data/maps/DaycarePond/scripts.pory"
-	msgbox SprigatitoDialog_Text_2, MSGBOX_NPC
+	msgbox SprigatitoDialog_Text_2, MSGBOX_DEFAULT
 # 121 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 122 "data/maps/DaycarePond/scripts.pory"
@@ -152,7 +152,7 @@ SprigatitoDialog_1:
 # 92 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_SPRIGATITO, EMOTE_NORMAL
 # 93 "data/maps/DaycarePond/scripts.pory"
-	msgbox SprigatitoDialog_Text_2, MSGBOX_NPC
+	msgbox SprigatitoDialog_Text_2, MSGBOX_DEFAULT
 # 94 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 95 "data/maps/DaycarePond/scripts.pory"
@@ -171,7 +171,7 @@ SprigatitoDialog_4:
 # 78 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_SPRIGATITO, EMOTE_ELATED
 # 79 "data/maps/DaycarePond/scripts.pory"
-	msgbox SprigatitoDialog_Text_1, MSGBOX_NPC
+	msgbox SprigatitoDialog_Text_1, MSGBOX_DEFAULT
 # 80 "data/maps/DaycarePond/scripts.pory"
 	giveitem ITEM_LUCKY_EGG
 # 81 "data/maps/DaycarePond/scripts.pory"
@@ -194,7 +194,7 @@ SprigatitoDialog_7:
 # 107 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_SPRIGATITO, EMOTE_ELATED
 # 108 "data/maps/DaycarePond/scripts.pory"
-	msgbox SprigatitoDialog_Text_3, MSGBOX_NPC
+	msgbox SprigatitoDialog_Text_3, MSGBOX_DEFAULT
 # 109 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 110 "data/maps/DaycarePond/scripts.pory"
