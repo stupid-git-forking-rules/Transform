@@ -445,3 +445,61 @@ void StartMarillSurf(void)
     CreateTask(Task_StartJump, 0xFF);
     CreateTask(Task_MarillSurfSequence2, 0xFF);
 }
+
+// egg counting
+// these flags are not in a contiguous block.
+static const u16 sMiscellaneousFlags[] = {
+    FLAG_TRAPINCH_EGG,
+    FLAG_SPRIGATITO_EGG,
+    FLAG_HIDE_EISCUE,
+    FLAG_GENGAR_EGG,
+    FLAG_STUNFISK_EGG,
+    FLAG_HIDE_RUFFLET
+};
+
+u16 CountFlagsInRange(u16 start_flag, u16 end_flag)
+{
+    u16 i;
+    u16 count = 0;
+    for (i = start_flag; i <= end_flag; i++)
+    {
+        if (FlagGet(i))
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+u16 CountSpecificFlags(const u16* flagArray, u16 numFlags)
+{
+    u16 i;
+    u16 count = 0;
+    for (i = 0; i < numFlags; i++)
+    {
+        if (FlagGet(flagArray[i]))
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+u16 CountMyItemsAndEvents(void)
+{
+    u16 count = 0;
+
+    // Count the contiguous flags
+    count += CountFlagsInRange(FLAG_ITEM_DAYCARE_BASE1, FLAG_ITEM_DAYCARE_MCD2);
+
+    // Count misc flags
+    count += CountSpecificFlags(sMiscellaneousFlags, ARRAY_COUNT(sMiscellaneousFlags));
+
+    // Clitwick gives 2 eggs
+    if (FlagGet(FLAG_LITWICK_EGG))
+    {
+        count += 2;
+    }
+
+    return count;
+}

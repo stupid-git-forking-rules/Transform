@@ -24,6 +24,7 @@
 #include "config/overworld.h"
 #include "field_mugshot.h"
 #include "constants/songs.h"
+#include "transform.h"
 
 struct MenuInfoIcon
 {
@@ -2186,6 +2187,10 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
             *string = flagCount + CHAR_0;
             *endOfString = EOS;
             break;
+        case SAVE_MENU_EGGS: // Add this new case
+            string = ConvertIntToDecimalStringN(string, CountMyItemsAndEvents(), STR_CONV_MODE_LEFT_ALIGN, 4);
+            *string = EOS;
+            break;    
     }
 }
 

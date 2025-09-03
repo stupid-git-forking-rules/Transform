@@ -1148,6 +1148,7 @@ const u8 gText_SavingPlayer[] = _("PLAYER");
 const u8 gText_SavingBadges[] = _("BADGES");
 const u8 gText_SavingPokedex[] = _("XFORMS");
 const u8 gText_SavingTime[] = _("TIME");
+const u8 gText_SavingEggs[] = _("LUCKY EGGS");
 const u8 gText_WirelessCommStatus[] = _("Wireless Communication Status");
 const u8 gText_PeopleTrading[] = _("People trading:");
 const u8 gText_PeopleBattling[] = _("People battling:");

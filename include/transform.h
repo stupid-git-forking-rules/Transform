@@ -44,4 +44,9 @@ struct Transformation
 };
 
 
+u16 CountMyItemsAndEvents(void);
+u16 CountFlagsInRange(u16 start_flag, u16 end_flag);
+u16 CountSpecificFlags(const u16* flagArray, u16 numFlags);
+
+
 #endif // GUARD_TRANSFORM_H

@@ -57,6 +57,7 @@
 #include "event_object_movement.h"
 #include "gba/isagbprint.h"
 #include "party_menu.h"
+#include "transform.h"
 
 /* ENUMs */
 enum MenuOption 
@@ -1445,8 +1446,9 @@ static void ShowSaveInfoWindow(void)
     u8 color;
     u32 xOffset;
     u32 yOffset;
+    u16 eggCount;
 
-    if (FlagGet(FLAG_SYS_POKEDEX_GET))
+    if (!FlagGet(FLAG_SYS_POKEDEX_GET))
         saveInfoWindow.height -= 2;
     
     sSaveInfoWindowId = AddWindow(&saveInfoWindow);
@@ -1477,6 +1479,9 @@ static void ShowSaveInfoWindow(void)
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 */
+
+
+
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
     {
         // Print pokedex count
@@ -1486,6 +1491,13 @@ static void ShowSaveInfoWindow(void)
         xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
         AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
     }
+
+    // print Egg count
+    yOffset += 16;
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingEggs, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    BufferSaveMenuText(SAVE_MENU_EGGS, gStringVar4, color);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
 
     // Print play time
     yOffset += 16;

@@ -672,7 +672,7 @@
 #define FLAG_TRANS_MACHAMP  0x271 // Transform Machamp flag, means player has obtained Machamp transformation
 #define FLAG_TRANS_CHINCHOU 0x272 // Transform Chinchou flag, means player has obtained Chinchou transformation
 #define FLAG_OLDMAN_INTRO  0x273 // used in intro for old man introducing daycare expectations
-#define FLAG_EGG_OBTAINED  0x274 // used to beat the game, showing the old man you have obtained the egg, he will reward you with 1 level.
+#define FLAG_EGG_OBTAINED  0x274 // unused
 #define FLAG_RIOLU_INTRO  0x275 // USED for riolus intro, which introduces that it will be your guide for the game.
 #define FLAG_HIDE_RUFFLET  0x276 // hides Rufflet
 #define FLAG_XFORMS_TALKED_TO_DITTO  0x277 // talk to ditto the first time about xforms

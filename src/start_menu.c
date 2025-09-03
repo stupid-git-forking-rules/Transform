@@ -49,6 +49,7 @@
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "transform.h"
 
 // Menu actions
 enum
@@ -1392,6 +1393,7 @@ static void ShowSaveInfoWindow(void)
     u8 color;
     u32 xOffset;
     u32 yOffset;
+    u16 eggCount;
 
     if (!FlagGet(FLAG_SYS_POKEDEX_GET))
     {
@@ -1420,6 +1422,15 @@ static void ShowSaveInfoWindow(void)
     BufferSaveMenuText(SAVE_MENU_NAME, gStringVar4, color);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     PrintPlayerNameOnWindow(sSaveInfoWindowId, gStringVar4, xOffset, yOffset);
+
+    // print Egg count
+    yOffset += 16;
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingEggs, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    eggCount = CountMyItemsAndEvents();
+    ConvertIntToDecimalStringN(gStringVar4, eggCount, STR_CONV_MODE_LEFT_ALIGN, 4);
+    xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
+    AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
+
 
     // Print badge count
     yOffset += 16;

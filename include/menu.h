@@ -37,6 +37,7 @@ enum
     SAVE_MENU_PLAY_TIME,
     SAVE_MENU_LOCATION,
     SAVE_MENU_BADGES,
+    SAVE_MENU_EGGS,
 };
 
 struct MenuAction
