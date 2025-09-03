@@ -526,7 +526,7 @@ HuntailInCaveTrigger_14:
 # 276 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	createfieldmugshot MUGSHOT_HUNTAIL, EMOTE_NORMAL
 # 277 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	msgbox HuntailInCaveTrigger_Text_0, MSGBOX_DEFAULT
+	msgbox HuntailInCave_Text_3, MSGBOX_DEFAULT
 # 278 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	setflag FLAG_HUNTAIL_BATTLE
 # 279 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
@@ -635,7 +635,3 @@ HuntailInCave_Text_2:
 HuntailInCave_Text_3:
 # 178 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
 	.string "I prefer the the seafloor to be\ndark.$"
-
-HuntailInCaveTrigger_Text_0:
-# 277 "data/maps/DaycareMountainCaveDeepDive/scripts.pory"
-	.string "\pI prefer the the seafloor to be\ndark.$"

@@ -12,7 +12,7 @@ GastlyDialog::
 # 9 "data/maps/DaycareNoivernCave/scripts.pory"
 	createfieldmugshot MUGSHOT_GASTLY, EMOTE_NORMAL
 # 10 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox GastlyDialog_Text_1, MSGBOX_DEFAULT
+	msgbox GastlyDialog_Text_1, MSGBOX_NPC
 # 11 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmessage
 # 12 "data/maps/DaycareNoivernCave/scripts.pory"
@@ -38,7 +38,7 @@ HaunterDialog::
 # 24 "data/maps/DaycareNoivernCave/scripts.pory"
 	createfieldmugshot MUGSHOT_HAUNTER, EMOTE_NORMAL
 # 25 "data/maps/DaycareNoivernCave/scripts.pory"
-	msgbox HaunterDialog_Text_1, MSGBOX_DEFAULT
+	msgbox HaunterDialog_Text_1, MSGBOX_NPC
 # 26 "data/maps/DaycareNoivernCave/scripts.pory"
 	waitmessage
 # 27 "data/maps/DaycareNoivernCave/scripts.pory"

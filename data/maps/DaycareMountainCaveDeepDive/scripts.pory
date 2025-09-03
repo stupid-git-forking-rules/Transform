@@ -274,7 +274,7 @@ script HuntailInCaveTrigger{
             {
                 speakername("Huntail")
                 createfieldmugshot(MUGSHOT_HUNTAIL, EMOTE_NORMAL)
-                msgbox("\pI prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
+                msgbox("I prefer the the seafloor to be\ndark.", MSGBOX_DEFAULT)
                 setflag(FLAG_HUNTAIL_BATTLE)
                 waitmessage
                 removefieldmugshot

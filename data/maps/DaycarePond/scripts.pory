@@ -59,7 +59,7 @@ script PsyduckDialog{
     faceplayer
     speakername("Psyduck")
     createfieldmugshot(MUGSHOT_PSYDUCK, EMOTE_NORMAL)
-    msgbox("I came to the lake to try to ease\nthis headache...\pIt's the most peaceful biome at\nthe daycare.", MSGBOX_DEFAULT)
+    msgbox("I came to the lake to try to ease\nthis headache...\pIt's the most peaceful biome at\nthe daycare.", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release
@@ -76,7 +76,7 @@ script SprigatitoDialog{
             faceplayer
             speakername("Sprigatito")
             createfieldmugshot(MUGSHOT_SPRIGATITO, EMOTE_ELATED)
-            msgbox("A Grass_type!\pDon't see many around the lake\nhere.\pPlease take this Egg I found.\n", MSGBOX_DEFAULT)
+            msgbox("A Grass_type!\pDon't see many around the lake\nhere.\pPlease take this Egg I found.\n", MSGBOX_NPC)
             giveitem(ITEM_LUCKY_EGG)
             setflag(FLAG_SPRIGATITO_EGG)
             waitmessage
@@ -90,7 +90,7 @@ script SprigatitoDialog{
             faceplayer
             speakername("Sprigatito")
             createfieldmugshot(MUGSHOT_SPRIGATITO, EMOTE_NORMAL)
-            msgbox("I love it here by the water but\nI hardly see any other\lGrass_types...", MSGBOX_DEFAULT)
+            msgbox("I love it here by the water but\nI hardly see any other\lGrass_types...", MSGBOX_NPC)
             waitmessage
             removefieldmugshot
             release
@@ -105,7 +105,7 @@ script SprigatitoDialog{
             faceplayer
             speakername("Sprigatito")
             createfieldmugshot(MUGSHOT_SPRIGATITO, EMOTE_ELATED)
-            msgbox("A Grass_type!\pDon't see many around the lake\nhere.", MSGBOX_DEFAULT)
+            msgbox("A Grass_type!\pDon't see many around the lake\nhere.", MSGBOX_NPC)
             waitmessage
             removefieldmugshot
             release
@@ -117,7 +117,7 @@ script SprigatitoDialog{
             faceplayer
             speakername("Sprigatito")
             createfieldmugshot(MUGSHOT_SPRIGATITO, EMOTE_NORMAL)
-            msgbox("I love it here by the water but\nI hardly see any other\lGrass_types...", MSGBOX_DEFAULT)
+            msgbox("I love it here by the water but\nI hardly see any other\lGrass_types...", MSGBOX_NPC)
             waitmessage
             removefieldmugshot
             release
@@ -132,7 +132,7 @@ script MudkipDialog{
     faceplayer
     speakername("Mudkip")
     createfieldmugshot(MUGSHOT_MUDKIP, EMOTE_ANGRY)
-    msgbox("I hope my trainer comes back\nsoon...\pI miss them.\pI'm supposed to be their first\npartner Pokémon.", MSGBOX_DEFAULT)
+    msgbox("I hope my trainer comes back\nsoon...\pI miss them.\pI'm supposed to be their first\npartner Pokémon.", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release
@@ -144,7 +144,7 @@ script SeakingDialog{
     faceplayer
     speakername("Seaking")
     createfieldmugshot(MUGSHOT_SEAKING, EMOTE_NORMAL)
-    msgbox("Everyone talks about how\ncool Vaporeon is.\pSeakings deserve attention too...\n", MSGBOX_DEFAULT)
+    msgbox("Everyone talks about how\ncool Vaporeon is.\pSeakings deserve attention too...\n", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release
@@ -157,7 +157,7 @@ script QuagsireDialog{
     faceplayer
     speakername("Quagsire")
     createfieldmugshot(MUGSHOT_QUAGSIRE, EMOTE_HAPPY)
-    msgbox("The Lake here is so calm.\pDragonair makes sure that we\nkeep the peace here.\pShe believes keeping it mellow\nis the key to EXP.", MSGBOX_DEFAULT)
+    msgbox("The Lake here is so calm.\pDragonair makes sure that we\nkeep the peace here.\pShe believes keeping it mellow\nis the key to EXP.", MSGBOX_NPC)
     waitmessage
     removefieldmugshot
     release

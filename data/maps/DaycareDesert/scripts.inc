@@ -208,7 +208,7 @@ VibravaDialog::
 # 130 "data/maps/DaycareDesert/scripts.pory"
 	createfieldmugshot MUGSHOT_VIBRAVA, EMOTE_NORMAL
 # 131 "data/maps/DaycareDesert/scripts.pory"
-	msgbox VibravaDialog_Text_1, MSGBOX_DEFAULT
+	msgbox VibravaDialog_Text_1, MSGBOX_NPC
 # 132 "data/maps/DaycareDesert/scripts.pory"
 	waitmessage
 # 133 "data/maps/DaycareDesert/scripts.pory"

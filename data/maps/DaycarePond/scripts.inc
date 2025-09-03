@@ -105,7 +105,7 @@ PsyduckDialog::
 # 61 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_PSYDUCK, EMOTE_NORMAL
 # 62 "data/maps/DaycarePond/scripts.pory"
-	msgbox PsyduckDialog_Text_1, MSGBOX_DEFAULT
+	msgbox PsyduckDialog_Text_1, MSGBOX_NPC
 # 63 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 64 "data/maps/DaycarePond/scripts.pory"
@@ -130,7 +130,7 @@ SprigatitoDialog::
 # 119 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_SPRIGATITO, EMOTE_NORMAL
 # 120 "data/maps/DaycarePond/scripts.pory"
-	msgbox SprigatitoDialog_Text_2, MSGBOX_DEFAULT
+	msgbox SprigatitoDialog_Text_2, MSGBOX_NPC
 # 121 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 122 "data/maps/DaycarePond/scripts.pory"
@@ -152,7 +152,7 @@ SprigatitoDialog_1:
 # 92 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_SPRIGATITO, EMOTE_NORMAL
 # 93 "data/maps/DaycarePond/scripts.pory"
-	msgbox SprigatitoDialog_Text_2, MSGBOX_DEFAULT
+	msgbox SprigatitoDialog_Text_2, MSGBOX_NPC
 # 94 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 95 "data/maps/DaycarePond/scripts.pory"
@@ -171,7 +171,7 @@ SprigatitoDialog_4:
 # 78 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_SPRIGATITO, EMOTE_ELATED
 # 79 "data/maps/DaycarePond/scripts.pory"
-	msgbox SprigatitoDialog_Text_1, MSGBOX_DEFAULT
+	msgbox SprigatitoDialog_Text_1, MSGBOX_NPC
 # 80 "data/maps/DaycarePond/scripts.pory"
 	giveitem ITEM_LUCKY_EGG
 # 81 "data/maps/DaycarePond/scripts.pory"
@@ -194,7 +194,7 @@ SprigatitoDialog_7:
 # 107 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_SPRIGATITO, EMOTE_ELATED
 # 108 "data/maps/DaycarePond/scripts.pory"
-	msgbox SprigatitoDialog_Text_3, MSGBOX_DEFAULT
+	msgbox SprigatitoDialog_Text_3, MSGBOX_NPC
 # 109 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 110 "data/maps/DaycarePond/scripts.pory"
@@ -214,7 +214,7 @@ MudkipDialog::
 # 134 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_MUDKIP, EMOTE_ANGRY
 # 135 "data/maps/DaycarePond/scripts.pory"
-	msgbox MudkipDialog_Text_1, MSGBOX_DEFAULT
+	msgbox MudkipDialog_Text_1, MSGBOX_NPC
 # 136 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 137 "data/maps/DaycarePond/scripts.pory"
@@ -234,7 +234,7 @@ SeakingDialog::
 # 146 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_SEAKING, EMOTE_NORMAL
 # 147 "data/maps/DaycarePond/scripts.pory"
-	msgbox SeakingDialog_Text_1, MSGBOX_DEFAULT
+	msgbox SeakingDialog_Text_1, MSGBOX_NPC
 # 148 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 149 "data/maps/DaycarePond/scripts.pory"
@@ -254,7 +254,7 @@ QuagsireDialog::
 # 159 "data/maps/DaycarePond/scripts.pory"
 	createfieldmugshot MUGSHOT_QUAGSIRE, EMOTE_HAPPY
 # 160 "data/maps/DaycarePond/scripts.pory"
-	msgbox QuagsireDialog_Text_1, MSGBOX_DEFAULT
+	msgbox QuagsireDialog_Text_1, MSGBOX_NPC
 # 161 "data/maps/DaycarePond/scripts.pory"
 	waitmessage
 # 162 "data/maps/DaycarePond/scripts.pory"

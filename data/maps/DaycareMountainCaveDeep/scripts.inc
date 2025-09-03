@@ -238,21 +238,21 @@ DaycareMCDDittoOpenXforms::
 	faceplayer
 # 145 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	goto_if_set FLAG_DITTO_INTRO, DaycareMCDDittoOpenXforms_1
-# 206 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	speakername DaycareMCDDittoOpenXforms_Text_0
 # 207 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	speakername DaycareMCDDittoOpenXforms_Text_1
+# 208 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 208 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox DaycareMCDDittoOpenXforms_Text_4, MSGBOX_DEFAULT
-# 208 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	waitmessage
 # 209 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	setflag FLAG_DITTO_INTRO
-# 210 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox DaycareMCDDittoOpenXforms_Text_4, MSGBOX_DEFAULT
+# 209 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	waitmessage
+# 210 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	setflag FLAG_DITTO_INTRO
 # 211 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	removefieldmugshot
+	waitmessage
 # 212 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	removefieldmugshot
+# 213 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	release
 	end
 
@@ -260,7 +260,7 @@ DaycareMCDDittoOpenXforms_1:
 # 147 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareMCDDittoOpenXforms_4
 # 174 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	speakername DaycareMCDDittoOpenXforms_Text_0
+	speakername DaycareMCDDittoOpenXforms_Text_1
 # 175 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 176 "data/maps/DaycareMountainCaveDeep/scripts.pory"
@@ -270,36 +270,42 @@ DaycareMCDDittoOpenXforms_1:
 # 177 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	setflag FLAG_XFORMS_TALKED_TO_DITTO
 # 178 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	removefieldmugshot
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 179 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox DaycareMCDDittoOpenXforms_Text_1, MSGBOX_YESNO
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 180 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	removefieldmugshot
+# 181 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	msgbox DaycareMCDDittoOpenXforms_Text_0, MSGBOX_YESNO
+# 182 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareMCDDittoOpenXforms_10
 # 192 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+	speakername DaycareMCDDittoOpenXforms_Text_1
 # 193 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox DaycareMCDDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 194 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	msgbox DaycareMCDDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
 # 195 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 196 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	waitmessage
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 197 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	removefieldmugshot
+	waitmessage
 # 198 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	removefieldmugshot
+# 199 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	release
 	end
 
 DaycareMCDDittoOpenXforms_4:
 # 149 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	speakername DaycareMCDDittoOpenXforms_Text_0
+	msgbox DaycareMCDDittoOpenXforms_Text_0, MSGBOX_YESNO
 # 150 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	msgbox DaycareMCDDittoOpenXforms_Text_1, MSGBOX_YESNO
-# 151 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareMCDDittoOpenXforms_7
+# 162 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	speakername DaycareMCDDittoOpenXforms_Text_1
 # 163 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 164 "data/maps/DaycareMountainCaveDeep/scripts.pory"
@@ -317,31 +323,27 @@ DaycareMCDDittoOpenXforms_4:
 	end
 
 DaycareMCDDittoOpenXforms_7:
-# 153 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 152 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	dittotransform SPECIES_DITTO
-# 154 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 153 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	special OpenPCMoveMons
-# 155 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 154 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	waitstate
-# 156 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 155 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 157 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 156 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 158 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 157 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	release
 	end
 
 DaycareMCDDittoOpenXforms_10:
-# 182 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	dittotransform SPECIES_DITTO
-# 183 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	special OpenPCMoveMons
 # 184 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	waitstate
+	dittotransform SPECIES_DITTO
 # 185 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	special OpenPCMoveMons
 # 186 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	waitstate
 # 187 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	release
 	end
@@ -403,11 +405,11 @@ AlolanSandshrewDialog_Text_1:
 
 DaycareMCDDittoOpenXforms_Text_0:
 # 149 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	.string "Ditto$"
+	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareMCDDittoOpenXforms_Text_1:
-# 150 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	.string "Would you like to change out your\ntransformation options?$"
+# 162 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+	.string "Ditto$"
 
 DaycareMCDDittoOpenXforms_Text_2:
 # 164 "data/maps/DaycareMountainCaveDeep/scripts.pory"
@@ -418,5 +420,5 @@ DaycareMCDDittoOpenXforms_Text_3:
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"
 
 DaycareMCDDittoOpenXforms_Text_4:
-# 208 "data/maps/DaycareMountainCaveDeep/scripts.pory"
+# 209 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 	.string "Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!$"

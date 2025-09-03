@@ -160,7 +160,6 @@ script DaycareTreehouseDittoOpenXforms{
     {
         if (flag(FLAG_XFORMS_TALKED_TO_DITTO))
         {
-        speakername("Ditto")
         msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES)
         {  
@@ -174,6 +173,7 @@ script DaycareTreehouseDittoOpenXforms{
         }
         else
         {
+            speakername("Ditto")
             createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
             msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
             waitmessage
@@ -189,6 +189,8 @@ script DaycareTreehouseDittoOpenXforms{
             createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
             msgbox("Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n", MSGBOX_DEFAULT)        waitmessage
             setflag(FLAG_XFORMS_TALKED_TO_DITTO)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             removefieldmugshot
             msgbox("Would you like to change out your\ntransformation options?", MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
@@ -196,13 +198,12 @@ script DaycareTreehouseDittoOpenXforms{
                 dittotransform(SPECIES_DITTO)
                 special(OpenPCMoveMons)
                 waitstate
-                setflag(FLAG_SUPPRESS_SPEAKER_NAME)
-                clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 release
                 end
             }
             else
             {
+                speakername("Ditto")
                 createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
                 msgbox("Come back anytime!", MSGBOX_AUTOCLOSE)
                 setflag(FLAG_SUPPRESS_SPEAKER_NAME)

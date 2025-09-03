@@ -273,21 +273,21 @@ DaycareTreehouseDittoOpenXforms::
 	faceplayer
 # 159 "data/maps/DaycareTreehouse/scripts.pory"
 	goto_if_set FLAG_DITTO_INTRO, DaycareTreehouseDittoOpenXforms_1
-# 220 "data/maps/DaycareTreehouse/scripts.pory"
-	speakername DaycareTreehouseDittoOpenXforms_Text_0
 # 221 "data/maps/DaycareTreehouse/scripts.pory"
+	speakername DaycareTreehouseDittoOpenXforms_Text_1
+# 222 "data/maps/DaycareTreehouse/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 222 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox DaycareTreehouseDittoOpenXforms_Text_4, MSGBOX_DEFAULT
-# 222 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmessage
 # 223 "data/maps/DaycareTreehouse/scripts.pory"
-	setflag FLAG_DITTO_INTRO
-# 224 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox DaycareTreehouseDittoOpenXforms_Text_4, MSGBOX_DEFAULT
+# 223 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmessage
+# 224 "data/maps/DaycareTreehouse/scripts.pory"
+	setflag FLAG_DITTO_INTRO
 # 225 "data/maps/DaycareTreehouse/scripts.pory"
-	removefieldmugshot
+	waitmessage
 # 226 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 227 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
@@ -295,7 +295,7 @@ DaycareTreehouseDittoOpenXforms_1:
 # 161 "data/maps/DaycareTreehouse/scripts.pory"
 	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareTreehouseDittoOpenXforms_4
 # 188 "data/maps/DaycareTreehouse/scripts.pory"
-	speakername DaycareTreehouseDittoOpenXforms_Text_0
+	speakername DaycareTreehouseDittoOpenXforms_Text_1
 # 189 "data/maps/DaycareTreehouse/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 190 "data/maps/DaycareTreehouse/scripts.pory"
@@ -305,36 +305,42 @@ DaycareTreehouseDittoOpenXforms_1:
 # 191 "data/maps/DaycareTreehouse/scripts.pory"
 	setflag FLAG_XFORMS_TALKED_TO_DITTO
 # 192 "data/maps/DaycareTreehouse/scripts.pory"
-	removefieldmugshot
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 193 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox DaycareTreehouseDittoOpenXforms_Text_1, MSGBOX_YESNO
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 194 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 195 "data/maps/DaycareTreehouse/scripts.pory"
+	msgbox DaycareTreehouseDittoOpenXforms_Text_0, MSGBOX_YESNO
+# 196 "data/maps/DaycareTreehouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareTreehouseDittoOpenXforms_10
 # 206 "data/maps/DaycareTreehouse/scripts.pory"
-	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+	speakername DaycareTreehouseDittoOpenXforms_Text_1
 # 207 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox DaycareTreehouseDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 208 "data/maps/DaycareTreehouse/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	msgbox DaycareTreehouseDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
 # 209 "data/maps/DaycareTreehouse/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 210 "data/maps/DaycareTreehouse/scripts.pory"
-	waitmessage
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 211 "data/maps/DaycareTreehouse/scripts.pory"
-	removefieldmugshot
+	waitmessage
 # 212 "data/maps/DaycareTreehouse/scripts.pory"
+	removefieldmugshot
+# 213 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 DaycareTreehouseDittoOpenXforms_4:
 # 163 "data/maps/DaycareTreehouse/scripts.pory"
-	speakername DaycareTreehouseDittoOpenXforms_Text_0
+	msgbox DaycareTreehouseDittoOpenXforms_Text_0, MSGBOX_YESNO
 # 164 "data/maps/DaycareTreehouse/scripts.pory"
-	msgbox DaycareTreehouseDittoOpenXforms_Text_1, MSGBOX_YESNO
-# 165 "data/maps/DaycareTreehouse/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareTreehouseDittoOpenXforms_7
+# 176 "data/maps/DaycareTreehouse/scripts.pory"
+	speakername DaycareTreehouseDittoOpenXforms_Text_1
 # 177 "data/maps/DaycareTreehouse/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 178 "data/maps/DaycareTreehouse/scripts.pory"
@@ -352,31 +358,27 @@ DaycareTreehouseDittoOpenXforms_4:
 	end
 
 DaycareTreehouseDittoOpenXforms_7:
-# 167 "data/maps/DaycareTreehouse/scripts.pory"
+# 166 "data/maps/DaycareTreehouse/scripts.pory"
 	dittotransform SPECIES_DITTO
-# 168 "data/maps/DaycareTreehouse/scripts.pory"
+# 167 "data/maps/DaycareTreehouse/scripts.pory"
 	special OpenPCMoveMons
-# 169 "data/maps/DaycareTreehouse/scripts.pory"
+# 168 "data/maps/DaycareTreehouse/scripts.pory"
 	waitstate
-# 170 "data/maps/DaycareTreehouse/scripts.pory"
+# 169 "data/maps/DaycareTreehouse/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 171 "data/maps/DaycareTreehouse/scripts.pory"
+# 170 "data/maps/DaycareTreehouse/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 172 "data/maps/DaycareTreehouse/scripts.pory"
+# 171 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
 
 DaycareTreehouseDittoOpenXforms_10:
-# 196 "data/maps/DaycareTreehouse/scripts.pory"
-	dittotransform SPECIES_DITTO
-# 197 "data/maps/DaycareTreehouse/scripts.pory"
-	special OpenPCMoveMons
 # 198 "data/maps/DaycareTreehouse/scripts.pory"
-	waitstate
+	dittotransform SPECIES_DITTO
 # 199 "data/maps/DaycareTreehouse/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
+	special OpenPCMoveMons
 # 200 "data/maps/DaycareTreehouse/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	waitstate
 # 201 "data/maps/DaycareTreehouse/scripts.pory"
 	release
 	end
@@ -474,11 +476,11 @@ ChanseyDaycareTreehouseHeal_Text_5:
 
 DaycareTreehouseDittoOpenXforms_Text_0:
 # 163 "data/maps/DaycareTreehouse/scripts.pory"
-	.string "Ditto$"
+	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareTreehouseDittoOpenXforms_Text_1:
-# 164 "data/maps/DaycareTreehouse/scripts.pory"
-	.string "Would you like to change out your\ntransformation options?$"
+# 176 "data/maps/DaycareTreehouse/scripts.pory"
+	.string "Ditto$"
 
 DaycareTreehouseDittoOpenXforms_Text_2:
 # 178 "data/maps/DaycareTreehouse/scripts.pory"
@@ -489,5 +491,5 @@ DaycareTreehouseDittoOpenXforms_Text_3:
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"
 
 DaycareTreehouseDittoOpenXforms_Text_4:
-# 222 "data/maps/DaycareTreehouse/scripts.pory"
+# 223 "data/maps/DaycareTreehouse/scripts.pory"
 	.string "Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!$"
