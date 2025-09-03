@@ -575,6 +575,7 @@ script RioluDialog{
         }
         else
         {
+            lock
             speakername("Riolu")
             createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
             msgbox("No?\nCome back when you do!", MSGBOX_AUTOCLOSE)
