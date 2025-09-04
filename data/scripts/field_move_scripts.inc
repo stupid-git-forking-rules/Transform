@@ -1,8 +1,7 @@
 @ Interact with cuttable tree
 EventScript_CutTree::
 	lockall
-	//checkpartymove MOVE_CUT
-    checkpartylearnknowsfieldmove ITEM_HM01
+	checkpartymove MOVE_CUT
 	goto_if_unset FLAG_BADGE01_GET, EventScript_CheckTreeCantCut
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CheckTreeCantCut
 	setfieldeffectargument 0, VAR_RESULT
@@ -68,8 +67,7 @@ EventScript_UseRockSmash::
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
-	//checkpartymove MOVE_ROCK_SMASH
-    checkpartylearnknowsfieldmove ITEM_HM06
+	checkpartymove MOVE_ROCK_SMASH
 	goto_if_unset FLAG_BADGE03_GET, EventScript_CantSmashRock
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantSmashRock
 	setfieldeffectargument 0, VAR_RESULT
@@ -235,8 +233,7 @@ EventScript_StrengthBoulder::
 	lockall
 	goto_if_unset FLAG_BADGE04_GET, EventScript_CantStrength
 	goto_if_set FLAG_SYS_USE_STRENGTH, EventScript_CheckActivatedBoulder
-	//checkpartymove MOVE_STRENGTH
-    checkpartylearnknowsfieldmove ITEM_HM04
+	checkpartymove MOVE_STRENGTH
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantStrength
 	setfieldeffectargument 0, VAR_RESULT
 	msgbox Text_WantToStrength, MSGBOX_YESNO
@@ -301,8 +298,7 @@ Text_StrengthActivated:
 
 EventScript_UseWaterfall::
 	lockall
-	//checkpartymove MOVE_WATERFALL
-    checkpartylearnknowsfieldmove ITEM_HM07
+	checkpartymove MOVE_WATERFALL
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EventScript_CantWaterfall
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
@@ -339,8 +335,7 @@ Text_MonUsedWaterfall:
 
 EventScript_UseDive::
 	lockall
-	//checkpartymove MOVE_DIVE
-    checkpartylearnknowsfieldmove ITEM_HM08
+	checkpartymove MOVE_DIVE
 	goto_if_eq VAR_RESULT, FALSE, EventScript_CantDive
 	copyvar 0x8004 VAR_RESULT
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
@@ -367,8 +362,7 @@ EventScript_EndDive::
 
 EventScript_UseDiveUnderwater::
 	lockall
-	//checkpartymove MOVE_DIVE
-    checkpartylearnknowsfieldmove ITEM_HM08
+	checkpartymove MOVE_DIVE
 	goto_if_eq VAR_RESULT, FALSE, EventScript_CantSurface
 	bufferpartymonnick STR_VAR_1, VAR_RESULT
 	setfieldeffectargument 0, VAR_RESULT
