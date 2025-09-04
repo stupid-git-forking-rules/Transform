@@ -107,7 +107,6 @@ u32 CanUseCut(s16 x, s16 y)
 u32 UseCut(u32 fieldMoveStatus)
 {
     HideMapNamePopUpWindow();
-    LockPlayerAndLoadMon();
 #ifdef QOL_NO_MESSAGING
     FlagSet(FLAG_SYS_USE_CUT);
 #endif //QOL_NO_MESSAGING
@@ -223,7 +222,6 @@ u32 UseSurf(u32 fieldMoveStatus)
 {
 	HideMapNamePopUpWindow();
 	ForcePlayerToPerformMovementAction();
-	LockPlayerAndLoadMon();
 #ifdef QOL_NO_MESSAGING
 	FlagSet(FLAG_SYS_USE_SURF);
 #endif //QOL_NO_MESSAGING
@@ -271,7 +269,6 @@ u32 UseStrength(u32 fieldMoveStatus, u8 x, u8 y, u8 direction)
     FlagSet(FLAG_SYS_USE_STRENGTH);
 #endif
     HideMapNamePopUpWindow();
-    LockPlayerAndLoadMon();
 
     if (FlagGet(FLAG_SYS_USE_STRENGTH))
     {
@@ -335,7 +332,6 @@ u32 CanUseFlash(void)
 static void UseFlash(u32 fieldMoveStatus)
 {
     HideMapNamePopUpWindow();
-    LockPlayerAndLoadMon();
     SetUpFieldMove_UseFlash(fieldMoveStatus);
 }
 
@@ -364,7 +360,6 @@ u32 CanUseRockSmash(s16 x, s16 y)
 u32 UseRockSmash(u32 fieldMoveStatus)
 {
     HideMapNamePopUpWindow();
-    LockPlayerAndLoadMon();
 #ifdef QOL_NO_MESSAGING
     FlagSet(FLAG_SYS_USE_ROCK_SMASH);
 #endif //QOL_NO_MESSAGING
@@ -420,7 +415,6 @@ u32 CanUseWaterfallTool(void)
 u32 UseWaterfall(struct PlayerAvatar playerAvatar, u32 fieldMoveStatus)
 {
     HideMapNamePopUpWindow();
-    LockPlayerAndLoadMon();
 #ifdef QOL_NO_MESSAGING
     FlagSet(FLAG_SYS_USE_WATERFALL);
 #endif //QOL_NO_MESSAGING
