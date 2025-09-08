@@ -5,7 +5,7 @@ mapscripts DaycareBeachCave_MapScripts {
 script WiggletDialog{
     lock
     faceplayer
-    speakername("Wigglet")
+    speakername("Wiglett")
     createfieldmugshot(MUGSHOT_WIGGLET, EMOTE_NORMAL)
     msgbox("Pst!\nListen closely.\pYou're looking for an Egg, right?\pI've heard there's another\ntransforming Pokémon just like you\lwho holds the key to finding that\lEgg!", MSGBOX_DEFAULT)
     waitmessage
@@ -70,8 +70,8 @@ script ChinchouDialog{
         waitmessage
         clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
         speakername("Chinchou")
-        createfieldmugshot(MUGSHOT_CHINCHOU, EMOTE_HAPPY)
-        msgbox("Looking more electric already!\n", MSGBOX_AUTOCLOSE)
+        createfieldmugshot(MUGSHOT_CHINCHOU, EMOTE_ELATED)
+        msgbox("Wow!\pLooking more electric already!", MSGBOX_AUTOCLOSE)
         givemon(SPECIES_CHINCHOU, 25, move1=MOVE_THUNDER_WAVE, move2=MOVE_DISCHARGE, move3=MOVE_DIVE, move4=MOVE_DAZZLING_GLEAM)
         waitmessage
         removefieldmugshot

@@ -459,7 +459,8 @@ static const u16 sMiscellaneousFlags[] = {
     FLAG_HIDE_EISCUE,
     FLAG_GENGAR_EGG,
     FLAG_STUNFISK_EGG,
-    FLAG_HIDE_RUFFLET
+    FLAG_HIDE_RUFFLET,
+    FLAG_LITWICK_EGG
 };
 
 u16 CountFlagsInRange(u16 start_flag, u16 end_flag)
@@ -501,7 +502,7 @@ u16 CountMyItemsAndEvents(void)
     count += CountSpecificFlags(sMiscellaneousFlags, ARRAY_COUNT(sMiscellaneousFlags));
 
     // Clitwick gives 2 eggs
-    if (FlagGet(FLAG_LITWICK_EGG))
+    if (FlagGet(FLAG_FAM_TWO))
     {
         count += 2;
     }

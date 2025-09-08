@@ -263,10 +263,10 @@ script DaycareOldManDialog{
             waitmovement(Brendan)
             speakername("Daycare Man")
             msgbox("Ah, it's you!\pWe were raising your Pokémon\nand my goodness, were we surprised!\pYour Pokémon had an Egg!\pWe don't know how it got there,\nbut your Pokémon had it.\pYou do want it, yes?\n", MSGBOX_DEFAULT)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)           
+            delay(30)
+            fadescreenspeed(FADE_TO_BLACK, 24)
             delay(60)
-            fadescreenswapbuffers(FADE_TO_BLACK, 240)
-            delay(60)
-            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             msgbox("INSERT STATS HERE", MSGBOX_DEFAULT)
             waitmessage
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -322,9 +322,10 @@ script DaycareOldManDialog{
             waitmovement(Brendan)
             speakername("Daycare Man")
             msgbox("Ah, it's you!\pWe were raising your Pokémon\nand my goodness, were we surprised!\pYour Pokémon had an Egg!\pWe don't know how it got there,\nbut your Pokémon had it.\pYou do want it, yes?\n", MSGBOX_DEFAULT)
-            delay(60)
-            fadescreenswapbuffers(FADE_TO_BLACK, 60)
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            delay(30)
+            fadescreenspeed(FADE_TO_BLACK, 24)
+            delay(60)
             msgbox("INSERT STATS HERE", MSGBOX_DEFAULT)
             waitmessage
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
@@ -675,10 +676,10 @@ script ChanseyHeal{
         {
             removeitem(ITEM_LUCKY_EGG)
             fadescreenswapbuffers(FADE_TO_BLACK)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             playfanfare(MUS_HEAL)
             waitfanfare
             special(HealPlayerParty)
-            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             fadescreenswapbuffers(FADE_FROM_BLACK)
             msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)

@@ -72,10 +72,10 @@ script LitwickDialog {
             faceplayer
             speakername("Litwick")
             createfieldmugshot(MUGSHOT_LITWICK, EMOTE_NORMAL)
-            msgbox("Noivern is quite the challenge,\nisn't he?\pHere. Take these.\n", MSGBOX_DEFAULT)
+            msgbox("Noivern is quite the challenge,\nisn't he?\pHere. Take this.\n", MSGBOX_DEFAULT)
             removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
-            giveitem(ITEM_LUCKY_EGG, 2)
+            giveitem(ITEM_LUCKY_EGG)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             speakername("Litwick")
             createfieldmugshot(MUGSHOT_LITWICK, EMOTE_NORMAL)

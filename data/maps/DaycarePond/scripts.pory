@@ -73,7 +73,7 @@ script PsyduckDialog{
         lock
         faceplayer
         speakername("Psyduck")
-        createfieldmugshot(MUGSHOT_PSYDUCK, EMOTE_HAPPY)
+        createfieldmugshot(MUGSHOT_PSYDUCK, EMOTE_NORMAL)
         msgbox("Are you looking for Mudkip?\pIt's trainer came back and picked\nit up!\pAs fun as the Daycare is, some\nPokémon yearn to battle alongside\ltheir trainers.", MSGBOX_NPC)
         waitmessage
         removefieldmugshot

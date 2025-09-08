@@ -4604,7 +4604,7 @@
     {
       "id": "LAYOUT_DAYCARE_EAST_UNDERWATER",
       "name": "DaycareEastUnderwater_Layout",
-      "width": 78,
+      "width": 73,
       "height": 47,
       "primary_tileset": "gTileset_Reef_Primary",
       "secondary_tileset": "gTileset_Reef_Secondary",
