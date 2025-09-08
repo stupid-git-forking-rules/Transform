@@ -239,6 +239,8 @@ EventScript_StrengthBoulder::
 	msgbox Text_WantToStrength, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EventScript_CancelStrength
 	closemessage
+	isdittofieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_STRENGTH
 	waitstate
 	goto EventScript_ActivateStrength
@@ -250,6 +252,8 @@ EventScript_PushBoulderScript::
 
 EventScript_UseStrength::
 	lockall
+	isdittofieldmoveuser VAR_0x8004
+	setfieldeffectargument 3, VAR_RESULT
 	dofieldeffect FLDEFF_USE_STRENGTH
 	waitstate
     specialvar VAR_LAST_TALKED, TryUpdateFromFieldMoveBackup
