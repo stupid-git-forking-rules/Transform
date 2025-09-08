@@ -719,7 +719,7 @@
 #define FLAG_DITTO_END_TRIGGER  0x2A0 //ditto end trigger
 #define FLAG_STUNFISK_EGG  0x2A1 // stunfisk lucky egg flag
 #define FLAG_DISABLE_XFORM_MENU  0x2A2 // disable xform menu 
-#define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
+#define FLAG_MUDKIP_PICKED_UP  0x2A3 // Unused Flag
 #define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag
 #define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
 #define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag

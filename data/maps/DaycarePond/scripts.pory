@@ -55,15 +55,30 @@ script BattleVsMarill{
 
 
 script PsyduckDialog{
-    lock
-    faceplayer
-    speakername("Psyduck")
-    createfieldmugshot(MUGSHOT_PSYDUCK, EMOTE_NORMAL)
-    msgbox("I came to the lake to try to ease\nthis headache...\pIt's the most peaceful biome at\nthe daycare.", MSGBOX_NPC)
-    waitmessage
-    removefieldmugshot
-    release
-    end
+    if(!flag(FLAG_MUDKIP_PICKED_UP))
+    {
+        lock
+        faceplayer
+        speakername("Psyduck")
+        createfieldmugshot(MUGSHOT_PSYDUCK, EMOTE_NORMAL)
+        msgbox("I came to the lake to try to ease\nthis headache...\pIt's the most peaceful biome at\nthe daycare.", MSGBOX_NPC)
+        waitmessage
+        removefieldmugshot
+        release
+        end
+    }
+    else
+    {
+        lock
+        faceplayer
+        speakername("Psyduck")
+        createfieldmugshot(MUGSHOT_PSYDUCK, EMOTE_HAPPY)
+        msgbox("Are you looking for Mudkip?\pIt's trainer came back and picked\nit up!\pAs fun as the Daycare is, some\nPokémon yearn to battle alongside\ltheir trainers.", MSGBOX_NPC)
+        waitmessage
+        removefieldmugshot
+        release
+        end        
+    }
 
 }
 
@@ -670,6 +685,7 @@ script BattleVsDragonair{
         playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_DRAGONAIR)
+        setflag(FLAG_MUDKIP_PICKED_UP)
         dittotransform(SPECIES_DRAGONAIR)
         playse(MUS_LEVEL_UP)
         msgbox("You have gained the ability to\ntransform into Dragonair!", MSGBOX_DEFAULT)
