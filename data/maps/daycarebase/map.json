@@ -15,12 +15,12 @@
   "connections": [
     {
       "map": "MAP_DAYCARE_EAST",
-      "offset": -4,
+      "offset": 0,
       "direction": "right"
     },
     {
       "map": "MAP_DAYCARE_WEST",
-      "offset": 0,
+      "offset": 4,
       "direction": "left"
     }
   ],
@@ -29,7 +29,7 @@
       "local_id": "DaycareMan",
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
       "x": 20,
-      "y": 48,
+      "y": 52,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -42,7 +42,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZIGZAGOON)",
       "x": 6,
-      "y": 47,
+      "y": 51,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -55,7 +55,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KECLEON)",
       "x": 12,
-      "y": 48,
+      "y": 52,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -68,7 +68,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZUMARILL)",
       "x": 15,
-      "y": 46,
+      "y": 50,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -81,7 +81,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_VAPOREON",
       "x": 33,
-      "y": 38,
+      "y": 42,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -94,7 +94,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON2)",
       "x": 15,
-      "y": 12,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -107,7 +107,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 25,
-      "y": 16,
+      "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -120,7 +120,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIDGEY)",
       "x": 18,
-      "y": 33,
+      "y": 37,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -133,7 +133,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RIOLU)",
       "x": 23,
-      "y": 9,
+      "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 1,
@@ -146,7 +146,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 24,
-      "y": 5,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -160,7 +160,7 @@
       "local_id": "Pikachu",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIKACHU)",
       "x": 31,
-      "y": 15,
+      "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -173,7 +173,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIMIKYU)",
       "x": 23,
-      "y": 45,
+      "y": 49,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -186,7 +186,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(LINOONE)",
       "x": 11,
-      "y": 37,
+      "y": 41,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -199,7 +199,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BULBASAUR)",
       "x": 15,
-      "y": 22,
+      "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -212,7 +212,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
       "x": 31,
-      "y": 17,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -225,7 +225,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
       "x": 9,
-      "y": 47,
+      "y": 51,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_INVISIBLE",
       "movement_range_x": 0,
@@ -238,7 +238,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_LAPRAS",
       "x": 37,
-      "y": 34,
+      "y": 38,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -251,7 +251,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIKIPEK)",
       "x": 21,
-      "y": 7,
+      "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -264,7 +264,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SCYTHER)",
       "x": 41,
-      "y": 10,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 1,
@@ -277,7 +277,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
       "x": 12,
-      "y": 15,
+      "y": 19,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 1,
@@ -289,8 +289,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 42,
-      "y": 39,
+      "x": 43,
+      "y": 43,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -303,8 +303,8 @@
     {
       "local_id": "BrendanBiking",
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_MACH_BIKE",
-      "x": 11,
-      "y": 52,
+      "x": 12,
+      "y": 56,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT",
       "movement_range_x": 15,
@@ -318,7 +318,7 @@
       "local_id": "VaporeonIntro",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(VAPOREON)",
       "x": 21,
-      "y": 40,
+      "y": 44,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -332,7 +332,7 @@
       "local_id": "DaycareManIntro",
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
       "x": 20,
-      "y": 41,
+      "y": 45,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -346,7 +346,7 @@
       "local_id": "DittoIntro",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DITTO)",
       "x": 20,
-      "y": 34,
+      "y": 38,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -360,7 +360,7 @@
       "local_id": "Brendan",
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE",
       "x": 10,
-      "y": 52,
+      "y": 56,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -369,26 +369,39 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_SHOW_BRENDAN_OUTRO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 46,
+      "y": 32,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaycareBase_FindLuckyEgg",
+      "flag": "FLAG_ITEM_DAYCARE_EAST1"
     }
   ],
   "warp_events": [
     {
       "x": 31,
-      "y": 18,
+      "y": 22,
       "elevation": 0,
       "dest_map": "MAP_DAYCAREBASE",
       "dest_warp_id": "0"
     },
     {
       "x": 34,
-      "y": 14,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_DAYCARE_PIKACHU_SHRINK_CAVE",
       "dest_warp_id": "1"
     },
     {
       "x": 9,
-      "y": 48,
+      "y": 52,
       "elevation": 0,
       "dest_map": "MAP_DAYCAREBASE",
       "dest_warp_id": "0"
@@ -398,7 +411,7 @@
     {
       "type": "trigger",
       "x": 26,
-      "y": 34,
+      "y": 38,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -407,7 +420,7 @@
     {
       "type": "trigger",
       "x": 22,
-      "y": 34,
+      "y": 38,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -416,7 +429,7 @@
     {
       "type": "trigger",
       "x": 24,
-      "y": 34,
+      "y": 38,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -425,7 +438,7 @@
     {
       "type": "trigger",
       "x": 23,
-      "y": 34,
+      "y": 38,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -434,7 +447,7 @@
     {
       "type": "trigger",
       "x": 27,
-      "y": 34,
+      "y": 38,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -443,7 +456,7 @@
     {
       "type": "trigger",
       "x": 25,
-      "y": 34,
+      "y": 38,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
@@ -452,7 +465,7 @@
     {
       "type": "trigger",
       "x": 21,
-      "y": 34,
+      "y": 38,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",

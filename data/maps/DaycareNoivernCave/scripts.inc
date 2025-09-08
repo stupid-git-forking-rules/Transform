@@ -565,7 +565,7 @@ BattleVsNoivern_4:
 # 326 "data/maps/DaycareNoivernCave/scripts.pory"
 	setflag FLAG_TRANS_NOIVERN
 # 327 "data/maps/DaycareNoivernCave/scripts.pory"
-	delay 30
+	delay 15
 # 328 "data/maps/DaycareNoivernCave/scripts.pory"
 	dittotransform SPECIES_NOIVERN
 # 329 "data/maps/DaycareNoivernCave/scripts.pory"

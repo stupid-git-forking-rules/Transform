@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_DAYCAREBASE",
-      "offset": 4,
+      "offset": 0,
       "direction": "left"
     },
     {
@@ -27,8 +27,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SANDYGAST)",
-      "x": 28,
-      "y": 21,
+      "x": 20,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -40,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
-      "x": 24,
+      "x": 19,
       "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -53,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHELLOS_EAST)",
-      "x": 18,
+      "x": 13,
       "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -66,7 +66,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RAICHU_ALOLA)",
-      "x": 47,
+      "x": 42,
       "y": 23,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
@@ -79,8 +79,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(EXEGGUTOR_ALOLA)",
-      "x": 22,
-      "y": 22,
+      "x": 13,
+      "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -92,7 +92,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAILLOW)",
-      "x": 6,
+      "x": 1,
       "y": 12,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -105,7 +105,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIKIPEK)",
-      "x": 36,
+      "x": 31,
       "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -118,7 +118,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
-      "x": 50,
+      "x": 45,
       "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -132,7 +132,7 @@
     {
       "local_id": "Rufflet",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RUFFLET)",
-      "x": 67,
+      "x": 62,
       "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -145,7 +145,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 62,
+      "x": 57,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -158,7 +158,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
-      "x": 62,
+      "x": 57,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -172,7 +172,7 @@
     {
       "local_id": "Sharpedo",
       "graphics_id": "OBJ_EVENT_GFX_SHARPEDO",
-      "x": 54,
+      "x": 49,
       "y": 36,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -185,7 +185,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SLOWPOKE",
-      "x": 19,
+      "x": 14,
       "y": 34,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -198,7 +198,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DITTO)",
-      "x": 24,
+      "x": 19,
       "y": 17,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -211,7 +211,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RUFFLET)",
-      "x": 28,
+      "x": 23,
       "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -221,38 +221,25 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RuffletOnShore",
       "flag": "FLAG_SHOW_RUFFLET"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 2,
-      "y": 32,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "DaycareEast_FindLuckyEgg",
-      "flag": "FLAG_ITEM_DAYCARE_EAST1"
     }
   ],
   "warp_events": [
     {
-      "x": 19,
+      "x": 14,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_EASTTO_DESERT",
       "dest_warp_id": "1"
     },
     {
-      "x": 50,
+      "x": 45,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_CAVETO_MEW",
       "dest_warp_id": "0"
     },
     {
-      "x": 69,
+      "x": 64,
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_DAYCARE_NOIVERN_CAVE",

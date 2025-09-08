@@ -215,7 +215,7 @@ script BattleVsCutiefly{
         playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_CUTIEFLY)
-        delay(30)
+        delay(15)
         dittotransform(SPECIES_CUTIEFLY)
         playse(MUS_LEVEL_UP)
         msgbox("You have gained the ability to\ntransform into Cutiefly!", MSGBOX_DEFAULT)

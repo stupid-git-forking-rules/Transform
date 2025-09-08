@@ -136,13 +136,13 @@
       "id": "HEAL_LOCATION_DAYCAREBASE",
       "map": "MAP_DAYCAREBASE",
       "x": 12,
-      "y": 16
+      "y": 20
     },
     {
       "id": "HEAL_LOCATION_DAYCAREBASE_2",
       "map": "MAP_DAYCAREBASE",
       "x": 20,
-      "y": 40
+      "y": 44
     }
   ]
 }

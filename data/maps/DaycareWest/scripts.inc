@@ -350,7 +350,7 @@ BattleVsCutiefly_8:
 # 217 "data/maps/DaycareWest/scripts.pory"
 	setflag FLAG_TRANS_CUTIEFLY
 # 218 "data/maps/DaycareWest/scripts.pory"
-	delay 30
+	delay 15
 # 219 "data/maps/DaycareWest/scripts.pory"
 	dittotransform SPECIES_CUTIEFLY
 # 220 "data/maps/DaycareWest/scripts.pory"

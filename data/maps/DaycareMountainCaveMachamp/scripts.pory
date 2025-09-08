@@ -35,6 +35,7 @@ script BattleVsMachamp{
         playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_MACHAMP)
+        delay(15)
         dittotransform(SPECIES_MACHAMP)
         playse(MUS_LEVEL_UP)
         msgbox("You have gained the ability to\ntransform into Machamp!", MSGBOX_DEFAULT)

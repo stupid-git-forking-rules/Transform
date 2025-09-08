@@ -4414,8 +4414,8 @@
     {
       "id": "LAYOUT_DAYCAREBASE",
       "name": "daycarebase_Layout",
-      "width": 44,
-      "height": 59,
+      "width": 49,
+      "height": 63,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/daycarebase/border.bin",
@@ -4424,7 +4424,7 @@
     {
       "id": "LAYOUT_DAYCARE_EAST",
       "name": "DaycareEast_Layout",
-      "width": 78,
+      "width": 73,
       "height": 47,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
@@ -4495,7 +4495,7 @@
       "id": "LAYOUT_DAYCARE_VOLCANO",
       "name": "DaycareVolcano_Layout",
       "width": 40,
-      "height": 41,
+      "height": 43,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/DaycareVolcano/border.bin",

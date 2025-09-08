@@ -63,7 +63,7 @@ IntroScript::
 # 33 "data/maps/Route117_PokemonDayCare/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK, 24
 # 34 "data/maps/Route117_PokemonDayCare/scripts.pory"
-	warp MAP_DAYCAREBASE, 20, 40
+	warp MAP_DAYCAREBASE, 20, 44
 # 35 "data/maps/Route117_PokemonDayCare/scripts.pory"
 	setvar VAR_TEMP_A, 1
 # 36 "data/maps/Route117_PokemonDayCare/scripts.pory"

@@ -82,6 +82,7 @@ script BattleVsWeavile{
         playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_WEAVILE)
+        delay(15)
         dittotransform(SPECIES_WEAVILE)
         playse(MUS_LEVEL_UP)
         msgbox("You have gained the ability to\ntransform into Weavile!", MSGBOX_DEFAULT)
@@ -91,7 +92,7 @@ script BattleVsWeavile{
         waitmessage
         speakername("Weavile")
         createfieldmugshot(MUGSHOT_WEAVILE, EMOTE_NORMAL)
-        msgbox("Godspeed challenger.\n", MSGBOX_AUTOCLOSE)
+        msgbox("Godspeed challenger.\pYou have shown me that you aren't\nall looks.", MSGBOX_AUTOCLOSE)
         waitmessage
         removefieldmugshot
         applymovement(Weavile, moves(walk_fast_up*2))

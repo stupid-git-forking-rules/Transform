@@ -275,13 +275,13 @@ DaycareOldManDialog::
 # 207 "data/maps/daycarebase/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_DITTO
 	goto_if_eq DaycareOldManDialog_7
-# 331 "data/maps/daycarebase/scripts.pory"
+# 338 "data/maps/daycarebase/scripts.pory"
 	speakername DaycareIntro_Text_0
-# 332 "data/maps/daycarebase/scripts.pory"
+# 339 "data/maps/daycarebase/scripts.pory"
 	msgbox DaycareOldManDialog_Text_1, MSGBOX_DEFAULT
-# 333 "data/maps/daycarebase/scripts.pory"
+# 340 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 334 "data/maps/daycarebase/scripts.pory"
+# 341 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
@@ -336,111 +336,117 @@ DaycareOldManDialog_7:
 # 218 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareOldManDialog_13
-# 275 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 276 "data/maps/daycarebase/scripts.pory"
-	playse SE_M_SCRATCH
-# 277 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareOldManDialog_Text_9, MSGBOX_DEFAULT
-# 278 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 279 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 280 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareIntro_Text_0
-# 281 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareOldManDialog_Text_5, MSGBOX_DEFAULT
-# 282 "data/maps/daycarebase/scripts.pory"
-	removeobject BrendanBiking
-# 283 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_HIDE_BRENDAN_BIKE
-# 284 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 285 "data/maps/daycarebase/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 286 "data/maps/daycarebase/scripts.pory"
-	playse SE_EXP
-# 287 "data/maps/daycarebase/scripts.pory"
-	waitse
-# 288 "data/maps/daycarebase/scripts.pory"
-	playse SE_EXP_MAX
-# 289 "data/maps/daycarebase/scripts.pory"
-	waitse
-# 290 "data/maps/daycarebase/scripts.pory"
-	playfanfare MUS_LEVEL_UP
-# 291 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareOldManDialog_Text_6, MSGBOX_DEFAULT
-# 292 "data/maps/daycarebase/scripts.pory"
-	waitfanfare
-# 293 "data/maps/daycarebase/scripts.pory"
+# 280 "data/maps/daycarebase/scripts.pory"
+	playse SE_M_SCRATCH
+# 281 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareOldManDialog_Text_10, MSGBOX_DEFAULT
+# 282 "data/maps/daycarebase/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 283 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 284 "data/maps/daycarebase/scripts.pory"
+	speakername DaycareIntro_Text_0
+# 285 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareOldManDialog_Text_5, MSGBOX_DEFAULT
+# 286 "data/maps/daycarebase/scripts.pory"
+	removeobject BrendanBiking
+# 287 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_HIDE_BRENDAN_BIKE
+# 288 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 289 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 290 "data/maps/daycarebase/scripts.pory"
+	playse SE_EXP
+# 291 "data/maps/daycarebase/scripts.pory"
+	waitse
+# 292 "data/maps/daycarebase/scripts.pory"
+	playse SE_EXP_MAX
+# 293 "data/maps/daycarebase/scripts.pory"
+	waitse
 # 294 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareIntro_Text_0
+	playfanfare MUS_LEVEL_UP
 # 295 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareOldManDialog_Text_7, MSGBOX_AUTOCLOSE
+	msgbox DaycareOldManDialog_Text_6, MSGBOX_DEFAULT
 # 296 "data/maps/daycarebase/scripts.pory"
-	special SpawnCameraObject
+	waitfanfare
 # 297 "data/maps/daycarebase/scripts.pory"
-	applymovement DaycareMan, DaycareOldManDialog_Movement_1
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 298 "data/maps/daycarebase/scripts.pory"
-	waitmovement DaycareMan
-# 299 "data/maps/daycarebase/scripts.pory"
-	applymovement DaycareMan, DaycareOldManDialog_Movement_2
-# 300 "data/maps/daycarebase/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, DaycareOldManDialog_Movement_2
-# 301 "data/maps/daycarebase/scripts.pory"
-	waitmovement DaycareMan
-# 302 "data/maps/daycarebase/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 303 "data/maps/daycarebase/scripts.pory"
-	delay 60
-# 304 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK, 24
-# 305 "data/maps/daycarebase/scripts.pory"
-	delay 60
-# 306 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SHOW_BRENDAN_OUTRO
-# 307 "data/maps/daycarebase/scripts.pory"
-	addobject Brendan
-# 308 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK, 24
-# 309 "data/maps/daycarebase/scripts.pory"
-	applymovement Brendan, DaycareOldManDialog_Movement_3
-# 310 "data/maps/daycarebase/scripts.pory"
-	waitmovement Brendan
-# 311 "data/maps/daycarebase/scripts.pory"
-	playse SE_PIN
-# 312 "data/maps/daycarebase/scripts.pory"
-	applymovement Brendan, Common_Movement_ExclamationMark
-# 313 "data/maps/daycarebase/scripts.pory"
-	waitmovement Brendan
-# 314 "data/maps/daycarebase/scripts.pory"
-	delay 30
-# 315 "data/maps/daycarebase/scripts.pory"
-	applymovement Brendan, DaycareOldManDialog_Movement_4
-# 316 "data/maps/daycarebase/scripts.pory"
-	waitmovement Brendan
-# 317 "data/maps/daycarebase/scripts.pory"
-	applymovement Brendan, DaycareOldManDialog_Movement_5
-# 318 "data/maps/daycarebase/scripts.pory"
-	waitmovement Brendan
-# 319 "data/maps/daycarebase/scripts.pory"
 	speakername DaycareIntro_Text_0
+# 299 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareOldManDialog_Text_7, MSGBOX_AUTOCLOSE
+# 300 "data/maps/daycarebase/scripts.pory"
+	special SpawnCameraObject
+# 301 "data/maps/daycarebase/scripts.pory"
+	applymovement DaycareMan, DaycareOldManDialog_Movement_1
+# 302 "data/maps/daycarebase/scripts.pory"
+	waitmovement DaycareMan
+# 303 "data/maps/daycarebase/scripts.pory"
+	applymovement DaycareMan, DaycareOldManDialog_Movement_2
+# 304 "data/maps/daycarebase/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, DaycareOldManDialog_Movement_2
+# 305 "data/maps/daycarebase/scripts.pory"
+	waitmovement DaycareMan
+# 306 "data/maps/daycarebase/scripts.pory"
+	waitmovement OBJ_EVENT_ID_CAMERA
+# 307 "data/maps/daycarebase/scripts.pory"
+	delay 60
+# 308 "data/maps/daycarebase/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK, 24
+# 309 "data/maps/daycarebase/scripts.pory"
+	delay 60
+# 310 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SHOW_BRENDAN_OUTRO
+# 311 "data/maps/daycarebase/scripts.pory"
+	addobject Brendan
+# 312 "data/maps/daycarebase/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK, 24
+# 313 "data/maps/daycarebase/scripts.pory"
+	applymovement Brendan, DaycareOldManDialog_Movement_3
+# 314 "data/maps/daycarebase/scripts.pory"
+	waitmovement Brendan
+# 315 "data/maps/daycarebase/scripts.pory"
+	playse SE_PIN
+# 316 "data/maps/daycarebase/scripts.pory"
+	applymovement Brendan, Common_Movement_ExclamationMark
+# 317 "data/maps/daycarebase/scripts.pory"
+	waitmovement Brendan
+# 318 "data/maps/daycarebase/scripts.pory"
+	delay 30
+# 319 "data/maps/daycarebase/scripts.pory"
+	applymovement Brendan, DaycareOldManDialog_Movement_4
 # 320 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareOldManDialog_Text_8, MSGBOX_DEFAULT
+	waitmovement Brendan
 # 321 "data/maps/daycarebase/scripts.pory"
-	delay 60
+	applymovement Brendan, DaycareOldManDialog_Movement_5
 # 322 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK, 240
+	waitmovement Brendan
 # 323 "data/maps/daycarebase/scripts.pory"
-	delay 60
+	speakername DaycareIntro_Text_0
 # 324 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_BEAT_MEW
+	msgbox DaycareOldManDialog_Text_8, MSGBOX_DEFAULT
 # 325 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SHOW_BRENDAN_OUTRO
+	delay 60
 # 326 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_HIDE_BRENDAN_BIKE
+	fadescreenswapbuffers FADE_TO_BLACK, 60
 # 327 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 328 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareOldManDialog_Text_9, MSGBOX_DEFAULT
+# 329 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 330 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 331 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_BEAT_MEW
+# 332 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SHOW_BRENDAN_OUTRO
+# 333 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_HIDE_BRENDAN_BIKE
+# 334 "data/maps/daycarebase/scripts.pory"
 	special GameClear
 	return
 
@@ -555,777 +561,787 @@ DaycareOldManDialog_13:
 # 268 "data/maps/daycarebase/scripts.pory"
 	delay 60
 # 269 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_BEAT_MEW
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 270 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SHOW_BRENDAN_OUTRO
+	msgbox DaycareOldManDialog_Text_9, MSGBOX_DEFAULT
 # 271 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_HIDE_BRENDAN_BIKE
+	waitmessage
 # 272 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 273 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_BEAT_MEW
+# 274 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SHOW_BRENDAN_OUTRO
+# 275 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_HIDE_BRENDAN_BIKE
+# 276 "data/maps/daycarebase/scripts.pory"
 	special GameClear
 	return
 
 
 VaporeonDialog::
-# 345 "data/maps/daycarebase/scripts.pory"
-	lock
-# 346 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 347 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareIntro_Text_2
-# 348 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_VAPOREON, EMOTE_ANGRY
-# 349 "data/maps/daycarebase/scripts.pory"
-	msgbox VaporeonDialog_Text_0, MSGBOX_NPC
-# 350 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 351 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
 # 352 "data/maps/daycarebase/scripts.pory"
+	lock
+# 353 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 354 "data/maps/daycarebase/scripts.pory"
+	speakername DaycareIntro_Text_2
+# 355 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_VAPOREON, EMOTE_ANGRY
+# 356 "data/maps/daycarebase/scripts.pory"
+	msgbox VaporeonDialog_Text_0, MSGBOX_NPC
+# 357 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 358 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 359 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 LaprasDialog::
-# 358 "data/maps/daycarebase/scripts.pory"
-	lock
-# 359 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 360 "data/maps/daycarebase/scripts.pory"
-	speakername LaprasDialog_Text_0
-# 361 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_LAPRAS, EMOTE_HAPPY
-# 362 "data/maps/daycarebase/scripts.pory"
-	msgbox LaprasDialog_Text_1, MSGBOX_DEFAULT
-# 363 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 364 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
 # 365 "data/maps/daycarebase/scripts.pory"
+	lock
+# 366 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 367 "data/maps/daycarebase/scripts.pory"
+	speakername LaprasDialog_Text_0
+# 368 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_LAPRAS, EMOTE_HAPPY
+# 369 "data/maps/daycarebase/scripts.pory"
+	msgbox LaprasDialog_Text_1, MSGBOX_DEFAULT
+# 370 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 371 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 372 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 LinooneDialog::
-# 370 "data/maps/daycarebase/scripts.pory"
+# 377 "data/maps/daycarebase/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_DITTO
 	goto_if_eq LinooneDialog_1
-# 384 "data/maps/daycarebase/scripts.pory"
-	lock
-# 385 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 386 "data/maps/daycarebase/scripts.pory"
-	speakername LinooneDialog_Text_0
-# 387 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_LINOONE, EMOTE_NORMAL
-# 388 "data/maps/daycarebase/scripts.pory"
-	msgbox LinooneDialog_Text_2
-# 389 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 390 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
 # 391 "data/maps/daycarebase/scripts.pory"
+	lock
+# 392 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 393 "data/maps/daycarebase/scripts.pory"
+	speakername LinooneDialog_Text_0
+# 394 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_LINOONE, EMOTE_NORMAL
+# 395 "data/maps/daycarebase/scripts.pory"
+	msgbox LinooneDialog_Text_2
+# 396 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 397 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 398 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 LinooneDialog_1:
-# 372 "data/maps/daycarebase/scripts.pory"
-	lock
-# 373 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 374 "data/maps/daycarebase/scripts.pory"
-	speakername LinooneDialog_Text_0
-# 375 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_LINOONE, EMOTE_NORMAL
-# 376 "data/maps/daycarebase/scripts.pory"
-	msgbox LinooneDialog_Text_1
-# 377 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 378 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
 # 379 "data/maps/daycarebase/scripts.pory"
+	lock
+# 380 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 381 "data/maps/daycarebase/scripts.pory"
+	speakername LinooneDialog_Text_0
+# 382 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_LINOONE, EMOTE_NORMAL
+# 383 "data/maps/daycarebase/scripts.pory"
+	msgbox LinooneDialog_Text_1
+# 384 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 385 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 386 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 BulbsaurDialog::
-# 397 "data/maps/daycarebase/scripts.pory"
-	lock
-# 398 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 399 "data/maps/daycarebase/scripts.pory"
-	speakername BulbsaurDialog_Text_0
-# 400 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_BULBASAUR, EMOTE_NORMAL
-# 401 "data/maps/daycarebase/scripts.pory"
-	msgbox BulbsaurDialog_Text_1, MSGBOX_NPC
-# 402 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 403 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
 # 404 "data/maps/daycarebase/scripts.pory"
+	lock
+# 405 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 406 "data/maps/daycarebase/scripts.pory"
+	speakername BulbsaurDialog_Text_0
+# 407 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_BULBASAUR, EMOTE_NORMAL
+# 408 "data/maps/daycarebase/scripts.pory"
+	msgbox BulbsaurDialog_Text_1, MSGBOX_NPC
+# 409 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 410 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 411 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 CombeeDialog::
-# 409 "data/maps/daycarebase/scripts.pory"
-	lock
-# 410 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 411 "data/maps/daycarebase/scripts.pory"
-	speakername CombeeDialog_Text_0
-# 412 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBEE, EMOTE_NORMAL
-# 413 "data/maps/daycarebase/scripts.pory"
-	msgbox CombeeDialog_Text_1, MSGBOX_NPC
-# 414 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 415 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
 # 416 "data/maps/daycarebase/scripts.pory"
+	lock
+# 417 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 418 "data/maps/daycarebase/scripts.pory"
+	speakername CombeeDialog_Text_0
+# 419 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_COMBEE, EMOTE_NORMAL
+# 420 "data/maps/daycarebase/scripts.pory"
+	msgbox CombeeDialog_Text_1, MSGBOX_NPC
+# 421 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 422 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 423 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 Porygon2Dialog::
-# 421 "data/maps/daycarebase/scripts.pory"
-	lock
-# 422 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 423 "data/maps/daycarebase/scripts.pory"
-	speakername Porygon2Dialog_Text_0
-# 424 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_PORYGON2, EMOTE_NORMAL
-# 425 "data/maps/daycarebase/scripts.pory"
-	msgbox Porygon2Dialog_Text_1, MSGBOX_NPC
-# 426 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 427 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
 # 428 "data/maps/daycarebase/scripts.pory"
+	lock
+# 429 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 430 "data/maps/daycarebase/scripts.pory"
+	speakername Porygon2Dialog_Text_0
+# 431 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_PORYGON2, EMOTE_NORMAL
+# 432 "data/maps/daycarebase/scripts.pory"
+	msgbox Porygon2Dialog_Text_1, MSGBOX_NPC
+# 433 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 434 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 435 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 ScytherDialog::
-# 433 "data/maps/daycarebase/scripts.pory"
-	lock
-# 434 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 435 "data/maps/daycarebase/scripts.pory"
-	speakername ScytherDialog_Text_0
-# 436 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_SCYTHER, EMOTE_NORMAL
-# 437 "data/maps/daycarebase/scripts.pory"
-	msgbox ScytherDialog_Text_1, MSGBOX_DEFAULT
-# 438 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 439 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
 # 440 "data/maps/daycarebase/scripts.pory"
+	lock
+# 441 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 442 "data/maps/daycarebase/scripts.pory"
+	speakername ScytherDialog_Text_0
+# 443 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_SCYTHER, EMOTE_NORMAL
+# 444 "data/maps/daycarebase/scripts.pory"
+	msgbox ScytherDialog_Text_1, MSGBOX_DEFAULT
+# 445 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 446 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 447 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 RioluDialog::
-# 445 "data/maps/daycarebase/scripts.pory"
+# 452 "data/maps/daycarebase/scripts.pory"
 	lock
-# 446 "data/maps/daycarebase/scripts.pory"
+# 453 "data/maps/daycarebase/scripts.pory"
 	faceplayer
-# 447 "data/maps/daycarebase/scripts.pory"
+# 454 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_RIOLU_INTRO, RioluDialog_1
-# 591 "data/maps/daycarebase/scripts.pory"
+# 598 "data/maps/daycarebase/scripts.pory"
 	speakername RioluDialog_Text_0
-# 592 "data/maps/daycarebase/scripts.pory"
+# 599 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 593 "data/maps/daycarebase/scripts.pory"
+# 600 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_27, MSGBOX_DEFAULT
-# 594 "data/maps/daycarebase/scripts.pory"
+# 601 "data/maps/daycarebase/scripts.pory"
 	setflag FLAG_RIOLU_INTRO
-# 595 "data/maps/daycarebase/scripts.pory"
+# 602 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 596 "data/maps/daycarebase/scripts.pory"
+# 603 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 597 "data/maps/daycarebase/scripts.pory"
+# 604 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_1:
-# 449 "data/maps/daycarebase/scripts.pory"
-	lock
-# 450 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 451 "data/maps/daycarebase/scripts.pory"
-	speakername RioluDialog_Text_0
-# 452 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 453 "data/maps/daycarebase/scripts.pory"
-	msgbox RioluDialog_Text_1, MSGBOX_DEFAULT
-# 454 "data/maps/daycarebase/scripts.pory"
-	checkitem ITEM_LUCKY_EGG
-# 455 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
 # 456 "data/maps/daycarebase/scripts.pory"
+	lock
+# 457 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 458 "data/maps/daycarebase/scripts.pory"
+	speakername RioluDialog_Text_0
+# 459 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
+# 460 "data/maps/daycarebase/scripts.pory"
+	msgbox RioluDialog_Text_1, MSGBOX_DEFAULT
+# 461 "data/maps/daycarebase/scripts.pory"
+	checkitem ITEM_LUCKY_EGG
+# 462 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 463 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq RioluDialog_4
-# 578 "data/maps/daycarebase/scripts.pory"
+# 585 "data/maps/daycarebase/scripts.pory"
 	lock
-# 579 "data/maps/daycarebase/scripts.pory"
+# 586 "data/maps/daycarebase/scripts.pory"
 	speakername RioluDialog_Text_0
-# 580 "data/maps/daycarebase/scripts.pory"
+# 587 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 581 "data/maps/daycarebase/scripts.pory"
+# 588 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_26, MSGBOX_AUTOCLOSE
-# 582 "data/maps/daycarebase/scripts.pory"
+# 589 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 583 "data/maps/daycarebase/scripts.pory"
+# 590 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 584 "data/maps/daycarebase/scripts.pory"
+# 591 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_4:
-# 458 "data/maps/daycarebase/scripts.pory"
+# 465 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 459 "data/maps/daycarebase/scripts.pory"
+# 466 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_2, MSGBOX_DEFAULT
-# 460 "data/maps/daycarebase/scripts.pory"
+# 467 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 461 "data/maps/daycarebase/scripts.pory"
+# 468 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_3, MSGBOX_YESNO
-# 462 "data/maps/daycarebase/scripts.pory"
+# 469 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq RioluDialog_7
-# 568 "data/maps/daycarebase/scripts.pory"
+# 575 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 569 "data/maps/daycarebase/scripts.pory"
+# 576 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_25
-# 570 "data/maps/daycarebase/scripts.pory"
+# 577 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 571 "data/maps/daycarebase/scripts.pory"
+# 578 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 572 "data/maps/daycarebase/scripts.pory"
+# 579 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_7:
-# 464 "data/maps/daycarebase/scripts.pory"
+# 471 "data/maps/daycarebase/scripts.pory"
 	removeitem ITEM_LUCKY_EGG
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	dynmultichoice 0, 0, TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, RioluDialog_Text_4, RioluDialog_Text_5, RioluDialog_Text_6, RioluDialog_Text_7, RioluDialog_Text_8, RioluDialog_Text_9, RioluDialog_Text_10, MimikyuDialog_Text_0, RioluDialog_Text_11, RioluDialog_Text_12, RioluDialog_Text_13
-# 466 "data/maps/daycarebase/scripts.pory"
+# 473 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq RioluDialog_10
-# 475 "data/maps/daycarebase/scripts.pory"
+# 482 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq RioluDialog_11
-# 484 "data/maps/daycarebase/scripts.pory"
+# 491 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq RioluDialog_12
-# 493 "data/maps/daycarebase/scripts.pory"
+# 500 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq RioluDialog_13
-# 502 "data/maps/daycarebase/scripts.pory"
+# 509 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 4
 	goto_if_eq RioluDialog_14
-# 511 "data/maps/daycarebase/scripts.pory"
+# 518 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 5
 	goto_if_eq RioluDialog_15
-# 520 "data/maps/daycarebase/scripts.pory"
+# 527 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 6
 	goto_if_eq RioluDialog_16
-# 529 "data/maps/daycarebase/scripts.pory"
+# 536 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 7
 	goto_if_eq RioluDialog_17
-# 538 "data/maps/daycarebase/scripts.pory"
+# 545 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 8
 	goto_if_eq RioluDialog_18
-# 547 "data/maps/daycarebase/scripts.pory"
+# 554 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 9
 	goto_if_eq RioluDialog_19
-# 556 "data/maps/daycarebase/scripts.pory"
+# 563 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, 10
 	goto_if_eq RioluDialog_20
 	return
 
 RioluDialog_10:
-# 468 "data/maps/daycarebase/scripts.pory"
+# 475 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 469 "data/maps/daycarebase/scripts.pory"
+# 476 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_14, MSGBOX_DEFAULT
-# 470 "data/maps/daycarebase/scripts.pory"
+# 477 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 471 "data/maps/daycarebase/scripts.pory"
+# 478 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 472 "data/maps/daycarebase/scripts.pory"
+# 479 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_11:
-# 477 "data/maps/daycarebase/scripts.pory"
+# 484 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 478 "data/maps/daycarebase/scripts.pory"
+# 485 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_15, MSGBOX_DEFAULT
-# 479 "data/maps/daycarebase/scripts.pory"
+# 486 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 480 "data/maps/daycarebase/scripts.pory"
+# 487 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 481 "data/maps/daycarebase/scripts.pory"
+# 488 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_12:
-# 486 "data/maps/daycarebase/scripts.pory"
+# 493 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 487 "data/maps/daycarebase/scripts.pory"
+# 494 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_16, MSGBOX_DEFAULT
-# 488 "data/maps/daycarebase/scripts.pory"
+# 495 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 489 "data/maps/daycarebase/scripts.pory"
+# 496 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 490 "data/maps/daycarebase/scripts.pory"
+# 497 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_13:
-# 495 "data/maps/daycarebase/scripts.pory"
+# 502 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 496 "data/maps/daycarebase/scripts.pory"
+# 503 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_17, MSGBOX_DEFAULT
-# 497 "data/maps/daycarebase/scripts.pory"
+# 504 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 498 "data/maps/daycarebase/scripts.pory"
+# 505 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 499 "data/maps/daycarebase/scripts.pory"
+# 506 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_14:
-# 504 "data/maps/daycarebase/scripts.pory"
+# 511 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 505 "data/maps/daycarebase/scripts.pory"
+# 512 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_18, MSGBOX_DEFAULT
-# 506 "data/maps/daycarebase/scripts.pory"
+# 513 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 507 "data/maps/daycarebase/scripts.pory"
+# 514 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 508 "data/maps/daycarebase/scripts.pory"
+# 515 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_15:
-# 513 "data/maps/daycarebase/scripts.pory"
+# 520 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 514 "data/maps/daycarebase/scripts.pory"
+# 521 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_19, MSGBOX_DEFAULT
-# 515 "data/maps/daycarebase/scripts.pory"
+# 522 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 516 "data/maps/daycarebase/scripts.pory"
+# 523 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 517 "data/maps/daycarebase/scripts.pory"
+# 524 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_16:
-# 522 "data/maps/daycarebase/scripts.pory"
+# 529 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 523 "data/maps/daycarebase/scripts.pory"
+# 530 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_20, MSGBOX_DEFAULT
-# 524 "data/maps/daycarebase/scripts.pory"
+# 531 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 525 "data/maps/daycarebase/scripts.pory"
+# 532 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 526 "data/maps/daycarebase/scripts.pory"
+# 533 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_17:
-# 531 "data/maps/daycarebase/scripts.pory"
+# 538 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 532 "data/maps/daycarebase/scripts.pory"
+# 539 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_21, MSGBOX_DEFAULT
-# 533 "data/maps/daycarebase/scripts.pory"
+# 540 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 534 "data/maps/daycarebase/scripts.pory"
+# 541 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 535 "data/maps/daycarebase/scripts.pory"
+# 542 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_18:
-# 540 "data/maps/daycarebase/scripts.pory"
+# 547 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 541 "data/maps/daycarebase/scripts.pory"
+# 548 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_22, MSGBOX_DEFAULT
-# 542 "data/maps/daycarebase/scripts.pory"
+# 549 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 543 "data/maps/daycarebase/scripts.pory"
+# 550 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 544 "data/maps/daycarebase/scripts.pory"
+# 551 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_19:
-# 549 "data/maps/daycarebase/scripts.pory"
+# 556 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 550 "data/maps/daycarebase/scripts.pory"
+# 557 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_23, MSGBOX_DEFAULT
-# 551 "data/maps/daycarebase/scripts.pory"
+# 558 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 552 "data/maps/daycarebase/scripts.pory"
+# 559 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 553 "data/maps/daycarebase/scripts.pory"
+# 560 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 RioluDialog_20:
-# 558 "data/maps/daycarebase/scripts.pory"
+# 565 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_RIOLU, EMOTE_NORMAL
-# 559 "data/maps/daycarebase/scripts.pory"
+# 566 "data/maps/daycarebase/scripts.pory"
 	msgbox RioluDialog_Text_24, MSGBOX_DEFAULT
-# 560 "data/maps/daycarebase/scripts.pory"
+# 567 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 561 "data/maps/daycarebase/scripts.pory"
+# 568 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 562 "data/maps/daycarebase/scripts.pory"
+# 569 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 BattleVsPikachu::
-# 604 "data/maps/daycarebase/scripts.pory"
+# 611 "data/maps/daycarebase/scripts.pory"
 	lock
-# 606 "data/maps/daycarebase/scripts.pory"
+# 613 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_TRANS_PIKACHU, BattleVsPikachu_2
-# 618 "data/maps/daycarebase/scripts.pory"
-	playbgm MUS_PMD_BOSS_INTRO, FALSE
-# 619 "data/maps/daycarebase/scripts.pory"
-	applymovement Pikachu, DaycareOldManDialog_Movement_0
-# 620 "data/maps/daycarebase/scripts.pory"
-	waitmovement Pikachu
-# 621 "data/maps/daycarebase/scripts.pory"
-	playse SE_PIN
-# 622 "data/maps/daycarebase/scripts.pory"
-	applymovement Pikachu, Common_Movement_ExclamationMark
-# 623 "data/maps/daycarebase/scripts.pory"
-	waitmovement Pikachu
-# 624 "data/maps/daycarebase/scripts.pory"
-	speakername MimikyuDialog_Text_0
 # 625 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_PIKACHU, EMOTE_NORMAL
+	playbgm MUS_PMD_BOSS_INTRO, FALSE
 # 626 "data/maps/daycarebase/scripts.pory"
-	msgbox BattleVsPikachu_Text_1, MSGBOX_AUTOCLOSE
+	applymovement Pikachu, DaycareOldManDialog_Movement_0
 # 627 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
+	waitmovement Pikachu
 # 628 "data/maps/daycarebase/scripts.pory"
-	setwildbattle SPECIES_PIKACHU, 25
+	playse SE_PIN
 # 629 "data/maps/daycarebase/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	applymovement Pikachu, Common_Movement_ExclamationMark
 # 630 "data/maps/daycarebase/scripts.pory"
-	dowildbattle
+	waitmovement Pikachu
 # 631 "data/maps/daycarebase/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	speakername MimikyuDialog_Text_0
 # 632 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_PIKACHU, EMOTE_NORMAL
+# 633 "data/maps/daycarebase/scripts.pory"
+	msgbox BattleVsPikachu_Text_1, MSGBOX_AUTOCLOSE
+# 634 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 635 "data/maps/daycarebase/scripts.pory"
+	setwildbattle SPECIES_PIKACHU, 25
+# 636 "data/maps/daycarebase/scripts.pory"
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+# 637 "data/maps/daycarebase/scripts.pory"
+	dowildbattle
+# 638 "data/maps/daycarebase/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 639 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsPikachu_4
 	return
 
 BattleVsPikachu_2:
-# 608 "data/maps/daycarebase/scripts.pory"
+# 615 "data/maps/daycarebase/scripts.pory"
 	faceplayer
-# 609 "data/maps/daycarebase/scripts.pory"
+# 616 "data/maps/daycarebase/scripts.pory"
 	speakername MimikyuDialog_Text_0
-# 610 "data/maps/daycarebase/scripts.pory"
+# 617 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_PIKACHU, EMOTE_NORMAL
-# 611 "data/maps/daycarebase/scripts.pory"
+# 618 "data/maps/daycarebase/scripts.pory"
 	msgbox BattleVsPikachu_Text_0, MSGBOX_DEFAULT
-# 612 "data/maps/daycarebase/scripts.pory"
+# 619 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 613 "data/maps/daycarebase/scripts.pory"
+# 620 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 614 "data/maps/daycarebase/scripts.pory"
+# 621 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 BattleVsPikachu_4:
-# 634 "data/maps/daycarebase/scripts.pory"
-	playbgm MUS_PMD_HAPPINESS, FALSE
-# 635 "data/maps/daycarebase/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
-# 636 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_TRANS_PIKACHU
-# 637 "data/maps/daycarebase/scripts.pory"
-	dittotransform SPECIES_PIKACHU
-# 638 "data/maps/daycarebase/scripts.pory"
-	playse MUS_LEVEL_UP
-# 639 "data/maps/daycarebase/scripts.pory"
-	msgbox BattleVsPikachu_Text_2, MSGBOX_DEFAULT
-# 640 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 641 "data/maps/daycarebase/scripts.pory"
-	dittotransform VAR_TEMP_0
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 642 "data/maps/daycarebase/scripts.pory"
-	givemon SPECIES_PIKACHU, 25, move1 = MOVE_NUZZLE, move2 = MOVE_IRON_TAIL, move3 = MOVE_SPARK, move4 = MOVE_FLASH
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 643 "data/maps/daycarebase/scripts.pory"
-	speakername MimikyuDialog_Text_0
+	setflag FLAG_TRANS_PIKACHU
 # 644 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_PIKACHU, EMOTE_HAPPY
+	delay 15
 # 645 "data/maps/daycarebase/scripts.pory"
-	msgbox BattleVsPikachu_Text_3, MSGBOX_DEFAULT
+	dittotransform SPECIES_PIKACHU
 # 646 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	playse MUS_LEVEL_UP
 # 647 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
+	msgbox BattleVsPikachu_Text_2, MSGBOX_DEFAULT
 # 648 "data/maps/daycarebase/scripts.pory"
-	fadenewbgm MUS_PMD_HEARTWARMING
+	waitmessage
 # 649 "data/maps/daycarebase/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 650 "data/maps/daycarebase/scripts.pory"
+	givemon SPECIES_PIKACHU, 25, move1 = MOVE_NUZZLE, move2 = MOVE_IRON_TAIL, move3 = MOVE_SPARK, move4 = MOVE_FLASH
+# 651 "data/maps/daycarebase/scripts.pory"
+	speakername MimikyuDialog_Text_0
+# 652 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_PIKACHU, EMOTE_HAPPY
+# 653 "data/maps/daycarebase/scripts.pory"
+	msgbox BattleVsPikachu_Text_3, MSGBOX_DEFAULT
+# 654 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 655 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 656 "data/maps/daycarebase/scripts.pory"
+	fadenewbgm MUS_PMD_HEARTWARMING
+# 657 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 ChanseyHeal::
-# 655 "data/maps/daycarebase/scripts.pory"
-	lock
-# 656 "data/maps/daycarebase/scripts.pory"
-	faceplayer
-# 657 "data/maps/daycarebase/scripts.pory"
-	speakername ChanseyHeal_Text_0
-# 658 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
-# 659 "data/maps/daycarebase/scripts.pory"
-	msgbox ChanseyHeal_Text_1, MSGBOX_DEFAULT
-# 660 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
-# 661 "data/maps/daycarebase/scripts.pory"
-	msgbox ChanseyHeal_Text_2, MSGBOX_YESNO
-# 662 "data/maps/daycarebase/scripts.pory"
-	waitmessage
 # 663 "data/maps/daycarebase/scripts.pory"
+	lock
+# 664 "data/maps/daycarebase/scripts.pory"
+	faceplayer
+# 665 "data/maps/daycarebase/scripts.pory"
+	speakername ChanseyHeal_Text_0
+# 666 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 667 "data/maps/daycarebase/scripts.pory"
+	msgbox ChanseyHeal_Text_1, MSGBOX_DEFAULT
+# 668 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 669 "data/maps/daycarebase/scripts.pory"
+	msgbox ChanseyHeal_Text_2, MSGBOX_YESNO
+# 670 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 671 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq ChanseyHeal_1
-# 693 "data/maps/daycarebase/scripts.pory"
+# 701 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
-# 694 "data/maps/daycarebase/scripts.pory"
+# 702 "data/maps/daycarebase/scripts.pory"
 	msgbox ChanseyHeal_Text_5, MSGBOX_AUTOCLOSE
-# 695 "data/maps/daycarebase/scripts.pory"
+# 703 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 696 "data/maps/daycarebase/scripts.pory"
+# 704 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 697 "data/maps/daycarebase/scripts.pory"
+# 705 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 ChanseyHeal_1:
-# 665 "data/maps/daycarebase/scripts.pory"
+# 673 "data/maps/daycarebase/scripts.pory"
 	checkitem ITEM_LUCKY_EGG
-# 666 "data/maps/daycarebase/scripts.pory"
+# 674 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ChanseyHeal_4
-# 683 "data/maps/daycarebase/scripts.pory"
+# 691 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
-# 684 "data/maps/daycarebase/scripts.pory"
+# 692 "data/maps/daycarebase/scripts.pory"
 	msgbox ChanseyHeal_Text_4, MSGBOX_AUTOCLOSE
-# 685 "data/maps/daycarebase/scripts.pory"
+# 693 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 686 "data/maps/daycarebase/scripts.pory"
+# 694 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 687 "data/maps/daycarebase/scripts.pory"
+# 695 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 ChanseyHeal_4:
-# 668 "data/maps/daycarebase/scripts.pory"
-	removeitem ITEM_LUCKY_EGG
-# 669 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 670 "data/maps/daycarebase/scripts.pory"
-	playfanfare MUS_HEAL
-# 671 "data/maps/daycarebase/scripts.pory"
-	waitfanfare
-# 672 "data/maps/daycarebase/scripts.pory"
-	special HealPlayerParty
-# 673 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 674 "data/maps/daycarebase/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 675 "data/maps/daycarebase/scripts.pory"
-	msgbox ChanseyHeal_Text_3, MSGBOX_AUTOCLOSE
 # 676 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+	removeitem ITEM_LUCKY_EGG
 # 677 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	fadescreenswapbuffers FADE_TO_BLACK
 # 678 "data/maps/daycarebase/scripts.pory"
+	playfanfare MUS_HEAL
+# 679 "data/maps/daycarebase/scripts.pory"
+	waitfanfare
+# 680 "data/maps/daycarebase/scripts.pory"
+	special HealPlayerParty
+# 681 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 682 "data/maps/daycarebase/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 683 "data/maps/daycarebase/scripts.pory"
+	msgbox ChanseyHeal_Text_3, MSGBOX_AUTOCLOSE
+# 684 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 685 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 686 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycareBase_Ditto::
-# 704 "data/maps/daycarebase/scripts.pory"
+# 712 "data/maps/daycarebase/scripts.pory"
 	lock
-# 705 "data/maps/daycarebase/scripts.pory"
+# 713 "data/maps/daycarebase/scripts.pory"
 	faceplayer
-# 706 "data/maps/daycarebase/scripts.pory"
+# 714 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_DITTO_INTRO, DaycareBase_Ditto_1
-# 768 "data/maps/daycarebase/scripts.pory"
+# 776 "data/maps/daycarebase/scripts.pory"
 	speakername DaycareBase_Ditto_Text_1
-# 769 "data/maps/daycarebase/scripts.pory"
+# 777 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 770 "data/maps/daycarebase/scripts.pory"
+# 778 "data/maps/daycarebase/scripts.pory"
 	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
-# 770 "data/maps/daycarebase/scripts.pory"
+# 778 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 771 "data/maps/daycarebase/scripts.pory"
+# 779 "data/maps/daycarebase/scripts.pory"
 	setflag FLAG_DITTO_INTRO
-# 772 "data/maps/daycarebase/scripts.pory"
+# 780 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 773 "data/maps/daycarebase/scripts.pory"
+# 781 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 774 "data/maps/daycarebase/scripts.pory"
+# 782 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_1:
-# 708 "data/maps/daycarebase/scripts.pory"
+# 716 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareBase_Ditto_4
-# 735 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareBase_Ditto_Text_1
-# 736 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 737 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_3, MSGBOX_DEFAULT
-# 737 "data/maps/daycarebase/scripts.pory"
-	waitmessage
-# 738 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_XFORMS_TALKED_TO_DITTO
-# 739 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 740 "data/maps/daycarebase/scripts.pory"
-	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 741 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
-# 742 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_0, MSGBOX_YESNO
 # 743 "data/maps/daycarebase/scripts.pory"
+	speakername DaycareBase_Ditto_Text_1
+# 744 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 745 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_3, MSGBOX_DEFAULT
+# 745 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 746 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_XFORMS_TALKED_TO_DITTO
+# 747 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 748 "data/maps/daycarebase/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 749 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 750 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_0, MSGBOX_YESNO
+# 751 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareBase_Ditto_10
-# 753 "data/maps/daycarebase/scripts.pory"
+# 761 "data/maps/daycarebase/scripts.pory"
 	speakername DaycareBase_Ditto_Text_1
-# 754 "data/maps/daycarebase/scripts.pory"
+# 762 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 755 "data/maps/daycarebase/scripts.pory"
+# 763 "data/maps/daycarebase/scripts.pory"
 	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
-# 756 "data/maps/daycarebase/scripts.pory"
+# 764 "data/maps/daycarebase/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 757 "data/maps/daycarebase/scripts.pory"
+# 765 "data/maps/daycarebase/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 758 "data/maps/daycarebase/scripts.pory"
+# 766 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 759 "data/maps/daycarebase/scripts.pory"
+# 767 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 760 "data/maps/daycarebase/scripts.pory"
+# 768 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_4:
-# 710 "data/maps/daycarebase/scripts.pory"
+# 718 "data/maps/daycarebase/scripts.pory"
 	msgbox DaycareBase_Ditto_Text_0, MSGBOX_YESNO
-# 711 "data/maps/daycarebase/scripts.pory"
+# 719 "data/maps/daycarebase/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareBase_Ditto_7
-# 723 "data/maps/daycarebase/scripts.pory"
+# 731 "data/maps/daycarebase/scripts.pory"
 	speakername DaycareBase_Ditto_Text_1
-# 724 "data/maps/daycarebase/scripts.pory"
+# 732 "data/maps/daycarebase/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 725 "data/maps/daycarebase/scripts.pory"
+# 733 "data/maps/daycarebase/scripts.pory"
 	msgbox DaycareBase_Ditto_Text_2, MSGBOX_AUTOCLOSE
-# 726 "data/maps/daycarebase/scripts.pory"
+# 734 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 727 "data/maps/daycarebase/scripts.pory"
+# 735 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
-# 728 "data/maps/daycarebase/scripts.pory"
+# 736 "data/maps/daycarebase/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 729 "data/maps/daycarebase/scripts.pory"
+# 737 "data/maps/daycarebase/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 730 "data/maps/daycarebase/scripts.pory"
+# 738 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_7:
-# 713 "data/maps/daycarebase/scripts.pory"
+# 721 "data/maps/daycarebase/scripts.pory"
 	dittotransform SPECIES_DITTO
-# 714 "data/maps/daycarebase/scripts.pory"
+# 722 "data/maps/daycarebase/scripts.pory"
 	special OpenPCMoveMons
-# 715 "data/maps/daycarebase/scripts.pory"
+# 723 "data/maps/daycarebase/scripts.pory"
 	waitstate
-# 716 "data/maps/daycarebase/scripts.pory"
+# 724 "data/maps/daycarebase/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 717 "data/maps/daycarebase/scripts.pory"
+# 725 "data/maps/daycarebase/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 718 "data/maps/daycarebase/scripts.pory"
+# 726 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 DaycareBase_Ditto_10:
-# 745 "data/maps/daycarebase/scripts.pory"
+# 753 "data/maps/daycarebase/scripts.pory"
 	dittotransform SPECIES_DITTO
-# 746 "data/maps/daycarebase/scripts.pory"
+# 754 "data/maps/daycarebase/scripts.pory"
 	special OpenPCMoveMons
-# 747 "data/maps/daycarebase/scripts.pory"
+# 755 "data/maps/daycarebase/scripts.pory"
 	waitstate
-# 748 "data/maps/daycarebase/scripts.pory"
+# 756 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycarebaseDitto_intro_trigger::
-# 781 "data/maps/daycarebase/scripts.pory"
+# 789 "data/maps/daycarebase/scripts.pory"
 	goto_if_unset FLAG_DITTO_INTRO, DaycarebaseDitto_intro_trigger_1
 	end
 
 DaycarebaseDitto_intro_trigger_1:
-# 783 "data/maps/daycarebase/scripts.pory"
-	lock
-# 784 "data/maps/daycarebase/scripts.pory"
-	playse SE_PIN
-# 785 "data/maps/daycarebase/scripts.pory"
-	applymovement DittoIntro, Common_Movement_ExclamationMark
-# 786 "data/maps/daycarebase/scripts.pory"
-	waitmovement DittoIntro
-# 787 "data/maps/daycarebase/scripts.pory"
-	applymovement DittoIntro, DaycareIntro_Movement_2
-# 788 "data/maps/daycarebase/scripts.pory"
-	waitmovement DittoIntro
-# 789 "data/maps/daycarebase/scripts.pory"
-	applymovement LOCALID_PLAYER, DaycareIntro_Movement_3
-# 790 "data/maps/daycarebase/scripts.pory"
-	waitmovement LOCALID_PLAYER
 # 791 "data/maps/daycarebase/scripts.pory"
-	speakername DaycareBase_Ditto_Text_1
+	lock
 # 792 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+	playse SE_PIN
 # 793 "data/maps/daycarebase/scripts.pory"
-	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
-# 793 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	applymovement DittoIntro, Common_Movement_ExclamationMark
 # 794 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_DITTO_INTRO
+	waitmovement DittoIntro
 # 795 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	applymovement DittoIntro, DaycareIntro_Movement_2
 # 796 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
+	waitmovement DittoIntro
 # 797 "data/maps/daycarebase/scripts.pory"
+	applymovement LOCALID_PLAYER, DaycareIntro_Movement_3
+# 798 "data/maps/daycarebase/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 799 "data/maps/daycarebase/scripts.pory"
+	speakername DaycareBase_Ditto_Text_1
+# 800 "data/maps/daycarebase/scripts.pory"
+	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
+# 801 "data/maps/daycarebase/scripts.pory"
+	msgbox DaycareBase_Ditto_Text_4, MSGBOX_DEFAULT
+# 801 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 802 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_DITTO_INTRO
+# 803 "data/maps/daycarebase/scripts.pory"
+	waitmessage
+# 804 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 805 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycareBase_FindLuckyEgg::
-# 807 "data/maps/daycarebase/scripts.pory"
+# 815 "data/maps/daycarebase/scripts.pory"
 	lock
-# 808 "data/maps/daycarebase/scripts.pory"
+# 816 "data/maps/daycarebase/scripts.pory"
 	finditem ITEM_LUCKY_EGG
-# 809 "data/maps/daycarebase/scripts.pory"
+# 817 "data/maps/daycarebase/scripts.pory"
 	waitmessage
-# 810 "data/maps/daycarebase/scripts.pory"
+# 818 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
@@ -1541,233 +1557,237 @@ DaycareOldManDialog_Text_8:
 	.string "Ah, it's you!\pWe were raising your Pokémon\nand my goodness, were we surprised!\pYour Pokémon had an Egg!\pWe don't know how it got there,\nbut your Pokémon had it.\pYou do want it, yes?\n$"
 
 DaycareOldManDialog_Text_9:
-# 277 "data/maps/daycarebase/scripts.pory"
+# 270 "data/maps/daycarebase/scripts.pory"
+	.string "INSERT STATS HERE$"
+
+DaycareOldManDialog_Text_10:
+# 281 "data/maps/daycarebase/scripts.pory"
 	.string "The Daycare Man ripped the Egg\nfrom Ditto's clutches.$"
 
 VaporeonDialog_Text_0:
-# 349 "data/maps/daycarebase/scripts.pory"
+# 356 "data/maps/daycarebase/scripts.pory"
 	.string "Ugh!\pWhy does everyone keep asking me\nto help them search for Eggs?\pCan't you see I'm busy?\n$"
 
 LaprasDialog_Text_0:
-# 360 "data/maps/daycarebase/scripts.pory"
+# 367 "data/maps/daycarebase/scripts.pory"
 	.string "Lapras$"
 
 LaprasDialog_Text_1:
-# 362 "data/maps/daycarebase/scripts.pory"
+# 369 "data/maps/daycarebase/scripts.pory"
 	.string "I love the Daycare!\pIt's so peaceful and quiet here.\pI can just float around all day\nand relax.\pThose waterfalls are pretty\nvicious, I won't go near them.\pI've heard that Dragonair can\neasily scale even the largest\lof waterfalls!$"
 
 LinooneDialog_Text_0:
-# 374 "data/maps/daycarebase/scripts.pory"
+# 381 "data/maps/daycarebase/scripts.pory"
 	.string "Linoone$"
 
 LinooneDialog_Text_1:
-# 376 "data/maps/daycarebase/scripts.pory"
+# 383 "data/maps/daycarebase/scripts.pory"
 	.string "The Daycare is huge!\pIt's a bit scary to expore,\nso I stay up here.\pRiolu is way more brave than I\nam and has explored the entirety\lof the Daycare.\pYou should talk with Riolu if\nyou get lost!\pI'm sure they can help!\n$"
 
 LinooneDialog_Text_2:
-# 388 "data/maps/daycarebase/scripts.pory"
+# 395 "data/maps/daycarebase/scripts.pory"
 	.string "Those Dittos really freak me out.\pThey could be any one of use right\nnow...\pEven you!... or me!\n$"
 
 BulbsaurDialog_Text_0:
-# 399 "data/maps/daycarebase/scripts.pory"
+# 406 "data/maps/daycarebase/scripts.pory"
 	.string "Bulbasaur$"
 
 BulbsaurDialog_Text_1:
-# 401 "data/maps/daycarebase/scripts.pory"
+# 408 "data/maps/daycarebase/scripts.pory"
 	.string "You want to know where Eggs\ncome from?\pI heard that a Pokémon needs\nto go on a great adventure to\lmeet a shapeshifting Pokémon.\pIf you can best them, they will\ngive you an egg!\pAt least, that's what Venusaur\ntold me...$"
 
 CombeeDialog_Text_0:
-# 411 "data/maps/daycarebase/scripts.pory"
+# 418 "data/maps/daycarebase/scripts.pory"
 	.string "Combee$"
 
 CombeeDialog_Text_1:
-# 413 "data/maps/daycarebase/scripts.pory"
+# 420 "data/maps/daycarebase/scripts.pory"
 	.string "I've been in this Daycare\nfor ages!\pI've flown all around and\npollenated so many flowers\lbut I still haven't gained a\lsingle level.\pI'm beginning to believe gaining\nEXP here is nothing more\lthan a big ole myth!$"
 
 Porygon2Dialog_Text_0:
-# 423 "data/maps/daycarebase/scripts.pory"
+# 430 "data/maps/daycarebase/scripts.pory"
 	.string "Porygon2$"
 
 Porygon2Dialog_Text_1:
-# 425 "data/maps/daycarebase/scripts.pory"
+# 432 "data/maps/daycarebase/scripts.pory"
 	.string "Another Ditto...\pI'm actually a Ditto too,\nI just prefer this look.\pThe Daycare population must be at\nleast 75 percent Dittos!\pMost Dittos will take on different\nforms.\pYou won't be able to transform\ninto a form that another Ditto has\ltaken on though.$"
 
 ScytherDialog_Text_0:
-# 435 "data/maps/daycarebase/scripts.pory"
+# 442 "data/maps/daycarebase/scripts.pory"
 	.string "Scyther$"
 
 ScytherDialog_Text_1:
-# 437 "data/maps/daycarebase/scripts.pory"
-	.string "One in every thirty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...$"
+# 444 "data/maps/daycarebase/scripts.pory"
+	.string "One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...$"
 
 RioluDialog_Text_0:
-# 451 "data/maps/daycarebase/scripts.pory"
+# 458 "data/maps/daycarebase/scripts.pory"
 	.string "Riolu$"
 
 RioluDialog_Text_1:
-# 453 "data/maps/daycarebase/scripts.pory"
+# 460 "data/maps/daycarebase/scripts.pory"
 	.string "Back with a Lucky Egg?\n$"
 
 RioluDialog_Text_2:
-# 459 "data/maps/daycarebase/scripts.pory"
+# 466 "data/maps/daycarebase/scripts.pory"
 	.string "Great!\pI can tell about the habitat and\nability of a Pokémon in the Daycare.$"
 
 RioluDialog_Text_3:
-# 461 "data/maps/daycarebase/scripts.pory"
+# 468 "data/maps/daycarebase/scripts.pory"
 	.string "Would you like to exchange a\nLucky Egg?$"
 
 RioluDialog_Text_4:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Arcanine$"
 
 RioluDialog_Text_5:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Chinchou$"
 
 RioluDialog_Text_6:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Cutiefly$"
 
 RioluDialog_Text_7:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Dragonair$"
 
 RioluDialog_Text_8:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Marill$"
 
 RioluDialog_Text_9:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Machamp$"
 
 RioluDialog_Text_10:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Noivern$"
 
 RioluDialog_Text_11:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Rhyhorn$"
 
 RioluDialog_Text_12:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Lurantis$"
 
 RioluDialog_Text_13:
-# 465 "data/maps/daycarebase/scripts.pory"
+# 472 "data/maps/daycarebase/scripts.pory"
 	.string "Weavile$"
 
 RioluDialog_Text_14:
-# 469 "data/maps/daycarebase/scripts.pory"
+# 476 "data/maps/daycarebase/scripts.pory"
 	.string "Arcanine can be found deep in the\nVolcano.\pIt can run really fast and scale\nhills that would normally be to\lslippery to climb!$"
 
 RioluDialog_Text_15:
-# 478 "data/maps/daycarebase/scripts.pory"
+# 485 "data/maps/daycarebase/scripts.pory"
 	.string "Chinchou can be found in a cave\non the water in the desert.\pIt can dive deep underwater.\n$"
 
 RioluDialog_Text_16:
-# 487 "data/maps/daycarebase/scripts.pory"
+# 494 "data/maps/daycarebase/scripts.pory"
 	.string "Cutiefly can be found in the\nDaycare's flowers to the west.\pIt's a tiny Pokémon that can\nfit through small openings.$"
 
 RioluDialog_Text_17:
-# 496 "data/maps/daycarebase/scripts.pory"
+# 503 "data/maps/daycarebase/scripts.pory"
 	.string "Dragonair can be found at the lake.\pIt can be a bit cryptic so it\nmay be difficult to reach.\pIt can scale large waterfalls\nwith ease.$"
 
 RioluDialog_Text_18:
-# 505 "data/maps/daycarebase/scripts.pory"
+# 512 "data/maps/daycarebase/scripts.pory"
 	.string "Marill can be found at the lake,\nusually by the shore.\pIt's a bit shy so it may be hiding.\pIt can float in any body of water.\n$"
 
 RioluDialog_Text_19:
-# 514 "data/maps/daycarebase/scripts.pory"
+# 521 "data/maps/daycarebase/scripts.pory"
 	.string "Machamp likes to train deep in\nthe mountains.\pIt is a very tough and solitary\nPokémon.\pIts strength can move large\nboulders.$"
 
 RioluDialog_Text_20:
-# 523 "data/maps/daycarebase/scripts.pory"
+# 530 "data/maps/daycarebase/scripts.pory"
 	.string "Noivern hangs out in a dark\ncave above the Daycare Falls.\pIt's quite a powerful Pokémon,\nso be prepared for a fight.\pIt can soar through the air,\nreaching places unreachable by\lnon_flying types.$"
 
 RioluDialog_Text_21:
-# 532 "data/maps/daycarebase/scripts.pory"
+# 539 "data/maps/daycarebase/scripts.pory"
 	.string "Pikachu is standing on that cliff\nright over there.\pIts electricity can light up even\nthe darkest of caves.$"
 
 RioluDialog_Text_22:
-# 541 "data/maps/daycarebase/scripts.pory"
+# 548 "data/maps/daycarebase/scripts.pory"
 	.string "Rhyhorn lives in the desert.\pIt's quite a friendly Pokémon,\nbut don't upset it!\pIt is strong enough to smash\nsolid rocks!$"
 
 RioluDialog_Text_23:
-# 550 "data/maps/daycarebase/scripts.pory"
+# 557 "data/maps/daycarebase/scripts.pory"
 	.string "Lurantis has been spending time\nacross the water in the mountains.\pIts sharp limbs can cut through\nsmall trees.$"
 
 RioluDialog_Text_24:
-# 559 "data/maps/daycarebase/scripts.pory"
+# 566 "data/maps/daycarebase/scripts.pory"
 	.string "Weavile is quite the ninja.\pIt spends time in the tall trees\nin the jungle.\pIt demands a fierce challenger\nto battle it.\pIts agility allows it to cross\neven the smallest of walkways.$"
 
 RioluDialog_Text_25:
-# 569 "data/maps/daycarebase/scripts.pory"
+# 576 "data/maps/daycarebase/scripts.pory"
 	.string "Oh.\pWhat else are you gonna do\nwith that egg?$"
 
 RioluDialog_Text_26:
-# 581 "data/maps/daycarebase/scripts.pory"
+# 588 "data/maps/daycarebase/scripts.pory"
 	.string "No?\nCome back when you do!$"
 
 RioluDialog_Text_27:
-# 593 "data/maps/daycarebase/scripts.pory"
+# 600 "data/maps/daycarebase/scripts.pory"
 	.string "Hiya!\pI'm Riolu!\pI've visited every biome the\nDaycare has to offer.\lI know it like the back of my paw!\pIf you need guidance on where a\ncertain Pokémon might be,\lI'm your Pokémon!\pAlthough I won't do it for free...\pBring me Lucky Eggs, and I'll tell\nyou what I know.$"
 
 BattleVsPikachu_Text_0:
-# 611 "data/maps/daycarebase/scripts.pory"
+# 618 "data/maps/daycarebase/scripts.pory"
 	.string "You really lit me up.\pBest of luck on your journey!\n$"
 
 BattleVsPikachu_Text_1:
-# 626 "data/maps/daycarebase/scripts.pory"
+# 633 "data/maps/daycarebase/scripts.pory"
 	.string "A Ditto!\pYou must be on your quest to obtain\nyour egg.\pDefeat me in battle and I'll allow\nyou to transform into me!$"
 
 BattleVsPikachu_Text_2:
-# 639 "data/maps/daycarebase/scripts.pory"
+# 647 "data/maps/daycarebase/scripts.pory"
 	.string "You have gained the ability to\ntransform into Pikachu!$"
 
 BattleVsPikachu_Text_3:
-# 645 "data/maps/daycarebase/scripts.pory"
+# 653 "data/maps/daycarebase/scripts.pory"
 	.string "How electrifying!\pElectric_type moves are powerful\nagainst Water_type Pokémon.\pThey typically spend their time in\nthe Lake Biome here.$"
 
 ChanseyHeal_Text_0:
-# 657 "data/maps/daycarebase/scripts.pory"
+# 665 "data/maps/daycarebase/scripts.pory"
 	.string "Chansey$"
 
 ChanseyHeal_Text_1:
-# 659 "data/maps/daycarebase/scripts.pory"
+# 667 "data/maps/daycarebase/scripts.pory"
 	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.$"
 
 ChanseyHeal_Text_2:
-# 661 "data/maps/daycarebase/scripts.pory"
+# 669 "data/maps/daycarebase/scripts.pory"
 	.string "Would you like to heal?$"
 
 ChanseyHeal_Text_3:
-# 675 "data/maps/daycarebase/scripts.pory"
+# 683 "data/maps/daycarebase/scripts.pory"
 	.string "You have been restored to full health!$"
 
 ChanseyHeal_Text_4:
-# 684 "data/maps/daycarebase/scripts.pory"
+# 692 "data/maps/daycarebase/scripts.pory"
 	.string "You don't have a Lucky Egg!\pCome back when you do.$"
 
 ChanseyHeal_Text_5:
-# 694 "data/maps/daycarebase/scripts.pory"
+# 702 "data/maps/daycarebase/scripts.pory"
 	.string "Oh, okay then.$"
 
 DaycareBase_Ditto_Text_0:
-# 710 "data/maps/daycarebase/scripts.pory"
+# 718 "data/maps/daycarebase/scripts.pory"
 	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareBase_Ditto_Text_1:
-# 723 "data/maps/daycarebase/scripts.pory"
+# 731 "data/maps/daycarebase/scripts.pory"
 	.string "Ditto$"
 
 DaycareBase_Ditto_Text_2:
-# 725 "data/maps/daycarebase/scripts.pory"
+# 733 "data/maps/daycarebase/scripts.pory"
 	.string "Come back anytime!$"
 
 DaycareBase_Ditto_Text_3:
-# 737 "data/maps/daycarebase/scripts.pory"
+# 745 "data/maps/daycarebase/scripts.pory"
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"
 
 DaycareBase_Ditto_Text_4:
-# 770 "data/maps/daycarebase/scripts.pory"
+# 778 "data/maps/daycarebase/scripts.pory"
 	.string "Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!$"

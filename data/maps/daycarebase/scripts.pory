@@ -266,6 +266,10 @@ script DaycareOldManDialog{
             delay(60)
             fadescreenswapbuffers(FADE_TO_BLACK, 240)
             delay(60)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            msgbox("INSERT STATS HERE", MSGBOX_DEFAULT)
+            waitmessage
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             clearflag(FLAG_BEAT_MEW)
             setflag(FLAG_SHOW_BRENDAN_OUTRO)
             clearflag(FLAG_HIDE_BRENDAN_BIKE)
@@ -319,8 +323,11 @@ script DaycareOldManDialog{
             speakername("Daycare Man")
             msgbox("Ah, it's you!\pWe were raising your Pokémon\nand my goodness, were we surprised!\pYour Pokémon had an Egg!\pWe don't know how it got there,\nbut your Pokémon had it.\pYou do want it, yes?\n", MSGBOX_DEFAULT)
             delay(60)
-            fadescreenswapbuffers(FADE_TO_BLACK, 240)
-            delay(60)
+            fadescreenswapbuffers(FADE_TO_BLACK, 60)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            msgbox("INSERT STATS HERE", MSGBOX_DEFAULT)
+            waitmessage
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             clearflag(FLAG_BEAT_MEW)
             setflag(FLAG_SHOW_BRENDAN_OUTRO)
             clearflag(FLAG_HIDE_BRENDAN_BIKE)
@@ -434,7 +441,7 @@ script ScytherDialog{
     faceplayer
     speakername("Scyther")
     createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
-    msgbox("One in every thirty Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...", MSGBOX_DEFAULT)
+    msgbox("One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release
@@ -634,6 +641,7 @@ script BattleVsPikachu{
         playbgm(MUS_PMD_HAPPINESS, FALSE)
         copyvar(VAR_TEMP_0, VAR_TRANSFORM_MON)
         setflag(FLAG_TRANS_PIKACHU)
+        delay(15)
         dittotransform(SPECIES_PIKACHU)
         playse(MUS_LEVEL_UP)
         msgbox("You have gained the ability to\ntransform into Pikachu!", MSGBOX_DEFAULT)
