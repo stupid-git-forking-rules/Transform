@@ -6,6 +6,7 @@ EventScript_UseSurf::
     lockall
     msgbox gText_WantToUseSurf, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, EventScript_ReleaseUseSurf
+EventScript_UseSurfFieldEffect::
     special StartMarillSurf
 	releaseall
     end

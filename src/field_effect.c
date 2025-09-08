@@ -3,6 +3,7 @@
 #include "decompress.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "event_scripts.h"
 #include "field_camera.h"
 #include "field_control_avatar.h"
 #include "field_effect.h"
@@ -3228,10 +3229,7 @@ static void SpriteCB_FieldMoveMonSlideOffscreen(struct Sprite *sprite)
 
 u8 FldEff_UseSurf(void)
 {
-    u8 taskId = CreateTask(Task_SurfFieldEffect, 0xff);
-    gTasks[taskId].tMonId = gFieldEffectArguments[0];
-    Overworld_ClearSavedMusic();
-    Overworld_ChangeMusicTo(MUS_SURF);
+    ScriptContext_SetupScript(EventScript_UseSurfFieldEffect);
     return FALSE;
 }
 
