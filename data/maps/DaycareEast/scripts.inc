@@ -184,21 +184,26 @@ RuffletDialog::
 # 113 "data/maps/DaycareEast/scripts.pory"
 	lock
 # 114 "data/maps/DaycareEast/scripts.pory"
-	faceplayer
+	applymovement Rufflet, RuffletDialog_Movement_0
 # 115 "data/maps/DaycareEast/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_NOIVERN
-	goto_if_eq RuffletDialog_1
-# 180 "data/maps/DaycareEast/scripts.pory"
+	goto_if_eq RuffletDialog_7
+RuffletDialog_5:
+# 178 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_TRANSFORM_MON, SPECIES_NOIVERN
+	goto_if_eq RuffletDialog_4
+RuffletDialog_3:
+# 245 "data/maps/DaycareEast/scripts.pory"
 	speakername RuffletDialog_Text_0
-# 181 "data/maps/DaycareEast/scripts.pory"
+# 246 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_RUFFLET, EMOTE_ANGRY
-# 182 "data/maps/DaycareEast/scripts.pory"
+# 247 "data/maps/DaycareEast/scripts.pory"
 	msgbox RuffletDialog_Text_5, MSGBOX_DEFAULT
-# 183 "data/maps/DaycareEast/scripts.pory"
+# 248 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 184 "data/maps/DaycareEast/scripts.pory"
+# 249 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
-# 185 "data/maps/DaycareEast/scripts.pory"
+# 250 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
@@ -266,13 +271,13 @@ RuffletDialog_1:
 # 147 "data/maps/DaycareEast/scripts.pory"
 	playse SE_LEDGE
 # 149 "data/maps/DaycareEast/scripts.pory"
-	applymovement Rufflet, RuffletDialog_Movement_0
+	applymovement Rufflet, RuffletDialog_Movement_1
 # 153 "data/maps/DaycareEast/scripts.pory"
 	waitmovement 0
 # 154 "data/maps/DaycareEast/scripts.pory"
 	playse SE_FALL
 # 155 "data/maps/DaycareEast/scripts.pory"
-	applymovement Rufflet, RuffletDialog_Movement_1
+	applymovement Rufflet, RuffletDialog_Movement_2
 # 157 "data/maps/DaycareEast/scripts.pory"
 	waitmovement 0
 # 158 "data/maps/DaycareEast/scripts.pory"
@@ -309,240 +314,369 @@ RuffletDialog_1:
 	release
 	end
 
-
+RuffletDialog_2:
+# 180 "data/maps/DaycareEast/scripts.pory"
+	speakername RuffletDialog_Text_0
+# 181 "data/maps/DaycareEast/scripts.pory"
+	createfieldmugshot MUGSHOT_RUFFLET, EMOTE_ANGRY
+# 182 "data/maps/DaycareEast/scripts.pory"
+	msgbox RuffletDialog_Text_1, MSGBOX_DEFAULT
+# 183 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 184 "data/maps/DaycareEast/scripts.pory"
+	removefieldmugshot
+# 185 "data/maps/DaycareEast/scripts.pory"
+	applymovement Rufflet, Common_Movement_ExclamationMark
+# 186 "data/maps/DaycareEast/scripts.pory"
+	playse SE_PIN
+# 187 "data/maps/DaycareEast/scripts.pory"
+	waitfanfare
+# 188 "data/maps/DaycareEast/scripts.pory"
+	waitmovement
+# 189 "data/maps/DaycareEast/scripts.pory"
+	createfieldmugshot MUGSHOT_RUFFLET, EMOTE_ELATED
+# 190 "data/maps/DaycareEast/scripts.pory"
+	msgbox RuffletDialog_Text_2, MSGBOX_DEFAULT
 # 191 "data/maps/DaycareEast/scripts.pory"
-RuffletFlyAway:
+	waitmessage
 # 192 "data/maps/DaycareEast/scripts.pory"
-	face_down
+	applymovement Rufflet, Common_Movement_ExclamationMark
 # 193 "data/maps/DaycareEast/scripts.pory"
-	lock_facing_direction
+	playse SE_PIN
 # 194 "data/maps/DaycareEast/scripts.pory"
-	walk_slow_up
-# 194 "data/maps/DaycareEast/scripts.pory"
-	walk_slow_up
+	waitfanfare
 # 195 "data/maps/DaycareEast/scripts.pory"
-	delay_16
-# 195 "data/maps/DaycareEast/scripts.pory"
-	delay_16
+	waitmovement
 # 196 "data/maps/DaycareEast/scripts.pory"
-	walk_fast_down
-# 196 "data/maps/DaycareEast/scripts.pory"
-	walk_fast_down
-	step_end
-
-RuffletOnShore::
+	msgbox RuffletDialog_Text_3, MSGBOX_DEFAULT
+# 197 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 198 "data/maps/DaycareEast/scripts.pory"
+	removefieldmugshot
+# 199 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 200 "data/maps/DaycareEast/scripts.pory"
+	giveitem ITEM_LUCKY_EGG
 # 201 "data/maps/DaycareEast/scripts.pory"
-	lock
+	waitfanfare
 # 202 "data/maps/DaycareEast/scripts.pory"
-	faceplayer
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 203 "data/maps/DaycareEast/scripts.pory"
 	speakername RuffletDialog_Text_0
 # 204 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_RUFFLET, EMOTE_ELATED
 # 205 "data/maps/DaycareEast/scripts.pory"
-	msgbox RuffletOnShore_Text_0, MSGBOX_DEFAULT
+	msgbox RuffletDialog_Text_4, MSGBOX_AUTOCLOSE
 # 206 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
 # 207 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
 # 208 "data/maps/DaycareEast/scripts.pory"
+	applymovement LOCALID_PLAYER, RuffletDialog_Movement_3
+# 209 "data/maps/DaycareEast/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 210 "data/maps/DaycareEast/scripts.pory"
+	applymovement Rufflet, RuffletFlyAway
+# 211 "data/maps/DaycareEast/scripts.pory"
+	waitmovement 0
+# 212 "data/maps/DaycareEast/scripts.pory"
+	playse SE_LEDGE
+# 214 "data/maps/DaycareEast/scripts.pory"
+	applymovement Rufflet, RuffletDialog_Movement_1
+# 218 "data/maps/DaycareEast/scripts.pory"
+	waitmovement 0
+# 219 "data/maps/DaycareEast/scripts.pory"
+	playse SE_FALL
+# 220 "data/maps/DaycareEast/scripts.pory"
+	applymovement Rufflet, RuffletDialog_Movement_2
+# 222 "data/maps/DaycareEast/scripts.pory"
+	waitmovement 0
+# 223 "data/maps/DaycareEast/scripts.pory"
+	delay 30
+# 225 "data/maps/DaycareEast/scripts.pory"
+	setvar VAR_0x8004, 2
+# 226 "data/maps/DaycareEast/scripts.pory"
+	setvar VAR_0x8005, 6
+# 227 "data/maps/DaycareEast/scripts.pory"
+	setvar VAR_0x8006, 4
+# 228 "data/maps/DaycareEast/scripts.pory"
+	setvar VAR_0x8007, 4
+# 229 "data/maps/DaycareEast/scripts.pory"
+	special ShakeCamera
+# 230 "data/maps/DaycareEast/scripts.pory"
+	waitstate
+# 231 "data/maps/DaycareEast/scripts.pory"
+	delay 60
+# 233 "data/maps/DaycareEast/scripts.pory"
+	playse SE_BANG
+# 234 "data/maps/DaycareEast/scripts.pory"
+	waitfanfare
+# 235 "data/maps/DaycareEast/scripts.pory"
+	delay 60
+# 236 "data/maps/DaycareEast/scripts.pory"
+	playmoncry SPECIES_SHARPEDO, CRY_MODE_NORMAL
+# 237 "data/maps/DaycareEast/scripts.pory"
+	waitmoncry
+# 238 "data/maps/DaycareEast/scripts.pory"
+	removeobject Rufflet
+# 239 "data/maps/DaycareEast/scripts.pory"
+	setflag FLAG_HIDE_RUFFLET
+# 240 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+RuffletDialog_4:
+# 178 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_FACING, DIR_SOUTH
+	goto_if_eq RuffletDialog_2
+	goto RuffletDialog_3
+
+RuffletDialog_7:
+# 115 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_FACING, DIR_SOUTH
+	goto_if_ne RuffletDialog_1
+	goto RuffletDialog_5
+
+
+# 256 "data/maps/DaycareEast/scripts.pory"
+RuffletFlyAway:
+# 257 "data/maps/DaycareEast/scripts.pory"
+	face_down
+# 258 "data/maps/DaycareEast/scripts.pory"
+	lock_facing_direction
+# 259 "data/maps/DaycareEast/scripts.pory"
+	walk_slow_up
+# 259 "data/maps/DaycareEast/scripts.pory"
+	walk_slow_up
+# 260 "data/maps/DaycareEast/scripts.pory"
+	delay_16
+# 260 "data/maps/DaycareEast/scripts.pory"
+	delay_16
+# 261 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+# 261 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+	step_end
+
+RuffletOnShore::
+# 266 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 267 "data/maps/DaycareEast/scripts.pory"
+	faceplayer
+# 268 "data/maps/DaycareEast/scripts.pory"
+	speakername RuffletDialog_Text_0
+# 269 "data/maps/DaycareEast/scripts.pory"
+	createfieldmugshot MUGSHOT_RUFFLET, EMOTE_ELATED
+# 270 "data/maps/DaycareEast/scripts.pory"
+	msgbox RuffletOnShore_Text_0, MSGBOX_DEFAULT
+# 271 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 272 "data/maps/DaycareEast/scripts.pory"
+	removefieldmugshot
+# 273 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 
 SlowpokeDialog::
-# 213 "data/maps/DaycareEast/scripts.pory"
+# 278 "data/maps/DaycareEast/scripts.pory"
 	lock
-# 214 "data/maps/DaycareEast/scripts.pory"
+# 279 "data/maps/DaycareEast/scripts.pory"
 	faceplayer
-# 215 "data/maps/DaycareEast/scripts.pory"
+# 280 "data/maps/DaycareEast/scripts.pory"
 	speakername SlowpokeDialog_Text_0
-# 216 "data/maps/DaycareEast/scripts.pory"
+# 281 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_SLOWPOKE, EMOTE_NORMAL
-# 217 "data/maps/DaycareEast/scripts.pory"
+# 282 "data/maps/DaycareEast/scripts.pory"
 	msgbox SlowpokeDialog_Text_1, MSGBOX_DEFAULT
-# 218 "data/maps/DaycareEast/scripts.pory"
+# 283 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 219 "data/maps/DaycareEast/scripts.pory"
+# 284 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
-# 220 "data/maps/DaycareEast/scripts.pory"
+# 285 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 
 SharpedoDialog::
-# 225 "data/maps/DaycareEast/scripts.pory"
+# 290 "data/maps/DaycareEast/scripts.pory"
 	lock
-# 226 "data/maps/DaycareEast/scripts.pory"
+# 291 "data/maps/DaycareEast/scripts.pory"
 	faceplayer
-# 227 "data/maps/DaycareEast/scripts.pory"
+# 292 "data/maps/DaycareEast/scripts.pory"
 	goto_if_set FLAG_HIDE_RUFFLET, SharpedoDialog_1
-# 247 "data/maps/DaycareEast/scripts.pory"
+# 312 "data/maps/DaycareEast/scripts.pory"
 	speakername SharpedoDialog_Text_0
-# 248 "data/maps/DaycareEast/scripts.pory"
+# 313 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_SHARPEDO, EMOTE_NORMAL
-# 249 "data/maps/DaycareEast/scripts.pory"
+# 314 "data/maps/DaycareEast/scripts.pory"
 	msgbox SharpedoDialog_Text_3, MSGBOX_DEFAULT
-# 250 "data/maps/DaycareEast/scripts.pory"
+# 315 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 251 "data/maps/DaycareEast/scripts.pory"
+# 316 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
-# 252 "data/maps/DaycareEast/scripts.pory"
+# 317 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 SharpedoDialog_1:
-# 229 "data/maps/DaycareEast/scripts.pory"
+# 294 "data/maps/DaycareEast/scripts.pory"
 	speakername SharpedoDialog_Text_0
-# 230 "data/maps/DaycareEast/scripts.pory"
+# 295 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_SHARPEDO, EMOTE_NORMAL
-# 231 "data/maps/DaycareEast/scripts.pory"
+# 296 "data/maps/DaycareEast/scripts.pory"
 	msgbox SharpedoDialog_Text_1, MSGBOX_DEFAULT
-# 232 "data/maps/DaycareEast/scripts.pory"
+# 297 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 233 "data/maps/DaycareEast/scripts.pory"
+# 298 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
-# 234 "data/maps/DaycareEast/scripts.pory"
+# 299 "data/maps/DaycareEast/scripts.pory"
 	applymovement Sharpedo, ContestHall_Movement_Heart
-# 235 "data/maps/DaycareEast/scripts.pory"
+# 300 "data/maps/DaycareEast/scripts.pory"
 	speakername SharpedoDialog_Text_0
-# 236 "data/maps/DaycareEast/scripts.pory"
+# 301 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_SHARPEDO, EMOTE_ELATED
-# 237 "data/maps/DaycareEast/scripts.pory"
+# 302 "data/maps/DaycareEast/scripts.pory"
 	playse SE_PIN
-# 238 "data/maps/DaycareEast/scripts.pory"
+# 303 "data/maps/DaycareEast/scripts.pory"
 	msgbox SharpedoDialog_Text_2, MSGBOX_DEFAULT
-# 239 "data/maps/DaycareEast/scripts.pory"
+# 304 "data/maps/DaycareEast/scripts.pory"
 	clearflag FLAG_SHOW_RUFFLET
-# 240 "data/maps/DaycareEast/scripts.pory"
+# 305 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 241 "data/maps/DaycareEast/scripts.pory"
+# 306 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
-# 242 "data/maps/DaycareEast/scripts.pory"
+# 307 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 
 DaycareEastDittoOpenXforms::
-# 258 "data/maps/DaycareEast/scripts.pory"
-	lock
-# 259 "data/maps/DaycareEast/scripts.pory"
-	faceplayer
-# 260 "data/maps/DaycareEast/scripts.pory"
-	goto_if_set FLAG_DITTO_INTRO, DaycareEastDittoOpenXforms_1
 # 323 "data/maps/DaycareEast/scripts.pory"
-	speakername DaycareEastDittoOpenXforms_Text_1
+	lock
 # 324 "data/maps/DaycareEast/scripts.pory"
+	faceplayer
+# 325 "data/maps/DaycareEast/scripts.pory"
+	goto_if_set FLAG_DITTO_INTRO, DaycareEastDittoOpenXforms_1
+# 388 "data/maps/DaycareEast/scripts.pory"
+	speakername DaycareEastDittoOpenXforms_Text_1
+# 389 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 325 "data/maps/DaycareEast/scripts.pory"
+# 390 "data/maps/DaycareEast/scripts.pory"
 	msgbox DaycareEastDittoOpenXforms_Text_4, MSGBOX_DEFAULT
-# 325 "data/maps/DaycareEast/scripts.pory"
+# 390 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 326 "data/maps/DaycareEast/scripts.pory"
+# 391 "data/maps/DaycareEast/scripts.pory"
 	setflag FLAG_DITTO_INTRO
-# 327 "data/maps/DaycareEast/scripts.pory"
+# 392 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 328 "data/maps/DaycareEast/scripts.pory"
+# 393 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
-# 329 "data/maps/DaycareEast/scripts.pory"
+# 394 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 DaycareEastDittoOpenXforms_1:
-# 262 "data/maps/DaycareEast/scripts.pory"
+# 327 "data/maps/DaycareEast/scripts.pory"
 	goto_if_set FLAG_XFORMS_TALKED_TO_DITTO, DaycareEastDittoOpenXforms_4
-# 289 "data/maps/DaycareEast/scripts.pory"
+# 354 "data/maps/DaycareEast/scripts.pory"
 	speakername DaycareEastDittoOpenXforms_Text_1
-# 290 "data/maps/DaycareEast/scripts.pory"
+# 355 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 291 "data/maps/DaycareEast/scripts.pory"
+# 356 "data/maps/DaycareEast/scripts.pory"
 	msgbox DaycareEastDittoOpenXforms_Text_3, MSGBOX_DEFAULT
-# 292 "data/maps/DaycareEast/scripts.pory"
+# 357 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 293 "data/maps/DaycareEast/scripts.pory"
+# 358 "data/maps/DaycareEast/scripts.pory"
 	setflag FLAG_XFORMS_TALKED_TO_DITTO
-# 294 "data/maps/DaycareEast/scripts.pory"
+# 359 "data/maps/DaycareEast/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 295 "data/maps/DaycareEast/scripts.pory"
+# 360 "data/maps/DaycareEast/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 296 "data/maps/DaycareEast/scripts.pory"
+# 361 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
-# 297 "data/maps/DaycareEast/scripts.pory"
+# 362 "data/maps/DaycareEast/scripts.pory"
 	msgbox DaycareEastDittoOpenXforms_Text_0, MSGBOX_YESNO
-# 298 "data/maps/DaycareEast/scripts.pory"
+# 363 "data/maps/DaycareEast/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareEastDittoOpenXforms_10
-# 308 "data/maps/DaycareEast/scripts.pory"
+# 373 "data/maps/DaycareEast/scripts.pory"
 	speakername DaycareEastDittoOpenXforms_Text_1
-# 309 "data/maps/DaycareEast/scripts.pory"
+# 374 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 310 "data/maps/DaycareEast/scripts.pory"
+# 375 "data/maps/DaycareEast/scripts.pory"
 	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 311 "data/maps/DaycareEast/scripts.pory"
+# 376 "data/maps/DaycareEast/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 312 "data/maps/DaycareEast/scripts.pory"
+# 377 "data/maps/DaycareEast/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 313 "data/maps/DaycareEast/scripts.pory"
+# 378 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 314 "data/maps/DaycareEast/scripts.pory"
+# 379 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
-# 315 "data/maps/DaycareEast/scripts.pory"
+# 380 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 DaycareEastDittoOpenXforms_4:
-# 264 "data/maps/DaycareEast/scripts.pory"
+# 329 "data/maps/DaycareEast/scripts.pory"
 	msgbox DaycareEastDittoOpenXforms_Text_0, MSGBOX_YESNO
-# 265 "data/maps/DaycareEast/scripts.pory"
+# 330 "data/maps/DaycareEast/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq DaycareEastDittoOpenXforms_7
-# 277 "data/maps/DaycareEast/scripts.pory"
+# 342 "data/maps/DaycareEast/scripts.pory"
 	speakername DaycareEastDittoOpenXforms_Text_1
-# 278 "data/maps/DaycareEast/scripts.pory"
+# 343 "data/maps/DaycareEast/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
-# 279 "data/maps/DaycareEast/scripts.pory"
+# 344 "data/maps/DaycareEast/scripts.pory"
 	msgbox DaycareEastDittoOpenXforms_Text_2, MSGBOX_AUTOCLOSE
-# 280 "data/maps/DaycareEast/scripts.pory"
+# 345 "data/maps/DaycareEast/scripts.pory"
 	waitmessage
-# 281 "data/maps/DaycareEast/scripts.pory"
+# 346 "data/maps/DaycareEast/scripts.pory"
 	removefieldmugshot
-# 282 "data/maps/DaycareEast/scripts.pory"
+# 347 "data/maps/DaycareEast/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 283 "data/maps/DaycareEast/scripts.pory"
+# 348 "data/maps/DaycareEast/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 284 "data/maps/DaycareEast/scripts.pory"
+# 349 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 DaycareEastDittoOpenXforms_7:
-# 267 "data/maps/DaycareEast/scripts.pory"
+# 332 "data/maps/DaycareEast/scripts.pory"
 	dittotransform SPECIES_DITTO
-# 268 "data/maps/DaycareEast/scripts.pory"
+# 333 "data/maps/DaycareEast/scripts.pory"
 	special OpenPCMoveMons
-# 269 "data/maps/DaycareEast/scripts.pory"
+# 334 "data/maps/DaycareEast/scripts.pory"
 	waitstate
-# 270 "data/maps/DaycareEast/scripts.pory"
+# 335 "data/maps/DaycareEast/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
-# 271 "data/maps/DaycareEast/scripts.pory"
+# 336 "data/maps/DaycareEast/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
-# 272 "data/maps/DaycareEast/scripts.pory"
+# 337 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 DaycareEastDittoOpenXforms_10:
-# 300 "data/maps/DaycareEast/scripts.pory"
+# 365 "data/maps/DaycareEast/scripts.pory"
 	dittotransform SPECIES_DITTO
-# 301 "data/maps/DaycareEast/scripts.pory"
+# 366 "data/maps/DaycareEast/scripts.pory"
 	special OpenPCMoveMons
-# 302 "data/maps/DaycareEast/scripts.pory"
+# 367 "data/maps/DaycareEast/scripts.pory"
 	waitstate
-# 303 "data/maps/DaycareEast/scripts.pory"
+# 368 "data/maps/DaycareEast/scripts.pory"
 	release
 	end
 
 
-# 149 "data/maps/DaycareEast/scripts.pory"
+# 114 "data/maps/DaycareEast/scripts.pory"
 RuffletDialog_Movement_0:
+# 114 "data/maps/DaycareEast/scripts.pory"
+	face_player
+	step_end
+
+# 149 "data/maps/DaycareEast/scripts.pory"
+RuffletDialog_Movement_1:
 # 150 "data/maps/DaycareEast/scripts.pory"
 	jump_2_down
 # 151 "data/maps/DaycareEast/scripts.pory"
@@ -552,7 +686,7 @@ RuffletDialog_Movement_0:
 	step_end
 
 # 155 "data/maps/DaycareEast/scripts.pory"
-RuffletDialog_Movement_1:
+RuffletDialog_Movement_2:
 # 156 "data/maps/DaycareEast/scripts.pory"
 	slide_down
 # 156 "data/maps/DaycareEast/scripts.pory"
@@ -563,6 +697,14 @@ RuffletDialog_Movement_1:
 	slide_down
 # 156 "data/maps/DaycareEast/scripts.pory"
 	slide_down
+	step_end
+
+# 208 "data/maps/DaycareEast/scripts.pory"
+RuffletDialog_Movement_3:
+# 208 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_left
+# 208 "data/maps/DaycareEast/scripts.pory"
+	face_right
 	step_end
 
 KrabbyDialog_Text_0:
@@ -646,53 +788,53 @@ RuffletDialog_Text_4:
 	.string "Thanks for the confidence boost.$"
 
 RuffletDialog_Text_5:
-# 182 "data/maps/DaycareEast/scripts.pory"
+# 247 "data/maps/DaycareEast/scripts.pory"
 	.string "I wish I had the confidence to jump\nand try to fly but I don't have\la role model to show me how.$"
 
 RuffletOnShore_Text_0:
-# 205 "data/maps/DaycareEast/scripts.pory"
+# 270 "data/maps/DaycareEast/scripts.pory"
 	.string "That Sharpedo was nice enough to\nbring me ashore.\pI don't know why they get such a\nbad rap...$"
 
 SlowpokeDialog_Text_0:
-# 215 "data/maps/DaycareEast/scripts.pory"
+# 280 "data/maps/DaycareEast/scripts.pory"
 	.string "Slowpoke$"
 
 SlowpokeDialog_Text_1:
-# 217 "data/maps/DaycareEast/scripts.pory"
+# 282 "data/maps/DaycareEast/scripts.pory"
 	.string "I stay close to the shore.\pThere are some scary Pokémon\nfurther out!$"
 
 SharpedoDialog_Text_0:
-# 229 "data/maps/DaycareEast/scripts.pory"
+# 294 "data/maps/DaycareEast/scripts.pory"
 	.string "Sharpedo$"
 
 SharpedoDialog_Text_1:
-# 231 "data/maps/DaycareEast/scripts.pory"
+# 296 "data/maps/DaycareEast/scripts.pory"
 	.string "That little Rufflet fell into\nthe water.\pPoor fellow couldn't swim so\nI carried it to the shore.$"
 
 SharpedoDialog_Text_2:
-# 238 "data/maps/DaycareEast/scripts.pory"
+# 303 "data/maps/DaycareEast/scripts.pory"
 	.string "Looks can be deceiving!\n$"
 
 SharpedoDialog_Text_3:
-# 249 "data/maps/DaycareEast/scripts.pory"
+# 314 "data/maps/DaycareEast/scripts.pory"
 	.string "I don't understand why Pokémon are\nso afraid of me...\pIs it something stuck in my teeth?\n$"
 
 DaycareEastDittoOpenXforms_Text_0:
-# 264 "data/maps/DaycareEast/scripts.pory"
+# 329 "data/maps/DaycareEast/scripts.pory"
 	.string "Would you like to change out your\ntransformation options?$"
 
 DaycareEastDittoOpenXforms_Text_1:
-# 277 "data/maps/DaycareEast/scripts.pory"
+# 342 "data/maps/DaycareEast/scripts.pory"
 	.string "Ditto$"
 
 DaycareEastDittoOpenXforms_Text_2:
-# 279 "data/maps/DaycareEast/scripts.pory"
+# 344 "data/maps/DaycareEast/scripts.pory"
 	.string "Come back anytime!$"
 
 DaycareEastDittoOpenXforms_Text_3:
-# 291 "data/maps/DaycareEast/scripts.pory"
+# 356 "data/maps/DaycareEast/scripts.pory"
 	.string "Ditto!\pYou can only remember four\ntransformations at a time.\pWe Dittos can act as a way to\nswap out which transformations\lyou have active at anytime!\pYou'll find us scattered around\nthe Daycare.\pNow...\n$"
 
 DaycareEastDittoOpenXforms_Text_4:
-# 325 "data/maps/DaycareEast/scripts.pory"
+# 390 "data/maps/DaycareEast/scripts.pory"
 	.string "Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!$"

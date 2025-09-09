@@ -79,7 +79,7 @@ script LitwickDialog {
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             speakername("Litwick")
             createfieldmugshot(MUGSHOT_LITWICK, EMOTE_NORMAL)
-            msgbox("I know a Chansey will exchange\nthese to heal your wounds.", MSGBOX_DEFAULT)
+            msgbox("I know a Chansey will exchange\nit to heal your wounds.", MSGBOX_DEFAULT)
             removefieldmugshot
             waitmessage
             release

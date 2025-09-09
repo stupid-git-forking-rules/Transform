@@ -111,8 +111,8 @@ script WingullDialog {
 
 script RuffletDialog {
     lock
-    faceplayer
-    if (var(VAR_TRANSFORM_MON) == SPECIES_NOIVERN)
+    applymovement(Rufflet, moves(face_player))
+    if (var(VAR_TRANSFORM_MON) == SPECIES_NOIVERN && var(VAR_FACING) != DIR_SOUTH)
     {
         speakername("Rufflet")
         createfieldmugshot(MUGSHOT_RUFFLET, EMOTE_ANGRY)
@@ -142,6 +142,71 @@ script RuffletDialog {
         msgbox("Thanks for the confidence boost.", MSGBOX_AUTOCLOSE)
         waitmessage
         removefieldmugshot
+        applymovement(Rufflet, RuffletFlyAway)
+        waitmovement(0)
+        playse(SE_LEDGE) 
+
+        applymovement(Rufflet, moves(
+jump_2_down 
+delay_16 * 2 
+)) 
+waitmovement(0) 
+        playse(SE_FALL)
+        applymovement(Rufflet,moves(
+slide_down * 5))
+        waitmovement(0)
+        delay(30)
+        
+        setvar(VAR_0x8004, 2)
+        setvar(VAR_0x8005, 6)
+        setvar(VAR_0x8006, 4)
+        setvar(VAR_0x8007, 4)
+        special(ShakeCamera)
+        waitstate
+        delay(60)
+
+        playse(SE_BANG)
+        waitfanfare
+        delay(60)
+        playmoncry(SPECIES_SHARPEDO, CRY_MODE_NORMAL)
+        waitmoncry
+        removeobject(Rufflet)
+        setflag(FLAG_HIDE_RUFFLET)
+        release
+        end
+    }
+    elif(var(VAR_TRANSFORM_MON) == SPECIES_NOIVERN && var(VAR_FACING) == DIR_SOUTH)
+    {
+        speakername("Rufflet")
+        createfieldmugshot(MUGSHOT_RUFFLET, EMOTE_ANGRY)
+        msgbox("I wish I had the confidence to jump\nand try to fly...", MSGBOX_DEFAULT)
+        waitmessage
+        removefieldmugshot
+        applymovement(Rufflet, Common_Movement_ExclamationMark)
+        playse(SE_PIN)
+        waitfanfare
+        waitmovement
+        createfieldmugshot(MUGSHOT_RUFFLET, EMOTE_ELATED)
+        msgbox("Wow a Flying_type Pokémon!\pWhere do you get the confidence to\nsoar like that?", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(Rufflet, Common_Movement_ExclamationMark)
+        playse(SE_PIN)
+        waitfanfare
+        waitmovement
+        msgbox("It just takes a leap of faith\nyou say?\pAlright, I'll try it!\pHere. Take this.", MSGBOX_DEFAULT)
+        waitmessage
+        removefieldmugshot
+        setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        giveitem(ITEM_LUCKY_EGG)   
+        waitfanfare
+        clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+        speakername("Rufflet")
+        createfieldmugshot(MUGSHOT_RUFFLET, EMOTE_ELATED)
+        msgbox("Thanks for the confidence boost.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        removefieldmugshot
+        applymovement(LOCALID_PLAYER, moves(walk_fast_left, face_right))
+        waitmovement(LOCALID_PLAYER)
         applymovement(Rufflet, RuffletFlyAway)
         waitmovement(0)
         playse(SE_LEDGE) 

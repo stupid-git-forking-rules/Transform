@@ -719,7 +719,7 @@ LitwickDialog_Text_1:
 
 LitwickDialog_Text_2:
 # 82 "data/maps/DaycareNoivernCave/scripts.pory"
-	.string "I know a Chansey will exchange\nthese to heal your wounds.$"
+	.string "I know a Chansey will exchange\nit to heal your wounds.$"
 
 LitwickDialog_Text_3:
 # 94 "data/maps/DaycareNoivernCave/scripts.pory"
