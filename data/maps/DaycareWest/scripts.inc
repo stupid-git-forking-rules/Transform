@@ -58,13 +58,13 @@ ChanseyDaycareWestHeal_4:
 # 20 "data/maps/DaycareWest/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 21 "data/maps/DaycareWest/scripts.pory"
-	playfanfare MUS_HEAL
-# 22 "data/maps/DaycareWest/scripts.pory"
-	waitfanfare
-# 23 "data/maps/DaycareWest/scripts.pory"
-	special HealPlayerParty
-# 24 "data/maps/DaycareWest/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 22 "data/maps/DaycareWest/scripts.pory"
+	playfanfare MUS_HEAL
+# 23 "data/maps/DaycareWest/scripts.pory"
+	waitfanfare
+# 24 "data/maps/DaycareWest/scripts.pory"
+	special HealPlayerParty
 # 25 "data/maps/DaycareWest/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 # 26 "data/maps/DaycareWest/scripts.pory"

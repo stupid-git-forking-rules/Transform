@@ -163,7 +163,7 @@ LitwickDialog_4:
 # 77 "data/maps/DaycareNoivernCave/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 78 "data/maps/DaycareNoivernCave/scripts.pory"
-	giveitem ITEM_LUCKY_EGG, 2
+	giveitem ITEM_LUCKY_EGG
 # 79 "data/maps/DaycareNoivernCave/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 80 "data/maps/DaycareNoivernCave/scripts.pory"
@@ -715,7 +715,7 @@ LitwickDialog_Text_0:
 
 LitwickDialog_Text_1:
 # 75 "data/maps/DaycareNoivernCave/scripts.pory"
-	.string "Noivern is quite the challenge,\nisn't he?\pHere. Take these.\n$"
+	.string "Noivern is quite the challenge,\nisn't he?\pHere. Take this.\n$"
 
 LitwickDialog_Text_2:
 # 82 "data/maps/DaycareNoivernCave/scripts.pory"

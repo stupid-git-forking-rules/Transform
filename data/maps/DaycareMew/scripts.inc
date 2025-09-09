@@ -233,13 +233,13 @@ ChanseyHealMew_4:
 # 141 "data/maps/DaycareMew/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 142 "data/maps/DaycareMew/scripts.pory"
-	playfanfare MUS_HEAL
-# 143 "data/maps/DaycareMew/scripts.pory"
-	waitfanfare
-# 144 "data/maps/DaycareMew/scripts.pory"
-	special HealPlayerParty
-# 145 "data/maps/DaycareMew/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 143 "data/maps/DaycareMew/scripts.pory"
+	playfanfare MUS_HEAL
+# 144 "data/maps/DaycareMew/scripts.pory"
+	waitfanfare
+# 145 "data/maps/DaycareMew/scripts.pory"
+	special HealPlayerParty
 # 146 "data/maps/DaycareMew/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 # 147 "data/maps/DaycareMew/scripts.pory"

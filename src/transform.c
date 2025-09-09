@@ -509,3 +509,15 @@ u16 CountMyItemsAndEvents(void)
 
     return count;
 }
+
+void CountLuckyEggs(void)
+{
+    u16 count = CountMyItemsAndEvents();
+    VarSet(VAR_LUCKYEGG_COUNT, count);
+}
+
+
+void GetWhiteoutCount(void)
+{
+    VarSet(VAR_WHITEOUT_COUNT, gSaveBlock2Ptr->whiteoutCount);
+}

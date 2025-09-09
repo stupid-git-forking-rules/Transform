@@ -566,3 +566,5 @@ gSpecials::
 	def_special GetCodeFeedback
     def_special TryUpdateFromFieldMoveBackup
 	def_special StartMarillSurf
+	def_special CountLuckyEggs
+	def_special GetWhiteoutCount

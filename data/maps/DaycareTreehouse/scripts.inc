@@ -248,13 +248,13 @@ ChanseyDaycareTreehouseHeal_4:
 # 123 "data/maps/DaycareTreehouse/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 124 "data/maps/DaycareTreehouse/scripts.pory"
-	playfanfare MUS_HEAL
-# 125 "data/maps/DaycareTreehouse/scripts.pory"
-	waitfanfare
-# 126 "data/maps/DaycareTreehouse/scripts.pory"
-	special HealPlayerParty
-# 127 "data/maps/DaycareTreehouse/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 125 "data/maps/DaycareTreehouse/scripts.pory"
+	playfanfare MUS_HEAL
+# 126 "data/maps/DaycareTreehouse/scripts.pory"
+	waitfanfare
+# 127 "data/maps/DaycareTreehouse/scripts.pory"
+	special HealPlayerParty
 # 128 "data/maps/DaycareTreehouse/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 # 129 "data/maps/DaycareTreehouse/scripts.pory"

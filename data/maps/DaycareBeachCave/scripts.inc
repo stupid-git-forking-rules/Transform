@@ -106,7 +106,7 @@ ChinchouDialog::
 # 72 "data/maps/DaycareBeachCave/scripts.pory"
 	speakername ChinchouDialog_Text_0
 # 73 "data/maps/DaycareBeachCave/scripts.pory"
-	createfieldmugshot MUGSHOT_CHINCHOU, EMOTE_HAPPY
+	createfieldmugshot MUGSHOT_CHINCHOU, EMOTE_ELATED
 # 74 "data/maps/DaycareBeachCave/scripts.pory"
 	msgbox ChinchouDialog_Text_4, MSGBOX_AUTOCLOSE
 # 75 "data/maps/DaycareBeachCave/scripts.pory"
@@ -259,7 +259,7 @@ ChinchouTransformTrigger_Movement_2:
 
 WiggletDialog_Text_0:
 # 8 "data/maps/DaycareBeachCave/scripts.pory"
-	.string "Wigglet$"
+	.string "Wiglett$"
 
 WiggletDialog_Text_1:
 # 10 "data/maps/DaycareBeachCave/scripts.pory"
@@ -295,7 +295,7 @@ ChinchouDialog_Text_3:
 
 ChinchouDialog_Text_4:
 # 74 "data/maps/DaycareBeachCave/scripts.pory"
-	.string "Looking more electric already!\n$"
+	.string "Wow!\pLooking more electric already!$"
 
 ChinchouTransformTrigger_Text_0:
 # 108 "data/maps/DaycareBeachCave/scripts.pory"

@@ -107,7 +107,7 @@ PsyduckDialog::
 # 75 "data/maps/DaycarePond/scripts.pory"
 	speakername PsyduckDialog_Text_0
 # 76 "data/maps/DaycarePond/scripts.pory"
-	createfieldmugshot MUGSHOT_PSYDUCK, EMOTE_HAPPY
+	createfieldmugshot MUGSHOT_PSYDUCK, EMOTE_NORMAL
 # 77 "data/maps/DaycarePond/scripts.pory"
 	msgbox PsyduckDialog_Text_2, MSGBOX_NPC
 # 78 "data/maps/DaycarePond/scripts.pory"
