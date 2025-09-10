@@ -78,6 +78,7 @@
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 #include "qol_field_moves.h" // qol_field_moves
+#include "transform.h"
 
 
 
@@ -380,10 +381,11 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
 // code
 void DoWhiteOut(void)
 {
-    gSaveBlock2Ptr->whiteoutCount++;
+    gSaveBlock1Ptr->whiteoutCount++;
     RunScriptImmediately(EventScript_WhiteOut);
     HealPlayerParty();
     Overworld_ResetStateAfterWhiteOut();
+    TrySetPlayerAvatarTransformation(SPECIES_DITTO, FALSE);
     SetWarpDestinationToLastHealLocation();
     WarpIntoMap();
 }

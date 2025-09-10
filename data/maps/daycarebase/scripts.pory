@@ -275,33 +275,39 @@ script DaycareOldManDialog{
             buffernumberstring(STR_VAR_2, VAR_TEMP_1)
             if(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) ==17)    
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0\n{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Lucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts\nand found all of the Lucky Eggs!\pCongratulations!", MSGBOX_DEFAULT)
-                waitmessage            
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0\n{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Lucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts\nand found all of the Lucky Eggs!\pCongratulations!\pStart a new game for a reward!", MSGBOX_DEFAULT)
+                waitmessage
+                special(ForceShinyDitto)           
             }
-            elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) !=17 && var(VAR_TEMP_1) >0)
+            elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) !=17 && var(VAR_LUCKYEGG_COUNT) >0)
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
-                waitmessage   
+                waitmessage
+                special(RemoveForceShinyDitto)    
             }
             elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) == 0)
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
-                waitmessage  
+                waitmessage
+                special(RemoveForceShinyDitto)   
             }
             elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 0)
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
-                waitmessage  
+                waitmessage
+                special(RemoveForceShinyDitto)   
             }
             elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 17)
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat Job!\nYou found all of the Lucky Eggs!\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
-                waitmessage  
+                waitmessage
+                special(RemoveForceShinyDitto)   
             }
             else
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
                 waitmessage
+                special(RemoveForceShinyDitto) 
             }
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             clearflag(FLAG_BEAT_MEW)
@@ -368,33 +374,39 @@ script DaycareOldManDialog{
             buffernumberstring(STR_VAR_2, VAR_TEMP_1)
             if(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) ==17)    
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0\n{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Lucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts\nand found all of the Lucky Eggs!\pCongratulations!", MSGBOX_DEFAULT)
-                waitmessage            
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0\n{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Lucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts\nand found all of the Lucky Eggs!\pCongratulations!\pStart a new game for a reward!", MSGBOX_DEFAULT)
+                waitmessage
+                special(ForceShinyDitto)           
             }
-            elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) !=17 && var(VAR_TEMP_1) >0)
+            elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) !=17 && var(VAR_LUCKYEGG_COUNT) >0)
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
-                waitmessage   
+                waitmessage
+                special(RemoveForceShinyDitto)    
             }
             elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) == 0)
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
-                waitmessage  
+                waitmessage
+                special(RemoveForceShinyDitto)   
             }
             elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 0)
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
-                waitmessage  
+                waitmessage
+                special(RemoveForceShinyDitto)   
             }
             elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 17)
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat Job!\nYou found all of the Lucky Eggs!\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
-                waitmessage  
+                waitmessage
+                special(RemoveForceShinyDitto)   
             }
             else
             {
                 msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
                 waitmessage
+                special(RemoveForceShinyDitto) 
             }
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             clearflag(FLAG_BEAT_MEW)
@@ -422,7 +434,7 @@ script VaporeonDialog{
     faceplayer
     speakername("Vaporeon")
     createfieldmugshot(MUGSHOT_VAPOREON, EMOTE_ANGRY)
-    msgbox("Ugh!\pWhy does everyone keep asking me\nto help them search for Eggs?\pCan't you see I'm busy?\n", MSGBOX_NPC)   
+    msgbox("Ugh!\nYou again.\pEveryone here keeps asking me to\nhelp them search for Eggs.\pCan't a Vaporeon just relax?", MSGBOX_NPC)   
     waitmessage
     removefieldmugshot
     release
@@ -507,14 +519,30 @@ script Porygon2Dialog{
 
 script ScytherDialog{
     lock
-    faceplayer
-    speakername("Scyther")
-    createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
-    msgbox("One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.\pMust be all those shiny hunters\ntrying to capitalize on Gen 2\lmechanics.\pWhen will they learn that this is\nGen 3?...", MSGBOX_DEFAULT)
-    waitmessage
-    removefieldmugshot
-    release
-    end
+    applymovement(scyther, moves(face_player))
+    if(!flag(FLAG_DITTO_IS_SHINY))
+    {
+        speakername("Scyther")
+        createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
+        msgbox("One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.\pThere must be some reason trainers\nput so many in here...", MSGBOX_DEFAULT)
+        waitmessage
+        removefieldmugshot
+        release
+        end
+    }
+    else
+    {
+        speakername("Scyther")
+        createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
+        msgbox("One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.", MSGBOX_DEFAULT)
+        waitmessage
+        applymovement(scyther, Common_Movement_ExclamationMark)
+        waitmovement(scyther)
+        msgbox("Oh hey!\pYou're one of the blue ones!\pYou must've gotten really lucky!")
+        removefieldmugshot
+        release
+        end
+    }
 }
 
 script RioluDialog{
@@ -537,11 +565,12 @@ script RioluDialog{
             msgbox("Would you like to exchange a\nLucky Egg?", MSGBOX_YESNO)
             if(var(VAR_RESULT) == YES)
             {  
+                createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
+                msgbox("Which Pokémon would you like to\n know more about?", MSGBOX_DEFAULT)
                 removeitem(ITEM_LUCKY_EGG)
                 dynmultichoice(0,0,TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Arcanine","Chinchou", "Cutiefly", "Dragonair", "Marill", "Machamp", "Noivern","Pikachu", "Rhyhorn","Lurantis", "Weavile")
                 if(var(VAR_RESULT) == 0)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Arcanine can be found deep in the\nVolcano.\pIt can run really fast and scale\nhills that would normally be to\lslippery to climb!", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -550,7 +579,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 1)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Chinchou can be found in a cave\non the water in the desert.\pIt can dive deep underwater.\n", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -559,7 +587,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 2)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Cutiefly can be found in the\nDaycare's flowers to the west.\pIt's a tiny Pokémon that can\nfit through small openings.", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -568,7 +595,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 3)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Dragonair can be found at the lake.\pIt can be a bit cryptic so it\nmay be difficult to reach.\pIt can scale large waterfalls\nwith ease.", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -577,7 +603,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 4)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Marill can be found at the lake,\nusually by the shore.\pIt's a bit shy so it may be hiding.\pIt can float in any body of water.\n", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -586,7 +611,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 5)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Machamp likes to train deep in\nthe mountains.\pIt is a very tough and solitary\nPokémon.\pIts strength can move large\nboulders.", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -595,7 +619,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 6)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Noivern hangs out in a dark\ncave above the Daycare Falls.\pIt's quite a powerful Pokémon,\nso be prepared for a fight.\pIt can soar through the air,\nreaching places unreachable by\lnon_flying types.", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -604,7 +627,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 7)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Pikachu is standing on that cliff\nright over there.\pIts electricity can light up even\nthe darkest of caves.", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -613,7 +635,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 8)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Rhyhorn lives in the desert.\pIt's quite a friendly Pokémon,\nbut don't upset it!\pIt is strong enough to smash\nsolid rocks!", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -622,7 +643,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 9)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Lurantis has been spending time\nacross the water in the mountains.\pIts sharp limbs can cut through\nsmall trees.", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -631,7 +651,6 @@ script RioluDialog{
                 }
                 elif(var(VAR_RESULT) == 10)
                 {
-                    createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
                     msgbox("Weavile is quite the ninja.\pIt spends time in the tall trees\nin the jungle.\pIt demands a fierce challenger\nto battle it.\pIts agility allows it to cross\neven the smallest of walkways.", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
@@ -789,7 +808,6 @@ script DaycareBase_Ditto{
         {  
             dittotransform(SPECIES_DITTO)
             special(OpenPCMoveMons)
-            waitstate
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             release
@@ -821,7 +839,6 @@ script DaycareBase_Ditto{
             {
                 dittotransform(SPECIES_DITTO)
                 special(OpenPCMoveMons)
-                waitstate
                 release
                 end
             }

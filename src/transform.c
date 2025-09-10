@@ -519,5 +519,15 @@ void CountLuckyEggs(void)
 
 void GetWhiteoutCount(void)
 {
-    VarSet(VAR_WHITEOUT_COUNT, gSaveBlock2Ptr->whiteoutCount);
+    VarSet(VAR_WHITEOUT_COUNT, gSaveBlock1Ptr->whiteoutCount);
+}
+
+void ForceShinyDitto(void)
+{
+    gSaveBlock2Ptr->forceShinyDitto = 1;
+}
+
+void RemoveForceShinyDitto(void)
+{
+    gSaveBlock2Ptr->forceShinyDitto = 0;
 }

@@ -8,6 +8,7 @@ EventScript_UseSurf::
     goto_if_eq VAR_RESULT, NO, EventScript_ReleaseUseSurf
 EventScript_UseSurfFieldEffect::
     special StartMarillSurf
+    delay(15)
 	releaseall
     end
 EventScript_ReleaseUseSurf::

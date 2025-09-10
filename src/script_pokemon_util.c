@@ -503,8 +503,9 @@ u32 ScriptGiveDitto(u16 species, u8 level, u16 item)
 {
     bool8 ShinyDitto = FALSE;
 
-    if (Random() < 1311)  // 1311 for 1/50 odds
+    if (Random() < 1311 || gSaveBlock2Ptr->forceShinyDitto == 1)  // 1311 for 1/50 odds
     {
+        FlagSet(FLAG_DITTO_IS_SHINY);
         ShinyDitto = TRUE;
     }
     u8 evs[NUM_STATS]        = {0, 0, 0, 0, 0, 0};

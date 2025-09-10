@@ -351,6 +351,7 @@ EventScript_UseDive::
 	setfieldeffectargument 0, VAR_0x8004
 	setfieldeffectargument 1, 1
 	dofieldeffect FLDEFF_USE_DIVE
+	delay(15)
 	goto EventScript_EndDive
 	end
 
@@ -375,6 +376,7 @@ EventScript_UseDiveUnderwater::
 	msgbox Text_MonUsedDive, MSGBOX_DEFAULT
 	hidefollowernpc
 	dofieldeffect FLDEFF_USE_DIVE
+	delay(15)
 	goto EventScript_EndSurface
 	end
 
