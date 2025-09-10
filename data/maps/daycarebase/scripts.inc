@@ -449,23 +449,23 @@ DaycareOldManDialog_7:
 # 368 "data/maps/daycarebase/scripts.pory"
 	buffernumberstring STR_VAR_2, VAR_TEMP_1
 # 369 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 == 0, 0
-	goto_if_ne DaycareOldManDialog_61
+	compare VAR_WHITEOUT_COUNT, 0
+	goto_if_eq DaycareOldManDialog_61
 DaycareOldManDialog_58:
 # 374 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 == 0, 0
-	goto_if_ne DaycareOldManDialog_57
+	compare VAR_WHITEOUT_COUNT, 0
+	goto_if_eq DaycareOldManDialog_57
 DaycareOldManDialog_54:
 # 379 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 == 0, 0
-	goto_if_ne DaycareOldManDialog_53
+	compare VAR_WHITEOUT_COUNT, 0
+	goto_if_eq DaycareOldManDialog_53
 DaycareOldManDialog_51:
 # 384 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 != 0, 0
+	compare VAR_WHITEOUT_COUNT, 0
 	goto_if_ne DaycareOldManDialog_50
 DaycareOldManDialog_48:
 # 389 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 != 0, 0
+	compare VAR_WHITEOUT_COUNT, 0
 	goto_if_ne DaycareOldManDialog_47
 DaycareOldManDialog_46:
 # 396 "data/maps/daycarebase/scripts.pory"
@@ -610,23 +610,23 @@ DaycareOldManDialog_13:
 # 275 "data/maps/daycarebase/scripts.pory"
 	buffernumberstring STR_VAR_2, VAR_TEMP_1
 # 276 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 == 0, 0
-	goto_if_ne DaycareOldManDialog_37
+	compare VAR_WHITEOUT_COUNT, 0
+	goto_if_eq DaycareOldManDialog_37
 DaycareOldManDialog_34:
 # 281 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 == 0, 0
-	goto_if_ne DaycareOldManDialog_33
+	compare VAR_WHITEOUT_COUNT, 0
+	goto_if_eq DaycareOldManDialog_33
 DaycareOldManDialog_30:
 # 286 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 == 0, 0
-	goto_if_ne DaycareOldManDialog_29
+	compare VAR_WHITEOUT_COUNT, 0
+	goto_if_eq DaycareOldManDialog_29
 DaycareOldManDialog_27:
 # 291 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 != 0, 0
+	compare VAR_WHITEOUT_COUNT, 0
 	goto_if_ne DaycareOldManDialog_26
 DaycareOldManDialog_24:
 # 296 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_0 != 0, 0
+	compare VAR_WHITEOUT_COUNT, 0
 	goto_if_ne DaycareOldManDialog_23
 DaycareOldManDialog_22:
 # 303 "data/maps/daycarebase/scripts.pory"
@@ -683,19 +683,19 @@ DaycareOldManDialog_21:
 
 DaycareOldManDialog_23:
 # 296 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 17
+	compare VAR_LUCKYEGG_COUNT, 17
 	goto_if_eq DaycareOldManDialog_21
 	goto DaycareOldManDialog_22
 
 DaycareOldManDialog_26:
 # 291 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 0
+	compare VAR_LUCKYEGG_COUNT, 0
 	goto_if_eq DaycareOldManDialog_20
 	goto DaycareOldManDialog_24
 
 DaycareOldManDialog_29:
 # 286 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 0
+	compare VAR_LUCKYEGG_COUNT, 0
 	goto_if_eq DaycareOldManDialog_19
 	goto DaycareOldManDialog_27
 
@@ -707,13 +707,13 @@ DaycareOldManDialog_32:
 
 DaycareOldManDialog_33:
 # 281 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 17
+	compare VAR_LUCKYEGG_COUNT, 17
 	goto_if_ne DaycareOldManDialog_32
 	goto DaycareOldManDialog_30
 
 DaycareOldManDialog_37:
 # 276 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 17
+	compare VAR_LUCKYEGG_COUNT, 17
 	goto_if_eq DaycareOldManDialog_17
 	goto DaycareOldManDialog_34
 
@@ -754,19 +754,19 @@ DaycareOldManDialog_45:
 
 DaycareOldManDialog_47:
 # 389 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 17
+	compare VAR_LUCKYEGG_COUNT, 17
 	goto_if_eq DaycareOldManDialog_45
 	goto DaycareOldManDialog_46
 
 DaycareOldManDialog_50:
 # 384 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 0
+	compare VAR_LUCKYEGG_COUNT, 0
 	goto_if_eq DaycareOldManDialog_44
 	goto DaycareOldManDialog_48
 
 DaycareOldManDialog_53:
 # 379 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 0
+	compare VAR_LUCKYEGG_COUNT, 0
 	goto_if_eq DaycareOldManDialog_43
 	goto DaycareOldManDialog_51
 
@@ -778,13 +778,13 @@ DaycareOldManDialog_56:
 
 DaycareOldManDialog_57:
 # 374 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 17
+	compare VAR_LUCKYEGG_COUNT, 17
 	goto_if_ne DaycareOldManDialog_56
 	goto DaycareOldManDialog_54
 
 DaycareOldManDialog_61:
 # 369 "data/maps/daycarebase/scripts.pory"
-	compare VAR_TEMP_1, 17
+	compare VAR_LUCKYEGG_COUNT, 17
 	goto_if_eq DaycareOldManDialog_41
 	goto DaycareOldManDialog_58
 
@@ -1788,7 +1788,7 @@ DaycareOldManDialog_Text_13:
 
 DaycareOldManDialog_Text_14:
 # 303 "data/maps/daycarebase/scripts.pory"
-	.string "Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {STR_VAR_2}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.$"
+	.string "Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.$"
 
 DaycareOldManDialog_Text_15:
 # 315 "data/maps/daycarebase/scripts.pory"

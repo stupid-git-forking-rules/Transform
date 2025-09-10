@@ -424,9 +424,10 @@ script SinisteaDialog{
 
 script NymbleDialog{
     lock
-    faceplayer
     if(var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
     {
+        applymovement(nymble, moves(face_player))
+        waitmovement(nymble)
         speakername("Nymble")
         createfieldmugshot(MUGSHOT_NYMBLE, EMOTE_NORMAL)
         msgbox("Our cave is quite barebones when it\ncomes to decor...\pSome Pokémon will make themselves\nright at home when they find space.", MSGBOX_DEFAULT)
@@ -437,6 +438,8 @@ script NymbleDialog{
     }
     else
     {
+        applymovement(nymble, moves(face_player))
+        waitmovement(nymble)
         speakername("Nymble")
         createfieldmugshot(MUGSHOT_NYMBLE, EMOTE_HAPPY)
         playse(SE_PIN)

@@ -93,10 +93,12 @@ script SprigatitoDialog{
             speakername("Sprigatito")
             createfieldmugshot(MUGSHOT_SPRIGATITO, EMOTE_ELATED)
             msgbox("A Grass_type!\pDon't see many around the lake\nhere.\pPlease take this Egg I found.\n", MSGBOX_DEFAULT)
+            removefieldmugshot
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
             giveitem(ITEM_LUCKY_EGG)
             setflag(FLAG_SPRIGATITO_EGG)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             waitmessage
-            removefieldmugshot
             release
             end
         }

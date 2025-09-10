@@ -769,42 +769,48 @@ NymbleDialog::
 # 426 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	lock
 # 427 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	faceplayer
-# 428 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	compare VAR_TRANSFORM_MON, SPECIES_CUTIEFLY
 	goto_if_eq NymbleDialog_1
-# 440 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername NymbleDialog_Text_0
 # 441 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	createfieldmugshot MUGSHOT_NYMBLE, EMOTE_HAPPY
+	applymovement nymble, ShroodleInCave_Movement_0
 # 442 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	playse SE_PIN
-# 443 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	applymovement nymble, Common_Movement_ExclamationMark
-# 444 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	waitmovement nymble
+# 443 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	speakername NymbleDialog_Text_0
+# 444 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	createfieldmugshot MUGSHOT_NYMBLE, EMOTE_HAPPY
 # 445 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox NymbleDialog_Text_2, MSGBOX_DEFAULT
+	playse SE_PIN
 # 446 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	applymovement nymble, Common_Movement_ExclamationMark
 # 447 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	removefieldmugshot
+	waitmovement nymble
 # 448 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	msgbox NymbleDialog_Text_2, MSGBOX_DEFAULT
+# 449 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	waitmessage
+# 450 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	removefieldmugshot
+# 451 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
 NymbleDialog_1:
+# 429 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	applymovement nymble, ShroodleInCave_Movement_0
 # 430 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	speakername NymbleDialog_Text_0
+	waitmovement nymble
 # 431 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	createfieldmugshot MUGSHOT_NYMBLE, EMOTE_NORMAL
+	speakername NymbleDialog_Text_0
 # 432 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	msgbox NymbleDialog_Text_1, MSGBOX_DEFAULT
+	createfieldmugshot MUGSHOT_NYMBLE, EMOTE_NORMAL
 # 433 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	waitmessage
+	msgbox NymbleDialog_Text_1, MSGBOX_DEFAULT
 # 434 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
-	removefieldmugshot
+	waitmessage
 # 435 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+	removefieldmugshot
+# 436 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	release
 	end
 
@@ -946,13 +952,13 @@ SinisteaDialog_Text_2:
 	.string "Hey!\pAren't you a little too big to be\nin here?$"
 
 NymbleDialog_Text_0:
-# 430 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 431 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Nymble$"
 
 NymbleDialog_Text_1:
-# 432 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 433 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Our cave is quite barebones when it\ncomes to decor...\pSome Pokémon will make themselves\nright at home when they find space.$"
 
 NymbleDialog_Text_2:
-# 445 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
+# 448 "data/maps/DaycarePikachuShrinkCave/scripts.pory"
 	.string "Whoa... you're HUGE!\pPlease don't step on me.\n$"
