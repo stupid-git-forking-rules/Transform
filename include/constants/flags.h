@@ -721,7 +721,7 @@
 #define FLAG_DISABLE_XFORM_MENU  0x2A2 // disable xform menu 
 #define FLAG_MUDKIP_PICKED_UP  0x2A3 // mudkip goes home :')
 #define FLAG_DITTO_IS_SHINY  0x2A4 // player rolled a shiny ditto
-#define FLAG_FORCE_SHINY_DITTO  0x2A5 // force shiny
+#define FLAG_CHANSEY_INTRO  0x2A5 // chansey intro
 #define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag

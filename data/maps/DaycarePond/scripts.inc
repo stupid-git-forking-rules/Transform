@@ -30,7 +30,7 @@ BattleVsMarill::
 # 29 "data/maps/DaycarePond/scripts.pory"
 	setwildbattle SPECIES_MARILL, 25, move1 = MOVE_SURF, move2 = MOVE_AQUA_JET, move3 = MOVE_COVET, move4 = MOVE_RAIN_DANCE
 # 30 "data/maps/DaycarePond/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	settotemboost B_POSITION_OPPONENT_LEFT, 2, 1, 1, 2, 1, 0, 0
 # 31 "data/maps/DaycarePond/scripts.pory"
 	dowildbattle
 # 32 "data/maps/DaycarePond/scripts.pory"
@@ -1198,7 +1198,7 @@ BattleVsDragonair::
 # 682 "data/maps/DaycarePond/scripts.pory"
 	setwildbattle SPECIES_DRAGONAIR, 25, move1 = MOVE_OUTRAGE, move2 = MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD
 # 683 "data/maps/DaycarePond/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 0, 1, 0, 0
+	settotemboost B_POSITION_OPPONENT_LEFT, 2, 1, 1, 0, 2, 0, 0
 # 684 "data/maps/DaycarePond/scripts.pory"
 	dowildbattle
 # 685 "data/maps/DaycarePond/scripts.pory"

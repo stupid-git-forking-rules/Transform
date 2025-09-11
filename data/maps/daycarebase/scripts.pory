@@ -750,34 +750,46 @@ script BattleVsPikachu{
 script ChanseyHeal{
     lock
     faceplayer
-    speakername("Chansey")
-    createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
-    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.", MSGBOX_DEFAULT)
-    removefieldmugshot
-    msgbox("Would you like to heal?", MSGBOX_YESNO)
-    waitmessage
-    if(var(VAR_RESULT) == YES)
+    if(flag(FLAG_CHANSEY_INTRO))
     {
-        checkitem(ITEM_LUCKY_EGG)
-        if(var(VAR_RESULT) == TRUE)
+        speakername("Chansey")
+        createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+        msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.", MSGBOX_DEFAULT)
+        removefieldmugshot
+        msgbox("Would you like to heal?", MSGBOX_YESNO)
+        waitmessage
+        if(var(VAR_RESULT) == YES)
         {
-            removeitem(ITEM_LUCKY_EGG)
-            fadescreenswapbuffers(FADE_TO_BLACK)
-            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
-            playfanfare(MUS_HEAL)
-            waitfanfare
-            special(HealPlayerParty)
-            fadescreenswapbuffers(FADE_FROM_BLACK)
-            msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
-            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
-            waitmessage
-            release
-            end
+            checkitem(ITEM_LUCKY_EGG)
+            if(var(VAR_RESULT) == TRUE)
+            {
+                removeitem(ITEM_LUCKY_EGG)
+                fadescreenswapbuffers(FADE_TO_BLACK)
+                setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+                playfanfare(MUS_HEAL)
+                waitfanfare
+                special(HealPlayerParty)
+                fadescreenswapbuffers(FADE_FROM_BLACK)
+                msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
+                clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+                waitmessage
+                release
+                end
+            }
+            else
+            {
+                createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+                msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
+                waitmessage
+                removefieldmugshot
+                release
+                end
+            }
         }
         else
         {
             createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
-            msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
+            msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
             waitmessage
             removefieldmugshot
             release
@@ -786,9 +798,13 @@ script ChanseyHeal{
     }
     else
     {
+        lock
+        faceplayer
+        speakername("Chansey")
         createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
-        msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
+        msgbox("You look new!\pHave you found any Lucky Eggs yet?\pThey aren't quite the Mythical Egg\nyou are in search of, but many\lPokémon around the daycare will\loffer trades or services for them!\pDon't be afraid to use them!\pI'll offer to bring you back to\nfull health for just one!", MSGBOX_DEFAULT)
         waitmessage
+        setflag(FLAG_CHANSEY_INTRO)
         removefieldmugshot
         release
         end
@@ -797,7 +813,7 @@ script ChanseyHeal{
 }
 
 script DaycareBase_Ditto{
-        lock
+    lock
     faceplayer
     if(flag(FLAG_DITTO_INTRO))
     {
@@ -861,7 +877,8 @@ script DaycareBase_Ditto{
     {
         speakername("Ditto")
         createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
-        msgbox("Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!", MSGBOX_DEFAULT)        waitmessage
+        msgbox("Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pYou can also view more information\nabout the Pokémon you can\ltransform into by opening your\lTransformation Party from the\l{START_BUTTON} menu.", MSGBOX_DEFAULT)
+        waitmessage
         setflag(FLAG_DITTO_INTRO)
         waitmessage
         removefieldmugshot
@@ -884,8 +901,7 @@ script DaycarebaseDitto_intro_trigger{
         waitmovement(LOCALID_PLAYER)    
         speakername("Ditto")
         createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
-        msgbox("Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pIf you open your Transformation\nParty, you'll see which Pokémon\lyou can transform into!", MSGBOX_DEFAULT)        waitmessage
-        setflag(FLAG_DITTO_INTRO)
+        msgbox("Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pYou can also view more information\nabout the Pokémon you can\ltransform into by opening your\lTransformation Party from the\l{SELECT_BUTTON} menu.", MSGBOX_DEFAULT)        setflag(FLAG_DITTO_INTRO)
         waitmessage
         removefieldmugshot
         release

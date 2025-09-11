@@ -1636,13 +1636,11 @@ void ShowPokemonStorageSystemPC(void)
 void OpenPCMoveMons(void)
 {
     u8 taskId;
-    FlagSet(FLAG_SUPPRESS_SPEAKER_NAME);
     taskId = CreateTask(Task_PCMainMenu, 80);
 
     gTasks[taskId].tState = STATE_ENTER_PC;
     gTasks[taskId].tInput = 0;
     FadeScreen(FADE_TO_BLACK, 0);
-    FlagClear(FLAG_SUPPRESS_SPEAKER_NAME);
     LockPlayerFieldControls();
 }
 
