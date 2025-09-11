@@ -1922,7 +1922,7 @@ RioluDialog_Text_3:
 
 RioluDialog_Text_4:
 # 569 "data/maps/daycarebase/scripts.pory"
-	.string "Which Pokémon would you like to\n know more about?$"
+	.string "Which Pokémon would you like to\nknow more about?$"
 
 RioluDialog_Text_5:
 # 571 "data/maps/daycarebase/scripts.pory"

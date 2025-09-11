@@ -566,7 +566,7 @@ script RioluDialog{
             if(var(VAR_RESULT) == YES)
             {  
                 createfieldmugshot(MUGSHOT_RIOLU, EMOTE_NORMAL)
-                msgbox("Which Pokémon would you like to\n know more about?", MSGBOX_DEFAULT)
+                msgbox("Which Pokémon would you like to\nknow more about?", MSGBOX_DEFAULT)
                 removeitem(ITEM_LUCKY_EGG)
                 dynmultichoice(0,0,TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Arcanine","Chinchou", "Cutiefly", "Dragonair", "Marill", "Machamp", "Noivern","Pikachu", "Rhyhorn","Lurantis", "Weavile")
                 if(var(VAR_RESULT) == 0)
