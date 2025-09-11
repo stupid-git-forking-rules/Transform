@@ -901,7 +901,7 @@ script DaycarebaseDitto_intro_trigger{
         waitmovement(LOCALID_PLAYER)    
         speakername("Ditto")
         createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
-        msgbox("Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pYou can also view more information\nabout the Pokémon you can\ltransform into by opening your\lTransformation Party from the\l{SELECT_BUTTON} menu.", MSGBOX_DEFAULT)        setflag(FLAG_DITTO_INTRO)
+        msgbox("Hello there fellow Ditto!\pDaycare Man asked you to get an Egg\nfor him, did he?\pWell, you're about to learn the\nthe secret of how we Dittos are\lalways found holding Eggs.\pIt'll be quite the adventure!\pDon't forget, you are a Ditto,\nso you can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pYou can also view more information\nabout the Pokémon you can\ltransform into by opening your\lTransformation Party from the\l{START_BUTTON} menu.", MSGBOX_DEFAULT)        setflag(FLAG_DITTO_INTRO)
         waitmessage
         removefieldmugshot
         release
