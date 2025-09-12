@@ -137,8 +137,92 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
+	lock
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, myscript_Movement_3
+	waitmovement OBJ_EVENT_ID_CAMERA	
+	applymovement LOCALID_PLAYER, myscript_Movement_0
+	waitmovement LOCALID_PLAYER
+	dittotransform SPECIES_DITTO
+	delay 30
+	dittotransform SPECIES_PIKACHU
+	delay 30
+	applymovement LOCALID_PLAYER, myscript_Movement_1
+	waitmovement LOCALID_PLAYER
+	delay 120
+	applymovement OBJ_EVENT_ID_CAMERA, myscript_Movement_2
+	waitmovement OBJ_EVENT_ID_CAMERA
+	special RemoveCameraObject
 	release
 	end
+
+myscript_Movement_0:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	face_down
+	step_end
+
+myscript_Movement_1:
+	face_left
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	delay_16
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+myscript_Movement_2:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+myscript_Movement_3:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	step_end	
 
 Debug_EventScript_Script_2::
 	release
