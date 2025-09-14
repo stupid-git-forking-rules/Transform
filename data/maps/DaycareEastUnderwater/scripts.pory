@@ -124,6 +124,8 @@ script CorsolaDialog{
 
 script ClauncherDialog{
     lock
+    applymovement(clauncher, moves(walk_in_place_left, walk_in_place_up, walk_in_place_right, walk_in_place_down))
+    waitmovement(clauncher)
     msgbox("It's impossible to get this\nClauncher's attention...\pIt's humming and snapping its\npinchers to the theme of\l'Under the Sea'.", MSGBOX_DEFAULT)
     waitmessage
     release

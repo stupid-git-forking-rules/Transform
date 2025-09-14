@@ -200,73 +200,89 @@ ClauncherDialog::
 # 126 "data/maps/DaycareEastUnderwater/scripts.pory"
 	lock
 # 127 "data/maps/DaycareEastUnderwater/scripts.pory"
-	msgbox ClauncherDialog_Text_0, MSGBOX_DEFAULT
+	applymovement clauncher, ClauncherDialog_Movement_0
 # 128 "data/maps/DaycareEastUnderwater/scripts.pory"
-	waitmessage
+	waitmovement clauncher
 # 129 "data/maps/DaycareEastUnderwater/scripts.pory"
+	msgbox ClauncherDialog_Text_0, MSGBOX_DEFAULT
+# 130 "data/maps/DaycareEastUnderwater/scripts.pory"
+	waitmessage
+# 131 "data/maps/DaycareEastUnderwater/scripts.pory"
 	release
 	end
 
 
 TentacoolDialog::
-# 133 "data/maps/DaycareEastUnderwater/scripts.pory"
-	lock
-# 134 "data/maps/DaycareEastUnderwater/scripts.pory"
-	faceplayer
 # 135 "data/maps/DaycareEastUnderwater/scripts.pory"
-	speakername TentacoolDialog_Text_0
+	lock
 # 136 "data/maps/DaycareEastUnderwater/scripts.pory"
-	createfieldmugshot MUGSHOT_TENTACOOL, EMOTE_NORMAL
+	faceplayer
 # 137 "data/maps/DaycareEastUnderwater/scripts.pory"
-	msgbox TentacoolDialog_Text_1, MSGBOX_DEFAULT
+	speakername TentacoolDialog_Text_0
 # 138 "data/maps/DaycareEastUnderwater/scripts.pory"
-	waitmessage
+	createfieldmugshot MUGSHOT_TENTACOOL, EMOTE_NORMAL
 # 139 "data/maps/DaycareEastUnderwater/scripts.pory"
-	removefieldmugshot
+	msgbox TentacoolDialog_Text_1, MSGBOX_DEFAULT
 # 140 "data/maps/DaycareEastUnderwater/scripts.pory"
+	waitmessage
+# 141 "data/maps/DaycareEastUnderwater/scripts.pory"
+	removefieldmugshot
+# 142 "data/maps/DaycareEastUnderwater/scripts.pory"
 	release
 	end
 
 
 BinacleDialog::
-# 144 "data/maps/DaycareEastUnderwater/scripts.pory"
-	lock
-# 145 "data/maps/DaycareEastUnderwater/scripts.pory"
-	faceplayer
 # 146 "data/maps/DaycareEastUnderwater/scripts.pory"
-	speakername BinacleDialog_Text_0
+	lock
 # 147 "data/maps/DaycareEastUnderwater/scripts.pory"
-	createfieldmugshot MUGSHOT_BINACLE, EMOTE_NORMAL
+	faceplayer
 # 148 "data/maps/DaycareEastUnderwater/scripts.pory"
-	msgbox BinacleDialog_Text_1, MSGBOX_DEFAULT
+	speakername BinacleDialog_Text_0
 # 149 "data/maps/DaycareEastUnderwater/scripts.pory"
-	waitmessage
+	createfieldmugshot MUGSHOT_BINACLE, EMOTE_NORMAL
 # 150 "data/maps/DaycareEastUnderwater/scripts.pory"
-	removefieldmugshot
+	msgbox BinacleDialog_Text_1, MSGBOX_DEFAULT
 # 151 "data/maps/DaycareEastUnderwater/scripts.pory"
+	waitmessage
+# 152 "data/maps/DaycareEastUnderwater/scripts.pory"
+	removefieldmugshot
+# 153 "data/maps/DaycareEastUnderwater/scripts.pory"
 	release
 	end
 
 
 SkrelpDialog::
-# 155 "data/maps/DaycareEastUnderwater/scripts.pory"
-	lock
-# 156 "data/maps/DaycareEastUnderwater/scripts.pory"
-	faceplayer
 # 157 "data/maps/DaycareEastUnderwater/scripts.pory"
-	speakername SkrelpDialog_Text_0
+	lock
 # 158 "data/maps/DaycareEastUnderwater/scripts.pory"
-	createfieldmugshot MUGSHOT_SKRELP, EMOTE_NORMAL
+	faceplayer
 # 159 "data/maps/DaycareEastUnderwater/scripts.pory"
-	msgbox SkrelpDialog_Text_1, MSGBOX_DEFAULT
+	speakername SkrelpDialog_Text_0
 # 160 "data/maps/DaycareEastUnderwater/scripts.pory"
-	waitmessage
+	createfieldmugshot MUGSHOT_SKRELP, EMOTE_NORMAL
 # 161 "data/maps/DaycareEastUnderwater/scripts.pory"
-	removefieldmugshot
+	msgbox SkrelpDialog_Text_1, MSGBOX_DEFAULT
 # 162 "data/maps/DaycareEastUnderwater/scripts.pory"
+	waitmessage
+# 163 "data/maps/DaycareEastUnderwater/scripts.pory"
+	removefieldmugshot
+# 164 "data/maps/DaycareEastUnderwater/scripts.pory"
 	release
 	end
 
+
+# 127 "data/maps/DaycareEastUnderwater/scripts.pory"
+ClauncherDialog_Movement_0:
+# 127 "data/maps/DaycareEastUnderwater/scripts.pory"
+	walk_in_place_left
+# 127 "data/maps/DaycareEastUnderwater/scripts.pory"
+	walk_in_place_up
+# 127 "data/maps/DaycareEastUnderwater/scripts.pory"
+	walk_in_place_right
+# 127 "data/maps/DaycareEastUnderwater/scripts.pory"
+	walk_in_place_down
+	step_end
 
 HorseaDialog_Text_0:
 # 6 "data/maps/DaycareEastUnderwater/scripts.pory"
@@ -321,29 +337,29 @@ CorsolaDialog_Text_9:
 	.string "Oh, okay then.$"
 
 ClauncherDialog_Text_0:
-# 127 "data/maps/DaycareEastUnderwater/scripts.pory"
+# 129 "data/maps/DaycareEastUnderwater/scripts.pory"
 	.string "It's impossible to get this\nClauncher's attention...\pIt's humming and snapping its\npinchers to the theme of\l'Under the Sea'.$"
 
 TentacoolDialog_Text_0:
-# 135 "data/maps/DaycareEastUnderwater/scripts.pory"
+# 137 "data/maps/DaycareEastUnderwater/scripts.pory"
 	.string "Tentacool$"
 
 TentacoolDialog_Text_1:
-# 137 "data/maps/DaycareEastUnderwater/scripts.pory"
+# 139 "data/maps/DaycareEastUnderwater/scripts.pory"
 	.string "The sea is so beautiful.\nImagine if there was more of it!\pEveryone would get to experience\nits elegance!\pI wonder if there is an\norganization I can join to help\lfurther this mission!$"
 
 BinacleDialog_Text_0:
-# 146 "data/maps/DaycareEastUnderwater/scripts.pory"
+# 148 "data/maps/DaycareEastUnderwater/scripts.pory"
 	.string "Binacle$"
 
 BinacleDialog_Text_1:
-# 148 "data/maps/DaycareEastUnderwater/scripts.pory"
+# 150 "data/maps/DaycareEastUnderwater/scripts.pory"
 	.string "Rock on dude!\n$"
 
 SkrelpDialog_Text_0:
-# 157 "data/maps/DaycareEastUnderwater/scripts.pory"
+# 159 "data/maps/DaycareEastUnderwater/scripts.pory"
 	.string "Skrelp$"
 
 SkrelpDialog_Text_1:
-# 159 "data/maps/DaycareEastUnderwater/scripts.pory"
+# 161 "data/maps/DaycareEastUnderwater/scripts.pory"
 	.string "Wait you can see me?\pI need to work on my camoflauge...\n$"

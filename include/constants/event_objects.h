@@ -261,13 +261,13 @@
 #define OBJ_EVENT_GFX_VAPOREON                   254
 #define OBJ_EVENT_GFX_LOMBRE                     255
 #define OBJ_EVENT_GFX_STARMIE                    256
-
+#define OBJ_EVENT_GFX_MUSICNOTE                  257
 
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        257
+#define NUM_OBJ_EVENT_GFX                        258
 
 
 // These are dynamic object gfx ids.
@@ -412,7 +412,10 @@
 #define OBJ_EVENT_PAL_TAG_VAPOREON                0x1130
 #define OBJ_EVENT_PAL_TAG_LOMBRE                  0x1131
 #define OBJ_EVENT_PAL_TAG_STARMIE                 0x1132
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1133
+//emote pals
+#define OBJ_EVENT_PAL_TAG_MUSICNOTE               0x1133
+
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1134
 
 
 #if OW_FOLLOWERS_POKEBALLS

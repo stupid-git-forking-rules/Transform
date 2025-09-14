@@ -421,6 +421,10 @@ const u16 gObjectEventPal_WatermonSlowpoke[] = INCBIN_U16("graphics/object_event
 const u32 gObjectEventPic_WatermonPolitoed[] = INCBIN_U32("graphics/object_events/pics/people/watermons/politoed.4bpp");
 const u16 gObjectEventPal_WatermonPolitoed[] = INCBIN_U16("graphics/object_events/palettes/politoed.gbapal");
 
+// emotes
+const u32 gObjectEventPic_EmoteMusicNote[] = INCBIN_U32("graphics/object_events/pics/misc/music_note_emote.4bpp");
+const u16 gObjectEventPal_EmoteMusicNote[] = INCBIN_U16("graphics/object_events/pics/misc/music_note_emote.gbapal");
+
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");
 const u32 gObjectEventPic_UltraBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_ultra.4bpp");

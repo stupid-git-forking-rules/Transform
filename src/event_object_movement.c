@@ -540,6 +540,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_WatermonLombre,        OBJ_EVENT_PAL_TAG_LOMBRE},
     {gObjectEventPal_WatermonSlowpoke,      OBJ_EVENT_PAL_TAG_SLOWPOKE},
     {gObjectEventPal_WatermonPolitoed,      OBJ_EVENT_PAL_TAG_POLITOED},
+    {gObjectEventPal_EmoteMusicNote,        OBJ_EVENT_PAL_TAG_MUSICNOTE},
 
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},

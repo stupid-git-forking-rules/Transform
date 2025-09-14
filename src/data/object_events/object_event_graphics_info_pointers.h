@@ -254,6 +254,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lombre;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Starmie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Politoed;
 
+// emotes
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_EmoteMusicNote;
 
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
@@ -526,6 +528,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_LOMBRE] =                   &gObjectEventGraphicsInfo_Lombre,
     [OBJ_EVENT_GFX_STARMIE] =                  &gObjectEventGraphicsInfo_Starmie,
     [OBJ_EVENT_GFX_POLITOED] =                 &gObjectEventGraphicsInfo_Politoed,
+    [OBJ_EVENT_GFX_MUSICNOTE] =                &gObjectEventGraphicsInfo_EmoteMusicNote,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

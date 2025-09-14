@@ -1408,3 +1408,7 @@ static const struct SpriteFrameImage sPicTable_Watermon_Starmie[] = {
 static const struct SpriteFrameImage sPicTable_Watermon_Politoed[] = {
     overworld_ascending_frames(gObjectEventPic_WatermonPolitoed, 4, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Emote_MusicNote[] = {
+    overworld_ascending_frames(gObjectEventPic_EmoteMusicNote, 2, 2),
+};

@@ -520,17 +520,7 @@ script Porygon2Dialog{
 script ScytherDialog{
     lock
     applymovement(scyther, moves(face_player))
-    if(!flag(FLAG_DITTO_IS_SHINY))
-    {
-        speakername("Scyther")
-        createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
-        msgbox("One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.\pThere must be some reason trainers\nput so many in here...", MSGBOX_DEFAULT)
-        waitmessage
-        removefieldmugshot
-        release
-        end
-    }
-    else
+    if(flag(FLAG_DITTO_IS_SHINY) && var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Scyther")
         createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
@@ -539,6 +529,16 @@ script ScytherDialog{
         applymovement(scyther, Common_Movement_ExclamationMark)
         waitmovement(scyther)
         msgbox("Oh hey!\pYou're one of the blue ones!\pYou must've gotten really lucky!")
+        removefieldmugshot
+        release
+        end
+    }
+    else
+    {
+        speakername("Scyther")
+        createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
+        msgbox("One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.\pThere must be some reason trainers\nput so many in here...", MSGBOX_DEFAULT)
+        waitmessage
         removefieldmugshot
         release
         end

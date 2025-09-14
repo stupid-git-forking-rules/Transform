@@ -1443,7 +1443,7 @@ BuizelInCave_Text_0:
 
 BuizelInCave_Text_1:
 # 290 "data/maps/DaycarePond/scripts.pory"
-	.string "Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.$"
+	.string "Dragonair keeps to herself.\nEnsuring maximum relaxation.$"
 
 BuizelInCave_Text_2:
 # 306 "data/maps/DaycarePond/scripts.pory"
@@ -1451,7 +1451,7 @@ BuizelInCave_Text_2:
 
 BuizelInCave_Text_3:
 # 316 "data/maps/DaycarePond/scripts.pory"
-	.string "She keeps to herself.\nEnsuring maximum relaxation.$"
+	.string "Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.$"
 
 SlowpokeInCave_Text_0:
 # 394 "data/maps/DaycarePond/scripts.pory"
@@ -1467,7 +1467,7 @@ SlowpokeInCave_Text_2:
 
 SlowpokeInCave_Text_3:
 # 421 "data/maps/DaycarePond/scripts.pory"
-	.string "Maybe it's cause I'm too slow to\nharsh the vibe.$"
+	.string "Maybe I'm too slow to\nharsh the vibe.$"
 
 CroagunkInCave_Text_0:
 # 499 "data/maps/DaycarePond/scripts.pory"

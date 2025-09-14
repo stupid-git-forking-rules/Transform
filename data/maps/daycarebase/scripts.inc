@@ -961,21 +961,16 @@ ScytherDialog::
 # 522 "data/maps/daycarebase/scripts.pory"
 	applymovement scyther, DaycareOldManDialog_Movement_0
 # 523 "data/maps/daycarebase/scripts.pory"
-	goto_if_unset FLAG_DITTO_IS_SHINY, ScytherDialog_1
-# 535 "data/maps/daycarebase/scripts.pory"
-	speakername ScytherDialog_Text_0
-# 536 "data/maps/daycarebase/scripts.pory"
-	createfieldmugshot MUGSHOT_SCYTHER, EMOTE_NORMAL
-# 537 "data/maps/daycarebase/scripts.pory"
-	msgbox ScytherDialog_Text_2, MSGBOX_DEFAULT
+	goto_if_set FLAG_DITTO_IS_SHINY, ScytherDialog_3
+ScytherDialog_2:
 # 538 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	speakername ScytherDialog_Text_0
 # 539 "data/maps/daycarebase/scripts.pory"
-	applymovement scyther, Common_Movement_ExclamationMark
+	createfieldmugshot MUGSHOT_SCYTHER, EMOTE_NORMAL
 # 540 "data/maps/daycarebase/scripts.pory"
-	waitmovement scyther
+	msgbox ScytherDialog_Text_3, MSGBOX_DEFAULT
 # 541 "data/maps/daycarebase/scripts.pory"
-	msgbox ScytherDialog_Text_3
+	waitmessage
 # 542 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
 # 543 "data/maps/daycarebase/scripts.pory"
@@ -992,10 +987,22 @@ ScytherDialog_1:
 # 528 "data/maps/daycarebase/scripts.pory"
 	waitmessage
 # 529 "data/maps/daycarebase/scripts.pory"
-	removefieldmugshot
+	applymovement scyther, Common_Movement_ExclamationMark
 # 530 "data/maps/daycarebase/scripts.pory"
+	waitmovement scyther
+# 531 "data/maps/daycarebase/scripts.pory"
+	msgbox ScytherDialog_Text_2
+# 532 "data/maps/daycarebase/scripts.pory"
+	removefieldmugshot
+# 533 "data/maps/daycarebase/scripts.pory"
 	release
 	end
+
+ScytherDialog_3:
+# 523 "data/maps/daycarebase/scripts.pory"
+	compare VAR_TRANSFORM_MON, SPECIES_DITTO
+	goto_if_eq ScytherDialog_1
+	goto ScytherDialog_2
 
 
 RioluDialog::
@@ -1894,15 +1901,15 @@ ScytherDialog_Text_0:
 
 ScytherDialog_Text_1:
 # 527 "data/maps/daycarebase/scripts.pory"
-	.string "One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.\pThere must be some reason trainers\nput so many in here...$"
-
-ScytherDialog_Text_2:
-# 537 "data/maps/daycarebase/scripts.pory"
 	.string "One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.$"
 
-ScytherDialog_Text_3:
-# 541 "data/maps/daycarebase/scripts.pory"
+ScytherDialog_Text_2:
+# 531 "data/maps/daycarebase/scripts.pory"
 	.string "Oh hey!\pYou're one of the blue ones!\pYou must've gotten really lucky!$"
+
+ScytherDialog_Text_3:
+# 540 "data/maps/daycarebase/scripts.pory"
+	.string "One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.\pThere must be some reason trainers\nput so many in here...$"
 
 RioluDialog_Text_0:
 # 555 "data/maps/daycarebase/scripts.pory"
