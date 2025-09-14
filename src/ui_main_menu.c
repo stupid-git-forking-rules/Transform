@@ -747,24 +747,25 @@ static void DestroyMugshot()
 #define ICON_BOX_Y_DIFFERENCE       32
 static void CreateIconShadow()
 {
-    u8 i = 0;
+    u8 i;
+    u8 shadowIndex = 0;
 
     sMainMenuDataPtr->iconBoxSpriteIds[0] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + (ICON_BOX_X_DIFFERENCE * 0), ICON_BOX_1_START_Y, 2);
     sMainMenuDataPtr->iconBoxSpriteIds[1] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + (ICON_BOX_X_DIFFERENCE * 1), ICON_BOX_1_START_Y, 2);
     sMainMenuDataPtr->iconBoxSpriteIds[2] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + (ICON_BOX_X_DIFFERENCE * 2), ICON_BOX_1_START_Y, 2);
-    
     sMainMenuDataPtr->iconBoxSpriteIds[3] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + (ICON_BOX_X_DIFFERENCE * 0), ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1), 2);
     sMainMenuDataPtr->iconBoxSpriteIds[4] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + (ICON_BOX_X_DIFFERENCE * 1), ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1), 2);
     sMainMenuDataPtr->iconBoxSpriteIds[5] = CreateSprite(&sSpriteTemplate_IconBox, ICON_BOX_1_START_X + (ICON_BOX_X_DIFFERENCE * 2), ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1), 2);
 
-    for(i = 0; i < gPlayerPartyCount; i++)
+    for (i = 1; i < gPlayerPartyCount; i++)
     {
-        gSprites[sMainMenuDataPtr->iconBoxSpriteIds[i]].invisible = FALSE;
-        StartSpriteAnim(&gSprites[sMainMenuDataPtr->iconBoxSpriteIds[i]], 0);
-        gSprites[sMainMenuDataPtr->iconBoxSpriteIds[i]].oam.priority = 1;
+        gSprites[sMainMenuDataPtr->iconBoxSpriteIds[shadowIndex]].invisible = FALSE;
+        StartSpriteAnim(&gSprites[sMainMenuDataPtr->iconBoxSpriteIds[shadowIndex]], 0);
+        gSprites[sMainMenuDataPtr->iconBoxSpriteIds[shadowIndex]].oam.priority = 1;
+        shadowIndex++;
     }
 
-    for(i = gPlayerPartyCount; i < 6; i++) // Hide Shadows For Mons that don't exist
+    for (i = shadowIndex; i < 6; i++)
     {
         gSprites[sMainMenuDataPtr->iconBoxSpriteIds[i]].invisible = TRUE;
     }
@@ -793,14 +794,16 @@ static u32 GetHPEggCyclePercent(u32 partyIndex) // Random HP function from psf's
 
 static void CreatePartyMonIcons()
 {
-    u8 i = 0;
-    s16 x = ICON_BOX_1_START_X;
-    s16 y = ICON_BOX_1_START_Y;
-    struct Pokemon *mon;
+    u8 i;
+    u8 iconIndex = 0;
+    s16 x = 0;
+    s16 y = 0;
+    
     LoadMonIconPalettes();
-    for(i = 0; i < gPlayerPartyCount; i++)
-    {   
-        switch (i) // choose position for each icon
+    
+    for (i = 1; i < gPlayerPartyCount; i++)
+    {
+        switch (iconIndex)
         {
             case 0:
                 x = ICON_BOX_1_START_X;
@@ -820,28 +823,27 @@ static void CreatePartyMonIcons()
                 break;
             case 4:
                 x = ICON_BOX_1_START_X + ICON_BOX_X_DIFFERENCE;
-                y = ICON_BOX_1_START_Y + (ICON_BOX_X_DIFFERENCE * 1);
-                break;
-            case 5:
-                x = ICON_BOX_1_START_X + (ICON_BOX_X_DIFFERENCE * 2);
                 y = ICON_BOX_1_START_Y + (ICON_BOX_Y_DIFFERENCE * 1);
                 break;
         }
 
 #ifdef RHH_EXPANSION
-            sMainMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y - 2, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY));
+        sMainMenuDataPtr->iconMonSpriteIds[iconIndex] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y - 2, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY));
 #else
-            sMainMenuDataPtr->iconMonSpriteIds[i] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y - 2, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY), TRUE);
+        sMainMenuDataPtr->iconMonSpriteIds[iconIndex] = CreateMonIcon(GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG), SpriteCB_MonIcon, x, y - 2, 0, GetMonData(&gPlayerParty[i], MON_DATA_PERSONALITY), TRUE);
 #endif
 
-        gSprites[sMainMenuDataPtr->iconMonSpriteIds[i]].oam.priority = 0;
+        gSprites[sMainMenuDataPtr->iconMonSpriteIds[iconIndex]].oam.priority = 0;
 
         if (GetHPEggCyclePercent(i) == 0)
         {
-            gSprites[sMainMenuDataPtr->iconMonSpriteIds[i]].callback = SpriteCallbackDummy;
+            gSprites[sMainMenuDataPtr->iconMonSpriteIds[iconIndex]].callback = SpriteCallbackDummy;
         }
 
+        iconIndex++;
     }
+    
+    sMainMenuDataPtr->iconMonSpriteIds[5] = 0xFF;
 }
 
 static void DestroyMonIcons()
