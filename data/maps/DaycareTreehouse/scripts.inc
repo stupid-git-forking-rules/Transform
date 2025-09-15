@@ -113,11 +113,11 @@ BattleVsWeavile_3:
 # 36 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmovement LOCALID_PLAYER
 # 37 "data/maps/DaycareTreehouse/scripts.pory"
-	playse SE_M_SCRATCH
-# 38 "data/maps/DaycareTreehouse/scripts.pory"
 	applymovement Weavile, BattleVsWeavile_Movement_3
-# 39 "data/maps/DaycareTreehouse/scripts.pory"
+# 38 "data/maps/DaycareTreehouse/scripts.pory"
 	waitmovement Weavile
+# 39 "data/maps/DaycareTreehouse/scripts.pory"
+	playse SE_M_SCRATCH
 # 40 "data/maps/DaycareTreehouse/scripts.pory"
 	playbgm MUS_PMD_BOSS_INTRO, FALSE
 # 41 "data/maps/DaycareTreehouse/scripts.pory"
@@ -404,9 +404,9 @@ BattleVsWeavile_Movement_2:
 	walk_fast_down
 	step_end
 
-# 38 "data/maps/DaycareTreehouse/scripts.pory"
+# 37 "data/maps/DaycareTreehouse/scripts.pory"
 BattleVsWeavile_Movement_3:
-# 38 "data/maps/DaycareTreehouse/scripts.pory"
+# 37 "data/maps/DaycareTreehouse/scripts.pory"
 	jump_2_down
 	step_end
 
