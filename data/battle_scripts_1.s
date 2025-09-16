@@ -3465,6 +3465,7 @@ BattleScript_EffectTransform::
 	ppreduce
 	trytoclearprimalweather
 	flushtextbox
+BattleScript_TransformFromPartyMenu::
 	transformdataexecution
 	attackanimation
 	waitanimation

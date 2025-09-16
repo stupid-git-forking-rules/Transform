@@ -34,6 +34,7 @@
 #include "event_data.h"
 #include "pokemon_storage_system.h"
 #include "task.h"
+#include "transform.h"
 #include "naming_screen.h"
 #include "battle_setup.h"
 #include "overworld.h"
@@ -13261,9 +13262,9 @@ static void Cmd_transformdataexecution(void)
 
     gChosenMove = MOVE_UNAVAILABLE;
     gBattlescriptCurrInstr = cmd->nextInstr;
-    if (gBattleMons[gBattlerTarget].status2 & STATUS2_TRANSFORMED
+    if (!gPartyTargetForTransform && (gBattleMons[gBattlerTarget].status2 & STATUS2_TRANSFORMED
         || gBattleStruct->illusion[gBattlerTarget].state == ILLUSION_ON
-        || gStatuses3[gBattlerTarget] & STATUS3_SEMI_INVULNERABLE_NO_COMMANDER)
+        || gStatuses3[gBattlerTarget] & STATUS3_SEMI_INVULNERABLE_NO_COMMANDER))
     {
         gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_FAILED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TRANSFORM_FAILED;
@@ -13277,23 +13278,46 @@ static void Cmd_transformdataexecution(void)
         gBattleMons[gBattlerAttacker].status2 |= STATUS2_TRANSFORMED;
         gDisableStructs[gBattlerAttacker].disabledMove = MOVE_NONE;
         gDisableStructs[gBattlerAttacker].disableTimer = 0;
-        gDisableStructs[gBattlerAttacker].transformedMonPersonality = gBattleMons[gBattlerTarget].personality;
-        gDisableStructs[gBattlerAttacker].transformedMonShininess = gBattleMons[gBattlerTarget].isShiny;
         gDisableStructs[gBattlerAttacker].mimickedMoves = 0;
         gDisableStructs[gBattlerAttacker].usedMoves = 0;
 
-        timesGotHit = gBattleStruct->timesGotHit[GetBattlerSide(gBattlerTarget)][gBattlerPartyIndexes[gBattlerTarget]];
-        gBattleStruct->timesGotHit[GetBattlerSide(gBattlerAttacker)][gBattlerPartyIndexes[gBattlerAttacker]] = timesGotHit;
+        if (gPartyTargetForTransform)
+        {
+            u16 species = GetMonData(&gPlayerParty[gPartyTargetForTransform], MON_DATA_SPECIES);
+            gBattleSpritesDataPtr->battlerData[gBattlerAttacker].transformSpecies = species;
 
-        PREPARE_SPECIES_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerTarget].species)
+            gDisableStructs[gBattlerAttacker].transformedMonPersonality = gBattleMons[gBattlerAttacker].personality;
+            gDisableStructs[gBattlerAttacker].transformedMonShininess = gBattleMons[gBattlerAttacker].isShiny;
 
-        battleMonAttacker = (u8 *)(&gBattleMons[gBattlerAttacker]);
-        battleMonTarget = (u8 *)(&gBattleMons[gBattlerTarget]);
+            PREPARE_SPECIES_BUFFER(gBattleTextBuff1, species)
 
-        for (i = 0; i < offsetof(struct BattlePokemon, pp); i++)
-            battleMonAttacker[i] = battleMonTarget[i];
+            battleMonAttacker = (u8 *)(&gBattleMons[gBattlerAttacker]);
 
-        gDisableStructs[gBattlerAttacker].overwrittenAbility = GetBattlerAbility(gBattlerTarget);
+            for (i = 0; i < 4; i++)
+                SetBattleMonMoveSlot(&gBattleMons[gBattlerAttacker], GetTransformationMoves(species, i), i);
+
+            gDisableStructs[gBattlerAttacker].overwrittenAbility = GetTransformationAbility(species);
+            gPartyTargetForTransform = 0;
+        }
+        else
+        {
+            gDisableStructs[gBattlerAttacker].transformedMonPersonality = gBattleMons[gBattlerTarget].personality;
+            gDisableStructs[gBattlerAttacker].transformedMonShininess = gBattleMons[gBattlerTarget].isShiny;
+
+            timesGotHit = gBattleStruct->timesGotHit[GetBattlerSide(gBattlerTarget)][gBattlerPartyIndexes[gBattlerTarget]];
+            gBattleStruct->timesGotHit[GetBattlerSide(gBattlerAttacker)][gBattlerPartyIndexes[gBattlerAttacker]] = timesGotHit;
+
+            PREPARE_SPECIES_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerTarget].species)
+
+            battleMonAttacker = (u8 *)(&gBattleMons[gBattlerAttacker]);
+            battleMonTarget = (u8 *)(&gBattleMons[gBattlerTarget]);
+
+            for (i = 0; i < offsetof(struct BattlePokemon, pp); i++)
+                battleMonAttacker[i] = battleMonTarget[i];
+
+            gDisableStructs[gBattlerAttacker].overwrittenAbility = GetBattlerAbility(gBattlerTarget);
+        }
+
         for (i = 0; i < MAX_MON_MOVES; i++)
         {
             u32 pp = GetMovePP(gBattleMons[gBattlerAttacker].moves[i]);

@@ -623,6 +623,7 @@ extern const u8 BattleScript_EffectSpecialDefenseUp2[];
 extern const u8 BattleScript_EffectAccuracyUp2[];
 extern const u8 BattleScript_EffectEvasionUp2[];
 extern const u8 BattleScript_EffectTransform[];
+extern const u8 BattleScript_TransformFromPartyMenu[];
 extern const u8 BattleScript_EffectAttackDown2[];
 extern const u8 BattleScript_EffectDefenseDown2[];
 extern const u8 BattleScript_EffectSpeedDown2[];

@@ -24,6 +24,7 @@
 #include "string_util.h"
 #include "task.h"
 #include "test_runner.h"
+#include "transform.h"
 #include "trig.h"
 #include "trainer_slide.h"
 #include "window.h"
@@ -552,6 +553,17 @@ void HandleAction_Switch(void)
      && gBattlerPartyIndexes[BATTLE_PARTNER(gBattlerAttacker)] == gBattleStruct->monToSwitchIntoId[gBattlerAttacker])
     {
         gCurrentActionFuncId = B_ACTION_FINISHED;
+        return;
+    }
+
+    // if playing as Ditto, cancel switch
+    if (PlayerIsDitto())
+    {
+        gPartyTargetForTransform = gBattleStruct->monToSwitchIntoId[gBattlerAttacker];
+        DebugPrintfLevel(MGBA_LOG_WARN, "gPartyTargetForTransform (%d)!", gPartyTargetForTransform);
+        gBattlescriptCurrInstr = BattleScript_TransformFromPartyMenu;
+        gCurrentMove = gChosenMove = MOVE_TRANSFORM;
+        gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
         return;
     }
 
