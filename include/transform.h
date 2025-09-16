@@ -23,6 +23,8 @@ void TrySetPlayerAvatarTransformation(u16 speciesId, bool8 UnlockPlayerFieldCont
 void SetPlayerAvatarSurfTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls);
 void SetPlayerAvatarStopSurfTransformation(u16 speciesId, bool8 UnlockPlayerFieldControls);
 TransformFunc GetTransformationFunc(u16 speciesId);
+u16 GetTransformationMoves(u16 speciesId, u8 i);
+u16 GetTransformationAbility(u16 speciesId);
 
 #define TRANSFORM_TYPE_PLAYER_SPECIES 1
 

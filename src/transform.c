@@ -227,6 +227,16 @@ TransformFunc GetTransformationFunc(u16 speciesId)
     return gTransformations[speciesId].fieldUseFunc;
 }
 
+u16 GetTransformationMoves(u16 speciesId, u8 i)
+{
+    return gTransformations[speciesId].moves[i];
+}
+
+u16 GetTransformationAbility(u16 speciesId)
+{
+    return gTransformations[speciesId].ability;
+}
+
 void TransformDittoBoxMon(u16 targetSpecies)
 {
     if (!IsSpeciesValidTransformation(targetSpecies))
