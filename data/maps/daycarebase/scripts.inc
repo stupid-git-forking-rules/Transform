@@ -1608,44 +1608,46 @@ DaycarebaseDitto_intro_trigger_1:
 # 917 "data/maps/daycarebase/scripts.pory"
 	removefieldmugshot
 # 918 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_DITTO_INTRO
+# 919 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycareBase_FindLuckyEgg::
-# 928 "data/maps/daycarebase/scripts.pory"
+# 929 "data/maps/daycarebase/scripts.pory"
 	finditem ITEM_LUCKY_EGG
 	return
 
 
 DaycareBase_FindLuckyEgg1::
-# 932 "data/maps/daycarebase/scripts.pory"
-	lock
 # 933 "data/maps/daycarebase/scripts.pory"
-	removeobject luckyegg1
+	lock
 # 934 "data/maps/daycarebase/scripts.pory"
-	giveitem ITEM_LUCKY_EGG
+	removeobject luckyegg1
 # 935 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	giveitem ITEM_LUCKY_EGG
 # 936 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_ITEM_DAYCARE_BASE1
+	waitmessage
 # 937 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_ITEM_DAYCARE_BASE1
+# 938 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
 
 DaycareBase_FindLuckyEgg2::
-# 942 "data/maps/daycarebase/scripts.pory"
-	lock
 # 943 "data/maps/daycarebase/scripts.pory"
-	removeobject luckyegg2
+	lock
 # 944 "data/maps/daycarebase/scripts.pory"
-	giveitem ITEM_LUCKY_EGG
+	removeobject luckyegg2
 # 945 "data/maps/daycarebase/scripts.pory"
-	waitmessage
+	giveitem ITEM_LUCKY_EGG
 # 946 "data/maps/daycarebase/scripts.pory"
-	setflag FLAG_ITEM_DAYCARE_EAST1
+	waitmessage
 # 947 "data/maps/daycarebase/scripts.pory"
+	setflag FLAG_ITEM_DAYCARE_EAST1
+# 948 "data/maps/daycarebase/scripts.pory"
 	release
 	end
 
