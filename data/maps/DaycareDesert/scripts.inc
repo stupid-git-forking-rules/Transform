@@ -357,7 +357,7 @@ SandshrewDialog_Text_0:
 
 SandshrewDialog_Text_1:
 # 119 "data/maps/DaycareDesert/scripts.pory"
-	.string "Rhyhorn may have a tough exterior,\nbut he is the nicest Pokémon in\lthe desert!\pHe's a pacifist and doesn't like\nto battle.$"
+	.string "Rhyhorn may have a tough exterior,\nbut he is the nicest Pokémon in\lthe desert!\pHe's a pacifist and doesn't like\nto battle.\pHe's great friends with Trapinch\nwho can be fiesty.$"
 
 VibravaDialog_Text_0:
 # 129 "data/maps/DaycareDesert/scripts.pory"

@@ -183,7 +183,7 @@ script BattleVsCutiefly{
         release
         end
     }
-    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
+    playbgm(MUS_PMD_HAPPINESS, FALSE)
     playse(SE_PIN)
     applymovement(Cutiefly, Common_Movement_ExclamationMark)
     waitmovement(Cutiefly)

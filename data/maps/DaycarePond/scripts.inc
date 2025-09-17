@@ -16,7 +16,7 @@ BattleVsMarill::
 # 12 "data/maps/DaycarePond/scripts.pory"
 	goto_if_set FLAG_TRANS_MARILL, BattleVsMarill_2
 # 23 "data/maps/DaycarePond/scripts.pory"
-	playbgm MUS_PMD_BOSS_INTRO, FALSE
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 24 "data/maps/DaycarePond/scripts.pory"
 	applymovement Marill, BattleVsMarill_Movement_0
 # 25 "data/maps/DaycarePond/scripts.pory"

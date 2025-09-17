@@ -741,7 +741,7 @@ script BattleVsPikachu{
         end
         
     }
-    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
+    playbgm(MUS_PMD_HAPPINESS, FALSE)
     applymovement(Pikachu, moves(face_player))
     waitmovement(Pikachu)
     playse(SE_PIN)

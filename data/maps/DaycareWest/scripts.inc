@@ -239,7 +239,7 @@ BattleVsCutiefly::
 # 176 "data/maps/DaycareWest/scripts.pory"
 	goto_if_set FLAG_TRANS_CUTIEFLY, BattleVsCutiefly_4
 # 186 "data/maps/DaycareWest/scripts.pory"
-	playbgm MUS_PMD_BOSS_INTRO, FALSE
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 187 "data/maps/DaycareWest/scripts.pory"
 	playse SE_PIN
 # 188 "data/maps/DaycareWest/scripts.pory"

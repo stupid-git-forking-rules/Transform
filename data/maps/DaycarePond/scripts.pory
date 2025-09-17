@@ -20,7 +20,7 @@ script BattleVsMarill{
         release
         end
     }
-    playbgm(MUS_PMD_BOSS_INTRO, FALSE)
+    playbgm(MUS_PMD_HAPPINESS, FALSE)
     applymovement(Marill, moves(face_player))
     waitmovement(Marill)
     playse(SE_PIN)

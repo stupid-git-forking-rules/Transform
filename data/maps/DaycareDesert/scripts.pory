@@ -116,7 +116,7 @@ script SandshrewDialog{
     faceplayer
     speakername("Sandshrew")
     createfieldmugshot(MUGSHOT_SANDSHREW, EMOTE_NORMAL)
-    msgbox("Rhyhorn may have a tough exterior,\nbut he is the nicest Pokémon in\lthe desert!\pHe's a pacifist and doesn't like\nto battle.", MSGBOX_DEFAULT)
+    msgbox("Rhyhorn may have a tough exterior,\nbut he is the nicest Pokémon in\lthe desert!\pHe's a pacifist and doesn't like\nto battle.\pHe's great friends with Trapinch\nwho can be fiesty.", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release

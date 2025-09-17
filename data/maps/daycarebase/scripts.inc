@@ -1309,7 +1309,7 @@ BattleVsPikachu::
 # 732 "data/maps/daycarebase/scripts.pory"
 	goto_if_set FLAG_TRANS_PIKACHU, BattleVsPikachu_2
 # 744 "data/maps/daycarebase/scripts.pory"
-	playbgm MUS_PMD_BOSS_INTRO, FALSE
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 745 "data/maps/daycarebase/scripts.pory"
 	applymovement Pikachu, DaycareOldManDialog_Movement_0
 # 746 "data/maps/daycarebase/scripts.pory"
