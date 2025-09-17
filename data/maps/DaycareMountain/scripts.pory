@@ -12,6 +12,10 @@ script SoarFront {
 		end
 	}
 	else{
+        lock
+        msgbox("The bridge seems to be broken.\pMaybe a Flying Pokémon could soar\nover the gap.", MSGBOX_DEFAULT)
+        waitmessage
+        release
 		end
 	}
 }
@@ -26,6 +30,10 @@ script SoarBack {
 		end
 	}
 	else{
+        lock
+        msgbox("The bridge seems to be broken.\pMaybe a Flying Pokémon could soar\nover the gap.", MSGBOX_DEFAULT)
+        waitmessage
+        release
 		end
 	}
 }

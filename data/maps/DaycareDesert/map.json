@@ -56,7 +56,7 @@
     {
       "local_id": "Rhyhorn",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RHYHORN)",
-      "x": 16,
+      "x": 17,
       "y": 31,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
