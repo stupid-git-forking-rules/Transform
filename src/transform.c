@@ -470,7 +470,8 @@ static const u16 sMiscellaneousFlags[] = {
     FLAG_GENGAR_EGG,
     FLAG_STUNFISK_EGG,
     FLAG_HIDE_RUFFLET,
-    FLAG_LITWICK_EGG
+    FLAG_LITWICK_EGG,
+    FLAG_MIMIKYU_LUCKYEGG
 };
 
 u16 CountFlagsInRange(u16 start_flag, u16 end_flag)

@@ -2,16 +2,20 @@ mapscripts DaycareMountainCaveDeep_MapScripts{}
 
 script Daycaremountaincavedeep_FindSuperPotion{
     lock
-    finditem(ITEM_SUPER_POTION)
+    removeobject(mcdpotion)
+    giveitem(ITEM_SUPER_POTION)
     waitmessage
+    setflag(FLAG_ITEM_DAYCARE_MCD1)
     release
     end
 }
 
 script DaycareMCD_FindLuckyEgg{
     lock
-    finditem(ITEM_LUCKY_EGG)
+    removeobject(mcdegg)
+    giveitem(ITEM_LUCKY_EGG)
     waitmessage
+    setflag(FLAG_ITEM_DAYCARE_MCD2)
     release
     end
 }

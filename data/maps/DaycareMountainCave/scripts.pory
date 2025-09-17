@@ -25,9 +25,5 @@ script SnomDialog{
 }
 
 script DaycareMountainCave_FindLuckyEgg{
-    lock
     finditem(ITEM_LUCKY_EGG)
-    waitmessage
-    release
-    end
 }

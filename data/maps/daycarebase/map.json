@@ -289,6 +289,7 @@
       "flag": "0"
     },
     {
+      "local_id": "luckyegg1",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 43,
       "y": 43,
@@ -298,7 +299,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DaycareBase_FindLuckyEgg",
+      "script": "DaycareBase_FindLuckyEgg1",
       "flag": "FLAG_ITEM_DAYCARE_BASE1"
     },
     {
@@ -372,6 +373,7 @@
       "flag": "FLAG_SHOW_BRENDAN_OUTRO"
     },
     {
+      "local_id": "luckyegg2",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 46,
       "y": 32,
@@ -381,7 +383,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DaycareBase_FindLuckyEgg",
+      "script": "DaycareBase_FindLuckyEgg2",
       "flag": "FLAG_ITEM_DAYCARE_EAST1"
     }
   ],

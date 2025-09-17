@@ -26,9 +26,5 @@ script RolycolyDialog{
 }
 
 script EasttoDesert_FindLuckyEgg{
-    lock
     finditem(ITEM_LUCKY_EGG)
-    waitmessage
-    release
-    end
 }

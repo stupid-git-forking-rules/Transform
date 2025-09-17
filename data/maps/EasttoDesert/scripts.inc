@@ -44,14 +44,8 @@ RolycolyDialog::
 
 EasttoDesert_FindLuckyEgg::
 # 29 "data/maps/EasttoDesert/scripts.pory"
-	lock
-# 30 "data/maps/EasttoDesert/scripts.pory"
 	finditem ITEM_LUCKY_EGG
-# 31 "data/maps/EasttoDesert/scripts.pory"
-	waitmessage
-# 32 "data/maps/EasttoDesert/scripts.pory"
-	release
-	end
+	return
 
 
 RoggenrolaDialog_Text_0:

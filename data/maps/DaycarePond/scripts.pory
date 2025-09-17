@@ -710,9 +710,5 @@ script BattleVsDragonair{
 
 
 script DaycarePond_FindLuckyEgg{
-    lock
     finditem(ITEM_LUCKY_EGG)
-    waitmessage
-    release
-    end
 }

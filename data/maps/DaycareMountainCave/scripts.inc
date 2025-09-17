@@ -44,14 +44,8 @@ SnomDialog::
 
 DaycareMountainCave_FindLuckyEgg::
 # 28 "data/maps/DaycareMountainCave/scripts.pory"
-	lock
-# 29 "data/maps/DaycareMountainCave/scripts.pory"
 	finditem ITEM_LUCKY_EGG
-# 30 "data/maps/DaycareMountainCave/scripts.pory"
-	waitmessage
-# 31 "data/maps/DaycareMountainCave/scripts.pory"
-	release
-	end
+	return
 
 
 PiplupDialog_Text_0:

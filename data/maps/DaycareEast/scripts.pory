@@ -50,11 +50,7 @@ script SandyghastDialog {
 }
 
 script DaycareEast_FindLuckyEgg {
-    lock
     finditem(ITEM_LUCKY_EGG)
-    waitmessage
-    release
-    end
 }
 
 script ShellosEastDialog{

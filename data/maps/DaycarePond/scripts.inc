@@ -1269,14 +1269,8 @@ BattleVsDragonair_4:
 
 DaycarePond_FindLuckyEgg::
 # 713 "data/maps/DaycarePond/scripts.pory"
-	lock
-# 714 "data/maps/DaycarePond/scripts.pory"
 	finditem ITEM_LUCKY_EGG
-# 715 "data/maps/DaycarePond/scripts.pory"
-	waitmessage
-# 716 "data/maps/DaycarePond/scripts.pory"
-	release
-	end
+	return
 
 
 # 20 "data/maps/DaycarePond/scripts.pory"

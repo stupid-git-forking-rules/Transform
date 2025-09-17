@@ -107,6 +107,37 @@ script MimikyuDialog{
         release
         end
     }
+    elif (var(VAR_TRANSFORM_MON)== SPECIES_PIKACHU)
+    {
+        if (flag(FLAG_MIMIKYU_LUCKYEGG))
+        {
+            speakername("Mimikyu")
+            createfieldmugshot(MUGSHOT_MIMIKYU, EMOTE_ANGRY)
+            msgbox("I've always looked up to you\nPikachu.\pI hope my disguise doesn't insult\nyou..", MSGBOX_DEFAULT)
+            waitmessage
+            removefieldmugshot
+            release
+            end
+        }
+        else
+        {
+            speakername("Pikachu")
+            createfieldmugshot(MUGSHOT_MIMIKYUTOP, EMOTE_NORMAL)
+            msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!",MSGBOX_DEFAULT)
+            removefieldmugshot
+            speakername("Mimikyu")
+            createfieldmugshot(MUGSHOT_MIMIKYU, EMOTE_ANGRY)
+            msgbox("Oh!\nA real life Pikachu!\pYou are my idol.\pPlease take this.\n", MSGBOX_DEFAULT)
+            waitmessage
+            removefieldmugshot
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            giveitem(ITEM_LUCKY_EGG)
+            setflag(FLAG_MIMIKYU_LUCKYEGG)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            release
+            end
+        }
+    }
     else
     {
     speakername("Pikachu")
@@ -179,7 +210,7 @@ script DaycareOldManDialog{
         if(var(VAR_TRANSFORM_MON)==SPECIES_DITTO)
         {
         speakername("Daycare Man")
-	    msgbox("Back from exploring the Daycare?\pAh!\nBut where is your Egg!\pKeep doing whatever it is you\nDittos do and come back when\lyou have one!", MSGBOX_DEFAULT)
+	    msgbox("Back from exploring the Daycare?\pAh!\nBut where is your Egg?\pKeep doing whatever it is you\nDittos do and come back when\lyou have one!", MSGBOX_DEFAULT)
         waitmessage
         release
         end
@@ -273,39 +304,39 @@ script DaycareOldManDialog{
             buffernumberstring(STR_VAR_1, VAR_TEMP_0)
             copyvar(VAR_TEMP_1, VAR_LUCKYEGG_COUNT)
             buffernumberstring(STR_VAR_2, VAR_TEMP_1)
-            if(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) ==17)    
+            if(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) ==18)    
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0\n{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Lucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts\nand found all of the Lucky Eggs!\pCongratulations!\pStart a new game for a reward!", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0\n{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Lucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pAmazing!\pYou beat the game with 0 whiteouts\nand found all of the Lucky Eggs!\pCongratulations!\pStart a new game for a reward!", MSGBOX_DEFAULT)
                 waitmessage
                 special(ForceShinyDitto)           
             }
-            elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) !=17 && var(VAR_LUCKYEGG_COUNT) >0)
+            elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) !=18 && var(VAR_LUCKYEGG_COUNT) >0)
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto)    
             }
             elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) == 0)
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto)   
             }
             elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 0)
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto)   
             }
-            elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 17)
+            elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 18)
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat Job!\nYou found all of the Lucky Eggs!\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pGreat Job!\nYou found all of the Lucky Eggs!\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto)   
             }
             else
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto) 
             }
@@ -372,39 +403,39 @@ script DaycareOldManDialog{
             buffernumberstring(STR_VAR_1, VAR_TEMP_0)
             copyvar(VAR_TEMP_1, VAR_LUCKYEGG_COUNT)
             buffernumberstring(STR_VAR_2, VAR_TEMP_1)
-            if(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) ==17)    
+            if(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) ==18)    
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0\n{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Lucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts\nand found all of the Lucky Eggs!\pCongratulations!\pStart a new game for a reward!", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0\n{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Lucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pAmazing!\pYou beat the game with 0 whiteouts\nand found all of the Lucky Eggs!\pCongratulations!\pStart a new game for a reward!", MSGBOX_DEFAULT)
                 waitmessage
                 special(ForceShinyDitto)           
             }
-            elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) !=17 && var(VAR_LUCKYEGG_COUNT) >0)
+            elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) !=18 && var(VAR_LUCKYEGG_COUNT) >0)
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto)    
             }
             elif(var(VAR_WHITEOUT_COUNT) == 0 && var(VAR_LUCKYEGG_COUNT) == 0)
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR BLUE}{SHADOW LIGHT_BLUE}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pAmazing!\pYou beat the game with 0 whiteouts!\pKeep searching for the remaining\nLucky Eggs and defeat Mew again to\l100% the game!", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto)   
             }
             elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 0)
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}0{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto)   
             }
-            elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 17)
+            elif(var(VAR_WHITEOUT_COUNT) != 0 && var(VAR_LUCKYEGG_COUNT) == 18)
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat Job!\nYou found all of the Lucky Eggs!\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR BLUE}{SHADOW LIGHT_BLUE}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pGreat Job!\nYou found all of the Lucky Eggs!\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto)   
             }
             else
             {
-                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/17\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
+                msgbox("Pokémon Transform Stats:\pNumber of Whiteouts: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_1}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}\nLucky Eggs found: {COLOR RED}{SHADOW LIGHT_RED}{STR_VAR_2}{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}/18\pGreat job!\pYou can continue this save and\nfind the remaining Lucky eggs.\pChallenge Mew again and speak\nto the Daycare Man.\pStart a new run to try to win\nwithout whiting out.", MSGBOX_DEFAULT)
                 waitmessage
                 special(RemoveForceShinyDitto) 
             }
@@ -914,9 +945,25 @@ script DaycarebaseDitto_intro_trigger{
 }
 
 script DaycareBase_FindLuckyEgg{
-    lock
     finditem(ITEM_LUCKY_EGG)
+}
+
+script DaycareBase_FindLuckyEgg1{
+    lock
+    removeobject(luckyegg1)
+    giveitem(ITEM_LUCKY_EGG)
     waitmessage
+    setflag(FLAG_ITEM_DAYCARE_BASE1)
+    release
+    end
+}
+
+script DaycareBase_FindLuckyEgg2{
+    lock
+    removeobject(luckyegg2)
+    giveitem(ITEM_LUCKY_EGG)
+    waitmessage
+    setflag(FLAG_ITEM_DAYCARE_EAST1)
     release
     end
 }
