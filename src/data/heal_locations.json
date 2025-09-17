@@ -143,6 +143,48 @@
       "map": "MAP_DAYCAREBASE",
       "x": 20,
       "y": 44
+    },
+    {
+      "id": "HEAL_LOCATION_DAYCARE_EAST",
+      "map": "MAP_DAYCARE_EAST",
+      "x": 54,
+      "y": 9
+    },
+    {
+      "id": "HEAL_LOCATION_DAYCARE_MEW",
+      "map": "MAP_DAYCARE_MEW",
+      "x": 8,
+      "y": 11
+    },
+    {
+      "id": "HEAL_LOCATION_DAYCARE_MOUNTAIN_CAVE_DEEP",
+      "map": "MAP_DAYCARE_MOUNTAIN_CAVE_DEEP",
+      "x": 35,
+      "y": 5
+    },
+    {
+      "id": "HEAL_LOCATION_DAYCARE_POND",
+      "map": "MAP_DAYCARE_POND",
+      "x": 30,
+      "y": 3
+    },
+    {
+      "id": "HEAL_LOCATION_DAYCARE_TREEHOUSE",
+      "map": "MAP_DAYCARE_TREEHOUSE",
+      "x": 16,
+      "y": 24
+    },
+    {
+      "id": "HEAL_LOCATION_DAYCARE_VOLCANO",
+      "map": "MAP_DAYCARE_VOLCANO",
+      "x": 28,
+      "y": 8
+    },
+    {
+      "id": "HEAL_LOCATION_DAYCARE_WEST",
+      "map": "MAP_DAYCARE_WEST",
+      "x": 14,
+      "y": 8
     }
   ]
 }

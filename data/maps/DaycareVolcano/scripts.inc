@@ -1,867 +1,875 @@
 DaycareVolcano_MapScripts::
+# 2 "data/maps/DaycareVolcano/scripts.pory"
+	map_script MAP_SCRIPT_ON_TRANSITION, DaycareVolcano_OnTransition
 	.byte 0
 
 
-CyndaquilInCave::
+DaycareVolcano_OnTransition::
 # 6 "data/maps/DaycareVolcano/scripts.pory"
+	setrespawn HEAL_LOCATION_DAYCARE_VOLCANO
+	end
+
+
+CyndaquilInCave::
+# 11 "data/maps/DaycareVolcano/scripts.pory"
 	lock
-# 7 "data/maps/DaycareVolcano/scripts.pory"
+# 12 "data/maps/DaycareVolcano/scripts.pory"
 	faceplayer
-# 8 "data/maps/DaycareVolcano/scripts.pory"
+# 13 "data/maps/DaycareVolcano/scripts.pory"
 	goto_if_set FLAG_CYNDAQUIL_BATTLE, CyndaquilInCave_1
-# 20 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Cyndaquil, CyndaquilInCave_Movement_0
-# 21 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Cyndaquil
-# 22 "data/maps/DaycareVolcano/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 23 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Cyndaquil, Common_Movement_ExclamationMark
-# 24 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Cyndaquil
 # 25 "data/maps/DaycareVolcano/scripts.pory"
-	delay 60
+	applymovement Cyndaquil, CyndaquilInCave_Movement_0
 # 26 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CyndaquilInCave_Text_0
+	waitmovement Cyndaquil
 # 27 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
+	special PlayTrainerEncounterMusic
 # 28 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CyndaquilInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Cyndaquil, Common_Movement_ExclamationMark
 # 29 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	waitmovement Cyndaquil
 # 30 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_CYNDAQUIL, 25
+	delay 60
 # 31 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername CyndaquilInCave_Text_0
 # 32 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
 # 33 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CyndaquilInCave_Text_2, MSGBOX_AUTOCLOSE
+# 34 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 35 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_CYNDAQUIL, 25
+# 36 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 37 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 38 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CyndaquilInCave_4
 	return
 
 CyndaquilInCave_1:
-# 10 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CyndaquilInCave_Text_0
-# 11 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
-# 12 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CyndaquilInCave_Text_1, MSGBOX_DEFAULT
-# 13 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
-# 14 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
 # 15 "data/maps/DaycareVolcano/scripts.pory"
+	speakername CyndaquilInCave_Text_0
+# 16 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
+# 17 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CyndaquilInCave_Text_1, MSGBOX_DEFAULT
+# 18 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 19 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 20 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 CyndaquilInCave_4:
-# 35 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CyndaquilInCave_Text_0
-# 36 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
-# 37 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CyndaquilInCave_Text_1, MSGBOX_DEFAULT
-# 38 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_CYNDAQUIL_BATTLE
-# 39 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 40 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername CyndaquilInCave_Text_0
 # 41 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
+# 42 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CyndaquilInCave_Text_1, MSGBOX_DEFAULT
+# 43 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_CYNDAQUIL_BATTLE
+# 44 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 45 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 46 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 
 CyndaquilInCaveTrigger::
-# 49 "data/maps/DaycareVolcano/scripts.pory"
+# 54 "data/maps/DaycareVolcano/scripts.pory"
 	goto_if_unset FLAG_CYNDAQUIL_BATTLE, CyndaquilInCaveTrigger_1
 	return
 
 CyndaquilInCaveTrigger_1:
-# 51 "data/maps/DaycareVolcano/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 52 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Cyndaquil, Common_Movement_ExclamationMark
-# 53 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Cyndaquil
-# 54 "data/maps/DaycareVolcano/scripts.pory"
-	delay 60
-# 55 "data/maps/DaycareVolcano/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 # 56 "data/maps/DaycareVolcano/scripts.pory"
-	switch VAR_TEMP_2
+	special PlayTrainerEncounterMusic
+# 57 "data/maps/DaycareVolcano/scripts.pory"
+	applymovement Cyndaquil, Common_Movement_ExclamationMark
 # 58 "data/maps/DaycareVolcano/scripts.pory"
+	waitmovement Cyndaquil
+# 59 "data/maps/DaycareVolcano/scripts.pory"
+	delay 60
+# 60 "data/maps/DaycareVolcano/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 61 "data/maps/DaycareVolcano/scripts.pory"
+	switch VAR_TEMP_2
+# 63 "data/maps/DaycareVolcano/scripts.pory"
 	case 37, CyndaquilInCaveTrigger_4
-# 80 "data/maps/DaycareVolcano/scripts.pory"
+# 85 "data/maps/DaycareVolcano/scripts.pory"
 	case 36, CyndaquilInCaveTrigger_5
 	return
 
 CyndaquilInCaveTrigger_4:
-# 59 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
-# 60 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Cyndaquil, CyndaquilInCaveTrigger_Movement_1
-# 61 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Cyndaquil
-# 62 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CyndaquilInCave_Text_0
-# 63 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
 # 64 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CyndaquilInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
 # 65 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	applymovement Cyndaquil, CyndaquilInCaveTrigger_Movement_1
 # 66 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_CYNDAQUIL, 25
+	waitmovement Cyndaquil
 # 67 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername CyndaquilInCave_Text_0
 # 68 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
 # 69 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CyndaquilInCave_Text_2, MSGBOX_AUTOCLOSE
+# 70 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 71 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_CYNDAQUIL, 25
+# 72 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 73 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 74 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CyndaquilInCaveTrigger_6
 	return
 
 CyndaquilInCaveTrigger_5:
-# 81 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
-# 82 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CyndaquilInCave_Text_0
-# 83 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
-# 84 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CyndaquilInCave_Text_2, MSGBOX_AUTOCLOSE
-# 85 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
 # 86 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_CYNDAQUIL, 25
+	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
 # 87 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername CyndaquilInCave_Text_0
 # 88 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
 # 89 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CyndaquilInCave_Text_2, MSGBOX_AUTOCLOSE
+# 90 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 91 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_CYNDAQUIL, 25
+# 92 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 93 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 94 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CyndaquilInCaveTrigger_8
 	return
 
 CyndaquilInCaveTrigger_6:
-# 71 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CyndaquilInCave_Text_0
-# 72 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
-# 73 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CyndaquilInCave_Text_1, MSGBOX_DEFAULT
-# 74 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_CYNDAQUIL_BATTLE
-# 75 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 76 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername CyndaquilInCave_Text_0
 # 77 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
+# 78 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CyndaquilInCave_Text_1, MSGBOX_DEFAULT
+# 79 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_CYNDAQUIL_BATTLE
+# 80 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 81 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 82 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 CyndaquilInCaveTrigger_8:
-# 91 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CyndaquilInCave_Text_0
-# 92 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
-# 93 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CyndaquilInCave_Text_1, MSGBOX_DEFAULT
-# 94 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_CYNDAQUIL_BATTLE
-# 95 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 96 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername CyndaquilInCave_Text_0
 # 97 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_CYNDAQUIL, EMOTE_NORMAL
+# 98 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CyndaquilInCave_Text_1, MSGBOX_DEFAULT
+# 99 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_CYNDAQUIL_BATTLE
+# 100 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 101 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 102 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 
 VulpixInCave::
-# 106 "data/maps/DaycareVolcano/scripts.pory"
+# 111 "data/maps/DaycareVolcano/scripts.pory"
 	lock
-# 107 "data/maps/DaycareVolcano/scripts.pory"
+# 112 "data/maps/DaycareVolcano/scripts.pory"
 	faceplayer
-# 108 "data/maps/DaycareVolcano/scripts.pory"
+# 113 "data/maps/DaycareVolcano/scripts.pory"
 	goto_if_set FLAG_VULPIX_BATTLE, VulpixInCave_1
-# 120 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Vulpix, CyndaquilInCave_Movement_0
-# 121 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Vulpix
-# 122 "data/maps/DaycareVolcano/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 123 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Vulpix, Common_Movement_ExclamationMark
-# 124 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Vulpix
 # 125 "data/maps/DaycareVolcano/scripts.pory"
-	delay 60
+	applymovement Vulpix, CyndaquilInCave_Movement_0
 # 126 "data/maps/DaycareVolcano/scripts.pory"
-	speakername VulpixInCave_Text_0
+	waitmovement Vulpix
 # 127 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
+	special PlayTrainerEncounterMusic
 # 128 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox VulpixInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Vulpix, Common_Movement_ExclamationMark
 # 129 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	waitmovement Vulpix
 # 130 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_VULPIX, 25
+	delay 60
 # 131 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername VulpixInCave_Text_0
 # 132 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
 # 133 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox VulpixInCave_Text_2, MSGBOX_AUTOCLOSE
+# 134 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 135 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_VULPIX, 25
+# 136 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 137 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 138 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq VulpixInCave_4
 	return
 
 VulpixInCave_1:
-# 110 "data/maps/DaycareVolcano/scripts.pory"
-	speakername VulpixInCave_Text_0
-# 111 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
-# 112 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox VulpixInCave_Text_1, MSGBOX_DEFAULT
-# 113 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
-# 114 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
 # 115 "data/maps/DaycareVolcano/scripts.pory"
+	speakername VulpixInCave_Text_0
+# 116 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
+# 117 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox VulpixInCave_Text_1, MSGBOX_DEFAULT
+# 118 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 119 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 120 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 VulpixInCave_4:
-# 135 "data/maps/DaycareVolcano/scripts.pory"
-	speakername VulpixInCave_Text_0
-# 136 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
-# 137 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox VulpixInCave_Text_3, MSGBOX_DEFAULT
-# 138 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_VULPIX_BATTLE
-# 139 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 140 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername VulpixInCave_Text_0
 # 141 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
+# 142 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox VulpixInCave_Text_3, MSGBOX_DEFAULT
+# 143 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_VULPIX_BATTLE
+# 144 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 145 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 146 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 
 VulpixInCaveTrigger::
-# 149 "data/maps/DaycareVolcano/scripts.pory"
+# 154 "data/maps/DaycareVolcano/scripts.pory"
 	goto_if_unset FLAG_VULPIX_BATTLE, VulpixInCaveTrigger_1
 	return
 
 VulpixInCaveTrigger_1:
-# 151 "data/maps/DaycareVolcano/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 152 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Vulpix, Common_Movement_ExclamationMark
-# 153 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Vulpix
-# 154 "data/maps/DaycareVolcano/scripts.pory"
-	delay 60
-# 155 "data/maps/DaycareVolcano/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 # 156 "data/maps/DaycareVolcano/scripts.pory"
-	switch VAR_TEMP_1
+	special PlayTrainerEncounterMusic
+# 157 "data/maps/DaycareVolcano/scripts.pory"
+	applymovement Vulpix, Common_Movement_ExclamationMark
 # 158 "data/maps/DaycareVolcano/scripts.pory"
+	waitmovement Vulpix
+# 159 "data/maps/DaycareVolcano/scripts.pory"
+	delay 60
+# 160 "data/maps/DaycareVolcano/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 161 "data/maps/DaycareVolcano/scripts.pory"
+	switch VAR_TEMP_1
+# 163 "data/maps/DaycareVolcano/scripts.pory"
 	case 26, VulpixInCaveTrigger_4
-# 179 "data/maps/DaycareVolcano/scripts.pory"
+# 184 "data/maps/DaycareVolcano/scripts.pory"
 	case 27, VulpixInCaveTrigger_5
 	return
 
 VulpixInCaveTrigger_4:
-# 159 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
-# 160 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
-# 161 "data/maps/DaycareVolcano/scripts.pory"
-	speakername VulpixInCave_Text_0
-# 162 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
-# 163 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox VulpixInCave_Text_2, MSGBOX_AUTOCLOSE
 # 164 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
 # 165 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_VULPIX, 25
+	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
 # 166 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername VulpixInCave_Text_0
 # 167 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
 # 168 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox VulpixInCave_Text_2, MSGBOX_AUTOCLOSE
+# 169 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 170 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_VULPIX, 25
+# 171 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 172 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 173 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq VulpixInCaveTrigger_6
 	return
 
 VulpixInCaveTrigger_5:
-# 180 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
-# 181 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Vulpix, VulpixInCaveTrigger_Movement_1
-# 182 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Vulpix
-# 183 "data/maps/DaycareVolcano/scripts.pory"
-	speakername VulpixInCave_Text_0
-# 184 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
 # 185 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox VulpixInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
 # 186 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	applymovement Vulpix, VulpixInCaveTrigger_Movement_1
 # 187 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_VULPIX, 25
+	waitmovement Vulpix
 # 188 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername VulpixInCave_Text_0
 # 189 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
 # 190 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox VulpixInCave_Text_2, MSGBOX_AUTOCLOSE
+# 191 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 192 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_VULPIX, 25
+# 193 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 194 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 195 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq VulpixInCaveTrigger_8
 	return
 
 VulpixInCaveTrigger_6:
-# 170 "data/maps/DaycareVolcano/scripts.pory"
-	speakername VulpixInCave_Text_0
-# 171 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
-# 172 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox VulpixInCave_Text_3, MSGBOX_DEFAULT
-# 173 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_VULPIX_BATTLE
-# 174 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 175 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername VulpixInCave_Text_0
 # 176 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
+# 177 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox VulpixInCave_Text_3, MSGBOX_DEFAULT
+# 178 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_VULPIX_BATTLE
+# 179 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 180 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 181 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 VulpixInCaveTrigger_8:
-# 192 "data/maps/DaycareVolcano/scripts.pory"
-	speakername VulpixInCave_Text_0
-# 193 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
-# 194 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox VulpixInCave_Text_3, MSGBOX_DEFAULT
-# 195 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_VULPIX_BATTLE
-# 196 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 197 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername VulpixInCave_Text_0
 # 198 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_VULPIX, EMOTE_NORMAL
+# 199 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox VulpixInCave_Text_3, MSGBOX_DEFAULT
+# 200 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_VULPIX_BATTLE
+# 201 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 202 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 203 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 
 FuecocoInCave::
-# 206 "data/maps/DaycareVolcano/scripts.pory"
+# 211 "data/maps/DaycareVolcano/scripts.pory"
 	lock
-# 207 "data/maps/DaycareVolcano/scripts.pory"
+# 212 "data/maps/DaycareVolcano/scripts.pory"
 	faceplayer
-# 208 "data/maps/DaycareVolcano/scripts.pory"
+# 213 "data/maps/DaycareVolcano/scripts.pory"
 	goto_if_set FLAG_FUECOCO_BATTLE, FuecocoInCave_1
-# 220 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Fuecoco, CyndaquilInCave_Movement_0
-# 221 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Fuecoco
-# 222 "data/maps/DaycareVolcano/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 223 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Fuecoco, Common_Movement_ExclamationMark
-# 224 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Fuecoco
 # 225 "data/maps/DaycareVolcano/scripts.pory"
-	delay 60
+	applymovement Fuecoco, CyndaquilInCave_Movement_0
 # 226 "data/maps/DaycareVolcano/scripts.pory"
-	speakername FuecocoInCave_Text_0
+	waitmovement Fuecoco
 # 227 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
+	special PlayTrainerEncounterMusic
 # 228 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox FuecocoInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Fuecoco, Common_Movement_ExclamationMark
 # 229 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	waitmovement Fuecoco
 # 230 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE
+	delay 60
 # 231 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername FuecocoInCave_Text_0
 # 232 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
 # 233 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox FuecocoInCave_Text_2, MSGBOX_AUTOCLOSE
+# 234 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 235 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE
+# 236 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 237 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 238 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq FuecocoInCave_4
 	return
 
 FuecocoInCave_1:
-# 210 "data/maps/DaycareVolcano/scripts.pory"
-	speakername FuecocoInCave_Text_0
-# 211 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
-# 212 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox FuecocoInCave_Text_1, MSGBOX_DEFAULT
-# 213 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
-# 214 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
 # 215 "data/maps/DaycareVolcano/scripts.pory"
+	speakername FuecocoInCave_Text_0
+# 216 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
+# 217 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox FuecocoInCave_Text_1, MSGBOX_DEFAULT
+# 218 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 219 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 220 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 FuecocoInCave_4:
-# 235 "data/maps/DaycareVolcano/scripts.pory"
-	speakername FuecocoInCave_Text_0
-# 236 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
-# 237 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox FuecocoInCave_Text_3, MSGBOX_DEFAULT
-# 238 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_FUECOCO_BATTLE
-# 239 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 240 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername FuecocoInCave_Text_0
 # 241 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
+# 242 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox FuecocoInCave_Text_3, MSGBOX_DEFAULT
+# 243 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_FUECOCO_BATTLE
+# 244 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 245 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 246 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 
 FuecocoInCaveTrigger::
-# 248 "data/maps/DaycareVolcano/scripts.pory"
+# 253 "data/maps/DaycareVolcano/scripts.pory"
 	goto_if_unset FLAG_FUECOCO_BATTLE, FuecocoInCaveTrigger_1
 	return
 
 FuecocoInCaveTrigger_1:
-# 250 "data/maps/DaycareVolcano/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 251 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Fuecoco, Common_Movement_ExclamationMark
-# 252 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Fuecoco
-# 253 "data/maps/DaycareVolcano/scripts.pory"
-	delay 60
-# 254 "data/maps/DaycareVolcano/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 # 255 "data/maps/DaycareVolcano/scripts.pory"
-	switch VAR_TEMP_2
+	special PlayTrainerEncounterMusic
+# 256 "data/maps/DaycareVolcano/scripts.pory"
+	applymovement Fuecoco, Common_Movement_ExclamationMark
 # 257 "data/maps/DaycareVolcano/scripts.pory"
+	waitmovement Fuecoco
+# 258 "data/maps/DaycareVolcano/scripts.pory"
+	delay 60
+# 259 "data/maps/DaycareVolcano/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 260 "data/maps/DaycareVolcano/scripts.pory"
+	switch VAR_TEMP_2
+# 262 "data/maps/DaycareVolcano/scripts.pory"
 	case 21, FuecocoInCaveTrigger_4
-# 279 "data/maps/DaycareVolcano/scripts.pory"
+# 284 "data/maps/DaycareVolcano/scripts.pory"
 	case 20, FuecocoInCaveTrigger_5
-# 299 "data/maps/DaycareVolcano/scripts.pory"
+# 304 "data/maps/DaycareVolcano/scripts.pory"
 	case 22, FuecocoInCaveTrigger_6
 	return
 
 FuecocoInCaveTrigger_4:
-# 258 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
-# 259 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Fuecoco, CyndaquilInCaveTrigger_Movement_1
-# 260 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Fuecoco
-# 261 "data/maps/DaycareVolcano/scripts.pory"
-	speakername FuecocoInCave_Text_0
-# 262 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
 # 263 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox FuecocoInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
 # 264 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	applymovement Fuecoco, CyndaquilInCaveTrigger_Movement_1
 # 265 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE
+	waitmovement Fuecoco
 # 266 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername FuecocoInCave_Text_0
 # 267 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
 # 268 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox FuecocoInCave_Text_2, MSGBOX_AUTOCLOSE
+# 269 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 270 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE
+# 271 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 272 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 273 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq FuecocoInCaveTrigger_7
 	return
 
 FuecocoInCaveTrigger_5:
-# 280 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
-# 281 "data/maps/DaycareVolcano/scripts.pory"
-	speakername FuecocoInCave_Text_0
-# 282 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
-# 283 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox FuecocoInCave_Text_2, MSGBOX_AUTOCLOSE
-# 284 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
 # 285 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE
+	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
 # 286 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername FuecocoInCave_Text_0
 # 287 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
 # 288 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox FuecocoInCave_Text_2, MSGBOX_AUTOCLOSE
+# 289 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 290 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE
+# 291 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 292 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 293 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq FuecocoInCaveTrigger_9
 	return
 
 FuecocoInCaveTrigger_6:
-# 300 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
-# 301 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Fuecoco, FuecocoInCaveTrigger_Movement_0
-# 302 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Fuecoco
-# 303 "data/maps/DaycareVolcano/scripts.pory"
-	speakername FuecocoInCave_Text_0
-# 304 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
 # 305 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox FuecocoInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
 # 306 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	applymovement Fuecoco, FuecocoInCaveTrigger_Movement_0
 # 307 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE
+	waitmovement Fuecoco
 # 308 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername FuecocoInCave_Text_0
 # 309 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
 # 310 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox FuecocoInCave_Text_2, MSGBOX_AUTOCLOSE
+# 311 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 312 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_FUECOCO, 25, move1 = MOVE_SNARL, move2 = MOVE_YAWN, move3 = MOVE_INCINERATE, move4 = MOVE_CURSE
+# 313 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 314 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 315 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq FuecocoInCaveTrigger_11
 	return
 
 FuecocoInCaveTrigger_7:
-# 270 "data/maps/DaycareVolcano/scripts.pory"
-	speakername FuecocoInCave_Text_0
-# 271 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
-# 272 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox FuecocoInCave_Text_3, MSGBOX_DEFAULT
-# 273 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_FUECOCO_BATTLE
-# 274 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 275 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername FuecocoInCave_Text_0
 # 276 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
+# 277 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox FuecocoInCave_Text_3, MSGBOX_DEFAULT
+# 278 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_FUECOCO_BATTLE
+# 279 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 280 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 281 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 FuecocoInCaveTrigger_9:
-# 290 "data/maps/DaycareVolcano/scripts.pory"
-	speakername FuecocoInCave_Text_0
-# 291 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
-# 292 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox FuecocoInCave_Text_3, MSGBOX_DEFAULT
-# 293 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_FUECOCO_BATTLE
-# 294 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 295 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername FuecocoInCave_Text_0
 # 296 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
+# 297 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox FuecocoInCave_Text_3, MSGBOX_DEFAULT
+# 298 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_FUECOCO_BATTLE
+# 299 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 300 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 301 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 FuecocoInCaveTrigger_11:
-# 312 "data/maps/DaycareVolcano/scripts.pory"
-	speakername FuecocoInCave_Text_0
-# 313 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
-# 314 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox FuecocoInCave_Text_3, MSGBOX_DEFAULT
-# 315 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_FUECOCO_BATTLE
-# 316 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 317 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername FuecocoInCave_Text_0
 # 318 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_FUECOCO, EMOTE_NORMAL
+# 319 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox FuecocoInCave_Text_3, MSGBOX_DEFAULT
+# 320 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_FUECOCO_BATTLE
+# 321 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 322 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 323 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 
 CombuskenInCave::
-# 326 "data/maps/DaycareVolcano/scripts.pory"
+# 331 "data/maps/DaycareVolcano/scripts.pory"
 	lock
-# 327 "data/maps/DaycareVolcano/scripts.pory"
+# 332 "data/maps/DaycareVolcano/scripts.pory"
 	faceplayer
-# 328 "data/maps/DaycareVolcano/scripts.pory"
+# 333 "data/maps/DaycareVolcano/scripts.pory"
 	goto_if_set FLAG_COMBUSKEN_BATTLE, CombuskenInCave_1
-# 340 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Combusken, CyndaquilInCave_Movement_0
-# 341 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Combusken
-# 342 "data/maps/DaycareVolcano/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 343 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Combusken, Common_Movement_ExclamationMark
-# 344 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Combusken
 # 345 "data/maps/DaycareVolcano/scripts.pory"
-	delay 60
+	applymovement Combusken, CyndaquilInCave_Movement_0
 # 346 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CombuskenInCave_Text_0
+	waitmovement Combusken
 # 347 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
+	special PlayTrainerEncounterMusic
 # 348 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CombuskenInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement Combusken, Common_Movement_ExclamationMark
 # 349 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	waitmovement Combusken
 # 350 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_COMBUSKEN, 25
+	delay 60
 # 351 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername CombuskenInCave_Text_0
 # 352 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
 # 353 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CombuskenInCave_Text_2, MSGBOX_AUTOCLOSE
+# 354 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 355 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_COMBUSKEN, 25
+# 356 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 357 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 358 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CombuskenInCave_4
 	return
 
 CombuskenInCave_1:
-# 330 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CombuskenInCave_Text_0
-# 331 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
-# 332 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CombuskenInCave_Text_1, MSGBOX_DEFAULT
-# 333 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
-# 334 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
 # 335 "data/maps/DaycareVolcano/scripts.pory"
+	speakername CombuskenInCave_Text_0
+# 336 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
+# 337 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CombuskenInCave_Text_1, MSGBOX_DEFAULT
+# 338 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 339 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 340 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 CombuskenInCave_4:
-# 355 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CombuskenInCave_Text_0
-# 356 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
-# 357 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CombuskenInCave_Text_3, MSGBOX_DEFAULT
-# 358 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_COMBUSKEN_BATTLE
-# 359 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 360 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername CombuskenInCave_Text_0
 # 361 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
+# 362 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CombuskenInCave_Text_3, MSGBOX_DEFAULT
+# 363 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_COMBUSKEN_BATTLE
+# 364 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 365 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 366 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 
 CombuskenInCaveTrigger::
-# 369 "data/maps/DaycareVolcano/scripts.pory"
+# 374 "data/maps/DaycareVolcano/scripts.pory"
 	goto_if_unset FLAG_COMBUSKEN_BATTLE, CombuskenInCaveTrigger_1
 	return
 
 CombuskenInCaveTrigger_1:
-# 371 "data/maps/DaycareVolcano/scripts.pory"
-	special PlayTrainerEncounterMusic
-# 372 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Combusken, Common_Movement_ExclamationMark
-# 373 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Combusken
-# 374 "data/maps/DaycareVolcano/scripts.pory"
-	delay 60
-# 375 "data/maps/DaycareVolcano/scripts.pory"
-	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 # 376 "data/maps/DaycareVolcano/scripts.pory"
-	switch VAR_TEMP_1
+	special PlayTrainerEncounterMusic
+# 377 "data/maps/DaycareVolcano/scripts.pory"
+	applymovement Combusken, Common_Movement_ExclamationMark
 # 378 "data/maps/DaycareVolcano/scripts.pory"
+	waitmovement Combusken
+# 379 "data/maps/DaycareVolcano/scripts.pory"
+	delay 60
+# 380 "data/maps/DaycareVolcano/scripts.pory"
+	getplayerxy VAR_TEMP_1, VAR_TEMP_2
+# 381 "data/maps/DaycareVolcano/scripts.pory"
+	switch VAR_TEMP_1
+# 383 "data/maps/DaycareVolcano/scripts.pory"
 	case 6, CombuskenInCaveTrigger_4
-# 398 "data/maps/DaycareVolcano/scripts.pory"
+# 403 "data/maps/DaycareVolcano/scripts.pory"
 	case 7, CombuskenInCaveTrigger_5
-# 420 "data/maps/DaycareVolcano/scripts.pory"
+# 425 "data/maps/DaycareVolcano/scripts.pory"
 	case 8, CombuskenInCaveTrigger_6
 	return
 
 CombuskenInCaveTrigger_4:
-# 379 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
-# 380 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CombuskenInCave_Text_0
-# 381 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
-# 382 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CombuskenInCave_Text_2, MSGBOX_AUTOCLOSE
-# 383 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
 # 384 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_COMBUSKEN, 25
+	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
 # 385 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername CombuskenInCave_Text_0
 # 386 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
 # 387 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CombuskenInCave_Text_2, MSGBOX_AUTOCLOSE
+# 388 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 389 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_COMBUSKEN, 25
+# 390 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 391 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 392 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CombuskenInCaveTrigger_7
 	return
 
 CombuskenInCaveTrigger_5:
-# 399 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
-# 400 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Combusken, VulpixInCaveTrigger_Movement_1
-# 401 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Combusken
-# 402 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CombuskenInCave_Text_0
-# 403 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
 # 404 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CombuskenInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
 # 405 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	applymovement Combusken, VulpixInCaveTrigger_Movement_1
 # 406 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_COMBUSKEN, 25
+	waitmovement Combusken
 # 407 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername CombuskenInCave_Text_0
 # 408 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
 # 409 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CombuskenInCave_Text_2, MSGBOX_AUTOCLOSE
+# 410 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 411 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_COMBUSKEN, 25
+# 412 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 413 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 414 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CombuskenInCaveTrigger_9
 	return
 
 CombuskenInCaveTrigger_6:
-# 421 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
-# 422 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Combusken, CombuskenInCaveTrigger_Movement_0
-# 423 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Combusken
-# 424 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CombuskenInCave_Text_0
-# 425 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
 # 426 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CombuskenInCave_Text_2, MSGBOX_AUTOCLOSE
+	applymovement LOCALID_PLAYER, VulpixInCaveTrigger_Movement_0
 # 427 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	applymovement Combusken, CombuskenInCaveTrigger_Movement_0
 # 428 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_COMBUSKEN, 25
+	waitmovement Combusken
 # 429 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername CombuskenInCave_Text_0
 # 430 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
 # 431 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CombuskenInCave_Text_2, MSGBOX_AUTOCLOSE
+# 432 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 433 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_COMBUSKEN, 25
+# 434 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 435 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 436 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq CombuskenInCaveTrigger_11
 	return
 
 CombuskenInCaveTrigger_7:
-# 389 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CombuskenInCave_Text_0
-# 390 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
-# 391 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CombuskenInCave_Text_3, MSGBOX_DEFAULT
-# 392 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_COMBUSKEN_BATTLE
-# 393 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 394 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername CombuskenInCave_Text_0
 # 395 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
+# 396 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CombuskenInCave_Text_3, MSGBOX_DEFAULT
+# 397 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_COMBUSKEN_BATTLE
+# 398 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 399 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 400 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 CombuskenInCaveTrigger_9:
-# 411 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CombuskenInCave_Text_0
-# 412 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
-# 413 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CombuskenInCave_Text_3, MSGBOX_DEFAULT
-# 414 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_COMBUSKEN_BATTLE
-# 415 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 416 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername CombuskenInCave_Text_0
 # 417 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
+# 418 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CombuskenInCave_Text_3, MSGBOX_DEFAULT
+# 419 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_COMBUSKEN_BATTLE
+# 420 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 421 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 422 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 CombuskenInCaveTrigger_11:
-# 433 "data/maps/DaycareVolcano/scripts.pory"
-	speakername CombuskenInCave_Text_0
-# 434 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
-# 435 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox CombuskenInCave_Text_3, MSGBOX_DEFAULT
-# 436 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_COMBUSKEN_BATTLE
-# 437 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
 # 438 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	speakername CombuskenInCave_Text_0
 # 439 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_COMBUSKEN, EMOTE_NORMAL
+# 440 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox CombuskenInCave_Text_3, MSGBOX_DEFAULT
+# 441 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_COMBUSKEN_BATTLE
+# 442 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 443 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 444 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 
 BattleVsArcanine::
-# 447 "data/maps/DaycareVolcano/scripts.pory"
-	goto_if_set FLAG_TRANS_ARCANINE, BattleVsArcanine_2
-# 451 "data/maps/DaycareVolcano/scripts.pory"
-	lock
 # 452 "data/maps/DaycareVolcano/scripts.pory"
-	playbgm MUS_DUMMY, FALSE
-# 453 "data/maps/DaycareVolcano/scripts.pory"
-	playmoncry SPECIES_ARCANINE, CRY_MODE_NORMAL
-# 454 "data/maps/DaycareVolcano/scripts.pory"
-	waitmoncry
-# 455 "data/maps/DaycareVolcano/scripts.pory"
-	playse SE_PIN
+	goto_if_set FLAG_TRANS_ARCANINE, BattleVsArcanine_2
 # 456 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	lock
 # 457 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	playbgm MUS_DUMMY, FALSE
 # 458 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
+	playmoncry SPECIES_ARCANINE, CRY_MODE_NORMAL
 # 459 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	waitmoncry
 # 460 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, BattleVsArcanine_Movement_0
+	playse SE_PIN
 # 461 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 462 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement LOCALID_PLAYER, BattleVsArcanine_Movement_1
-# 463 "data/maps/DaycareVolcano/scripts.pory"
 	waitmovement LOCALID_PLAYER
+# 463 "data/maps/DaycareVolcano/scripts.pory"
+	applymovement LOCALID_PLAYER, CyndaquilInCaveTrigger_Movement_0
 # 464 "data/maps/DaycareVolcano/scripts.pory"
-	playse SE_LEDGE
+	waitmovement LOCALID_PLAYER
 # 465 "data/maps/DaycareVolcano/scripts.pory"
-	playse SE_LEDGE
+	applymovement LOCALID_PLAYER, BattleVsArcanine_Movement_0
 # 466 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Arcanine, BattleVsArcanine_Movement_2
+	waitmovement LOCALID_PLAYER
 # 467 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Arcanine
+	applymovement LOCALID_PLAYER, BattleVsArcanine_Movement_1
 # 468 "data/maps/DaycareVolcano/scripts.pory"
-	playbgm MUS_PMD_BOSS_INTRO, FALSE
+	waitmovement LOCALID_PLAYER
 # 469 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_ARCANINE, EMOTE_ANGRY
+	playse SE_LEDGE
 # 470 "data/maps/DaycareVolcano/scripts.pory"
-	speakername BattleVsArcanine_Text_0
+	playse SE_LEDGE
 # 471 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox BattleVsArcanine_Text_1, MSGBOX_AUTOCLOSE
+	applymovement Arcanine, BattleVsArcanine_Movement_2
 # 472 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	waitmovement Arcanine
 # 473 "data/maps/DaycareVolcano/scripts.pory"
-	setwildbattle SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_FIRE_FANG, move3 = MOVE_FLAMETHROWER, move4 = MOVE_EMBER
+	playbgm MUS_PMD_BOSS_INTRO, FALSE
 # 474 "data/maps/DaycareVolcano/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 0, 1, 1, 0
+	createfieldmugshot MUGSHOT_ARCANINE, EMOTE_ANGRY
 # 475 "data/maps/DaycareVolcano/scripts.pory"
-	dowildbattle
+	speakername BattleVsArcanine_Text_0
 # 476 "data/maps/DaycareVolcano/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
+	msgbox BattleVsArcanine_Text_1, MSGBOX_AUTOCLOSE
 # 477 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 478 "data/maps/DaycareVolcano/scripts.pory"
+	setwildbattle SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_FIRE_FANG, move3 = MOVE_FLAMETHROWER, move4 = MOVE_EMBER
+# 479 "data/maps/DaycareVolcano/scripts.pory"
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 0, 1, 1, 0
+# 480 "data/maps/DaycareVolcano/scripts.pory"
+	dowildbattle
+# 481 "data/maps/DaycareVolcano/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 482 "data/maps/DaycareVolcano/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq BattleVsArcanine_4
 	return
@@ -870,209 +878,309 @@ BattleVsArcanine_2:
 	end
 
 BattleVsArcanine_4:
-# 479 "data/maps/DaycareVolcano/scripts.pory"
-	playbgm MUS_PMD_HAPPINESS, FALSE
-# 480 "data/maps/DaycareVolcano/scripts.pory"
-	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
-# 481 "data/maps/DaycareVolcano/scripts.pory"
-	setflag FLAG_TRANS_ARCANINE
-# 482 "data/maps/DaycareVolcano/scripts.pory"
-	delay 15
-# 483 "data/maps/DaycareVolcano/scripts.pory"
-	dittotransform SPECIES_ARCANINE
 # 484 "data/maps/DaycareVolcano/scripts.pory"
-	playse MUS_LEVEL_UP
+	playbgm MUS_PMD_HAPPINESS, FALSE
 # 485 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox BattleVsArcanine_Text_2, MSGBOX_DEFAULT
+	copyvar VAR_TEMP_0, VAR_TRANSFORM_MON
 # 486 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
+	setflag FLAG_TRANS_ARCANINE
 # 487 "data/maps/DaycareVolcano/scripts.pory"
-	dittotransform VAR_TEMP_0
+	delay 15
 # 488 "data/maps/DaycareVolcano/scripts.pory"
-	givemon SPECIES_ARCANINE, 25, move1 = MOVE_FIRE_FANG, move2 = MOVE_BITE, move3 = MOVE_AERIAL_ACE, move4 = MOVE_THUNDER_FANG
+	dittotransform SPECIES_ARCANINE
 # 489 "data/maps/DaycareVolcano/scripts.pory"
-	waitmessage
+	playse MUS_LEVEL_UP
 # 490 "data/maps/DaycareVolcano/scripts.pory"
-	speakername BattleVsArcanine_Text_0
+	msgbox BattleVsArcanine_Text_2, MSGBOX_DEFAULT
 # 491 "data/maps/DaycareVolcano/scripts.pory"
-	createfieldmugshot MUGSHOT_ARCANINE, EMOTE_NORMAL
-# 492 "data/maps/DaycareVolcano/scripts.pory"
-	msgbox BattleVsArcanine_Text_3, MSGBOX_AUTOCLOSE
-# 493 "data/maps/DaycareVolcano/scripts.pory"
 	waitmessage
+# 492 "data/maps/DaycareVolcano/scripts.pory"
+	dittotransform VAR_TEMP_0
+# 493 "data/maps/DaycareVolcano/scripts.pory"
+	givemon SPECIES_ARCANINE, 25, move1 = MOVE_FIRE_FANG, move2 = MOVE_BITE, move3 = MOVE_AERIAL_ACE, move4 = MOVE_THUNDER_FANG
 # 494 "data/maps/DaycareVolcano/scripts.pory"
-	removefieldmugshot
+	waitmessage
 # 495 "data/maps/DaycareVolcano/scripts.pory"
-	playse SE_LEDGE
+	speakername BattleVsArcanine_Text_0
 # 496 "data/maps/DaycareVolcano/scripts.pory"
-	playse SE_LEDGE
+	createfieldmugshot MUGSHOT_ARCANINE, EMOTE_NORMAL
 # 497 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Arcanine, BattleVsArcanine_Movement_3
+	msgbox BattleVsArcanine_Text_3, MSGBOX_AUTOCLOSE
 # 498 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Arcanine
+	waitmessage
 # 499 "data/maps/DaycareVolcano/scripts.pory"
-	applymovement Arcanine, BattleVsArcanine_Movement_4
+	removefieldmugshot
 # 500 "data/maps/DaycareVolcano/scripts.pory"
-	waitmovement Arcanine
+	playse SE_LEDGE
 # 501 "data/maps/DaycareVolcano/scripts.pory"
-	fadenewbgm MUS_PMD_VOLCANO
+	playse SE_LEDGE
 # 502 "data/maps/DaycareVolcano/scripts.pory"
+	applymovement Arcanine, BattleVsArcanine_Movement_3
+# 503 "data/maps/DaycareVolcano/scripts.pory"
+	waitmovement Arcanine
+# 504 "data/maps/DaycareVolcano/scripts.pory"
+	applymovement Arcanine, BattleVsArcanine_Movement_4
+# 505 "data/maps/DaycareVolcano/scripts.pory"
+	waitmovement Arcanine
+# 506 "data/maps/DaycareVolcano/scripts.pory"
+	fadenewbgm MUS_PMD_VOLCANO
+# 507 "data/maps/DaycareVolcano/scripts.pory"
 	release
 	end
 
 
-# 20 "data/maps/DaycareVolcano/scripts.pory"
+ChanseyDaycareVolcano::
+# 513 "data/maps/DaycareVolcano/scripts.pory"
+	lock
+# 514 "data/maps/DaycareVolcano/scripts.pory"
+	faceplayer
+# 515 "data/maps/DaycareVolcano/scripts.pory"
+	speakername ChanseyDaycareVolcano_Text_0
+# 516 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 517 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox ChanseyDaycareVolcano_Text_1, MSGBOX_DEFAULT
+# 518 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 519 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox ChanseyDaycareVolcano_Text_2, MSGBOX_YESNO
+# 520 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 521 "data/maps/DaycareVolcano/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ChanseyDaycareVolcano_1
+# 551 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 552 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox ChanseyDaycareVolcano_Text_5, MSGBOX_AUTOCLOSE
+# 553 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 554 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 555 "data/maps/DaycareVolcano/scripts.pory"
+	release
+	end
+
+ChanseyDaycareVolcano_1:
+# 523 "data/maps/DaycareVolcano/scripts.pory"
+	checkitem ITEM_LUCKY_EGG
+# 524 "data/maps/DaycareVolcano/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq ChanseyDaycareVolcano_4
+# 541 "data/maps/DaycareVolcano/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 542 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox ChanseyDaycareVolcano_Text_4, MSGBOX_AUTOCLOSE
+# 543 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 544 "data/maps/DaycareVolcano/scripts.pory"
+	removefieldmugshot
+# 545 "data/maps/DaycareVolcano/scripts.pory"
+	release
+	end
+
+ChanseyDaycareVolcano_4:
+# 526 "data/maps/DaycareVolcano/scripts.pory"
+	removeitem ITEM_LUCKY_EGG
+# 527 "data/maps/DaycareVolcano/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 528 "data/maps/DaycareVolcano/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 529 "data/maps/DaycareVolcano/scripts.pory"
+	playfanfare MUS_HEAL
+# 530 "data/maps/DaycareVolcano/scripts.pory"
+	waitfanfare
+# 531 "data/maps/DaycareVolcano/scripts.pory"
+	special HealPlayerParty
+# 532 "data/maps/DaycareVolcano/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 533 "data/maps/DaycareVolcano/scripts.pory"
+	msgbox ChanseyDaycareVolcano_Text_3, MSGBOX_AUTOCLOSE
+# 534 "data/maps/DaycareVolcano/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 535 "data/maps/DaycareVolcano/scripts.pory"
+	waitmessage
+# 536 "data/maps/DaycareVolcano/scripts.pory"
+	release
+	end
+
+
+# 25 "data/maps/DaycareVolcano/scripts.pory"
 CyndaquilInCave_Movement_0:
-# 20 "data/maps/DaycareVolcano/scripts.pory"
+# 25 "data/maps/DaycareVolcano/scripts.pory"
 	face_player
 	step_end
 
-# 59 "data/maps/DaycareVolcano/scripts.pory"
+# 64 "data/maps/DaycareVolcano/scripts.pory"
 CyndaquilInCaveTrigger_Movement_0:
-# 59 "data/maps/DaycareVolcano/scripts.pory"
+# 64 "data/maps/DaycareVolcano/scripts.pory"
 	face_up
 	step_end
 
-# 60 "data/maps/DaycareVolcano/scripts.pory"
+# 65 "data/maps/DaycareVolcano/scripts.pory"
 CyndaquilInCaveTrigger_Movement_1:
-# 60 "data/maps/DaycareVolcano/scripts.pory"
+# 65 "data/maps/DaycareVolcano/scripts.pory"
 	walk_down
 	step_end
 
-# 159 "data/maps/DaycareVolcano/scripts.pory"
+# 164 "data/maps/DaycareVolcano/scripts.pory"
 VulpixInCaveTrigger_Movement_0:
-# 159 "data/maps/DaycareVolcano/scripts.pory"
+# 164 "data/maps/DaycareVolcano/scripts.pory"
 	face_left
 	step_end
 
-# 181 "data/maps/DaycareVolcano/scripts.pory"
+# 186 "data/maps/DaycareVolcano/scripts.pory"
 VulpixInCaveTrigger_Movement_1:
-# 181 "data/maps/DaycareVolcano/scripts.pory"
+# 186 "data/maps/DaycareVolcano/scripts.pory"
 	walk_right
 	step_end
 
-# 301 "data/maps/DaycareVolcano/scripts.pory"
+# 306 "data/maps/DaycareVolcano/scripts.pory"
 FuecocoInCaveTrigger_Movement_0:
-# 301 "data/maps/DaycareVolcano/scripts.pory"
+# 306 "data/maps/DaycareVolcano/scripts.pory"
 	walk_down
-# 301 "data/maps/DaycareVolcano/scripts.pory"
+# 306 "data/maps/DaycareVolcano/scripts.pory"
 	walk_down
 	step_end
 
-# 422 "data/maps/DaycareVolcano/scripts.pory"
+# 427 "data/maps/DaycareVolcano/scripts.pory"
 CombuskenInCaveTrigger_Movement_0:
-# 422 "data/maps/DaycareVolcano/scripts.pory"
+# 427 "data/maps/DaycareVolcano/scripts.pory"
 	walk_right
-# 422 "data/maps/DaycareVolcano/scripts.pory"
+# 427 "data/maps/DaycareVolcano/scripts.pory"
 	walk_right
 	step_end
 
-# 460 "data/maps/DaycareVolcano/scripts.pory"
+# 465 "data/maps/DaycareVolcano/scripts.pory"
 BattleVsArcanine_Movement_0:
-# 460 "data/maps/DaycareVolcano/scripts.pory"
+# 465 "data/maps/DaycareVolcano/scripts.pory"
 	lock_facing_direction
 	step_end
 
-# 462 "data/maps/DaycareVolcano/scripts.pory"
+# 467 "data/maps/DaycareVolcano/scripts.pory"
 BattleVsArcanine_Movement_1:
-# 462 "data/maps/DaycareVolcano/scripts.pory"
+# 467 "data/maps/DaycareVolcano/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 466 "data/maps/DaycareVolcano/scripts.pory"
+# 471 "data/maps/DaycareVolcano/scripts.pory"
 BattleVsArcanine_Movement_2:
-# 466 "data/maps/DaycareVolcano/scripts.pory"
+# 471 "data/maps/DaycareVolcano/scripts.pory"
 	jump_2_down
-# 466 "data/maps/DaycareVolcano/scripts.pory"
+# 471 "data/maps/DaycareVolcano/scripts.pory"
 	jump_2_down
 	step_end
 
-# 497 "data/maps/DaycareVolcano/scripts.pory"
+# 502 "data/maps/DaycareVolcano/scripts.pory"
 BattleVsArcanine_Movement_3:
-# 497 "data/maps/DaycareVolcano/scripts.pory"
+# 502 "data/maps/DaycareVolcano/scripts.pory"
 	jump_2_up
-# 497 "data/maps/DaycareVolcano/scripts.pory"
+# 502 "data/maps/DaycareVolcano/scripts.pory"
 	jump_2_up
 	step_end
 
-# 499 "data/maps/DaycareVolcano/scripts.pory"
+# 504 "data/maps/DaycareVolcano/scripts.pory"
 BattleVsArcanine_Movement_4:
-# 499 "data/maps/DaycareVolcano/scripts.pory"
+# 504 "data/maps/DaycareVolcano/scripts.pory"
 	walk_in_place_down
 	step_end
 
 CyndaquilInCave_Text_0:
-# 10 "data/maps/DaycareVolcano/scripts.pory"
+# 15 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Cyndaquil$"
 
 CyndaquilInCave_Text_1:
-# 12 "data/maps/DaycareVolcano/scripts.pory"
+# 17 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Go on!\nSee for yourself.$"
 
 CyndaquilInCave_Text_2:
-# 28 "data/maps/DaycareVolcano/scripts.pory"
+# 33 "data/maps/DaycareVolcano/scripts.pory"
 	.string "The boss is so strong.\nHe must know how to gain EXP!$"
 
 VulpixInCave_Text_0:
-# 110 "data/maps/DaycareVolcano/scripts.pory"
+# 115 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Vulpix$"
 
 VulpixInCave_Text_1:
-# 112 "data/maps/DaycareVolcano/scripts.pory"
+# 117 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Someone once told me there's a\nplace where Vulpix live on snowy\lmountains... that sounds nice.$"
 
 VulpixInCave_Text_2:
-# 128 "data/maps/DaycareVolcano/scripts.pory"
+# 133 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Can't take the heat?\n$"
 
 VulpixInCave_Text_3:
-# 137 "data/maps/DaycareVolcano/scripts.pory"
+# 142 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Neither can I.\nIt's hot in here.$"
 
 FuecocoInCave_Text_0:
-# 210 "data/maps/DaycareVolcano/scripts.pory"
+# 215 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Fuecoco$"
 
 FuecocoInCave_Text_1:
-# 212 "data/maps/DaycareVolcano/scripts.pory"
+# 217 "data/maps/DaycareVolcano/scripts.pory"
 	.string "At least it doesnt lag here in\nHoenn...$"
 
 FuecocoInCave_Text_2:
-# 228 "data/maps/DaycareVolcano/scripts.pory"
+# 233 "data/maps/DaycareVolcano/scripts.pory"
 	.string "I joined this group to fit in!\n$"
 
 FuecocoInCave_Text_3:
-# 237 "data/maps/DaycareVolcano/scripts.pory"
+# 242 "data/maps/DaycareVolcano/scripts.pory"
 	.string "No one here has even heard of\nPaldea...$"
 
 CombuskenInCave_Text_0:
-# 330 "data/maps/DaycareVolcano/scripts.pory"
+# 335 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Combusken$"
 
 CombuskenInCave_Text_1:
-# 332 "data/maps/DaycareVolcano/scripts.pory"
+# 337 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Ran out of steam.\n$"
 
 CombuskenInCave_Text_2:
-# 348 "data/maps/DaycareVolcano/scripts.pory"
+# 353 "data/maps/DaycareVolcano/scripts.pory"
 	.string "I've heard the boss is so fast\nhe can gain EXP just by running\laround the Daycare!$"
 
 CombuskenInCave_Text_3:
-# 357 "data/maps/DaycareVolcano/scripts.pory"
+# 362 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Guess I should take a lap.\n$"
 
 BattleVsArcanine_Text_0:
-# 470 "data/maps/DaycareVolcano/scripts.pory"
+# 475 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Arcanine$"
 
 BattleVsArcanine_Text_1:
-# 471 "data/maps/DaycareVolcano/scripts.pory"
+# 476 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Aha!\pA challenger.\pYou must be strong if you battled\nyour way through my volcano.\pI see how your spirit burns bright.\pMaybe taking you down will grant me\nthe EXP I am looking for.\pLet me test your flame!\n$"
 
 BattleVsArcanine_Text_2:
-# 485 "data/maps/DaycareVolcano/scripts.pory"
+# 490 "data/maps/DaycareVolcano/scripts.pory"
 	.string "You have gained the ability to\ntransform into Arcanine!$"
 
 BattleVsArcanine_Text_3:
-# 492 "data/maps/DaycareVolcano/scripts.pory"
+# 497 "data/maps/DaycareVolcano/scripts.pory"
 	.string "Carry yourself with honor.\pDon't soil my good name.\pMaybe you will unlock the secret\nto gain EXP.$"
+
+ChanseyDaycareVolcano_Text_0:
+# 515 "data/maps/DaycareVolcano/scripts.pory"
+	.string "Chansey$"
+
+ChanseyDaycareVolcano_Text_1:
+# 517 "data/maps/DaycareVolcano/scripts.pory"
+	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.$"
+
+ChanseyDaycareVolcano_Text_2:
+# 519 "data/maps/DaycareVolcano/scripts.pory"
+	.string "Would you like to heal?$"
+
+ChanseyDaycareVolcano_Text_3:
+# 533 "data/maps/DaycareVolcano/scripts.pory"
+	.string "You have been restored to full health!$"
+
+ChanseyDaycareVolcano_Text_4:
+# 542 "data/maps/DaycareVolcano/scripts.pory"
+	.string "You don't have a Lucky Egg!\pCome back when you do.$"
+
+ChanseyDaycareVolcano_Text_5:
+# 552 "data/maps/DaycareVolcano/scripts.pory"
+	.string "Oh, okay then.$"

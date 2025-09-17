@@ -1,4 +1,11 @@
-mapscripts DaycareMew_MapScripts{}
+mapscripts DaycareMew_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION:DaycareMew_OnTransition
+}
+
+script DaycareMew_OnTransition{
+    setrespawn(HEAL_LOCATION_DAYCARE_MEW)
+    end
+}
 
 script DittoEnd
 {

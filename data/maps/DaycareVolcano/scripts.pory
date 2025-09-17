@@ -1,5 +1,10 @@
 mapscripts DaycareVolcano_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION:DaycareVolcano_OnTransition
+}
 
+script DaycareVolcano_OnTransition{
+    setrespawn(HEAL_LOCATION_DAYCARE_VOLCANO)
+    end
 }
 
 script CyndaquilInCave{
@@ -502,4 +507,53 @@ script BattleVsArcanine{
         release
         end
     }
+}
+
+script ChanseyDaycareVolcano{
+    lock
+    faceplayer
+    speakername("Chansey")
+    createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.", MSGBOX_DEFAULT)
+    removefieldmugshot
+    msgbox("Would you like to heal?", MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES)
+    {
+        checkitem(ITEM_LUCKY_EGG)
+        if(var(VAR_RESULT) == TRUE)
+        {
+            removeitem(ITEM_LUCKY_EGG)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            special(HealPlayerParty)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+            msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+            msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
+            waitmessage
+            removefieldmugshot
+            release
+            end
+        }
+    }
+    else
+    {
+        createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+        msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        removefieldmugshot
+        release
+        end
+    }
+
 }
