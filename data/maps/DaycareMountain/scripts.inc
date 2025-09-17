@@ -626,25 +626,25 @@ VullabyAfterSoar_1:
 # 9 "data/maps/DaycareMountain/scripts.pory"
 SoarFront_Movement_0:
 # 9 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 # 9 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 # 9 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 # 9 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 	step_end
 
 # 23 "data/maps/DaycareMountain/scripts.pory"
 SoarBack_Movement_0:
 # 23 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 # 23 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 # 23 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 # 23 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 	step_end
 
 # 105 "data/maps/DaycareMountain/scripts.pory"
@@ -680,33 +680,33 @@ KabutoInCaveTrigger_Movement_1:
 # 345 "data/maps/DaycareMountain/scripts.pory"
 VullabyAfterSoar_Movement_0:
 # 345 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 # 345 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 # 345 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 # 345 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 # 345 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 # 345 "data/maps/DaycareMountain/scripts.pory"
-	walk_down
+	walk_fast_down
 	step_end
 
 # 357 "data/maps/DaycareMountain/scripts.pory"
 VullabyAfterSoar_Movement_1:
 # 357 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 # 357 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 # 357 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 # 357 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 # 357 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 # 357 "data/maps/DaycareMountain/scripts.pory"
-	walk_up
+	walk_fast_up
 	step_end
 
 VullabyDialog_Text_0:
