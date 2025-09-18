@@ -445,6 +445,38 @@ Familyoftwo_1:
 	end
 
 
+ShrinkToPikachuCave5::
+# 254 "data/maps/DaycareMausholdShrink/scripts.pory"
+	lock
+# 255 "data/maps/DaycareMausholdShrink/scripts.pory"
+	compare VAR_TRANSFORM_MON, SPECIES_CUTIEFLY
+	goto_if_eq ShrinkToPikachuCave5_1
+# 271 "data/maps/DaycareMausholdShrink/scripts.pory"
+	msgbox ShrinkToPikachuCave5_Text_1, MSGBOX_DEFAULT
+# 272 "data/maps/DaycareMausholdShrink/scripts.pory"
+	waitmessage
+# 273 "data/maps/DaycareMausholdShrink/scripts.pory"
+	release
+	end
+
+ShrinkToPikachuCave5_1:
+# 257 "data/maps/DaycareMausholdShrink/scripts.pory"
+	msgbox ShrinkToPikachuCave5_Text_0, MSGBOX_YESNO
+# 258 "data/maps/DaycareMausholdShrink/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ShrinkToPikachuCave5_4
+# 264 "data/maps/DaycareMausholdShrink/scripts.pory"
+	waitmessage
+# 265 "data/maps/DaycareMausholdShrink/scripts.pory"
+	release
+	end
+
+ShrinkToPikachuCave5_4:
+# 260 "data/maps/DaycareMausholdShrink/scripts.pory"
+	warp MAP_DAYCAREBASE, 2
+	return
+
+
 # 32 "data/maps/DaycareMausholdShrink/scripts.pory"
 FamilyofFour_Movement_0:
 # 32 "data/maps/DaycareMausholdShrink/scripts.pory"
@@ -526,3 +558,11 @@ Familyoftwo_Text_1:
 Familyoftwo_Text_2:
 # 245 "data/maps/DaycareMausholdShrink/scripts.pory"
 	.string "We've been quite happy up here.\pWe've built a nice life for\nourselves.\pWe even have enough items\nleftover to afford to make\lfrequent trips around the Daycare!$"
+
+ShrinkToPikachuCave5_Text_0:
+# 257 "data/maps/DaycareMausholdShrink/scripts.pory"
+	.string "There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?$"
+
+ShrinkToPikachuCave5_Text_1:
+# 271 "data/maps/DaycareMausholdShrink/scripts.pory"
+	.string "There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.$"

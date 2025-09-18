@@ -249,3 +249,28 @@ script Familyoftwo{
     end
     }
 }
+
+script ShrinkToPikachuCave5{
+    lock
+    if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
+    {
+        msgbox("There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?",MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            warp(MAP_DAYCAREBASE, 2)
+        }   
+        else
+        {
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+}

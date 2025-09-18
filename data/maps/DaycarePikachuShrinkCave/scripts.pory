@@ -58,7 +58,7 @@ script ShroodleInCave{
     {
         speakername("Shroodle")
         createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
-        msgbox("I've yet to gain a single level.\n", MSGBOX_DEFAULT)
+        msgbox("Some say battling is the way to\ngain EXP in the Daycare.\pI've yet to gain a single level...", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
         release
@@ -83,7 +83,7 @@ script ShroodleInCave{
         {
             speakername("Shroodle")
             createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
-	        msgbox("Some say battling is the way to\ngain EXP in the Daycare...", MSGBOX_DEFAULT)
+	        msgbox("Some say battling is the way to\ngain EXP in the Daycare.\pI've yet to gain a single level...", MSGBOX_DEFAULT)
             setflag(FLAG_SHROODLE_BATTLE)
             waitmessage
             removefieldmugshot
@@ -119,7 +119,7 @@ script ShroodleInCaveTrigger{
             {
             speakername("Shroodle")
             createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
-	            msgbox("Some say battling is the way to\ngain EXP in the Daycare...", MSGBOX_DEFAULT)
+	            msgbox("Some say battling is the way to\ngain EXP in the Daycare.\pI've yet to gain a single level...", MSGBOX_DEFAULT)
                 setflag(FLAG_SHROODLE_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -139,7 +139,7 @@ script ShroodleInCaveTrigger{
             {
                 speakername("Shroodle")
                 createfieldmugshot(MUGSHOT_SHROODLE, EMOTE_HAPPY)
-	            msgbox("Some say battling is the way to\ngain EXP in the Daycare...", MSGBOX_DEFAULT)
+	            msgbox("Some say battling is the way to\ngain EXP in the Daycare.\pI've yet to gain a single level...", MSGBOX_DEFAULT)
                 setflag(FLAG_SHROODLE_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -258,7 +258,7 @@ script BlipbugInCave{
     {
         speakername("Blipbug")
         createfieldmugshot(MUGSHOT_BLIPBUG, EMOTE_NORMAL)
-        msgbox("You just knew the perfect matchup.\n", MSGBOX_DEFAULT)
+        msgbox("It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
         release
@@ -319,7 +319,7 @@ script BlipbugInCaveTrigger{
             {
             speakername("Blipbug")
             createfieldmugshot(MUGSHOT_BLIPBUG, EMOTE_NORMAL)
-	            msgbox("It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.", MSGBOX_DEFAULT)
+	            msgbox("You just knew the perfect matchup.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_BLIPBUG_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -341,7 +341,7 @@ script BlipbugInCaveTrigger{
             {
             speakername("Blipbug")
             createfieldmugshot(MUGSHOT_BLIPBUG, EMOTE_NORMAL)
-	            msgbox("It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.", MSGBOX_DEFAULT)
+	            msgbox("You just knew the perfect matchup.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_BLIPBUG_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -363,7 +363,7 @@ script BlipbugInCaveTrigger{
             {
             speakername("Blipbug")
             createfieldmugshot(MUGSHOT_BLIPBUG, EMOTE_NORMAL)
-	            msgbox("It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.", MSGBOX_DEFAULT)
+	            msgbox("You just knew the perfect matchup.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_BLIPBUG_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -383,7 +383,7 @@ script BlipbugInCaveTrigger{
             {
             speakername("Blipbug")
             createfieldmugshot(MUGSHOT_BLIPBUG, EMOTE_NORMAL)
-	            msgbox("It's best to pick your battles\nhere.\pIt's every Pokémon for\nthemselves, so try to only battle\lPokémon that you have a type\ladvantage over.", MSGBOX_DEFAULT)
+	            msgbox("You just knew the perfect matchup.\n", MSGBOX_DEFAULT)
                 setflag(FLAG_BLIPBUG_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -448,6 +448,58 @@ script NymbleDialog{
         msgbox("Whoa... you're HUGE!\pPlease don't step on me.\n", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
+        release
+        end
+    }
+}
+
+
+script ShrinkToPikachuCave3{
+    lock
+    if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
+    {
+        msgbox("There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?",MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            warp(MAP_DAYCAREBASE, 0)
+        }   
+        else
+        {
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+}
+
+
+script ShrinkToPikachuCave4{
+    lock
+    if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
+    {
+        msgbox("There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?",MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            warp(MAP_DAYCAREBASE, 1)
+        }   
+        else
+        {
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
+        waitmessage
         release
         end
     }

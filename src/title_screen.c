@@ -40,6 +40,8 @@ enum {
 #define RESET_RTC_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON | DPAD_LEFT)
 #define BERRY_UPDATE_BUTTON_COMBO (B_BUTTON | SELECT_BUTTON)
 #define A_B_START_SELECT (A_BUTTON | B_BUTTON | START_BUTTON | SELECT_BUTTON)
+#define FORCE_SHINY_BUTTON_COMBO (L_BUTTON | R_BUTTON | DPAD_DOWN | B_BUTTON)
+#define UNDO_FORCE_SHINY_BUTTON_COMBO (L_BUTTON | R_BUTTON | DPAD_UP | B_BUTTON)
 
 static void MainCB2(void);
 static void Task_TitleScreenPhase1(u8);
@@ -111,7 +113,7 @@ static const struct OamData sVersionBannerLeftOamData =
     .y = DISPLAY_HEIGHT,
     .affineMode = ST_OAM_AFFINE_OFF,
     .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
+    .mosaic = TRUE, 
     .bpp = ST_OAM_8BPP,
     .shape = SPRITE_SHAPE(64x32),
     .x = 0,
@@ -128,7 +130,7 @@ static const struct OamData sVersionBannerRightOamData =
     .y = DISPLAY_HEIGHT,
     .affineMode = ST_OAM_AFFINE_OFF,
     .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
+    .mosaic = TRUE, 
     .bpp = ST_OAM_8BPP,
     .shape = SPRITE_SHAPE(64x32),
     .x = 0,
@@ -728,7 +730,11 @@ static void Task_TitleScreenPhase1(u8 taskId)
 #undef sParentTaskId
 #undef sAlphaBlendIdx
 
-// Create "Press Start" and copyright banners, and slide Pokémon logo up
+#define MOSAIC_BG_H(val) ((val) << 0)
+#define MOSAIC_BG_V(val) ((val) << 4)
+#define MOSAIC_OBJ_H(val) ((val) << 8)
+#define MOSAIC_OBJ_V(val) ((val) << 12)
+
 static void Task_TitleScreenPhase2(u8 taskId)
 {
     u32 yPos;
@@ -740,12 +746,47 @@ static void Task_TitleScreenPhase2(u8 taskId)
         gTasks[taskId].tCounter = 0;
     }
 
-    if (gTasks[taskId].tCounter != 0)
+if (gTasks[taskId].tCounter != 0)
+{
+    if (gTasks[taskId].tCounter == 119) 
+        m4aSongNumStart(SE_M_TELEPORT);
+    if (gTasks[taskId].tCounter == 70)
+        m4aSongNumStart(SE_M_MINIMIZE);
+
+    if (gTasks[taskId].tCounter < 120)
     {
-        gTasks[taskId].tCounter--;
+        u8 mosaicSize = gTasks[taskId].tCounter / 9; 
+        if (mosaicSize > 8) mosaicSize = 8;
+        if (mosaicSize < 1) mosaicSize = 1;
+        SetGpuReg(REG_OFFSET_MOSAIC,
+            MOSAIC_BG_H(mosaicSize) | MOSAIC_BG_V(mosaicSize) |
+            MOSAIC_OBJ_H(mosaicSize) | MOSAIC_OBJ_V(mosaicSize));
+
+        // Enable mosaic for backgrounds
+        SetGpuReg(REG_OFFSET_BG0CNT, BGCNT_PRIORITY(3) | BGCNT_CHARBASE(2) | BGCNT_SCREENBASE(26) | BGCNT_16COLOR | BGCNT_TXT256x256 | BGCNT_MOSAIC);
+        SetGpuReg(REG_OFFSET_BG1CNT, BGCNT_PRIORITY(2) | BGCNT_CHARBASE(3) | BGCNT_SCREENBASE(27) | BGCNT_16COLOR | BGCNT_TXT256x256 | BGCNT_MOSAIC);
+        SetGpuReg(REG_OFFSET_BG2CNT, BGCNT_PRIORITY(1) | BGCNT_CHARBASE(0) | BGCNT_SCREENBASE(9) | BGCNT_256COLOR | BGCNT_AFF256x256 | BGCNT_MOSAIC);
     }
     else
     {
+
+        SetGpuReg(REG_OFFSET_MOSAIC, 0);
+        SetGpuReg(REG_OFFSET_BG0CNT, BGCNT_PRIORITY(3) | BGCNT_CHARBASE(2) | BGCNT_SCREENBASE(26) | BGCNT_16COLOR | BGCNT_TXT256x256);
+        SetGpuReg(REG_OFFSET_BG1CNT, BGCNT_PRIORITY(2) | BGCNT_CHARBASE(3) | BGCNT_SCREENBASE(27) | BGCNT_16COLOR | BGCNT_TXT256x256);
+        SetGpuReg(REG_OFFSET_BG2CNT, BGCNT_PRIORITY(1) | BGCNT_CHARBASE(0) | BGCNT_SCREENBASE(9) | BGCNT_256COLOR | BGCNT_AFF256x256);
+    }
+
+    gTasks[taskId].tCounter--;
+}
+    else
+    {
+        // Restore backgrounds to normal
+        SetGpuReg(REG_OFFSET_BG0CNT, BGCNT_PRIORITY(3) | BGCNT_CHARBASE(2) | BGCNT_SCREENBASE(26) | BGCNT_16COLOR | BGCNT_TXT256x256);
+        SetGpuReg(REG_OFFSET_BG1CNT, BGCNT_PRIORITY(2) | BGCNT_CHARBASE(3) | BGCNT_SCREENBASE(27) | BGCNT_16COLOR | BGCNT_TXT256x256);
+        SetGpuReg(REG_OFFSET_BG2CNT, BGCNT_PRIORITY(1) | BGCNT_CHARBASE(0) | BGCNT_SCREENBASE(9) | BGCNT_256COLOR | BGCNT_AFF256x256);
+
+        SetGpuReg(REG_OFFSET_MOSAIC, 0); // Disable mosaic for sprite
+
         gTasks[taskId].tSkipToNext = TRUE;
         SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BD);
         SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(6, 15));
@@ -801,6 +842,14 @@ static void Task_TitleScreenPhase3(u8 taskId)
         FadeOutBGM(4);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         SetMainCallback2(CB2_GoToBerryFixScreen);
+    }
+    else if (JOY_HELD(FORCE_SHINY_BUTTON_COMBO)== FORCE_SHINY_BUTTON_COMBO)
+    {
+        gSaveBlock2Ptr->forceShinyDitto = 1;
+    }
+    else if (JOY_HELD(UNDO_FORCE_SHINY_BUTTON_COMBO) == UNDO_FORCE_SHINY_BUTTON_COMBO)
+    {
+        gSaveBlock2Ptr->forceShinyDitto = 0;
     }
     else
     {

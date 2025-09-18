@@ -65,6 +65,31 @@ script ShrinkToPikachuCave{
     }
 }
 
+script ShrinkToPikachuCave2{
+    lock
+    if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
+    {
+        msgbox("There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?",MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            warp(MAP_DAYCARE_PIKACHU_SHRINK_CAVE, 1)
+        }   
+        else
+        {
+            waitmessage
+            release
+            end
+        }
+    }
+    else
+    {
+        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+        end
+    }
+}
+
 script ShrinktoMausholdCave{
     lock
     if (var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
@@ -73,6 +98,8 @@ script ShrinktoMausholdCave{
         if(var(VAR_RESULT) == YES)
         {
             warp(MAP_DAYCARE_MAUSHOLD_SHRINK, 0)
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            waitmovement(LOCALID_PLAYER)
         }   
         else
         {
