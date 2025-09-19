@@ -141,6 +141,7 @@ static void WarpToTruck(void)
     gSaveBlock2Ptr->pokemonAvatarSpecies = SPECIES_DITTO;
     FlagSet(FLAG_SYS_B_DASH);
     FlagClear(FLAG_RUNNING_SHOES_TOGGLE);
+    FlagSet(FLAG_AUTORUN_MENU_TOGGLE);
     FlagSet(FLAG_SYS_POKEMON_GET);
     VarSet(VAR_TRANSFORM_MON, SPECIES_DITTO);
     FlagSet(FLAG_SHOW_RUFFLET);
