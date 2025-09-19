@@ -75,6 +75,7 @@ EventScript_AccessPokemonBoxLink::
 
 EventScript_AccessMovePC::
 	playse SE_M_TELEPORT
+	dittotransform SPECIES_DITTO
 	special OpenPCMoveMons
 	waitstate
 	goto EventScript_TurnOffPC

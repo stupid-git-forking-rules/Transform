@@ -5318,6 +5318,17 @@ bool32 NoAliveMonsForPlayer(void)
     return (HP_count == 0);
 }
 
+bool32 IsFirstMonFainted(void)
+{
+    u32 hp = GetMonData(&gPlayerParty[0], MON_DATA_HP);
+    if (hp == 0)
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+
 static bool32 NoAliveMonsForOpponent(void)
 {
     u32 i;
@@ -5338,7 +5349,7 @@ static bool32 NoAliveMonsForOpponent(void)
 
 bool32 NoAliveMonsForEitherParty(void)
 {
-    return (NoAliveMonsForPlayer() || NoAliveMonsForOpponent());
+    return (IsFirstMonFainted() || NoAliveMonsForOpponent());
 }
 
 // For battles that aren't BATTLE_TYPE_LINK or BATTLE_TYPE_RECORDED_LINK or trainer battles, the only thing this
@@ -5351,7 +5362,7 @@ static void Cmd_checkteamslost(void)
     if (gBattleControllerExecFlags)
         return;
 
-    if (NoAliveMonsForPlayer())
+    if (IsFirstMonFainted())
         gBattleOutcome |= B_OUTCOME_LOST;
 
     if (NoAliveMonsForOpponent())
