@@ -177,8 +177,8 @@
     {
       "id": "HEAL_LOCATION_DAYCARE_VOLCANO",
       "map": "MAP_DAYCARE_VOLCANO",
-      "x": 28,
-      "y": 8
+      "x": 5,
+      "y": 33
     },
     {
       "id": "HEAL_LOCATION_DAYCARE_WEST",

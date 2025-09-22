@@ -56,6 +56,22 @@ script ShrinkToPikachuCave{
             end
         }
     }
+    elif (flag(FLAG_TRANS_CUTIEFLY) && var(VAR_TRANSFORM_MON) != SPECIES_CUTIEFLY)
+    {
+        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.\pWould you like to transform into\nCutiefly to squeeze through it?",MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            dittotransform(SPECIES_CUTIEFLY)
+            delay(30)
+            warp(MAP_DAYCARE_PIKACHU_SHRINK_CAVE, 0)
+        }   
+        else
+        {
+            waitmessage
+            release
+            end
+        }
+    }
     else
     {
         msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
@@ -72,6 +88,22 @@ script ShrinkToPikachuCave2{
         msgbox("There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?",MSGBOX_YESNO)
         if(var(VAR_RESULT) == YES)
         {
+            warp(MAP_DAYCARE_PIKACHU_SHRINK_CAVE, 1)
+        }   
+        else
+        {
+            waitmessage
+            release
+            end
+        }
+    }
+    elif (flag(FLAG_TRANS_CUTIEFLY) && var(VAR_TRANSFORM_MON) != SPECIES_CUTIEFLY)
+    {
+        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.\pWould you like to transform into\nCutiefly to squeeze through it?",MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            dittotransform(SPECIES_CUTIEFLY)
+            delay(30)
             warp(MAP_DAYCARE_PIKACHU_SHRINK_CAVE, 1)
         }   
         else
@@ -98,14 +130,28 @@ script ShrinktoMausholdCave{
         if(var(VAR_RESULT) == YES)
         {
             warp(MAP_DAYCARE_MAUSHOLD_SHRINK, 0)
-            applymovement(LOCALID_PLAYER, moves(face_up))
-            waitmovement(LOCALID_PLAYER)
         }   
         else
         {
-           waitmessage
-           release
-           end
+            waitmessage
+            release
+            end
+        }
+    }
+    elif (flag(FLAG_TRANS_CUTIEFLY) && var(VAR_TRANSFORM_MON) != SPECIES_CUTIEFLY)
+    {
+        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.\pWould you like to transform into\nCutiefly to squeeze through it?",MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES)
+        {
+            dittotransform(SPECIES_CUTIEFLY)
+            delay(30)
+            warp(MAP_DAYCARE_MAUSHOLD_SHRINK, 0)
+        }   
+        else
+        {
+            waitmessage
+            release
+            end
         }
     }
     else
@@ -584,6 +630,7 @@ script ScytherDialog{
         createfieldmugshot(MUGSHOT_SCYTHER, EMOTE_NORMAL)
         msgbox("One in every {COLOR BLUE}{SHADOW LIGHT_BLUE}fifty {COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}Dittos that I\nsee here are blue.", MSGBOX_DEFAULT)
         waitmessage
+        playse(SE_PIN)
         applymovement(scyther, Common_Movement_ExclamationMark)
         waitmovement(scyther)
         msgbox("Oh hey!\pYou're one of the blue ones!\pYou must've gotten really lucky!")
@@ -629,7 +676,7 @@ script RioluDialog{
                 dynmultichoice(0,0,TRUE, 5, 0, DYN_MULTICHOICE_CB_NONE, "Arcanine","Chinchou", "Cutiefly", "Dragonair", "Marill", "Machamp", "Noivern","Pikachu", "Rhyhorn","Lurantis", "Weavile")
                 if(var(VAR_RESULT) == 0)
                 {
-                    msgbox("Arcanine can be found deep in the\nVolcano.\pIt can run really fast and scale\nhills that would normally be to\lslippery to climb!", MSGBOX_DEFAULT)
+                    msgbox("Arcanine can be found deep in the\nVolcano.\pIt can run really fast and scale\nhills that would normally be tooS\lslippery to climb!", MSGBOX_DEFAULT)
                     waitmessage
                     removefieldmugshot
                     release
@@ -903,7 +950,7 @@ script DaycareBase_Ditto{
         else{
             speakername("Ditto")
             createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
-            msgbox("Ditto!\pYou can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\pPress the {SELECT_BUTTON} button to\nopen your transformation menu.\pYou can also view more information\nabout the Pokémon you can\ltransform into by opening your\lTransformation Party from the\l{START_BUTTON} menu.\pTo swap out your transformation\noptions, press the {L_BUTTON} button!", MSGBOX_DEFAULT)        
+            msgbox("Ditto!\pYou can transform into any\lPokémon you defeat in battle!\pThis does only apply to Pokémon\nwho are not already using\lTransform...\p{SELECT_BUTTON} button to\nopen your transformation menu.\pYou can also view more information\nabout the Pokémon you can\ltransform into by opening your\lTransformation Party from the\l{START_BUTTON} menu.\pTo swap out your transformation\noptions, press the {L_BUTTON} button!", MSGBOX_DEFAULT)        
             waitmessage
             removefieldmugshot
             release
