@@ -11,7 +11,26 @@ script SoarFront {
 		release
 		end
 	}
-	else{
+    elif (flag(FLAG_TRANS_NOIVERN) && var(VAR_TRANSFORM_MON) != SPECIES_NOIVERN)
+    {
+        lock
+        msgbox("The bridge seems to be broken.\pWould you like to transform into\nNoivern to soar across?", MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES)
+        {
+            dittotransform(SPECIES_NOIVERN)
+            applymovement(LOCALID_PLAYER, moves(walk_fast_up*4))
+            waitmovement(LOCALID_PLAYER)
+            release
+            end
+        }
+        else
+        {
+            release
+            end
+        }
+    }
+	else
+    {
         lock
         msgbox("The bridge seems to be broken.\pMaybe a Flying Pokémon could soar\nover the gap.", MSGBOX_DEFAULT)
         waitmessage
@@ -29,6 +48,24 @@ script SoarBack {
 		release
 		end
 	}
+    elif (flag(FLAG_TRANS_NOIVERN) && var(VAR_TRANSFORM_MON) != SPECIES_NOIVERN)
+    {
+        lock
+        msgbox("The bridge seems to be broken.\pWould you like to transform into\nNoivern to soar across?", MSGBOX_YESNO)
+        if (var(VAR_RESULT) == YES)
+        {
+            dittotransform(SPECIES_NOIVERN)
+            applymovement(LOCALID_PLAYER, moves(walk_fast_down*4))
+            waitmovement(LOCALID_PLAYER)
+            release
+            end
+        }
+        else
+        {
+            release
+            end
+        }
+    }
 	else{
         lock
         msgbox("The bridge seems to be broken.\pMaybe a Flying Pokémon could soar\nover the gap.", MSGBOX_DEFAULT)

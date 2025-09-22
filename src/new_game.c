@@ -155,6 +155,7 @@ static void WarpToTruck(void)
     FlagSet(FLAG_BADGE08_GET);
     FlagSet(FLAG_NO_CATCHING);
     FlagSet(FLAG_NO_RUNNING);
+    FlagSet(FLAG_SMART_WILD_AI); /// we can move this into the scripts for bosses to have better AI than regular battles. 
     FlagSet(FLAG_SHOW_BRENDAN_INTRO);
     FlagSet(FLAG_SPAWN_INVISIBLE);
     FlagSet(FLAG_SHOW_BRENDAN_OUTRO);
