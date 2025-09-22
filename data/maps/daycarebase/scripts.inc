@@ -2048,7 +2048,7 @@ LinooneDialog_Text_1:
 
 LinooneDialog_Text_2:
 # 580 "data/maps/daycarebase/scripts.pory"
-	.string "Those Dittos really freak me out.\pThey could be any one of use right\nnow...\pEven you!... or me!\n$"
+	.string "Those Dittos really freak me out.\pThey could be any one of us right\nnow...\pEven you!... or me!\n$"
 
 BulbsaurDialog_Text_0:
 # 591 "data/maps/daycarebase/scripts.pory"

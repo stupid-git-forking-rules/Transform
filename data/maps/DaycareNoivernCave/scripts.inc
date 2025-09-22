@@ -605,6 +605,88 @@ BattleVsNoivern_4:
 	end
 
 
+ChanseyDaycareNoivern::
+# 352 "data/maps/DaycareNoivernCave/scripts.pory"
+	lock
+# 353 "data/maps/DaycareNoivernCave/scripts.pory"
+	faceplayer
+# 354 "data/maps/DaycareNoivernCave/scripts.pory"
+	speakername ChanseyDaycareNoivern_Text_0
+# 355 "data/maps/DaycareNoivernCave/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 356 "data/maps/DaycareNoivernCave/scripts.pory"
+	msgbox ChanseyDaycareNoivern_Text_1, MSGBOX_DEFAULT
+# 357 "data/maps/DaycareNoivernCave/scripts.pory"
+	removefieldmugshot
+# 358 "data/maps/DaycareNoivernCave/scripts.pory"
+	msgbox ChanseyDaycareNoivern_Text_2, MSGBOX_YESNO
+# 359 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 360 "data/maps/DaycareNoivernCave/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ChanseyDaycareNoivern_1
+# 390 "data/maps/DaycareNoivernCave/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 391 "data/maps/DaycareNoivernCave/scripts.pory"
+	msgbox ChanseyDaycareNoivern_Text_5, MSGBOX_AUTOCLOSE
+# 392 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 393 "data/maps/DaycareNoivernCave/scripts.pory"
+	removefieldmugshot
+# 394 "data/maps/DaycareNoivernCave/scripts.pory"
+	release
+	end
+
+ChanseyDaycareNoivern_1:
+# 362 "data/maps/DaycareNoivernCave/scripts.pory"
+	checkitem ITEM_LUCKY_EGG
+# 363 "data/maps/DaycareNoivernCave/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq ChanseyDaycareNoivern_4
+# 380 "data/maps/DaycareNoivernCave/scripts.pory"
+	createfieldmugshot MUGSHOT_CHANSEY, EMOTE_NORMAL
+# 381 "data/maps/DaycareNoivernCave/scripts.pory"
+	msgbox ChanseyDaycareNoivern_Text_4, MSGBOX_AUTOCLOSE
+# 382 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 383 "data/maps/DaycareNoivernCave/scripts.pory"
+	removefieldmugshot
+# 384 "data/maps/DaycareNoivernCave/scripts.pory"
+	release
+	end
+
+ChanseyDaycareNoivern_4:
+# 365 "data/maps/DaycareNoivernCave/scripts.pory"
+	removeitem ITEM_LUCKY_EGG
+# 366 "data/maps/DaycareNoivernCave/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 367 "data/maps/DaycareNoivernCave/scripts.pory"
+	setflag FLAG_SUPPRESS_SPEAKER_NAME
+# 368 "data/maps/DaycareNoivernCave/scripts.pory"
+	playfanfare MUS_HEAL
+# 369 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitfanfare
+# 370 "data/maps/DaycareNoivernCave/scripts.pory"
+	special HealPlayerParty
+# 371 "data/maps/DaycareNoivernCave/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 372 "data/maps/DaycareNoivernCave/scripts.pory"
+	msgbox ChanseyDaycareNoivern_Text_3, MSGBOX_AUTOCLOSE
+# 373 "data/maps/DaycareNoivernCave/scripts.pory"
+	clearflag FLAG_SUPPRESS_SPEAKER_NAME
+# 374 "data/maps/DaycareNoivernCave/scripts.pory"
+	waitmessage
+# 375 "data/maps/DaycareNoivernCave/scripts.pory"
+	release
+	end
+
+
+SetNoivernRespawn::
+# 401 "data/maps/DaycareNoivernCave/scripts.pory"
+	setrespawn HEAL_LOCATION_DAYCARE_NOIVERN_CAVE
+	end
+
+
 # 37 "data/maps/DaycareNoivernCave/scripts.pory"
 GengarDialog_Movement_0:
 # 37 "data/maps/DaycareNoivernCave/scripts.pory"
@@ -772,3 +854,27 @@ BattleVsNoivern_Text_2:
 BattleVsNoivern_Text_3:
 # 337 "data/maps/DaycareNoivernCave/scripts.pory"
 	.string "Soar high gooey friend.\pYou'll need my flight to reach your\ndestination\pYou near the end of your quest!$"
+
+ChanseyDaycareNoivern_Text_0:
+# 354 "data/maps/DaycareNoivernCave/scripts.pory"
+	.string "Chansey$"
+
+ChanseyDaycareNoivern_Text_1:
+# 356 "data/maps/DaycareNoivernCave/scripts.pory"
+	.string "Hello there!\pI can heal you in exchange for\na Lucky Egg.$"
+
+ChanseyDaycareNoivern_Text_2:
+# 358 "data/maps/DaycareNoivernCave/scripts.pory"
+	.string "Would you like to heal?$"
+
+ChanseyDaycareNoivern_Text_3:
+# 372 "data/maps/DaycareNoivernCave/scripts.pory"
+	.string "You have been restored to full health!$"
+
+ChanseyDaycareNoivern_Text_4:
+# 381 "data/maps/DaycareNoivernCave/scripts.pory"
+	.string "You don't have a Lucky Egg!\pCome back when you do.$"
+
+ChanseyDaycareNoivern_Text_5:
+# 391 "data/maps/DaycareNoivernCave/scripts.pory"
+	.string "Oh, okay then.$"

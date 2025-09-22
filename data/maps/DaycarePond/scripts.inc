@@ -1357,6 +1357,52 @@ ChanseyDaycarePond_4:
 	end
 
 
+CroconawDialog::
+# 771 "data/maps/DaycarePond/scripts.pory"
+	lock
+# 772 "data/maps/DaycarePond/scripts.pory"
+	faceplayer
+# 773 "data/maps/DaycarePond/scripts.pory"
+	speakername CroconawDialog_Text_0
+# 774 "data/maps/DaycarePond/scripts.pory"
+	createfieldmugshot MUGSHOT_CROCONAW, EMOTE_NORMAL
+# 775 "data/maps/DaycarePond/scripts.pory"
+	msgbox CroconawDialog_Text_1, MSGBOX_NPC
+# 776 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 777 "data/maps/DaycarePond/scripts.pory"
+	removefieldmugshot
+# 778 "data/maps/DaycarePond/scripts.pory"
+	release
+	end
+
+
+StarmieDialog::
+# 783 "data/maps/DaycarePond/scripts.pory"
+	lock
+# 784 "data/maps/DaycarePond/scripts.pory"
+	faceplayer
+# 785 "data/maps/DaycarePond/scripts.pory"
+	speakername StarmieDialog_Text_0
+# 786 "data/maps/DaycarePond/scripts.pory"
+	createfieldmugshot MUGSHOT_STARMIE, EMOTE_NORMAL
+# 787 "data/maps/DaycarePond/scripts.pory"
+	msgbox StarmieDialog_Text_1, MSGBOX_NPC
+# 788 "data/maps/DaycarePond/scripts.pory"
+	waitmessage
+# 789 "data/maps/DaycarePond/scripts.pory"
+	removefieldmugshot
+# 790 "data/maps/DaycarePond/scripts.pory"
+	release
+	end
+
+
+DragonairHealLocation::
+# 797 "data/maps/DaycarePond/scripts.pory"
+	setrespawn HEAL_LOCATION_DAYCARE_POND_1
+	end
+
+
 # 24 "data/maps/DaycarePond/scripts.pory"
 BattleVsMarill_Movement_0:
 # 24 "data/maps/DaycarePond/scripts.pory"
@@ -1606,3 +1652,19 @@ ChanseyDaycarePond_Text_4:
 ChanseyDaycarePond_Text_5:
 # 761 "data/maps/DaycarePond/scripts.pory"
 	.string "Oh, okay then.$"
+
+CroconawDialog_Text_0:
+# 773 "data/maps/DaycarePond/scripts.pory"
+	.string "Croconaw$"
+
+CroconawDialog_Text_1:
+# 775 "data/maps/DaycarePond/scripts.pory"
+	.string "I haven't seen Totodile around the\nlake for a while now.\pI wonder if he's found a new spot.\pWhile it is peaceful here, privacy\nis hard to come by.$"
+
+StarmieDialog_Text_0:
+# 785 "data/maps/DaycarePond/scripts.pory"
+	.string "Starmie$"
+
+StarmieDialog_Text_1:
+# 787 "data/maps/DaycarePond/scripts.pory"
+	.string "Isn't the water so relaxing?\nRealy puts the mind at ease.$"

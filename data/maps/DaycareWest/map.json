@@ -98,8 +98,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BOUNSWEET)",
-      "x": 23,
-      "y": 9,
+      "x": 24,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,

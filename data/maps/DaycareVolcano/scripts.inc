@@ -1005,6 +1005,12 @@ ChanseyDaycareVolcano_4:
 	end
 
 
+SetArcanineRespawn::
+# 562 "data/maps/DaycareVolcano/scripts.pory"
+	setrespawn HEAL_LOCATION_DAYCARE_VOLCANO_1
+	end
+
+
 # 25 "data/maps/DaycareVolcano/scripts.pory"
 CyndaquilInCave_Movement_0:
 # 25 "data/maps/DaycareVolcano/scripts.pory"
