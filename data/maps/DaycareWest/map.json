@@ -20,20 +20,20 @@
     },
     {
       "map": "MAP_DAYCARE_TREEHOUSE",
-      "offset": -4,
+      "offset": 1,
       "direction": "left"
     },
     {
       "map": "MAP_DAYCARE_MOUNTAIN",
-      "offset": 0,
+      "offset": -2,
       "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SURSKIT)",
-      "x": 13,
-      "y": 34,
+      "x": 12,
+      "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -73,7 +73,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPINARAK)",
       "x": 24,
-      "y": 26,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -85,7 +85,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(APPLIN)",
-      "x": 9,
+      "x": 7,
       "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -98,8 +98,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BOUNSWEET)",
-      "x": 26,
-      "y": 6,
+      "x": 23,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -107,19 +107,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DITTO)",
-      "x": 22,
-      "y": 6,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "DaycareWestDittoOpenXforms",
       "flag": "0"
     },
     {
@@ -133,6 +120,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ChanseyDaycareWestHeal",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DITTO)",
+      "x": 0,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DaycareWestDittoOpenXforms",
       "flag": "0"
     }
   ],

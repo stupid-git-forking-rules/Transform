@@ -93,8 +93,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON2)",
-      "x": 15,
-      "y": 16,
+      "x": 17,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -107,7 +107,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(COMBEE)",
       "x": 25,
-      "y": 20,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -132,7 +132,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RIOLU)",
-      "x": 23,
+      "x": 24,
       "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -198,8 +198,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BULBASAUR)",
-      "x": 15,
-      "y": 26,
+      "x": 19,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -251,7 +251,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIKIPEK)",
       "x": 21,
-      "y": 11,
+      "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -264,7 +264,7 @@
     {
       "local_id": "scyther",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SCYTHER)",
-      "x": 41,
+      "x": 40,
       "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -277,8 +277,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
-      "x": 12,
-      "y": 19,
+      "x": 13,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 1,
