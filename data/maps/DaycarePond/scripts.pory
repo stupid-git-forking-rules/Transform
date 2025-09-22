@@ -766,3 +766,34 @@ script ChanseyDaycarePond{
     }
 
 }
+
+script CroconawDialog{
+    lock
+    faceplayer
+    speakername("Croconaw")
+    createfieldmugshot(MUGSHOT_CROCONAW, EMOTE_NORMAL)
+    msgbox("I haven't seen Totodile around the\nlake for a while now.\pI wonder if he's found a new spot.\pWhile it is peaceful here, privacy\nis hard to come by.", MSGBOX_NPC)
+    waitmessage
+    removefieldmugshot
+    release
+    end
+}
+
+script StarmieDialog{
+    lock
+    faceplayer
+    speakername("Starmie")
+    createfieldmugshot(MUGSHOT_STARMIE, EMOTE_NORMAL)
+    msgbox("Isn't the water so relaxing?\nRealy puts the mind at ease.", MSGBOX_NPC)
+    waitmessage
+    removefieldmugshot
+    release
+    end
+}
+
+
+
+script DragonairHealLocation {
+    setrespawn(HEAL_LOCATION_DAYCARE_POND_1)
+    end
+}

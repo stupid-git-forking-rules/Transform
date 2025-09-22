@@ -557,3 +557,8 @@ script ChanseyDaycareVolcano{
     }
 
 }
+
+script SetArcanineRespawn{
+    setrespawn(HEAL_LOCATION_DAYCARE_VOLCANO_1)
+    end
+}

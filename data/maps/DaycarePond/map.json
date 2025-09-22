@@ -144,7 +144,7 @@
     {
       "local_id": "Croagunk",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CROAGUNK)",
-      "x": 28,
+      "x": 29,
       "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -257,7 +257,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "StarmieDialog",
       "flag": "0"
     },
     {
@@ -270,7 +270,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "CroconawDialog",
       "flag": "0"
     },
     {
@@ -311,6 +311,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
       "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
+      "x": 24,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ChanseyDaycarePond",
+      "flag": "0"
     }
   ],
   "warp_events": [],
@@ -335,7 +348,7 @@
     },
     {
       "type": "trigger",
-      "x": 28,
+      "x": 29,
       "y": 3,
       "elevation": 0,
       "var": "VAR_TEMP_0",
@@ -380,7 +393,7 @@
     },
     {
       "type": "trigger",
-      "x": 28,
+      "x": 29,
       "y": 4,
       "elevation": 0,
       "var": "VAR_TEMP_0",
@@ -389,7 +402,7 @@
     },
     {
       "type": "trigger",
-      "x": 28,
+      "x": 29,
       "y": 5,
       "elevation": 0,
       "var": "VAR_TEMP_0",
@@ -398,7 +411,7 @@
     },
     {
       "type": "trigger",
-      "x": 28,
+      "x": 29,
       "y": 6,
       "elevation": 0,
       "var": "VAR_TEMP_0",
@@ -407,12 +420,12 @@
     },
     {
       "type": "trigger",
-      "x": 28,
-      "y": 7,
+      "x": 25,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_TEMP_0",
       "var_value": "0",
-      "script": "CroagunkInCaveTrigger"
+      "script": "DragonairHealLocation"
     }
   ],
   "bg_events": [

@@ -577,7 +577,7 @@ script LinooneDialog{
         faceplayer
         speakername("Linoone")
         createfieldmugshot(MUGSHOT_LINOONE, EMOTE_NORMAL)
-	    msgbox("Those Dittos really freak me out.\pThey could be any one of use right\nnow...\pEven you!... or me!\n")
+	    msgbox("Those Dittos really freak me out.\pThey could be any one of us right\nnow...\pEven you!... or me!\n")
         waitmessage
         removefieldmugshot
         release

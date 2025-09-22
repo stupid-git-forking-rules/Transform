@@ -59,7 +59,7 @@
     {
       "local_id": "Cutiefly",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CUTIEFLY)",
-      "x": 7,
+      "x": 5,
       "y": 32,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
@@ -72,8 +72,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPINARAK)",
-      "x": 24,
-      "y": 25,
+      "x": 18,
+      "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -120,19 +120,6 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ChanseyDaycareWestHeal",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DITTO)",
-      "x": 0,
-      "y": 5,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "DaycareWestDittoOpenXforms",
       "flag": "0"
     }
   ],

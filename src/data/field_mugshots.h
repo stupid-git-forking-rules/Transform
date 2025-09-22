@@ -89,6 +89,8 @@ static const u32 sFieldMugshotGfx_ApplinNormal[] = INCBIN_U32("graphics/field_mu
 static const u32 sFieldMugshotGfx_MasquerainNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/masquerain_normal.4bpp.lz");
 static const u32 sFieldMugshotGfx_VibravaNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/vibrava_normal.4bpp.lz");
 static const u32 sFieldMugshotGfx_BlipbugNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/blipbug_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_CroconawNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/croconaw_normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_StarmieNormal[] = INCBIN_U32("graphics/field_mugshots/pmd/starmie_normal.4bpp.lz");
 
 static const u16 sFieldMugshotPal_BlipbugNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/blipbug_normal.gbapal");
 static const u16 sFieldMugshotPal_VibravaNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/vibrava_normal.gbapal");
@@ -175,6 +177,8 @@ static const u16 sFieldMugshotPal_VullabyNormal[] = INCBIN_U16("graphics/field_m
 static const u16 sFieldMugshotPal_VulpixNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/vulpix_normal.gbapal");
 static const u16 sFieldMugshotPal_AlolanExeggutorNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/alolanexeggutor_normal.gbapal");
 static const u16 sFieldMugshotPal_AlolanSandslashNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/alolansandslash_normal.gbapal");
+static const u16 sFieldMugshotPal_CroconawNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/croconaw_normal.gbapal");
+static const u16 sFieldMugshotPal_StarmieNormal[] = INCBIN_U16("graphics/field_mugshots/pmd/starmie_normal.gbapal");
 
 //happy
 static const u32 sFieldMugshotGfx_RyhornHappy[] = INCBIN_U32("graphics/field_mugshots/pmd/ryhorn_happy.4bpp.lz");
@@ -1190,6 +1194,22 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_BlipbugNormal,
             .pal = sFieldMugshotPal_BlipbugNormal,
+        },
+    },
+    [MUGSHOT_CROCONAW] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_CroconawNormal,
+            .pal = sFieldMugshotPal_CroconawNormal,
+        },
+    },
+    [MUGSHOT_STARMIE] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_StarmieNormal,
+            .pal = sFieldMugshotPal_StarmieNormal,
         },
     },
 };
