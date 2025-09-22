@@ -9,6 +9,9 @@ script TarountulaDialog{
         createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_NORMAL)
         msgbox("This cave feels so much bigger\nfor us small bug types.\pI'm sure bigger Pokémon suspect\nnothing is in here!", MSGBOX_AUTOCLOSE)
         waitmessage
+        removefieldmugshot
+        release
+        end
     }
     elif (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
@@ -27,6 +30,9 @@ script TarountulaDialog{
         createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_NORMAL)
         msgbox("I guess a Ditto could use\nTransform...", MSGBOX_AUTOCLOSE)
         waitmessage
+        removefieldmugshot
+        release
+        end
     }
     else
     {
@@ -39,16 +45,17 @@ script TarountulaDialog{
         playse(SE_PIN)
         applymovement(tarountula, Common_Movement_ExclamationMark)
         waitmovement(tarountula)
-        msgbox("WAIT... HEY!\pHow did you fit in the tiny\nentrance?\p", MSGBOX_DEFAULT)
+        msgbox("WAIT... HEY!\pHow did you fit in the tiny\nentrance?", MSGBOX_DEFAULT)
         waitmessage
         removefieldmugshot
         createfieldmugshot(MUGSHOT_TAROUNTULA, EMOTE_NORMAL)
         msgbox("OH!\nA Ditto you say...", MSGBOX_AUTOCLOSE)
         waitmessage
+        removefieldmugshot
+        release
+        end
     }
-    removefieldmugshot
-    release
-    end
+
 }
 
 script ShroodleInCave{
