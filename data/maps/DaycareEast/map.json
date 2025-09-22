@@ -40,8 +40,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
-      "x": 19,
-      "y": 26,
+      "x": 17,
+      "y": 27,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -53,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHELLOS_EAST)",
-      "x": 13,
+      "x": 11,
       "y": 29,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -79,8 +79,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(EXEGGUTOR_ALOLA)",
-      "x": 13,
-      "y": 24,
+      "x": 14,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
@@ -92,8 +92,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAILLOW)",
-      "x": 1,
-      "y": 12,
+      "x": 6,
+      "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -106,7 +106,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIKIPEK)",
       "x": 31,
-      "y": 21,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -118,7 +118,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
-      "x": 44,
+      "x": 39,
       "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -198,8 +198,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DITTO)",
-      "x": 19,
-      "y": 17,
+      "x": 20,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
