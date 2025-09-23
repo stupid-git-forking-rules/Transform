@@ -6179,6 +6179,7 @@ void ScriptSetTotemBoost(struct ScriptContext *ctx)
             gQueuedStatBoosts[battler].stats |= (1 << i);
             gQueuedStatBoosts[battler].statChanges[i] = stat;
             gQueuedStatBoosts[battler].stats |= 0x80;  // used as a flag for the "totem flared to life" script
+            gBattleScripting.animArg1 |= (1 << i); 
         }
     }
 }

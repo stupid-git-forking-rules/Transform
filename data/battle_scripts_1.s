@@ -9107,13 +9107,15 @@ BattleScript_ApplyTotemVarBoost:
 BattleScript_ApplyAllTotemBoosts::
 	printstring STRINGID_OMNIBOOST
 	waitmessage B_WAIT_TIME_LONG
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TotemVarEnd_NoMessage
+	setgraphicalstatchangevalues
+	playanimation BS_SCRIPTING, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_ApplyTotemVarBoost_NoMessage
 
 
 BattleScript_ApplyTotemVarBoost_NoMessage:
 	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TotemVarEnd_NoMessage
-	setgraphicalstatchangevalues
-	playanimation BS_SCRIPTING, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	gettotemboost BattleScript_ApplyTotemVarBoost_NoMessage
 	return
 
