@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_DAYCARE_TREEHOUSE",
-      "offset": 1,
+      "offset": -1,
       "direction": "left"
     },
     {
