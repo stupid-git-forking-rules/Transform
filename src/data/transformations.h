@@ -100,7 +100,7 @@ const struct Transformation gTransformations[] =
         .moves = {
             MOVE_BUG_BUZZ,
             MOVE_DAZZLING_GLEAM,
-            MOVE_SWEET_SCENT,
+            MOVE_STICKY_WEB,
             MOVE_PSYCHIC,
         },
     },

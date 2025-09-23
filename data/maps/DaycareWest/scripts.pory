@@ -152,7 +152,8 @@ script MasquerainDialog{
 
 script BattleVsCutiefly{
     lock
-    faceplayer
+    applymovement(Cutiefly, moves(face_player))
+    waitmovement(Cutiefly)
     if(!flag(FLAG_TRANS_RYHORN))
     {
         speakername("Cutiefly")
@@ -192,7 +193,7 @@ script BattleVsCutiefly{
     msgbox("Welcome to the flower patch big\nfriend!\pSometimes it pays to be tiny!\pBeat me here on my home turf\nand you too can transform to be\ltiny.", MSGBOX_AUTOCLOSE)
 	removefieldmugshot
     setwildbattle(SPECIES_CUTIEFLY, 25)
-	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 0, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
@@ -206,7 +207,7 @@ script BattleVsCutiefly{
         msgbox("You have gained the ability to\ntransform into Cutiefly!", MSGBOX_DEFAULT)
         waitmessage
         dittotransform(VAR_TEMP_0)
-        givemon(SPECIES_CUTIEFLY, 25, move1=MOVE_BUG_BUZZ, move2=MOVE_DAZZLING_GLEAM, move3=MOVE_SWEET_SCENT, move4=MOVE_PSYCHIC)
+        givemon(SPECIES_CUTIEFLY, 25, move1=MOVE_BUG_BUZZ, move2=MOVE_DAZZLING_GLEAM, move3=MOVE_STICKY_WEB, move4=MOVE_PSYCHIC)
         speakername("Cutiefly")
         createfieldmugshot(MUGSHOT_CUTIEFLY, EMOTE_HAPPY)
         msgbox("I'll stick to my flowers.\pBe on the lookout for places only a\ntiny Pokémon can squeeze through!", MSGBOX_DEFAULT)

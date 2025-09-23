@@ -404,6 +404,7 @@ script BlipbugInCaveTrigger{
 script SinisteaDialog{
     lock
     applymovement(sinistea, moves(face_player))
+    waitmovement(sinistea)
     if(var(VAR_TRANSFORM_MON) == SPECIES_CUTIEFLY)
     {
         speakername("Sinistea")
@@ -479,15 +480,26 @@ script ShrinkToPikachuCave3{
     }
     elif (flag(FLAG_TRANS_CUTIEFLY) && var(VAR_TRANSFORM_MON) != SPECIES_CUTIEFLY)
     {
-        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.\pWould you like to transform into\nCutiefly to squeeze through it?",MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES)
+        checkpartymove(MOVE_STICKY_WEB)
+        if (var(VAR_RESULT) != PARTY_SIZE)
         {
-            dittotransform(SPECIES_CUTIEFLY)
-            delay(30)
-            warp(MAP_DAYCAREBASE, 0)
-        }   
+            msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.\pWould you like to transform into\nCutiefly to squeeze through it?",MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES)
+            {
+                dittotransform(SPECIES_CUTIEFLY)
+                delay(30)
+                warp(MAP_DAYCAREBASE, 0)
+            }   
+            else
+            {
+                waitmessage
+                release
+                end
+            }
+        }
         else
         {
+            msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
             waitmessage
             release
             end
@@ -521,15 +533,26 @@ script ShrinkToPikachuCave4{
     }
     elif (flag(FLAG_TRANS_CUTIEFLY) && var(VAR_TRANSFORM_MON) != SPECIES_CUTIEFLY)
     {
-        msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.\pWould you like to transform into\nCutiefly to squeeze through it?",MSGBOX_YESNO)
-        if(var(VAR_RESULT) == YES)
+        checkpartymove(MOVE_STICKY_WEB)
+        if (var(VAR_RESULT) != PARTY_SIZE)
         {
-            dittotransform(SPECIES_CUTIEFLY)
-            delay(30)
-            warp(MAP_DAYCAREBASE, 1)
-        }   
+            msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.\pWould you like to transform into\nCutiefly to squeeze through it?",MSGBOX_YESNO)
+            if(var(VAR_RESULT) == YES)
+            {
+                dittotransform(SPECIES_CUTIEFLY)
+                delay(30)
+                warp(MAP_DAYCAREBASE, 1)
+            }   
+            else
+            {
+                waitmessage
+                release
+                end
+            }
+        }
         else
         {
+            msgbox("There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.", MSGBOX_DEFAULT)
             waitmessage
             release
             end

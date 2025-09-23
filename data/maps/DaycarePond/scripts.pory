@@ -338,11 +338,12 @@ script BuizelInCaveTrigger{
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {
-        case 34:
+        case 33:
             applymovement(Buizel, moves(face_player))
             waitmovement(Buizel)
-            applymovement(LOCALID_PLAYER, moves(face_down))
-            applymovement(Buizel, moves(walk_up))
+            applymovement(LOCALID_PLAYER, moves(face_up))
+            delay(60)
+            applymovement(Buizel, moves(walk_down))
             waitmovement(Buizel)
 	        speakername("Buizel")
             createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
@@ -363,10 +364,10 @@ script BuizelInCaveTrigger{
                 release
                 end
             }
-        case 35:
+        case 32:
             applymovement(Buizel, moves(face_player))
             waitmovement(Buizel)
-            applymovement(LOCALID_PLAYER, moves(face_down))
+            applymovement(LOCALID_PLAYER, moves(face_up))
 	        speakername("Buizel")
             createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
             msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
@@ -439,13 +440,15 @@ script SlowpokeInCaveTrigger{
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_1)) 
         {
-        case 28:
+        case 25:
             applymovement(Slowpoke, Common_Movement_ExclamationMark)
 	        waitmovement(Slowpoke)
-            applymovement(Slowpoke, moves(face_right))
+            applymovement(Slowpoke, moves(face_player))
             waitmovement(Slowpoke)
             applymovement(LOCALID_PLAYER, moves(face_left))
             delay(60)
+            applymovement(Buizel, moves(walk_down))
+            waitmovement(Buizel)
 	        speakername("Slowpoke")
             createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)
             msgbox("Dragonair really likes my vibe.\n", MSGBOX_AUTOCLOSE)
@@ -468,9 +471,9 @@ script SlowpokeInCaveTrigger{
         case 26:
             applymovement(Slowpoke, Common_Movement_ExclamationMark)
 	        waitmovement(Slowpoke)
-            applymovement(Slowpoke, moves(face_left))
+            applymovement(Slowpoke, moves(face_player))
             waitmovement(Slowpoke)        
-            applymovement(LOCALID_PLAYER, moves(face_right))
+            applymovement(LOCALID_PLAYER, moves(face_left))
             delay(60)
 	        speakername("Slowpoke")
             createfieldmugshot(MUGSHOT_SLOWPOKE, EMOTE_NORMAL)

@@ -454,11 +454,11 @@ ShrinkToPikachuCave5::
 # 269 "data/maps/DaycareMausholdShrink/scripts.pory"
 	goto_if_set FLAG_TRANS_CUTIEFLY, ShrinkToPikachuCave5_4
 ShrinkToPikachuCave5_3:
-# 287 "data/maps/DaycareMausholdShrink/scripts.pory"
+# 298 "data/maps/DaycareMausholdShrink/scripts.pory"
 	msgbox ShrinkToPikachuCave5_Text_2, MSGBOX_DEFAULT
-# 288 "data/maps/DaycareMausholdShrink/scripts.pory"
+# 299 "data/maps/DaycareMausholdShrink/scripts.pory"
 	waitmessage
-# 289 "data/maps/DaycareMausholdShrink/scripts.pory"
+# 300 "data/maps/DaycareMausholdShrink/scripts.pory"
 	release
 	end
 
@@ -476,13 +476,15 @@ ShrinkToPikachuCave5_1:
 
 ShrinkToPikachuCave5_2:
 # 271 "data/maps/DaycareMausholdShrink/scripts.pory"
-	msgbox ShrinkToPikachuCave5_Text_1, MSGBOX_YESNO
+	checkpartymove MOVE_STICKY_WEB
 # 272 "data/maps/DaycareMausholdShrink/scripts.pory"
-	compare VAR_RESULT, YES
-	goto_if_eq ShrinkToPikachuCave5_11
-# 280 "data/maps/DaycareMausholdShrink/scripts.pory"
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_ne ShrinkToPikachuCave5_11
+# 290 "data/maps/DaycareMausholdShrink/scripts.pory"
+	msgbox ShrinkToPikachuCave5_Text_2, MSGBOX_DEFAULT
+# 291 "data/maps/DaycareMausholdShrink/scripts.pory"
 	waitmessage
-# 281 "data/maps/DaycareMausholdShrink/scripts.pory"
+# 292 "data/maps/DaycareMausholdShrink/scripts.pory"
 	release
 	end
 
@@ -499,11 +501,23 @@ ShrinkToPikachuCave5_8:
 
 ShrinkToPikachuCave5_11:
 # 274 "data/maps/DaycareMausholdShrink/scripts.pory"
-	dittotransform SPECIES_CUTIEFLY
+	msgbox ShrinkToPikachuCave5_Text_1, MSGBOX_YESNO
 # 275 "data/maps/DaycareMausholdShrink/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq ShrinkToPikachuCave5_14
+# 283 "data/maps/DaycareMausholdShrink/scripts.pory"
+	waitmessage
+# 284 "data/maps/DaycareMausholdShrink/scripts.pory"
+	release
+	end
+
+ShrinkToPikachuCave5_14:
+# 277 "data/maps/DaycareMausholdShrink/scripts.pory"
+	dittotransform SPECIES_CUTIEFLY
+# 278 "data/maps/DaycareMausholdShrink/scripts.pory"
 	delay 30
-# 276 "data/maps/DaycareMausholdShrink/scripts.pory"
-	warp MAP_DAYCAREBASE, 2
+# 279 "data/maps/DaycareMausholdShrink/scripts.pory"
+	warp MAP_DAYCARE_PIKACHU_SHRINK_CAVE, 0
 	return
 
 
@@ -594,9 +608,9 @@ ShrinkToPikachuCave5_Text_0:
 	.string "There is a tiny hole that you can\nsqueeze through.\pWould you like to squeeze through it?$"
 
 ShrinkToPikachuCave5_Text_1:
-# 271 "data/maps/DaycareMausholdShrink/scripts.pory"
+# 274 "data/maps/DaycareMausholdShrink/scripts.pory"
 	.string "There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.\pWould you like to transform into\nCutiefly to squeeze through it?$"
 
 ShrinkToPikachuCave5_Text_2:
-# 287 "data/maps/DaycareMausholdShrink/scripts.pory"
+# 290 "data/maps/DaycareMausholdShrink/scripts.pory"
 	.string "There is a tiny hole.\pA small Pokémon may be able to\nsqueeze through it.$"
