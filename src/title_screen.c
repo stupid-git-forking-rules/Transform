@@ -660,7 +660,7 @@ void CB2_InitTitleScreen(void)
                                     | DISPCNT_OBJ_ON
                                     | DISPCNT_WIN0_ON
                                     | DISPCNT_OBJWIN_ON);
-        m4aSongNumStart(MUS_PMD_TITLE);
+        m4aSongNumStart(MUS_TITLE);
         gMain.state = 5;
         break;
     case 5:
@@ -742,8 +742,15 @@ static void Task_TitleScreenPhase2(u8 taskId)
     // Skip to next phase when A, B, Start, or Select is pressed
     if (JOY_NEW(A_B_START_SELECT) || gTasks[taskId].tSkipToNext)
     {
+        m4aSongNumStop(MUS_TITLE);
+        m4aSongNumStart(MUS_PMD_TITLE);
         gTasks[taskId].tSkipToNext = TRUE;
         gTasks[taskId].tCounter = 0;
+    }
+
+    if (gTasks[taskId].tCounter == 100) 
+    {
+        m4aSongNumStop(MUS_TITLE);
     }
 
 if (gTasks[taskId].tCounter != 0)
@@ -752,6 +759,8 @@ if (gTasks[taskId].tCounter != 0)
         m4aSongNumStart(SE_M_TELEPORT);
     if (gTasks[taskId].tCounter == 70)
         m4aSongNumStart(SE_M_MINIMIZE);
+    if (gTasks[taskId].tCounter == 20)
+        m4aSongNumStart(MUS_PMD_TITLE);
 
     if (gTasks[taskId].tCounter < 120)
     {
