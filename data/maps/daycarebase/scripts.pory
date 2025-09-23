@@ -866,7 +866,7 @@ script BattleVsPikachu{
     msgbox("A Ditto!\pYou must be on your quest to obtain\nyour egg.\pDefeat me in battle and I'll allow\nyou to transform into me!", MSGBOX_AUTOCLOSE)
 	removefieldmugshot
     setwildbattle(SPECIES_PIKACHU, 25)
-	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 0, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)

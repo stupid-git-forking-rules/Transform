@@ -9093,17 +9093,32 @@ BattleScript_TotemVar::
 	end2
 
 BattleScript_TotemVar_Ret::
-	gettotemboost BattleScript_ApplyTotemVarBoost
+	gettotemboost BattleScript_TotemVarEnd_Success
 BattleScript_TotemVarEnd:
 	return
+	
+BattleScript_TotemVarEnd_Success:
+	call BattleScript_ApplyAllTotemBoosts
+	goto BattleScript_TotemVarEnd
+
 BattleScript_ApplyTotemVarBoost:
-	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TotemVarEnd
+	goto BattleScript_ApplyTotemVarBoost_NoMessage
+	
+BattleScript_ApplyAllTotemBoosts::
+	printstring STRINGID_OMNIBOOST
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_ApplyTotemVarBoost_NoMessage
+
+
+BattleScript_ApplyTotemVarBoost_NoMessage:
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TotemVarEnd_NoMessage
 	setgraphicalstatchangevalues
 	playanimation BS_SCRIPTING, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_TotemVar_Ret  @loop until stats bitfield is empty
+	gettotemboost BattleScript_ApplyTotemVarBoost_NoMessage
+	return
 
+BattleScript_TotemVarEnd_NoMessage:
+	return
 
 BattleScript_AnnounceAirLockCloudNine::
 	call BattleScript_AbilityPopUp

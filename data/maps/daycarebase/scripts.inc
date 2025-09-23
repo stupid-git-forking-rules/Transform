@@ -1511,7 +1511,7 @@ BattleVsPikachu::
 # 868 "data/maps/daycarebase/scripts.pory"
 	setwildbattle SPECIES_PIKACHU, 25
 # 869 "data/maps/daycarebase/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 0, 0
 # 870 "data/maps/daycarebase/scripts.pory"
 	dowildbattle
 # 871 "data/maps/daycarebase/scripts.pory"

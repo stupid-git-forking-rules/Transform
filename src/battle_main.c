@@ -6169,7 +6169,7 @@ void ScriptSetTotemBoost(struct ScriptContext *ctx)
     u32 stat;
     u32 i;
 
-    Script_RequestEffects(SCREFF_V1);
+    //Script_RequestEffects(SCREFF_V1);
 
     for (i = 0; i < (NUM_BATTLE_STATS - 1); i++)
     {
