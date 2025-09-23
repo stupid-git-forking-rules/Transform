@@ -171,6 +171,7 @@
       "flag": "0"
     },
     {
+      "local_id": "mimikyu",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MIMIKYU)",
       "x": 23,
       "y": 49,

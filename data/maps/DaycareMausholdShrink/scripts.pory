@@ -276,7 +276,7 @@ script ShrinkToPikachuCave5{
             {
                 dittotransform(SPECIES_CUTIEFLY)
                 delay(30)
-                warp(MAP_DAYCARE_PIKACHU_SHRINK_CAVE, 0)
+                warp(MAP_DAYCAREBASE, 2)
             }   
             else
             {

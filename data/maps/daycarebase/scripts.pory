@@ -198,13 +198,17 @@ script ShrinktoMausholdCave{
 
 script MimikyuDialog{
     lock
-    faceplayer
+    applymovement(mimikyu, moves(face_player))
+    waitmovement(mimikyu)
     if (var(VAR_TRANSFORM_MON) == SPECIES_DITTO)
     {
         speakername("Pikachu")
         createfieldmugshot(MUGSHOT_MIMIKYUTOP, EMOTE_NORMAL)
         msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!",MSGBOX_DEFAULT)
         removefieldmugshot
+        playse(SE_PIN)
+        applymovement(mimikyu, Common_Movement_ExclamationMark)
+        waitmovement(mimikyu)
         speakername("Mimikyu")
         createfieldmugshot(MUGSHOT_MIMIKYU, EMOTE_ANGRY)
         msgbox("Oh...\nYou caught me.\pI wish I could disguise myself as\nwell as you can...\pMaybe then people would like me more...", MSGBOX_DEFAULT)
@@ -231,6 +235,9 @@ script MimikyuDialog{
             createfieldmugshot(MUGSHOT_MIMIKYUTOP, EMOTE_NORMAL)
             msgbox("Hey!\pI'm just a normal Pikachu in my usual\nspot!",MSGBOX_DEFAULT)
             removefieldmugshot
+            playse(SE_PIN)
+            applymovement(mimikyu, Common_Movement_ExclamationMark)
+            waitmovement(mimikyu)
             speakername("Mimikyu")
             createfieldmugshot(MUGSHOT_MIMIKYU, EMOTE_ANGRY)
             msgbox("Oh!\nA real life Pikachu!\pYou are my idol.\pPlease take this.\n", MSGBOX_DEFAULT)

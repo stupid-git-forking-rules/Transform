@@ -517,7 +517,7 @@ ShrinkToPikachuCave5_14:
 # 278 "data/maps/DaycareMausholdShrink/scripts.pory"
 	delay 30
 # 279 "data/maps/DaycareMausholdShrink/scripts.pory"
-	warp MAP_DAYCARE_PIKACHU_SHRINK_CAVE, 0
+	warp MAP_DAYCAREBASE, 2
 	return
 
 
