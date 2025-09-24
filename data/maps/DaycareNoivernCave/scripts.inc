@@ -544,7 +544,7 @@ BattleVsNoivern::
 # 318 "data/maps/DaycareNoivernCave/scripts.pory"
 	setwildbattle SPECIES_NOIVERN, 25, move1 = MOVE_HURRICANE, move2 = MOVE_BOOMBURST, move3 = MOVE_DRAGON_PULSE, move4 = MOVE_DOUBLE_TEAM
 # 319 "data/maps/DaycareNoivernCave/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 0, 4, 4, 1, 2, 0, 0
+	settotemboost B_POSITION_OPPONENT_LEFT, 0, 4, 4, 0, 2, 0, 0
 # 320 "data/maps/DaycareNoivernCave/scripts.pory"
 	dowildbattle
 # 321 "data/maps/DaycareNoivernCave/scripts.pory"
