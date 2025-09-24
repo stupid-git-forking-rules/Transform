@@ -25,6 +25,7 @@ void SetPlayerAvatarStopSurfTransformation(u16 speciesId, bool8 UnlockPlayerFiel
 TransformFunc GetTransformationFunc(u16 speciesId);
 u16 GetTransformationMoves(u16 speciesId, u8 i);
 u16 GetTransformationAbility(u16 speciesId);
+u16 GetTransformationBattleSpecies(u16 speciesId);
 
 #define TRANSFORM_TYPE_PLAYER_SPECIES 1
 

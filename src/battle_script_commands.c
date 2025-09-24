@@ -13254,6 +13254,72 @@ static void Cmd_setfocusenergy(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+void CalculateBattleMonStats(u8 battlerId)
+{
+    struct BattlePokemon *mon = &gBattleMons[battlerId];
+    u8 originalPartyIndex = gBattlerPartyIndexes[battlerId];
+    struct Pokemon *originalMon = &gPlayerParty[originalPartyIndex];
+    
+    u8 level = mon->level;
+    const struct SpeciesInfo* speciesInfo = &gSpeciesInfo[mon->species];
+    
+    s32 hpIV = GetMonData(originalMon, MON_DATA_HP_IV, NULL);
+    s32 hpEV = GetMonData(originalMon, MON_DATA_HP_EV, NULL);
+    s32 attackIV = GetMonData(originalMon, MON_DATA_ATK_IV, NULL);
+    s32 attackEV = GetMonData(originalMon, MON_DATA_ATK_EV, NULL);
+    s32 defenseIV = GetMonData(originalMon, MON_DATA_DEF_IV, NULL);
+    s32 defenseEV = GetMonData(originalMon, MON_DATA_DEF_EV, NULL);
+    s32 speedIV = GetMonData(originalMon, MON_DATA_SPEED_IV, NULL);
+    s32 speedEV = GetMonData(originalMon, MON_DATA_SPEED_EV, NULL);
+    s32 spAttackIV = GetMonData(originalMon, MON_DATA_SPATK_IV, NULL);
+    s32 spAttackEV = GetMonData(originalMon, MON_DATA_SPATK_EV, NULL);
+    s32 spDefenseIV = GetMonData(originalMon, MON_DATA_SPDEF_IV, NULL);
+    s32 spDefenseEV = GetMonData(originalMon, MON_DATA_SPDEF_EV, NULL);
+    
+    u8 nature = GetMonData(originalMon, MON_DATA_ATK2, NULL); 
+    
+    if (mon->species == SPECIES_SHEDINJA)
+    {
+        mon->maxHP = 1;
+    }
+    else
+    {
+        s32 n = 2 * speciesInfo->baseHP + hpIV + hpEV / 4;
+        mon->maxHP = ((n * level) / 100) + level + 10;
+    }
+    
+    mon->attack = ((2 * speciesInfo->baseAttack + attackIV + attackEV / 4) * level) / 100 + 5;
+    mon->defense = ((2 * speciesInfo->baseDefense + defenseIV + defenseEV / 4) * level) / 100 + 5;
+    mon->speed = ((2 * speciesInfo->baseSpeed + speedIV + speedEV / 4) * level) / 100 + 5;
+    mon->spAttack = ((2 * speciesInfo->baseSpAttack + spAttackIV + spAttackEV / 4) * level) / 100 + 5;
+    mon->spDefense = ((2 * speciesInfo->baseSpDefense + spDefenseIV + spDefenseEV / 4) * level) / 100 + 5;
+    
+    if (gNaturesInfo[nature].statUp != gNaturesInfo[nature].statDown)
+    {
+        if (gNaturesInfo[nature].statUp == STAT_ATK)
+            mon->attack = (mon->attack * 110 + 50) / 100;
+        else if (gNaturesInfo[nature].statUp == STAT_DEF)
+            mon->defense = (mon->defense * 110 + 50) / 100;
+        else if (gNaturesInfo[nature].statUp == STAT_SPEED)
+            mon->speed = (mon->speed * 110 + 50) / 100;
+        else if (gNaturesInfo[nature].statUp == STAT_SPATK)
+            mon->spAttack = (mon->spAttack * 110 + 50) / 100;
+        else if (gNaturesInfo[nature].statUp == STAT_SPDEF)
+            mon->spDefense = (mon->spDefense * 110 + 50) / 100;
+
+        if (gNaturesInfo[nature].statDown == STAT_ATK)
+            mon->attack = (mon->attack * 90 + 50) / 100;
+        else if (gNaturesInfo[nature].statDown == STAT_DEF)
+            mon->defense = (mon->defense * 90 + 50) / 100;
+        else if (gNaturesInfo[nature].statDown == STAT_SPEED)
+            mon->speed = (mon->speed * 90 + 50) / 100;
+        else if (gNaturesInfo[nature].statDown == STAT_SPATK)
+            mon->spAttack = (mon->spAttack * 90 + 50) / 100;
+        else if (gNaturesInfo[nature].statDown == STAT_SPDEF)
+            mon->spDefense = (mon->spDefense * 90 + 50) / 100;
+    }
+}
+
 static void Cmd_transformdataexecution(void)
 {
     CMD_ARGS();
@@ -13281,20 +13347,29 @@ static void Cmd_transformdataexecution(void)
 
         if (gPartyTargetForTransform)
         {
-            u16 species = GetMonData(&gPlayerParty[gPartyTargetForTransform], MON_DATA_SPECIES);
-            gBattleSpritesDataPtr->battlerData[gBattlerAttacker].transformSpecies = species;
-
-            gDisableStructs[gBattlerAttacker].transformedMonPersonality = gBattleMons[gBattlerAttacker].personality;
-            gDisableStructs[gBattlerAttacker].transformedMonShininess = gBattleMons[gBattlerAttacker].isShiny;
-
-            PREPARE_SPECIES_BUFFER(gBattleTextBuff1, species)
-
-            battleMonAttacker = (u8 *)(&gBattleMons[gBattlerAttacker]);
+            u16 species = GetMonData(&gPlayerParty[gPartyTargetForTransform], MON_DATA_SPECIES, NULL);
+            u16 speciesId = GetTransformationBattleSpecies(species);
+            const struct SpeciesInfo* speciesInfo = &gSpeciesInfo[speciesId];
+            
+            gBattleMons[gBattlerAttacker].species = speciesId;
+            gBattleSpritesDataPtr->battlerData[gBattlerAttacker].transformSpecies = speciesId;
+            
+            gBattleMons[gBattlerAttacker].types[0] = speciesInfo->types[0];
+            gBattleMons[gBattlerAttacker].types[1] = speciesInfo->types[1];
+            
+            u16 newAbility = GetTransformationAbility(species);
+            gBattleMons[gBattlerAttacker].ability = newAbility;
+            gDisableStructs[gBattlerAttacker].overwrittenAbility = newAbility;
 
             for (i = 0; i < 4; i++)
                 SetBattleMonMoveSlot(&gBattleMons[gBattlerAttacker], GetTransformationMoves(species, i), i);
 
-            gDisableStructs[gBattlerAttacker].overwrittenAbility = GetTransformationAbility(species);
+            CalculateBattleMonStats(gBattlerAttacker);
+            
+            gDisableStructs[gBattlerAttacker].transformedMonPersonality = gBattleMons[gBattlerAttacker].personality;
+            gDisableStructs[gBattlerAttacker].transformedMonShininess = gBattleMons[gBattlerAttacker].isShiny;
+            
+            PREPARE_SPECIES_BUFFER(gBattleTextBuff1, speciesId)
             gPartyTargetForTransform = 0;
         }
         else
@@ -13325,7 +13400,6 @@ static void Cmd_transformdataexecution(void)
                 gBattleMons[gBattlerAttacker].pp[i] = 5;
         }
 
-        // update AI knowledge
         RecordAllMoves(gBattlerAttacker);
         RecordAbilityBattle(gBattlerAttacker, gBattleMons[gBattlerAttacker].ability);
 

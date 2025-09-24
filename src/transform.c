@@ -237,6 +237,11 @@ u16 GetTransformationAbility(u16 speciesId)
     return gTransformations[speciesId].ability;
 }
 
+u16 GetTransformationBattleSpecies(u16 speciesId)
+{
+    return gTransformations[speciesId].battleSpecies;
+}
+
 void TransformDittoBoxMon(u16 targetSpecies)
 {
     if (!IsSpeciesValidTransformation(targetSpecies))
