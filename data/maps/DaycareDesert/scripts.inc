@@ -381,7 +381,7 @@ RhyhornDialog_Text_2:
 
 RhyhornDialog_Text_3:
 # 169 "data/maps/DaycareDesert/scripts.pory"
-	.string "You have gained the ability to\ntransform into Ryhorn!$"
+	.string "You have gained the ability to\ntransform into Rhyhorn!$"
 
 RhyhornDialog_Text_4:
 # 174 "data/maps/DaycareDesert/scripts.pory"

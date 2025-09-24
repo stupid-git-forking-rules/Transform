@@ -166,7 +166,7 @@ script RhyhornDialog{
         setflag(FLAG_SUPPRESS_SPEAKER_NAME)
         dittotransform(SPECIES_RHYHORN)
         playse(MUS_LEVEL_UP)
-        msgbox("You have gained the ability to\ntransform into Ryhorn!", MSGBOX_DEFAULT)
+        msgbox("You have gained the ability to\ntransform into Rhyhorn!", MSGBOX_DEFAULT)
         waitmessage
         clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
         speakername("Rhyhorn")
