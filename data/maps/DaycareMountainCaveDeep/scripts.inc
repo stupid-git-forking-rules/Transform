@@ -441,12 +441,6 @@ ChanseyDaycareMCD_4:
 	end
 
 
-SetRespawnMachamp::
-# 280 "data/maps/DaycareMountainCaveDeep/scripts.pory"
-	setrespawn HEAL_LOCATION_DAYCARE_MOUNTAIN_CAVE_DEEP_1
-	end
-
-
 # 80 "data/maps/DaycareMountainCaveDeep/scripts.pory"
 EiscueDialog_Movement_0:
 # 80 "data/maps/DaycareMountainCaveDeep/scripts.pory"

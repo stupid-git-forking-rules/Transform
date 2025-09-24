@@ -385,7 +385,10 @@ void DoWhiteOut(void)
     RunScriptImmediately(EventScript_WhiteOut);
     HealPlayerParty();
     Overworld_ResetStateAfterWhiteOut();
-    TrySetPlayerAvatarTransformation(SPECIES_DITTO, FALSE);
+    if (FlagGet(FLAG_IS_SURFING_MARILL) == TRUE)
+    {
+        TrySetPlayerAvatarTransformation(SPECIES_DITTO, FALSE);
+    }
     SetWarpDestinationToLastHealLocation();
     WarpIntoMap();
 }

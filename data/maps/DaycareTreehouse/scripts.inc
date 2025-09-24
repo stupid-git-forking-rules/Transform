@@ -80,7 +80,7 @@ BattleVsWeavile::
 # 80 "data/maps/DaycareTreehouse/scripts.pory"
 	removefieldmugshot
 # 81 "data/maps/DaycareTreehouse/scripts.pory"
-	setwildbattle SPECIES_WEAVILE, 25, item = ITEM_QUICK_CLAW, move1 = MOVE_FAKE_OUT, move2 = MOVE_SHADOW_CLAW, move3 = MOVE_ICE_SHARD, move4 = MOVE_ICE_PUNCH
+	setwildbattle SPECIES_WEAVILE, 25, item = ITEM_QUICK_CLAW, move1 = MOVE_FAKE_OUT, move2 = MOVE_DIG, move3 = MOVE_ICE_SHARD, move4 = MOVE_ICE_PUNCH
 # 82 "data/maps/DaycareTreehouse/scripts.pory"
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
 # 83 "data/maps/DaycareTreehouse/scripts.pory"

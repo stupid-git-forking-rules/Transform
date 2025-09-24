@@ -298,6 +298,7 @@ void SetPlayerAvatarSurfTransformation(u16 speciesId, bool8 UnlockPlayerFieldCon
     gSaveBlock2Ptr->pokemonAvatarSpecies = SPECIES_GUMSHOOS;
     VarSet(VAR_TRANSFORM_MON, SPECIES_GUMSHOOS);
     FlagSet(FLAG_DISABLE_XFORM_MENU);
+    FlagSet(FLAG_IS_SURFING_MARILL);
     // Start the transformation effect.
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES, UnlockPlayerFieldControls);
 
@@ -308,6 +309,8 @@ void SetPlayerAvatarStopSurfTransformation(u16 speciesId, bool8 UnlockPlayerFiel
     gSaveBlock2Ptr->pokemonAvatarSpecies = SPECIES_MARILL;
     VarSet(VAR_TRANSFORM_MON, SPECIES_MARILL);
     FlagClear(FLAG_DISABLE_XFORM_MENU);
+    FlagClear(FLAG_IS_SURFING_MARILL);
+    
 
     // Start the transformation effect.
     BeginPlayerTransformEffect(TRANSFORM_TYPE_PLAYER_SPECIES, UnlockPlayerFieldControls);

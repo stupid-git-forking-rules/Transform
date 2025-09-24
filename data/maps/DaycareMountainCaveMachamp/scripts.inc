@@ -113,6 +113,12 @@ BattleVsMachamp_4:
 	end
 
 
+SetRespawnMachamp::
+# 63 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
+	setrespawn HEAL_LOCATION_DAYCARE_MOUNTAIN_CAVE_DEEP_1
+	end
+
+
 # 15 "data/maps/DaycareMountainCaveMachamp/scripts.pory"
 BattleVsMachamp_Movement_0:
 # 15 "data/maps/DaycareMountainCaveMachamp/scripts.pory"

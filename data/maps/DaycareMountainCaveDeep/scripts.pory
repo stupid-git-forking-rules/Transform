@@ -276,7 +276,3 @@ script ChanseyDaycareMCD{
 
 }
 
-script SetRespawnMachamp{
-    setrespawn(HEAL_LOCATION_DAYCARE_MOUNTAIN_CAVE_DEEP_1)
-    end
-}

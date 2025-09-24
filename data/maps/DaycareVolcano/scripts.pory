@@ -3,7 +3,9 @@ mapscripts DaycareVolcano_MapScripts{
 }
 
 script DaycareVolcano_OnTransition{
+    dittotransform(SPECIES_MARILL)
     setrespawn(HEAL_LOCATION_DAYCARE_VOLCANO)
+    setflag(FLAG_DISABLE_XFORM_MENU)
     end
 }
 
@@ -473,10 +475,10 @@ script BattleVsArcanine{
     playbgm(MUS_PMD_BOSS_INTRO, FALSE)
     createfieldmugshot(MUGSHOT_ARCANINE, EMOTE_ANGRY)
     speakername("Arcanine")
-    msgbox("Aha!\pA challenger.\pYou must be strong if you battled\nyour way through my volcano.\pI see how your spirit burns bright.\pMaybe taking you down will grant me\nthe EXP I am looking for.\pLet me test your flame!\n", MSGBOX_AUTOCLOSE)
+    msgbox("Aha!\pA Water_type challenger.\pYou must be strong if you battled\nyour way through my volcano.\pI see how your spirit burns bright.\pMaybe taking you down will grant me\nthe EXP I am looking for.\pLet me test your flame!\n", MSGBOX_AUTOCLOSE)
 	removefieldmugshot
-    setwildbattle(SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_FIRE_FANG, move3 = MOVE_FLAMETHROWER, move4 = MOVE_EMBER)
-	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 0, 1, 1, 0)
+    setwildbattle(SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_BITE, move3 = MOVE_AERIAL_ACE, move4 = MOVE_FLAME_CHARGE, ability = 3)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 0, 1,0,0,0,0,0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)
@@ -494,7 +496,7 @@ script BattleVsArcanine{
         waitmessage
         speakername("Arcanine")
         createfieldmugshot(MUGSHOT_ARCANINE, EMOTE_NORMAL)
-        msgbox("Carry yourself with honor.\pDon't soil my good name.\pMaybe you will unlock the secret\nto gain EXP.", MSGBOX_AUTOCLOSE)
+        msgbox("That was a clever trick you pulled\nby transforming into a Rock_type.\pI lure Water_types into the volcano\nunder the guise that they have\lan advantage.\pThe intense fire here actually\ngives me the advantage.\pThis way I have a greater chance\nto earn EXP.\pMaybe I'm insecure about my\nabilities...\p...\pExcuse me.\pI meant to say...\pCarry yourself with honor.\pDon't soil my good name.\pMaybe you will unlock the secret\nto gain EXP.", MSGBOX_AUTOCLOSE)
         waitmessage
         removefieldmugshot
         playse(SE_LEDGE)

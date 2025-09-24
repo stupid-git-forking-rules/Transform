@@ -723,7 +723,7 @@
 #define FLAG_DITTO_IS_SHINY  0x2A4 // player rolled a shiny ditto
 #define FLAG_CHANSEY_INTRO  0x2A5 // chansey intro
 #define FLAG_MIMIKYU_LUCKYEGG  0x2A6 // mimikyu lucky egg
-#define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
+#define FLAG_IS_SURFING_MARILL  0x2A7 // is surfing marill for use in whiteout scripts
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
 #define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag

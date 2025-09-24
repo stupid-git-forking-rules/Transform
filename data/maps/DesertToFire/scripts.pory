@@ -1,5 +1,10 @@
 mapscripts DesertToFire_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION:DaycareDesertToFire_OnTransition
+}
 
+script DaycareDesertToFire_OnTransition{
+    clearflag(FLAG_DISABLE_XFORM_MENU)
+    end
 }
 
 script BlockVolcano{
