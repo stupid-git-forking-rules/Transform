@@ -255,7 +255,7 @@ void TransformDittoBoxMon(u16 targetSpecies)
         SetMonMoveSlot(mon, gTransformations[targetSpecies].moves[i], i);
     u32 abilityNum = GetAbilityNumFromAbility(gTransformations[targetSpecies].ability, dittoForm);
     SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
-    CalculateMonStats(mon);
+    CalculateXformStats(mon);
 }
 
 void SetPlayerAvatarFromScript(struct ScriptContext *ctx)
