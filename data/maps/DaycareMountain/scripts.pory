@@ -18,10 +18,9 @@ script SoarFront {
         if (var(VAR_RESULT) != PARTY_SIZE)
         {
             msgbox("The bridge seems to be broken.\pWould you like to transform into\nNoivern to soar across?", MSGBOX_YESNO)
+            release
             if (var(VAR_RESULT) == YES)
             {
-                waitmessage
-	            waitbuttonpress
                 dittotransform(SPECIES_NOIVERN)
                 applymovement(LOCALID_PLAYER, moves(walk_fast_up*4))
                 waitmovement(LOCALID_PLAYER)
@@ -69,10 +68,9 @@ script SoarBack {
         if (var(VAR_RESULT) != PARTY_SIZE)
         {
             msgbox("The bridge seems to be broken.\pWould you like to transform into\nNoivern to soar across?", MSGBOX_YESNO)
+            release
             if (var(VAR_RESULT) == YES)
             {
-                waitmessage
-	            waitbuttonpress
                 dittotransform(SPECIES_NOIVERN)
                 applymovement(LOCALID_PLAYER, moves(walk_fast_down*4))
                 waitmovement(LOCALID_PLAYER)

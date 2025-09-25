@@ -39,9 +39,9 @@ MewFinalBattleTrigger_1:
 # 20 "data/maps/DaycareMewFinale/scripts.pory"
 	removefieldmugshot
 # 21 "data/maps/DaycareMewFinale/scripts.pory"
-	setwildbattle SPECIES_MEW, 25, IsShiny = TRUE, move1 = MOVE_SWIFT, move2 = MOVE_PSYCHIC, move3 = MOVE_CONFUSE_RAY, move4 = MOVE_ANCIENT_POWER
+	setwildbattle SPECIES_MEW, 25, IsShiny = TRUE, move1 = MOVE_SOFT_BOILED, move2 = MOVE_NASTY_PLOT, move3 = MOVE_PSYCHIC, move4 = MOVE_FIRE_BLAST
 # 22 "data/maps/DaycareMewFinale/scripts.pory"
-	settotemboost B_POSITION_PLAYER_LEFT, 4, 4, 4, 4, 4, 4, 0
+	settotemboost B_POSITION_PLAYER_LEFT, 1, 1, 1, 1, 1, 1, 0
 # 23 "data/maps/DaycareMewFinale/scripts.pory"
 	dowildbattle
 # 24 "data/maps/DaycareMewFinale/scripts.pory"

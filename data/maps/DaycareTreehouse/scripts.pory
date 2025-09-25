@@ -25,7 +25,38 @@ script BattleVsWeavile{
     {
         end
     } 
-    elif(!flag(FLAG_TRANS_ARCANINE) && var(VAR_TRANSFORM_MON) != SPECIES_ARCANINE)
+    elif(!flag(FLAG_TRANS_ARCANINE))
+    {
+        lock
+        playbgm(MUS_NONE, FALSE)       
+        playmoncry(SPECIES_WEAVILE, CRY_MODE_NORMAL)
+        waitmoncry
+        applymovement(LOCALID_PLAYER, Common_Movement_ExclamationMark)
+        waitmovement(LOCALID_PLAYER)            
+        applymovement(LOCALID_PLAYER, moves(face_up))
+        waitmovement(LOCALID_PLAYER) 
+        applymovement(LOCALID_PLAYER, moves(lock_facing_direction))
+        waitmovement(LOCALID_PLAYER)
+        applymovement(LOCALID_PLAYER, moves(walk_fast_down))
+        waitmovement(LOCALID_PLAYER)
+        applymovement(Weavile, moves(jump_2_down))
+        waitmovement(Weavile)
+        playse(SE_M_SCRATCH)
+        playbgm(MUS_PMD_BOSS_INTRO, FALSE)
+        speakername("Weavile")
+        createfieldmugshot(MUGSHOT_WEAVILE, EMOTE_ANGRY)
+        msgbox("You want to challenge me?\pNot a chance weakling.\pCome back when you can keep up...\nor don't come back at all.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        removefieldmugshot
+        applymovement(Weavile, moves(walk_fast_up*2))
+        waitmovement(Weavile)
+        applymovement(Weavile, moves(walk_in_place_down))
+        waitmovement(Weavile)
+        fadenewbgm(MUS_PMD_JUNGLE)
+        release
+        end
+    }
+    elif(flag(FLAG_TRANS_ARCANINE) && var(VAR_TRANSFORM_MON) != SPECIES_ARCANINE)
     {
         lock
         playbgm(MUS_NONE, FALSE)       
@@ -79,7 +110,7 @@ script BattleVsWeavile{
     msgbox("You look quick.\pNow we're talking.\pLet's see if you're fast or just\nflashy.", MSGBOX_AUTOCLOSE)
     removefieldmugshot
     setwildbattle(SPECIES_WEAVILE, 25, item = ITEM_QUICK_CLAW, move1= MOVE_FAKE_OUT, move2=MOVE_DIG, move3 = MOVE_ICE_SHARD, move4= MOVE_ICE_PUNCH)
-	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
+	settotemboost(B_POSITION_OPPONENT_LEFT, 0, 0, 1, 1, 1, 0, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
     if (var(VAR_RESULT) == B_OUTCOME_WON)

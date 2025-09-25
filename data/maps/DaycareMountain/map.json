@@ -141,7 +141,7 @@
     {
       "local_id": "Vullaby",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(VULLABY)",
-      "x": 19,
+      "x": 18,
       "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
