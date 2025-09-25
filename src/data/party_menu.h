@@ -783,7 +783,7 @@ struct
     [MENU_TAKE_MAIL]       = {COMPOUND_STRING("TAKE"),            CursorCb_TakeMail},
     [MENU_READ]            = {COMPOUND_STRING("READ"),            CursorCb_Read},
     [MENU_CANCEL2]         = {gText_Cancel2,                      CursorCb_Cancel2},
-    [MENU_SHIFT]           = {COMPOUND_STRING("SHIFT"),           CursorCb_SendMon},
+    [MENU_SHIFT]           = {COMPOUND_STRING("TRANSFORM"),           CursorCb_SendMon},
     [MENU_SEND_OUT]        = {COMPOUND_STRING("SEND OUT"),        CursorCb_SendMon},
     [MENU_ENTER]           = {COMPOUND_STRING("ENTER"),           CursorCb_Enter},
     [MENU_NO_ENTRY]        = {COMPOUND_STRING("NO ENTRY"),        CursorCb_NoEntry},

@@ -5,7 +5,7 @@ script PiplupDialog{
     faceplayer
     speakername("Piplup")
     createfieldmugshot(MUGSHOT_PIPLUP, EMOTE_NORMAL)
-    msgbox("Brr! Hey there!\pYou must be cold!\pNot many Pokémon make it this far.\nI may not look it, but I hold\limperium down here!", MSGBOX_DEFAULT)
+    msgbox("Brr!\nHey there!\pYou must be cold!\pNot many Pokémon make it this far.\nI may not look it, but I hold\limperium down here!", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release

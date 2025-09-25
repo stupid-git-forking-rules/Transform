@@ -209,7 +209,7 @@ MawileInCave::
 # 139 "data/maps/DaycareNoivernCave/scripts.pory"
 	removefieldmugshot
 # 140 "data/maps/DaycareNoivernCave/scripts.pory"
-	setwildbattle SPECIES_MAWILE, 25
+	setwildbattle SPECIES_MAWILE, 25, move1 = MOVE_SWORDS_DANCE, move2 = MOVE_PLAY_ROUGH, move3 = MOVE_SUCKER_PUNCH, move4 = MOVE_THUNDER_PUNCH
 # 141 "data/maps/DaycareNoivernCave/scripts.pory"
 	dowildbattle
 # 142 "data/maps/DaycareNoivernCave/scripts.pory"
@@ -292,7 +292,7 @@ MawileInCaveTrigger_4:
 # 174 "data/maps/DaycareNoivernCave/scripts.pory"
 	removefieldmugshot
 # 175 "data/maps/DaycareNoivernCave/scripts.pory"
-	setwildbattle SPECIES_MAWILE, 25
+	setwildbattle SPECIES_MAWILE, 25, move1 = MOVE_SWORDS_DANCE, move2 = MOVE_PLAY_ROUGH, move3 = MOVE_SUCKER_PUNCH, move4 = MOVE_THUNDER_PUNCH
 # 176 "data/maps/DaycareNoivernCave/scripts.pory"
 	dowildbattle
 # 177 "data/maps/DaycareNoivernCave/scripts.pory"
@@ -314,7 +314,7 @@ MawileInCaveTrigger_5:
 # 194 "data/maps/DaycareNoivernCave/scripts.pory"
 	removefieldmugshot
 # 195 "data/maps/DaycareNoivernCave/scripts.pory"
-	setwildbattle SPECIES_MAWILE, 25
+	setwildbattle SPECIES_MAWILE, 25, move1 = MOVE_SWORDS_DANCE, move2 = MOVE_PLAY_ROUGH, move3 = MOVE_SUCKER_PUNCH, move4 = MOVE_THUNDER_PUNCH
 # 196 "data/maps/DaycareNoivernCave/scripts.pory"
 	dowildbattle
 # 197 "data/maps/DaycareNoivernCave/scripts.pory"

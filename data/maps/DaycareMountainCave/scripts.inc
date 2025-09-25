@@ -54,7 +54,7 @@ PiplupDialog_Text_0:
 
 PiplupDialog_Text_1:
 # 8 "data/maps/DaycareMountainCave/scripts.pory"
-	.string "Brr! Hey there!\pYou must be cold!\pNot many Pokémon make it this far.\nI may not look it, but I hold\limperium down here!$"
+	.string "Brr!\nHey there!\pYou must be cold!\pNot many Pokémon make it this far.\nI may not look it, but I hold\limperium down here!$"
 
 SnomDialog_Text_0:
 # 18 "data/maps/DaycareMountainCave/scripts.pory"
