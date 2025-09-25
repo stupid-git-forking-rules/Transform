@@ -440,7 +440,7 @@ BattleVsCutiefly_Text_2:
 
 BattleVsCutiefly_Text_3:
 # 193 "data/maps/DaycareWest/scripts.pory"
-	.string "Welcome to the flower patch big\nfriend!\pSometimes it pays to be tiny!\pBeat me here on my home turf\nand you too can transform to be\ltiny.$"
+	.string "Welcome to the flower patch big\nfriend!\pSometimes it pays to be small!\pBeat me here on my home turf\nand you too can transform to be\lminiature.$"
 
 BattleVsCutiefly_Text_4:
 # 207 "data/maps/DaycareWest/scripts.pory"

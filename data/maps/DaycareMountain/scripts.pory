@@ -1,5 +1,10 @@
 mapscripts DaycareMountain_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION:DaycareMountain_OnTransition
+}
 
+script DaycareMountain_OnTransition{
+    setrespawn(HEAL_LOCATION_DAYCARE_MOUNTAIN)
+    end
 }
 
 script SoarFront {
@@ -182,7 +187,7 @@ script BattleVsLurantis{
     createfieldmugshot(MUGSHOT_LURANTIS, EMOTE_NORMAL)
     msgbox("You're out seeking your Egg...\nare you not?\pEvery Ditto comes here in search\nif the Mythical Egg.\pProve your strength to me.\nMy sharp raptorial arms may come\lin handy.", MSGBOX_AUTOCLOSE)
 	removefieldmugshot
-    setwildbattle(SPECIES_LURANTIS, 25, item= ITEM_OCCA_BERRY, move1 = MOVE_LEAF_BLADE, move2= MOVE_LEECH_LIFE, move3 = MOVE_GIGA_IMPACT, move4 = MOVE_SWORDS_DANCE)
+    setwildbattle(SPECIES_LURANTIS, 25, item= ITEM_OCCA_BERRY, move1 = MOVE_LEAF_BLADE, move2= MOVE_LEECH_LIFE, move3 = MOVE_BRICK_BREAK, move4 = MOVE_SWORDS_DANCE)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0)
 	dowildbattle
     specialvar(VAR_RESULT, GetBattleOutcome)
@@ -436,4 +441,54 @@ script VullabyAfterSoar{
 	else{
 		end
 	}
+}
+
+
+script ChanseyDaycareMountainHeal{
+    lock
+    faceplayer
+    speakername("Chansey")
+    createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+    msgbox("Hello there!\pI can heal you in exchange for\na Lucky Egg.", MSGBOX_DEFAULT)
+    removefieldmugshot
+    msgbox("Would you like to heal?", MSGBOX_YESNO)
+    waitmessage
+    if(var(VAR_RESULT) == YES)
+    {
+        checkitem(ITEM_LUCKY_EGG)
+        if(var(VAR_RESULT) == TRUE)
+        {
+            removeitem(ITEM_LUCKY_EGG)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            setflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            playfanfare(MUS_HEAL)
+            waitfanfare
+            special(HealPlayerParty)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+            msgbox("You have been restored to full health!", MSGBOX_AUTOCLOSE)
+            clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
+            waitmessage
+            release
+            end
+        }
+        else
+        {
+            createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+            msgbox("You don't have a Lucky Egg!\pCome back when you do.", MSGBOX_AUTOCLOSE)
+            waitmessage
+            removefieldmugshot
+            release
+            end
+        }
+    }
+    else
+    {
+        createfieldmugshot(MUGSHOT_CHANSEY, EMOTE_NORMAL)
+        msgbox("Oh, okay then.", MSGBOX_AUTOCLOSE)
+        waitmessage
+        removefieldmugshot
+        release
+        end
+    }
+
 }

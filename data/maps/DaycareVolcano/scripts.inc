@@ -868,7 +868,7 @@ BattleVsArcanine::
 # 480 "data/maps/DaycareVolcano/scripts.pory"
 	setwildbattle SPECIES_ARCANINE, 25, move1 = MOVE_FLAME_WHEEL, move2 = MOVE_BITE, move3 = MOVE_AERIAL_ACE, move4 = MOVE_FLAME_CHARGE, ability = 3
 # 481 "data/maps/DaycareVolcano/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 0, 1, 0, 0, 0, 0, 0
+	settotemboost B_POSITION_OPPONENT_LEFT, 0, 0, 0, 0, 0, 1, 0
 # 482 "data/maps/DaycareVolcano/scripts.pory"
 	dowildbattle
 # 483 "data/maps/DaycareVolcano/scripts.pory"

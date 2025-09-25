@@ -209,6 +209,12 @@
       "map": "MAP_DAYCARE_VOLCANO",
       "x": 27,
       "y": 8
+    },
+    {
+      "id": "HEAL_LOCATION_DAYCARE_MOUNTAIN",
+      "map": "MAP_DAYCARE_MOUNTAIN",
+      "x": 7,
+      "y": 25
     }
   ]
 }

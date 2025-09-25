@@ -190,7 +190,7 @@ script BattleVsCutiefly{
     waitmovement(Cutiefly)
     speakername("Cutiefly")
     createfieldmugshot(MUGSHOT_CUTIEFLY, EMOTE_NORMAL)
-    msgbox("Welcome to the flower patch big\nfriend!\pSometimes it pays to be tiny!\pBeat me here on my home turf\nand you too can transform to be\ltiny.", MSGBOX_AUTOCLOSE)
+    msgbox("Welcome to the flower patch big\nfriend!\pSometimes it pays to be small!\pBeat me here on my home turf\nand you too can transform to be\lminiature.", MSGBOX_AUTOCLOSE)
 	removefieldmugshot
     setwildbattle(SPECIES_CUTIEFLY, 25)
 	settotemboost(B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 0, 0)
