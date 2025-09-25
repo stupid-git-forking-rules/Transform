@@ -333,7 +333,7 @@
       "x": 16,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "GoomyInCaveTrigger"
     },
@@ -342,7 +342,7 @@
       "x": 25,
       "y": 24,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "SlowpokeInCaveTrigger"
     },
@@ -351,7 +351,7 @@
       "x": 29,
       "y": 3,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "CroagunkInCaveTrigger"
     },
@@ -369,7 +369,7 @@
       "x": 17,
       "y": 13,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "GoomyInCaveTrigger"
     },
@@ -387,7 +387,7 @@
       "x": 26,
       "y": 24,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "SlowpokeInCaveTrigger"
     },
@@ -396,7 +396,7 @@
       "x": 29,
       "y": 4,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "CroagunkInCaveTrigger"
     },
@@ -405,7 +405,7 @@
       "x": 29,
       "y": 5,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "CroagunkInCaveTrigger"
     },
@@ -414,16 +414,34 @@
       "x": 29,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "CroagunkInCaveTrigger"
     },
     {
       "type": "trigger",
-      "x": 25,
-      "y": 8,
+      "x": 33,
+      "y": 3,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "DragonairHealLocation"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "DragonairHealLocation"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
       "var_value": "0",
       "script": "DragonairHealLocation"
     }

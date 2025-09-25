@@ -281,7 +281,7 @@ BattleVsLurantis::
 # 190 "data/maps/DaycareMountain/scripts.pory"
 	setwildbattle SPECIES_LURANTIS, 25, item = ITEM_OCCA_BERRY, move1 = MOVE_LEAF_BLADE, move2 = MOVE_LEECH_LIFE, move3 = MOVE_BRICK_BREAK, move4 = MOVE_SWORDS_DANCE
 # 191 "data/maps/DaycareMountain/scripts.pory"
-	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 1, 1, 1, 0
+	settotemboost B_POSITION_OPPONENT_LEFT, 2, 1, 1, 1, 1, 1, 0
 # 192 "data/maps/DaycareMountain/scripts.pory"
 	dowildbattle
 # 193 "data/maps/DaycareMountain/scripts.pory"

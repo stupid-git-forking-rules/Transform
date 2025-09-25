@@ -1200,7 +1200,7 @@ BattleVsDragonair::
 # 683 "data/maps/DaycarePond/scripts.pory"
 	removefieldmugshot
 # 684 "data/maps/DaycarePond/scripts.pory"
-	setwildbattle SPECIES_DRAGONAIR, 25, move1 = MOVE_OUTRAGE, move2 = MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_SAFEGUARD
+	setwildbattle SPECIES_DRAGONAIR, 25, move1 = MOVE_OUTRAGE, move2 = MOVE_WATERFALL, move3 = MOVE_IRON_HEAD, move4 = MOVE_OUTRAGE
 # 685 "data/maps/DaycarePond/scripts.pory"
 	settotemboost B_POSITION_OPPONENT_LEFT, 1, 1, 1, 0, 2, 0, 0
 # 686 "data/maps/DaycarePond/scripts.pory"
