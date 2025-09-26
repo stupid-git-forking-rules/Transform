@@ -351,7 +351,7 @@
       "x": 29,
       "y": 3,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "VAR_TEMP_4",
       "var_value": "0",
       "script": "CroagunkInCaveTrigger"
     },
@@ -394,9 +394,9 @@
     {
       "type": "trigger",
       "x": 29,
-      "y": 4,
+      "y": 5,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "VAR_TEMP_4",
       "var_value": "0",
       "script": "CroagunkInCaveTrigger"
     },
@@ -414,7 +414,7 @@
       "x": 29,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_TEMP_1",
+      "var": "VAR_TEMP_4",
       "var_value": "0",
       "script": "CroagunkInCaveTrigger"
     },

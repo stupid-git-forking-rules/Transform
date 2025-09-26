@@ -20,7 +20,7 @@ script DittoEnd
             msgbox("This is it.\pAfter you walk through this\ndoorway, you will learn the\lsecret of how we Dittos get\lour Eggs.\pTake these.\nThey'll come in handy.", MSGBOX_DEFAULT)
             removefieldmugshot
             setflag(FLAG_SUPPRESS_SPEAKER_NAME)
-            giveitem(ITEM_SITRUS_BERRY, 5)
+            giveitem(ITEM_SUPER_POTION, 5)
             clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
             setflag(FLAG_DITTO_SITRUS)
             waitmessage
@@ -33,7 +33,7 @@ script DittoEnd
             faceplayer
             speakername("Ditto")
             createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
-            msgbox("Hold on to one of those berries.\nTrust me.", MSGBOX_DEFAULT)
+            msgbox("You'll want to be at full health.\nTrust me.", MSGBOX_AUTOCLOSE)
             removefieldmugshot
             waitmessage
             release
@@ -73,12 +73,12 @@ script DittoEndTrigger
                 msgbox("This is it.\pAfter you walk through this\ndoorway, you will learn the\lsecret of how we Dittos get\lour Eggs.\pTake these.\nThey'll come in handy.", MSGBOX_DEFAULT)
                 removefieldmugshot
                 setflag(FLAG_SUPPRESS_SPEAKER_NAME)
-                giveitem(ITEM_SITRUS_BERRY, 5)
+                giveitem(ITEM_SUPER_POTION, 5)
                 clearflag(FLAG_SUPPRESS_SPEAKER_NAME)
                 setflag(FLAG_DITTO_SITRUS)
                 speakername("Ditto")
                 createfieldmugshot(MUGSHOT_DITTO, EMOTE_NORMAL)
-                msgbox("Hold on to one of those berries.\nTrust me.", MSGBOX_AUTOCLOSE)
+                msgbox("You'll want to be at full health.\nTrust me.", MSGBOX_AUTOCLOSE)
                 removefieldmugshot
                 applymovement(DittoFinale, moves(walk_up))
                 waitmovement(DittoFinale)

@@ -111,7 +111,7 @@ script VullabyDialog{
 	if(!flag(FLAG_SOAR_ACROSS))
 	{
 	lock
-	faceplayer
+	applymovement(Vullaby, moves(face_player))
 	speakername("Vullaby")
     createfieldmugshot(MUGSHOT_VULLABY, EMOTE_NORMAL)
 	msgbox("I wish I had stronger wings...\pThen I'd just fly right over the\nbroken bridge!", MSGBOX_DEFAULT)
@@ -122,7 +122,7 @@ script VullabyDialog{
 	}
 	else{
 	lock
-	faceplayer
+	applymovement(Vullaby, moves(face_player))
 	speakername("Vullaby")
     createfieldmugshot(MUGSHOT_VULLABY, EMOTE_NORMAL)
 	msgbox("I wish I could transform like you.\pI would change into a giant eagle!\n", MSGBOX_DEFAULT)
