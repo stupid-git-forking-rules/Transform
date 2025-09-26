@@ -168,7 +168,7 @@ VullabyDialog::
 # 124 "data/maps/DaycareMountain/scripts.pory"
 	lock
 # 125 "data/maps/DaycareMountain/scripts.pory"
-	faceplayer
+	applymovement Vullaby, VullabyDialog_Movement_0
 # 126 "data/maps/DaycareMountain/scripts.pory"
 	speakername VullabyDialog_Text_0
 # 127 "data/maps/DaycareMountain/scripts.pory"
@@ -187,7 +187,7 @@ VullabyDialog_1:
 # 113 "data/maps/DaycareMountain/scripts.pory"
 	lock
 # 114 "data/maps/DaycareMountain/scripts.pory"
-	faceplayer
+	applymovement Vullaby, VullabyDialog_Movement_0
 # 115 "data/maps/DaycareMountain/scripts.pory"
 	speakername VullabyDialog_Text_0
 # 116 "data/maps/DaycareMountain/scripts.pory"
@@ -261,7 +261,7 @@ BattleVsLurantis::
 # 180 "data/maps/DaycareMountain/scripts.pory"
 	playbgm MUS_PMD_BOSS_INTRO, FALSE
 # 181 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Lurantis, BattleVsLurantis_Movement_0
+	applymovement Lurantis, VullabyDialog_Movement_0
 # 182 "data/maps/DaycareMountain/scripts.pory"
 	waitmovement Lurantis
 # 183 "data/maps/DaycareMountain/scripts.pory"
@@ -346,7 +346,7 @@ OmanyteInCave::
 # 219 "data/maps/DaycareMountain/scripts.pory"
 	goto_if_set FLAG_OMANYTE_BATTLE, OmanyteInCave_1
 # 232 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Omanyte, BattleVsLurantis_Movement_0
+	applymovement Omanyte, VullabyDialog_Movement_0
 # 233 "data/maps/DaycareMountain/scripts.pory"
 	waitmovement Omanyte
 # 234 "data/maps/DaycareMountain/scripts.pory"
@@ -524,7 +524,7 @@ KabutoInCave::
 # 318 "data/maps/DaycareMountain/scripts.pory"
 	goto_if_set FLAG_KABUTO_BATTLE, KabutoInCave_1
 # 331 "data/maps/DaycareMountain/scripts.pory"
-	applymovement Kabuto, BattleVsLurantis_Movement_0
+	applymovement Kabuto, VullabyDialog_Movement_0
 # 332 "data/maps/DaycareMountain/scripts.pory"
 	waitmovement Kabuto
 # 333 "data/maps/DaycareMountain/scripts.pory"
@@ -847,9 +847,9 @@ SoarBack_Movement_0:
 	walk_fast_down
 	step_end
 
-# 181 "data/maps/DaycareMountain/scripts.pory"
-BattleVsLurantis_Movement_0:
-# 181 "data/maps/DaycareMountain/scripts.pory"
+# 114 "data/maps/DaycareMountain/scripts.pory"
+VullabyDialog_Movement_0:
+# 114 "data/maps/DaycareMountain/scripts.pory"
 	face_player
 	step_end
 

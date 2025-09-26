@@ -43,7 +43,7 @@ DittoEnd_1:
 # 35 "data/maps/DaycareMew/scripts.pory"
 	createfieldmugshot MUGSHOT_DITTO, EMOTE_NORMAL
 # 36 "data/maps/DaycareMew/scripts.pory"
-	msgbox DittoEnd_Text_2, MSGBOX_DEFAULT
+	msgbox DittoEnd_Text_2, MSGBOX_AUTOCLOSE
 # 37 "data/maps/DaycareMew/scripts.pory"
 	removefieldmugshot
 # 38 "data/maps/DaycareMew/scripts.pory"
@@ -68,7 +68,7 @@ DittoEnd_4:
 # 22 "data/maps/DaycareMew/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 23 "data/maps/DaycareMew/scripts.pory"
-	giveitem ITEM_SITRUS_BERRY, 5
+	giveitem ITEM_SUPER_POTION, 5
 # 24 "data/maps/DaycareMew/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 25 "data/maps/DaycareMew/scripts.pory"
@@ -113,7 +113,7 @@ DittoEndTrigger_1:
 # 75 "data/maps/DaycareMew/scripts.pory"
 	setflag FLAG_SUPPRESS_SPEAKER_NAME
 # 76 "data/maps/DaycareMew/scripts.pory"
-	giveitem ITEM_SITRUS_BERRY, 5
+	giveitem ITEM_SUPER_POTION, 5
 # 77 "data/maps/DaycareMew/scripts.pory"
 	clearflag FLAG_SUPPRESS_SPEAKER_NAME
 # 78 "data/maps/DaycareMew/scripts.pory"
@@ -311,7 +311,7 @@ DittoEnd_Text_1:
 
 DittoEnd_Text_2:
 # 36 "data/maps/DaycareMew/scripts.pory"
-	.string "Hold on to one of those berries.\nTrust me.$"
+	.string "You'll want to be at full health.\nTrust me.$"
 
 DittoEnd_Text_3:
 # 50 "data/maps/DaycareMew/scripts.pory"
