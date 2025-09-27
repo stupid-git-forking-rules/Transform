@@ -2078,6 +2078,8 @@ static void Cmd_critcalc(void)
             gSpecialStatuses[battlerDef].criticalHit = FALSE;
         else if (gBattleStruct->critChance[battlerDef] == -2)
             gSpecialStatuses[battlerDef].criticalHit = TRUE;
+        else if (PlayerIsDitto()) // Disable non-guarenteed crits
+            gSpecialStatuses[battlerDef].criticalHit = FALSE;
         else
         {
             if (GetGenConfig(GEN_CONFIG_CRIT_CHANCE) == GEN_1)
