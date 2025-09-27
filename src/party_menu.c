@@ -157,6 +157,7 @@ enum {
 enum {
     PARTY_BOX_LEFT_COLUMN,
     PARTY_BOX_RIGHT_COLUMN,
+    PARTY_BOX_DITTO_STATS,
 };
 
 enum {
@@ -303,6 +304,7 @@ static void DisplayPartyPokemonDataForWirelessMinigame(u8);
 static void DisplayPartyPokemonDataForBattlePyramidHeldItem(u8);
 static bool8 DisplayPartyPokemonDataForMoveTutorOrEvolutionItem(u8);
 static void DisplayPartyPokemonData(u8);
+static void DisplayDittoPokemonData(u8);
 static void DisplayPartyPokemonNickname(struct Pokemon *, struct PartyMenuBox *, u8);
 static void DisplayPartyPokemonLevelCheck(struct Pokemon *, struct PartyMenuBox *, u8);
 static void DisplayPartyPokemonGenderNidoranCheck(struct Pokemon *, struct PartyMenuBox *, u8);
@@ -928,7 +930,10 @@ static bool8 AllocPartyMenuBgGfx(void)
     case 1:
         if (!IsDma3ManagerBusyWithBgCopy())
         {
-            LZDecompressWram(gPartyMenuBg_Tilemap, sPartyBgTilemapBuffer);
+            if (PlayerIsDitto())
+                LZDecompressWram(gPartyMenuBg_DittoTilemap, sPartyBgTilemapBuffer);
+            else
+                LZDecompressWram(gPartyMenuBg_Tilemap, sPartyBgTilemapBuffer);
             sPartyMenuInternal->data[0]++;
         }
         break;
@@ -985,18 +990,17 @@ static void FreePartyPointers(void)
 
 static void InitPartyMenuBoxes(u8 layout)
 {
-    u8 partySize = PlayerIsDitto() ? DITTO_PARTY : PARTY_SIZE;
-
-    sPartyMenuBoxes = Alloc(sizeof(struct PartyMenuBox[partySize]));
+    sPartyMenuBoxes = Alloc(sizeof(struct PartyMenuBox[PARTY_SIZE]));
     LoadPartyMenuBoxes(layout);
 }
 
 static void LoadPartyMenuBoxes(u8 layout)
 {
     u32 i;
-    u8 partySize = PlayerIsDitto() ? DITTO_PARTY : PARTY_SIZE;
+    if (PlayerIsDitto())
+        layout = PARTY_LAYOUT_DITTO;
 
-    for (i = 0; i < partySize; i++)
+    for (i = 0; i < PARTY_SIZE; i++)
     {
         sPartyMenuBoxes[i].infoRects = &sPartyBoxInfoRects[PARTY_BOX_RIGHT_COLUMN];
         sPartyMenuBoxes[i].spriteCoords = sPartyMenuSpriteCoords[layout][i];
@@ -1009,7 +1013,9 @@ static void LoadPartyMenuBoxes(u8 layout)
     // The first party mon goes in the left column
     sPartyMenuBoxes[0].infoRects = &sPartyBoxInfoRects[PARTY_BOX_LEFT_COLUMN];
 
-    if (layout == PARTY_LAYOUT_MULTI_SHOWCASE)
+    if (PlayerIsDitto())
+        sPartyMenuBoxes[5].infoRects = &sPartyBoxInfoRects[PARTY_BOX_DITTO_STATS];
+    else if (layout == PARTY_LAYOUT_MULTI_SHOWCASE)
         sPartyMenuBoxes[3].infoRects = &sPartyBoxInfoRects[PARTY_BOX_LEFT_COLUMN];
     else if (layout != PARTY_LAYOUT_SINGLE)
         sPartyMenuBoxes[1].infoRects = &sPartyBoxInfoRects[PARTY_BOX_LEFT_COLUMN];
@@ -1035,6 +1041,10 @@ static void RenderPartyMenuBox(u8 slot)
             DrawDittoSlot(sPartyMenuBoxes[0].windowId);
             LoadDittoPalette(DITTO_PALSLOT, DITTO_PALETTE_NORMAL);
             CopyWindowToVram(sPartyMenuBoxes[0].windowId, COPYWIN_GFX);
+        }
+        else if (PlayerIsDitto() && slot == 5)
+        {
+            DisplayDittoPokemonData(slot);
         }
         else if (GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES) == SPECIES_NONE)
         {
@@ -1086,6 +1096,16 @@ static void DisplayPartyPokemonData(u8 slot)
         DisplayPartyPokemonMaxHPCheck(&gPlayerParty[slot], &sPartyMenuBoxes[slot], 0);
         DisplayPartyPokemonHPBarCheck(&gPlayerParty[slot], &sPartyMenuBoxes[slot]);
     }
+}
+
+static void DisplayDittoPokemonData(u8 slot)
+{
+    DisplayPartyPokemonNickname(&gPlayerParty[0], &sPartyMenuBoxes[slot], 0);
+    DisplayPartyPokemonLevelCheck(&gPlayerParty[0], &sPartyMenuBoxes[slot], 0);
+    DisplayPartyPokemonGenderNidoranCheck(&gPlayerParty[0], &sPartyMenuBoxes[slot], 0);
+    DisplayPartyPokemonHPCheck(&gPlayerParty[0], &sPartyMenuBoxes[slot], 0);
+    DisplayPartyPokemonMaxHPCheck(&gPlayerParty[0], &sPartyMenuBoxes[slot], 0);
+    DisplayPartyPokemonHPBarCheck(&gPlayerParty[0], &sPartyMenuBoxes[slot]);
 }
 
 static void DisplayPartyPokemonDescriptionData(u8 slot, u8 stringID)
@@ -1283,7 +1303,8 @@ static void CreatePartyMonSprites(u8 slot)
     }
     else if (PlayerIsDitto() && slot == 0)
     {
-        return; // Replace with any sprites we want to Animate onto Ditto
+        CreatePartyMonHeldItemSprite(&gPlayerParty[0], &sPartyMenuBoxes[5]);
+        CreatePartyMonStatusSprite(&gPlayerParty[0], &sPartyMenuBoxes[5]);
     }
     else if (GetMonData(&gPlayerParty[slot], MON_DATA_SPECIES) != SPECIES_NONE)
     {
@@ -2130,16 +2151,21 @@ static void BufferBagFullCantTakeItemMessage(u16 itemUnused)
 #define tHPToAdd      data[3]
 #define tPartyId      data[4]
 #define tStartHP      data[5]
+#define tPartySlot    data[6]
 
 static void Task_PartyMenuModifyHP(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
+    bool8 drawHpIcon = 1;
+
+    if (PlayerIsDitto() && tPartyId == 0)
+        drawHpIcon = 3;
 
     tHP += tHPIncrement;
     tHPToAdd--;
     SetMonData(&gPlayerParty[tPartyId], MON_DATA_HP, &tHP);
-    DisplayPartyPokemonHPCheck(&gPlayerParty[tPartyId], &sPartyMenuBoxes[tPartyId], 1);
-    DisplayPartyPokemonHPBarCheck(&gPlayerParty[tPartyId], &sPartyMenuBoxes[tPartyId]);
+    DisplayPartyPokemonHPCheck(&gPlayerParty[tPartyId], &sPartyMenuBoxes[tPartySlot], drawHpIcon);
+    DisplayPartyPokemonHPBarCheck(&gPlayerParty[tPartyId], &sPartyMenuBoxes[tPartySlot]);
     if (tHPToAdd == 0 || tHP == 0 || tHP == tMaxHP)
     {
         // If HP was recovered, buffer the amount recovered
@@ -2161,6 +2187,11 @@ void PartyMenuModifyHP(u8 taskId, u8 slot, s8 hpIncrement, s16 hpDifference, Tas
     tHPToAdd = hpDifference;
     tPartyId = slot;
     tStartHP = tHP;
+    tPartySlot = slot;
+
+    if (PlayerIsDitto() && tPartyId == 0)
+        tPartySlot = 5;
+
     SetTaskFuncWithFollowupFunc(taskId, Task_PartyMenuModifyHP, task);
 }
 
@@ -2341,19 +2372,22 @@ u8 CanTeachMove(struct Pokemon *mon, u16 move)
 
 static void InitPartyMenuWindows(u8 layout)
 {
+    if (PlayerIsDitto())
+        layout = PARTY_LAYOUT_DITTO;
+
     switch (layout)
     {
     case PARTY_LAYOUT_SINGLE:
-        if (PlayerIsDitto())
-            InitWindows(sDittoPartyMenuWindowTemplate);
-        else
-            InitWindows(sSinglePartyMenuWindowTemplate);
+        InitWindows(sSinglePartyMenuWindowTemplate);
         break;
     case PARTY_LAYOUT_DOUBLE:
         InitWindows(sDoublePartyMenuWindowTemplate);
         break;
     case PARTY_LAYOUT_MULTI:
         InitWindows(sMultiPartyMenuWindowTemplate);
+        break;
+    case PARTY_LAYOUT_DITTO:
+        InitWindows(sDittoPartyMenuWindowTemplate);
         break;
     default: // PARTY_LAYOUT_MULTI_SHOWCASE
         InitWindows(sShowcaseMultiPartyMenuWindowTemplate);
@@ -2670,7 +2704,9 @@ static void DisplayPartyPokemonHPCheck(struct Pokemon *mon, struct PartyMenuBox 
 {
     if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE)
     {
-        if (c != 0)
+        if (c == 3)
+            FillWindowPixelRect(menuBox->windowId, PIXEL_FILL(0), 20, 25, 15, 8);
+        else if (c != 0)
             menuBox->infoRects->blitFunc(menuBox->windowId, menuBox->infoRects->dimensions[12] >> 3, (menuBox->infoRects->dimensions[13] >> 3) + 1, menuBox->infoRects->dimensions[14] >> 3, menuBox->infoRects->dimensions[15] >> 3, FALSE);
         if (c != 2)
             DisplayPartyPokemonHP(GetMonData(mon, MON_DATA_HP), GetMonData(mon, MON_DATA_MAX_HP), menuBox);
@@ -4889,7 +4925,7 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
             PlaySE(SE_GLASS_FLUTE);
         }
         SetPartyMonAilmentGfx(mon, &sPartyMenuBoxes[gPartyMenu.slotId]);
-        if (gSprites[sPartyMenuBoxes[gPartyMenu.slotId].statusSpriteId].invisible)
+        if (gSprites[sPartyMenuBoxes[gPartyMenu.slotId].statusSpriteId].invisible && (!PlayerIsDitto() && gPartyMenu.slotId == 0))
             DisplayPartyPokemonLevelCheck(mon, &sPartyMenuBoxes[gPartyMenu.slotId], 1);
         if (canHeal == TRUE)
         {
