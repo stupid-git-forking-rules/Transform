@@ -4554,8 +4554,8 @@
     {
       "id": "LAYOUT_CAVETO_MEW",
       "name": "CavetoMew_Layout",
-      "width": 25,
-      "height": 23,
+      "width": 27,
+      "height": 18,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/CavetoMew/border.bin",
