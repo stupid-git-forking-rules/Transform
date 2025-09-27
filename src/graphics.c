@@ -1677,6 +1677,8 @@ const u16 gPartyMenuBg_Pal[] = INCBIN_U16("graphics/party_menu/bg.gbapal");
 const u16 gPartyMenuBg_Pal_Shiny[] = INCBIN_U16("graphics/party_menu/bg_shiny.gbapal");
 const u32 gPartyMenuBg_Tilemap[] = INCBIN_U32("graphics/party_menu/bg.bin.lz");
 
+const u32 gPartyMenuBg_DittoTilemap[] = INCBIN_U32("graphics/party_menu/bg_ditto.bin.lz");
+
 const u32 gPartyMenuPokeball_Gfx[] = INCBIN_U32("graphics/party_menu/pokeball.4bpp.lz");
 const u32 gPartyMenuPokeballSmall_Gfx[] = INCBIN_U32("graphics/party_menu/pokeball_small.4bpp.lz"); //unused
 const u16 gPartyMenuPokeball_Pal[] = INCBIN_U16("graphics/party_menu/pokeball.gbapal");
