@@ -1970,6 +1970,9 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
         critChance = CRITICAL_HIT_BLOCKED;
     }
 
+    if (critChance != CRITICAL_HIT_ALWAYS)
+        critChance = CRITICAL_HIT_BLOCKED;
+
     return critChance;
 }
 
