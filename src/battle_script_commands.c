@@ -1970,6 +1970,9 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
         critChance = CRITICAL_HIT_BLOCKED;
     }
 
+    if (critChance != CRITICAL_HIT_ALWAYS)
+        critChance = CRITICAL_HIT_BLOCKED;
+
     return critChance;
 }
 
@@ -2075,6 +2078,8 @@ static void Cmd_critcalc(void)
             gSpecialStatuses[battlerDef].criticalHit = FALSE;
         else if (gBattleStruct->critChance[battlerDef] == -2)
             gSpecialStatuses[battlerDef].criticalHit = TRUE;
+        else if (PlayerIsDitto()) // Disable non-guarenteed crits
+            gSpecialStatuses[battlerDef].criticalHit = FALSE;
         else
         {
             if (GetGenConfig(GEN_CONFIG_CRIT_CHANCE) == GEN_1)

@@ -59,6 +59,20 @@ static const struct PartyMenuBoxInfoRects sPartyBoxInfoRects[] =
         },
         77, 4, 64, 16        // Description text
     },
+    [PARTY_BOX_DITTO_STATS] =
+    {
+        BlitBitmapToPartyWindow_LeftColumn,
+        {
+            //The below are the x, y, width, and height for each of the following info
+            4,   2, 40, 13, // Nickname
+            4,  22, 32,  8, // Level
+            30,  2,  8,  8, // Gender
+            25, 22, 24,  8, // HP
+            40, 22, 24,  8, // Max HP
+            14, 18, 48,  3  // HP bar
+        },
+        12, 34, 64, 16      // Description text (e.g. NO USE)
+    },
 };
 
 
@@ -103,6 +117,15 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
         {104, 106, 106, 116, 136, 115, 102, 113},
         {104, 130, 106, 140, 136, 139, 102, 137},
     },
+    [PARTY_LAYOUT_DITTO] =
+    {
+        { 16,  40,  20,  50,  50,  52,  16,  34},
+        {104,  18, 108,  28, 136,  27, 102,  25},
+        {104,  42, 108,  52, 136,  51, 102,  49},
+        {104,  66, 108,  76, 136,  75, 102,  73},
+        {104,  90, 108, 100, 136,  99, 102,  97},
+        { 16,  80,  76,  99,  20, 110,  16,  74},
+    }
 };
 
 // Used only when both Cancel and Confirm are present
@@ -174,13 +197,13 @@ static const struct WindowTemplate sDittoPartyMenuWindowTemplate[] =
         .paletteNum = 7,
         .baseBlock = 0x14B,
     },
-    { // Party mon 6 // UNUSED
+    { // Party mon 6 - Used for Ditto stats
         .bg = 0,
-        .tilemapLeft = 12,
-        .tilemapTop = 13,
-        .width = 18,
-        .height = 3,
-        .paletteNum = 8,
+        .tilemapLeft = 1,
+        .tilemapTop = 10,
+        .width = 10,
+        .height = 6,
+        .paletteNum = 3,
         .baseBlock = 0x181,
     },
     [WIN_MSG] = {
@@ -645,14 +668,14 @@ static const struct WindowTemplate sLevelUpStatsWindowTemplate =
     .baseBlock = 0x2E9,
 };
 
-static const struct WindowTemplate sUnusedWindowTemplate1 =
+static const struct WindowTemplate sDittoStatsWindowTemplate =
 {
-    .bg = 2,
-    .tilemapLeft = 2,
-    .tilemapTop = 15,
-    .width = 27,
+    .bg = 3,
+    .tilemapLeft = 1,
+    .tilemapTop = 11,
+    .width = 8,
     .height = 4,
-    .paletteNum = 14,
+    .paletteNum = 15,
     .baseBlock = 0x1DF,
 };
 
