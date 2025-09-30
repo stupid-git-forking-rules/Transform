@@ -955,7 +955,7 @@ BattleVsLurantis_Text_1:
 
 BattleVsLurantis_Text_2:
 # 188 "data/maps/DaycareMountain/scripts.pory"
-	.string "You're out seeking your Egg...\nare you not?\pEvery Ditto comes here in search\nif the Mythical Egg.\pProve your strength to me.\nMy sharp raptorial arms may come\lin handy.$"
+	.string "You're out seeking your Egg...\nare you not?\pEvery Ditto comes here in search\nof the Mythical Egg.\pProve your strength to me.\nMy sharp raptorial arms may come\lin handy.$"
 
 BattleVsLurantis_Text_3:
 # 201 "data/maps/DaycareMountain/scripts.pory"
