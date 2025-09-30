@@ -605,7 +605,7 @@ script LinooneDialog{
         faceplayer
         speakername("Linoone")
         createfieldmugshot(MUGSHOT_LINOONE, EMOTE_NORMAL)
-	    msgbox("The Daycare is huge!\pIt's a bit scary to expore,\nso I stay up here.\pRiolu is way more brave than I\nam and has explored the entirety\lof the Daycare.\pYou should talk with Riolu if\nyou get lost!\pI'm sure they can help!\n")
+	    msgbox("The Daycare is huge!\pIt's a bit scary to explore,\nso I stay up here.\pRiolu is way more brave than I\nam and has explored the entirety\lof the Daycare.\pYou should talk with Riolu if\nyou get lost!\pI'm sure they can help!\n")
         waitmessage
         removefieldmugshot
         release

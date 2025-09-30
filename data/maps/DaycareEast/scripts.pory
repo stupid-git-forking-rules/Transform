@@ -104,7 +104,7 @@ script WingullDialog {
     faceplayer
     speakername("Wingull")
     createfieldmugshot(MUGSHOT_WINGULL, EMOTE_HAPPY)
-    msgbox("I wish more Pokémon could make\nway up here.\pSuch a beautiful view.\n", MSGBOX_DEFAULT)
+    msgbox("I wish more Pokémon could make\nway up here.\pWe Flying_type Pokémon can just\nfly down this cliffside here.", MSGBOX_DEFAULT)
     waitmessage
     removefieldmugshot
     release
@@ -424,4 +424,103 @@ script ChanseyDaycareEast{
         end
     }
 
+}
+
+script SoarFrontEast {
+	if(var(VAR_TRANSFORM_MON)== SPECIES_NOIVERN)
+	{
+		lock
+		applymovement(LOCALID_PLAYER, moves(walk_fast_up*9))
+		waitmovement(LOCALID_PLAYER)
+		release
+		end
+	}
+    elif (flag(FLAG_TRANS_NOIVERN) && var(VAR_TRANSFORM_MON) != SPECIES_NOIVERN)
+    {
+        lock
+        checkpartymove(MOVE_SUPER_FANG)
+        if (var(VAR_RESULT) != PARTY_SIZE)
+        {
+            msgbox("There is a tall cliff.\pWould you like to transform into\nNoivern to soar up it?", MSGBOX_YESNO)
+            release
+            if (var(VAR_RESULT) == YES)
+            {
+                dittotransform(SPECIES_NOIVERN)
+                applymovement(LOCALID_PLAYER, moves(walk_fast_up*9))
+                waitmovement(LOCALID_PLAYER)
+                release
+                end
+            }
+            else
+            {
+                release
+                end
+            }
+        }
+        else
+        {
+            lock
+            msgbox("There is a tall cliff.\pMaybe a Flying Pokémon could soar\nup to the top.", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end
+        }
+    }
+	else
+    {
+        lock
+        msgbox("There is a tall cliff.\pMaybe a Flying Pokémon could soar\nup to the top.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+		end
+	}
+}
+
+script SoarBackEast {
+	if(var(VAR_TRANSFORM_MON)== SPECIES_NOIVERN)
+	{
+		lock
+		applymovement(LOCALID_PLAYER, moves(walk_fast_down*9))
+		waitmovement(LOCALID_PLAYER)
+		release
+		end
+	}
+    elif (flag(FLAG_TRANS_NOIVERN) && var(VAR_TRANSFORM_MON) != SPECIES_NOIVERN)
+    {
+        lock
+        checkpartymove(MOVE_SUPER_FANG)
+        if (var(VAR_RESULT) != PARTY_SIZE)
+        {
+            msgbox("There is a tall cliff.\pWould you like to transform into\nNoivern to soar down it?", MSGBOX_YESNO)
+            release
+            if (var(VAR_RESULT) == YES)
+            {
+                dittotransform(SPECIES_NOIVERN)
+                applymovement(LOCALID_PLAYER, moves(walk_fast_down*9))
+                waitmovement(LOCALID_PLAYER)
+                release
+                end
+            }
+            else
+            {
+                release
+                end
+            }
+        }
+        else
+        {
+            lock
+            msgbox("There is a tall cliff.\pMaybe a Flying Pokémon could soar\ndown to the bottom.", MSGBOX_DEFAULT)
+            waitmessage
+            release
+            end
+        }
+    }
+	else{
+        lock
+        msgbox("There is a tall cliff.\pMaybe a Flying Pokémon could soar\ndown to the bottom.", MSGBOX_DEFAULT)
+        waitmessage
+        release
+		end
+	}
 }

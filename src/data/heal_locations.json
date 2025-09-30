@@ -166,7 +166,7 @@
       "id": "HEAL_LOCATION_DAYCARE_POND",
       "map": "MAP_DAYCARE_POND",
       "x": 15,
-      "y": 37
+      "y": 41
     },
     {
       "id": "HEAL_LOCATION_DAYCARE_TREEHOUSE",
@@ -202,7 +202,7 @@
       "id": "HEAL_LOCATION_DAYCARE_POND_1",
       "map": "MAP_DAYCARE_POND",
       "x": 24,
-      "y": 5
+      "y": 9
     },
     {
       "id": "HEAL_LOCATION_DAYCARE_VOLCANO_1",

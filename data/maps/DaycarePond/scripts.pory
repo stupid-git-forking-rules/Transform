@@ -287,68 +287,31 @@ script GoomyInCaveTrigger{
 script BuizelInCave{
     lock
 	faceplayer
-    if(flag(FLAG_BUIZEL_BATTLE))
+    if (flag(FLAG_TRANS_WEAVILE))
     {
-        speakername("Buizel")
-        createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
-        msgbox("Dragonair keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
-        waitmessage
-        removefieldmugshot
-        release
-	    end
-    }
-    else
-    {
-        applymovement(Buizel, moves(face_player))
-        waitmovement(Buizel)              
-        special(PlayTrainerEncounterMusic)
-        applymovement(Buizel, Common_Movement_ExclamationMark)
-	    waitmovement(Buizel)
-        delay(60)
-	    speakername("Buizel")
-        createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
-        msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
-        removefieldmugshot
-	    setwildbattle(SPECIES_BUIZEL, 25)
-        dowildbattle
-        specialvar(VAR_RESULT, GetBattleOutcome)
-        if (var(VAR_RESULT) == B_OUTCOME_WON)
+        if(flag(FLAG_BUIZEL_BATTLE))
         {
-            lock
             speakername("Buizel")
             createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
-	        msgbox("Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.", MSGBOX_DEFAULT)
-            setflag(FLAG_BUIZEL_BATTLE)
+            msgbox("Dragonair keeps to herself.\nEnsuring maximum relaxation.", MSGBOX_DEFAULT)
             waitmessage
             removefieldmugshot
             release
             end
         }
-    }
-}
-
-script BuizelInCaveTrigger{
-    if(!flag(FLAG_BUIZEL_BATTLE))
-    {
-        lock
-        special(PlayTrainerEncounterMusic)
-        applymovement(Buizel, Common_Movement_ExclamationMark)
-	    waitmovement(Buizel)
-        delay(60)
-        getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
-        switch(var(VAR_TEMP_2)) 
+        else
         {
-        case 33:
             applymovement(Buizel, moves(face_player))
+            waitmovement(Buizel)              
+            special(PlayTrainerEncounterMusic)
+            applymovement(Buizel, Common_Movement_ExclamationMark)
             waitmovement(Buizel)
-            applymovement(LOCALID_PLAYER, moves(face_up))
-            applymovement(Buizel, moves(walk_down))
-            waitmovement(Buizel)
-	        speakername("Buizel")
+            delay(60)
+            speakername("Buizel")
             createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
             msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
             removefieldmugshot
-	        setwildbattle(SPECIES_BUIZEL, 25)
+            setwildbattle(SPECIES_BUIZEL, 25)
             dowildbattle
             specialvar(VAR_RESULT, GetBattleOutcome)
             if (var(VAR_RESULT) == B_OUTCOME_WON)
@@ -356,30 +319,7 @@ script BuizelInCaveTrigger{
                 lock
                 speakername("Buizel")
                 createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
-	            msgbox("Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.", MSGBOX_DEFAULT)
-                setflag(FLAG_BUIZEL_BATTLE)
-                waitmessage
-                removefieldmugshot
-                release
-                end
-            }
-        case 32:
-            applymovement(Buizel, moves(face_player))
-            waitmovement(Buizel)
-            applymovement(LOCALID_PLAYER, moves(face_up))
-	        speakername("Buizel")
-            createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
-            msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
-            removefieldmugshot
-	        setwildbattle(SPECIES_BUIZEL, 25)
-            dowildbattle
-            specialvar(VAR_RESULT, GetBattleOutcome)
-            if (var(VAR_RESULT) == B_OUTCOME_WON)
-            {
-                lock
-                speakername("Buizel")
-                createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
-	            msgbox("Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.", MSGBOX_DEFAULT)
+                msgbox("Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.", MSGBOX_DEFAULT)
                 setflag(FLAG_BUIZEL_BATTLE)
                 waitmessage
                 removefieldmugshot
@@ -387,6 +327,86 @@ script BuizelInCaveTrigger{
                 end
             }
         }
+    }
+    else
+    {
+        speakername("Buizel")
+        createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
+        msgbox("Welcome to the Lake biome,\nthe calmest in the Daycare.", MSGBOX_DEFAULT)
+        waitmessage
+        removefieldmugshot
+        release
+        end
+    }
+}
+
+script BuizelInCaveTrigger{
+    if(flag(FLAG_TRANS_WEAVILE))
+    {
+        if(!flag(FLAG_BUIZEL_BATTLE))
+        {
+            lock
+            special(PlayTrainerEncounterMusic)
+            applymovement(Buizel, Common_Movement_ExclamationMark)
+            waitmovement(Buizel)
+            delay(60)
+            getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
+            switch(var(VAR_TEMP_2)) 
+            {
+            case 37:
+                applymovement(Buizel, moves(face_player))
+                waitmovement(Buizel)
+                applymovement(LOCALID_PLAYER, moves(face_up))
+                applymovement(Buizel, moves(walk_down))
+                waitmovement(Buizel)
+                speakername("Buizel")
+                createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
+                msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
+                removefieldmugshot
+                setwildbattle(SPECIES_BUIZEL, 25)
+                dowildbattle
+                specialvar(VAR_RESULT, GetBattleOutcome)
+                if (var(VAR_RESULT) == B_OUTCOME_WON)
+                {
+                    lock
+                    speakername("Buizel")
+                    createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
+                    msgbox("Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.", MSGBOX_DEFAULT)
+                    setflag(FLAG_BUIZEL_BATTLE)
+                    waitmessage
+                    removefieldmugshot
+                    release
+                    end
+                }
+            case 36:
+                applymovement(Buizel, moves(face_player))
+                waitmovement(Buizel)
+                applymovement(LOCALID_PLAYER, moves(face_up))
+                speakername("Buizel")
+                createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
+                msgbox("Dragonair likes to keep the waters\ncalm around here.\pLet's keep it lowkey.\n", MSGBOX_AUTOCLOSE)
+                removefieldmugshot
+                setwildbattle(SPECIES_BUIZEL, 25)
+                dowildbattle
+                specialvar(VAR_RESULT, GetBattleOutcome)
+                if (var(VAR_RESULT) == B_OUTCOME_WON)
+                {
+                    lock
+                    speakername("Buizel")
+                    createfieldmugshot(MUGSHOT_BUIZEL, EMOTE_NORMAL)
+                    msgbox("Dragonair likes to be cryptic.\pShe set up this maze so only those\nwho really need something from her\lwill seek her out.\pSome Pokémon really harsh her\nmellow.", MSGBOX_DEFAULT)
+                    setflag(FLAG_BUIZEL_BATTLE)
+                    waitmessage
+                    removefieldmugshot
+                    release
+                    end
+                }
+            }
+        }
+    }
+    else
+    {
+        end
     }
 }
 
@@ -544,7 +564,7 @@ script CroagunkInCaveTrigger{
         getplayerxy(VAR_TEMP_1, VAR_TEMP_2)
         switch(var(VAR_TEMP_2)) 
         {
-        case 3:
+        case 7:
             applymovement(LOCALID_PLAYER, moves(face_up))
 	        speakername("Croagunk")
             createfieldmugshot(MUGSHOT_CROAGUNK, EMOTE_NORMAL)
@@ -564,7 +584,7 @@ script CroagunkInCaveTrigger{
                 release
                 end
             }
-        case 4:
+        case 8:
             applymovement(LOCALID_PLAYER, moves(face_up))
             applymovement(Croagunk, moves(walk_down))
             waitmovement(Croagunk)
@@ -586,7 +606,7 @@ script CroagunkInCaveTrigger{
                 release
                 end
             }
-        case 5:
+        case 9:
             applymovement(LOCALID_PLAYER, moves(face_up))
             applymovement(Croagunk, moves(walk_down*2))
             waitmovement(Croagunk)
@@ -608,7 +628,7 @@ script CroagunkInCaveTrigger{
                 release
                 end
             }
-        case 6:
+        case 10:
             applymovement(LOCALID_PLAYER, moves(face_up))
             applymovement(Croagunk, moves(walk_down*3))
             waitmovement(Croagunk)
@@ -630,7 +650,7 @@ script CroagunkInCaveTrigger{
                 release
                 end
             }
-        case 7:
+        case 11:
             applymovement(LOCALID_PLAYER, moves(face_up))
             applymovement(Croagunk, moves(walk_down*4))
             waitmovement(Croagunk)

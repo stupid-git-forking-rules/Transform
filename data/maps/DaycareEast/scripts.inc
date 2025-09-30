@@ -709,6 +709,158 @@ ChanseyDaycareEast_4:
 	end
 
 
+SoarFrontEast::
+# 430 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_TRANSFORM_MON, SPECIES_NOIVERN
+	goto_if_eq SoarFrontEast_1
+# 438 "data/maps/DaycareEast/scripts.pory"
+	goto_if_set FLAG_TRANS_NOIVERN, SoarFrontEast_4
+SoarFrontEast_3:
+# 471 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 472 "data/maps/DaycareEast/scripts.pory"
+	msgbox SoarFrontEast_Text_1, MSGBOX_DEFAULT
+# 473 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 474 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+SoarFrontEast_1:
+# 432 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 433 "data/maps/DaycareEast/scripts.pory"
+	applymovement LOCALID_PLAYER, SoarFrontEast_Movement_0
+# 434 "data/maps/DaycareEast/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 435 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+SoarFrontEast_2:
+# 440 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 441 "data/maps/DaycareEast/scripts.pory"
+	checkpartymove MOVE_SUPER_FANG
+# 442 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_ne SoarFrontEast_8
+# 462 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 463 "data/maps/DaycareEast/scripts.pory"
+	msgbox SoarFrontEast_Text_1, MSGBOX_DEFAULT
+# 464 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 465 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+SoarFrontEast_4:
+# 438 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_TRANSFORM_MON, SPECIES_NOIVERN
+	goto_if_ne SoarFrontEast_2
+	goto SoarFrontEast_3
+
+SoarFrontEast_8:
+# 444 "data/maps/DaycareEast/scripts.pory"
+	msgbox SoarFrontEast_Text_0, MSGBOX_YESNO
+# 445 "data/maps/DaycareEast/scripts.pory"
+	release
+# 446 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq SoarFrontEast_11
+# 456 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+SoarFrontEast_11:
+# 448 "data/maps/DaycareEast/scripts.pory"
+	dittotransform SPECIES_NOIVERN
+# 449 "data/maps/DaycareEast/scripts.pory"
+	applymovement LOCALID_PLAYER, SoarFrontEast_Movement_0
+# 450 "data/maps/DaycareEast/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 451 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+
+SoarBackEast::
+# 480 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_TRANSFORM_MON, SPECIES_NOIVERN
+	goto_if_eq SoarBackEast_1
+# 488 "data/maps/DaycareEast/scripts.pory"
+	goto_if_set FLAG_TRANS_NOIVERN, SoarBackEast_4
+SoarBackEast_3:
+# 520 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 521 "data/maps/DaycareEast/scripts.pory"
+	msgbox SoarBackEast_Text_1, MSGBOX_DEFAULT
+# 522 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 523 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+SoarBackEast_1:
+# 482 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 483 "data/maps/DaycareEast/scripts.pory"
+	applymovement LOCALID_PLAYER, SoarBackEast_Movement_0
+# 484 "data/maps/DaycareEast/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 485 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+SoarBackEast_2:
+# 490 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 491 "data/maps/DaycareEast/scripts.pory"
+	checkpartymove MOVE_SUPER_FANG
+# 492 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_ne SoarBackEast_8
+# 512 "data/maps/DaycareEast/scripts.pory"
+	lock
+# 513 "data/maps/DaycareEast/scripts.pory"
+	msgbox SoarBackEast_Text_1, MSGBOX_DEFAULT
+# 514 "data/maps/DaycareEast/scripts.pory"
+	waitmessage
+# 515 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+SoarBackEast_4:
+# 488 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_TRANSFORM_MON, SPECIES_NOIVERN
+	goto_if_ne SoarBackEast_2
+	goto SoarBackEast_3
+
+SoarBackEast_8:
+# 494 "data/maps/DaycareEast/scripts.pory"
+	msgbox SoarBackEast_Text_0, MSGBOX_YESNO
+# 495 "data/maps/DaycareEast/scripts.pory"
+	release
+# 496 "data/maps/DaycareEast/scripts.pory"
+	compare VAR_RESULT, YES
+	goto_if_eq SoarBackEast_11
+# 506 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+SoarBackEast_11:
+# 498 "data/maps/DaycareEast/scripts.pory"
+	dittotransform SPECIES_NOIVERN
+# 499 "data/maps/DaycareEast/scripts.pory"
+	applymovement LOCALID_PLAYER, SoarBackEast_Movement_0
+# 500 "data/maps/DaycareEast/scripts.pory"
+	waitmovement LOCALID_PLAYER
+# 501 "data/maps/DaycareEast/scripts.pory"
+	release
+	end
+
+
 # 116 "data/maps/DaycareEast/scripts.pory"
 RuffletDialog_Movement_0:
 # 116 "data/maps/DaycareEast/scripts.pory"
@@ -745,6 +897,50 @@ RuffletDialog_Movement_3:
 	walk_fast_left
 # 210 "data/maps/DaycareEast/scripts.pory"
 	face_right
+	step_end
+
+# 433 "data/maps/DaycareEast/scripts.pory"
+SoarFrontEast_Movement_0:
+# 433 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_up
+# 433 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_up
+# 433 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_up
+# 433 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_up
+# 433 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_up
+# 433 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_up
+# 433 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_up
+# 433 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_up
+# 433 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_up
+	step_end
+
+# 483 "data/maps/DaycareEast/scripts.pory"
+SoarBackEast_Movement_0:
+# 483 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+# 483 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+# 483 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+# 483 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+# 483 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+# 483 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+# 483 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+# 483 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
+# 483 "data/maps/DaycareEast/scripts.pory"
+	walk_fast_down
 	step_end
 
 KrabbyDialog_Text_0:
@@ -805,7 +1001,7 @@ WingullDialog_Text_0:
 
 WingullDialog_Text_1:
 # 107 "data/maps/DaycareEast/scripts.pory"
-	.string "I wish more Pokémon could make\nway up here.\pSuch a beautiful view.\n$"
+	.string "I wish more Pokémon could make\nway up here.\pWe Flying_type Pokémon can just\nfly down this cliffside here.$"
 
 RuffletDialog_Text_0:
 # 119 "data/maps/DaycareEast/scripts.pory"
@@ -902,3 +1098,19 @@ ChanseyDaycareEast_Text_4:
 ChanseyDaycareEast_Text_5:
 # 420 "data/maps/DaycareEast/scripts.pory"
 	.string "Oh, okay then.$"
+
+SoarFrontEast_Text_0:
+# 444 "data/maps/DaycareEast/scripts.pory"
+	.string "There is a tall cliff.\pWould you like to transform into\nNoivern to soar up it?$"
+
+SoarFrontEast_Text_1:
+# 463 "data/maps/DaycareEast/scripts.pory"
+	.string "There is a tall cliff.\pMaybe a Flying Pokémon could soar\nup to the top.$"
+
+SoarBackEast_Text_0:
+# 494 "data/maps/DaycareEast/scripts.pory"
+	.string "There is a tall cliff.\pWould you like to transform into\nNoivern to soar down it?$"
+
+SoarBackEast_Text_1:
+# 513 "data/maps/DaycareEast/scripts.pory"
+	.string "There is a tall cliff.\pMaybe a Flying Pokémon could soar\ndown to the bottom.$"

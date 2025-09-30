@@ -2100,7 +2100,7 @@ LinooneDialog_Text_0:
 
 LinooneDialog_Text_1:
 # 608 "data/maps/daycarebase/scripts.pory"
-	.string "The Daycare is huge!\pIt's a bit scary to expore,\nso I stay up here.\pRiolu is way more brave than I\nam and has explored the entirety\lof the Daycare.\pYou should talk with Riolu if\nyou get lost!\pI'm sure they can help!\n$"
+	.string "The Daycare is huge!\pIt's a bit scary to explore,\nso I stay up here.\pRiolu is way more brave than I\nam and has explored the entirety\lof the Daycare.\pYou should talk with Riolu if\nyou get lost!\pI'm sure they can help!\n$"
 
 LinooneDialog_Text_2:
 # 620 "data/maps/daycarebase/scripts.pory"

@@ -4505,7 +4505,7 @@
       "id": "LAYOUT_DAYCARE_POND",
       "name": "DaycarePond_Layout",
       "width": 42,
-      "height": 45,
+      "height": 49,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mauville",
       "border_filepath": "data/layouts/DaycarePond/border.bin",
